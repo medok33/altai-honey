@@ -1,0 +1,16 @@
+{
+  "name": "Алтайский мёд",
+  "short_name": "AltayMed",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff8f0",
+  "theme_color": "#9f5524",
+  "description": "Натуральный алтайский мёд с доставкой",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ]
+}

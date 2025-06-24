@@ -13,21 +13,32 @@
 <!-- Open Graph -->
 <meta property="og:title" content="FAQ | Алтайский мёд">
 <meta property="og:description" content="Ответы на часто задаваемые вопросы о мёде">
-<meta property="og:image" content="https://ваш-сайт.ru/images/og-preview.jpg">
-<meta property="og:url" content="https://ваш-сайт.ru/faq/">
+<meta property="og:image" content="https://altaymed.shop/images/og-preview.jpg">
+<meta property="og:url" content="https://altaymed.shop/faq/">
 <meta property="og:type" content="website">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="FAQ | Алтайский мёд">
 <meta name="twitter:description" content="Часто задаваемые вопросы о мёде и доставке">
-<meta name="twitter:image" content="https://ваш-сайт.ru/images/twitter-preview.jpg">
+<meta name="twitter:image" content="https://altaymed.shop/images/twitter-preview.jpg">
 
-<!-- Favicon, манифест, аналитика, шрифты - аналогично главной странице -->
+<!-- Favicon -->
+<link rel="icon" href="../images/favicon.ico" sizes="any">
+<link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+
+<!-- Web Manifest -->
+<link rel="manifest" href="../manifest.json">
+<meta name="theme-color" content="#9f5524">
+
+<!-- Оптимизированные шрифты -->
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- Подключение Tailwind CSS -->
-<link rel="stylesheet" href="../css/style.min.css">
-
 <script src="https://cdn.tailwindcss.com/3.4.16"></script>
 <script>
 tailwind.config = {
@@ -54,50 +65,193 @@ tailwind.config = {
   }
 }
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+
+<!-- Наш CSS -->
+<link rel="stylesheet" href="../css/style.min.css">
+
 <style>
-/* Ваши существующие стили */
 .faq-header {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-              url('../images/image-14.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                   url('../images/image-14.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 2rem;
 }
-/* ... остальные стили без изменений ... -->
+
+.faq-item {
+  border-bottom: 1px solid #e2e8f0;
+  padding: 1.5rem 0;
+}
+
+.faq-question {
+  font-weight: bold;
+  font-size: 1.25rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-answer {
+  padding-top: 1rem;
+  display: none;
+}
+
+.faq-answer.show {
+  display: block;
+}
 </style>
 </head>
 <body>
 <!-- Навигация -->
 <nav class="bg-white shadow-sm sticky top-0 z-50">
-  <!-- Ваша навигация без изменений -->
+  <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+    <a href="/" class="text-2xl font-bold text-secondary">
+      <span class="text-primary">Алтайский</span> Мёд
+    </a>
+    <div class="hidden md:flex space-x-6">
+      <a href="/" class="hover:text-primary">Главная</a>
+      <a href="/#products" class="hover:text-primary">Продукция</a>
+      <a href="/#about" class="hover:text-primary">О нас</a>
+      <a href="/blog/" class="hover:text-primary">Блог</a>
+      <a href="/faq/" class="hover:text-primary font-bold">FAQ</a>
+    </div>
+    <button class="md:hidden text-secondary">
+      <i class="ri-menu-line text-2xl"></i>
+    </button>
+  </div>
 </nav>
 
 <main>
 <!-- Шапка FAQ -->
 <section class="faq-header">
-  <!-- Контент без изменений -->
+  <div>
+    <h1 class="text-3xl md:text-5xl font-bold mb-4">Часто задаваемые вопросы</h1>
+    <p class="text-xl">Ответы на самые популярные вопросы о нашем мёде</p>
+  </div>
 </section>
 
 <!-- Содержимое FAQ -->
 <section class="py-16 bg-[#F5DEB3] bg-opacity-20 texture-bg">
   <div class="container mx-auto px-4 md:px-6">
-    <div class="faq-container">
-      <!-- Вопросы без изменений -->
+    <div class="max-w-3xl mx-auto">
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Как хранить мёд?</span>
+          <i class="ri-arrow-down-s-line"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Мёд следует хранить в плотно закрытой стеклянной или керамической посуде при комнатной температуре (18-20°C) в темном месте. Не рекомендуется хранить мёд в холодильнике, так как это может ускорить кристаллизацию. Избегайте попадания прямых солнечных лучей.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Почему мёд кристаллизуется?</span>
+          <i class="ri-arrow-down-s-line"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Кристаллизация — естественный процесс для натурального мёда. Она свидетельствует о его качестве и зрелости. Скорость кристаллизации зависит от сорта мёда и температуры хранения. Например, гречишный мёд кристаллизуется быстрее, чем акациевый.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Как отличить настоящий мёд от подделки?</span>
+          <i class="ri-arrow-down-s-line"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Натуральный мёд имеет густую консистенцию, насыщенный аромат и характерный вкус с легкой горчинкой. При вращении ложки мёд наматывается, образуя "горку". Натуральный мёд растворяется в воде без осадка. Подробнее читайте в нашей статье <a href="../blog/kak-vybrat-med.html" class="text-primary underline">"Как выбрать качественный мёд"</a>.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Какие сроки доставки?</span>
+          <i class="ri-arrow-down-s-line"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Мы отправляем заказы в течение 1-2 рабочих дней. Сроки доставки зависят от вашего региона:</p>
+          <ul class="list-disc pl-6 mt-2">
+            <li>По Москве и Московской области: 1-2 дня</li>
+            <li>По России: 3-7 дней</li>
+            <li>В отдаленные регионы: до 14 дней</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Как оплатить заказ?</span>
+          <i class="ri-arrow-down-s-line"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Мы предлагаем несколько способов оплаты:</p>
+          <ul class="list-disc pl-6 mt-2">
+            <li>Онлайн-оплата банковской картой</li>
+            <li>Наложенный платеж (оплата при получении)</li>
+            <li>Безналичный расчет для юридических лиц</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Есть ли противопоказания к употреблению мёда?</span>
+          <i class="ri-arrow-down-s-line"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Мёд не рекомендуется употреблять:</p>
+          <ul class="list-disc pl-6 mt-2">
+            <li>Детям до 1 года</li>
+            <li>Людям с аллергией на продукты пчеловодства</li>
+            <li>При сахарном диабете (требуется консультация врача)</li>
+            <li>При обострении гастрита или язвенной болезни</li>
+          </ul>
+          <p class="mt-2">В остальных случаях мёд полезен при умеренном потреблении (1-2 столовые ложки в день).</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 </main>
 
 <!-- Футер -->
-<footer class="bg-[#8B4513] py-10 md:py-12 w-full">
-  <!-- Контент без изменений -->
+<footer class="bg-[#8B4513] py-10 md:py-12 w-full text-white">
+  <!-- Тот же футер, что и на главной странице -->
 </footer>
 
-<!-- Скрипт lazy loading -->
+<!-- Скрипт для FAQ -->
 <script>
-  // Тот же скрипт, что и на главной странице
+  document.addEventListener("DOMContentLoaded", function() {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    
+    faqQuestions.forEach(question => {
+      question.addEventListener('click', function() {
+        const answer = this.nextElementSibling;
+        const icon = this.querySelector('i');
+        
+        if (answer.classList.contains('show')) {
+          answer.classList.remove('show');
+          icon.classList.remove('ri-arrow-up-s-line');
+          icon.classList.add('ri-arrow-down-s-line');
+        } else {
+          answer.classList.add('show');
+          icon.classList.remove('ri-arrow-down-s-line');
+          icon.classList.add('ri-arrow-up-s-line');
+        }
+      });
+    });
+  });
 </script>
-
-<!-- Остальные скрипты без изменений -->
 </body>
 </html>

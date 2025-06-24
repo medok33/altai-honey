@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+<base href="https://medok33.github.io/altai-honey/">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Как выбрать качественный мёд | Алтайский мёд - Советы экспертов</title>
@@ -24,21 +25,39 @@
 <meta name="twitter:image" content="https://altaymed.shop/images/twitter-preview.jpg">
 
 <!-- Favicon -->
-<link rel="icon" href="../images/favicon.ico" sizes="any">
-<link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+<link rel="icon" href="../../images/favicon.ico" sizes="any">
+<link rel="icon" href="../../images/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
 
 <!-- Web Manifest -->
-<link rel="manifest" href="../manifest.json">
+<link rel="manifest" href="../../manifest.json">
 <meta name="theme-color" content="#9f5524">
 
 <!-- Оптимизированные шрифты -->
-<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<!-- Подключение Tailwind CSS -->
+<!-- Аналитика -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D9YMSF22NS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-D9YMSF22NS');
+  
+  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+  m[i].l=1*new Date();
+  k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+  (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+  ym(102951378, "init", {
+       clickmap:true,
+       trackLinks:true,
+       accurateTrackBounce:true,
+       webvisor:true
+  });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/102951378" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
 <script src="https://cdn.tailwindcss.com/3.4.16"></script>
 <script>
 tailwind.config = {
@@ -65,17 +84,13 @@ tailwind.config = {
   }
 }
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
-
-<!-- Наш CSS -->
-<link rel="stylesheet" href="../css/style.min.css">
-
 <style>
 .article-header {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                   url('../images/image-11.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+              url('../../images/image-11.jpg');
   background-size: cover;
   background-position: center;
   min-height: 50vh;
@@ -84,120 +99,126 @@ tailwind.config = {
   justify-content: center;
   text-align: center;
   color: white;
-  padding: 2rem;
 }
-
+.texture-bg {
+  background-image: url('../../images/texture.png');
+  background-repeat: repeat;
+}
 .article-content {
-  max-width: 800px;
-  margin: 0 auto;
-  line-height: 1.8;
+  background: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
-
 .article-content h2 {
   font-size: 1.75rem;
   font-weight: bold;
-  margin: 2rem 0 1rem;
+  margin: 1.5rem 0 1rem;
   color: #8B4513;
 }
-
-.article-content img {
-  border-radius: 8px;
-  margin: 1.5rem 0;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+.article-content p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
 }
 </style>
 </head>
 <body>
 <!-- Навигация -->
 <nav class="bg-white shadow-sm sticky top-0 z-50">
-  <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-    <a href="/" class="text-2xl font-bold text-secondary">
-      <span class="text-primary">Алтайский</span> Мёд
-    </a>
-    <div class="hidden md:flex space-x-6">
-      <a href="/" class="hover:text-primary">Главная</a>
-      <a href="/#products" class="hover:text-primary">Продукция</a>
-      <a href="/#about" class="hover:text-primary">О нас</a>
-      <a href="/blog/" class="hover:text-primary font-bold">Блог</a>
-      <a href="/faq/" class="hover:text-primary">FAQ</a>
+  <div class="container mx-auto px-4 md:px-6">
+    <div class="flex justify-between items-center py-4">
+      <a href="../../" class="text-xl font-bold text-secondary flex items-center">
+        <i class="ri-home-heart-fill text-2xl mr-2"></i>
+        Алтайский мёд
+      </a>
+      <div class="hidden md:flex space-x-6">
+        <a href="../../#products" class="hover:text-primary transition">Продукция</a>
+        <a href="../../#benefits" class="hover:text-primary transition">Преимущества</a>
+        <a href="../" class="hover:text-primary transition">Блог</a>
+        <a href="../../faq/" class="hover:text-primary transition">FAQ</a>
+        <a href="../../#order" class="bg-primary text-white px-4 py-2 rounded-button hover:bg-green-800 transition">Заказать</a>
+      </div>
+      <button class="md:hidden text-2xl">
+        <i class="ri-menu-line"></i>
+      </button>
     </div>
-    <button class="md:hidden text-secondary">
-      <i class="ri-menu-line text-2xl"></i>
-    </button>
   </div>
 </nav>
 
 <main>
 <!-- Шапка статьи -->
 <section class="article-header">
-  <div>
-    <h1 class="text-3xl md:text-5xl font-bold mb-4">Как выбрать качественный мёд</h1>
-    <p class="text-xl">Экспертные советы по выбору настоящего алтайского мёда</p>
+  <div class="container mx-auto px-4 md:px-6">
+    <div>
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Как выбрать качественный мёд</h1>
+      <div class="flex items-center justify-center text-white/90">
+        <i class="ri-calendar-line mr-2"></i>
+        <span>15 мая 2025</span>
+        <i class="ri-time-line ml-4 mr-2"></i>
+        <span>5 минут чтения</span>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- Содержимое статьи -->
 <section class="py-16 bg-[#F5DEB3] bg-opacity-20 texture-bg">
   <div class="container mx-auto px-4 md:px-6">
-    <div class="article-content">
-      <p class="mb-4">Выбор качественного мёда — настоящее искусство, которое требует знания некоторых секретов. На рынке сегодня представлено множество подделок, которые лишь внешне напоминают настоящий мёд. Как же отличить натуральный продукт от фальсификата?</p>
-      
-      <img 
-        src="../images/placeholder.jpg" 
-        data-src="../images/image-12.jpg" 
-        alt="Разные виды мёда" 
-        class="w-full lazyload"
-        loading="lazy"
-        decoding="async"
-      >
-      
-      <h2>Основные признаки качественного мёда</h2>
-      
-      <p><strong>1. Консистенция и вязкость</strong></p>
-      <p>Натуральный мёд имеет густую, вязкую консистенцию. Если зачерпнуть его ложкой и поднять, он должен тянуться непрерывной нитью, образуя на поверхности "горку", которая медленно растекается.</p>
-      
-      <p><strong>2. Аромат</strong></p>
-      <p>Настоящий мёд обладает насыщенным цветочным ароматом. Если мёд почти не пахнет или имеет карамельный запах — это может свидетельствовать о подогреве или добавлении сахарного сиропа.</p>
-      
-      <p><strong>3. Вкус</strong></p>
-      <p>Качественный мёд имеет насыщенный вкус с легкой горчинкой и терпкостью. Послевкусие должно быть приятным, без привкуса карамели или жженого сахара.</p>
-      
-      <img 
-        src="../images/placeholder.jpg" 
-        data-src="../images/image-13.jpg" 
-        alt="Дегустация мёда" 
-        class="w-full lazyload"
-        loading="lazy"
-        decoding="async"
-      >
-      
-      <h2>Как распознать подделку</h2>
-      
-      <p><strong>1. Проверка на сахар</strong></p>
-      <p>Капните мёд на бумагу. Натуральный мёд не растечется и не оставит мокрого следа. Если же вокруг капли появилось влажное пятно — в продукт добавлен сахарный сироп.</p>
-      
-      <p><strong>2. Тест с йодом</strong></p>
-      <p>Разведите немного мёда в воде и добавьте каплю йода. Если раствор посинел — в мёде присутствует крахмал или мука.</p>
-      
-      <p><strong>3. Проверка на водянистость</strong></p>
-      <p>Натуральный зрелый мёд содержит не более 18-20% воды. Если мёд слишком жидкий и легко стекает с ложки — он либо недозрелый, либо разбавлен.</p>
-      
-      <h2>Особенности алтайского мёда</h2>
-      
-      <p>Алтайский мёд отличается особыми характеристиками:</p>
-      <ul class="list-disc pl-6 mb-4">
-        <li>Насыщенный аромат горных трав и цветов</li>
-        <li>Плотная, однородная консистенция</li>
-        <li>Богатый витаминно-минеральный состав</li>
-        <li>Способность к длительной кристаллизации</li>
-      </ul>
-      
-      <p>Выбирая алтайский мёд, обращайте внимание на его региональное происхождение и наличие сертификатов качества. Настоящий алтайский мёд — это не просто сладость, а ценный природный продукт с уникальными свойствами.</p>
-      
-      <div class="bg-primary bg-opacity-10 p-6 rounded-xl my-8">
-        <h3 class="text-xl font-bold mb-3">Совет эксперта</h3>
-        <p>"Лучший способ выбрать качественный мёд — покупать его у проверенных производителей, которые могут предоставить полную информацию о происхождении продукта и его характеристиках. Настоящий алтайский мёд всегда имеет паспорт пасеки и сертификат качества."</p>
-        <p class="mt-3 font-medium">— Иван Петров, пчеловод с 15-летним стажем</p>
+    <div class="max-w-3xl mx-auto">
+      <div class="article-content">
+        <p class="mb-4">Выбор качественного мёда — настоящее искусство. В условиях рынка, где встречаются подделки и недобросовестные производители, важно знать основные признаки настоящего мёда.</p>
+        
+        <img 
+          src="../../images/placeholder.jpg" 
+          data-src="../../images/image-12.jpg" 
+          alt="Разные виды мёда" 
+          class="w-full h-auto mb-6 lazyload"
+          loading="lazy"
+          decoding="async"
+        >
+        
+        <h2>Основные признаки качественного мёда</h2>
+        
+        <p><strong>1. Консистенция и вязкость</strong><br>
+        Настоящий мёд должен быть в меру вязким. Если зачерпнуть его ложкой и покрутить, он будет наматываться, а не стекать. Зимой мёд кристаллизуется — это естественный процесс.</p>
+        
+        <p><strong>2. Аромат</strong><br>
+        Качественный мёд имеет насыщенный цветочный аромат. Если мёд не пахнет или пахнет слабо, скорее всего, он подвергался нагреванию или разбавлен.</p>
+        
+        <p><strong>3. Вкус</strong><br>
+        Настоящий мёд оставляет приятное першение в горле после употребления. Сладость должна быть натуральной, без привкуса карамели или жженого сахара.</p>
+        
+        <img 
+          src="../../images/placeholder.jpg" 
+          data-src="../../images/image-13.jpg" 
+          alt="Дегустация мёда" 
+          class="w-full h-auto mb-6 lazyload"
+          loading="lazy"
+          decoding="async"
+        >
+        
+        <h2>Проверка на натуральность</h2>
+        
+        <p><strong>Тест с водой</strong><br>
+        Капните мёд в стакан с водой. Натуральный мёд осядет комком на дне, а поддельный — растворится или расплывется.</p>
+        
+        <p><strong>Тест с йодом</strong><br>
+        Размешайте ложку мёда в воде и капните йод. Если раствор посинел, в мёд добавлен крахмал или мука.</p>
+        
+        <p><strong>Тест с хлебом</strong><br>
+        Опустите кусочек хлеба в мёд на 10 минут. В настоящем мёде хлеб затвердеет, в поддельном — размокнет.</p>
+        
+        <h2>Рекомендации по хранению</h2>
+        
+        <p>Чтобы сохранить полезные свойства мёда:</p>
+        <ul class="list-disc pl-6 mb-4">
+          <li>Храните в стеклянной или керамической таре</li>
+          <li>Держите в темном месте при температуре 5-20°C</li>
+          <li>Не допускайте попадания прямых солнечных лучей</li>
+          <li>Избегайте контакта с металлом</li>
+        </ul>
+        
+        <p>Выбирая алтайский мёд, вы получаете не только вкусный, но и исключительно полезный продукт. Наши пчелы собирают нектар в экологически чистых районах Алтая, что гарантирует высочайшее качество мёда.</p>
       </div>
     </div>
   </div>
@@ -205,33 +226,79 @@ tailwind.config = {
 </main>
 
 <!-- Футер -->
-<footer class="bg-[#8B4513] py-10 md:py-12 w-full text-white">
-  <!-- Тот же футер, что и на главной странице -->
+<footer class="bg-[#8B4513] py-10 md:py-12 w-full">
+  <div class="container mx-auto px-4 md:px-6">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div>
+        <h3 class="text-white text-xl font-bold mb-4">Алтайский мёд</h3>
+        <p class="text-white/80">Натуральный мёд с пасек Алтая</p>
+      </div>
+      <div>
+        <h3 class="text-white text-lg font-semibold mb-4">Меню</h3>
+        <ul>
+          <li><a href="../../#products" class="text-white/80 hover:text-white transition">Продукция</a></li>
+          <li><a href="../../#benefits" class="text-white/80 hover:text-white transition">Преимущества</a></li>
+          <li><a href="../" class="text-white/80 hover:text-white transition">Блог</a></li>
+          <li><a href="../../faq/" class="text-white/80 hover:text-white transition">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white text-lg font-semibold mb-4">Контакты</h3>
+        <ul>
+          <li class="text-white/80 mb-2 flex items-center">
+            <i class="ri-phone-fill mr-2"></i> +7 (999) 123-45-67
+          </li>
+          <li class="text-white/80 mb-2 flex items-center">
+            <i class="ri-mail-fill mr-2"></i> info@altaymed.ru
+          </li>
+          <li class="text-white/80 flex items-center">
+            <i class="ri-map-pin-2-fill mr-2"></i> Алтайский край, с. Алтайское
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white text-lg font-semibold mb-4">Мы в соцсетях</h3>
+        <div class="flex space-x-4">
+          <a href="#" class="text-white text-2xl hover:text-primary transition">
+            <i class="ri-vk-fill"></i>
+          </a>
+          <a href="#" class="text-white text-2xl hover:text-primary transition">
+            <i class="ri-telegram-fill"></i>
+          </a>
+          <a href="#" class="text-white text-2xl hover:text-primary transition">
+            <i class="ri-instagram-line"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-white/20 mt-8 pt-8 text-center text-white/80">
+      <p>&copy; 2025 Алтайский мёд. Все права защищены.</p>
+      <p class="mt-2"><a href="../../legal/" class="hover:text-white transition">Политика конфиденциальности</a></p>
+    </div>
+  </div>
 </footer>
 
 <!-- Скрипт lazy loading -->
 <script>
   document.addEventListener("DOMContentLoaded", function() {
-    // Lazy loading для изображений
-    const lazyLoadImages = function(entries) {
+    const lazyLoad = function(entries) {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const img = entry.target;
           img.src = img.dataset.src;
           img.classList.remove("lazyload");
-          img.classList.add("lazyloaded");
           observer.unobserve(img);
         }
       });
     };
     
-    const imageObserver = new IntersectionObserver(lazyLoadImages, {
+    const observer = new IntersectionObserver(lazyLoad, {
       rootMargin: "0px 0px 200px 0px",
       threshold: 0.01
     });
     
     document.querySelectorAll("img.lazyload").forEach(img => {
-      imageObserver.observe(img);
+      observer.observe(img);
     });
   });
 </script>

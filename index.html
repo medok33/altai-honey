@@ -1,455 +1,360 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Алтайский мёд - Натуральные продукты пчеловодства</title>
-<meta name="description" content="Натуральный алтайский мёд от производителя. Доставка по всей России. Гречишный, таёжный, цветочный мёд.">
-
-<!-- Мета-теги верификации -->
-<meta name="yandex-verification" content="9c5350476939e370" />
-<meta name="google-site-verification" content="JsJoSVyM5o4vxTSdN88FHLrAwPaoQ0nEjpJkiub50AE">
-
-<!-- Open Graph -->
-<meta property="og:title" content="Алтайский мёд - Натуральные продукты пчеловодства">
-<meta property="og:description" content="Экологически чистый мёд с Алтайских гор. Доставка по всей России">
-<meta property="og:image" content="https://altaymed.shop/images/og-preview.jpg">
-<meta property="og:url" content="https://altaymed.shop">
-<meta property="og:type" content="website">
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Алтайский мёд - Натуральные продукты пчеловодства">
-<meta name="twitter:description" content="Экологически чистый мёд с Алтайских гор">
-<meta name="twitter:image" content="https://altaymed.shop/images/twitter-preview.jpg">
-
-<!-- Favicon -->
-<link rel="icon" href="images/favicon.ico" sizes="any">
-<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-
-<!-- Web Manifest -->
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#9f5524">
-
-<!-- Оптимизированные шрифты -->
-<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<!-- Аналитика -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-D9YMSF22NS"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-D9YMSF22NS');
-</script>
-<script>
-  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-  m[i].l=1*new Date();
-  k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-  (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-  ym(102951378, "init", {
-       clickmap:true,
-       trackLinks:true,
-       accurateTrackBounce:true,
-       webvisor:true
-  });
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/102951378" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-
-<!-- Подключение Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com/3.4.16"></script>
-<script>
-tailwind.config = {
-  theme: {
-    extend: {
-      colors: {
-        primary: '#6B8E23',
-        secondary: '#8B4513',
-        orange: '#FFA500'
-      },
-      borderRadius: {
-        'none': '0px',
-        'sm': '4px',
-        DEFAULT: '8px',
-        'md': '12px',
-        'lg': '16px',
-        'xl': '20px',
-        '2xl': '24px',
-        '3xl': '32px',
-        'full': '9999px',
-        'button': '8px'
-      }
-    }
-  }
-}
-</script>
-<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
-
-<!-- Наш CSS -->
-<link rel="stylesheet" href="css/style.min.css">
-
-<style>
-/* Ваши существующие стили */
-:where([class^="ri-"])::before { content: "\f3c2"; }
-.hero-section {
-  min-height: 70vh;
-}
-@media (min-width: 768px) {
-  .hero-section {
-    min-height: 80vh;
-  }
-}
-
-/* Текстура фона */
-.texture-bg {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23F5DEB3" opacity="0.1"/><path d="M0 50 L100 50" stroke="%238B4513" stroke-width="0.5" stroke-opacity="0.1"/></svg>');
-  background-size: 200px;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Алтайский мёд - Натуральные продукты пчеловодства</title>
+    <meta name="description" content="Натуральный алтайский мёд от производителя. Доставка по всей России. Гречишный, таёжный, цветочный мёд.">
+    
+    <!-- Мета-теги верификации -->
+    <meta name="yandex-verification" content="9c5350476939e370" />
+    <meta name="google-site-verification" content="JsJoSVyM5o4vxTSdN88FHLrAwPaoQ0nEjpJkiub50AE">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Алтайский мёд - Натуральные продукты пчеловодства">
+    <meta property="og:description" content="Экологически чистый мёд с Алтайских гор. Доставка по всей России">
+    <meta property="og:image" content="https://altaymed.shop/images/og-preview.jpg">
+    <meta property="og:url" content="https://altaymed.shop">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Алтайский мёд - Натуральные продукты пчеловодства">
+    <meta name="twitter:description" content="Экологически чистый мёд с Алтайских гор">
+    <meta name="twitter:image" content="https://altaymed.shop/images/twitter-preview.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" sizes="any">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    
+    <!-- Web Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#9f5524">
+    
+    <!-- Шрифты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+    
+    <!-- Иконки -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    
+    <!-- Стили -->
+    <link rel="stylesheet" href="css/style.min.css">
+    
+    <!-- Аналитика -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D9YMSF22NS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-D9YMSF22NS');
+    </script>
+    <script>
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+        ym(102951378, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/102951378" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 </head>
 <body>
-<!-- Навигация -->
-<nav class="bg-white shadow-sm sticky top-0 z-50">
-  <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-    <a href="/" class="text-2xl font-bold text-secondary">
-      <span class="text-primary">Алтайский</span> Мёд
-    </a>
-    <div class="hidden md:flex space-x-6">
-      <a href="/" class="hover:text-primary">Главная</a>
-      <a href="#products" class="hover:text-primary">Продукция</a>
-      <a href="#about" class="hover:text-primary">О нас</a>
-      <a href="/blog/" class="hover:text-primary">Блог</a>
-      <a href="/faq/" class="hover:text-primary">FAQ</a>
-    </div>
-    <button class="md:hidden text-secondary">
-      <i class="ri-menu-line text-2xl"></i>
-    </button>
-  </div>
-</nav>
+    <!-- Навигация -->
+    <nav>
+        <div class="container nav-container">
+            <a href="/" class="logo">
+                <span>Алтайский</span> Мёд
+            </a>
+            <div class="nav-links">
+                <a href="/">Главная</a>
+                <a href="#products">Продукция</a>
+                <a href="#about">О нас</a>
+                <a href="/blog/">Блог</a>
+                <a href="/faq/">FAQ</a>
+            </div>
+        </div>
+    </nav>
 
-<main>
-<!-- Герой-секция -->
-<section class="hero-section flex items-center justify-center text-center text-white">
-  <div class="container mx-auto px-4">
-    <h1 class="text-4xl md:text-6xl font-bold mb-6">Настоящий алтайский мёд</h1>
-    <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Экологически чистый мёд с предгорий Алтая. Собран с любовью и заботой о природе</p>
-    <a href="#products" class="bg-primary hover:bg-green-800 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 inline-block">
-      Выбрать мёд
-    </a>
-  </div>
-</section>
+    <main>
+        <!-- Герой-секция -->
+        <section class="hero-section">
+            <div class="container hero-content">
+                <h1>Настоящий алтайский мёд</h1>
+                <p>Экологически чистый мёд с предгорий Алтая. Собран с любовью и заботой о природе</p>
+                <a href="#products" class="btn">Выбрать мёд</a>
+            </div>
+        </section>
 
-<!-- Преимущества -->
-<section id="benefits" class="py-16 md:py-20 texture-bg bg-[#F5DEB3] bg-opacity-20 section-animate">
-  <div class="container mx-auto px-4 md:px-6">
-    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Почему выбирают наш мёд</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="text-center p-6 bg-white rounded-lg shadow-md">
-        <div class="text-5xl text-primary mb-4"><i class="ri-leaf-line"></i></div>
-        <h3 class="text-xl font-bold mb-3">Экологически чистый</h3>
-        <p>Собран в заповедных местах Алтая без применения химикатов</p>
-      </div>
-      <div class="text-center p-6 bg-white rounded-lg shadow-md">
-        <div class="text-5xl text-primary mb-4"><i class="ri-medal-line"></i></div>
-        <h3 class="text-xl font-bold mb-3">Проверенное качество</h3>
-        <p>Лабораторно подтверждённая натуральность и полезные свойства</p>
-      </div>
-      <div class="text-center p-6 bg-white rounded-lg shadow-md">
-        <div class="text-5xl text-primary mb-4"><i class="ri-truck-line"></i></div>
-        <h3 class="text-xl font-bold mb-3">Быстрая доставка</h3>
-        <p>Отправляем по всей России в течение 24 часов после заказа</p>
-      </div>
-    </div>
-  </div>
-</section>
+        <!-- Преимущества -->
+        <section id="benefits" class="section">
+            <div class="container">
+                <h2 class="section-title">Почему выбирают наш мёд</h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-content">
+                            <div style="font-size: 3rem; color: #6B8E23; margin-bottom: 20px;">
+                                <i class="ri-leaf-line"></i>
+                            </div>
+                            <h3 class="card-title">Экологически чистый</h3>
+                            <p>Собран в заповедных местах Алтая без применения химикатов</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-content">
+                            <div style="font-size: 3rem; color: #6B8E23; margin-bottom: 20px;">
+                                <i class="ri-medal-line"></i>
+                            </div>
+                            <h3 class="card-title">Проверенное качество</h3>
+                            <p>Лабораторно подтверждённая натуральность и полезные свойства</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-content">
+                            <div style="font-size: 3rem; color: #6B8E23; margin-bottom: 20px;">
+                                <i class="ri-truck-line"></i>
+                            </div>
+                            <h3 class="card-title">Быстрая доставка</h3>
+                            <p>Отправляем по всей России в течение 24 часов после заказа</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<!-- Каталог продукции -->
-<section id="products" class="py-16 md:py-20 bg-white section-animate">
-  <div class="container mx-auto px-4 md:px-6">
-    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Наша продукция</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-      <!-- Продукт 1 -->
-      <div class="bg-white rounded-lg shadow-md overflow-hidden">
-        <div class="h-56 md:h-64 overflow-hidden">
-          <img 
-            src="images/placeholder.jpg" 
-            data-src="images/image-2.jpg" 
-            alt="Разнотравье" 
-            class="w-full h-full object-cover object-center lazyload"
-            loading="lazy"
-            decoding="async"
-          >
-        </div>
-        <div class="p-6">
-          <h3 class="text-xl font-bold mb-2">Мёд разнотравье</h3>
-          <p class="text-gray-600 mb-4">Собран на альпийских лугах Алтая. Имеет нежный цветочный аромат и мягкий вкус.</p>
-          <div class="flex justify-between items-center">
-            <span class="text-lg font-bold text-secondary">850 ₽/кг</span>
-            <button class="bg-primary hover:bg-green-800 text-white py-2 px-4 rounded-full transition duration-300">
-              Заказать
-            </button>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Продукт 2 -->
-      <div class="bg-white rounded-lg shadow-md overflow-hidden">
-        <div class="h-56 md:h-64 overflow-hidden">
-          <img 
-            src="images/placeholder.jpg" 
-            data-src="images/image-3.jpg" 
-            alt="Таёжный мёд" 
-            class="w-full h-full object-cover object-center lazyload"
-            loading="lazy"
-            decoding="async"
-          >
-        </div>
-        <div class="p-6">
-          <h3 class="text-xl font-bold mb-2">Таёжный мёд</h3>
-          <p class="text-gray-600 mb-4">Тёмный мёд с хвойно-ягодными нотками. Богат микроэлементами и антиоксидантами.</p>
-          <div class="flex justify-between items-center">
-            <span class="text-lg font-bold text-secondary">950 ₽/кг</span>
-            <button class="bg-primary hover:bg-green-800 text-white py-2 px-4 rounded-full transition duration-300">
-              Заказать
-            </button>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Продукт 3 -->
-      <div class="bg-white rounded-lg shadow-md overflow-hidden">
-        <div class="h-56 md:h-64 overflow-hidden">
-          <img 
-            src="images/placeholder.jpg" 
-            data-src="images/image-4.jpg" 
-            alt="Гречишный мёд" 
-            class="w-full h-full object-cover object-center lazyload"
-            loading="lazy"
-            decoding="async"
-          >
-        </div>
-        <div class="p-6">
-          <h3 class="text-xl font-bold mb-2">Гречишный мёд</h3>
-          <p class="text-gray-600 mb-4">Насыщенный тёмный мёд с характерной терпкостью. Лидер по содержанию железа.</p>
-          <div class="flex justify-between items-center">
-            <span class="text-lg font-bold text-secondary">900 ₽/кг</span>
-            <button class="bg-primary hover:bg-green-800 text-white py-2 px-4 rounded-full transition duration-300">
-              Заказать
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="text-center mt-10">
-      <a href="#" class="inline-block bg-secondary hover:bg-orange-900 text-white font-bold py-3 px-8 rounded-full transition duration-300">
-        Весь каталог
-      </a>
-    </div>
-  </div>
-</section>
+        <!-- Каталог продукции -->
+        <section id="products" class="section">
+            <div class="container">
+                <h2 class="section-title">Наша продукция</h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-img">
+                            <img src="images/placeholder.jpg" data-src="images/image-2.jpg" alt="Разнотравье" class="lazyload">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Мёд разнотравье</h3>
+                            <p class="card-text">Собран на альпийских лугах Алтая. Имеет нежный цветочный аромат и мягкий вкус.</p>
+                            <div class="card-price">850 ₽/кг</div>
+                            <button class="btn">Заказать</button>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-img">
+                            <img src="images/placeholder.jpg" data-src="images/image-3.jpg" alt="Таёжный мёд" class="lazyload">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Таёжный мёд</h3>
+                            <p class="card-text">Тёмный мёд с хвойно-ягодными нотками. Богат микроэлементами и антиоксидантами.</p>
+                            <div class="card-price">950 ₽/кг</div>
+                            <button class="btn">Заказать</button>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-img">
+                            <img src="images/placeholder.jpg" data-src="images/image-4.jpg" alt="Гречишный мёд" class="lazyload">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Гречишный мёд</h3>
+                            <p class="card-text">Насыщенный тёмный мёд с характерной терпкостью. Лидер по содержанию железа.</p>
+                            <div class="card-price">900 ₽/кг</div>
+                            <button class="btn">Заказать</button>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 40px;">
+                    <a href="#" class="btn" style="background-color: #8B4513;">Весь каталог</a>
+                </div>
+            </div>
+        </section>
 
-<!-- О нас -->
-<section id="about" class="py-16 md:py-20 bg-[#F5DEB3] bg-opacity-20 texture-bg relative section-animate">
-  <div class="container mx-auto px-4 md:px-6 relative z-10">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-      <div class="order-2 md:order-1">
-        <div class="bg-white p-3 shadow-lg rotate-2 mb-6 md:mb-8 max-w-md mx-auto">
-          <img 
-            src="images/placeholder.jpg" 
-            data-src="images/image-5.jpg" 
-            alt="Наша семья" 
-            class="w-full h-auto lazyload"
-            loading="lazy"
-            decoding="async"
-          >
-        </div>
-        <div class="bg-white p-3 shadow-lg -rotate-3 max-w-md mx-auto">
-          <img 
-            src="images/placeholder.jpg" 
-            data-src="images/image-6.jpg" 
-            alt="Наша пасека" 
-            class="w-full h-auto lazyload"
-            loading="lazy"
-            decoding="async"
-          >
-        </div>
-      </div>
-      <div class="order-1 md:order-2">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6">Наша история</h2>
-        <p class="mb-4">Наша семья занимается пчеловодством в предгорьях Алтая уже более 20 лет. Всё началось с нескольких ульев, которые мой дед установил на лесной поляне.</p>
-        <p class="mb-4">Сегодня мы сохраняем традиции и используем только экологичные методы пчеловодства. Наши пасеки расположены вдали от промышленных зон, в заповедных местах, где природа сохранила свою первозданную чистоту.</p>
-        <p class="mb-6">Мы гордимся тем, что наш мёд не только вкусный, но и по-настоящему полезный. Каждая баночка проходит лабораторный контроль качества.</p>
-        <a href="#" class="inline-block bg-primary hover:bg-green-800 text-white font-bold py-3 px-8 rounded-full transition duration-300">
-          Узнать больше
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
+        <!-- О нас -->
+        <section id="about" class="section about-section">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-images">
+                        <div class="about-img">
+                            <img src="images/placeholder.jpg" data-src="images/image-5.jpg" alt="Наша семья" class="lazyload">
+                        </div>
+                        <div class="about-img">
+                            <img src="images/placeholder.jpg" data-src="images/image-6.jpg" alt="Наша пасека" class="lazyload">
+                        </div>
+                    </div>
+                    <div class="about-text">
+                        <h2>Наша история</h2>
+                        <p>Наша семья занимается пчеловодством в предгорьях Алтая уже более 20 лет. Всё началось с нескольких ульев, которые мой дед установил на лесной поляне.</p>
+                        <p>Сегодня мы сохраняем традиции и используем только экологичные методы пчеловодства. Наши пасеки расположены вдали от промышленных зон, в заповедных местах, где природа сохранила свою первозданную чистоту.</p>
+                        <p>Мы гордимся тем, что наш мёд не только вкусный, но и по-настоящему полезный. Каждая баночка проходит лабораторный контроль качества.</p>
+                        <a href="#" class="btn">Узнать больше</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<!-- Форма заказа -->
-<section id="order" class="py-16 md:py-20 bg-white section-animate">
-  <div class="container mx-auto px-4 md:px-6">
-    <div class="max-w-2xl mx-auto bg-primary bg-opacity-10 p-8 md:p-12 rounded-xl">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">Заказать мёд</h2>
-      <form class="space-y-6">
-        <div>
-          <label class="block text-gray-700 mb-2" for="name">Ваше имя</label>
-          <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
-        </div>
-        <div>
-          <label class="block text-gray-700 mb-2" for="phone">Телефон</label>
-          <input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
-        </div>
-        <div>
-          <label class="block text-gray-700 mb-2" for="product">Выберите мёд</label>
-          <select id="product" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
-            <option>Мёд разнотравье</option>
-            <option>Таёжный мёд</option>
-            <option>Гречишный мёд</option>
-            <option>Мёд с пергой</option>
-            <option>Мёд в сотах</option>
-          </select>
-        </div>
-        <div>
-          <label class="block text-gray-700 mb-2" for="quantity">Количество (кг)</label>
-          <input type="number" id="quantity" min="1" value="1" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
-        </div>
-        <button type="submit" class="w-full bg-primary hover:bg-green-800 text-white font-bold py-4 px-6 rounded-full transition duration-300">
-          Оформить заказ
-        </button>
-      </form>
-    </div>
-  </div>
-</section>
+        <!-- Форма заказа -->
+        <section id="order" class="section">
+            <div class="container">
+                <h2 class="section-title">Заказать мёд</h2>
+                <div class="order-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Ваше имя</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Телефон</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="product">Выберите мёд</label>
+                            <select id="product" required>
+                                <option value="">-- Выберите продукт --</option>
+                                <option value="raznotravie">Мёд разнотравье</option>
+                                <option value="taiga">Таёжный мёд</option>
+                                <option value="grechishny">Гречишный мёд</option>
+                                <option value="s-pergoi">Мёд с пергой</option>
+                                <option value="soty">Мёд в сотах</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="quantity">Количество (кг)</label>
+                            <input type="number" id="quantity" min="1" value="1" required>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Оформить заказ</button>
+                    </form>
+                </div>
+            </div>
+        </section>
 
-<!-- Как мы работаем -->
-<section id="workflow" class="py-16 md:py-20 bg-[#F5DEB3] bg-opacity-20 texture-bg section-animate">
-  <div class="container mx-auto px-4 md:px-6">
-    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Как мы работаем</h2>
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-      <div class="text-center">
-        <div class="text-5xl text-primary mb-4">1</div>
-        <h3 class="text-xl font-bold mb-2">Заявка</h3>
-        <p>Вы оставляете заявку на сайте или по телефону</p>
-      </div>
-      <div class="text-center">
-        <div class="text-5xl text-primary mb-4">2</div>
-        <h3 class="text-xl font-bold mb-2">Подтверждение</h3>
-        <p>Мы связываемся с вами для уточнения деталей</p>
-      </div>
-      <div class="text-center">
-        <div class="text-5xl text-primary mb-4">3</div>
-        <h3 class="text-xl font-bold mb-2">Отправка</h3>
-        <p>Отправляем ваш заказ в течение 24 часов</p>
-      </div>
-      <div class="text-center">
-        <div class="text-5xl text-primary mb-4">4</div>
-        <h3 class="text-xl font-bold mb-2">Получение</h3>
-        <p>Вы получаете свежий мёд прямо до двери</p>
-      </div>
-    </div>
-  </div>
-</section>
-</main>
+        <!-- Как мы работаем -->
+        <section id="workflow" class="section about-section">
+            <div class="container">
+                <h2 class="section-title">Как мы работаем</h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-content" style="text-align: center;">
+                            <div style="font-size: 3rem; color: #6B8E23; margin-bottom: 15px;">1</div>
+                            <h3 class="card-title">Заявка</h3>
+                            <p>Вы оставляете заявку на сайте или по телефону</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-content" style="text-align: center;">
+                            <div style="font-size: 3rem; color: #6B8E23; margin-bottom: 15px;">2</div>
+                            <h3 class="card-title">Подтверждение</h3>
+                            <p>Мы связываемся с вами для уточнения деталей</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-content" style="text-align: center;">
+                            <div style="font-size: 3rem; color: #6B8E23; margin-bottom: 15px;">3</div>
+                            <h3 class="card-title">Отправка</h3>
+                            <p>Отправляем ваш заказ в течение 24 часов</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-content" style="text-align: center;">
+                            <div style="font-size: 3rem; color: #6B8E23; margin-bottom: 15px;">4</div>
+                            <h3 class="card-title">Получение</h3>
+                            <p>Вы получаете свежий мёд прямо до двери</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-<!-- Футер -->
-<footer class="bg-[#8B4513] py-10 md:py-12 w-full text-white">
-  <div class="container mx-auto px-4 md:px-6">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-      <div>
-        <h3 class="text-xl font-bold mb-4">Алтайский Мёд</h3>
-        <p>Натуральный мёд с предгорий Алтая. Качество, проверенное временем.</p>
-      </div>
-      <div>
-        <h3 class="text-xl font-bold mb-4">Меню</h3>
-        <ul class="space-y-2">
-          <li><a href="/" class="hover:text-primary">Главная</a></li>
-          <li><a href="#products" class="hover:text-primary">Продукция</a></li>
-          <li><a href="#about" class="hover:text-primary">О нас</a></li>
-          <li><a href="/blog/" class="hover:text-primary">Блог</a></li>
-          <li><a href="/faq/" class="hover:text-primary">FAQ</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="text-xl font-bold mb-4">Контакты</h3>
-        <ul class="space-y-2">
-          <li class="flex items-center">
-            <i class="ri-phone-line mr-2"></i> +7 (999) 123-45-67
-          </li>
-          <li class="flex items-center">
-            <i class="ri-mail-line mr-2"></i> info@altaymed.shop
-          </li>
-          <li class="flex items-center">
-            <i class="ri-map-pin-line mr-2"></i> Алтайский край, с. Алтайское
-          </li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="text-xl font-bold mb-4">Мы в соцсетях</h3>
-        <div class="flex space-x-4">
-          <a href="#" class="text-2xl hover:text-primary"><i class="ri-vk-line"></i></a>
-          <a href="#" class="text-2xl hover:text-primary"><i class="ri-telegram-line"></i></a>
-          <a href="#" class="text-2xl hover:text-primary"><i class="ri-instagram-line"></i></a>
-          <a href="#" class="text-2xl hover:text-primary"><i class="ri-whatsapp-line"></i></a>
+    <!-- Футер -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>Алтайский Мёд</h3>
+                    <p>Натуральный мёд с предгорий Алтая. Качество, проверенное временем.</p>
+                </div>
+                
+                <div>
+                    <h3>Меню</h3>
+                    <ul class="footer-links">
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="#products">Продукция</a></li>
+                        <li><a href="#about">О нас</a></li>
+                        <li><a href="/blog/">Блог</a></li>
+                        <li><a href="/faq/">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3>Контакты</h3>
+                    <ul class="footer-links">
+                        <li><i class="ri-phone-line"></i> +7 (999) 123-45-67</li>
+                        <li><i class="ri-mail-line"></i> info@altaymed.shop</li>
+                        <li><i class="ri-map-pin-line"></i> Алтайский край, с. Алтайское</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3>Мы в соцсетях</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="ri-vk-line"></i></a>
+                        <a href="#"><i class="ri-telegram-line"></i></a>
+                        <a href="#"><i class="ri-instagram-line"></i></a>
+                        <a href="#"><i class="ri-whatsapp-line"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Алтайский Мёд. Все права защищены.</p>
+                <p><a href="/legal.html">Политика конфиденциальности</a></p>
+            </div>
         </div>
-      </div>
-    </div>
-    <div class="border-t border-white border-opacity-20 mt-10 pt-6 text-center text-sm">
-      <p>&copy; 2025 Алтайский Мёд. Все права защищены.</p>
-      <p class="mt-2"><a href="/legal.html" class="hover:text-primary">Политика конфиденциальности</a></p>
-    </div>
-  </div>
-</footer>
+    </footer>
 
-<!-- Скрипт lazy loading -->
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    // Lazy loading для изображений
-    const lazyLoadImages = function(entries) {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const img = entry.target;
-          img.src = img.dataset.src;
-          img.classList.remove("lazyload");
-          img.classList.add("lazyloaded");
-          observer.unobserve(img);
-        }
-      });
-    };
-    
-    const imageObserver = new IntersectionObserver(lazyLoadImages, {
-      rootMargin: "0px 0px 200px 0px",
-      threshold: 0.01
-    });
-    
-    document.querySelectorAll("img.lazyload").forEach(img => {
-      imageObserver.observe(img);
-    });
-
-    // Анимации для секций
-    const animateSections = function(entries) {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    };
-    
-    const sectionObserver = new IntersectionObserver(animateSections, {
-      threshold: 0.1
-    });
-    
-    document.querySelectorAll('.section-animate').forEach(section => {
-      sectionObserver.observe(section);
-    });
-  });
-</script>
+    <!-- Скрипты -->
+    <script>
+        // Lazy Loading изображений
+        document.addEventListener("DOMContentLoaded", function() {
+            const lazyImages = [].slice.call(document.querySelectorAll("img.lazyload"));
+            
+            if ("IntersectionObserver" in window) {
+                let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            let lazyImage = entry.target;
+                            lazyImage.src = lazyImage.dataset.src;
+                            lazyImage.classList.remove("lazyload");
+                            lazyImageObserver.unobserve(lazyImage);
+                        }
+                    });
+                });
+                
+                lazyImages.forEach(function(lazyImage) {
+                    lazyImageObserver.observe(lazyImage);
+                });
+            } else {
+                // Для старых браузеров
+                lazyImages.forEach(function(lazyImage) {
+                    lazyImage.src = lazyImage.dataset.src;
+                });
+            }
+        });
+    </script>
 </body>
 </html>

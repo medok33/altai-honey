@@ -11,8 +11,7 @@
     <style>
         .blog-header {
             min-height: 50vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                        url('../images/image-7.jpg') center/cover no-repeat;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/image-7.jpg') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -96,6 +95,20 @@
 </head>
 <body>
     <!-- Навигация (аналогично главной странице) -->
+    <nav>
+        <div class="container nav-container">
+            <a href="/" class="logo">
+                <span>Алтайский</span> Мёд
+            </a>
+            <div class="nav-links">
+                <a href="/">Главная</a>
+                <a href="/#products">Продукция</a>
+                <a href="/#about">О нас</a>
+                <a href="/blog/">Блог</a>
+                <a href="/faq/">FAQ</a>
+            </div>
+        </div>
+    </nav>
     
     <main>
         <!-- Шапка блога -->
@@ -168,7 +181,13 @@
     </main>
     
     <!-- Футер (аналогично главной странице) -->
+    <footer>
+        <!-- ... -->
+    </footer>
     
     <!-- Скрипты (аналогично главной странице) -->
+    <script>
+        // ... (тот же скрипт для lazy loading)
+    </script>
 </body>
 </html>

@@ -1,0 +1,37 @@
+/* Анимации для появления секций */
+.section-animate {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.section-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Базовые стили для body и т.д. */
+body {
+  font-family: 'Open Sans', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Дополнительные стили, которые были в теге style в head */
+.hero-section {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                   url('../images/image-1.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Стили для ленивой загрузки */
+img.lazyload {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+img.lazyloaded {
+  opacity: 1;
+}

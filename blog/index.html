@@ -13,21 +13,32 @@
 <!-- Open Graph -->
 <meta property="og:title" content="Блог о мёде | Алтайский мёд">
 <meta property="og:description" content="Полезные статьи о мёде, пчеловодстве и здоровом питании">
-<meta property="og:image" content="https://ваш-сайт.ru/images/og-preview.jpg">
-<meta property="og:url" content="https://ваш-сайт.ru/blog/">
+<meta property="og:image" content="https://altaymed.shop/images/og-preview.jpg">
+<meta property="og:url" content="https://altaymed.shop/blog/">
 <meta property="og:type" content="website">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Блог о мёде | Алтайский мёд">
 <meta name="twitter:description" content="Читайте полезные статьи о мёде и пчеловодстве">
-<meta name="twitter:image" content="https://ваш-сайт.ru/images/twitter-preview.jpg">
+<meta name="twitter:image" content="https://altaymed.shop/images/twitter-preview.jpg">
 
-<!-- Favicon, манифест, аналитика, шрифты - аналогично главной странице -->
+<!-- Favicon -->
+<link rel="icon" href="../images/favicon.ico" sizes="any">
+<link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+
+<!-- Web Manifest -->
+<link rel="manifest" href="../manifest.json">
+<meta name="theme-color" content="#9f5524">
+
+<!-- Оптимизированные шрифты -->
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- Подключение Tailwind CSS -->
-<link rel="stylesheet" href="../css/style.min.css">
-
 <script src="https://cdn.tailwindcss.com/3.4.16"></script>
 <script>
 tailwind.config = {
@@ -54,28 +65,71 @@ tailwind.config = {
   }
 }
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+
+<!-- Наш CSS -->
+<link rel="stylesheet" href="../css/style.min.css">
+
 <style>
-/* Ваши существующие стили */
 .blog-header {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-              url('../images/image-7.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                   url('../images/image-7.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 2rem;
 }
-/* ... остальные стили без изменений ... */
+
+.blog-post-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.blog-post-image {
+  height: 250px;
+  object-fit: cover;
+  width: 100%;
+}
 </style>
 </head>
 <body>
 <!-- Навигация -->
 <nav class="bg-white shadow-sm sticky top-0 z-50">
-  <!-- Ваша навигация без изменений -->
+  <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+    <a href="/" class="text-2xl font-bold text-secondary">
+      <span class="text-primary">Алтайский</span> Мёд
+    </a>
+    <div class="hidden md:flex space-x-6">
+      <a href="/" class="hover:text-primary">Главная</a>
+      <a href="/#products" class="hover:text-primary">Продукция</a>
+      <a href="/#about" class="hover:text-primary">О нас</a>
+      <a href="/blog/" class="hover:text-primary font-bold">Блог</a>
+      <a href="/faq/" class="hover:text-primary">FAQ</a>
+    </div>
+    <button class="md:hidden text-secondary">
+      <i class="ri-menu-line text-2xl"></i>
+    </button>
+  </div>
 </nav>
 
 <main>
 <!-- Шапка блога -->
 <section class="blog-header">
-  <!-- Контент без изменений -->
+  <div>
+    <h1 class="text-3xl md:text-5xl font-bold mb-4">Блог о мёде</h1>
+    <p class="text-xl md:text-2xl max-w-2xl mx-auto">Полезные статьи о пчеловодстве, здоровом питании и свойствах алтайского мёда</p>
+  </div>
 </section>
 
 <!-- Список статей -->
@@ -83,58 +137,108 @@ tailwind.config = {
   <div class="container mx-auto px-4 md:px-6">
     <div class="max-w-4xl mx-auto">
       <!-- Статья 1 -->
-      <div class="blog-post-card bg-white rounded-lg mb-10">
-        <img 
-          src="../images/placeholder.jpg" 
-          data-src="../images/image-8.jpg" 
-          alt="Как выбрать качественный мёд" 
-          class="blog-post-image lazyload"
-          loading="lazy"
-          decoding="async"
-        >
-        <!-- Остальное без изменений -->
-      </div>
+      <a href="kak-vybrat-med.html" class="blog-post-card block">
+        <div class="bg-white rounded-lg overflow-hidden mb-10">
+          <img 
+            src="../images/placeholder.jpg" 
+            data-src="../images/image-8.jpg" 
+            alt="Как выбрать качественный мёд" 
+            class="blog-post-image lazyload"
+            loading="lazy"
+            decoding="async"
+          >
+          <div class="p-6">
+            <span class="text-sm text-gray-500">15 мая 2025</span>
+            <h2 class="text-2xl font-bold my-3">Как выбрать качественный мёд</h2>
+            <p class="text-gray-600 mb-4">Узнайте, как отличить настоящий алтайский мёд от подделки. Экспертные советы по выбору качественного продукта.</p>
+            <div class="text-primary font-medium flex items-center">
+              Читать статью
+              <i class="ri-arrow-right-line ml-2"></i>
+            </div>
+          </div>
+        </div>
+      </a>
       
       <!-- Статья 2 -->
-      <div class="blog-post-card bg-white rounded-lg mb-10">
-        <img 
-          src="../images/placeholder.jpg" 
-          data-src="../images/image-9.jpg" 
-          alt="Мёд в здоровом питании" 
-          class="blog-post-image lazyload"
-          loading="lazy"
-          decoding="async"
-        >
-        <!-- Остальное без изменений -->
-      </div>
+      <a href="#" class="blog-post-card block">
+        <div class="bg-white rounded-lg overflow-hidden mb-10">
+          <img 
+            src="../images/placeholder.jpg" 
+            data-src="../images/image-9.jpg" 
+            alt="Мёд в здоровом питании" 
+            class="blog-post-image lazyload"
+            loading="lazy"
+            decoding="async"
+          >
+          <div class="p-6">
+            <span class="text-sm text-gray-500">10 апреля 2025</span>
+            <h2 class="text-2xl font-bold my-3">Мёд в здоровом питании</h2>
+            <p class="text-gray-600 mb-4">Как правильно использовать мёд в повседневном рационе. Рецепты полезных блюд и напитков с алтайским мёдом.</p>
+            <div class="text-primary font-medium flex items-center">
+              Читать статью
+              <i class="ri-arrow-right-line ml-2"></i>
+            </div>
+          </div>
+        </div>
+      </a>
       
       <!-- Статья 3 -->
-      <div class="blog-post-card bg-white rounded-lg mb-10">
-        <img 
-          src="../images/placeholder.jpg" 
-          data-src="../images/image-10.jpg" 
-          alt="Традиции алтайского пчеловодства" 
-          class="blog-post-image lazyload"
-          loading="lazy"
-          decoding="async"
-        >
-        <!-- Остальное без изменений -->
-      </div>
+      <a href="#" class="blog-post-card block">
+        <div class="bg-white rounded-lg overflow-hidden mb-10">
+          <img 
+            src="../images/placeholder.jpg" 
+            data-src="../images/image-10.jpg" 
+            alt="Традиции алтайского пчеловодства" 
+            class="blog-post-image lazyload"
+            loading="lazy"
+            decoding="async"
+          >
+          <div class="p-6">
+            <span class="text-sm text-gray-500">28 марта 2025</span>
+            <h2 class="text-2xl font-bold my-3">Традиции алтайского пчеловодства</h2>
+            <p class="text-gray-600 mb-4">История и особенности пчеловодства на Алтае. Как сохраняются вековые традиции в современном мире.</p>
+            <div class="text-primary font-medium flex items-center">
+              Читать статью
+              <i class="ri-arrow-right-line ml-2"></i>
+            </div>
+          </div>
+        </div>
+      </a>
     </div>
   </div>
 </section>
 </main>
 
 <!-- Футер -->
-<footer class="bg-[#8B4513] py-10 md:py-12 w-full">
-  <!-- Контент без изменений -->
+<footer class="bg-[#8B4513] py-10 md:py-12 w-full text-white">
+  <!-- Тот же футер, что и на главной странице -->
 </footer>
 
 <!-- Скрипт lazy loading -->
 <script>
-  // Тот же скрипт, что и на главной странице
+  document.addEventListener("DOMContentLoaded", function() {
+    // Lazy loading для изображений
+    const lazyLoadImages = function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.src = img.dataset.src;
+          img.classList.remove("lazyload");
+          img.classList.add("lazyloaded");
+          observer.unobserve(img);
+        }
+      });
+    };
+    
+    const imageObserver = new IntersectionObserver(lazyLoadImages, {
+      rootMargin: "0px 0px 200px 0px",
+      threshold: 0.01
+    });
+    
+    document.querySelectorAll("img.lazyload").forEach(img => {
+      imageObserver.observe(img);
+    });
+  });
 </script>
-
-<!-- Остальные скрипты без изменений -->
 </body>
 </html>

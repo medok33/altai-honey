@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+<base href="https://medok33.github.io/altai-honey/">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FAQ | Алтайский мёд - Часто задаваемые вопросы</title>
@@ -33,12 +34,30 @@
 <meta name="theme-color" content="#9f5524">
 
 <!-- Оптимизированные шрифты -->
-<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<!-- Подключение Tailwind CSS -->
+<!-- Аналитика -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D9YMSF22NS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-D9YMSF22NS');
+  
+  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+  m[i].l=1*new Date();
+  k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+  (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+  ym(102951378, "init", {
+       clickmap:true,
+       trackLinks:true,
+       accurateTrackBounce:true,
+       webvisor:true
+  });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/102951378" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
 <script src="https://cdn.tailwindcss.com/3.4.16"></script>
 <script>
 tailwind.config = {
@@ -65,17 +84,13 @@ tailwind.config = {
   }
 }
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
-
-<!-- Наш CSS -->
-<link rel="stylesheet" href="../css/style.min.css">
-
 <style>
 .faq-header {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                   url('../images/image-14.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+              url('../images/image-14.jpg');
   background-size: cover;
   background-position: center;
   min-height: 50vh;
@@ -84,59 +99,69 @@ tailwind.config = {
   justify-content: center;
   text-align: center;
   color: white;
-  padding: 2rem;
 }
-
+.texture-bg {
+  background-image: url('../images/texture.png');
+  background-repeat: repeat;
+}
 .faq-item {
-  border-bottom: 1px solid #e2e8f0;
-  padding: 1.5rem 0;
+  margin-bottom: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  overflow: hidden;
 }
-
 .faq-question {
-  font-weight: bold;
-  font-size: 1.25rem;
+  padding: 1.25rem;
+  background-color: white;
+  font-weight: 600;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
 .faq-answer {
-  padding-top: 1rem;
-  display: none;
+  padding: 0 1.25rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
 }
-
-.faq-answer.show {
-  display: block;
+.faq-answer.active {
+  padding: 0 1.25rem 1.25rem;
+  max-height: 1000px;
 }
 </style>
 </head>
 <body>
 <!-- Навигация -->
 <nav class="bg-white shadow-sm sticky top-0 z-50">
-  <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-    <a href="/" class="text-2xl font-bold text-secondary">
-      <span class="text-primary">Алтайский</span> Мёд
-    </a>
-    <div class="hidden md:flex space-x-6">
-      <a href="/" class="hover:text-primary">Главная</a>
-      <a href="/#products" class="hover:text-primary">Продукция</a>
-      <a href="/#about" class="hover:text-primary">О нас</a>
-      <a href="/blog/" class="hover:text-primary">Блог</a>
-      <a href="/faq/" class="hover:text-primary font-bold">FAQ</a>
+  <div class="container mx-auto px-4 md:px-6">
+    <div class="flex justify-between items-center py-4">
+      <a href="../" class="text-xl font-bold text-secondary flex items-center">
+        <i class="ri-home-heart-fill text-2xl mr-2"></i>
+        Алтайский мёд
+      </a>
+      <div class="hidden md:flex space-x-6">
+        <a href="../#products" class="hover:text-primary transition">Продукция</a>
+        <a href="../#benefits" class="hover:text-primary transition">Преимущества</a>
+        <a href="../blog/" class="hover:text-primary transition">Блог</a>
+        <a href="./" class="hover:text-primary transition">FAQ</a>
+        <a href="../#order" class="bg-primary text-white px-4 py-2 rounded-button hover:bg-green-800 transition">Заказать</a>
+      </div>
+      <button class="md:hidden text-2xl">
+        <i class="ri-menu-line"></i>
+      </button>
     </div>
-    <button class="md:hidden text-secondary">
-      <i class="ri-menu-line text-2xl"></i>
-    </button>
   </div>
 </nav>
 
 <main>
 <!-- Шапка FAQ -->
 <section class="faq-header">
-  <div>
-    <h1 class="text-3xl md:text-5xl font-bold mb-4">Часто задаваемые вопросы</h1>
-    <p class="text-xl">Ответы на самые популярные вопросы о нашем мёде</p>
+  <div class="container mx-auto px-4 md:px-6">
+    <div>
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Часто задаваемые вопросы</h1>
+      <p class="text-xl md:text-2xl max-w-2xl mx-auto">Ответы на популярные вопросы о нашем мёде, доставке и оплате</p>
+    </div>
   </div>
 </section>
 
@@ -144,80 +169,60 @@ tailwind.config = {
 <section class="py-16 bg-[#F5DEB3] bg-opacity-20 texture-bg">
   <div class="container mx-auto px-4 md:px-6">
     <div class="max-w-3xl mx-auto">
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>Как хранить мёд?</span>
-          <i class="ri-arrow-down-s-line"></i>
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Как отличить настоящий мёд от подделки?</span>
+            <i class="ri-arrow-down-s-line"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Настоящий мёд имеет густую консистенцию, натуральный цветочный аромат и оставляет легкое першение в горле. При вращении ложки он наматывается, а не стекает. Также вы можете провести простой тест: капните мёд на бумагу — настоящий не растечется и не оставит мокрого следа.</p>
+          </div>
         </div>
-        <div class="faq-answer">
-          <p>Мёд следует хранить в плотно закрытой стеклянной или керамической посуде при комнатной температуре (18-20°C) в темном месте. Не рекомендуется хранить мёд в холодильнике, так как это может ускорить кристаллизацию. Избегайте попадания прямых солнечных лучей.</p>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Почему мёд кристаллизуется?</span>
+            <i class="ri-arrow-down-s-line"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Кристаллизация — естественный процесс для натурального мёда. Она свидетельствует о качестве продукта. Скорость кристаллизации зависит от сорта мёда: гречишный кристаллизуется быстрее (1-2 месяца), а акациевый может оставаться жидким до года. Кристаллизованный мёд сохраняет все полезные свойства.</p>
+          </div>
         </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>Почему мёд кристаллизуется?</span>
-          <i class="ri-arrow-down-s-line"></i>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Как правильно хранить мёд?</span>
+            <i class="ri-arrow-down-s-line"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Храните мёд в стеклянной или керамической таре с плотной крышкой при температуре 5-20°C. Избегайте попадания прямых солнечных лучей и металлической посуды. При правильном хранении мёд сохраняет свои свойства годами.</p>
+          </div>
         </div>
-        <div class="faq-answer">
-          <p>Кристаллизация — естественный процесс для натурального мёда. Она свидетельствует о его качестве и зрелости. Скорость кристаллизации зависит от сорта мёда и температуры хранения. Например, гречишный мёд кристаллизуется быстрее, чем акациевый.</p>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Какие способы доставки вы предлагаете?</span>
+            <i class="ri-arrow-down-s-line"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Мы доставляем мёд по всей России:</p>
+            <ul class="list-disc pl-6 mt-2">
+              <li>Курьерская доставка по Москве и Санкт-Петербургу (1-2 дня)</li>
+              <li>Почта России (5-14 дней)</li>
+              <li>Транспортные компании (СДЭК, Boxberry) (3-7 дней)</li>
+            </ul>
+          </div>
         </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>Как отличить настоящий мёд от подделки?</span>
-          <i class="ri-arrow-down-s-line"></i>
-        </div>
-        <div class="faq-answer">
-          <p>Натуральный мёд имеет густую консистенцию, насыщенный аромат и характерный вкус с легкой горчинкой. При вращении ложки мёд наматывается, образуя "горку". Натуральный мёд растворяется в воде без осадка. Подробнее читайте в нашей статье <a href="../blog/kak-vybrat-med.html" class="text-primary underline">"Как выбрать качественный мёд"</a>.</p>
-        </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>Какие сроки доставки?</span>
-          <i class="ri-arrow-down-s-line"></i>
-        </div>
-        <div class="faq-answer">
-          <p>Мы отправляем заказы в течение 1-2 рабочих дней. Сроки доставки зависят от вашего региона:</p>
-          <ul class="list-disc pl-6 mt-2">
-            <li>По Москве и Московской области: 1-2 дня</li>
-            <li>По России: 3-7 дней</li>
-            <li>В отдаленные регионы: до 14 дней</li>
-          </ul>
-        </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>Как оплатить заказ?</span>
-          <i class="ri-arrow-down-s-line"></i>
-        </div>
-        <div class="faq-answer">
-          <p>Мы предлагаем несколько способов оплаты:</p>
-          <ul class="list-disc pl-6 mt-2">
-            <li>Онлайн-оплата банковской картой</li>
-            <li>Наложенный платеж (оплата при получении)</li>
-            <li>Безналичный расчет для юридических лиц</li>
-          </ul>
-        </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>Есть ли противопоказания к употреблению мёда?</span>
-          <i class="ri-arrow-down-s-line"></i>
-        </div>
-        <div class="faq-answer">
-          <p>Мёд не рекомендуется употреблять:</p>
-          <ul class="list-disc pl-6 mt-2">
-            <li>Детям до 1 года</li>
-            <li>Людям с аллергией на продукты пчеловодства</li>
-            <li>При сахарном диабете (требуется консультация врача)</li>
-            <li>При обострении гастрита или язвенной болезни</li>
-          </ul>
-          <p class="mt-2">В остальных случаях мёд полезен при умеренном потреблении (1-2 столовые ложки в день).</p>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Какой срок годности у мёда?</span>
+            <i class="ri-arrow-down-s-line"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Натуральный мёд при правильном хранении может сохранять свои свойства десятилетиями. Однако для максимального сохранения полезных веществ мы рекомендуем употреблять его в течение 2 лет с даты сбора.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -226,30 +231,102 @@ tailwind.config = {
 </main>
 
 <!-- Футер -->
-<footer class="bg-[#8B4513] py-10 md:py-12 w-full text-white">
-  <!-- Тот же футер, что и на главной странице -->
+<footer class="bg-[#8B4513] py-10 md:py-12 w-full">
+  <div class="container mx-auto px-4 md:px-6">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div>
+        <h3 class="text-white text-xl font-bold mb-4">Алтайский мёд</h3>
+        <p class="text-white/80">Натуральный мёд с пасек Алтая</p>
+      </div>
+      <div>
+        <h3 class="text-white text-lg font-semibold mb-4">Меню</h3>
+        <ul>
+          <li><a href="../#products" class="text-white/80 hover:text-white transition">Продукция</a></li>
+          <li><a href="../#benefits" class="text-white/80 hover:text-white transition">Преимущества</a></li>
+          <li><a href="../blog/" class="text-white/80 hover:text-white transition">Блог</a></li>
+          <li><a href="./" class="text-white/80 hover:text-white transition">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white text-lg font-semibold mb-4">Контакты</h3>
+        <ul>
+          <li class="text-white/80 mb-2 flex items-center">
+            <i class="ri-phone-fill mr-2"></i> +7 (999) 123-45-67
+          </li>
+          <li class="text-white/80 mb-2 flex items-center">
+            <i class="ri-mail-fill mr-2"></i> info@altaymed.ru
+          </li>
+          <li class="text-white/80 flex items-center">
+            <i class="ri-map-pin-2-fill mr-2"></i> Алтайский край, с. Алтайское
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white text-lg font-semibold mb-4">Мы в соцсетях</h3>
+        <div class="flex space-x-4">
+          <a href="#" class="text-white text-2xl hover:text-primary transition">
+            <i class="ri-vk-fill"></i>
+          </a>
+          <a href="#" class="text-white text-2xl hover:text-primary transition">
+            <i class="ri-telegram-fill"></i>
+          </a>
+          <a href="#" class="text-white text-2xl hover:text-primary transition">
+            <i class="ri-instagram-line"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-white/20 mt-8 pt-8 text-center text-white/80">
+      <p>&copy; 2025 Алтайский мёд. Все права защищены.</p>
+      <p class="mt-2"><a href="../legal/" class="hover:text-white transition">Политика конфиденциальности</a></p>
+    </div>
+  </div>
 </footer>
 
-<!-- Скрипт для FAQ -->
+<!-- Скрипт FAQ -->
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     const faqQuestions = document.querySelectorAll('.faq-question');
     
     faqQuestions.forEach(question => {
-      question.addEventListener('click', function() {
-        const answer = this.nextElementSibling;
-        const icon = this.querySelector('i');
+      question.addEventListener('click', () => {
+        const answer = question.nextElementSibling;
+        answer.classList.toggle('active');
         
-        if (answer.classList.contains('show')) {
-          answer.classList.remove('show');
-          icon.classList.remove('ri-arrow-up-s-line');
-          icon.classList.add('ri-arrow-down-s-line');
-        } else {
-          answer.classList.add('show');
+        const icon = question.querySelector('i');
+        if (answer.classList.contains('active')) {
           icon.classList.remove('ri-arrow-down-s-line');
           icon.classList.add('ri-arrow-up-s-line');
+        } else {
+          icon.classList.remove('ri-arrow-up-s-line');
+          icon.classList.add('ri-arrow-down-s-line');
         }
       });
+    });
+  });
+</script>
+
+<!-- Скрипт lazy loading -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const lazyLoad = function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.src = img.dataset.src;
+          img.classList.remove("lazyload");
+          observer.unobserve(img);
+        }
+      });
+    };
+    
+    const observer = new IntersectionObserver(lazyLoad, {
+      rootMargin: "0px 0px 200px 0px",
+      threshold: 0.01
+    });
+    
+    document.querySelectorAll("img.lazyload").forEach(img => {
+      observer.observe(img);
     });
   });
 </script>

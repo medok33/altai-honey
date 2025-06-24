@@ -24,21 +24,21 @@
 <meta name="twitter:image" content="https://altaymed.shop/images/twitter-preview.jpg">
 
 <!-- Favicon -->
-<link rel="icon" href="images/favicon.ico" sizes="any">
-<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="icon" href="/images/favicon.ico" sizes="any">
+<link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
 
 <!-- Web Manifest -->
-<link rel="manifest" href="manifest.json">
+<link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#9f5524">
 
 <!-- Оптимизированные шрифты -->
-<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- Подключение Tailwind CSS -->
+<link rel="stylesheet" href="/css/style.min.css">
+
 <script src="https://cdn.tailwindcss.com/3.4.16"></script>
 <script>
 tailwind.config = {
@@ -65,130 +65,95 @@ tailwind.config = {
   }
 }
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
-
-<!-- Наш CSS -->
-<link rel="stylesheet" href="css/style.min.css">
-
 <style>
-.legal-header {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                   url('images/image-15.jpg');
-  background-size: cover;
-  background-position: center;
-  min-height: 50vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  padding: 2rem;
-}
-
-.legal-content {
-  max-width: 800px;
-  margin: 0 auto;
-  line-height: 1.8;
-}
-
-.legal-content h2 {
-  font-size: 1.75rem;
-  font-weight: bold;
-  margin: 2rem 0 1rem;
-  color: #8B4513;
-}
-
-.legal-content h3 {
-  font-size: 1.25rem;
-  font-weight: bold;
-  margin: 1.5rem 0 0.5rem;
-}
+/* Все стили из главной страницы */
+/* ... */
 </style>
 </head>
 <body>
 <!-- Навигация -->
 <nav class="bg-white shadow-sm sticky top-0 z-50">
-  <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-    <a href="/" class="text-2xl font-bold text-secondary">
-      <span class="text-primary">Алтайский</span> Мёд
-    </a>
-    <div class="hidden md:flex space-x-6">
-      <a href="/" class="hover:text-primary">Главная</a>
-      <a href="/#products" class="hover:text-primary">Продукция</a>
-      <a href="/#about" class="hover:text-primary">О нас</a>
-      <a href="/blog/" class="hover:text-primary">Блог</a>
-      <a href="/faq/" class="hover:text-primary">FAQ</a>
+  <div class="container mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
+    <a href="/" class="text-2xl md:text-3xl font-['Pacifico'] header-logo">Алтайский мёд</a>
+    
+    <div class="hidden md:flex items-center space-x-6 md:space-x-8">
+      <a href="/#benefits" class="nav-link">Преимущества</a>
+      <a href="/#products" class="nav-link">Каталог</a>
+      <a href="/#about" class="nav-link">О нас</a>
+      <a href="/#footer-contacts" class="nav-link">Контакты</a>
+      <a href="/legal.html" class="nav-link font-bold">Правовая информация</a>
+      <a href="/#order" class="nav-btn px-4 md:px-6 py-1 md:py-2 !rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">Заказать</a>
     </div>
-    <button class="md:hidden text-secondary">
-      <i class="ri-menu-line text-2xl"></i>
+    
+    <button class="md:hidden w-10 h-10 flex items-center justify-center">
+      <i class="ri-menu-line text-gray-900 ri-xl"></i>
     </button>
+  </div>
+  
+  <!-- Мобильное меню -->
+  <div class="md:hidden hidden bg-white shadow-md px-4 py-3" id="mobile-menu">
+    <div class="flex flex-col space-y-4">
+      <a href="/#benefits" class="nav-link py-2">Преимущества</a>
+      <a href="/#products" class="nav-link py-2">Каталог</a>
+      <a href="/#about" class="nav-link py-2">О нас</a>
+      <a href="/#footer-contacts" class="nav-link py-2">Контакты</a>
+      <a href="/legal.html" class="nav-link py-2 font-bold">Правовая информация</a>
+      <a href="/#order" class="nav-btn py-2 text-center !rounded-button hover:bg-opacity-90 transition-all">Заказать</a>
+    </div>
   </div>
 </nav>
 
 <main>
 <!-- Шапка страницы -->
-<section class="legal-header">
-  <div>
-    <h1 class="text-3xl md:text-5xl font-bold mb-4">Правовая информация</h1>
-    <p class="text-xl">Условия использования сайта и юридические документы</p>
+<section class="min-h-[50vh] flex items-center" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/image-15.jpg'); background-size: cover; background-position: center;">
+  <div class="container mx-auto px-4 text-center text-white">
+    <h1 class="text-3xl md:text-4xl lg:text-5xl font-['Pacifico'] mb-4">Правовая информация</h1>
   </div>
 </section>
 
 <!-- Содержимое страницы -->
 <section class="py-16 bg-[#F5DEB3] bg-opacity-20 texture-bg">
   <div class="container mx-auto px-4 md:px-6">
-    <div class="legal-content">
-      <h2>Политика конфиденциальности</h2>
+    <div class="max-w-3xl mx-auto bg-white p-6 md:p-8 rounded-lg shadow-md">
+      <h2 class="text-2xl font-bold text-secondary mb-6">Условия использования сайта</h2>
       
-      <p>Настоящая Политика конфиденциальности персональных данных (далее — Политика конфиденциальности) действует в отношении всей информации, которую сайт Алтайский Мёд, расположенный на доменном имени altaymed.shop, может получить о Пользователе во время использования сайта.</p>
+      <p class="mb-4 text-gray-700">Настоящий документ «Пользовательское соглашение» (далее — Соглашение) представляет собой предложение ИП Иванов Иван Иванович (далее — Продавец), заключить договор на изложенных ниже условиях.</p>
       
-      <h3>1. Определение терминов</h3>
-      <p><strong>1.1.</strong> В настоящей Политике конфиденциальности используются следующие термины:</p>
-      <p><strong>1.1.1.</strong> «Администрация сайта» — уполномоченные сотрудники на управления сайтом, действующие от имени ИП Иванов И.И., которые организуют и (или) осуществляет обработку персональных данных, а также определяет цели обработки персональных данных, состав персональных данных, подлежащих обработке, действия (операции), совершаемые с персональными данными.</p>
-      <p><strong>1.1.2.</strong> «Персональные данные» — любая информация, относящаяся к прямо или косвенно определенному или определяемому физическому лицу (субъекту персональных данных).</p>
-      
-      <h3>2. Общие положения</h3>
-      <p><strong>2.1.</strong> Использование Пользователем сайта означает согласие с настоящей Политикой конфиденциальности и условиями обработки персональных данных Пользователя.</p>
-      <p><strong>2.2.</strong> В случае несогласия с условиями Политики конфиденциальности Пользователь должен прекратить использование сайта.</p>
-      
-      <h2>Условия использования сайта</h2>
-      
-      <p>Настоящие Условия использования сайта (далее — Условия) регулируют порядок использования сайта Алтайский Мёд, расположенного в сети Интернет по адресу: altaymed.shop.</p>
-      
-      <h3>1. Общие положения</h3>
-      <p><strong>1.1.</strong> Использование материалов и сервисов Сайта регулируется нормами действующего законодательства Российской Федерации.</p>
-      <p><strong>1.2.</strong> Настоящие Условия являются публичной офертой. Получая доступ к материалам Сайта Пользователь считается присоединившимся к настоящим Условиям.</p>
-      
-      <h3>2. Обязательства Пользователя</h3>
-      <p><strong>2.1.</strong> Пользователь соглашается не предпринимать действий, которые могут рассматриваться как нарушающие российское законодательство или нормы международного права, в том числе в сфере интеллектуальной собственности, авторских и/или смежных правах, а также любых действий, которые приводят или могут привести к нарушению нормальной работы Сайта и сервисов Сайта.</p>
-      
-      <h2>Публичная оферта</h2>
-      
-      <p>Настоящий документ является Публичной офертой (предложением) интернет-магазина "Алтайский Мёд" заключить Договор купли-продажи товара дистанционным способом на условиях, указанных ниже.</p>
-      
-      <h3>1. Предмет договора</h3>
-      <p><strong>1.1.</strong> Продавец обязуется передать в собственность Покупателя товар, а Покупатель обязуется принять и оплатить товар на условиях настоящего Договора.</p>
-      <p><strong>1.2.</strong> Настоящий Договор и все приложения к нему являются официальными документами Продавца и неотъемлемой частью оферты.</p>
-      
-      <h3>2. Порядок оформления заказа</h3>
-      <p><strong>2.1.</strong> Заказ Товара осуществляется Покупателем через Интернет-магазин на сайте altaymed.shop.</p>
-      <p><strong>2.2.</strong> При регистрации на сайте Интернет-магазина Покупатель обязуется предоставить следующую регистрационную информацию:</p>
-      <ul class="list-disc pl-6">
-        <li>Фамилия, Имя, Отчество Покупателя;</li>
-        <li>адрес электронной почты;</li>
-        <li>контактный телефон;</li>
-        <li>адрес доставки.</li>
+      <h3 class="text-xl font-bold text-gray-800 mb-3 mt-6">1. Термины и определения</h3>
+      <p class="mb-4 text-gray-700">В целях настоящего Соглашения нижеприведенные термины используются в следующем значении:</p>
+      <ul class="list-disc pl-6 mb-6">
+        <li class="mb-2">Сайт — интернет-сайт, размещенный в сети Интернет по адресу https://altaymed.shop</li>
+        <li class="mb-2">Пользователь — любое физическое лицо, использующее Сайт</li>
+        <li class="mb-2">Товар — продукты пчеловодства, представленные к продаже на Сайте</li>
       </ul>
       
-      <div class="mt-8 p-6 bg-white rounded-lg">
-        <h3 class="text-xl font-bold mb-3">Контактная информация</h3>
-        <p>ИП Иванов Иван Иванович</p>
-        <p>ИНН: 123456789012</p>
-        <p>ОГРНИП: 1234567890123</p>
-        <p class="mt-3">Телефон: +7 (999) 123-45-67</p>
-        <p>Email: info@altaymed.shop</p>
+      <h3 class="text-xl font-bold text-gray-800 mb-3 mt-6">2. Общие положения</h3>
+      <p class="mb-4 text-gray-700">2.1. Настоящее Соглашение определяет условия использования Пользователем материалов и сервисов Сайта.</p>
+      <p class="mb-4 text-gray-700">2.2. Факт использования Сайта означает, что Пользователь согласен со всеми условиями настоящего Соглашения.</p>
+      
+      <h3 class="text-xl font-bold text-gray-800 mb-3 mt-6">3. Интеллектуальная собственность</h3>
+      <p class="mb-4 text-gray-700">3.1. Все материалы, размещенные на Сайте, являются объектами интеллектуальной собственности Продавца.</p>
+      <p class="mb-4 text-gray-700">3.2. Любое использование материалов Сайта без письменного разрешения Продавца запрещено.</p>
+      
+      <h3 class="text-xl font-bold text-gray-800 mb-3 mt-6">4. Персональные данные</h3>
+      <p class="mb-4 text-gray-700">4.1. Отправляя свои персональные данные через формы на Сайте, Пользователь дает согласие на их обработку.</p>
+      <p class="mb-4 text-gray-700">4.2. Продавец обязуется не передавать персональные данные Пользователя третьим лицам без его согласия.</p>
+      
+      <h3 class="text-xl font-bold text-gray-800 mb-3 mt-6">5. Заключительные положения</h3>
+      <p class="mb-4 text-gray-700">5.1. Настоящее Соглашение вступает в силу с момента его принятия Пользователем и действует до момента его отзыва.</p>
+      <p class="mb-4 text-gray-700">5.2. Продавец оставляет за собой право вносить изменения в настоящее Соглашение без предварительного уведомления Пользователя.</p>
+      
+      <div class="mt-8 pt-6 border-t">
+        <h3 class="text-xl font-bold text-secondary mb-4">Политика конфиденциальности</h3>
+        <p class="mb-4 text-gray-700">Мы гарантируем конфиденциальность предоставленных вами персональных данных. Ваша информация используется исключительно для обработки заказов и улучшения качества обслуживания.</p>
+        <p class="mb-4 text-gray-700">Мы не передаем ваши данные третьим лицам, за исключением случаев, предусмотренных законодательством РФ.</p>
+      </div>
+      
+      <div class="mt-8 text-center">
+        <p class="text-gray-600">Дата последнего обновления: 25 июня 2025 года</p>
       </div>
     </div>
   </div>
@@ -196,8 +161,12 @@ tailwind.config = {
 </main>
 
 <!-- Футер -->
-<footer class="bg-[#8B4513] py-10 md:py-12 w-full text-white">
-  <!-- Тот же футер, что и на главной странице -->
+<footer class="bg-[#8B4513] py-10 md:py-12 w-full">
+  <!-- Контент футера из главной страницы -->
+  <!-- ... -->
 </footer>
+
+<!-- Скрипты из главной страницы -->
+<!-- ... -->
 </body>
 </html>

@@ -851,6 +851,15 @@ footer a:hover {
 #workflow {
   transition-delay: 0.5s;
 }
+
+/* Стили для блога */
+.blog-card {
+  transition: all 0.3s ease;
+}
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
 </style>
 </head>
 <body>
@@ -866,6 +875,7 @@ footer a:hover {
       <a href="#about" class="nav-link">О нас</a>
       <!-- Изменено: ссылка "Контакты" теперь ведет на #footer-contacts -->
       <a href="#footer-contacts" class="nav-link">Контакты</a>
+      <a href="#blog" class="nav-link">Блог</a>
       <a href="#order" class="nav-btn px-4 md:px-6 py-1 md:py-2 !rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">Заказать</a>
     </div>
     
@@ -882,6 +892,7 @@ footer a:hover {
       <a href="#about" class="nav-link py-2">О нас</a>
       <!-- Изменено: ссылка "Контакты" теперь ведет на #footer-contacts -->
       <a href="#footer-contacts" class="nav-link py-2">Контакты</a>
+      <a href="#blog" class="nav-link py-2">Блог</a>
       <a href="#order" class="nav-btn py-2 text-center !rounded-button hover:bg-opacity-90 transition-all">Заказать</a>
     </div>
   </div>
@@ -976,10 +987,9 @@ footer a:hover {
       <!-- Продукт 1 -->
       <div id="product-1" class="product-card bg-white rounded-lg shadow-md overflow-hidden">
         <div class="h-56 md:h-64 overflow-hidden">
-          <img src="/images/placeholder.jpg" 
-               data-src="/images/image-2.jpg" 
+          <img src="/images/image-2.jpg" 
                alt="Разнотравье" 
-               class="w-full h-full object-cover object-top lazyload"
+               class="w-full h-full object-cover object-top"
                loading="lazy"
                decoding="async">
         </div>
@@ -996,10 +1006,9 @@ footer a:hover {
       <!-- Продукт 2 -->
       <div id="product-2" class="product-card bg-white rounded-lg shadow-md overflow-hidden">
         <div class="h-56 md:h-64 overflow-hidden">
-          <img src="/images/placeholder.jpg" 
-               data-src="/images/image-3.jpg" 
+          <img src="/images/image-3.jpg" 
                alt="Таёжный мёд" 
-               class="w-full h-full object-cover object-top lazyload"
+               class="w-full h-full object-cover object-top"
                loading="lazy"
                decoding="async">
         </div>
@@ -1016,10 +1025,9 @@ footer a:hover {
       <!-- Продукт 3 -->
       <div id="product-3" class="product-card bg-white rounded-lg shadow-md overflow-hidden">
         <div class="h-56 md:h-64 overflow-hidden">
-          <img src="/images/placeholder.jpg" 
-               data-src="/images/image-4.jpg" 
+          <img src="/images/image-4.jpg" 
                alt="Гречишный мёд" 
-               class="w-full h-full object-cover object-top lazyload"
+               class="w-full h-full object-cover object-top"
                loading="lazy"
                decoding="async">
         </div>
@@ -1050,18 +1058,16 @@ footer a:hover {
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
       <div class="order-2 md:order-1">
         <div class="about-image bg-white p-3 shadow-lg rotate-2 mb-6 md:mb-8 max-w-md mx-auto">
-          <img src="/images/placeholder.jpg" 
-               data-src="/images/image-5.jpg" 
+          <img src="/images/image-5.jpg" 
                alt="Наша семья" 
-               class="w-full h-auto lazyload"
+               class="w-full h-auto"
                loading="lazy"
                decoding="async">
         </div>
         <div class="about-image bg-white p-3 shadow-lg -rotate-3 max-w-md mx-auto">
-          <img src="/images/placeholder.jpg" 
-               data-src="/images/image-6.jpg" 
+          <img src="/images/image-6.jpg" 
                alt="Наша пасека" 
-               class="w-full h-auto lazyload"
+               class="w-full h-auto"
                loading="lazy"
                decoding="async">
         </div>
@@ -1214,6 +1220,33 @@ footer a:hover {
     </div>
   </div>
 </section>
+
+<!-- Блог -->
+<section id="blog" class="py-16 md:py-20 bg-white">
+  <div class="container mx-auto px-4 md:px-6">
+    <h2 class="text-3xl md:text-4xl font-['Pacifico'] text-center text-secondary mb-12 md:mb-16">Наш блог</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
+      <!-- Статья 1 -->
+      <div class="blog-card bg-white rounded-lg shadow-md overflow-hidden">
+        <div class="h-56 overflow-hidden">
+          <img src="/images/image-11.jpg" 
+               alt="Как выбрать качественный мёд" 
+               class="w-full h-full object-cover"
+               loading="lazy"
+               decoding="async">
+        </div>
+        <div class="p-5 md:p-6">
+          <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-3">Как выбрать качественный мёд</h3>
+          <p class="text-gray-600 text-sm md:text-base mb-4">Узнайте, как отличить настоящий алтайский мёд от подделки. Экспертные советы по выбору качественного мёда.</p>
+          <a href="/blog/blog_kak-vybrat-med.html" class="inline-block bg-primary text-white px-4 py-2 !rounded-button hover:bg-opacity-90 transition-all text-sm md:text-base">
+            Читать статью
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 </main>
 
 <!-- Футер с добавленной колонкой "Материалы" -->
@@ -1258,13 +1291,13 @@ footer a:hover {
         <h4 class="text-base md:text-lg font-bold">Материалы</h4>
         <ul>
           <li>
-            <a href="/blog/index.html" class="hover:text-gray-300 transition-colors flex items-center py-1">
+            <a href="/blog/" class="hover:text-gray-300 transition-colors flex items-center py-1">
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Блог</span>
             </a>
           </li>
           <li>
-            <a href="/faq/index.html" class="hover:text-gray-300 transition-colors flex items-center py-1">
+            <a href="/faq/" class="hover:text-gray-300 transition-colors flex items-center py-1">
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">FAQ</span>
             </a>

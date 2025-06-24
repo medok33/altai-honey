@@ -1,15 +1,15 @@
 /* Основные стили */
 body {
     font-family: 'Open Sans', sans-serif;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background-color: #fff8f0;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
     color: #333;
+    background-color: #fff8f0;
 }
 
 .container {
-    width: 100%;
+    width: 90%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
@@ -35,6 +35,7 @@ nav {
     font-size: 24px;
     font-weight: 700;
     color: #8B4513;
+    text-decoration: none;
 }
 
 .logo span {
@@ -49,6 +50,7 @@ nav {
 .nav-links a {
     color: #333;
     font-weight: 500;
+    text-decoration: none;
     transition: color 0.3s;
 }
 
@@ -56,11 +58,10 @@ nav {
     color: #6B8E23;
 }
 
-/* Герой-секция */
+/* Герой секция */
 .hero-section {
     min-height: 70vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-                url('../images/image-1.jpg') center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../images/image-1.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -88,6 +89,7 @@ nav {
     padding: 12px 30px;
     border-radius: 8px;
     font-weight: 600;
+    text-decoration: none;
     transition: background-color 0.3s;
 }
 
@@ -167,7 +169,6 @@ nav {
 /* О нас */
 .about-section {
     background-color: rgba(245, 222, 179, 0.2);
-    position: relative;
 }
 
 .about-content {
@@ -257,6 +258,34 @@ nav {
     background-color: #5a7a1d;
 }
 
+/* Как мы работаем */
+.workflow-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.workflow-item {
+    text-align: center;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.workflow-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #6B8E23;
+    margin-bottom: 15px;
+}
+
+.workflow-title {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    color: #8B4513;
+}
+
 /* Футер */
 footer {
     background-color: #8B4513;
@@ -278,6 +307,7 @@ footer {
 
 .footer-links {
     list-style: none;
+    padding: 0;
 }
 
 .footer-links li {
@@ -286,6 +316,7 @@ footer {
 
 .footer-links a {
     color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
     transition: color 0.3s;
 }
 
@@ -308,4 +339,14 @@ footer {
     text-align: center;
     padding-top: 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+}
+
+.copyright a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+}
+
+.copyright a:hover {
+    color: white;
 }

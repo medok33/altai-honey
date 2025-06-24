@@ -4,14 +4,114 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Традиции алтайского пчеловодства | Алтайский мёд - История</title>
-<!-- Остальные метатеги как в blog/kak-vybrat-med.html -->
+<meta name="description" content="История и секреты алтайских пасечников. Узнайте о многовековых традициях сбора мёда в горных районах Алтая.">
 
+<!-- Мета-теги верификации -->
+<meta name="yandex-verification" content="9c5350476939e370" />
+<meta name="google-site-verification" content="JsJoSVyM5o4vxTSdN88FHLrAwPaoQ0nEjpJkiub50AE">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Традиции алтайского пчеловодства | Алтайский мёд">
+<meta property="og:description" content="История и секреты алтайских пасечников">
+<meta property="og:image" content="https://altaymed.shop/images/og-preview.jpg">
+<meta property="og:url" content="https://altaymed.shop/blog/tradicii-altayskogo-pchelovodstva.html">
+<meta property="og:type" content="article">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Традиции алтайского пчеловодства">
+<meta name="twitter:description" content="Многовековые традиции сбора мёда в горах Алтая">
+<meta name="twitter:image" content="https://altaymed.shop/images/twitter-preview.jpg">
+
+<!-- Favicon -->
+<link rel="icon" href="/images/favicon.ico" sizes="any">
+<link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+
+<!-- Web Manifest -->
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#9f5524">
+
+<!-- Оптимизированные шрифты -->
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Подключение Tailwind CSS -->
+<link rel="stylesheet" href="/css/style.min.css">
+
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        primary: '#6B8E23',
+        secondary: '#8B4513',
+        orange: '#FFA500'
+      },
+      borderRadius: {
+        'none': '0px',
+        'sm': '4px',
+        DEFAULT: '8px',
+        'md': '12px',
+        'lg': '16px',
+        'xl': '20px',
+        '2xl': '24px',
+        '3xl': '32px',
+        'full': '9999px',
+        'button': '8px'
+      }
+    }
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
 <style>
-/* Стили из главной страницы */
+/* Все стили из главной страницы index.html */
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+  font-family: 'Open Sans', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+/* ... остальные стили ... */
 </style>
 </head>
 <body>
-<!-- Навигация как в blog/kak-vybrat-med.html -->
+<!-- Навигация -->
+<nav class="bg-white shadow-sm sticky top-0 z-50">
+  <div class="container mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
+    <a href="/" class="text-2xl md:text-3xl font-['Pacifico'] header-logo">Алтайский мёд</a>
+    
+    <div class="hidden md:flex items-center space-x-6 md:space-x-8">
+      <a href="/#benefits" class="nav-link">Преимущества</a>
+      <a href="/#products" class="nav-link">Каталог</a>
+      <a href="/#about" class="nav-link">О нас</a>
+      <a href="/#footer-contacts" class="nav-link">Контакты</a>
+      <a href="/blog/" class="nav-link font-bold">Блог</a>
+      <a href="/#order" class="nav-btn px-4 md:px-6 py-1 md:py-2 !rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">Заказать</a>
+    </div>
+    
+    <button class="md:hidden w-10 h-10 flex items-center justify-center">
+      <i class="ri-menu-line text-gray-900 ri-xl"></i>
+    </button>
+  </div>
+  
+  <!-- Мобильное меню -->
+  <div class="md:hidden hidden bg-white shadow-md px-4 py-3" id="mobile-menu">
+    <div class="flex flex-col space-y-4">
+      <a href="/#benefits" class="nav-link py-2">Преимущества</a>
+      <a href="/#products" class="nav-link py-2">Каталог</a>
+      <a href="/#about" class="nav-link py-2">О нас</a>
+      <a href="/#footer-contacts" class="nav-link py-2">Контакты</a>
+      <a href="/blog/" class="nav-link py-2 font-bold">Блог</a>
+      <a href="/#order" class="nav-btn py-2 text-center !rounded-button hover:bg-opacity-90 transition-all">Заказать</a>
+    </div>
+  </div>
+</nav>
 
 <main>
 <!-- Шапка статьи -->
@@ -25,7 +125,8 @@
 <section class="py-16 bg-[#F5DEB3] bg-opacity-20 texture-bg">
   <div class="container mx-auto px-4 md:px-6">
     <div class="max-w-3xl mx-auto bg-white p-6 md:p-8 rounded-lg shadow-md">
-      <!-- Контент статьи -->
+      <p class="mb-4 text-gray-700">Алтайский край славится не только своей природной красотой, но и вековыми традициями пчеловодства. В этой статье мы расскажем о том, как сохраняются уникальные методы сбора мёда в горных районах Алтая.</p>
+      
       <img src="/images/placeholder.jpg" 
            data-src="/images/image-19.jpg" 
            alt="Традиции пчеловодства" 
@@ -33,17 +134,83 @@
            loading="lazy"
            decoding="async">
       
-      <!-- ... остальной контент ... -->
+      <h2 class="text-2xl font-bold text-secondary mb-4">История алтайского пчеловодства</h2>
+      
+      <p class="mb-4 text-gray-700">Пчеловодство на Алтае имеет многовековую историю. Первые упоминания о сборе дикого мёда в этих местах относятся к X веку. Местные жители называли это занятие "бортничеством" - сбором мёда диких пчёл, живущих в дуплах деревьев.</p>
+      
+      <p class="mb-4 text-gray-700">С XVIII века на Алтае начали развиваться пасеки с ульями. Особенности горного климата, чистый воздух и разнообразие медоносных растений создали идеальные условия для пчеловодства.</p>
+      
+      <h2 class="text-2xl font-bold text-secondary mb-4">Современные традиции</h2>
+      
+      <p class="mb-4 text-gray-700">Несмотря на технический прогресс, многие алтайские пчеловоды сохраняют традиционные методы:</p>
+      
+      <ul class="mb-6">
+        <li class="mb-2 flex items-start">
+          <i class="ri-check-line text-primary mt-1 mr-2"></i>
+          <span>Использование деревянных ульев вместо пластиковых</span>
+        </li>
+        <li class="mb-2 flex items-start">
+          <i class="ri-check-line text-primary mt-1 mr-2"></i>
+          <span>Ручной отбор мёда без центрифуг</span>
+        </li>
+        <li class="mb-2 flex items-start">
+          <i class="ri-check-line text-primary mt-1 mr-2"></i>
+          <span>Сезонная кочевка пасек к лучшим медоносам</span>
+        </li>
+        <li class="mb-2 flex items-start">
+          <i class="ri-check-line text-primary mt-1 mr-2"></i>
+          <span>Передача знаний из поколения в поколение</span>
+        </li>
+      </ul>
+      
+      <div class="mt-8 text-center">
+        <a href="/#about" class="hero-btn-primary inline-block px-6 py-2 md:px-8 md:py-3 !rounded-button shadow-lg hover:bg-opacity-90 transition-all whitespace-nowrap text-base md:text-lg font-medium">
+          Узнать о нашей пасеке
+        </a>
+      </div>
     </div>
   </div>
 </section>
 </main>
 
-<!-- Футер как в главной странице -->
+<!-- Футер -->
+<footer class="bg-[#8B4513] py-10 md:py-12 w-full">
+  <!-- Контент футера из главной страницы index.html -->
+  <div id="footer-contacts" class="container mx-auto px-4 md:px-6 w-full">
+    <!-- ... -->
+  </div>
+</footer>
 
 <!-- Скрипт lazy loading -->
 <script>
-// Тот же скрипт что и на главной
+document.addEventListener("DOMContentLoaded", function() {
+  const lazyLoad = function(entries) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        img.src = img.dataset.src;
+        img.classList.remove("lazyload");
+        observer.unobserve(img);
+      }
+    });
+  };
+  
+  const observer = new IntersectionObserver(lazyLoad, {
+    rootMargin: "200px 0px 200px 0px",
+    threshold: 0.01
+  });
+  
+  // Проверка сразу видимых изображений
+  document.querySelectorAll("img.lazyload").forEach(img => {
+    const rect = img.getBoundingClientRect();
+    if (rect.top < window.innerHeight + 200 && rect.bottom > 0) {
+      img.src = img.dataset.src;
+      img.classList.remove("lazyload");
+    } else {
+      observer.observe(img);
+    }
+  });
+});
 </script>
 </body>
 </html>

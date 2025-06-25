@@ -3,118 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Блог о мёде | Алтайский мёд - Полезные статьи</title>
-<meta name="description" content="Читайте полезные статьи о мёде, пчеловодстве и здоровом питании. Узнайте о пользе алтайского мёда.">
-
-<!-- Мета-теги верификации -->
-<meta name="yandex-verification" content="9c5350476939e370" />
-<meta name="google-site-verification" content="JsJoSVyM5o4vxTSdN88FHLrAwPaoQ0nEjpJkiub50AE">
-
-<!-- Open Graph -->
-<meta property="og:title" content="Блог о мёде | Алтайский мёд">
-<meta property="og:description" content="Полезные статьи о мёде, пчеловодстве и здоровом питании">
-<meta property="og:image" content="https://altaymed.shop/images/og-preview.jpg">
-<meta property="og:url" content="https://altaymed.shop/blog/">
-<meta property="og:type" content="website">
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Блог о мёде | Алтайский мёд">
-<meta name="twitter:description" content="Читайте полезные статьи о мёде и пчеловодстве">
-<meta name="twitter:image" content="https://altaymed.shop/images/twitter-preview.jpg">
-
-<!-- Favicon -->
-<link rel="icon" href="/images/favicon.ico" sizes="any">
-<link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
-
-<!-- Web Manifest -->
-<link rel="manifest" href="/manifest.json">
-<meta name="theme-color" content="#9f5524">
-
-<!-- Оптимизированные шрифты -->
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<!-- Подключение Tailwind CSS -->
-<link rel="stylesheet" href="/css/style.min.css">
-
-<script src="https://cdn.tailwindcss.com/3.4.16"></script>
-<script>
-tailwind.config = {
-  theme: {
-    extend: {
-      colors: {
-        primary: '#6B8E23',
-        secondary: '#8B4513',
-        orange: '#FFA500'
-      },
-      borderRadius: {
-        'none': '0px',
-        'sm': '4px',
-        DEFAULT: '8px',
-        'md': '12px',
-        'lg': '16px',
-        'xl': '20px',
-        '2xl': '24px',
-        '3xl': '32px',
-        'full': '9999px',
-        'button': '8px'
-      }
-    }
-  }
-}
-</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
-<style>
-/* Все стили из главной страницы */
-/* ... */
-</style>
+<title>Блог | Алтайский мёд - Полезные статьи о мёде</title>
+<!-- Стили и метатеги -->
 </head>
 <body>
 <!-- Навигация -->
 <nav class="bg-white shadow-sm sticky top-0 z-50">
-  <div class="container mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
-    <a href="/" class="text-2xl md:text-3xl font-['Pacifico'] header-logo">Алтайский мёд</a>
-    
-    <div class="hidden md:flex items-center space-x-6 md:space-x-8">
-      <a href="/#benefits" class="nav-link">Преимущества</a>
-      <a href="/#products" class="nav-link">Каталог</a>
-      <a href="/#about" class="nav-link">О нас</a>
-      <a href="/#footer-contacts" class="nav-link">Контакты</a>
-      <a href="/blog/" class="nav-link font-bold">Блог</a>
-      <a href="/#order" class="nav-btn px-4 md:px-6 py-1 md:py-2 !rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">Заказать</a>
-    </div>
-    
-    <button class="md:hidden w-10 h-10 flex items-center justify-center">
-      <i class="ri-menu-line text-gray-900 ri-xl"></i>
-    </button>
-  </div>
-  
-  <!-- Мобильное меню -->
-  <div class="md:hidden hidden bg-white shadow-md px-4 py-3" id="mobile-menu">
-    <div class="flex flex-col space-y-4">
-      <a href="/#benefits" class="nav-link py-2">Преимущества</a>
-      <a href="/#products" class="nav-link py-2">Каталог</a>
-      <a href="/#about" class="nav-link py-2">О нас</a>
-      <a href="/#footer-contacts" class="nav-link py-2">Контакты</a>
-      <a href="/blog/" class="nav-link py-2 font-bold">Блог</a>
-      <a href="/#order" class="nav-btn py-2 text-center !rounded-button hover:bg-opacity-90 transition-all">Заказать</a>
-    </div>
-  </div>
+  <!-- Код навигации -->
 </nav>
 
-<main>
 <!-- Кнопка "На главную" -->
-<div class="container mx-auto px-4 mt-4">
-  <a href="/" class="inline-flex items-center text-primary hover:text-secondary transition-colors">
-    <i class="ri-arrow-left-line mr-2"></i> На главную
-  </a>
-</div>
+<a href="/" id="home-button" class="fixed left-4 bottom-4 bg-primary text-white px-4 py-2 rounded-full shadow-lg z-50 hidden">
+  <i class="ri-home-2-line mr-2"></i> На главную
+</a>
 
-<!-- Шапка блога -->
+<main>
+<!-- Заголовок блога -->
 <section class="min-h-[50vh] flex items-center" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/image-7.jpg'); background-size: cover; background-position: center;">
   <div class="container mx-auto px-4 text-center text-white">
     <h1 class="text-3xl md:text-4xl lg:text-5xl font-['Pacifico'] mb-4">Полезные статьи о мёде</h1>
@@ -136,8 +40,9 @@ tailwind.config = {
              decoding="async">
         <div class="p-6">
           <h2 class="text-xl md:text-2xl font-bold mb-2">Как выбрать качественный мёд</h2>
-          <p class="text-gray-600 mb-4">Экспертные советы по выбору настоящего алтайского мёда. Узнайте, как отличить натуральный продукт от подделки и сохранить все полезные свойства.</p>
-          <a href="/kak-vybrat-med.html" class="text-primary font-medium hover:underline">
+          <p class="text-gray-600 mb-4">Экспертные советы по выбору настоящего алтайского мёда...</p>
+          <!-- Исправленная ссылка -->
+          <a href="/blog/kak-vybrat-med.html" class="text-primary font-medium hover:underline">
             Читать статью
           </a>
         </div>
@@ -153,8 +58,9 @@ tailwind.config = {
              decoding="async">
         <div class="p-6">
           <h2 class="text-xl md:text-2xl font-bold mb-2">Мёд в здоровом питании</h2>
-          <p class="text-gray-600 mb-4">Как правильно использовать мёд в ежедневном рационе. Рецепты и советы по включению натурального мёда в здоровое питание для всей семьи.</p>
-          <a href="/med-v-zdorovom-pitanii.html" class="text-primary font-medium hover:underline">
+          <p class="text-gray-600 mb-4">Как правильно использовать мёд в ежедневном рационе...</p>
+          <!-- Исправленная ссылка -->
+          <a href="/blog/med-v-zdorovom-pitanii.html" class="text-primary font-medium hover:underline">
             Читать статью
           </a>
         </div>
@@ -170,8 +76,9 @@ tailwind.config = {
              decoding="async">
         <div class="p-6">
           <h2 class="text-xl md:text-2xl font-bold mb-2">Традиции алтайского пчеловодства</h2>
-          <p class="text-gray-600 mb-4">История и секреты алтайских пасечников. Узнайте о многовековых традициях сбора мёда в горных районах Алтая.</p>
-          <a href="/tradicii-altayskogo-pchelovodstva.html" class="text-primary font-medium hover:underline">
+          <p class="text-gray-600 mb-4">История и секреты алтайских пасечников...</p>
+          <!-- Исправленная ссылка -->
+          <a href="/blog/tradicii-altayskogo-pchelovodstva.html" class="text-primary font-medium hover:underline">
             Читать статью
           </a>
         </div>
@@ -182,43 +89,24 @@ tailwind.config = {
 </main>
 
 <!-- Футер -->
-<li>
-  <a href="/delivery-payment.html" class="hover:text-gray-300 transition-colors flex items-center py-1">
-    <span class="bullet mr-2"></span>
-    <span class="text-sm md:text-base">Доставка и оплата</span>
-  </a>
-</li>
 <footer class="bg-[#8B4513] py-10 md:py-12 w-full">
-  <!-- Контент футера из главной страницы -->
-  <!-- ... -->
+  <!-- Код футера -->
 </footer>
 
-<!-- Скрипт lazy loading -->
+<!-- Скрипты -->
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const lazyLoad = function(entries) {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const img = entry.target;
-          img.src = img.dataset.src;
-          img.classList.remove("lazyload");
-          observer.unobserve(img);
-        }
-      });
-    };
-    
-    const observer = new IntersectionObserver(lazyLoad, {
-      rootMargin: "0px 0px 200px 0px",
-      threshold: 0.01
-    });
-    
-    document.querySelectorAll("img.lazyload").forEach(img => {
-      observer.observe(img);
-    });
+// Скрипт для кнопки "На главную"
+document.addEventListener('DOMContentLoaded', function() {
+  const homeButton = document.getElementById('home-button');
+  
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 300) {
+      homeButton.classList.remove('hidden');
+    } else {
+      homeButton.classList.add('hidden');
+    }
   });
+});
 </script>
-
-<!-- Остальные скрипты из главной страницы -->
-<!-- ... -->
 </body>
 </html>

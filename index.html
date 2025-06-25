@@ -861,6 +861,34 @@ img.product-image.loaded {
 #workflow {
   transition-delay: 0.5s;
 }
+
+/* Кнопка "На главную" */
+#home-button {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  background-color: #6B8E23;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 999;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+#home-button.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#home-button i {
+  font-size: 18px;
+}
 </style>
 </head>
 <body>
@@ -868,7 +896,7 @@ img.product-image.loaded {
 <nav class="bg-white shadow-sm sticky top-0 z-50">
   <div class="container mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
     <!-- Зеленый логотип в шапке -->
-    <a href="#" class="text-2xl md:text-3xl font-['Pacifico'] header-logo">Алтайский мёд</a>
+    <a href="/" class="text-2xl md:text-3xl font-['Pacifico'] header-logo">Алтайский мёд</a>
     
     <div class="hidden md:flex items-center space-x-6 md:space-x-8">
       <a href="#benefits" class="nav-link">Преимущества</a>
@@ -896,6 +924,11 @@ img.product-image.loaded {
     </div>
   </div>
 </nav>
+
+<!-- Кнопка "На главную" -->
+<a href="/" id="home-button">
+  <i class="ri-home-2-line"></i> На главную
+</a>
 
 <main>
 <!-- Герой-секция -->
@@ -1223,7 +1256,7 @@ img.product-image.loaded {
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 w-full">
       <!-- Лого и описание -->
       <div class="footer-column">
-        <a href="#" class="text-2xl md:text-3xl font-['Pacifico'] mb-3 md:mb-4 block footer-logo">Алтайский мёд</a>
+        <a href="/" class="text-2xl md:text-3xl font-['Pacifico'] mb-3 md:mb-4 block footer-logo">Алтайский мёд</a>
         <p class="mb-3 md:mb-4 text-sm md:text-base">Натуральные продукты пчеловодства с Алтайских гор.</p>
         <p class="text-sm md:text-base">© 2025 Алтайский мёд. Все права защищены.</p>
       </div>
@@ -1301,7 +1334,7 @@ img.product-image.loaded {
             </a>
           </li>
           <li>
-            <a href="#" class="hover:text-gray-300 transition-colors flex items-center py-1">
+            <a href="/delivery-payment.html" class="hover:text-gray-300 transition-colors flex items-center py-1">
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Доставка и оплата</span>
             </a>
@@ -1746,6 +1779,17 @@ ${message}
   productImages.forEach(img => {
     if (img.complete) {
       img.classList.add('loaded');
+    }
+  });
+
+  // Кнопка "На главную"
+  const homeButton = document.getElementById('home-button');
+  
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 300) {
+      homeButton.classList.add('visible');
+    } else {
+      homeButton.classList.remove('visible');
     }
   });
 });

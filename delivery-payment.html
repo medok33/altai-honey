@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<!-- Метатеги, стили и скрипты как в других страницах -->
+<style>
+  .delivery-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    padding: 25px;
+    margin-bottom: 30px;
+    transition: transform 0.3s;
+  }
+  .delivery-card:hover {
+    transform: translateY(-5px);
+  }
+</style>
+</head>
+<body>
+<!-- Навигация (аналогичная другим страницам) -->
+
+<main>
+<!-- Шапка страницы -->
+<section class="min-h-[40vh] flex items-center" 
+         style="background: linear-gradient(rgba(0, 0, 0, 0.7), url('/images/image-20.jpg'); 
+                background-size: cover; background-position: center;">
+  <div class="container mx-auto px-4 text-center text-white">
+    <h1 class="text-3xl md:text-4xl lg:text-5xl font-['Pacifico'] mb-4">Доставка и оплата</h1>
+  </div>
+</section>
+
+<!-- Кнопка "На главную" -->
+<div class="container mx-auto px-4 mt-6">
+  <a href="/" class="inline-flex items-center text-primary hover:text-secondary transition-colors">
+    <i class="ri-arrow-left-line mr-2"></i> На главную
+  </a>
+</div>
+
+<!-- Содержимое страницы -->
+<section class="py-16 bg-[#F5DEB3] bg-opacity-20 texture-bg">
+  <div class="container mx-auto px-4 md:px-6">
+    <div class="max-w-4xl mx-auto">
+      
+      <div class="delivery-card">
+        <h2 class="text-2xl font-bold text-secondary mb-4 flex items-center">
+          <i class="ri-truck-line text-primary text-2xl mr-3"></i> Способы доставки
+        </h2>
+        
+        <div class="space-y-4">
+          <div class="flex items-start">
+            <div class="bg-primary bg-opacity-10 w-8 h-8 rounded-full flex items-center justify-center mr-3 mt-1">
+              <span class="text-primary font-bold">1</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-gray-800 mb-1">Почта России</h3>
+              <p class="text-gray-600">Доставка по всей России. Срок доставки: 5-14 дней. Трек-номер для отслеживания предоставляется после отправки.</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start">
+            <div class="bg-primary bg-opacity-10 w-8 h-8 rounded-full flex items-center justify-center mr-3 mt-1">
+              <span class="text-primary font-bold">2</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-gray-800 mb-1">Курьерская служба СДЭК</h3>
+              <p class="text-gray-600">Быстрая доставка по крупным городам. Срок доставки: 2-7 дней. Возможна доставка до двери или пункта выдачи.</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start">
+            <div class="bg-primary bg-opacity-10 w-8 h-8 rounded-full flex items-center justify-center mr-3 mt-1">
+              <span class="text-primary font-bold">3</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-gray-800 mb-1">Самовывоз (Алтайский край)</h3>
+              <p class="text-gray-600">Для жителей Алтайского края доступен самовывоз по адресу: Алтайский край, Солтонский район.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="delivery-card">
+        <h2 class="text-2xl font-bold text-secondary mb-4 flex items-center">
+          <i class="ri-bank-card-line text-primary text-2xl mr-3"></i> Способы оплаты
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-gray-50 p-4 rounded-lg border border-gray-100">
+            <div class="flex items-center mb-3">
+              <div class="bg-primary bg-opacity-10 w-10 h-10 rounded-full flex items-center justify-center mr-3">
+                <i class="ri-bank-card-line text-primary text-xl"></i>
+              </div>
+              <h3 class="text-lg font-bold text-gray-800">Онлайн-оплата</h3>
+            </div>
+            <p class="text-gray-600">Оплата банковской картой Visa, Mastercard или МИР через безопасный платежный шлюз.</p>
+          </div>
+          
+          <div class="bg-gray-50 p-4 rounded-lg border border-gray-100">
+            <div class="flex items-center mb-3">
+              <div class="bg-primary bg-opacity-10 w-10 h-10 rounded-full flex items-center justify-center mr-3">
+                <i class="ri-wallet-3-line text-primary text-xl"></i>
+              </div>
+              <h3 class="text-lg font-bold text-gray-800">Наличными при получении</h3>
+            </div>
+            <p class="text-gray-600">Оплата наличными курьеру при получении заказа (доступно не для всех регионов).</p>
+          </div>
+          
+          <div class="bg-gray-50 p-4 rounded-lg border border-gray-100">
+            <div class="flex items-center mb-3">
+              <div class="bg-primary bg-opacity-10 w-10 h-10 rounded-full flex items-center justify-center mr-3">
+                <i class="ri-phone-line text-primary text-xl"></i>
+              </div>
+              <h3 class="text-lg font-bold text-gray-800">Перевод по номеру телефона</h3>
+            </div>
+            <p class="text-gray-600">Оплата через Сбербанк Онлайн или другие приложения по номеру телефона.</p>
+          </div>
+          
+          <div class="bg-gray-50 p-4 rounded-lg border border-gray-100">
+            <div class="flex items-center mb-3">
+              <div class="bg-primary bg-opacity-10 w-10 h-10 rounded-full flex items-center justify-center mr-3">
+                <i class="ri-exchange-dollar-line text-primary text-xl"></i>
+              </div>
+              <h3 class="text-lg font-bold text-gray-800">Электронные кошельки</h3>
+            </div>
+            <p class="text-gray-600">Оплата через ЮMoney (Яндекс.Деньги) или Qiwi кошелек.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="delivery-card">
+        <h2 class="text-2xl font-bold text-secondary mb-4 flex items-center">
+          <i class="ri-question-line text-primary text-2xl mr-3"></i> Частые вопросы
+        </h2>
+        
+        <div class="space-y-4">
+          <div class="border-b pb-4">
+            <h3 class="text-lg font-bold text-gray-800 mb-2">Как отследить посылку?</h3>
+            <p class="text-gray-600">После отправки заказа мы пришлем вам трек-номер на электронную почту и SMS. Вы сможете отслеживать посылку на сайте почты России или службы доставки.</p>
+          </div>
+          
+          <div class="border-b pb-4">
+            <h3 class="text-lg font-bold text-gray-800 mb-2">Сколько стоит доставка?</h3>
+            <p class="text-gray-600">Стоимость доставки рассчитывается индивидуально в зависимости от веса посылки и региона доставки. Точную стоимость вы увидите при оформлении заказа.</p>
+          </div>
+          
+          <div class="border-b pb-4">
+            <h3 class="text-lg font-bold text-gray-800 mb-2">Можно ли вернуть товар?</h3>
+            <p class="text-gray-600">Да, вы можете вернуть товар в течение 14 дней с момента получения. Товар должен быть в оригинальной упаковке и не вскрыт.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- Футер (аналогичный другим страницам) -->
+</body>
+</html>

@@ -21,42 +21,81 @@ const metricaCode = `
 `;
 
 function processDirectory(directory) {
-  const files = fs.readdirSync(directory);
+  console.log(`🔍 Сканирую директорию: ${directory}`);
+  
+  try {
+    const files = fs.readdirSync(directory);
 
-  files.forEach(file => {
-    const absolutePath = path.join(directory, file);
-    const stat = fs.statSync(absolutePath);
+    files.forEach(file => {
+      const absolutePath = path.join(directory, file);
+      
+      try {
+        const stat = fs.statSync(absolutePath);
 
-    if (stat.isDirectory()) {
-      processDirectory(absolutePath);
-    } else if (path.extname(file) === '.html') {
-      processHtmlFile(absolutePath);
-    }
-  });
+        if (stat.isDirectory()) {
+          processDirectory(absolutePath);
+        } else if (path.extname(file).toLowerCase() === '.html') {
+          processHtmlFile(absolutePath);
+        }
+      } catch (statError) {
+        console.error(`❌ Ошибка доступа к элементу: ${absolutePath}`, statError.message);
+      }
+    });
+  } catch (readDirError) {
+    console.error(`❌ Ошибка чтения директории: ${directory}`, readDirError.message);
+  }
 }
 
 function processHtmlFile(filePath) {
-  let content = fs.readFileSync(filePath, 'utf8');
+  console.log(`📄 Обрабатываю файл: ${filePath}`);
   
-  // Проверка на уже существующую метрику
-  if (content.includes('Yandex.Metrika counter')) {
-    console.log(`[Skipped] Метрика уже установлена в: ${filePath}`);
-    return;
-  }
+  try {
+    let content = fs.readFileSync(filePath, 'utf8');
+    
+    if (content.includes('Yandex.Metrika counter')) {
+      console.log(`⏩ Пропускаю (метрика уже установлена): ${filePath}`);
+      return;
+    }
 
-  // Вставка перед </head>
-  if (content.includes('</head>')) {
-    content = content.replace(
-      '</head>',
-      metricaCode + '\n</head>'
-    );
-    fs.writeFileSync(filePath, content, 'utf8');
-    console.log(`[Success] Метрика добавлена в: ${filePath}`);
-  } else {
-    console.error(`[Error] Тег </head> не найден в: ${filePath}`);
+    let modified = false;
+    
+    // Вариант 1: Вставка перед </head>
+    if (content.includes('</head>')) {
+      content = content.replace('</head>', metricaCode + '\n</head>');
+      modified = true;
+    } 
+    // Вариант 2: Вставка перед </body> если </head> отсутствует
+    else if (content.includes('</body>')) {
+      content = content.replace('</body>', metricaCode + '\n</body>');
+      modified = true;
+    }
+    // Вариант 3: Добавление в конец файла
+    else {
+      content += '\n' + metricaCode;
+      modified = true;
+      console.warn(`⚠️ Вставка в конец файла (отсутствуют теги): ${filePath}`);
+    }
+
+    if (modified) {
+      fs.writeFileSync(filePath, content, 'utf8');
+      console.log(`✅ Успешно добавлено: ${filePath}`);
+    } else {
+      console.error(`❌ Не удалось найти место для вставки: ${filePath}`);
+    }
+  } catch (error) {
+    console.error(`❌ Критическая ошибка обработки: ${filePath}`, error.message);
   }
 }
 
-// Запуск из корня проекта
-const rootDir = path.join(__dirname, '..');
-processDirectory(rootDir);
+// Проверка аргументов командной строки
+const args = process.argv.slice(2);
+let targetDir = args[0] || path.join(__dirname, '..');
+
+if (!fs.existsSync(targetDir)) {
+  console.error(`❌ Директория не существует: ${targetDir}`);
+  process.exit(1);
+}
+
+console.log(`🚀 Запуск скрипта для директории: ${targetDir}`);
+processDirectory(targetDir);
+console.log('🏁 Обработка завершена');

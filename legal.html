@@ -71,6 +71,36 @@ tailwind.config = {
 <style>
 /* Все стили из главной страницы */
 /* ... */
+
+/* Стиль для кнопки "На главную" */
+.home-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #6B8E23;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+.home-button.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.home-button:hover {
+  background-color: #5a7a1d;
+  transform: scale(1.05) translateY(0);
+}
 </style>
 </head>
 <body>
@@ -105,6 +135,11 @@ tailwind.config = {
     </div>
   </div>
 </nav>
+
+<!-- Кнопка "На главную" -->
+<a href="/" class="home-button">
+  <i class="ri-home-2-line ri-lg"></i>
+</a>
 
 <main>
 <!-- Шапка страницы -->
@@ -162,11 +197,187 @@ tailwind.config = {
 
 <!-- Футер -->
 <footer class="bg-[#8B4513] py-10 md:py-12 w-full">
-  <!-- Контент футера из главной страницы -->
-  <!-- ... -->
+  <div id="footer-contacts" class="container mx-auto px-4 md:px-6 w-full">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 w-full">
+      <!-- Лого и описание -->
+      <div class="footer-column">
+        <a href="/" class="text-2xl md:text-3xl font-['Pacifico'] mb-3 md:mb-4 block footer-logo">Алтайский мёд</a>
+        <p class="mb-3 md:mb-4 text-sm md:text-base">Натуральные продукты пчеловодства с Алтайских гор.</p>
+        <p class="text-sm md:text-base">© 2025 Алтайский мёд. Все права защищены.</p>
+      </div>
+      
+      <!-- Каталог -->
+      <div class="footer-column">
+        <h4 class="text-base md:text-lg font-bold">Каталог</h4>
+        <ul>
+          <li>
+            <a href="/#product-1" class="hover:text-gray-300 transition-colors flex items-center py-1">
+              <span class="bullet mr-2"></span>
+              <span class="text-sm md:text-base">Разнотравье</span>
+            </a>
+          </li>
+          <li>
+            <a href="/#product-2" class="hover:text-gray-300 transition-colors flex items-center py-1">
+              <span class="bullet mr-2"></span>
+              <span class="text-sm md:text-base">Таёжный мёд</span>
+            </a>
+          </li>
+          <li>
+            <a href="/#product-3" class="hover:text-gray-300 transition-colors flex items-center py-1">
+              <span class="bullet mr-2"></span>
+              <span class="text-sm md:text-base">Гречишный мёд</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- Материалы -->
+      <div class="footer-column">
+        <h4 class="text-base md:text-lg font-bold">Материалы</h4>
+        <ul>
+          <li>
+            <a href="/blog/" class="hover:text-gray-300 transition-colors flex items-center py-1">
+              <span class="bullet mr-2"></span>
+              <span class="text-sm md:text-base">Блог</span>
+            </a>
+          </li>
+          <li>
+            <a href="/faq/" class="hover:text-gray-300 transition-colors flex items-center py-1">
+              <span class="bullet mr-2"></span>
+              <span class="text-sm md:text-base">FAQ</span>
+            </a>
+          </li>
+          <li>
+            <a href="/legal.html" class="hover:text-gray-300 transition-colors flex items-center py-1">
+              <span class="bullet mr-2"></span>
+              <span class="text-sm md:text-base">Правовая информация</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- Информация -->
+      <div class="footer-column">
+        <h4 class="text-base md:text-lg font-bold">Информация</h4>
+        <ul>
+          <li>
+            <a href="/#benefits" class="hover:text-gray-300 transition-colors flex items-center py-1">
+              <span class="bullet mr-2"></span>
+              <span class="text-sm md:text-base">Преимущества</span>
+            </a>
+          </li>
+          <li>
+            <a href="/#about" class="hover:text-gray-300 transition-colors flex items-center py-1">
+              <span class="bullet mr-2"></span>
+              <span class="text-sm md:text-base">О нас</span>
+            </a>
+          </li>
+          <li>
+            <a href="/#footer-contacts" class="hover:text-gray-300 transition-colors flex items-center py-1">
+              <span class="bullet mr-2"></span>
+              <span class="text-sm md:text-base">Контакты</span>
+            </a>
+          </li>
+          <li>
+            <a href="/delivery.html" class="hover:text-gray-300 transition-colors flex items-center py-1">
+              <span class="bullet mr-2"></span>
+              <span class="text-sm md:text-base">Доставка и оплата</span>
+            </a>
+          </li>
+          <li>
+            <a href="/legal.html" class="hover:text-gray-300 transition-colors flex items-center py-1">
+              <span class="bullet mr-2"></span>
+              <span class="text-sm md:text-base">Политика конфиденциальности</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- Контакты -->
+      <div class="footer-column">
+        <h4 class="text-base md:text-lg font-bold">Контакты</h4>
+        <ul>
+          <li class="contact-item py-1">
+            <div class="contact-icon">
+              <i class="ri-map-pin-2-line ri-sm md:ri-base"></i>
+            </div>
+            <span class="text-sm md:text-base">Алтайский край, Солтонский район</span>
+          </li>
+          <li class="contact-item py-1">
+            <div class="contact-icon">
+              <i class="ri-phone-line ri-sm md:ri-base"></i>
+            </div>
+            <span class="text-sm md:text-base">+7 (920) 940-02-22</span>
+          </li>
+          <li class="contact-item py-1">
+            <div class="contact-icon">
+              <i class="ri-mail-line ri-sm md:ri-base"></i>
+            </div>
+            <span class="text-sm md:text-base">9209400222@mail.ru</span>
+          </li>
+        </ul>
+        
+        <!-- Социальные сети -->
+        <div class="mt-4 md:mt-6">
+          <p class="text-base md:text-lg font-bold mb-2 md:mb-3">Следите за нами</p>
+          <div class="flex space-x-2 md:space-x-3">
+            <a href="https://vk.com/honeybuckwheat" target="_blank" class="social-icon-bw">
+              <i class="ri-vk-line ri-lg"></i>
+            </a>
+            <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" class="social-icon-bw">
+              <i class="ri-telegram-line ri-lg"></i>
+            </a>
+            <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?context=H4sIAAAAAAAA_wE_AMD_YToyOntzOjEzOiJsb2NhbFByaW9yaXR5IjtiOjA7czoxOiJ4IjtzOjE2OiJES2U0ckc1ZzltRkZZeW1xIjt9bqqAxT8AAAA" 
+               target="_blank" class="social-icon-bw">
+              <div class="avito-icon-bw">
+                <svg viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg">
+                  <path fill="#04e061" d="M61.924 172.07c26.468 0 47.924-21.456 47.924-47.924S88.392 76.222 61.924 76.222 14 97.678 14 124.146s21.456 47.925 47.924 47.925z" transform="translate(7.024 7.024) scale(.92683)"/>
+                  <path fill="#ff4053" d="M149.044 166.007c15.992 0 28.956-12.963 28.956-28.955 0-15.992-12.964-28.955-28.956-28.955-15.99 0-28.954 12.963-28.954 28.955 0 15.992 12.963 28.955 28.954 28.955z" transform="translate(7.024 7.024) scale(.92683)"/>
+                  <path fill="#965eeb" d="M71.086 65.979c9.898 0 17.922-8.024 17.922-17.921 0-9.898-8.024-17.922-17.922-17.922-9.898 0-17.921 8.024-17.921 17.922 0 9.897 8.023 17.921 17.921 17.921z" transform="translate(7.024 7.024) scale(.92683)"/>
+                  <path fill="#0af" d="M137.789 97.856c21.519 0 38.964-17.444 38.964-38.963 0-21.52-17.445-38.964-38.964-38.964-21.52 0-38.964 17.445-38.964 38.964s17.445 38.963 38.964 38.963z" transform="translate(7.024 7.024) scale(.92683)"/>
+                </svg>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </footer>
 
-<!-- Скрипты из главной страницы -->
-<!-- ... -->
+<!-- Скрипты -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Кнопка "На главную"
+  const homeButton = document.querySelector('.home-button');
+  
+  // Показываем кнопку при скролле
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 300) {
+      homeButton.classList.add('visible');
+    } else {
+      homeButton.classList.remove('visible');
+    }
+  });
+  
+  // Плавная прокрутка к якорям
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      if (this.getAttribute('href') === '#') return;
+      
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+      
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop - 80,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+});
+</script>
 </body>
 </html>

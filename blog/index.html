@@ -71,6 +71,37 @@ tailwind.config = {
 <style>
 /* Все стили из главной страницы */
 /* ... */
+
+/* Стили для плавающей кнопки "На главную" */
+.home-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #6B8E23;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.home-btn.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.home-btn:hover {
+  background-color: #5a7a1d;
+  transform: translateY(-3px);
+}
 </style>
 </head>
 <body>
@@ -147,7 +178,7 @@ tailwind.config = {
         <div class="p-6">
           <h2 class="text-xl md:text-2xl font-bold mb-2">Мёд в здоровом питании</h2>
           <p class="text-gray-600 mb-4">Как правильно использовать мёд в ежедневном рационе. Рецепты и советы по включению натурального мёда в здоровое питание для всей семьи.</p>
-          <a href="#" class="text-primary font-medium hover:underline">
+          <a href="/blog/med-v-zdorovom-pitanii.html" class="text-primary font-medium hover:underline">
             Читать статью
           </a>
         </div>
@@ -164,7 +195,7 @@ tailwind.config = {
         <div class="p-6">
           <h2 class="text-xl md:text-2xl font-bold mb-2">Традиции алтайского пчеловодства</h2>
           <p class="text-gray-600 mb-4">История и секреты алтайских пасечников. Узнайте о многовековых традициях сбора мёда в горных районах Алтая.</p>
-          <a href="#" class="text-primary font-medium hover:underline">
+          <a href="/blog/tradicii-altayskogo-pchelovodstva.html" class="text-primary font-medium hover:underline">
             Читать статью
           </a>
         </div>
@@ -201,6 +232,21 @@ tailwind.config = {
     
     document.querySelectorAll("img.lazyload").forEach(img => {
       observer.observe(img);
+    });
+    
+    // Управление кнопкой "На главную"
+    const homeBtn = document.createElement('a');
+    homeBtn.href = '/';
+    homeBtn.className = 'home-btn';
+    homeBtn.innerHTML = '<i class="ri-home-line"></i>';
+    document.body.appendChild(homeBtn);
+    
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 300) {
+        homeBtn.classList.add('visible');
+      } else {
+        homeBtn.classList.remove('visible');
+      }
     });
   });
 </script>

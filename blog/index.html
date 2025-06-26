@@ -180,7 +180,7 @@ footer .grid {
   text-align: left !important;
   list-style-type: none !important;
   padding: 0 !important;
-  margin: 0 0 -0.5rem 0 !important;
+  margin: 0 !important;
   box-sizing: border-box !important;
 }
 
@@ -259,12 +259,12 @@ footer a:hover {
   filter: grayscale(0%);
 }
 
-/* УМЕНЬШЕННЫЕ ОТСТУПЫ МЕЖДУ КОНТАКТАМИ НА 20% */
-#footer-contacts .footer-column:last-child ul li {
-  padding-top: 0.75rem !important; /* 0.94 * 0.8 = 0.75rem */
-  padding-bottom: 0.75rem !important; /* 0.94 * 0.8 = 0.75rem */
-  display: flex !important;
-  align-items: center !important;
+/* ОДИНАКОВЫЕ ОТСТУПЫ ВО ВСЕХ БЛОКАХ */
+.footer-link-item {
+  display: flex;
+  align-items: center;
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
 }
 
 .contact-icon {
@@ -279,11 +279,6 @@ footer a:hover {
 .contact-text {
   flex-grow: 1;
   line-height: 1.5;
-}
-
-.footer-link-item {
-  padding-top: 0.25rem !important;
-  padding-bottom: 0.25rem !important;
 }
 
 .blog-post-card {
@@ -454,7 +449,7 @@ footer a:hover {
 </section>
 </main>
 
-<!-- Футер с уменьшенными отступами между контактами -->
+<!-- Футер с одинаковыми отступами во всех блоках -->
 <footer class="py-10 md:py-12 w-full">
   <div id="footer-contacts" class="container mx-auto px-4 md:px-6 w-full">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 w-full">
@@ -550,23 +545,29 @@ footer a:hover {
       <div class="footer-column">
         <h4 class="text-base md:text-lg font-bold">Контакты</h4>
         <ul>
-          <li class="contact-item">
-            <div class="contact-icon">
-              <i class="ri-map-pin-2-line ri-sm md:ri-base"></i>
-            </div>
-            <span class="contact-text">Алтайский край, Солтонский район</span>
+          <li>
+            <a class="footer-link-item">
+              <div class="contact-icon">
+                <i class="ri-map-pin-2-line ri-sm md:ri-base"></i>
+              </div>
+              <span class="contact-text">Алтайский край, Солтонский район</span>
+            </a>
           </li>
-          <li class="contact-item">
-            <div class="contact-icon">
-              <i class="ri-phone-line ri-sm md:ri-base"></i>
-            </div>
-            <span class="contact-text">+7 (920) 940-02-22</span>
+          <li>
+            <a href="tel:+79209400222" class="footer-link-item">
+              <div class="contact-icon">
+                <i class="ri-phone-line ri-sm md:ri-base"></i>
+              </div>
+              <span class="contact-text">+7 (920) 940-02-22</span>
+            </a>
           </li>
-          <li class="contact-item">
-            <div class="contact-icon">
-              <i class="ri-mail-line ri-sm md:ri-base"></i>
-            </div>
-            <span class="contact-text">9209400222@mail.ru</span>
+          <li>
+            <a href="mailto:9209400222@mail.ru" class="footer-link-item">
+              <div class="contact-icon">
+                <i class="ri-mail-line ri-sm md:ri-base"></i>
+              </div>
+              <span class="contact-text">9209400222@mail.ru</span>
+            </a>
           </li>
         </ul>
         

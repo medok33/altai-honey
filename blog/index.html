@@ -114,8 +114,8 @@ footer::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48cGF0dGVybiBpZD0iaGV4YWdvbiIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIiBwYXR0ZXJuVHJhbnNmb3JtPSJyb3RhdGUoMzApIj48cGF0aCBkPSJNMCwwTDEwLDBNMjAsMEwxMCwxNy4zMk0xMCwxNy4zMkwwLDM0LjY0TTEwLDE3LjMyTDIwLDM0LjY0IiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMC43IiBzdHJva2Utb3BhY2l0eT0iMC4xNSIgZmlsbD0ibm9uZSIgLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjaGV4YWdvbikiIC8+PC9zdmc+');
-  background-size: 120px;
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48cGF0dGVybiBpZD0iaGV4YWdvbiIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI4IiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNMTIsMEwyNCw3TDI0LDIxTDEyLDI4TDAsMjFMMCw3TDEyLDBaIiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMTUiIHN0cm9rZT0ibm9uZSIgLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjaGV4YWdvbikiIC8+PC9zdmc+');
+  background-size: 48px 28px;
   opacity: 0.8;
   z-index: 0;
 }
@@ -331,7 +331,6 @@ footer a:hover {
 
 .floating-back-button:hover {
   background: #e69500;
-  transform: scale(1.05);
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
@@ -341,41 +340,20 @@ footer a:hover {
   height: 24px;
 }
 
-.back-arrow::before,
-.back-arrow::after {
+.back-arrow::before {
   content: '';
   position: absolute;
-  background-color: white;
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-.back-arrow::before {
-  width: 18px;
-  height: 3px;
   top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-}
-
-.back-arrow::after {
-  width: 10px;
-  height: 10px;
+  left: 50%;
+  width: 14px;
+  height: 14px;
   border-top: 3px solid white;
   border-left: 3px solid white;
-  transform: rotate(-45deg);
-  top: 7px;
-  left: 0;
+  transform: translate(-30%, -50%) rotate(-45deg);
 }
 
 /* Анимации при наведении */
 .floating-back-button:hover .back-arrow::before {
-  transform: translateY(-50%) translateX(-2px);
-  background-color: #fff;
-}
-
-.floating-back-button:hover .back-arrow::after {
-  transform: rotate(-45deg) translateX(-2px);
   border-color: #fff;
 }
 </style>

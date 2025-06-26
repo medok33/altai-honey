@@ -95,150 +95,124 @@ body {
   color: #6B8E23 !important;
 }
 
-/* ИДЕАЛЬНАЯ ВАФЕЛЬНАЯ СЕТКА С ПОВОРОТОМ */
 footer {
+  width: 100% !important;
+  box-sizing: border-box !important;
   position: relative;
   overflow: hidden;
   background-color: #8B4513;
   z-index: 1;
-  width: 100%;
 }
 
-/* Создаем вафельную сетку с помощью псевдоэлементов */
+/* ИДЕАЛЬНАЯ ВАФЕЛЬНАЯ СЕТКА */
 footer::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
-  width: 200%;
-  height: 200%;
+  width: 100%;
+  height: 100%;
   background-image: 
-    /* Горизонтальные линии */
-    linear-gradient(to right, 
-      transparent 47%, 
-      rgba(255,255,255,0.15) 47%, 
-      rgba(255,255,255,0.15) 53%, 
-      transparent 53%
-    ),
-    /* Вертикальные линии */
-    linear-gradient(to bottom, 
-      transparent 47%, 
-      rgba(255,255,255,0.15) 47%, 
-      rgba(255,255,255,0.15) 53%, 
-      transparent 53%
-    ),
-    /* Диагональные линии (30 градусов) */
-    linear-gradient(30deg, 
-      transparent 47%, 
-      rgba(255,255,255,0.15) 47%, 
-      rgba(255,255,255,0.15) 53%, 
-      transparent 53%
-    ),
-    /* Диагональные линии (-30 градусов) */
-    linear-gradient(-30deg, 
-      transparent 47%, 
-      rgba(255,255,255,0.15) 47%, 
-      rgba(255,255,255,0.15) 53%, 
-      transparent 53%
-    );
-  
-  /* Размер ячейки */
-  background-size: 50px 50px, 50px 50px, 50px 50px, 50px 50px;
-  
-  /* Центрируем сетку */
-  background-position: center;
-  
-  /* Поворачиваем всю сетку на 30 градусов */
+    linear-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+  background-size: 108px 108px;
   transform: rotate(30deg);
-  
-  /* Сдвигаем для выравнивания */
-  transform-origin: top left;
-  
   opacity: 0.6;
   z-index: 0;
 }
 
-/* Контент футера поверх узора */
-.footer-content {
-  position: relative;
-  z-index: 2;
+/* Гарантия полного покрытия */
+footer::after {
+  content: "";
+  position: absolute;
+  top: -108px;
+  left: -108px;
+  width: calc(100% + 216px);
+  height: calc(100% + 216px);
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+  background-size: 108px 108px;
+  transform: rotate(30deg);
+  opacity: 0.6;
+  z-index: 0;
 }
 
 footer .container {
-  width: 100%;
-  max-width: 100%;
-  padding-right: 1.5rem;
-  padding-left: 1.5rem;
+  width: 100% !important;
+  max-width: 100% !important;
+  padding-right: 1.5rem !important;
+  padding-left: 1.5rem !important;
   position: relative;
   z-index: 1;
 }
 
 footer .grid {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
+  width: 100% !important;
+  display: grid !important;
+  grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
 }
 
 @media (min-width: 768px) {
   footer .grid {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
   }
 }
 
 .footer-column {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
 }
 
 .footer-column h4 {
-  text-align: left;
-  width: 100%;
-  padding: 0;
-  margin: 0 0 1rem 0;
-  font-weight: bold;
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+  text-align: left !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 0 1rem 0 !important;
+  font-weight: bold !important;
+  font-size: 1.125rem !important;
+  line-height: 1.75rem !important;
 }
 
 .footer-column ul {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  list-style: none;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  list-style: none !important;
 }
 
 .footer-column li {
-  width: 100%;
-  text-align: left;
-  list-style-type: none;
-  padding: 0;
-  margin: 0 0 -0.5rem 0;
-  box-sizing: border-box;
+  width: 100% !important;
+  text-align: left !important;
+  list-style-type: none !important;
+  padding: 0 !important;
+  margin: 0 0 -0.5rem 0 !important;
+  box-sizing: border-box !important;
 }
 
 .footer-column li a {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  box-sizing: border-box;
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
 }
 
 .footer-column .bullet {
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  background-color: white;
-  border-radius: 50%;
-  margin-right: 10px;
-  flex-shrink: 0;
+  display: inline-block !important;
+  width: 6px !important;
+  height: 6px !important;
+  background-color: white !important;
+  border-radius: 50% !important;
+  margin-right: 10px !important;
+  flex-shrink: 0 !important;
 }
 
 footer, 
@@ -248,11 +222,11 @@ footer p,
 footer span, 
 footer h4, 
 footer li {
-  color: white;
-  box-sizing: border-box;
+  color: white !important;
+  box-sizing: border-box !important;
 }
 footer a:hover {
-  color: #d1d5db;
+  color: #d1d5db !important;
 }
 
 .footer-column li a {
@@ -321,8 +295,8 @@ footer a:hover {
 }
 
 .footer-link-item {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
+  padding-top: 0.25rem !important;
+  padding-bottom: 0.25rem !important;
 }
 
 .blog-post-card {
@@ -334,16 +308,16 @@ footer a:hover {
 }
 
 .active-nav-link-alt {
-  border: 2px solid #6B8E23;
-  border-radius: 8px;
-  padding: 4px 12px;
-  color: #6B8E23;
-  font-weight: 600;
+  border: 2px solid #6B8E23 !important;
+  border-radius: 8px !important;
+  padding: 4px 12px !important;
+  color: #6B8E23 !important;
+  font-weight: 600 !important;
   transition: all 0.3s ease;
 }
 
 .active-nav-link-alt:hover {
-  background: rgba(107, 142, 35, 0.1);
+  background: rgba(107, 142, 35, 0.1) !important;
 }
 
 .floating-back-button {
@@ -487,9 +461,9 @@ footer a:hover {
 </section>
 </main>
 
-<!-- Футер с ПРАВИЛЬНОЙ вафельной сеткой -->
+<!-- Футер с идеальной вафельной сеткой -->
 <footer class="py-10 md:py-12 w-full">
-  <div id="footer-contacts" class="container mx-auto px-4 md:px-6 w-full footer-content">
+  <div id="footer-contacts" class="container mx-auto px-4 md:px-6 w-full">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 w-full">
       <!-- Лого и описание -->
       <div class="footer-column">

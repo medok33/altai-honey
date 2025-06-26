@@ -114,8 +114,8 @@ footer::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPgo8ZGVmcz4KICA8cGF0dGVybiBpZD0iaGV4IiB3aWR0aD0iMTAwIiBoZWlnaHQ9Ijg2LjYiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgPHBvbHlnb24gcG9pbnRzPSI1MCwwIDkwLDI1IDkwLDc1IDUwLDEwMCAxMCw3NSAxMCwyNSIgZmlsbD0iI2ZmZmZmZiIgZmlsbC1vcGFjaXR5PSIwLjEiLz4KICAgIDxwb2x5Z29uIHBvaW50cz0iMTAsMjUgMTAsNzUgNTAsMTAwIDkwLDc1IDkwLDI1IDUwLDAiIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIi8+CiAgPC9wYXR0ZXJuPgo8L2RlZnM+CjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjaGV4KSIgLz4KPC9zdmc+');
-  background-size: 120px 104px;
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPgogIDxkZWZzPgogICAgPHBhdHRlcm4gaWQ9ImhleGFnb25zIiB3aWR0aD0iODAiIGhlaWdodD0iOTIuMzgiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgICA8cGF0aCBkPSJNMCA0Ni4xOUw0MCAwTDgwIDQ2LjE5TDgwIDkyLjM4TDQwIDEzOC41N0wwIDkyLjM4WiIgZmlsbD0iI2ZmZmZmZiIgZmlsbC1vcGFjaXR5PSIwLjEiLz4KICAgICAgPHBhdGggZD0iTTQwIDkyLjM4TDgwIDQ2LjE5TDEyMCA5Mi4zOEw4MCAxMzguNTdMNDAgMTM4LjU3TDAgOTIuMzhaIiBmaWxsPSIjZmZmZmZmIiBmaWxsLW9wYWNpdHk9IjAuMSIvPgogICAgPC9wYXR0ZXJuPgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2hleGFnb25zKSIgLz4KPC9zdmc+');
+  background-size: 80px 92.38px;
   opacity: 0.8;
   z-index: 0;
 }
@@ -296,40 +296,6 @@ footer a:hover {
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
-/* Стили для плавающей кнопки */
-#back-button {
-  transition: opacity 0.5s ease;
-}
-
-/* Новый стиль для кнопки "Назад" */
-.floating-back-button {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  z-index: 50;
-  width: 3.5rem;
-  height: 3.5rem;
-  border-radius: 50%;
-  background: #6B8E23;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
-  opacity: 0;
-}
-
-.floating-back-button:hover {
-  background: #5a7c1f;
-  transform: scale(1.1);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-}
-
-.floating-back-button i {
-  font-size: 1.5rem;
-}
-
 /* СТИЛЬ ДЛЯ АКТИВНОГО РАЗДЕЛА В НАВИГАЦИИ */
 .active-nav-link-alt {
   border: 2px solid #6B8E23 !important;
@@ -342,6 +308,82 @@ footer a:hover {
 
 .active-nav-link-alt:hover {
   background: rgba(107, 142, 35, 0.1) !important;
+}
+
+/* Стиль для новой кнопки "Назад" */
+.floating-back-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 50;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background: #FFA500;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.floating-back-button:hover {
+  background: #e69500;
+  transform: scale(1.1);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.floating-back-button i {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.floating-back-button:hover i {
+  transform: translateX(-3px) scale(1.1);
+}
+
+/* Стиль для новой стрелки */
+.back-arrow {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.back-arrow::before,
+.back-arrow::after {
+  content: '';
+  position: absolute;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.back-arrow::before {
+  width: 16px;
+  height: 3px;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.back-arrow::after {
+  width: 10px;
+  height: 10px;
+  border-top: 3px solid white;
+  border-left: 3px solid white;
+  transform: rotate(-45deg);
+  top: 7px;
+  left: 0;
+}
+
+.floating-back-button:hover .back-arrow::before {
+  width: 20px;
+}
+
+.floating-back-button:hover .back-arrow::after {
+  transform: rotate(-45deg) translateX(-3px);
 }
 </style>
 </head>
@@ -537,12 +579,7 @@ footer a:hover {
               <span class="text-sm md:text-base">Доставка и оплата</span>
             </a>
           </li>
-          <li>
-            <a href="/privacy.html" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">Политика конфиденциальности</span>
-            </a>
-          </li>
+          <!-- Пункт "Политика конфиденциальности" удален по запросу -->
         </ul>
       </div>
       
@@ -623,9 +660,9 @@ footer a:hover {
   });
 </script>
 
-<!-- Плавающая кнопка "Назад" -->
+<!-- Плавающая кнопка "Назад" с новым дизайном -->
 <a href="#" id="back-button" class="floating-back-button">
-  <i class="ri-arrow-left-line"></i>
+  <div class="back-arrow"></div>
 </a>
 
 <!-- Скрипт для управления плавающей кнопкой -->
@@ -636,13 +673,11 @@ footer a:hover {
     // Показываем/скрываем кнопку при скролле
     let isScrolling;
     window.addEventListener('scroll', function() {
-      backButton.classList.remove('opacity-0');
-      backButton.classList.add('opacity-100');
+      backButton.style.opacity = "1";
       
       clearTimeout(isScrolling);
       isScrolling = setTimeout(function() {
-        backButton.classList.remove('opacity-100');
-        backButton.classList.add('opacity-0');
+        backButton.style.opacity = "0";
       }, 2000);
     });
     

@@ -101,6 +101,23 @@ body {
 footer {
   width: 100% !important;
   box-sizing: border-box !important;
+  position: relative;
+  overflow: hidden;
+  background-color: #8B4513;
+}
+
+/* Фон в виде пчелиных сот */
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 104" width="120" height="104"><path d="M60,0 L90,26 L90,78 L60,104 L30,78 L30,26 Z" fill="%239f5524" fill-opacity="0.08"/><path d="M0,52 L30,26 L30,78 L0,104 Z" fill="%239f5524" fill-opacity="0.08"/><path d="M120,52 L90,26 L90,78 L120,104 Z" fill="%239f5524" fill-opacity="0.08"/></svg>');
+  background-size: 120px 104px;
+  opacity: 0.3;
+  z-index: 0;
 }
 
 footer .container {
@@ -108,6 +125,8 @@ footer .container {
   max-width: 100% !important;
   padding-right: 1.5rem !important;
   padding-left: 1.5rem !important;
+  position: relative;
+  z-index: 1;
 }
 
 footer .grid {
@@ -312,50 +331,6 @@ footer a:hover {
 }
 
 /* СТИЛЬ ДЛЯ АКТИВНОГО РАЗДЕЛА В НАВИГАЦИИ */
-.active-nav-link {
-  position: relative;
-  font-weight: 600 !important;
-  color: #6B8E23 !important; /* Основной цвет сайта */
-}
-
-.active-nav-link::before {
-  content: '';
-  position: absolute;
-  bottom: -6px;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: #6B8E23; /* Основной цвет сайта */
-  border-radius: 2px;
-  transform: scaleX(0.8);
-  transition: transform 0.3s ease;
-}
-
-.active-nav-link:hover::before {
-  transform: scaleX(1);
-}
-
-/* Для мобильного меню */
-.active-nav-link-mobile {
-  position: relative;
-  font-weight: 600 !important;
-  color: #6B8E23 !important;
-  padding-left: 12px;
-}
-
-.active-nav-link-mobile::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 20px;
-  width: 4px;
-  background: #6B8E23;
-  border-radius: 2px;
-}
-
-/* Стиль для активного раздела в навигации (альтернативный вариант) */
 .active-nav-link-alt {
   border: 2px solid #6B8E23 !important;
   border-radius: 8px !important;
@@ -473,8 +448,8 @@ footer a:hover {
 </section>
 </main>
 
-<!-- Футер -->
-<footer class="bg-[#8B4513] py-10 md:py-12 w-full">
+<!-- Футер с узором пчелиных сот -->
+<footer class="py-10 md:py-12 w-full">
   <div id="footer-contacts" class="container mx-auto px-4 md:px-6 w-full">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 w-full">
       <!-- Лого и описание -->

@@ -244,8 +244,8 @@ footer a:hover {
 .contact-item {
   display: flex;
   align-items: center;
-  padding-top: 0.5rem; /* Добавлено для выравнивания */
-  padding-bottom: 0.5rem; /* Добавлено для выравнивания */
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .contact-icon {
@@ -253,7 +253,13 @@ footer a:hover {
   align-items: center;
   justify-content: center;
   margin-right: 12px;
-  flex-shrink: 0; /* Предотвращает сжатие иконок */
+  flex-shrink: 0;
+  width: 24px; /* Фиксированная ширина для выравнивания */
+}
+
+.contact-text {
+  flex-grow: 1;
+  line-height: 1.5; /* Улучшенный межстрочный интервал */
 }
 
 /* Анимации для карточек */
@@ -417,19 +423,19 @@ footer a:hover {
         <h4 class="text-base md:text-lg font-bold">Каталог</h4>
         <ul>
           <li>
-            <a href="/#product-1" class="hover:text-gray-300 transition-colors flex items-center py-2"> <!-- Изменено py-1 на py-2 -->
+            <a href="/#product-1" class="hover:text-gray-300 transition-colors flex items-center py-2">
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Разнотравье</span>
             </a>
           </li>
           <li>
-            <a href="/#product-2" class="hover:text-gray-300 transition-colors flex items-center py-2"> <!-- Изменено py-1 на py-2 -->
+            <a href="/#product-2" class="hover:text-gray-300 transition-colors flex items-center py-2">
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Таёжный мёд</span>
             </a>
           </li>
           <li>
-            <a href="/#product-3" class="hover:text-gray-300 transition-colors flex items-center py-2"> <!-- Изменено py-1 на py-2 -->
+            <a href="/#product-3" class="hover:text-gray-300 transition-colors flex items-center py-2">
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Гречишный мёд</span>
             </a>
@@ -442,19 +448,19 @@ footer a:hover {
         <h4 class="text-base md:text-lg font-bold">Материалы</h4>
         <ul>
           <li>
-            <a href="/blog/" class="hover:text-gray-300 transition-colors flex items-center py-2"> <!-- Изменено py-1 на py-2 -->
+            <a href="/blog/" class="hover:text-gray-300 transition-colors flex items-center py-2">
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Блог</span>
             </a>
           </li>
           <li>
-            <a href="/faq/" class="hover:text-gray-300 transition-colors flex items-center py-2"> <!-- Изменено py-1 на py-2 -->
+            <a href="/faq/" class="hover:text-gray-300 transition-colors flex items-center py-2">
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">FAQ</span>
             </a>
           </li>
           <li>
-            <a href="/legal.html" class="hover:text-gray-300 transition-colors flex items-center py-2"> <!-- Изменено py-1 на py-2 -->
+            <a href="/legal.html" class="hover:text-gray-300 transition-colors flex items-center py-2">
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Правовая информация</span>
             </a>
@@ -467,31 +473,31 @@ footer a:hover {
         <h4 class="text-base md:text-lg font-bold">Информация</h4>
         <ul>
           <li>
-            <a href="/#benefits" class="hover:text-gray-300 transition-colors flex items-center py-2"> <!-- Изменено py-1 на py-2 -->
+            <a href="/#benefits" class="hover:text-gray-300 transition-colors flex items-center py-2">
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Преимущества</span>
             </a>
           </li>
           <li>
-            <a href="/#about" class="hover:text-gray-300 transition-colors flex items-center py-2"> <!-- Изменено py-1 на py-2 -->
+            <a href="/#about" class="hover:text-gray-300 transition-colors flex items-center py-2">
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">О нас</span>
             </a>
           </li>
           <li>
-            <a href="/#footer-contacts" class="hover:text-gray-300 transition-colors flex items-center py-2"> <!-- Изменено py-1 на py-2 -->
+            <a href="/#footer-contacts" class="hover:text-gray-300 transition-colors flex items-center py-2">
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Контакты</span>
             </a>
           </li>
           <li>
-            <a href="/delivery.html" class="hover:text-gray-300 transition-colors flex items-center py-2"> <!-- Изменено py-1 на py-2 -->
+            <a href="/delivery.html" class="hover:text-gray-300 transition-colors flex items-center py-2">
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Доставка и оплата</span>
             </a>
           </li>
           <li>
-            <a href="/privacy.html" class="hover:text-gray-300 transition-colors flex items-center py-2"> <!-- Изменено py-1 на py-2 -->
+            <a href="/privacy.html" class="hover:text-gray-300 transition-colors flex items-center py-2">
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Политика конфиденциальности</span>
             </a>
@@ -499,7 +505,7 @@ footer a:hover {
         </ul>
       </div>
       
-      <!-- Контакты -->
+      <!-- Контакты (выровненная версия) -->
       <div class="footer-column">
         <h4 class="text-base md:text-lg font-bold">Контакты</h4>
         <ul>
@@ -507,19 +513,19 @@ footer a:hover {
             <div class="contact-icon">
               <i class="ri-map-pin-2-line ri-sm md:ri-base"></i>
             </div>
-            <span class="text-sm md:text-base">Алтайский край, Солтонский район</span>
+            <span class="contact-text">Алтайский край, Солтонский район</span>
           </li>
           <li class="contact-item">
             <div class="contact-icon">
               <i class="ri-phone-line ri-sm md:ri-base"></i>
             </div>
-            <span class="text-sm md:text-base">+7 (920) 940-02-22</span>
+            <span class="contact-text">+7 (920) 940-02-22</span>
           </li>
           <li class="contact-item">
             <div class="contact-icon">
               <i class="ri-mail-line ri-sm md:ri-base"></i>
             </div>
-            <span class="text-sm md:text-base">9209400222@mail.ru</span>
+            <span class="contact-text">9209400222@mail.ru</span>
           </li>
         </ul>
         

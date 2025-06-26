@@ -110,20 +110,18 @@ footer::before {
   position: absolute;
   top: 0;
   left: 0;
-  width: 600%; /* Увеличение на 20% (500% * 1.2) */
-  height: 600%; /* Увеличение на 20% */
+  width: 600%;
+  height: 600%;
   background-image: 
     linear-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
-  background-size: 108px 108px; /* Размер клетки остается прежним */
+  background-size: 108px 108px;
   transform: rotate(30deg);
   transform-origin: 0 0;
   opacity: 0.6;
   z-index: 0;
-  
-  /* Центрирование и сдвиг вправо на 20% */
-  margin-left: -220%; /* Увеличенный сдвиг вправо */
-  margin-top: -220%; /* Увеличенный сдвиг вниз */
+  margin-left: -220%;
+  margin-top: -220%;
 }
 
 footer .container {
@@ -261,12 +259,12 @@ footer a:hover {
   filter: grayscale(0%);
 }
 
-/* УВЕЛИЧЕННЫЕ ОТСТУПЫ МЕЖДУ КОНТАКТАМИ НА 30% */
-.contact-item {
-  display: flex;
-  align-items: center;
-  padding-top: 1.17rem !important; /* Увеличение на 30% */
-  padding-bottom: 1.17rem !important; /* Увеличение на 30% */
+/* ИСПРАВЛЕНИЕ: УВЕЛИЧЕННЫЕ ОТСТУПЫ МЕЖДУ КОНТАКТАМИ */
+#footer-contacts .footer-column:last-child ul li {
+  padding-top: 1.17rem !important;
+  padding-bottom: 1.17rem !important;
+  display: flex !important;
+  align-items: center !important;
 }
 
 .contact-icon {
@@ -346,10 +344,9 @@ footer a:hover {
   transform: translateX(-4px);
 }
 
-/* Явно задаем белый цвет для логотипа и текста в футере */
-.footer-logo,
-.footer-column:first-child p,
-.footer-column:first-child span {
+/* ИСПРАВЛЕНИЕ: БЕЛЫЙ ЦВЕТ ТЕКСТА В ПЕРВОМ БЛОКЕ ФУТЕРА */
+#footer-contacts .footer-column:first-child,
+#footer-contacts .footer-column:first-child * {
   color: white !important;
 }
 </style>
@@ -463,7 +460,7 @@ footer a:hover {
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 w-full">
       <!-- Лого и описание -->
       <div class="footer-column">
-        <a href="/" class="text-2xl md:text-3xl font-['Pacifico'] mb-3 md:mb-4 block footer-logo">Алтайский мёд</a>
+        <a href="/" class="text-2xl md:text-3xl font-['Pacifico'] mb-3 md:mb-4 block">Алтайский мёд</a>
         <p class="mb-3 md:mb-4 text-sm md:text-base">Натуральные продукты пчеловодства с Алтайских гор.</p>
         <p class="text-sm md:text-base">© 2025 Алтайский мёд. Все права защищены.</p>
       </div>

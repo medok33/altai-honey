@@ -106,7 +106,7 @@ footer {
   background-color: #8B4513;
 }
 
-/* ОБНОВЛЕННЫЙ ФОН С ВАФЕЛЬНОЙ СЕТКОЙ */
+/* ОБНОВЛЕННЫЙ ФОН С ВАФЕЛЬНОЙ СЕТКОЙ (увеличенная в 3 раза и повернутая на 30 градусов) */
 footer::before {
   content: "";
   position: absolute;
@@ -117,10 +117,10 @@ footer::before {
   background-image: 
     linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-  background-size: 90px 90px; /* Увеличенный размер сетки */
+  background-size: 90px 90px; /* Увеличен в 3 раза */
+  transform: rotate(30deg); /* Наклон на 30 градусов */
   opacity: 0.6;
   z-index: 0;
-  transform: rotate(30deg); /* Наклон сетки на 30 градусов */
 }
 
 footer .container {
@@ -313,7 +313,7 @@ footer a:hover {
   background: rgba(107, 142, 35, 0.1) !important;
 }
 
-/* ОБНОВЛЕННАЯ СТРЕЛОЧКА НАЗАД - СТИЛЬНАЯ ВЕРСИЯ */
+/* ОБНОВЛЕННАЯ СТРЕЛКА НАЗАД С ИЗМЕНЕННЫМ ЦВЕТОМ */
 .floating-back-button {
   position: fixed;
   bottom: 2rem;
@@ -323,7 +323,6 @@ footer a:hover {
   height: 3.5rem;
   border-radius: 50%;
   background: #6B8E23;
-  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -331,7 +330,6 @@ footer a:hover {
   transition: all 0.3s ease;
   opacity: 0;
   transform: scale(0.95);
-  cursor: pointer;
 }
 
 .floating-back-button:hover {
@@ -341,30 +339,16 @@ footer a:hover {
 }
 
 .back-arrow {
-  position: relative;
   width: 24px;
   height: 24px;
-  transform: rotate(180deg);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23ffffff' d='M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: transform 0.3s ease;
 }
 
-.back-arrow::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 18px;
-  height: 18px;
-  border-top: 3px solid white;
-  border-right: 3px solid white;
-  transform: translate(-50%, -50%) rotate(135deg);
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-/* Анимация при наведении */
-.floating-back-button:hover .back-arrow::before {
-  border-width: 4px;
-  transform: translate(-50%, -50%) rotate(135deg) scale(1.1);
+.floating-back-button:hover .back-arrow {
+  transform: translateX(-4px);
 }
 </style>
 </head>

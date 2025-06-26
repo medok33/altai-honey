@@ -259,10 +259,10 @@ footer a:hover {
   filter: grayscale(0%);
 }
 
-/* ИСПРАВЛЕНИЕ: УВЕЛИЧЕННЫЕ ОТСТУПЫ МЕЖДУ КОНТАКТАМИ */
+/* УМЕНЬШЕННЫЕ ОТСТУПЫ МЕЖДУ КОНТАКТАМИ НА 20% */
 #footer-contacts .footer-column:last-child ul li {
-  padding-top: 1.17rem !important;
-  padding-bottom: 1.17rem !important;
+  padding-top: 0.75rem !important; /* 0.94 * 0.8 = 0.75rem */
+  padding-bottom: 0.75rem !important; /* 0.94 * 0.8 = 0.75rem */
   display: flex !important;
   align-items: center !important;
 }
@@ -344,7 +344,7 @@ footer a:hover {
   transform: translateX(-4px);
 }
 
-/* ИСПРАВЛЕНИЕ: БЕЛЫЙ ЦВЕТ ТЕКСТА В ПЕРВОМ БЛОКЕ ФУТЕРА */
+/* БЕЛЫЙ ЦВЕТ ТЕКСТА В ПЕРВОМ БЛОКЕ ФУТЕРА */
 #footer-contacts .footer-column:first-child,
 #footer-contacts .footer-column:first-child * {
   color: white !important;
@@ -454,7 +454,7 @@ footer a:hover {
 </section>
 </main>
 
-<!-- Футер с увеличенными отступами между контактами -->
+<!-- Футер с уменьшенными отступами между контактами -->
 <footer class="py-10 md:py-12 w-full">
   <div id="footer-contacts" class="container mx-auto px-4 md:px-6 w-full">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 w-full">

@@ -110,20 +110,20 @@ footer::before {
   position: absolute;
   top: 0;
   left: 0;
-  width: 500%; /* Увеличиваем сетку в 5 раз */
-  height: 500%; /* Увеличиваем сетку в 5 раз */
+  width: 600%; /* Увеличение на 20% (500% * 1.2) */
+  height: 600%; /* Увеличение на 20% */
   background-image: 
     linear-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
   background-size: 108px 108px; /* Размер клетки остается прежним */
   transform: rotate(30deg);
-  transform-origin: 0 0; /* Фиксируем точку трансформации */
+  transform-origin: 0 0;
   opacity: 0.6;
   z-index: 0;
   
-  /* Центрируем увеличенную сетку */
-  margin-left: -100%;
-  margin-top: -100%;
+  /* Центрирование и сдвиг вправо на 20% */
+  margin-left: -220%; /* Увеличенный сдвиг вправо */
+  margin-top: -220%; /* Увеличенный сдвиг вниз */
 }
 
 footer .container {
@@ -449,7 +449,7 @@ footer a:hover {
 </section>
 </main>
 
-<!-- Футер с исправленной вафельной сеткой -->
+<!-- Футер с идеально покрытой вафельной сеткой -->
 <footer class="py-10 md:py-12 w-full">
   <div id="footer-contacts" class="container mx-auto px-4 md:px-6 w-full">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 w-full">

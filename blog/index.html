@@ -95,107 +95,107 @@ body {
   color: #6B8E23 !important;
 }
 
+/* ПОЛНОСТЬЮ ПЕРЕРАБОТАННЫЙ УЗОР ВАФЕЛЬНОЙ СЕТКИ */
 footer {
-  width: 100% !important;
-  box-sizing: border-box !important;
   position: relative;
   overflow: hidden;
   background-color: #8B4513;
   z-index: 1;
+  width: 100%;
 }
 
-/* ПОЛНОСТЬЮ ПЕРЕРАБОТАННЫЙ УЗОР ВАФЕЛЬНОЙ СЕТКИ */
-footer::before {
-  content: "";
+/* SVG паттерн для идеального покрытия */
+.footer-pattern {
   position: absolute;
-  top: -60px; /* Увеличенный отступ на 10% */
-  left: -60px; /* Увеличенный отступ на 10% */
-  width: calc(100% + 120px); /* Увеличенная ширина на 10% */
-  height: calc(100% + 120px); /* Увеличенная высота на 10% */
-  background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
-  background-size: 120px 120px; /* Увеличенный размер клетки на 10% */
-  transform: rotate(30deg);
-  opacity: 0.6;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   z-index: 0;
+  opacity: 0.6;
+}
+
+/* Контент футера поверх узора */
+.footer-content {
+  position: relative;
+  z-index: 2;
 }
 
 footer .container {
-  width: 100% !important;
-  max-width: 100% !important;
-  padding-right: 1.5rem !important;
-  padding-left: 1.5rem !important;
+  width: 100%;
+  max-width: 100%;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
   position: relative;
   z-index: 1;
 }
 
 footer .grid {
-  width: 100% !important;
-  display: grid !important;
-  grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
 @media (min-width: 768px) {
   footer .grid {
-    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 }
 
 .footer-column {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: flex-start !important;
-  width: 100% !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  box-sizing: border-box !important;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .footer-column h4 {
-  text-align: left !important;
-  width: 100% !important;
-  padding: 0 !important;
-  margin: 0 0 1rem 0 !important;
-  font-weight: bold !important;
-  font-size: 1.125rem !important;
-  line-height: 1.75rem !important;
+  text-align: left;
+  width: 100%;
+  padding: 0;
+  margin: 0 0 1rem 0;
+  font-weight: bold;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
 .footer-column ul {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: flex-start !important;
-  width: 100% !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  list-style: none !important;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
 .footer-column li {
-  width: 100% !important;
-  text-align: left !important;
-  list-style-type: none !important;
-  padding: 0 !important;
-  margin: 0 0 -0.5rem 0 !important;
-  box-sizing: border-box !important;
+  width: 100%;
+  text-align: left;
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 -0.5rem 0;
+  box-sizing: border-box;
 }
 
 .footer-column li a {
-  display: flex !important;
-  align-items: center !important;
-  width: 100% !important;
-  box-sizing: border-box !important;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .footer-column .bullet {
-  display: inline-block !important;
-  width: 6px !important;
-  height: 6px !important;
-  background-color: white !important;
-  border-radius: 50% !important;
-  margin-right: 10px !important;
-  flex-shrink: 0 !important;
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background-color: white;
+  border-radius: 50%;
+  margin-right: 10px;
+  flex-shrink: 0;
 }
 
 footer, 
@@ -205,11 +205,11 @@ footer p,
 footer span, 
 footer h4, 
 footer li {
-  color: white !important;
-  box-sizing: border-box !important;
+  color: white;
+  box-sizing: border-box;
 }
 footer a:hover {
-  color: #d1d5db !important;
+  color: #d1d5db;
 }
 
 .footer-column li a {
@@ -278,8 +278,8 @@ footer a:hover {
 }
 
 .footer-link-item {
-  padding-top: 0.25rem !important;
-  padding-bottom: 0.25rem !important;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
 }
 
 .blog-post-card {
@@ -291,16 +291,16 @@ footer a:hover {
 }
 
 .active-nav-link-alt {
-  border: 2px solid #6B8E23 !important;
-  border-radius: 8px !important;
-  padding: 4px 12px !important;
-  color: #6B8E23 !important;
-  font-weight: 600 !important;
+  border: 2px solid #6B8E23;
+  border-radius: 8px;
+  padding: 4px 12px;
+  color: #6B8E23;
+  font-weight: 600;
   transition: all 0.3s ease;
 }
 
 .active-nav-link-alt:hover {
-  background: rgba(107, 142, 35, 0.1) !important;
+  background: rgba(107, 142, 35, 0.1);
 }
 
 .floating-back-button {
@@ -446,7 +446,35 @@ footer a:hover {
 
 <!-- Футер с полностью переработанной вафельной сеткой -->
 <footer class="py-10 md:py-12 w-full">
-  <div id="footer-contacts" class="container mx-auto px-4 md:px-6 w-full">
+  <!-- SVG паттерн для идеального покрытия -->
+  <div class="footer-pattern">
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="honeycomb" width="120" height="104" patternUnits="userSpaceOnUse">
+          <!-- Горизонтальные линии -->
+          <line x1="0" y1="0" x2="100%" y2="0" stroke="rgba(255,255,255,0.15)" stroke-width="1" />
+          <line x1="0" y1="52" x2="100%" y2="52" stroke="rgba(255,255,255,0.15)" stroke-width="1" />
+          <line x1="0" y1="104" x2="100%" y2="104" stroke="rgba(255,255,255,0.15)" stroke-width="1" />
+          
+          <!-- Вертикальные линии -->
+          <line x1="0" y1="0" x2="0" y2="104" stroke="rgba(255,255,255,0.15)" stroke-width="1" />
+          <line x1="30" y1="0" x2="30" y2="104" stroke="rgba(255,255,255,0.15)" stroke-width="1" />
+          <line x1="60" y1="0" x2="60" y2="104" stroke="rgba(255,255,255,0.15)" stroke-width="1" />
+          <line x1="90" y1="0" x2="90" y2="104" stroke="rgba(255,255,255,0.15)" stroke-width="1" />
+          <line x1="120" y1="0" x2="120" y2="104" stroke="rgba(255,255,255,0.15)" stroke-width="1" />
+          
+          <!-- Диагональные линии -->
+          <line x1="0" y1="0" x2="60" y2="52" stroke="rgba(255,255,255,0.15)" stroke-width="1" />
+          <line x1="0" y1="104" x2="60" y2="52" stroke="rgba(255,255,255,0.15)" stroke-width="1" />
+          <line x1="60" y1="0" x2="120" y2="52" stroke="rgba(255,255,255,0.15)" stroke-width="1" />
+          <line x1="60" y1="104" x2="120" y2="52" stroke="rgba(255,255,255,0.15)" stroke-width="1" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#honeycomb)" />
+    </svg>
+  </div>
+  
+  <div id="footer-contacts" class="container mx-auto px-4 md:px-6 w-full footer-content">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 w-full">
       <!-- Лого и описание -->
       <div class="footer-column">

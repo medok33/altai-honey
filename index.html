@@ -292,6 +292,8 @@ footer a:hover {
 .contact-item {
   display: flex;
   align-items: center;
+  padding-top: 0.75rem; /* Увеличено с 0.5rem */
+  padding-bottom: 0.75rem; /* Увеличено с 0.5rem */
 }
 
 .contact-icon {
@@ -299,6 +301,19 @@ footer a:hover {
   align-items: center;
   justify-content: center;
   margin-right: 12px;
+  flex-shrink: 0;
+  width: 24px;
+}
+
+.contact-text {
+  flex-grow: 1;
+  line-height: 1.5;
+}
+
+/* Уменьшенные отступы для колонок Каталог/Материалы/Информация */
+.footer-link-item {
+  padding-top: 0.25rem !important; /* Уменьшено с 0.5rem */
+  padding-bottom: 0.25rem !important; /* Уменьшено с 0.5rem */
 }
 
 /* Анимации для карточек */
@@ -861,9 +876,54 @@ img.product-image.loaded {
 #workflow {
   transition-delay: 0.5s;
 }
+
+/* Кнопка "На главную" */
+.home-btn {
+  position: fixed;
+  top: 80px;
+  left: 20px;
+  z-index: 1000;
+  background: #6B8E23;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.3s ease;
+}
+
+.home-btn.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.home-btn i {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .home-btn {
+    top: 70px;
+    left: 10px;
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
 </style>
 </head>
 <body>
+<!-- Кнопка "На главную" -->
+<a href="/" class="home-btn">
+  <i class="ri-home-line"></i>
+  На главную
+</a>
+
 <!-- Навигация -->
 <nav class="bg-white shadow-sm sticky top-0 z-50">
   <div class="container mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
@@ -960,7 +1020,7 @@ img.product-image.loaded {
           <div class="benefit-icon w-14 h-14 md:w-16 md:h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4 md:mb-6">
             <i class="ri-truck-line ri-lg md:ri-xl text-primary"></i>
           </div>
-          <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-3 md:mb-4"> по всей России</h3>
+          <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-3 md:mb-4">Доставка по всей России</h3>
           <p class="text-gray-600 text-sm md:text-base">Мы доставляем наш мёд в любой регион России, сохраняя все полезные свойства продукта.</p>
         </div>
         
@@ -1111,7 +1171,7 @@ img.product-image.loaded {
               <div class="w-7 h-7 md:w-8 md:h-8 flex items-center justify-center bg-white bg-opacity-20 rounded-full">
                 <i class="ri-truck-line text-white ri-sm md:ri-base"></i>
               </div>
-              <span class="font-medium text-sm md:text-base"> по всей России</span>
+              <span class="font-medium text-sm md:text-base">Доставка по всей России</span>
             </div>
             
             <div class="flex items-center space-x-3 mb-2">
@@ -1228,24 +1288,24 @@ img.product-image.loaded {
         <p class="text-sm md:text-base">© 2025 Алтайский мёд. Все права защищены.</p>
       </div>
       
-      <!-- Каталог -->
+      <!-- Каталог (уменьшенные отступы) -->
       <div class="footer-column">
         <h4 class="text-base md:text-lg font-bold">Каталог</h4>
         <ul>
           <li>
-            <a href="#product-1" class="hover:text-gray-300 transition-colors flex items-center py-1">
+            <a href="#product-1" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Разнотравье</span>
             </a>
           </li>
           <li>
-            <a href="#product-2" class="hover:text-gray-300 transition-colors flex items-center py-1">
+            <a href="#product-2" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Таёжный мёд</span>
             </a>
           </li>
           <li>
-            <a href="#product-3" class="hover:text-gray-300 transition-colors flex items-center py-1">
+            <a href="#product-3" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Гречишный мёд</span>
             </a>
@@ -1253,24 +1313,24 @@ img.product-image.loaded {
         </ul>
       </div>
       
-      <!-- Новая колонка "Материалы" -->
+      <!-- Материалы (уменьшенные отступы) -->
       <div class="footer-column">
         <h4 class="text-base md:text-lg font-bold">Материалы</h4>
         <ul>
           <li>
-            <a href="/blog/index.html" class="hover:text-gray-300 transition-colors flex items-center py-1">
+            <a href="/blog/" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Блог</span>
             </a>
           </li>
           <li>
-            <a href="/faq/index.html" class="hover:text-gray-300 transition-colors flex items-center py-1">
+            <a href="/faq/" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">FAQ</span>
             </a>
           </li>
           <li>
-            <a href="/legal.html" class="hover:text-gray-300 transition-colors flex items-center py-1">
+            <a href="/legal.html" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Правовая информация</span>
             </a>
@@ -1278,36 +1338,36 @@ img.product-image.loaded {
         </ul>
       </div>
       
-      <!-- Информация -->
+      <!-- Информация (уменьшенные отступы) -->
       <div class="footer-column">
         <h4 class="text-base md:text-lg font-bold">Информация</h4>
         <ul>
           <li>
-            <a href="#benefits" class="hover:text-gray-300 transition-colors flex items-center py-1">
+            <a href="#benefits" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Преимущества</span>
             </a>
           </li>
           <li>
-            <a href="#about" class="hover:text-gray-300 transition-colors flex items-center py-1">
+            <a href="#about" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">О нас</span>
             </a>
           </li>
           <li>
-            <a href="#footer-contacts" class="hover:text-gray-300 transition-colors flex items-center py-1">
+            <a href="#footer-contacts" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Контакты</span>
             </a>
           </li>
           <li>
-            <a href="/delivery-payment.html" class="hover:text-gray-300 transition-colors flex items-center py-1">
+            <a href="delivery.html" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Доставка и оплата</span>
             </a>
           </li>
           <li>
-            <a href="#" class="hover:text-gray-300 transition-colors flex items-center py-1">
+            <a href="/privacy.html" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Политика конфиденциальности</span>
             </a>
@@ -1315,27 +1375,27 @@ img.product-image.loaded {
         </ul>
       </div>
       
-      <!-- Контакты -->
+      <!-- Контакты (увеличенные отступы) -->
       <div class="footer-column">
         <h4 class="text-base md:text-lg font-bold">Контакты</h4>
         <ul>
-          <li class="contact-item py-1">
+          <li class="contact-item">
             <div class="contact-icon">
               <i class="ri-map-pin-2-line ri-sm md:ri-base"></i>
             </div>
-            <span class="text-sm md:text-base">Алтайский край, Солтонский район</span>
+            <span class="contact-text">Алтайский край, Солтонский район</span>
           </li>
-          <li class="contact-item py-1">
+          <li class="contact-item">
             <div class="contact-icon">
               <i class="ri-phone-line ri-sm md:ri-base"></i>
             </div>
-            <span class="text-sm md:text-base">+7 (920) 940-02-22</span>
+            <span class="contact-text">+7 (920) 940-02-22</span>
           </li>
-          <li class="contact-item py-1">
+          <li class="contact-item">
             <div class="contact-icon">
               <i class="ri-mail-line ri-sm md:ri-base"></i>
             </div>
-            <span class="text-sm md:text-base">9209400222@mail.ru</span>
+            <span class="contact-text">9209400222@mail.ru</span>
           </li>
         </ul>
         
@@ -1748,6 +1808,44 @@ ${message}
       img.classList.add('loaded');
     }
   });
+  
+  // Управление кнопкой "На главную"
+  const homeBtn = document.querySelector('.home-btn');
+  let lastScrollTop = 0;
+  
+  window.addEventListener('scroll', function() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    // Показывать кнопку при прокрутке вниз или вверх
+    if (scrollTop > 100) {
+      homeBtn.classList.add('visible');
+    } else {
+      homeBtn.classList.remove('visible');
+    }
+    
+    // Фиксируем последнюю позицию скролла
+    lastScrollTop = scrollTop;
+  });
+  
+  // Показывать кнопку при бездействии
+  let inactivityTimer;
+  
+  function resetInactivityTimer() {
+    clearTimeout(inactivityTimer);
+    inactivityTimer = setTimeout(() => {
+      if (window.pageYOffset > 100) {
+        homeBtn.classList.add('visible');
+      }
+    }, 3000); // 3 секунды бездействия
+  }
+  
+  // События для сброса таймера
+  window.addEventListener('mousemove', resetInactivityTimer);
+  window.addEventListener('keypress', resetInactivityTimer);
+  window.addEventListener('scroll', resetInactivityTimer);
+  
+  // Инициализация таймера
+  resetInactivityTimer();
 });
 </script>
 </body>

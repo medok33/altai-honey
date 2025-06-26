@@ -95,112 +95,112 @@ body {
   color: #6B8E23 !important;
 }
 
-/* ПРОСТАЯ И ЧЕТКАЯ СЕТКА ЛИНИЙ ПОД 30 ГРАДУСОВ */
 footer {
+  width: 100% !important;
+  box-sizing: border-box !important;
   position: relative;
   overflow: hidden;
   background-color: #8B4513;
   z-index: 1;
-  width: 100%;
 }
 
+/* ИСПРАВЛЕННЫЙ УЗОР ВАФЕЛЬНОЙ СЕТКИ */
 footer::before {
   content: "";
   position: absolute;
-  top: -50%; /* Увеличиваем покрытие */
-  left: -50%;
-  width: 200%; /* Увеличиваем область для поворота */
-  height: 200%;
-  background-image: linear-gradient(
-    30deg, /* Угол наклона 30 градусов */
-    rgba(255, 255, 255, 0.15) 1px, /* Цвет линии */
-    transparent 1px /* Прозрачный фон */
-  );
-  background-size: 30px 30px; /* Расстояние между линиями */
+  top: 0;
+  left: 0;
+  width: 500%; /* Увеличиваем сетку в 5 раз */
+  height: 500%; /* Увеличиваем сетку в 5 раз */
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+  background-size: 108px 108px; /* Размер клетки остается прежним */
+  transform: rotate(30deg);
+  transform-origin: 0 0; /* Фиксируем точку трансформации */
+  opacity: 0.6;
   z-index: 0;
-}
-
-/* Контент футера поверх узора */
-.footer-content {
-  position: relative;
-  z-index: 2;
+  
+  /* Центрируем увеличенную сетку */
+  margin-left: -100%;
+  margin-top: -100%;
 }
 
 footer .container {
-  width: 100%;
-  max-width: 100%;
-  padding-right: 1.5rem;
-  padding-left: 1.5rem;
+  width: 100% !important;
+  max-width: 100% !important;
+  padding-right: 1.5rem !important;
+  padding-left: 1.5rem !important;
   position: relative;
   z-index: 1;
 }
 
 footer .grid {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
+  width: 100% !important;
+  display: grid !important;
+  grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
 }
 
 @media (min-width: 768px) {
   footer .grid {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
   }
 }
 
 .footer-column {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
 }
 
 .footer-column h4 {
-  text-align: left;
-  width: 100%;
-  padding: 0;
-  margin: 0 0 1rem 0;
-  font-weight: bold;
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+  text-align: left !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 0 1rem 0 !important;
+  font-weight: bold !important;
+  font-size: 1.125rem !important;
+  line-height: 1.75rem !important;
 }
 
 .footer-column ul {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  list-style: none;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  list-style: none !important;
 }
 
 .footer-column li {
-  width: 100%;
-  text-align: left;
-  list-style-type: none;
-  padding: 0;
-  margin: 0 0 -0.5rem 0;
-  box-sizing: border-box;
+  width: 100% !important;
+  text-align: left !important;
+  list-style-type: none !important;
+  padding: 0 !important;
+  margin: 0 0 -0.5rem 0 !important;
+  box-sizing: border-box !important;
 }
 
 .footer-column li a {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  box-sizing: border-box;
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
 }
 
 .footer-column .bullet {
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  background-color: white;
-  border-radius: 50%;
-  margin-right: 10px;
-  flex-shrink: 0;
+  display: inline-block !important;
+  width: 6px !important;
+  height: 6px !important;
+  background-color: white !important;
+  border-radius: 50% !important;
+  margin-right: 10px !important;
+  flex-shrink: 0 !important;
 }
 
 footer, 
@@ -210,11 +210,11 @@ footer p,
 footer span, 
 footer h4, 
 footer li {
-  color: white;
-  box-sizing: border-box;
+  color: white !important;
+  box-sizing: border-box !important;
 }
 footer a:hover {
-  color: #d1d5db;
+  color: #d1d5db !important;
 }
 
 .footer-column li a {
@@ -283,8 +283,8 @@ footer a:hover {
 }
 
 .footer-link-item {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
+  padding-top: 0.25rem !important;
+  padding-bottom: 0.25rem !important;
 }
 
 .blog-post-card {
@@ -296,16 +296,16 @@ footer a:hover {
 }
 
 .active-nav-link-alt {
-  border: 2px solid #6B8E23;
-  border-radius: 8px;
-  padding: 4px 12px;
-  color: #6B8E23;
-  font-weight: 600;
+  border: 2px solid #6B8E23 !important;
+  border-radius: 8px !important;
+  padding: 4px 12px !important;
+  color: #6B8E23 !important;
+  font-weight: 600 !important;
   transition: all 0.3s ease;
 }
 
 .active-nav-link-alt:hover {
-  background: rgba(107, 142, 35, 0.1);
+  background: rgba(107, 142, 35, 0.1) !important;
 }
 
 .floating-back-button {
@@ -449,9 +449,9 @@ footer a:hover {
 </section>
 </main>
 
-<!-- Футер с ПРОСТЫМИ ЛИНИЯМИ под 30 градусов -->
+<!-- Футер с исправленной вафельной сеткой -->
 <footer class="py-10 md:py-12 w-full">
-  <div id="footer-contacts" class="container mx-auto px-4 md:px-6 w-full footer-content">
+  <div id="footer-contacts" class="container mx-auto px-4 md:px-6 w-full">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 w-full">
       <!-- Лого и описание -->
       <div class="footer-column">

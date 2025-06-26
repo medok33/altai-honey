@@ -106,7 +106,7 @@ footer {
   background-color: #8B4513;
 }
 
-/* ОБНОВЛЕННЫЙ ФОН С ПЧЕЛИНЫМИ СОТАМИ */
+/* ОБНОВЛЕННЫЙ ФОН С ПЧЕЛИНЫМИ СОТАМИ - ИСПРАВЛЕННЫЙ */
 footer::before {
   content: "";
   position: absolute;
@@ -114,8 +114,8 @@ footer::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPgogIDxkZWZzPgogICAgPHBhdHRlcm4gaWQ9ImhleGFnb25zIiB3aWR0aD0iODAiIGhlaWdodD0iOTIuMzgiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgICA8cGF0aCBkPSJNMCA0Ni4xOUw0MCAwTDgwIDQ2LjE5TDgwIDkyLjM4TDQwIDEzOC41N0wwIDkyLjM4WiIgZmlsbD0iI2ZmZmZmZiIgZmlsbC1vcGFjaXR5PSIwLjEiLz4KICAgICAgPHBhdGggZD0iTTQwIDkyLjM4TDgwIDQ2LjE5TDEyMCA5Mi4zOEw4MCAxMzguNTdMNDAgMTM4LjU3TDAgOTIuMzhaIiBmaWxsPSIjZmZmZmZmIiBmaWxsLW9wYWNpdHk9IjAuMSIvPgogICAgPC9wYXR0ZXJuPgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2hleGFnb25zKSIgLz4KPC9zdmc+');
-  background-size: 80px 92.38px;
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KICA8ZGVmcz4KICAgIDxwYXR0ZXJuIGlkPSJoZXhhZ29uIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcGF0dGVyblRyYW5zZm9ybT0icm90YXRlKDMwKSI+CiAgICAgIDxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiM4QjQ1MTMiLz4KICAgICAgPHBhdGggZD0iTTAgNTBMNDAgMEg2MEwxMDAgNTBMNjAgMTAwSDQwTDAgNTBaIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDUpIi8+CiAgICAgIDxwYXRoIGQ9Ik0zMCA1MEw2MCAyNUg5MEw4MCA2MEw5MCAxMDBINjBMMzAgNTBaIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDUpIi8+CiAgICA8L3BhdHRlcm4+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjaGV4YWdvbikiLz4KPC9zdmc+');
+  background-size: 120px;
   opacity: 0.8;
   z-index: 0;
 }
@@ -344,7 +344,7 @@ footer a:hover {
   transform: translateX(-3px) scale(1.1);
 }
 
-/* Стиль для новой стрелки */
+/* НОВЫЙ СТИЛЬ СТРЕЛКИ */
 .back-arrow {
   position: relative;
   width: 24px;
@@ -361,7 +361,7 @@ footer a:hover {
 }
 
 .back-arrow::before {
-  width: 16px;
+  width: 18px;
   height: 3px;
   top: 50%;
   left: 0;
@@ -378,12 +378,15 @@ footer a:hover {
   left: 0;
 }
 
+/* Анимации при наведении */
 .floating-back-button:hover .back-arrow::before {
-  width: 20px;
+  width: 22px;
+  background-color: #fff;
 }
 
 .floating-back-button:hover .back-arrow::after {
-  transform: rotate(-45deg) translateX(-3px);
+  transform: rotate(-45deg) translateX(-4px);
+  border-color: #fff;
 }
 </style>
 </head>

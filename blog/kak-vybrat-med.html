@@ -86,6 +86,11 @@ tailwind.config = {
   color: #FFD700;
   transform: translateX(-5px);
 }
+
+/* Стили для плавающей кнопки */
+#home-button {
+  transition: opacity 0.5s ease;
+}
 </style>
 </head>
 <body>
@@ -122,11 +127,6 @@ tailwind.config = {
 </nav>
 
 <main>
-  <div class="container mx-auto px-4 mt-4">
-  <a href="/" class="inline-flex items-center text-primary hover:text-secondary transition-colors">
-    <i class="ri-arrow-left-line mr-2"></i> На главную
-  </a>
-</div>
 <!-- Шапка статьи -->
 <section class="min-h-[50vh] flex items-center" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/image-11.jpg'); background-size: cover; background-position: center;">
   <div class="container mx-auto px-4 text-center text-white">
@@ -373,6 +373,11 @@ tailwind.config = {
   </div>
 </footer>
 
+<!-- Плавающая кнопка "На главную" -->
+<a href="/" id="home-button" class="fixed bottom-8 right-8 z-50 w-14 h-14 rounded-full bg-primary hover:bg-orange text-white flex items-center justify-center shadow-lg transition-all duration-300 transform hover:scale-110 opacity-0">
+  <i class="ri-home-line ri-xl"></i>
+</a>
+
 <script>
 // Плавная прокрутка к якорям
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -389,6 +394,24 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         behavior: 'smooth'
       });
     }
+  });
+});
+
+// Управление плавающей кнопкой
+document.addEventListener("DOMContentLoaded", function() {
+  const homeButton = document.getElementById('home-button');
+  
+  // Показываем/скрываем кнопку при скролле
+  let isScrolling;
+  window.addEventListener('scroll', function() {
+    homeButton.classList.remove('opacity-0');
+    homeButton.classList.add('opacity-100');
+    
+    clearTimeout(isScrolling);
+    isScrolling = setTimeout(function() {
+      homeButton.classList.remove('opacity-100');
+      homeButton.classList.add('opacity-0');
+    }, 2000);
   });
 });
 </script>

@@ -244,8 +244,8 @@ footer a:hover {
 .contact-item {
   display: flex;
   align-items: center;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding-top: 0.75rem; /* Увеличено с 0.5rem */
+  padding-bottom: 0.75rem; /* Увеличено с 0.5rem */
 }
 
 .contact-icon {
@@ -254,12 +254,18 @@ footer a:hover {
   justify-content: center;
   margin-right: 12px;
   flex-shrink: 0;
-  width: 24px; /* Фиксированная ширина для выравнивания */
+  width: 24px;
 }
 
 .contact-text {
   flex-grow: 1;
-  line-height: 1.5; /* Улучшенный межстрочный интервал */
+  line-height: 1.5;
+}
+
+/* Уменьшенные отступы для колонок Каталог/Материалы/Информация */
+.footer-link-item {
+  padding-top: 0.25rem !important; /* Уменьшено с 0.5rem */
+  padding-bottom: 0.25rem !important; /* Уменьшено с 0.5rem */
 }
 
 /* Анимации для карточек */
@@ -418,24 +424,24 @@ footer a:hover {
         <p class="text-sm md:text-base">© 2025 Алтайский мёд. Все права защищены.</p>
       </div>
       
-      <!-- Каталог -->
+      <!-- Каталог (уменьшенные отступы) -->
       <div class="footer-column">
         <h4 class="text-base md:text-lg font-bold">Каталог</h4>
         <ul>
           <li>
-            <a href="/#product-1" class="hover:text-gray-300 transition-colors flex items-center py-2">
+            <a href="/#product-1" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Разнотравье</span>
             </a>
           </li>
           <li>
-            <a href="/#product-2" class="hover:text-gray-300 transition-colors flex items-center py-2">
+            <a href="/#product-2" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Таёжный мёд</span>
             </a>
           </li>
           <li>
-            <a href="/#product-3" class="hover:text-gray-300 transition-colors flex items-center py-2">
+            <a href="/#product-3" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Гречишный мёд</span>
             </a>
@@ -443,24 +449,24 @@ footer a:hover {
         </ul>
       </div>
       
-      <!-- Материалы -->
+      <!-- Материалы (уменьшенные отступы) -->
       <div class="footer-column">
         <h4 class="text-base md:text-lg font-bold">Материалы</h4>
         <ul>
           <li>
-            <a href="/blog/" class="hover:text-gray-300 transition-colors flex items-center py-2">
+            <a href="/blog/" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Блог</span>
             </a>
           </li>
           <li>
-            <a href="/faq/" class="hover:text-gray-300 transition-colors flex items-center py-2">
+            <a href="/faq/" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">FAQ</span>
             </a>
           </li>
           <li>
-            <a href="/legal.html" class="hover:text-gray-300 transition-colors flex items-center py-2">
+            <a href="/legal.html" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Правовая информация</span>
             </a>
@@ -468,36 +474,36 @@ footer a:hover {
         </ul>
       </div>
       
-      <!-- Информация -->
+      <!-- Информация (уменьшенные отступы) -->
       <div class="footer-column">
         <h4 class="text-base md:text-lg font-bold">Информация</h4>
         <ul>
           <li>
-            <a href="/#benefits" class="hover:text-gray-300 transition-colors flex items-center py-2">
+            <a href="/#benefits" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Преимущества</span>
             </a>
           </li>
           <li>
-            <a href="/#about" class="hover:text-gray-300 transition-colors flex items-center py-2">
+            <a href="/#about" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">О нас</span>
             </a>
           </li>
           <li>
-            <a href="/#footer-contacts" class="hover:text-gray-300 transition-colors flex items-center py-2">
+            <a href="/#footer-contacts" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Контакты</span>
             </a>
           </li>
           <li>
-            <a href="/delivery.html" class="hover:text-gray-300 transition-colors flex items-center py-2">
+            <a href="/delivery.html" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Доставка и оплата</span>
             </a>
           </li>
           <li>
-            <a href="/privacy.html" class="hover:text-gray-300 transition-colors flex items-center py-2">
+            <a href="/privacy.html" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Политика конфиденциальности</span>
             </a>
@@ -505,7 +511,7 @@ footer a:hover {
         </ul>
       </div>
       
-      <!-- Контакты (выровненная версия) -->
+      <!-- Контакты (увеличенные отступы) -->
       <div class="footer-column">
         <h4 class="text-base md:text-lg font-bold">Контакты</h4>
         <ul>

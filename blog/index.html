@@ -244,6 +244,8 @@ footer a:hover {
 .contact-item {
   display: flex;
   align-items: center;
+  padding-top: 0.5rem; /* Добавлено для выравнивания */
+  padding-bottom: 0.5rem; /* Добавлено для выравнивания */
 }
 
 .contact-icon {
@@ -251,6 +253,7 @@ footer a:hover {
   align-items: center;
   justify-content: center;
   margin-right: 12px;
+  flex-shrink: 0; /* Предотвращает сжатие иконок */
 }
 
 /* Анимации для карточек */
@@ -263,8 +266,37 @@ footer a:hover {
 }
 
 /* Стили для плавающей кнопки */
-#home-button {
+#back-button {
   transition: opacity 0.5s ease;
+}
+
+/* Новый стиль для кнопки "Назад" */
+.floating-back-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 50;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background: #6B8E23;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.floating-back-button:hover {
+  background: #5a7c1f;
+  transform: scale(1.1);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.floating-back-button i {
+  font-size: 1.5rem;
 }
 </style>
 </head>
@@ -385,19 +417,19 @@ footer a:hover {
         <h4 class="text-base md:text-lg font-bold">Каталог</h4>
         <ul>
           <li>
-            <a href="/#product-1" class="hover:text-gray-300 transition-colors flex items-center py-1">
+            <a href="/#product-1" class="hover:text-gray-300 transition-colors flex items-center py-2"> <!-- Изменено py-1 на py-2 -->
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Разнотравье</span>
             </a>
           </li>
           <li>
-            <a href="/#product-2" class="hover:text-gray-300 transition-colors flex items-center py-1">
+            <a href="/#product-2" class="hover:text-gray-300 transition-colors flex items-center py-2"> <!-- Изменено py-1 на py-2 -->
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Таёжный мёд</span>
             </a>
           </li>
           <li>
-            <a href="/#product-3" class="hover:text-gray-300 transition-colors flex items-center py-1">
+            <a href="/#product-3" class="hover:text-gray-300 transition-colors flex items-center py-2"> <!-- Изменено py-1 на py-2 -->
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Гречишный мёд</span>
             </a>
@@ -410,19 +442,19 @@ footer a:hover {
         <h4 class="text-base md:text-lg font-bold">Материалы</h4>
         <ul>
           <li>
-            <a href="/blog/" class="hover:text-gray-300 transition-colors flex items-center py-1">
+            <a href="/blog/" class="hover:text-gray-300 transition-colors flex items-center py-2"> <!-- Изменено py-1 на py-2 -->
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Блог</span>
             </a>
           </li>
           <li>
-            <a href="/faq/" class="hover:text-gray-300 transition-colors flex items-center py-1">
+            <a href="/faq/" class="hover:text-gray-300 transition-colors flex items-center py-2"> <!-- Изменено py-1 на py-2 -->
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">FAQ</span>
             </a>
           </li>
           <li>
-            <a href="/legal.html" class="hover:text-gray-300 transition-colors flex items-center py-1">
+            <a href="/legal.html" class="hover:text-gray-300 transition-colors flex items-center py-2"> <!-- Изменено py-1 на py-2 -->
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Правовая информация</span>
             </a>
@@ -435,31 +467,31 @@ footer a:hover {
         <h4 class="text-base md:text-lg font-bold">Информация</h4>
         <ul>
           <li>
-            <a href="/#benefits" class="hover:text-gray-300 transition-colors flex items-center py-1">
+            <a href="/#benefits" class="hover:text-gray-300 transition-colors flex items-center py-2"> <!-- Изменено py-1 на py-2 -->
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Преимущества</span>
             </a>
           </li>
           <li>
-            <a href="/#about" class="hover:text-gray-300 transition-colors flex items-center py-1">
+            <a href="/#about" class="hover:text-gray-300 transition-colors flex items-center py-2"> <!-- Изменено py-1 на py-2 -->
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">О нас</span>
             </a>
           </li>
           <li>
-            <a href="/#footer-contacts" class="hover:text-gray-300 transition-colors flex items-center py-1">
+            <a href="/#footer-contacts" class="hover:text-gray-300 transition-colors flex items-center py-2"> <!-- Изменено py-1 на py-2 -->
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Контакты</span>
             </a>
           </li>
           <li>
-            <a href="/delivery.html" class="hover:text-gray-300 transition-colors flex items-center py-1">
+            <a href="/delivery.html" class="hover:text-gray-300 transition-colors flex items-center py-2"> <!-- Изменено py-1 на py-2 -->
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Доставка и оплата</span>
             </a>
           </li>
           <li>
-            <a href="/privacy.html" class="hover:text-gray-300 transition-colors flex items-center py-1">
+            <a href="/privacy.html" class="hover:text-gray-300 transition-colors flex items-center py-2"> <!-- Изменено py-1 на py-2 -->
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Политика конфиденциальности</span>
             </a>
@@ -471,19 +503,19 @@ footer a:hover {
       <div class="footer-column">
         <h4 class="text-base md:text-lg font-bold">Контакты</h4>
         <ul>
-          <li class="contact-item py-1">
+          <li class="contact-item">
             <div class="contact-icon">
               <i class="ri-map-pin-2-line ri-sm md:ri-base"></i>
             </div>
             <span class="text-sm md:text-base">Алтайский край, Солтонский район</span>
           </li>
-          <li class="contact-item py-1">
+          <li class="contact-item">
             <div class="contact-icon">
               <i class="ri-phone-line ri-sm md:ri-base"></i>
             </div>
             <span class="text-sm md:text-base">+7 (920) 940-02-22</span>
           </li>
-          <li class="contact-item py-1">
+          <li class="contact-item">
             <div class="contact-icon">
               <i class="ri-mail-line ri-sm md:ri-base"></i>
             </div>
@@ -544,27 +576,41 @@ footer a:hover {
   });
 </script>
 
-<!-- Плавающая кнопка "На главную" -->
-<a href="/" id="home-button" class="fixed bottom-8 right-8 z-50 w-14 h-14 rounded-full bg-primary hover:bg-orange text-white flex items-center justify-center shadow-lg transition-all duration-300 transform hover:scale-110 opacity-0">
-  <i class="ri-home-line ri-xl"></i>
+<!-- Плавающая кнопка "Назад" -->
+<a href="#" id="back-button" class="floating-back-button">
+  <i class="ri-arrow-left-line"></i>
 </a>
 
 <!-- Скрипт для управления плавающей кнопкой -->
 <script>
   document.addEventListener("DOMContentLoaded", function() {
-    const homeButton = document.getElementById('home-button');
+    const backButton = document.getElementById('back-button');
     
     // Показываем/скрываем кнопку при скролле
     let isScrolling;
     window.addEventListener('scroll', function() {
-      homeButton.classList.remove('opacity-0');
-      homeButton.classList.add('opacity-100');
+      backButton.classList.remove('opacity-0');
+      backButton.classList.add('opacity-100');
       
       clearTimeout(isScrolling);
       isScrolling = setTimeout(function() {
-        homeButton.classList.remove('opacity-100');
-        homeButton.classList.add('opacity-0');
+        backButton.classList.remove('opacity-100');
+        backButton.classList.add('opacity-0');
       }, 2000);
+    });
+    
+    // Обработка нажатия на кнопку "Назад"
+    backButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      // Проверяем историю переходов
+      if (document.referrer && document.referrer.includes(window.location.host)) {
+        // Если есть предыдущая страница на нашем сайте
+        window.history.back();
+      } else {
+        // Если нет истории или пришел с другого сайта
+        window.location.href = '/';
+      }
     });
   });
 </script>

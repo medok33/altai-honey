@@ -106,7 +106,7 @@ footer {
   background-color: #8B4513;
 }
 
-/* Фон в виде пчелиных сот (обновленный) */
+/* ОБНОВЛЕННЫЙ ФОН В ВИДЕ ПЧЕЛИНЫХ СОТ (base64) */
 footer::before {
   content: "";
   position: absolute;
@@ -114,9 +114,9 @@ footer::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 104" width="120" height="104"><path d="M60,0 L90,26 L90,78 L60,104 L30,78 L30,26 Z" fill="%23FFFFFF" fill-opacity="0.08"/><path d="M0,52 L30,26 L30,78 L0,104 Z" fill="%23FFFFFF" fill-opacity="0.08"/><path d="M120,52 L90,26 L90,78 L120,104 Z" fill="%23FFFFFF" fill-opacity="0.08"/></svg>');
-  background-size: 180px 156px; /* Увеличено для более крупных сот */
-  opacity: 0.15; /* Уменьшена прозрачность */
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAgMTA0IiB3aWR0aD0iMTgwIiBoZWlnaHQ9IjE1NiI+PHBhdGggZD0iTTYwLDAgTDkwLDI2IEw5MCw3OCBMNjAsMTA0IEwzMCw3OCBMMzAsMjYgWiIgZmlsbD0iI2ZmZmZmZiIgZmlsbC1vcGFjaXR5PSIwLjEiLz48cGF0aCBkPSJNMCw1MiBMMzAsMjYgTDMwLDc4IEwwLDEwNCBaIiBmaWxsPSIjZmZmZmZmIiBmaWxsLW9wYWNpdHk9IjAuMSIvPjxwYXRoIGQ9Ik0xMjAsNTIgTDkwLDI2IEw5MCw3OCBMMTIwLDEwNCBaIiBmaWxsPSIjZmZmZmZmIiBmaWxsLW9wYWNpdHk9IjAuMSIvPjwvc3ZnPg==');
+  background-size: 180px 156px;
+  opacity: 1;
   z-index: 0;
 }
 
@@ -448,7 +448,7 @@ footer a:hover {
 </section>
 </main>
 
-<!-- Футер с узором пчелиных сот (обновленный) -->
+<!-- Футер с узором пчелиных сот (исправленный) -->
 <footer class="py-10 md:py-12 w-full">
   <div id="footer-contacts" class="container mx-auto px-4 md:px-6 w-full">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 w-full">

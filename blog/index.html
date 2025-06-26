@@ -238,9 +238,10 @@ footer a:hover {
 .social-icon-bw:hover {
   filter: grayscale(0%);
   border-color: #6B8E23;
+  color: #6B8E23;
 }
 
-.avito-icon-bw, .yandex-maps-icon {
+.avito-icon-bw {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -250,13 +251,12 @@ footer a:hover {
   filter: grayscale(100%);
 }
 
-.avito-icon-bw svg, .yandex-maps-icon svg {
+.avito-icon-bw svg {
   width: 100%;
   height: 100%;
 }
 
-.social-icon-bw:hover .avito-icon-bw,
-.social-icon-bw:hover .yandex-maps-icon {
+.social-icon-bw:hover .avito-icon-bw {
   filter: grayscale(0%);
 }
 
@@ -344,38 +344,6 @@ footer a:hover {
 #footer-contacts .footer-column:first-child,
 #footer-contacts .footer-column:first-child * {
   color: white !important;
-}
-
-/* УТОЧНЕННЫЕ СТИЛИ ДЛЯ ПЕРВОГО БЛОКА ФУТЕРА */
-.footer-column:first-child {
-  justify-content: flex-start;
-}
-.footer-column:first-child .logo-wrapper {
-  margin-bottom: 0.4rem; /* Увеличено на 20% */
-}
-.footer-column:first-child .description-wrapper {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-.footer-column:first-child .description-wrapper p {
-  margin: 0;
-  font-size: 0.7rem; /* Уменьшено на 20% (относительно 0.875rem) */
-  line-height: 1.25;
-}
-.footer-column:first-child .description-wrapper p:first-child {
-  margin-bottom: 0.3rem; /* Увеличено на 20% */
-}
-
-/* Стили для новых иконок */
-.social-icon-bw:hover.vk svg path {
-  fill: #4a76a8; /* Официальный цвет VK */
-}
-.social-icon-bw:hover.telegram svg path {
-  fill: #0088cc; /* Официальный цвет Telegram */
-}
-.social-icon-bw:hover.yandex-maps svg path {
-  fill: #ff0000; /* Официальный цвет Яндекс Карт */
 }
 </style>
 </head>
@@ -482,19 +450,15 @@ footer a:hover {
 </section>
 </main>
 
-<!-- Футер с точно выровненным текстом -->
+<!-- Футер с дополнительно уменьшенными отступами -->
 <footer class="py-10 md:py-12 w-full">
   <div id="footer-contacts" class="container mx-auto px-4 md:px-6 w-full">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 w-full">
       <!-- Лого и описание -->
       <div class="footer-column">
-        <div class="logo-wrapper">
-          <a href="/" class="text-2xl md:text-3xl font-['Pacifico'] mb-3 md:mb-4 block">Алтайский мёд</a>
-        </div>
-        <div class="description-wrapper">
-          <p class="text-xs">Натуральные продукты пчеловодства с Алтайских гор.</p>
-          <p class="text-xs">© 2025 Алтайский мёд. Все права защищены.</p>
-        </div>
+        <a href="/" class="text-2xl md:text-3xl font-['Pacifico'] mb-3 md:mb-4 block">Алтайский мёд</a>
+        <p class="mb-3 md:mb-4 text-sm md:text-base">Натуральные продукты пчеловодства с Алтайских гор.</p>
+        <p class="text-sm md:text-base">© 2025 Алтайский мёд. Все права защищены.</p>
       </div>
       
       <!-- Каталог -->
@@ -587,7 +551,7 @@ footer a:hover {
               <div class="contact-icon">
                 <i class="ri-map-pin-2-line ri-sm md:ri-base"></i>
               </div>
-              <span class="contact-text">Владимирская обл. Город Ковров</span>
+              <span class="contact-text">Алтайский край, Солтонский район</span>
             </a>
           </li>
           <li>
@@ -612,28 +576,12 @@ footer a:hover {
         <div class="mt-4 md:mt-6">
           <p class="text-base md:text-lg font-bold mb-2 md:mb-3">Следите за нами</p>
           <div class="flex space-x-2 md:space-x-3">
-            <!-- VK -->
-            <a href="https://vk.com/honeybuckwheat" target="_blank" class="social-icon-bw vk">
-              <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M15.07 2H8.93C3.33 2 2 3.33 2 8.93v6.14C2 20.67 3.34 22 8.93 22h6.14c5.6 0 6.93-1.33 6.93-6.93V8.93C22 3.33 20.66 2 15.07 2m.3 15.84h-1.46c-.55 0-.71-.42-1.88-1.58c-1.01-.93-1.46-1.05-1.71-1.05c-.34 0-.44.11-.44.59v1.43c0 .42-.13.66-1.21.66c-1.77 0-3.66-1.09-5.04-3.11c-2.07-3.02-2.7-5.34-2.7-5.64c0-.17.11-.41.59-.41h1.46c.44 0 .6.2.76.66c.82 2.38 2.18 4.45 2.7 4.45c.22 0 .31-.11.31-.66v-2.48c.06-.97-.27-1.06-.27-1.42c0-.17.19-.34.42-.34h2.18c.36 0 .49.19.49.64v3.33c0 .37.17.49.27.49c.22 0 .4-.11.81-.49c1.27-1.38 2.23-3.5 2.23-3.5c.12-.27.3-.41.66-.41h1.46c.53 0 .64.27.53.59c-.22.66-2.32 3.94-2.32 3.94c-.18.27-.25.4 0 .65c.17.23.73.67 1.11 1.08c.76.79 1.36 1.47 1.53 1.89c.27.59-.13.88-.66.88Z" fill="#4b5563"/>
-              </svg>
+            <a href="https://vk.com/honeybuckwheat" target="_blank" class="social-icon-bw">
+              <i class="ri-vk-line ri-lg"></i>
             </a>
-            
-            <!-- Telegram -->
-            <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" class="social-icon-bw telegram">
-              <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.78 5.42-.9 6.8c-.06.67-.36.9-.86.56c-2.49-1.73-3.57-2.84-5.49-4.56c-.63-.57-1.07-1.04-1.36-1.27c-.34-.28-.5-.43-.68-.36c-.43.14-.43.83-.64 1.29c-.18.38-.69 2.18-.76 2.5c-.14.59-.27.51-.76.31c-.38-.16-1.33-.52-2.19-.84c-.99-.37-.57-.56.12-.88c2.24-.89 3.91-1.44 4.07-1.51c.34-.15.55-.22.62-.35c.09-.14.07-.54 0-.74c-.1-.31-.42-.42-.63-.43c-.5-.03-.83.07-1.13.14c-1.03.31-2.89 1.14-3.2 1.31c-.33.18-.66.26-.66.66c0 .16.04.3.09.44c.72 2.15 2.21 5.06 3.22 6.4c.69.91 1.38 1.19 2.3 1.21c.74.02 1.04-.25 1.4-.5c.54-.37 1.35-1.17 2.06-1.92c1.35-1.34 2.11-2.47 2.7-3.4c.6-.95.8-1.57.8-1.68c0-.04-.01-.17-.07-.24c-.07-.08-.19-.05-.35.02c-.15.07-.92.58-2.52 1.66c-.44.3-.85.45-1.22.44c-.41-.01-1.19-.26-1.76-.48c-.71-.27-1.27-.42-1.22-.89c.03-.27.4-.55 1.07-.85c4.2-1.83 4.63-2.04 5.15-2.04c.28 0 .5.07.64.2c.14.14.19.33.17.58z" fill="#4b5563"/>
-              </svg>
+            <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" class="social-icon-bw">
+              <i class="ri-telegram-line ri-lg"></i>
             </a>
-            
-            <!-- Яндекс Карты -->
-            <a href="https://yandex.ru/maps/" target="_blank" class="social-icon-bw yandex-maps">
-              <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20.5 3l-.16.03L15 5.1L9 3L3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1l5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5M15 19l-6-2.11V5l6 2.11V19Z" fill="#4b5563"/>
-              </svg>
-            </a>
-            
-            <!-- Авито -->
             <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing" 
                target="_blank" class="social-icon-bw">
               <div class="avito-icon-bw">
@@ -644,6 +592,10 @@ footer a:hover {
                   <path fill="#0af" d="M137.789 97.856c21.519 0 38.964-17.444 38.964-38.963 0-21.52-17.445-38.964-38.964-38.964-21.52 0-38.964 17.445-38.964 38.964s17.445 38.963 38.964 38.963z" transform="translate(7.024 7.024) scale(.92683)"/>
                 </svg>
               </div>
+            </a>
+            <!-- Добавлена иконка Яндекса -->
+            <a href="https://yandex.ru" target="_blank" class="social-icon-bw">
+              <i class="ri-yandex-line ri-lg"></i>
             </a>
           </div>
         </div>
@@ -755,5 +707,22 @@ footer a:hover {
     });
   });
 </script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(102951378, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/102951378" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
 </body>
 </html>

@@ -1,4 +1,10 @@
+txt
 User-agent: *
 Allow: /
 Disallow: /private/
 Sitemap: https://altaymed.shop/sitemap.xml
+
+# Новые страницы
+Allow: /delivery.html
+Allow: /blog/med-v-zdorovom-pitanii.html
+Allow: /blog/tradicii-altayskogo-pchelovodstva.html

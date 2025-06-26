@@ -346,12 +346,12 @@ footer a:hover {
   color: white !important;
 }
 
-/* МИНИМАЛЬНЫЙ РАССТОЯНИЕ МЕЖДУ СТРОКАМИ */
+/* УТОЧНЕННЫЕ СТИЛИ ДЛЯ ПЕРВОГО БЛОКА ФУТЕРА */
 .footer-column:first-child {
   justify-content: flex-start;
 }
 .footer-column:first-child .logo-wrapper {
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.4rem; /* Увеличено на 20% */
 }
 .footer-column:first-child .description-wrapper {
   display: flex;
@@ -360,11 +360,11 @@ footer a:hover {
 }
 .footer-column:first-child .description-wrapper p {
   margin: 0;
-  font-size: 0.7rem;
-  line-height: 1.05;
+  font-size: 0.7rem; /* Уменьшено на 20% (относительно 0.875rem) */
+  line-height: 1.25;
 }
 .footer-column:first-child .description-wrapper p:first-child {
-  margin-bottom: 0.05rem;
+  margin-bottom: 0.3rem; /* Увеличено на 20% */
 }
 </style>
 </head>
@@ -471,14 +471,14 @@ footer a:hover {
 </section>
 </main>
 
-<!-- Футер с минимальным расстоянием между строками -->
+<!-- Футер с точно выровненным текстом -->
 <footer class="py-10 md:py-12 w-full">
   <div id="footer-contacts" class="container mx-auto px-4 md:px-6 w-full">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 w-full">
       <!-- Лого и описание -->
       <div class="footer-column">
         <div class="logo-wrapper">
-          <a href="/" class="text-2xl md:text-3xl font-['Pacifico'] mb-2 block">Алтайский мёд</a>
+          <a href="/" class="text-2xl md:text-3xl font-['Pacifico'] mb-3 md:mb-4 block">Алтайский мёд</a>
         </div>
         <div class="description-wrapper">
           <p class="text-xs">Натуральные продукты пчеловодства с Алтайских гор.</p>

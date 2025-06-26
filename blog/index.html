@@ -345,31 +345,6 @@ footer a:hover {
 #footer-contacts .footer-column:first-child * {
   color: white !important;
 }
-
-/* ТОЧНОЕ ВЫРАВНИВАНИЕ ТЕКСТА В ПОДВАЛЕ */
-.footer-column:first-child {
-  justify-content: flex-start;
-}
-.footer-column:first-child .logo-wrapper {
-  margin-bottom: 0.5rem;
-}
-.footer-column:first-child .description-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-}
-.footer-column:first-child .description-wrapper p {
-  margin: 0;
-  font-size: 0.75rem;
-  line-height: 1.2;
-}
-.footer-column:first-child .description-wrapper p:first-child {
-  margin-bottom: 0.1rem;
-}
-.footer-column:nth-child(2) ul {
-  padding-top: 0.3rem;
-}
 </style>
 </head>
 <body>
@@ -475,19 +450,15 @@ footer a:hover {
 </section>
 </main>
 
-<!-- Футер с точно выровненным текстом -->
+<!-- Футер с дополнительно уменьшенными отступами -->
 <footer class="py-10 md:py-12 w-full">
   <div id="footer-contacts" class="container mx-auto px-4 md:px-6 w-full">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 w-full">
       <!-- Лого и описание -->
       <div class="footer-column">
-        <div class="logo-wrapper">
-          <a href="/" class="text-2xl md:text-3xl font-['Pacifico'] mb-3 md:mb-4 block">Алтайский мёд</a>
-        </div>
-        <div class="description-wrapper">
-          <p class="text-xs md:text-xs">Натуральные продукты пчеловодства с Алтайских гор.</p>
-          <p class="text-xs md:text-xs">© 2025 Алтайский мёд. Все права защищены.</p>
-        </div>
+        <a href="/" class="text-2xl md:text-3xl font-['Pacifico'] mb-3 md:mb-4 block">Алтайский мёд</a>
+        <p class="mb-3 md:mb-4 text-sm md:text-base">Натуральные продукты пчеловодства с Алтайских гор.</p>
+        <p class="text-sm md:text-base">© 2025 Алтайский мёд. Все права защищены.</p>
       </div>
       
       <!-- Каталог -->

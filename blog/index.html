@@ -69,7 +69,6 @@ tailwind.config = {
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
 <style>
-/* Все стили из главной страницы */
 :where([class^="ri-"])::before { content: "\f3c2"; }
 body {
   font-family: 'Open Sans', sans-serif;
@@ -81,23 +80,21 @@ body {
   background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZmZmZmZmIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNmNWRlYjMiIG9wYWNpdHk9IjAuMSI+PC9yZWN0Pgo8L3N2Zz4=');
 }
 
-/* Исправления цветов */
 .nav-link {
-  color: #1a202c !important; /* Черный цвет вместо серого */
+  color: #1a202c !important;
   transition: color 0.3s;
 }
 .nav-link:hover {
-  color: #6B8E23 !important; /* Зеленый при наведении */
+  color: #6B8E23 !important;
 }
 .nav-btn {
-  background: #6B8E23 !important; /* Зеленый фон */
-  color: white !important; /* Белый текст */
+  background: #6B8E23 !important;
+  color: white !important;
 }
 .header-logo {
   color: #6B8E23 !important;
 }
 
-/* ФИКС: ВЫРАВНИВАНИЕ ПОДВАЛА */
 footer {
   width: 100% !important;
   box-sizing: border-box !important;
@@ -106,7 +103,7 @@ footer {
   background-color: #8B4513;
 }
 
-/* ОБНОВЛЕННЫЙ ФОН С ВАФЕЛЬНОЙ СЕТКОЙ (увеличенная в 3 раза и повернутая на 30 градусов) */
+/* ОБНОВЛЕННЫЙ УЗОР ВАФЕЛЬНОЙ СЕТКИ */
 footer::before {
   content: "";
   position: absolute;
@@ -115,10 +112,10 @@ footer::before {
   width: 100%;
   height: 100%;
   background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-  background-size: 90px 90px; /* Увеличен в 3 раза */
-  transform: rotate(30deg); /* Наклон на 30 градусов */
+    linear-gradient(rgba(255, 255, 255, 0.15) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.15) 2px, transparent 2px);
+  background-size: 90px 90px;
+  transform: rotate(30deg);
   opacity: 0.6;
   z-index: 0;
 }
@@ -200,7 +197,6 @@ footer .grid {
   flex-shrink: 0 !important;
 }
 
-/* ЖЕСТКИЙ ФИКС цвета текста в футере */
 footer, 
 footer *,
 footer a, 
@@ -212,16 +208,14 @@ footer li {
   box-sizing: border-box !important;
 }
 footer a:hover {
-  color: #d1d5db !important; /* Серый при наведении */
+  color: #d1d5db !important;
 }
 
-/* Дополнительные стили для вертикального выравнивания */
 .footer-column li a {
   display: flex;
   align-items: center;
 }
 
-/* СТИЛЬ ДЛЯ ИКОНОК СОЦСЕТЕЙ (ЧЕРНО-БЕЛЫЕ) */
 .social-icon-bw {
   display: flex;
   align-items: center;
@@ -242,7 +236,6 @@ footer a:hover {
   color: #6B8E23;
 }
 
-/* ИКОНКА AVITO (ОБНОВЛЕННАЯ) */
 .avito-icon-bw {
   display: flex;
   align-items: center;
@@ -262,12 +255,11 @@ footer a:hover {
   filter: grayscale(0%);
 }
 
-/* Выравнивание иконок в контактах */
 .contact-item {
   display: flex;
   align-items: center;
-  padding-top: 0.75rem; /* Увеличено с 0.5rem */
-  padding-bottom: 0.75rem; /* Увеличено с 0.5rem */
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 
 .contact-icon {
@@ -284,13 +276,11 @@ footer a:hover {
   line-height: 1.5;
 }
 
-/* Уменьшенные отступы для колонок Каталог/Материалы/Информация */
 .footer-link-item {
-  padding-top: 0.25rem !important; /* Уменьшено с 0.5rem */
-  padding-bottom: 0.25rem !important; /* Уменьшено с 0.5rem */
+  padding-top: 0.25rem !important;
+  padding-bottom: 0.25rem !important;
 }
 
-/* Анимации для карточек */
 .blog-post-card {
   transition: all 0.3s ease;
 }
@@ -299,7 +289,6 @@ footer a:hover {
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
-/* СТИЛЬ ДЛЯ АКТИВНОГО РАЗДЕЛА В НАВИГАЦИИ */
 .active-nav-link-alt {
   border: 2px solid #6B8E23 !important;
   border-radius: 8px !important;
@@ -313,7 +302,6 @@ footer a:hover {
   background: rgba(107, 142, 35, 0.1) !important;
 }
 
-/* ОБНОВЛЕННАЯ СТРЕЛКА НАЗАД С ИЗМЕНЕННЫМ ЦВЕТОМ */
 .floating-back-button {
   position: fixed;
   bottom: 2rem;
@@ -455,7 +443,7 @@ footer a:hover {
 </section>
 </main>
 
-<!-- Футер с вафельной сеткой -->
+<!-- Футер с обновлённой вафельной сеткой -->
 <footer class="py-10 md:py-12 w-full">
   <div id="footer-contacts" class="container mx-auto px-4 md:px-6 w-full">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 w-full">
@@ -466,7 +454,7 @@ footer a:hover {
         <p class="text-sm md:text-base">© 2025 Алтайский мёд. Все права защищены.</p>
       </div>
       
-      <!-- Каталог (уменьшенные отступы) -->
+      <!-- Каталог -->
       <div class="footer-column">
         <h4 class="text-base md:text-lg font-bold">Каталог</h4>
         <ul>
@@ -491,7 +479,7 @@ footer a:hover {
         </ul>
       </div>
       
-      <!-- Материалы (уменьшенные отступы) -->
+      <!-- Материалы -->
       <div class="footer-column">
         <h4 class="text-base md:text-lg font-bold">Материалы</h4>
         <ul>
@@ -516,7 +504,7 @@ footer a:hover {
         </ul>
       </div>
       
-      <!-- Информация (уменьшенные отступы) -->
+      <!-- Информация -->
       <div class="footer-column">
         <h4 class="text-base md:text-lg font-bold">Информация</h4>
         <ul>
@@ -544,11 +532,10 @@ footer a:hover {
               <span class="text-sm md:text-base">Доставка и оплата</span>
             </a>
           </li>
-          <!-- Пункт "Политика конфиденциальности" удален по запросу -->
         </ul>
       </div>
       
-      <!-- Контакты (увеличенные отступы) -->
+      <!-- Контакты -->
       <div class="footer-column">
         <h4 class="text-base md:text-lg font-bold">Контакты</h4>
         <ul>
@@ -625,7 +612,7 @@ footer a:hover {
   });
 </script>
 
-<!-- Плавающая кнопка "Назад" с новым дизайном -->
+<!-- Плавающая кнопка "Назад" -->
 <a href="#" id="back-button" class="floating-back-button">
   <div class="back-arrow"></div>
 </a>

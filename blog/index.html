@@ -265,8 +265,8 @@ footer a:hover {
 .contact-item {
   display: flex;
   align-items: center;
-  padding-top: 1.17rem; /* Увеличение на 30% (было 0.9rem) */
-  padding-bottom: 1.17rem; /* Увеличение на 30% (было 0.9rem) */
+  padding-top: 1.17rem !important; /* Увеличение на 30% */
+  padding-bottom: 1.17rem !important; /* Увеличение на 30% */
 }
 
 .contact-icon {
@@ -348,7 +348,8 @@ footer a:hover {
 
 /* Явно задаем белый цвет для логотипа и текста в футере */
 .footer-logo,
-.footer-column:first-child p {
+.footer-column:first-child p,
+.footer-column:first-child span {
   color: white !important;
 }
 </style>

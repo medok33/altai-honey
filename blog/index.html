@@ -106,7 +106,7 @@ footer {
   background-color: #8B4513;
 }
 
-/* ОБНОВЛЕННЫЙ ФОН С ПЧЕЛИНЫМИ СОТАМИ - ИСПРАВЛЕННЫЙ */
+/* ОБНОВЛЕННЫЙ ФОН С ВАФЕЛЬНОЙ СЕТКОЙ */
 footer::before {
   content: "";
   position: absolute;
@@ -114,9 +114,11 @@ footer::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48cGF0dGVybiBpZD0iaGV4YWdvbiIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI4IiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNMTIsMEwyNCw3TDI0LDIxTDEyLDI4TDAsMjFMMCw3TDEyLDBaIiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMTUiIHN0cm9rZT0ibm9uZSIgLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjaGV4YWdvbikiIC8+PC9zdmc+');
-  background-size: 48px 28px;
-  opacity: 0.8;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
+  opacity: 0.6;
   z-index: 0;
 }
 
@@ -310,7 +312,7 @@ footer a:hover {
   background: rgba(107, 142, 35, 0.1) !important;
 }
 
-/* НОВАЯ СТРЕЛКА НАЗАД */
+/* НОВАЯ СТРЕЛКА НАЗАД - СТИЛЬНАЯ ВЕРСИЯ */
 .floating-back-button {
   position: fixed;
   bottom: 2rem;
@@ -319,7 +321,7 @@ footer a:hover {
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 50%;
-  background: #FFA500;
+  background: #6B8E23;
   color: white;
   display: flex;
   align-items: center;
@@ -327,11 +329,13 @@ footer a:hover {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
   opacity: 0;
+  transform: scale(0.95);
 }
 
 .floating-back-button:hover {
-  background: #e69500;
+  background: #5a7a1c;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transform: scale(1.05);
 }
 
 .back-arrow {
@@ -340,21 +344,39 @@ footer a:hover {
   height: 24px;
 }
 
-.back-arrow::before {
+.back-arrow::before,
+.back-arrow::after {
   content: '';
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 14px;
-  height: 14px;
-  border-top: 3px solid white;
-  border-left: 3px solid white;
-  transform: translate(-30%, -50%) rotate(-45deg);
+  background-color: white;
+  transition: all 0.3s ease;
 }
 
-/* Анимации при наведении */
+.back-arrow::before {
+  width: 14px;
+  height: 3px;
+  transform: translate(-40%, -50%) rotate(-45deg);
+  border-radius: 2px;
+}
+
+.back-arrow::after {
+  width: 14px;
+  height: 3px;
+  transform: translate(-40%, -50%) rotate(45deg);
+  border-radius: 2px;
+}
+
+/* Анимация при наведении */
 .floating-back-button:hover .back-arrow::before {
-  border-color: #fff;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  width: 18px;
+}
+
+.floating-back-button:hover .back-arrow::after {
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 18px;
 }
 </style>
 </head>
@@ -461,7 +483,7 @@ footer a:hover {
 </section>
 </main>
 
-<!-- Футер с узором пчелиных сот (исправленный) -->
+<!-- Футер с вафельной сеткой -->
 <footer class="py-10 md:py-12 w-full">
   <div id="footer-contacts" class="container mx-auto px-4 md:px-6 w-full">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 w-full">

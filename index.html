@@ -34,39 +34,16 @@
 <meta name="theme-color" content="#9f5524">
 
 <!-- Оптимизированные шрифты -->
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" as="style" onload="this.rel='stylesheet'">
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" as="style" onload="this.rel='stylesheet'">
-<noscript>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-</noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<!-- Аналитика -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-D9YMSF22NS"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-D9YMSF22NS');
-</script>
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();
-   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+<!-- Оптимизированные иконки -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" media="print" onload="this.media='all'">
 
-   ym(102951378, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true
-   });
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/102951378" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
-
-<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<!-- Оптимизированный Tailwind -->
+<script src="https://cdn.tailwindcss.com/3.4.16?minify=true"></script>
 <script>
 tailwind.config = {
   theme: {
@@ -92,9 +69,7 @@ tailwind.config = {
   }
 }
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+
 <style>
 :where([class^="ri-"])::before { content: "\f3c2"; }
 body {
@@ -576,6 +551,18 @@ footer a:hover {
   .contact-cta {
     padding: 1rem 1.5rem;
     font-size: 1.1rem;
+  }
+  
+  /* Оптимизация анимаций для мобильных */
+  .benefit-card:hover, 
+  .product-card:hover,
+  .step-circle:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+  
+  .benefit-card:hover .benefit-icon {
+    transform: none !important;
   }
 }
 
@@ -1559,6 +1546,34 @@ img.product-image.loaded {
 </div>
 
 <script>
+// Аналитика загружается после полной загрузки страницы
+window.addEventListener('load', function() {
+  // Google Analytics
+  var gaScript = document.createElement('script');
+  gaScript.async = true;
+  gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-D9YMSF22NS';
+  document.head.appendChild(gaScript);
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-D9YMSF22NS');
+
+  // Yandex Metrika
+  var yaScript = document.createElement('script');
+  yaScript.src = 'https://mc.yandex.ru/metrika/tag.js';
+  yaScript.async = true;
+  document.head.appendChild(yaScript);
+
+  yaScript.onload = function() {
+    ym(102951378, "init", {
+      clickmap:true,
+      trackLinks:true,
+      accurateTrackBounce:true
+    });
+  };
+});
+
 document.addEventListener('DOMContentLoaded', function() {
   const mobileMenuButton = document.querySelector('.md\\:hidden');
   const mobileMenu = document.getElementById('mobile-menu');
@@ -1880,6 +1895,24 @@ ${message}
       img.classList.add('loaded');
     }
   });
+  
+  // Ленивая загрузка фонового изображения героя
+  const lazyBackgrounds = [].slice.call(document.querySelectorAll('.hero-section'));
+  
+  if ('IntersectionObserver' in window) {
+    let lazyBackgroundObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.style.backgroundImage = window.getComputedStyle(entry.target).backgroundImage;
+          lazyBackgroundObserver.unobserve(entry.target);
+        }
+      });
+    });
+
+    lazyBackgrounds.forEach(function(lazyBackground) {
+      lazyBackgroundObserver.observe(lazyBackground);
+    });
+  }
 });
 </script>
 </body>

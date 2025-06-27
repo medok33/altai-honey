@@ -1,9 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 
-const metricaCode = `
+// Код Яндекс.Метрики
+const METRICA_CODE = `
 <!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
+<script>
   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
   m[i].l=1*new Date();
   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
@@ -21,81 +22,64 @@ const metricaCode = `
 `;
 
 function processDirectory(directory) {
-  console.log(`🔍 Сканирую директорию: ${directory}`);
+  console.log(`Scanning directory: ${directory}`);
   
   try {
-    const files = fs.readdirSync(directory);
-
-    files.forEach(file => {
-      const absolutePath = path.join(directory, file);
+    const items = fs.readdirSync(directory, { withFileTypes: true });
+    
+    for (const item of items) {
+      const fullPath = path.join(directory, item.name);
       
-      try {
-        const stat = fs.statSync(absolutePath);
-
-        if (stat.isDirectory()) {
-          processDirectory(absolutePath);
-        } else if (path.extname(file).toLowerCase() === '.html') {
-          processHtmlFile(absolutePath);
-        }
-      } catch (statError) {
-        console.error(`❌ Ошибка доступа к элементу: ${absolutePath}`, statError.message);
+      if (item.isDirectory()) {
+        processDirectory(fullPath);
+      } else if (item.isFile() && fullPath.endsWith('.html')) {
+        processHtmlFile(fullPath);
       }
-    });
-  } catch (readDirError) {
-    console.error(`❌ Ошибка чтения директории: ${directory}`, readDirError.message);
+    }
+  } catch (error) {
+    console.error(`Error processing directory ${directory}:`, error.message);
   }
 }
 
 function processHtmlFile(filePath) {
-  console.log(`📄 Обрабатываю файл: ${filePath}`);
-  
   try {
+    console.log(`Processing file: ${filePath}`);
     let content = fs.readFileSync(filePath, 'utf8');
     
+    // Проверяем, не добавлен ли уже код
     if (content.includes('Yandex.Metrika counter')) {
-      console.log(`⏩ Пропускаю (метрика уже установлена): ${filePath}`);
+      console.log(`Skipping (already exists): ${filePath}`);
       return;
     }
-
-    let modified = false;
     
-    // Вариант 1: Вставка перед </head>
+    // Пытаемся вставить перед </head>
     if (content.includes('</head>')) {
-      content = content.replace('</head>', metricaCode + '\n</head>');
-      modified = true;
-    } 
-    // Вариант 2: Вставка перед </body> если </head> отсутствует
-    else if (content.includes('</body>')) {
-      content = content.replace('</body>', metricaCode + '\n</body>');
-      modified = true;
-    }
-    // Вариант 3: Добавление в конец файла
-    else {
-      content += '\n' + metricaCode;
-      modified = true;
-      console.warn(`⚠️ Вставка в конец файла (отсутствуют теги): ${filePath}`);
-    }
-
-    if (modified) {
+      content = content.replace('</head>', `${METRICA_CODE}\n</head>`);
       fs.writeFileSync(filePath, content, 'utf8');
-      console.log(`✅ Успешно добавлено: ${filePath}`);
-    } else {
-      console.error(`❌ Не удалось найти место для вставки: ${filePath}`);
+      console.log(`Added to </head>: ${filePath}`);
+      return;
     }
+    
+    // Пытаемся вставить перед </body>
+    if (content.includes('</body>')) {
+      content = content.replace('</body>', `${METRICA_CODE}\n</body>`);
+      fs.writeFileSync(filePath, content, 'utf8');
+      console.log(`Added to </body>: ${filePath}`);
+      return;
+    }
+    
+    // Если не нашли подходящее место, добавляем в конец
+    content += `\n${METRICA_CODE}`;
+    fs.writeFileSync(filePath, content, 'utf8');
+    console.log(`Appended to end: ${filePath}`);
+    
   } catch (error) {
-    console.error(`❌ Критическая ошибка обработки: ${filePath}`, error.message);
+    console.error(`Error processing file ${filePath}:`, error.message);
   }
 }
 
-// Проверка аргументов командной строки
-const args = process.argv.slice(2);
-let targetDir = args[0] || path.join(__dirname, '..');
-
-if (!fs.existsSync(targetDir)) {
-  console.error(`❌ Директория не существует: ${targetDir}`);
-  process.exit(1);
-}
-
-console.log(`🚀 Запуск скрипта для директории: ${targetDir}`);
-processDirectory(targetDir);
-console.log('🏁 Обработка завершена');
+// Определяем корневую директорию
+const rootDir = path.resolve(__dirname, '..');
+console.log(`Starting processing in: ${rootDir}`);
+processDirectory(rootDir);
+console.log('Processing completed!');

@@ -69,7 +69,6 @@ tailwind.config = {
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
 <style>
-/* Все стили из главной страницы index.html */
 :where([class^="ri-"])::before { content: "\f3c2"; }
 body {
   font-family: 'Open Sans', sans-serif;
@@ -77,36 +76,283 @@ body {
   display: flex;
   flex-direction: column;
 }
-/* ... остальные стили ... */
+.texture-bg {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZmZmZmZmIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNmNWRlYjMiIG9wYWNpdHk9IjAuMSI+PC9yZWN0Pgo8L3N2Zz4=');
+}
 
-/* Стиль для кнопки "На главную" */
-.home-button {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #6B8E23;
-  color: white;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
+.nav-link {
+  color: #1a202c !important;
+  transition: color 0.3s;
+}
+.nav-link:hover {
+  color: #6B8E23 !important;
+}
+.nav-btn {
+  background: #6B8E23 !important;
+  color: white !important;
+}
+.header-logo {
+  color: #6B8E23 !important;
+}
+
+footer {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  position: relative;
+  overflow: hidden;
+  background-color: #8B4513;
+  z-index: 1;
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 600%;
+  height: 600%;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+  background-size: 108px 108px;
+  transform: rotate(30deg);
+  transform-origin: 0 0;
+  opacity: 0.6;
+  z-index: 0;
+  margin-left: -220%;
+  margin-top: -220%;
+}
+
+footer .container {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding-right: 1.5rem !important;
+  padding-left: 1.5rem !important;
+  position: relative;
+  z-index: 1;
+}
+
+footer .grid {
+  width: 100% !important;
+  display: grid !important;
+  grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+}
+
+@media (min-width: 768px) {
+  footer .grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  }
+}
+
+.footer-column {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.footer-column h4 {
+  text-align: left !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 0 0.64rem 0 !important;
+  font-weight: bold !important;
+  font-size: 1.125rem !important;
+  line-height: 1.75rem !important;
+}
+
+.footer-column ul {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  list-style: none !important;
+}
+
+.footer-column li {
+  width: 100% !important;
+  text-align: left !important;
+  list-style-type: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.footer-column li a {
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.footer-column .bullet {
+  display: inline-block !important;
+  width: 6px !important;
+  height: 6px !important;
+  background-color: white !important;
+  border-radius: 50% !important;
+  margin-right: 10px !important;
+  flex-shrink: 0 !important;
+}
+
+footer, 
+footer *,
+footer a, 
+footer p, 
+footer span, 
+footer h4, 
+footer li {
+  color: white !important;
+  box-sizing: border-box !important;
+}
+footer a:hover {
+  color: #d1d5db !important;
+}
+
+.footer-column li a {
+  display: flex;
+  align-items: center;
+}
+
+.social-icon-bw {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  z-index: 1000;
-  opacity: 0;
-  transform: translateY(20px);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: transparent;
+  transition: all 0.3s;
+  border: 1px solid #4b5563;
+  color: #4b5563;
+  filter: grayscale(100%);
+}
+
+.social-icon-bw:hover {
+  filter: grayscale(0%);
+  border-color: #6B8E23;
+  color: #6B8E23;
+}
+
+.avito-icon-bw, .yandex-maps-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  filter: grayscale(100%);
+}
+
+.avito-icon-bw svg, .yandex-maps-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.social-icon-bw:hover .avito-icon-bw,
+.social-icon-bw:hover .yandex-maps-icon {
+  filter: grayscale(0%);
+}
+
+.footer-link-item {
+  display: flex;
+  align-items: center;
+  padding-top: 0.21rem !important;
+  padding-bottom: 0.21rem !important;
+}
+
+.contact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  flex-shrink: 0;
+  width: 24px;
+}
+
+.contact-text {
+  flex-grow: 1;
+  line-height: 1.5;
+}
+
+.active-nav-link-alt {
+  border: 2px solid #6B8E23 !important;
+  border-radius: 8px !important;
+  padding: 4px 12px !important;
+  color: #6B8E23 !important;
+  font-weight: 600 !important;
   transition: all 0.3s ease;
 }
 
-.home-button.visible {
-  opacity: 1;
-  transform: translateY(0);
+.active-nav-link-alt:hover {
+  background: rgba(107, 142, 35, 0.1) !important;
 }
 
-.home-button:hover {
-  background-color: #5a7a1d;
-  transform: scale(1.05) translateY(0);
+.floating-back-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 50;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background: #6B8E23;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.floating-back-button:hover {
+  background: #5a7a1c;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transform: scale(1.05);
+}
+
+.back-arrow {
+  width: 24px;
+  height: 24px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23ffffff' d='M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: transform 0.3s ease;
+}
+
+.floating-back-button:hover .back-arrow {
+  transform: translateX(-4px);
+}
+
+#footer-contacts .footer-column:first-child,
+#footer-contacts .footer-column:first-child * {
+  color: white !important;
+}
+
+.footer-column:first-child {
+  justify-content: flex-start;
+}
+.footer-column:first-child .logo-wrapper {
+  margin-bottom: 0.4rem;
+}
+.footer-column:first-child .description-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.footer-column:first-child .description-wrapper p {
+  margin: 0;
+  font-size: 0.7rem;
+  line-height: 1.25;
+}
+.footer-column:first-child .description-wrapper p:first-child {
+  margin-bottom: 0.3rem;
 }
 </style>
 </head>
@@ -121,11 +367,12 @@ body {
       <a href="/#products" class="nav-link">Каталог</a>
       <a href="/#about" class="nav-link">О нас</a>
       <a href="/#footer-contacts" class="nav-link">Контакты</a>
-      <a href="/blog/" class="nav-link font-bold">Блог</a>
+      <!-- Активная ссылка на Блог -->
+      <a href="/blog/" class="active-nav-link-alt">Блог</a>
       <a href="/#order" class="nav-btn px-4 md:px-6 py-1 md:py-2 !rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">Заказать</a>
     </div>
     
-    <button class="md:hidden w-10 h-10 flex items-center justify-center">
+    <button class="md:hidden w-10 h-10 flex items-center justify-center" id="mobile-menu-button">
       <i class="ri-menu-line text-gray-900 ri-xl"></i>
     </button>
   </div>
@@ -137,16 +384,12 @@ body {
       <a href="/#products" class="nav-link py-2">Каталог</a>
       <a href="/#about" class="nav-link py-2">О нас</a>
       <a href="/#footer-contacts" class="nav-link py-2">Контакты</a>
-      <a href="/blog/" class="nav-link py-2 font-bold">Блог</a>
+      <!-- Активная ссылка на Блог (мобильная версия) -->
+      <a href="/blog/" class="active-nav-link-alt py-2 text-center">Блог</a>
       <a href="/#order" class="nav-btn py-2 text-center !rounded-button hover:bg-opacity-90 transition-all">Заказать</a>
     </div>
   </div>
 </nav>
-
-<!-- Кнопка "На главную" -->
-<a href="/" class="home-button">
-  <i class="ri-home-2-line ri-lg"></i>
-</a>
 
 <main>
 <!-- Шапка статьи -->
@@ -164,7 +407,9 @@ body {
       
       <img src="/images/placeholder.jpg" 
            data-src="/images/image-19.jpg" 
-           alt="Традиции пчеловодства" 
+           alt="Традиционные ульи на алтайской пасеке" 
+           width="800"
+           height="600"
            class="w-full mb-6 rounded lazyload"
            loading="lazy"
            decoding="async">
@@ -197,26 +442,24 @@ body {
           <span>Передача знаний из поколения в поколение</span>
         </li>
       </ul>
-      
-      <div class="mt-8 text-center">
-        <a href="/#about" class="hero-btn-primary inline-block px-6 py-2 md:px-8 md:py-3 !rounded-button shadow-lg hover:bg-opacity-90 transition-all whitespace-nowrap text-base md:text-lg font-medium">
-          Узнать о нашей пасеке
-        </a>
-      </div>
     </div>
   </div>
 </section>
 </main>
 
 <!-- Футер -->
-<footer class="bg-[#8B4513] py-10 md:py-12 w-full">
+<footer class="py-10 md:py-12 w-full">
   <div id="footer-contacts" class="container mx-auto px-4 md:px-6 w-full">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 w-full">
       <!-- Лого и описание -->
       <div class="footer-column">
-        <a href="/" class="text-2xl md:text-3xl font-['Pacifico'] mb-3 md:mb-4 block footer-logo">Алтайский мёд</a>
-        <p class="mb-3 md:mb-4 text-sm md:text-base">Натуральные продукты пчеловодства с Алтайских гор.</p>
-        <p class="text-sm md:text-base">© 2025 Алтайский мёд. Все права защищены.</p>
+        <div class="logo-wrapper">
+          <a href="/" class="text-2xl md:text-3xl font-['Pacifico'] mb-3 md:mb-4 block">Алтайский мёд</a>
+        </div>
+        <div class="description-wrapper">
+          <p class="text-xs">Натуральные продукты пчеловодства с Алтайских гор.</p>
+          <p class="text-xs">© 2025 Алтайский мёд. Все права защищены.</p>
+        </div>
       </div>
       
       <!-- Каталог -->
@@ -224,19 +467,19 @@ body {
         <h4 class="text-base md:text-lg font-bold">Каталог</h4>
         <ul>
           <li>
-            <a href="/#product-1" class="hover:text-gray-300 transition-colors flex items-center py-1">
+            <a href="/#product-1" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Разнотравье</span>
             </a>
           </li>
           <li>
-            <a href="/#product-2" class="hover:text-gray-300 transition-colors flex items-center py-1">
+            <a href="/#product-2" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Таёжный мёд</span>
             </a>
           </li>
           <li>
-            <a href="/#product-3" class="hover:text-gray-300 transition-colors flex items-center py-1">
+            <a href="/#product-3" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Гречишный мёд</span>
             </a>
@@ -249,19 +492,19 @@ body {
         <h4 class="text-base md:text-lg font-bold">Материалы</h4>
         <ul>
           <li>
-            <a href="/blog/" class="hover:text-gray-300 transition-colors flex items-center py-1">
+            <a href="/blog/" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Блог</span>
             </a>
           </li>
           <li>
-            <a href="/faq/" class="hover:text-gray-300 transition-colors flex items-center py-1">
+            <a href="/faq/" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">FAQ</span>
             </a>
           </li>
           <li>
-            <a href="/legal.html" class="hover:text-gray-300 transition-colors flex items-center py-1">
+            <a href="/legal.html" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Правовая информация</span>
             </a>
@@ -274,33 +517,27 @@ body {
         <h4 class="text-base md:text-lg font-bold">Информация</h4>
         <ul>
           <li>
-            <a href="/#benefits" class="hover:text-gray-300 transition-colors flex items-center py-1">
+            <a href="/#benefits" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Преимущества</span>
             </a>
           </li>
           <li>
-            <a href="/#about" class="hover:text-gray-300 transition-colors flex items-center py-1">
+            <a href="/#about" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">О нас</span>
             </a>
           </li>
           <li>
-            <a href="/#footer-contacts" class="hover:text-gray-300 transition-colors flex items-center py-1">
+            <a href="/#footer-contacts" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Контакты</span>
             </a>
           </li>
           <li>
-            <a href="/delivery.html" class="hover:text-gray-300 transition-colors flex items-center py-1">
+            <a href="/delivery.html" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
               <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Доставка и оплата</span>
-            </a>
-          </li>
-          <li>
-            <a href="/legal.html" class="hover:text-gray-300 transition-colors flex items-center py-1">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">Политика конфиденциальности</span>
             </a>
           </li>
         </ul>
@@ -310,23 +547,29 @@ body {
       <div class="footer-column">
         <h4 class="text-base md:text-lg font-bold">Контакты</h4>
         <ul>
-          <li class="contact-item py-1">
-            <div class="contact-icon">
-              <i class="ri-map-pin-2-line ri-sm md:ri-base"></i>
-            </div>
-            <span class="text-sm md:text-base">Алтайский край, Солтонский район</span>
+          <li>
+            <a class="footer-link-item">
+              <div class="contact-icon">
+                <i class="ri-map-pin-2-line ri-sm md:ri-base"></i>
+              </div>
+              <span class="contact-text">Владимирская обл. Город Ковров</span>
+            </a>
           </li>
-          <li class="contact-item py-1">
-            <div class="contact-icon">
-              <i class="ri-phone-line ri-sm md:ri-base"></i>
-            </div>
-            <span class="text-sm md:text-base">+7 (920) 940-02-22</span>
+          <li>
+            <a href="tel:+79209400222" class="footer-link-item">
+              <div class="contact-icon">
+                <i class="ri-phone-line ri-sm md:ri-base"></i>
+              </div>
+              <span class="contact-text">+7 (920) 940-02-22</span>
+            </a>
           </li>
-          <li class="contact-item py-1">
-            <div class="contact-icon">
-              <i class="ri-mail-line ri-sm md:ri-base"></i>
-            </div>
-            <span class="text-sm md:text-base">9209400222@mail.ru</span>
+          <li>
+            <a href="mailto:9209400222@mail.ru" class="footer-link-item">
+              <div class="contact-icon">
+                <i class="ri-mail-line ri-sm md:ri-base"></i>
+              </div>
+              <span class="contact-text">9209400222@mail.ru</span>
+            </a>
           </li>
         </ul>
         
@@ -340,7 +583,7 @@ body {
             <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" class="social-icon-bw">
               <i class="ri-telegram-line ri-lg"></i>
             </a>
-            <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?context=H4sIAAAAAAAA_wE_AMD_YToyOntzOjEzOiJsb2NhbFByaW9yaXR5IjtiOjA7czoxOiJ4IjtzOjE2OiJES2U0ckc1ZzltRkZZeW1xIjt9bqqAxT8AAAA" 
+            <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing" 
                target="_blank" class="social-icon-bw">
               <div class="avito-icon-bw">
                 <svg viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg">
@@ -351,6 +594,15 @@ body {
                 </svg>
               </div>
             </a>
+            <!-- Иконка Яндекс Карт - обновленная версия -->
+            <a href="https://yandex.ru/maps/" target="_blank" class="social-icon-bw">
+              <div class="yandex-maps-icon">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2C8.13 2 5 5.13 5 9C5 13.17 9.42 18.92 11.24 21.11C11.64 21.59 12.37 21.59 12.77 21.11C14.58 18.92 19 13.17 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" 
+                        fill="currentColor"/>
+                </svg>
+              </div>
+            </a>
           </div>
         </div>
       </div>
@@ -358,48 +610,125 @@ body {
   </div>
 </footer>
 
+<!-- Плавающая кнопка "Назад" -->
+<a href="#" id="back-button" class="floating-back-button">
+  <div class="back-arrow"></div>
+</a>
+
 <!-- Скрипт lazy loading -->
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-  const lazyLoad = function(entries) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const img = entry.target;
-        img.src = img.dataset.src;
-        img.classList.remove("lazyload");
-        observer.unobserve(img);
+  document.addEventListener("DOMContentLoaded", function() {
+    const lazyLoad = function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.src = img.dataset.src;
+          img.classList.remove("lazyload");
+          observer.unobserve(img);
+        }
+      });
+    };
+    
+    const observer = new IntersectionObserver(lazyLoad, {
+      rootMargin: "0px 0px 200px 0px",
+      threshold: 0.01
+    });
+    
+    document.querySelectorAll("img.lazyload").forEach(img => {
+      observer.observe(img);
+    });
+  });
+</script>
+
+<!-- Скрипт для управления плавающей кнопкой -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const backButton = document.getElementById('back-button');
+    
+    // Показываем/скрываем кнопку при скролле
+    let isScrolling;
+    window.addEventListener('scroll', function() {
+      backButton.style.opacity = "1";
+      
+      clearTimeout(isScrolling);
+      isScrolling = setTimeout(function() {
+        backButton.style.opacity = "0";
+      }, 2000);
+    });
+    
+    // Обработка нажатия на кнопку "Назад"
+    backButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      // Проверяем историю переходов
+      if (document.referrer && document.referrer.includes(window.location.host)) {
+        // Если есть предыдущая страница на нашем сайте
+        window.history.back();
+      } else {
+        // Если нет истории или пришел с другого сайта
+        window.location.href = '/';
       }
     });
-  };
-  
-  const observer = new IntersectionObserver(lazyLoad, {
-    rootMargin: "200px 0px 200px 0px",
-    threshold: 0.01
   });
-  
-  // Проверка сразу видимых изображений
-  document.querySelectorAll("img.lazyload").forEach(img => {
-    const rect = img.getBoundingClientRect();
-    if (rect.top < window.innerHeight + 200 && rect.bottom > 0) {
-      img.src = img.dataset.src;
-      img.classList.remove("lazyload");
-    } else {
-      observer.observe(img);
-    }
-  });
-  
-  // Кнопка "На главную"
-  const homeButton = document.querySelector('.home-button');
-  
-  // Показываем кнопку при скролле
-  window.addEventListener('scroll', function() {
-    if (window.scrollY > 300) {
-      homeButton.classList.add('visible');
-    } else {
-      homeButton.classList.remove('visible');
-    }
-  });
-});
 </script>
+
+<!-- Обработка мобильного меню -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileMenuButton.addEventListener('click', function() {
+      if (mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.remove('hidden');
+        mobileMenu.classList.add('block');
+      } else {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('block');
+      }
+    });
+    
+    // Плавная прокрутка к якорям
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        if (this.getAttribute('href') === '#') return;
+        
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+          
+          // Закрыть мобильное меню при клике на ссылку
+          if (!mobileMenu.classList.contains('hidden') && window.innerWidth < 768) {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('block');
+          }
+        }
+      });
+    });
+  });
+</script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(102951378, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/102951378" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
 </body>
 </html>

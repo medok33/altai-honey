@@ -34,39 +34,51 @@
 <meta name="theme-color" content="#9f5524">
 
 <!-- Оптимизированные шрифты -->
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" as="style" onload="this.rel='stylesheet'">
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" as="style" onload="this.rel='stylesheet'">
-<noscript>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-</noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<!-- Аналитика -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-D9YMSF22NS"></script>
+<!-- Аналитика (отложенная загрузка) -->
 <script>
+window.addEventListener('load', function() {
+  // Google Analytics
+  const gtagScript = document.createElement('script');
+  gtagScript.async = true;
+  gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-D9YMSF22NS';
+  document.head.appendChild(gtagScript);
+  
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-D9YMSF22NS');
-</script>
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();
-   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+  
+  // Yandex.Metrika counter
+  const ymScript = document.createElement('script');
+  ymScript.type = 'text/javascript';
+  ymScript.text = `
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();
+    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-   ym(102951378, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true
-   });
+    ym(102951378, "init", {
+          clickmap:true,
+          trackLinks:true,
+          accurateTrackBounce:true
+    });
+  `;
+  document.head.appendChild(ymScript);
+  
+  const noscript = document.createElement('noscript');
+  noscript.innerHTML = '<div><img src="https://mc.yandex.ru/watch/102951378" style="position:absolute; left:-9999px;" alt="" /></div>';
+  document.head.appendChild(noscript);
+});
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/102951378" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
 
-<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com/3.4.16" async></script>
 <script>
 tailwind.config = {
   theme: {
@@ -92,9 +104,11 @@ tailwind.config = {
   }
 }
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Иконки -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+
+<!-- Стили -->
 <style>
 :where([class^="ri-"])::before { content: "\f3c2"; }
 body {
@@ -394,7 +408,7 @@ footer a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, -0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 1000;
   justify-content: center;
   align-items: center;
@@ -588,9 +602,6 @@ img.product-image {
 img.product-image.loaded {
   opacity: 1;
 }
-</style>
-<style>
-/* ... предыдущие стили ... */
 
 /* Новые стили для блока "Как мы работаем" */
 .workflow-container {
@@ -1081,15 +1092,12 @@ img.product-image.loaded {
       <!-- Продукт 1 -->
       <div id="product-1" class="product-card bg-white rounded-lg shadow-md overflow-hidden">
         <div class="h-56 md:h-64 overflow-hidden">
-          <picture>
-            <source srcset="/images/image-2.webp" type="image/webp">
-            <img src="/images/image-2.jpg" 
-                 alt="Разнотравный мёд с Алтая" 
-                 width="600" height="400"
-                 loading="lazy"
-                 class="w-full h-full object-cover object-top product-image"
-                 onload="this.classList.add('loaded')">
-          </picture>
+          <img src="/images/image-2.webp" 
+               alt="Разнотравный мёд с Алтая" 
+               width="600" height="400"
+               loading="lazy"
+               class="w-full h-full object-cover object-top product-image"
+               onload="this.classList.add('loaded')">
         </div>
         <div class="p-5 md:p-6">
           <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-2">Разнотравье</h3>
@@ -1104,15 +1112,12 @@ img.product-image.loaded {
       <!-- Продукт 2 -->
       <div id="product-2" class="product-card bg-white rounded-lg shadow-md overflow-hidden">
         <div class="h-56 md:h-64 overflow-hidden">
-          <picture>
-            <source srcset="/images/image-3.webp" type="image/webp">
-            <img src="/images/image-3.jpg" 
-                 alt="Таёжный мёд из Алтайского края" 
-                 width="600" height="400"
-                 loading="lazy"
-                 class="w-full h-full object-cover object-top product-image"
-                 onload="this.classList.add('loaded')">
-          </picture>
+          <img src="/images/image-3.webp" 
+               alt="Таёжный мёд из Алтайского края" 
+               width="600" height="400"
+               loading="lazy"
+               class="w-full h-full object-cover object-top product-image"
+               onload="this.classList.add('loaded')">
         </div>
         <div class="p-5 md:p-6">
           <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-2">Таёжный мёд</h3>
@@ -1127,15 +1132,12 @@ img.product-image.loaded {
       <!-- Продукт 3 -->
       <div id="product-3" class="product-card bg-white rounded-lg shadow-md overflow-hidden">
         <div class="h-56 md:h-64 overflow-hidden">
-          <picture>
-            <source srcset="/images/image-4.webp" type="image/webp">
-            <img src="/images/image-4.jpg" 
-                 alt="Гречишный мёд от производителя" 
-                 width="600" height="400"
-                 loading="lazy"
-                 class="w-full h-full object-cover object-top product-image"
-                 onload="this.classList.add('loaded')">
-          </picture>
+          <img src="/images/image-4.webp" 
+               alt="Гречишный мёд от производителя" 
+               width="600" height="400"
+               loading="lazy"
+               class="w-full h-full object-cover object-top product-image"
+               onload="this.classList.add('loaded')">
         </div>
         <div class="p-5 md:p-6">
           <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-2">Гречишный мёд</h3>
@@ -1164,26 +1166,20 @@ img.product-image.loaded {
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
       <div class="order-2 md:order-1">
         <div class="about-image bg-white p-3 shadow-lg rotate-2 mb-6 md:mb-8 max-w-md mx-auto">
-          <picture>
-            <source srcset="/images/image-5.webp" type="image/webp">
-            <img src="/images/image-5.jpg" 
-                 alt="Семейная пасека на Алтае" 
-                 width="600" height="400"
-                 loading="lazy"
-                 class="w-full h-auto product-image"
-                 onload="this.classList.add('loaded')">
-          </picture>
+          <img src="/images/image-5.webp" 
+               alt="Семейная пасека на Алтае" 
+               width="600" height="400"
+               loading="lazy"
+               class="w-full h-auto product-image"
+               onload="this.classList.add('loaded')">
         </div>
         <div class="about-image bg-white p-3 shadow-lg -rotate-3 max-w-md mx-auto">
-          <picture>
-            <source srcset="/images/image-6.webp" type="image/webp">
-            <img src="/images/image-6.jpg" 
-                 alt="Экологически чистый мёд с Алтая" 
-                 width="600" height="400"
-                 loading="lazy"
-                 class="w-full h-auto product-image"
-                 onload="this.classList.add('loaded')">
-          </picture>
+          <img src="/images/image-6.webp" 
+               alt="Экологически чистый мёд с Алтая" 
+               width="600" height="400"
+               loading="lazy"
+               class="w-full h-auto product-image"
+               onload="this.classList.add('loaded')">
         </div>
       </div>
       
@@ -1679,46 +1675,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
-  // Обработчик контактной формы
-  if (contactForm) {
-    contactForm.addEventListener('submit', async function(e) {
-      e.preventDefault();
-      const name = document.getElementById('contact-name').value;
-      const email = document.getElementById('contact-email').value;
-      const subject = document.getElementById('contact-subject').value;
-      const message = document.getElementById('contact-message').value;
-      
-      if (!name || !message) {
-        alert('Пожалуйста, заполните имя и сообщение');
-        return;
-      }
-      
-      // Форматируем сообщение для Telegram
-      const telegramMessage = `
-<b>📩 НОВОЕ СООБЩЕНИЕ С САЙТА</b>
-<b>Имя:</b> ${name}
-<b>Email:</b> ${email || 'не указан'}
-<b>Тема:</b> ${subject || 'не указана'}
-<b>Сообщение:</b>
-${message}
-      `;
-      
-      try {
-        const success = await sendToTelegram(telegramMessage);
-        
-        if (success) {
-          alert('✅ Ваше сообщение отправлено! Мы ответим вам в ближайшее время.');
-          contactForm.reset();
-        } else {
-          alert('⚠️ Ошибка при отправке сообщения. Пожалуйста, позвоните нам.');
-        }
-      } catch (error) {
-        console.error('Ошибка:', error);
-        alert('⚠️ Произошла ошибка. Пожалуйста, попробуйте еще раз.');
-      }
-    });
-  }
-  
   // Обработка покупки товара
   const buyButtons = document.querySelectorAll('.buy-btn');
   const modal = document.getElementById('buy-modal');
@@ -1880,6 +1836,13 @@ ${message}
       img.classList.add('loaded');
     }
   });
+  
+  // Активация анимаций при загрузке
+  setTimeout(function() {
+    document.querySelectorAll('.section-animate').forEach(el => {
+      el.classList.add('section-visible');
+    });
+  }, 100);
 });
 </script>
 </body>

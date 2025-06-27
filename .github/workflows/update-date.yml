@@ -2,8 +2,8 @@ name: Auto-update dateModified in legal.html
 
 on:
   schedule:
-    - cron: '0 6 * * 1'  # запуск каждый понедельник в 06:00 UTC
-  workflow_dispatch:      # можно запустить вручную
+    - cron: '0 6 * * 1'  # каждую неделю в понедельник в 06:00 UTC
+  workflow_dispatch:
 
 jobs:
   update-date:
@@ -18,14 +18,13 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Run update script
+      - name: Run update_date.py
         run: python update_date.py
 
-      - name: Commit and push if changed
-  run: |
-    git config --global user.email "github-actions@users.noreply.github.com"
-    git config --global user.name "GitHub Actions Bot"
-    git add legal.html
-    git diff --quiet && git diff --staged --quiet || git commit -m "Auto-update dateModified in legal.html"
-    git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:main
-
+      - name: Commit and push changes
+        run: |
+          git config --global user.email "github-actions@users.noreply.github.com"
+          git config --global user.name "GitHub Actions Bot"
+          git add legal.html
+          git diff --quiet && git diff --staged --quiet || git commit -m "Auto-update dateModified in legal.html"
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:main

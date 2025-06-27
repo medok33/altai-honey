@@ -922,6 +922,37 @@ img.product-image.loaded {
   transition-delay: 0.5s;
 }
 </style>
+
+<!-- Schema.org разметка -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "url": "https://altaymed.shop/",
+  "name": "Алтайский мёд - Натуральные продукты пчеловодства",
+  "description": "Натуральный алтайский мёд от производителя. Доставка по всей России. Гречишный, таёжный, цветочный мёд.",
+  "dateModified": "2025-06-27"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["Organization", "LocalBusiness"],
+  "name": "Алтайский мёд",
+  "url": "https://altaymed.shop/",
+  "logo": "https://altaymed.shop/images/favicon.ico",
+  "description": "Натуральный алтайский мёд от производителя. Доставка по всей России.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "Владимирская область",
+    "addressLocality": "Ковров"
+  },
+  "telephone": "+79209400222",
+  "openingHours": "Пн-Вс 9:00-21:00",
+  "image": "https://altaymed.shop/images/og-preview.jpg"
+}
+</script>
 </head>
 <body>
 <!-- Навигация -->
@@ -1047,7 +1078,9 @@ img.product-image.loaded {
       <div id="product-1" class="product-card bg-white rounded-lg shadow-md overflow-hidden">
         <div class="h-56 md:h-64 overflow-hidden">
           <img src="/images/image-2.jpg" 
-               alt="Разнотравье" 
+               alt="Разнотравный мёд с Алтая" 
+               width="600" height="400"
+               loading="lazy"
                class="w-full h-full object-cover object-top product-image"
                onload="this.classList.add('loaded')">
         </div>
@@ -1065,7 +1098,9 @@ img.product-image.loaded {
       <div id="product-2" class="product-card bg-white rounded-lg shadow-md overflow-hidden">
         <div class="h-56 md:h-64 overflow-hidden">
           <img src="/images/image-3.jpg" 
-               alt="Таёжный мёд" 
+               alt="Таёжный мёд из Алтайского края" 
+               width="600" height="400"
+               loading="lazy"
                class="w-full h-full object-cover object-top product-image"
                onload="this.classList.add('loaded')">
         </div>
@@ -1083,7 +1118,9 @@ img.product-image.loaded {
       <div id="product-3" class="product-card bg-white rounded-lg shadow-md overflow-hidden">
         <div class="h-56 md:h-64 overflow-hidden">
           <img src="/images/image-4.jpg" 
-               alt="Гречишный мёд" 
+               alt="Гречишный мёд от производителя" 
+               width="600" height="400"
+               loading="lazy"
                class="w-full h-full object-cover object-top product-image"
                onload="this.classList.add('loaded')">
         </div>
@@ -1115,13 +1152,17 @@ img.product-image.loaded {
       <div class="order-2 md:order-1">
         <div class="about-image bg-white p-3 shadow-lg rotate-2 mb-6 md:mb-8 max-w-md mx-auto">
           <img src="/images/image-5.jpg" 
-               alt="Наша семья" 
+               alt="Семейная пасека на Алтае" 
+               width="600" height="400"
+               loading="lazy"
                class="w-full h-auto product-image"
                onload="this.classList.add('loaded')">
         </div>
         <div class="about-image bg-white p-3 shadow-lg -rotate-3 max-w-md mx-auto">
           <img src="/images/image-6.jpg" 
-               alt="Наша пасека" 
+               alt="Экологически чистый мёд с Алтая" 
+               width="600" height="400"
+               loading="lazy"
                class="w-full h-auto product-image"
                onload="this.classList.add('loaded')">
         </div>

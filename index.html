@@ -11,6 +11,7 @@
 <link rel="preload" href="/images/image-1.webp" as="image" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 
 <!-- Мета-теги верификации -->
 <meta name="yandex-verification" content="9c5350476939e370" />
@@ -38,9 +39,12 @@
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#9f5524">
 
-<!-- Предзагрузка шрифтов -->
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" as="style">
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" as="style">
+<!-- Оптимизированные шрифты -->
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Оптимизированные иконки -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
 
 <!-- Оптимизированный Tailwind -->
 <script src="https://cdn.tailwindcss.com/3.4.16?minify=true"></script>
@@ -1217,22 +1221,22 @@ img.product-image.loaded {
           <form id="order-form">
             <div class="mb-3 md:mb-4">
               <label for="name" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Ваше имя</label>
-              <input type="text" id="name" name="name" autocomplete="name" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="Иван Петров">
+              <input type="text" id="name" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="Иван Петров">
             </div>
             
             <div class="mb-3 md:mb-4">
               <label for="phone" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Телефон</label>
-              <input type="tel" id="phone" name="phone" autocomplete="tel" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="+7 (999) 123-45-67">
+              <input type="tel" id="phone" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="+7 (999) 123-45-67">
             </div>
             
             <div class="mb-3 md:mb-4">
               <label for="email" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Email</label>
-              <input type="email" id="email" name="email" autocomplete="email" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="example@mail.ru">
+              <input type="email" id="email" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="example@mail.ru">
             </div>
             
             <div class="mb-4 md:mb-6">
               <label for="message" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Комментарий к заказу</label>
-              <textarea id="message" name="message" rows="3" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="Укажите интересующие вас сорта мёда и объём"></textarea>
+              <textarea id="message" rows="3" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="Укажите интересующие вас сорта мёда и объём"></textarea>
             </div>
             
             <button type="submit" class="w-full bg-orange text-white py-2 md:py-3 !rounded-button hover:bg-opacity-90 transition-all font-medium text-sm md:text-base">Отправить заявку</button>
@@ -1521,15 +1525,35 @@ img.product-image.loaded {
   </div>
 </div>
 
-<!-- Загрузка иконок после основного контента -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" media="print" onload="this.media='all'">
-
-<!-- Асинхронная загрузка шрифтов -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
-
 <script>
-// Упрощенный JavaScript для мобильных
+// Оптимизированная загрузка аналитики
+window.addEventListener('load', function() {
+  // Google Analytics
+  var gaScript = document.createElement('script');
+  gaScript.async = true;
+  gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-D9YMSF22NS';
+  document.head.appendChild(gaScript);
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-D9YMSF22NS');
+
+  // Yandex Metrika
+  var yaScript = document.createElement('script');
+  yaScript.async = true;
+  yaScript.src = 'https://mc.yandex.ru/metrika/tag.js';
+  document.head.appendChild(yaScript);
+
+  yaScript.onload = function() {
+    ym(102951378, "init", {
+      clickmap:true,
+      trackLinks:true,
+      accurateTrackBounce:true
+    });
+  };
+});
+
 document.addEventListener('DOMContentLoaded', function() {
   const mobileMenuButton = document.querySelector('.md\\:hidden');
   const mobileMenu = document.getElementById('mobile-menu');
@@ -1635,7 +1659,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const success = await sendToTelegram(telegramMessage);
         
         if (success) {
-          // Показываем модальное окно успеха
+          // Изменение 4: Показываем модальное окно успеха
           const successModal = document.getElementById('success-modal');
           successModal.style.display = 'flex';
           document.body.style.overflow = 'hidden';
@@ -1646,6 +1670,46 @@ document.addEventListener('DOMContentLoaded', function() {
       } catch (error) {
         console.error('Ошибка:', error);
         alert('⚠️ Произошла ошибка. Пожалуйста, попробуйте еще раз или позвоните нам.');
+      }
+    });
+  }
+  
+  // Обработчик контактной формы
+  if (contactForm) {
+    contactForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const name = document.getElementById('contact-name').value;
+      const email = document.getElementById('contact-email').value;
+      const subject = document.getElementById('contact-subject').value;
+      const message = document.getElementById('contact-message').value;
+      
+      if (!name || !message) {
+        alert('Пожалуйста, заполните имя и сообщение');
+        return;
+      }
+      
+      // Форматируем сообщение для Telegram
+      const telegramMessage = `
+<b>📩 НОВОЕ СООБЩЕНИЕ С САЙТА</b>
+<b>Имя:</b> ${name}
+<b>Email:</b> ${email || 'не указан'}
+<b>Тема:</b> ${subject || 'не указана'}
+<b>Сообщение:</b>
+${message}
+      `;
+      
+      try {
+        const success = await sendToTelegram(telegramMessage);
+        
+        if (success) {
+          alert('✅ Ваше сообщение отправлено! Мы ответим вам в ближайшее время.');
+          contactForm.reset();
+        } else {
+          alert('⚠️ Ошибка при отправке сообщения. Пожалуйста, позвоните нам.');
+        }
+      } catch (error) {
+        console.error('Ошибка:', error);
+        alert('⚠️ Произошла ошибка. Пожалуйста, попробуйте еще раз.');
       }
     });
   }
@@ -1811,34 +1875,6 @@ document.addEventListener('DOMContentLoaded', function() {
       img.classList.add('loaded');
     }
   });
-  
-  // Отложенная загрузка аналитики
-  setTimeout(function() {
-    // Google Analytics
-    const gaScript = document.createElement('script');
-    gaScript.async = true;
-    gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-D9YMSF22NS';
-    document.head.appendChild(gaScript);
-    
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-D9YMSF22NS');
-    
-    // Yandex Metrika
-    const yaScript = document.createElement('script');
-    yaScript.src = 'https://mc.yandex.ru/metrika/tag.js';
-    yaScript.async = true;
-    document.head.appendChild(yaScript);
-    
-    yaScript.onload = function() {
-      ym(102951378, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true
-      });
-    };
-  }, 3000);
 });
 </script>
 </body>

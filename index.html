@@ -71,6 +71,7 @@ tailwind.config = {
 </script>
 
 <style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
 body {
   font-family: 'Open Sans', sans-serif;
   min-height: 100vh;
@@ -87,6 +88,7 @@ body {
   background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZmZmZmZmIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNmNWRlYjMiIG9wYWNpdHk9IjAuMSI+PC9yZWN0Pgo8L3N2Zz4=');
 }
 
+/* Исправления цветов */
 .nav-link {
   color: #1a202c !important;
   transition: color 0.3s;
@@ -107,14 +109,17 @@ body {
   border-color: white !important;
 }
 
+/* ФИКС: Зеленый цвет логотипа в шапке */
 .header-logo {
   color: #6B8E23 !important;
 }
 
+/* ФИКС: Выравнивание иконок в подвале */
 .footer-icon {
   margin-top: 3px;
 }
 
+/* ФИКС: Проблемы с отображением */
 main {
   flex: 1;
 }
@@ -122,6 +127,8 @@ footer {
   margin-top: auto;
 }
 
+/* ФИКС: ВЫРАВНИВАНИЕ ПОДВАЛА ДЛЯ TILDA */
+/* Основные исправления для футера */
 footer {
   width: 100% !important;
   box-sizing: border-box !important;
@@ -130,6 +137,7 @@ footer {
   z-index: 1;
 }
 
+/* ИСПРАВЛЕННЫЙ УЗОР ВАФЕЛЬНОЙ СЕТКИ */
 footer::before {
   content: "";
   position: absolute;
@@ -180,6 +188,7 @@ footer .grid {
   box-sizing: border-box !important;
 }
 
+/* Уменьшенные отступы для заголовков на 20% */
 .footer-column h4 {
   text-align: left !important;
   width: 100% !important;
@@ -285,6 +294,7 @@ footer a:hover {
   filter: grayscale(0%);
 }
 
+/* Дополнительно уменьшенные отступы между пунктами на 25% */
 .footer-link-item {
   display: flex;
   align-items: center;
@@ -306,11 +316,13 @@ footer a:hover {
   line-height: 1.5;
 }
 
+/* БЕЛЫЙ ЦВЕТ ТЕКСТА В ПЕРВОМ БЛОКЕ ФУТЕРА */
 #footer-contacts .footer-column:first-child,
 #footer-contacts .footer-column:first-child * {
   color: white !important;
 }
 
+/* УТОЧНЕННЫЕ СТИЛИ ДЛЯ ПЕРВОГО БЛОКА ФУТЕРА */
 .footer-column:first-child {
   justify-content: flex-start;
 }
@@ -331,14 +343,25 @@ footer a:hover {
   margin-bottom: 0.3rem;
 }
 
-.about-image {
+/* Анимации для карточек */
+.benefit-card, .product-card, .about-image {
   transition: all 0.3s ease;
 }
-
+.benefit-card:hover, .product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+.benefit-icon {
+  transition: transform 0.3s ease;
+}
+.benefit-card:hover .benefit-icon {
+  transform: scale(1.15);
+}
 .about-image:hover {
   transform: scale(1.03);
 }
 
+/* Стили для модального окна */
 .modal {
   display: none;
   position: fixed;
@@ -376,6 +399,7 @@ footer a:hover {
   color: #374151;
 }
 
+/* Стили для модального окна успеха */
 .success-modal-content {
   background: white;
   border-radius: 16px;
@@ -436,6 +460,7 @@ footer a:hover {
   box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
+/* Адаптивные исправления для блока "О нас" */
 .about-check-item {
   display: flex;
   align-items: center;
@@ -501,6 +526,18 @@ footer a:hover {
     text-align: center;
   }
   
+  .benefit-card, .product-card {
+    margin-bottom: 1.5rem;
+  }
+  
+  .footer-column {
+    margin-bottom: 2rem;
+  }
+  
+  .footer-column:last-child {
+    margin-bottom: 0;
+  }
+  
   .contact-info-box {
     padding: 1.5rem;
   }
@@ -513,30 +550,8 @@ footer a:hover {
     padding: 1rem 1.5rem;
     font-size: 1.1rem;
   }
-  
-  /* Отключение сложных анимаций на мобильных */
-  .benefit-card, 
-  .product-card,
-  .step-circle {
-    transition: none !important;
-    animation: none !important;
-    transform: none !important;
-  }
-  
-  .benefit-icon {
-    transition: none !important;
-  }
-  
-  .section-animate {
-    opacity: 1 !important;
-    transform: none !important;
-  }
-  
-  .step-circle {
-    opacity: 1 !important;
-    transform: none !important;
-  }
-  
+
+  /* Оптимизация анимаций для мобильных */
   .benefit-card:hover, 
   .product-card:hover,
   .step-circle:hover {
@@ -549,6 +564,7 @@ footer a:hover {
   }
 }
 
+/* Исправление для изображений */
 img.product-image {
   transition: opacity 0.5s ease-in-out;
   opacity: 0;
@@ -558,6 +574,7 @@ img.product-image.loaded {
   opacity: 1;
 }
 
+/* Новые стили для блока "Как мы работаем" */
 .workflow-container {
   position: relative;
   padding: 60px 0;
@@ -588,6 +605,18 @@ img.product-image.loaded {
   padding: 25px;
   margin: 0 10px 60px;
   overflow: visible;
+  opacity: 0;
+  transform: translateY(30px);
+  animation-fill-mode: forwards;
+}
+
+.step-circle.animate {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.step-circle:hover {
+  transform: scale(1.15);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
 .step-number {
@@ -794,6 +823,7 @@ img.product-image.loaded {
   }
 }
 
+/* ИСПРАВЛЕНИЯ ДЛЯ ПОДВАЛА */
 .contact-item {
   display: flex;
   align-items: center;
@@ -806,6 +836,19 @@ img.product-image.loaded {
   margin-right: 12px;
 }
 
+/* Анимации для появления секций */
+.section-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.section-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Анимации для появления элементов */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -815,6 +858,37 @@ img.product-image.loaded {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Задержки для анимации шагов */
+.step-circle:nth-child(1).animate {
+  animation-delay: 0.2s;
+}
+.step-circle:nth-child(2).animate {
+  animation-delay: 0.4s;
+}
+.step-circle:nth-child(3).animate {
+  animation-delay: 0.6s;
+}
+.step-circle:nth-child(4).animate {
+  animation-delay: 0.8s;
+}
+
+/* Задержки для секций */
+#benefits {
+  transition-delay: 0.1s;
+}
+#products {
+  transition-delay: 0.2s;
+}
+#about {
+  transition-delay: 0.3s;
+}
+#order {
+  transition-delay: 0.4s;
+}
+#workflow {
+  transition-delay: 0.5s;
 }
 </style>
 
@@ -853,6 +927,7 @@ img.product-image.loaded {
 <!-- Навигация -->
 <nav class="bg-white shadow-sm sticky top-0 z-50">
   <div class="container mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
+    <!-- Зеленый логотип в шапке -->
     <a href="#" class="text-2xl md:text-3xl font-['Pacifico'] header-logo">Алтайский мёд</a>
     
     <div class="hidden md:flex items-center space-x-6 md:space-x-8">
@@ -901,909 +976,6 @@ img.product-image.loaded {
   </div>
 </section>
 
-<!-- Преимущества -->
-<section id="benefits" class="py-16 md:py-20 texture-bg bg-[#F5DEB3] bg-opacity-20">
-  <div class="container mx-auto px-4 md:px-6">
-    <h2 class="text-3xl md:text-4xl font-['Pacifico'] text-center text-secondary mb-12 md:mb-16">Почему выбирают наш мёд</h2>
-    
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
-      <!-- Карточка 1 -->
-      <div class="benefit-card bg-white p-6 md:p-8 rounded-lg shadow-md flex flex-col items-center text-center">
-        <div class="benefit-icon w-14 h-14 md:w-16 md:h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4 md:mb-6">
-          <i class="ri-plant-line ri-lg md:ri-xl text-primary"></i>
-        </div>
-        <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-3 md:mb-4">Экологически чистый продукт</h3>
-        <p class="text-gray-600 text-sm md:text-base">Наши пасеки расположены в заповедных зонах Алтая, вдали от промышленных объектов и дорог.</p>
-      </div>
-      
-      <!-- Карточка 2 -->
-      <div class="benefit-card bg-white p-6 md:p-8 rounded-lg shadow-md flex flex-col items-center text-center">
-        <div class="benefit-icon w-14 h-14 md:w-16 md:h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4 md:mb-6">
-          <i class="ri-leaf-line ri-lg md:ri-xl text-primary"></i>
-        </div>
-        <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-3 md:mb-4">Разнообразие сортов</h3>
-        <p class="text-gray-600 text-sm md:text-base">Мы предлагаем широкий ассортимент меда с разнообразными вкусовыми и полезными свойствами.</p>
-      </div>
-      
-      <!-- Карточка 3 -->
-      <div class="benefit-card bg-white p-6 md:p-8 rounded-lg shadow-md flex flex-col items-center text-center">
-        <div class="benefit-icon w-14 h-14 md:w-16 md:h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4 md:mb-6">
-          <i class="ri-award-line ri-lg md:ri-xl text-primary"></i>
-        </div>
-        <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-3 md:mb-4">Проверенное качество</h3>
-        <p class="text-gray-600 text-sm md:text-base">Каждая партия меда проходит строгий контроль и проверку на соответствие стандартам.</p>
-      </div>
-    </div>
-    
-    <!-- Центрированные блоки -->
-    <div class="flex justify-center mt-8 md:mt-10">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 max-w-4xl">
-        <!-- Карточка 4 -->
-        <div class="benefit-card bg-white p-6 md:p-8 rounded-lg shadow-md flex flex-col items-center text-center">
-          <div class="benefit-icon w-14 h-14 md:w-16 md:h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4 md:mb-6">
-            <i class="ri-truck-line ri-lg md:ri-xl text-primary"></i>
-          </div>
-          <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-3 md:mb-4">Доставка по всей России</h3>
-          <p class="text-gray-600 text-sm md:text-base">Мы доставляем наш мёд в любой регион России, сохраняя все полезные свойства продукта.</p>
-        </div>
-        
-        <!-- Карточка 5 -->
-        <div class="benefit-card bg-white p-6 md:p-8 rounded-lg shadow-md flex flex-col items-center text-center">
-          <div class="benefit-icon w-14 h-14 md:w-16 md:h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4 md:mb-6">
-            <i class="ri-heart-line ri-lg md:ri-xl text-primary"></i>
-          </div>
-          <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-3 md:mb-4">Семейные традиции</h3>
-          <p class="text-gray-600 text-sm md:text-base">Наша пасека существует уже более 30 лет, и мы бережно храним секреты пчеловодства.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Каталог продукции -->
-<section id="products" class="py-16 md:py-20 bg-white">
-  <div class="container mx-auto px-4 md:px-6">
-    <h2 class="text-3xl md:text-4xl font-['Pacifico'] text-center text-secondary mb-12 md:mb-16">Наши продукты</h2>
-    
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-      <!-- Продукт 1 -->
-      <div id="product-1" class="product-card bg-white rounded-lg shadow-md overflow-hidden">
-        <div class="h-56 md:h-64 overflow-hidden">
-          <picture>
-            <source srcset="/images/image-2.webp" type="image/webp">
-            <img src="/images/image-2.jpg" 
-                 alt="Разнотравный мёд с Алтая" 
-                 width="600" height="400"
-                 loading="lazy"
-                 decoding="async"
-                 class="w-full h-full object-cover object-top product-image"
-                 onload="this.classList.add('loaded')">
-          </picture>
-        </div>
-        <div class="p-5 md:p-6">
-          <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-2">Разнотравье</h3>
-          <p class="text-gray-600 text-sm md:text-base mb-3 md:mb-4">Мед с ярким букетом травяных нот, собранных в экологически чистых районах.</p>
-          <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-2 md:gap-0">
-            <span class="text-lg md:text-xl font-bold text-primary">1100 ₽ / 1 литр</span>
-            <button data-product="Разнотравье" data-price="1100" class="buy-btn bg-gradient-to-r from-primary to-[#8ea745] text-white px-4 py-2 md:px-5 md:py-2 !rounded-button hover:opacity-90 transition-opacity whitespace-nowrap text-sm md:text-base">Купить</button>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Продукт 2 -->
-      <div id="product-2" class="product-card bg-white rounded-lg shadow-md overflow-hidden">
-        <div class="h-56 md:h-64 overflow-hidden">
-          <picture>
-            <source srcset="/images/image-3.webp" type="image/webp">
-            <img src="/images/image-3.jpg" 
-                 alt="Таёжный мёд из Алтайского края" 
-                 width="600" height="400"
-                 loading="lazy"
-                 decoding="async"
-                 class="w-full h-full object-cover object-top product-image"
-                 onload="this.classList.add('loaded')">
-          </picture>
-        </div>
-        <div class="p-5 md:p-6">
-          <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-2">Таёжный мёд</h3>
-          <p class="text-gray-600 text-sm md:text-base mb-3 md:mb-4">Редкий и насыщенный мёд из дикой тайги, обладающий уникальными целебными свойствами.</p>
-          <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-2 md:gap-0">
-            <span class="text-lg md:text-xl font-bold text-primary">1300 ₽ / 1 литр</span>
-            <button data-product="Таёжный мёд" data-price="1300" class="buy-btn bg-gradient-to-r from-primary to-[#8ea745] text-white px-4 py-2 md:px-5 md:py-2 !rounded-button hover:opacity-90 transition-opacity whitespace-nowrap text-sm md:text-base">Купить</button>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Продукт 3 -->
-      <div id="product-3" class="product-card bg-white rounded-lg shadow-md overflow-hidden">
-        <div class="h-56 md:h-64 overflow-hidden">
-          <picture>
-            <source srcset="/images/image-4.webp" type="image/webp">
-            <img src="/images/image-4.jpg" 
-                 alt="Гречишный мёд от производителя" 
-                 width="600" height="400"
-                 loading="lazy"
-                 decoding="async"
-                 class="w-full h-full object-cover object-top product-image"
-                 onload="this.classList.add('loaded')">
-          </picture>
-        </div>
-        <div class="p-5 md:p-6">
-          <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-2">Гречишный мёд</h3>
-          <p class="text-gray-600 text-sm md:text-base mb-3 md:mb-4">Насыщенный тёмный мёд с богатым вкусом и ароматом гречихи.</p>
-          <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-2 md:gap-0">
-            <span class="text-lg md:text-xl font-bold text-primary">1000 ₽ / 1 литр</span>
-            <button data-product="Гречишный мёд" data-price="1000" class="buy-btn bg-gradient-to-r from-primary to-[#8ea745] text-white px-4 py-2 md:px-5 md:py-2 !rounded-button hover:opacity-90 transition-opacity whitespace-nowrap text-sm md:text-base">Купить</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="text-center mt-10 md:mt-12">
-      <a href="#order" class="hero-btn-primary inline-block px-6 py-2 md:px-8 md:py-3 !rounded-button shadow-lg hover:bg-opacity-90 transition-all whitespace-nowrap text-base md:text-lg font-medium">
-        Посмотреть все продукты
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- О нас -->
-<section id="about" class="py-16 md:py-20 bg-[#F5DEB3] bg-opacity-20 texture-bg relative">
-  <div class="container mx-auto px-4 md:px-6 relative z-10">
-    <h2 class="text-3xl md:text-4xl font-['Pacifico'] text-center text-secondary mb-12 md:mb-16">О нашей пасеке</h2>
-    
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-      <div class="order-2 md:order-1">
-        <div class="about-image bg-white p-3 shadow-lg rotate-2 mb-6 md:mb-8 max-w-md mx-auto">
-          <picture>
-            <source srcset="/images/image-5.webp" type="image/webp">
-            <img src="/images/image-5.jpg" 
-                 alt="Семейная пасека на Алтае" 
-                 width="600" height="400"
-                 loading="lazy"
-                 decoding="async"
-                 class="w-full h-auto product-image"
-                 onload="this.classList.add('loaded')">
-          </picture>
-        </div>
-        <div class="about-image bg-white p-3 shadow-lg -rotate-3 max-w-md mx-auto">
-          <picture>
-            <source srcset="/images/image-6.webp" type="image/webp">
-            <img src="/images/image-6.jpg" 
-                 alt="Экологически чистый мёд с Алтая" 
-                 width="600" height="400"
-                 loading="lazy"
-                 decoding="async"
-                 class="w-full h-auto product-image"
-                 onload="this.classList.add('loaded')">
-          </picture>
-        </div>
-      </div>
-      
-      <div class="text-gray-700 order-1 md:order-2">
-        <h3 class="text-xl md:text-2xl font-bold text-secondary mb-4 md:mb-6">Семейное дело с 1992 года</h3>
-        <p class="mb-4 text-sm md:text-base">Мы находимся в самом сердце Алтая, в Солтонском районе — месте, где природа живет и дышит в гармонии. Наши ульи расположены в окружении чистых лесов и полей, а мед наполняется особым ароматом и богатым вкусом благодаря натуральным источникам. Пчелы питаются только природными ресурсами, ведь для нас важно сохранять чистоту и здоровье природы.</p>
-        
-        <!-- Исправленные элементы с галочками -->
-        <div class="about-check-item">
-          <div class="about-check-icon">
-            <i class="ri-check-line"></i>
-          </div>
-          <p class="about-check-text">Более 300 пчелиных семей</p>
-        </div>
-        
-        <div class="about-check-item">
-          <div class="about-check-icon">
-            <i class="ri-check-line"></i>
-          </div>
-          <p class="about-check-text">Ежегодно производим более 5 тонн мёда</p>
-        </div>
-        
-        <div class="about-check-item">
-          <div class="about-check-icon">
-            <i class="ri-check-line"></i>
-          </div>
-          <p class="about-check-text">Работаем по экологическим стандартам, заботимся о пчелах и природе</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Форма заказа -->
-<section id="order" class="py-16 md:py-20 bg-white">
-  <div class="container mx-auto px-4 md:px-6">
-    <div class="max-w-4xl mx-auto bg-gradient-to-br from-primary to-[#8ea745] rounded-lg shadow-xl overflow-hidden">
-      <div class="grid grid-cols-1 md:grid-cols-2">
-        <div class="p-6 md:p-10 text-white">
-          <h2 class="text-2xl md:text-3xl font-['Pacifico'] mb-4 md:mb-6">Заказать мёд</h2>
-          <p class="mb-6 md:mb-8 text-sm md:text-base">Заполните форму, и мы свяжемся с вами для уточнения деталей заказа и доставки.</p>
-          
-          <div class="mb-4 md:mb-6">
-            <div class="flex items-center space-x-3 mb-2">
-              <div class="w-7 h-7 md:w-8 md:h-8 flex items-center justify-center bg-white bg-opacity-20 rounded-full">
-                <i class="ri-truck-line text-white ri-sm md:ri-base"></i>
-              </div>
-              <span class="font-medium text-sm md:text-base">Доставка по всей России</span>
-            </div>
-            
-            <div class="flex items-center space-x-3 mb-2">
-              <div class="w-7 h-7 md:w-8 md:h-8 flex items-center justify-center bg-white bg-opacity-20 rounded-full">
-                <i class="ri-secure-payment-line text-white ri-sm md:ri-base"></i>
-              </div>
-              <span class="font-medium text-sm md:text-base">Безопасная оплата</span>
-            </div>
-            
-            <div class="flex items-center space-x-3">
-              <div class="w-7 h-7 md:w-8 md:h-8 flex items-center justify-center bg-white bg-opacity-20 rounded-full">
-                <i class="ri-shield-check-line text-white ri-sm md:ri-base"></i>
-              </div>
-              <span class="font-medium text-sm md:text-base">Гарантия качества</span>
-            </div>
-          </div>
-        </div>
-        
-        <div class="bg-white p-6 md:p-8 lg:p-10">
-          <form id="order-form">
-            <div class="mb-3 md:mb-4">
-              <label for="name" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Ваше имя</label>
-              <input type="text" id="name" name="name" autocomplete="name" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="Иван Петров">
-            </div>
-            
-            <div class="mb-3 md:mb-4">
-              <label for="phone" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Телефон</label>
-              <input type="tel" id="phone" name="phone" autocomplete="tel" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="+7 (999) 123-45-67">
-            </div>
-            
-            <div class="mb-3 md:mb-4">
-              <label for="email" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Email</label>
-              <input type="email" id="email" name="email" autocomplete="email" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="example@mail.ru">
-            </div>
-            
-            <div class="mb-4 md:mb-6">
-              <label for="message" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Комментарий к заказу</label>
-              <textarea id="message" name="message" rows="3" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="Укажите интересующие вас сорта мёда и объём"></textarea>
-            </div>
-            
-            <button type="submit" class="w-full bg-orange text-white py-2 md:py-3 !rounded-button hover:bg-opacity-90 transition-all font-medium text-sm md:text-base">Отправить заявку</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Как мы работаем -->
-<section id="workflow" class="py-16 md:py-20 bg-[#F5DEB3] bg-opacity-20 texture-bg">
-  <div class="container mx-auto px-4 md:px-6">
-    <h2 class="text-3xl md:text-4xl font-['Pacifico'] text-center text-secondary mb-16 md:mb-20">Как мы работаем</h2>
-    
-    <div class="workflow-container">
-      <div class="workflow-steps">
-        <!-- Шаг 1 -->
-        <div class="step-circle">
-          <div class="step-number">1</div>
-          <div class="step-icon">
-            <i class="ri-chat-3-line"></i>
-          </div>
-          <div class="step-content">
-            <h3 class="step-title">Вы оставляете заявку</h3>
-          </div>
-        </div>
-        
-        <!-- Шаг 2 -->
-        <div class="step-circle">
-          <div class="step-number">2</div>
-          <div class="step-icon">
-            <i class="ri-phone-line"></i>
-          </div>
-          <div class="step-content">
-            <h3 class="step-title">Мы связываемся с вами</h3>
-          </div>
-        </div>
-        
-        <!-- Шаг 3 -->
-        <div class="step-circle">
-          <div class="step-number">3</div>
-          <div class="step-icon">
-            <i class="ri-truck-line"></i>
-          </div>
-          <div class="step-content">
-            <h3 class="step-title">Отправляем вам мед</h3>
-          </div>
-        </div>
-        
-        <!-- Шаг 4 -->
-        <div class="step-circle">
-          <div class="step-number">4</div>
-          <div class="step-icon">
-            <i class="ri-gift-line"></i>
-          </div>
-          <div class="step-content">
-            <h3 class="step-title">Вы наслаждаетесь вкусом</h3>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-</main>
-
-<!-- Футер с точно выровненным текстом -->
-<footer class="py-10 md:py-12 w-full bg-[#8B4513]">
-  <div id="footer-contacts" class="container mx-auto px-4 md:px-6 w-full">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 w-full">
-      <!-- Лого и описание -->
-      <div class="footer-column">
-        <div class="logo-wrapper">
-          <a href="/" class="text-2xl md:text-3xl font-['Pacifico'] mb-3 md:mb-4 block">Алтайский мёд</a>
-        </div>
-        <div class="description-wrapper">
-          <p class="text-xs">Натуральные продукты пчеловодства с Алтайских гор.</p>
-          <p class="text-xs">© 2025 Алтайский мёд. Все права защищены.</p>
-        </div>
-      </div>
-      
-      <!-- Каталог -->
-      <div class="footer-column">
-        <h4 class="text-base md:text-lg font-bold">Каталог</h4>
-        <ul>
-          <li>
-            <a href="#product-1" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">Разнотравье</span>
-            </a>
-          </li>
-          <li>
-            <a href="#product-2" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">Таёжный мёд</span>
-            </a>
-          </li>
-          <li>
-            <a href="#product-3" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">Гречишный мёд</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-      
-      <!-- Материалы -->
-      <div class="footer-column">
-        <h4 class="text-base md:text-lg font-bold">Материалы</h4>
-        <ul>
-          <li>
-            <a href="/blog/" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">Блог</span>
-            </a>
-          </li>
-          <li>
-            <a href="/faq/" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">FAQ</span>
-            </a>
-          </li>
-          <li>
-            <a href="/legal.html" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">Правовая информация</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-      
-      <!-- Информация -->
-      <div class="footer-column">
-        <h4 class="text-base md:text-lg font-bold">Информация</h4>
-        <ul>
-          <li>
-            <a href="#benefits" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">Преимущества</span>
-            </a>
-          </li>
-          <li>
-            <a href="#about" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">О нас</span>
-            </a>
-          </li>
-          <li>
-            <a href="#footer-contacts" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">Контакты</span>
-            </a>
-          </li>
-          <li>
-            <a href="/delivery.html" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">Доставка и оплата</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-      
-      <!-- Контакты -->
-      <div class="footer-column">
-        <h4 class="text-base md:text-lg font-bold">Контакты</h4>
-        <ul>
-          <li>
-            <a class="footer-link-item">
-              <div class="contact-icon">
-                <i class="ri-map-pin-2-line ri-sm md:ri-base"></i>
-              </div>
-              <span class="contact-text">Владимирская обл., г.Ковров</span>
-            </a>
-          </li>
-          <li>
-            <a href="tel:+79209400222" class="footer-link-item">
-              <div class="contact-icon">
-                <i class="ri-phone-line ri-sm md:ri-base"></i>
-              </div>
-              <span class="contact-text">+7 (920) 940-02-22</span>
-            </a>
-          </li>
-          <li>
-            <a href="mailto:altaymed.shop@yandex.ru" class="footer-link-item">
-              <div class="contact-icon">
-                <i class="ri-mail-line ri-sm md:ri-base"></i>
-              </div>
-              <span class="contact-text">altaymed.shop@yandex.ru</span>
-            </a>
-          </li>
-        </ul>
-        
-        <!-- Социальные сети -->
-        <div class="mt-4 md:mt-6">
-          <p class="text-base md:text-lg font-bold mb-2 md:mb-3">Следите за нами</p>
-          <div class="flex space-x-2 md:space-x-3">
-            <a href="https://vk.com/honeybuckwheat" target="_blank" class="social-icon-bw">
-              <i class="ri-vk-line ri-lg"></i>
-            </a>
-            <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" class="social-icon-bw">
-              <i class="ri-telegram-line ri-lg"></i>
-            </a>
-            <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing" 
-               target="_blank" class="social-icon-bw">
-              <div class="avito-icon-bw">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path fill="#04e061" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/>
-                </svg>
-              </div>
-            </a>
-            <a href="https://yandex.ru/maps/" target="_blank" class="social-icon-bw">
-              <div class="yandex-maps-icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2C8.13 2 5 5.13 5 9C5 13.17 9.42 18.92 11.24 21.11C11.64 21.59 12.37 21.59 12.77 21.11C14.58 18.92 19 13.17 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" 
-                        fill="currentColor"/>
-                </svg>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<!-- Модальное окно для покупки -->
-<div id="buy-modal" class="modal">
-  <div class="modal-content">
-    <div class="bg-gradient-to-r from-primary to-[#8ea745] p-4 md:p-6 rounded-t-lg">
-      <div class="flex justify-between items-center">
-        <h3 class="text-xl md:text-2xl font-bold text-white w-full text-center">Оформление заказа</h3>
-        <span class="close-modal text-white">&times;</span>
-      </div>
-    </div>
-    <div class="p-4 md:p-6">
-      <form id="quick-order-form">
-        <div class="mb-3 md:mb-4">
-          <label for="quick-product" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Товар</label>
-          <input type="text" id="quick-product" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded bg-gray-50 cursor-not-allowed text-sm md:text-base" readonly>
-        </div>
-        
-        <div class="mb-3 md:mb-4">
-          <label for="quantity" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Количество (литров)</label>
-          <input type="number" id="quantity" min="1" value="1" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base">
-        </div>
-        
-        <div class="mb-3 md:mb-4">
-          <label class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Примерная стоимость</label>
-          <div class="bg-gray-100 px-3 py-2 md:px-4 md:py-3 rounded flex justify-between items-center">
-            <span id="price-per-liter" class="text-gray-600 text-sm md:text-base">Цена за литр: <span class="font-semibold">1100</span> ₽</span>
-            <span id="total-price" class="text-lg md:text-xl font-bold text-primary">1100 ₽</span>
-          </div>
-        </div>
-        
-        <div class="mb-3 md:mb-4">
-          <label for="delivery-address" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Адрес доставки</label>
-          <textarea id="delivery-address" rows="2" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="Укажите полный адрес доставки"></textarea>
-        </div>
-        
-        <div class="mb-3 md:mb-4">
-          <label for="quick-phone" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Контактный телефон</label>
-          <input type="tel" id="quick-phone" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="+7 (999) 123-45-67">
-        </div>
-        
-        <button type="submit" class="w-full bg-orange text-white py-2 md:py-3 !rounded-button hover:bg-opacity-90 transition-all font-medium text-sm md:text-base">
-          Подтвердить заказ
-        </button>
-      </form>
-    </div>
-  </div>
-</div>
-
-<!-- Модальное окно успешного заказа -->
-<div id="success-modal" class="modal">
-  <div class="success-modal-content">
-    <div class="success-icon">
-      <i class="ri-check-line"></i>
-    </div>
-    <h3 class="success-title">Заказ оформлен!</h3>
-    <p class="success-text">Спасибо за ваш заказ! Мы свяжемся с вами в течение 10 минут для подтверждения деталей.</p>
-    <button class="success-btn" id="close-success-modal">Отлично</button>
-  </div>
-</div>
-
-<!-- Загрузка иконок после основного контента -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" media="print" onload="this.media='all'">
-
-<!-- Асинхронная загрузка шрифтов -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
-
-<script>
-// Упрощенный JavaScript для мобильных
-document.addEventListener('DOMContentLoaded', function() {
-  // Делегирование событий
-  document.body.addEventListener('click', function(e) {
-    // Мобильное меню
-    if (e.target.closest('.md\\:hidden')) {
-      const mobileMenu = document.getElementById('mobile-menu');
-      mobileMenu.classList.toggle('hidden');
-      mobileMenu.classList.toggle('block');
-    }
-    
-    // Плавная прокрутка
-    if (e.target.closest('a[href^="#"]')) {
-      const anchor = e.target.closest('a[href^="#"]');
-      if (anchor.getAttribute('href') === '#') return;
-      e.preventDefault();
-      const targetId = anchor.getAttribute('href');
-      const targetElement = document.querySelector(targetId);
-      
-      if (targetElement) {
-        window.scrollTo({
-          top: targetElement.offsetTop - 80,
-          behavior: 'smooth'
-        });
-        
-        // Закрыть мобильное меню
-        const mobileMenu = document.getElementById('mobile-menu');
-        if (!mobileMenu.classList.contains('hidden') && window.innerWidth < 768) {
-          mobileMenu.classList.add('hidden');
-          mobileMenu.classList.remove('block');
-        }
-      }
-    }
-    
-    // Модальные окна
-    if (e.target.matches('.close-modal') || e.target.matches('#close-success-modal')) {
-      document.querySelectorAll('.modal').forEach(modal => {
-        modal.style.display = 'none';
-      });
-      document.body.style.overflow = 'auto';
-    }
-    
-    if (e.target.matches('.modal')) {
-      e.target.style.display = 'none';
-      document.body.style.overflow = 'auto';
-    }
-    
-    // Кнопки покупки
-    if (e.target.matches('.buy-btn')) {
-      const button = e.target;
-      const product = button.getAttribute('data-product');
-      const price = parseInt(button.getAttribute('data-price'));
-      const modal = document.getElementById('buy-modal');
-      const quickProductInput = document.getElementById('quick-product');
-      const pricePerLiter = document.getElementById('price-per-liter');
-      const totalPrice = document.getElementById('total-price');
-      const quantityInput = document.getElementById('quantity');
-      
-      quickProductInput.value = product;
-      modal.style.display = 'flex';
-      document.body.style.overflow = 'hidden';
-      
-      // Обновление цены
-      function updateTotalPrice() {
-        const quantity = parseInt(quantityInput.value) || 1;
-        const total = price * quantity;
-        totalPrice.textContent = total.toLocaleString('ru-RU') + ' ₽';
-        pricePerLiter.querySelector('span').textContent = price.toLocaleString('ru-RU');
-      }
-      
-      updateTotalPrice();
-      quantityInput.addEventListener('input', updateTotalPrice);
-    }
-  });
-  
-  // Форма заказа
-  const orderForm = document.querySelector('#order form');
-  if (orderForm) {
-    orderForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = document.getElementById('name').value;
-      const phone = document.getElementById('phone').value;
-      
-      if (!name || !phone) {
-        alert('Пожалуйста, заполните имя и телефон');
-        return;
-      }
-      
-      // Показ модального окна успеха
-      const successModal = document.getElementById('success-modal');
-      successModal.style.display = 'flex';
-      document.body.style.overflow = 'hidden';
-      orderForm.reset();
-    });
-  }
-  
-  // Быстрый заказ
-  const quickOrderForm = document.getElementById('quick-order-form');
-  if (quickOrderForm) {
-    quickOrderForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const modal = document.getElementById('buy-modal');
-      modal.style.display = 'none';
-      
-      const successModal = document.getElementById('success-modal');
-      successModal.style.display = 'flex';
-      document.body.style.overflow = 'hidden';
-      
-      quickOrderForm.reset();
-    });
-  }
-  
-  // Загрузка аналитики после основного контента
-  setTimeout(function() {
-    // Google Analytics
-    const gaScript = document.createElement('script');
-    gaScript.async = true;
-    gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-D9YMSF22NS';
-    document.head.appendChild(gaScript);
-    
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-D9YMSF22NS');
-    
-    // Yandex Metrika
-    const yaScript = document.createElement('script');
-    yaScript.src = 'https://mc.yandex.ru/metrika/tag.js';
-    yaScript.async = true;
-    document.head.appendChild(yaScript);
-    
-    yaScript.onload = function() {
-      ym(102951378, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true
-      });
-    };
-  }, 3000);
-});
-</script>
-</body>
-</html><!DOCTYPE html>
-<html lang="ru">
-<head>
-<meta charset="UTF-8">
-<link rel="canonical" href="https://altaymed.shop/" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Алтайский мёд - Натуральные продукты пчеловодства</title>
-<meta name="description" content="Натуральный алтайский мёд от производителя. Доставка по всей России. Гречишный, таёжный, цветочный мёд.">
-
-<!-- Предзагрузка критических ресурсов -->
-<link rel="preload" href="/images/image-1.webp" as="image">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<!-- Мета-теги верификации -->
-<meta name="yandex-verification" content="9c5350476939e370" />
-<meta name="google-site-verification" content="JsJoSVyM5o4vxTSdN88FHLrAwPaoQ0nEjpJkiub50AE">
-
-<!-- Open Graph -->
-<meta property="og:title" content="Алтайский мёд - Натуральные продукты пчеловодства">
-<meta property="og:description" content="Экологически чистый мёд с Алтайских гор. Доставка по всей России">
-<meta property="og:image" content="https://altaymed.shop/images/og-preview.webp">
-<meta property="og:url" content="https://altaymed.shop">
-<meta property="og:type" content="website">
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Алтайский мёд - Натуральные продукты пчеловодства">
-<meta name="twitter:description" content="Экологически чистый мёд с Алтайских гор">
-<meta name="twitter:image" content="https://altaymed.shop/images/twitter-preview.webp">
-
-<!-- Favicon -->
-<link rel="icon" href="/images/favicon.ico" sizes="any">
-<link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
-
-<!-- Web Manifest -->
-<link rel="manifest" href="/manifest.json">
-<meta name="theme-color" content="#9f5524">
-
-<!-- Критические стили для первого экрана -->
-<style>
-/* Минимальные стили для первого экрана */
-:root {
-  --primary: #6B8E23;
-  --secondary: #8B4513;
-  --orange: #FFA500;
-}
-
-body {
-  margin: 0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
-  background: #f9f9f9;
-}
-
-nav {
-  background: white;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-  position: sticky;
-  top: 0;
-  z-index: 50;
-}
-
-.nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0.75rem 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header-logo {
-  font-family: 'Pacifico', cursive;
-  font-size: 1.5rem;
-  color: var(--primary);
-  text-decoration: none;
-}
-
-.hero-section {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-                   url('/images/image-1.webp');
-  background-size: cover;
-  background-position: center;
-  min-height: 70vh;
-  display: flex;
-  align-items: center;
-}
-
-.hero-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-  color: white;
-}
-
-.hero-title {
-  font-family: 'Pacifico', cursive;
-  font-size: 2.5rem;
-  line-height: 1.2;
-  margin-bottom: 1rem;
-}
-
-.hero-description {
-  font-size: 1.125rem;
-  margin-bottom: 1.5rem;
-  max-width: 600px;
-}
-
-.hero-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
-
-.hero-btn {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  font-weight: 500;
-  font-size: 1rem;
-  text-align: center;
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
-
-.hero-btn-primary {
-  background: var(--orange);
-  color: white;
-}
-
-.hero-btn-secondary {
-  border: 1px solid white;
-  color: white;
-}
-
-/* Основные стили будут загружены позже */
-</style>
-
-<!-- Оптимизированные шрифты -->
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<!-- Оптимизированные иконки -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" media="print" onload="this.media='all'">
-
-<!-- Schema.org разметка -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "url": "https://altaymed.shop/",
-  "name": "Алтайский мёд - Натуральные продукты пчеловодства",
-  "description": "Натуральный алтайский мёд от производителя. Доставка по всей России. Гречишный, таёжный, цветочный мёд.",
-  "dateModified": "2025-06-27"
-}
-</script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": ["Organization", "LocalBusiness"],
-  "name": "Алтайский мёд",
-  "url": "https://altaymed.shop/",
-  "logo": "https://altaymed.shop/images/favicon.ico",
-  "description": "Натуральный алтайский мёд от производителя. Доставка по всей России.",
-  "address": {
-    "@type": "PostalAddress",
-    "addressRegion": "Владимирская область",
-    "addressLocality": "Ковров"
-  },
-  "telephone": "+79209400222",
-  "openingHours": "Пн-Вс 9:00-21:00",
-  "image": "https://altaymed.shop/images/og-preview.webp"
-}
-</script>
-</head>
-<body>
-<!-- Навигация -->
-<nav>
-  <div class="nav-container">
-    <a href="#" class="header-logo">Алтайский мёд</a>
-    
-    <button class="md:hidden w-10 h-10 flex items-center justify-center" id="mobile-menu-button">
-      <i class="ri-menu-line text-gray-900 ri-xl"></i>
-    </button>
-  </div>
-</nav>
-
-<!-- Герой-секция -->
-<section class="hero-section">
-  <div class="hero-content">
-    <h1 class="hero-title">Натуральный мёд с Алтайских гор</h1>
-    <p class="hero-description">Наслаждайтесь вкусом и пользой настоящего алтайского мёда, собранного с любовью в экологически чистых районах.</p>
-    
-    <div class="hero-buttons">
-      <a href="#order" class="hero-btn hero-btn-primary">Заказать сейчас</a>
-      <a href="#products" class="hero-btn hero-btn-secondary">Наши продукты</a>
-    </div>
-  </div>
-</section>
-
-<!-- Основной контент -->
-<main>
 <!-- Преимущества -->
 <section id="benefits" class="py-16 md:py-20 texture-bg bg-[#F5DEB3] bg-opacity-20 section-animate">
   <div class="container mx-auto px-4 md:px-6">
@@ -2045,22 +1217,22 @@ nav {
           <form id="order-form">
             <div class="mb-3 md:mb-4">
               <label for="name" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Ваше имя</label>
-              <input type="text" id="name" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="Иван Петров">
+              <input type="text" id="name" name="name" autocomplete="name" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="Иван Петров">
             </div>
             
             <div class="mb-3 md:mb-4">
               <label for="phone" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Телефон</label>
-              <input type="tel" id="phone" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="+7 (999) 123-45-67">
+              <input type="tel" id="phone" name="phone" autocomplete="tel" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="+7 (999) 123-45-67">
             </div>
             
             <div class="mb-3 md:mb-4">
               <label for="email" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Email</label>
-              <input type="email" id="email" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="example@mail.ru">
+              <input type="email" id="email" name="email" autocomplete="email" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="example@mail.ru">
             </div>
             
             <div class="mb-4 md:mb-6">
               <label for="message" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Комментарий к заказу</label>
-              <textarea id="message" rows="3" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="Укажите интересующие вас сорта мёда и объём"></textarea>
+              <textarea id="message" name="message" rows="3" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="Укажите интересующие вас сорта мёда и объём"></textarea>
             </div>
             
             <button type="submit" class="w-full bg-orange text-white py-2 md:py-3 !rounded-button hover:bg-opacity-90 transition-all font-medium text-sm md:text-base">Отправить заявку</button>
@@ -2349,432 +1521,18 @@ nav {
   </div>
 </div>
 
-<!-- Полные стили -->
-<style>
-/* Основные стили для всего сайта */
-.texture-bg {
-  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZmZmZmZmIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNmNWRlYjMiIG9wYWNpdHk9IjAuMSI+PC9yZWN0Pgo8L3N2Zz4=');
-}
+<!-- Загрузка иконок после основного контента -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" media="print" onload="this.media='all'">
 
-.container {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
+<!-- Асинхронная загрузка шрифтов -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
 
-/* Навигация */
-.nav-link {
-  color: #1a202c;
-  transition: color 0.3s;
-  text-decoration: none;
-}
-
-.nav-link:hover {
-  color: #6B8E23;
-}
-
-.nav-btn {
-  background: #6B8E23;
-  color: white;
-  border-radius: 8px;
-  padding: 0.5rem 1.5rem;
-  text-decoration: none;
-}
-
-/* Преимущества */
-.benefit-card {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
-}
-
-.benefit-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-}
-
-.benefit-icon {
-  width: 4rem;
-  height: 4rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(107, 142, 35, 0.1);
-  border-radius: 50%;
-  margin-bottom: 1rem;
-}
-
-/* Продукты */
-.product-card {
-  background: white;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
-}
-
-.product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-}
-
-.product-image {
-  width: 100%;
-  height: 14rem;
-  object-fit: cover;
-  transition: opacity 0.5s;
-  opacity: 0;
-}
-
-.product-image.loaded {
-  opacity: 1;
-}
-
-/* О нас */
-.about-image {
-  background: white;
-  padding: 0.75rem;
-  box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-  transform: rotate(2deg);
-  margin-bottom: 2rem;
-}
-
-.about-image:nth-child(even) {
-  transform: rotate(-3deg);
-}
-
-.about-check-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1.5rem;
-}
-
-.about-check-icon {
-  width: 2.5rem;
-  height: 2.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(107, 142, 35, 0.1);
-  border-radius: 50%;
-  margin-right: 1rem;
-}
-
-/* Форма заказа */
-.bg-gradient-to-br {
-  background: linear-gradient(135deg, #6B8E23, #8ea745);
-}
-
-/* Как мы работаем */
-.workflow-steps {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-
-.step-circle {
-  width: 12rem;
-  height: 12rem;
-  border-radius: 50%;
-  background: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-  border: 2px solid #8B4513;
-  position: relative;
-}
-
-.step-number {
-  position: absolute;
-  font-size: 6rem;
-  font-weight: 800;
-  color: rgba(139, 69, 19, 0.08);
-  z-index: 1;
-}
-
-.step-icon {
-  position: absolute;
-  top: 1rem;
-  width: 3rem;
-  height: 3rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: white;
-  border-radius: 50%;
-  border: 2px solid #8B4513;
-  z-index: 2;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.step-title {
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: #2d3748;
-  text-align: center;
-  z-index: 2;
-  padding: 0 1rem;
-}
-
-/* Футер */
-footer {
-  background: #8B4513;
-  color: white;
-  position: relative;
-  overflow: hidden;
-}
-
-footer::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 600%;
-  height: 600%;
-  background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
-  background-size: 108px 108px;
-  transform: rotate(30deg);
-  transform-origin: 0 0;
-  opacity: 0.6;
-  z-index: 0;
-  margin-left: -220%;
-  margin-top: -220%;
-}
-
-.footer-column {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 2rem;
-}
-
-.footer-column h4 {
-  font-size: 1.125rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-.footer-column ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer-column li {
-  margin-bottom: 0.5rem;
-}
-
-.footer-column a {
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.footer-column a:hover {
-  color: #d1d5db;
-}
-
-.contact-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 0.5rem;
-}
-
-.contact-icon {
-  margin-right: 0.75rem;
-}
-
-.social-icon-bw {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 50%;
-  border: 1px solid #4b5563;
-  color: #4b5563;
-  transition: all 0.3s;
-}
-
-.social-icon-bw:hover {
-  border-color: #6B8E23;
-  color: #6B8E23;
-}
-
-/* Модальные окна */
-.modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5);
-  z-index: 1000;
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-content {
-  background: white;
-  border-radius: 12px;
-  max-width: 500px;
-  width: 90%;
-  animation: modalAppear 0.3s ease-out;
-}
-
-@keyframes modalAppear {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.success-modal-content {
-  background: white;
-  border-radius: 16px;
-  max-width: 450px;
-  width: 90%;
-  padding: 2.5rem;
-  text-align: center;
-  animation: modalAppear 0.4s ease-out;
-}
-
-.success-icon {
-  width: 5rem;
-  height: 5rem;
-  margin: 0 auto 1.25rem;
-  background: #6B8E23;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: pulse 1.5s infinite;
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
-}
-
-.success-title {
-  font-size: 1.75rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-
-.success-btn {
-  background: #6B8E23;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 0.75rem 1.875rem;
-  font-size: 1.125rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.success-btn:hover {
-  background: #5a7a1d;
-}
-
-/* Адаптивность */
-@media (min-width: 768px) {
-  .hero-title {
-    font-size: 3.5rem;
-  }
-  
-  .nav-container {
-    padding: 0.75rem 2rem;
-  }
-  
-  .footer-columns {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 2rem;
-  }
-}
-
-@media (max-width: 767px) {
-  .hero-section {
-    min-height: 60vh;
-  }
-  
-  .hero-title {
-    font-size: 2rem;
-  }
-  
-  .step-circle {
-    width: 10rem;
-    height: 10rem;
-  }
-  
-  .footer-column {
-    margin-bottom: 2.5rem;
-  }
-  
-  .benefit-card:hover, 
-  .product-card:hover,
-  .step-circle:hover {
-    transform: none;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  }
-}
-</style>
-
-<!-- Скрипты -->
 <script>
-// Аналитика загружается после полной загрузки страницы
-window.addEventListener('load', function() {
-  // Google Analytics
-  var gaScript = document.createElement('script');
-  gaScript.async = true;
-  gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-D9YMSF22NS';
-  document.head.appendChild(gaScript);
-
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-D9YMSF22NS');
-
-  // Yandex Metrika
-  var yaScript = document.createElement('script');
-  yaScript.src = 'https://mc.yandex.ru/metrika/tag.js';
-  yaScript.async = true;
-  document.head.appendChild(yaScript);
-
-  yaScript.onload = function() {
-    ym(102951378, "init", {
-      clickmap:true,
-      trackLinks:true,
-      accurateTrackBounce:true
-    });
-  };
-});
-
+// Упрощенный JavaScript для мобильных
 document.addEventListener('DOMContentLoaded', function() {
-  const mobileMenuButton = document.getElementById('mobile-menu-button');
-  const mobileMenu = document.createElement('div');
-  mobileMenu.id = 'mobile-menu';
-  mobileMenu.className = 'hidden bg-white shadow-md px-4 py-3';
-  mobileMenu.innerHTML = `
-    <div class="flex flex-col space-y-4">
-      <a href="#benefits" class="py-2">Преимущества</a>
-      <a href="#products" class="py-2">Каталог</a>
-      <a href="#about" class="py-2">О нас</a>
-      <a href="#footer-contacts" class="py-2">Контакты</a>
-      <a href="#order" class="py-2 text-center bg-[#6B8E23] text-white rounded">Заказать</a>
-    </div>
-  `;
-  document.querySelector('nav').appendChild(mobileMenu);
+  const mobileMenuButton = document.querySelector('.md\\:hidden');
+  const mobileMenu = document.getElementById('mobile-menu');
   
   mobileMenuButton.addEventListener('click', function() {
     if (mobileMenu.classList.contains('hidden')) {
@@ -2786,7 +1544,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
   
-  // Плавная прокрутка
+  // Плавная прокрутка к якорям
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       if (this.getAttribute('href') === '#') return;
@@ -2801,8 +1559,8 @@ document.addEventListener('DOMContentLoaded', function() {
           behavior: 'smooth'
         });
         
-        // Закрыть мобильное меню
-        if (!mobileMenu.classList.contains('hidden')) {
+        // Закрыть мобильное меню при клике на ссылку
+        if (!mobileMenu.classList.contains('hidden') && window.innerWidth < 768) {
           mobileMenu.classList.add('hidden');
           mobileMenu.classList.remove('block');
         }
@@ -2811,8 +1569,8 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
   // Получаем формы
-  const orderForm = document.getElementById('order-form');
-  const quickOrderForm = document.getElementById('quick-order-form');
+  const orderForm = document.querySelector('#order form');
+  const contactForm = document.querySelector('#contacts form');
 
   // Функция для отправки сообщения в Telegram
   function sendToTelegram(message) {
@@ -2877,6 +1635,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const success = await sendToTelegram(telegramMessage);
         
         if (success) {
+          // Показываем модальное окно успеха
           const successModal = document.getElementById('success-modal');
           successModal.style.display = 'flex';
           document.body.style.overflow = 'hidden';
@@ -2895,6 +1654,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const buyButtons = document.querySelectorAll('.buy-btn');
   const modal = document.getElementById('buy-modal');
   const closeModal = document.querySelector('.close-modal');
+  const quickOrderForm = document.getElementById('quick-order-form');
   const quickProductInput = document.getElementById('quick-product');
   const pricePerLiter = document.getElementById('price-per-liter');
   const totalPrice = document.getElementById('total-price');
@@ -2970,9 +1730,16 @@ document.addEventListener('DOMContentLoaded', function() {
         const success = await sendToTelegram(telegramMessage);
         
         if (success) {
+          // Закрываем модальное окно заказа
           modal.style.display = 'none';
+          document.body.style.overflow = 'auto';
+          
+          // Показываем модальное окно успеха
           const successModal = document.getElementById('success-modal');
           successModal.style.display = 'flex';
+          document.body.style.overflow = 'hidden';
+          
+          // Сбрасываем форму
           quickOrderForm.reset();
         } else {
           alert('⚠️ Ошибка при отправке заказа. Пожалуйста, позвоните нам.');
@@ -3001,17 +1768,77 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
   
+  // Анимация для появления секций при скролле
+  const animateSections = document.querySelectorAll('.section-animate');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('section-visible');
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+  
+  animateSections.forEach(section => {
+    observer.observe(section);
+  });
+  
+  // Анимация для шагов в блоке "Как мы работаем"
+  const workflowSteps = document.querySelectorAll('.step-circle');
+  
+  const stepObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('animate');
+        }, 300);
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+  
+  workflowSteps.forEach(step => {
+    stepObserver.observe(step);
+  });
+  
   // Предзагрузка изображений для плавного появления
   const productImages = document.querySelectorAll('.product-image');
   productImages.forEach(img => {
     if (img.complete) {
       img.classList.add('loaded');
-    } else {
-      img.addEventListener('load', function() {
-        this.classList.add('loaded');
-      });
     }
   });
+  
+  // Отложенная загрузка аналитики
+  setTimeout(function() {
+    // Google Analytics
+    const gaScript = document.createElement('script');
+    gaScript.async = true;
+    gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-D9YMSF22NS';
+    document.head.appendChild(gaScript);
+    
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-D9YMSF22NS');
+    
+    // Yandex Metrika
+    const yaScript = document.createElement('script');
+    yaScript.src = 'https://mc.yandex.ru/metrika/tag.js';
+    yaScript.async = true;
+    document.head.appendChild(yaScript);
+    
+    yaScript.onload = function() {
+      ym(102951378, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+      });
+    };
+  }, 3000);
 });
 </script>
 </body>

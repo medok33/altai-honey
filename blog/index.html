@@ -5,6 +5,30 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Блог о мёде | Алтайский мёд - Полезные статьи</title>
 <meta name="description" content="Читайте полезные статьи о мёде, пчеловодстве и здоровом питании. Узнайте о пользе алтайского мёда.">
+<link rel="canonical" href="https://altaymed.shop/blog/" />
+
+<!-- Schema.org разметка -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://altaymed.shop/blog/"
+  },
+  "headline": "Блог о мёде | Алтайский мёд",
+  "description": "Полезные статьи о мёде, пчеловодстве и здоровом питании",
+  "image": "https://altaymed.shop/images/image-7.webp",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Алтайский мёд",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://altaymed.shop/images/logo.webp"
+    }
+  }
+}
+</script>
 
 <!-- Мета-теги верификации -->
 <meta name="yandex-verification" content="9c5350476939e370" />
@@ -13,7 +37,7 @@
 <!-- Open Graph -->
 <meta property="og:title" content="Блог о мёде | Алтайский мёд">
 <meta property="og:description" content="Полезные статьи о мёде, пчеловодстве и здоровом питании">
-<meta property="og:image" content="https://altaymed.shop/images/og-preview.jpg">
+<meta property="og:image" content="https://altaymed.shop/images/og-preview.webp">
 <meta property="og:url" content="https://altaymed.shop/blog/">
 <meta property="og:type" content="website">
 
@@ -21,7 +45,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Блог о мёде | Алтайский мёд">
 <meta name="twitter:description" content="Читайте полезные статьи о мёде и пчеловодстве">
-<meta name="twitter:image" content="https://altaymed.shop/images/twitter-preview.jpg">
+<meta name="twitter:image" content="https://altaymed.shop/images/twitter-preview.webp">
 
 <!-- Favicon -->
 <link rel="icon" href="/images/favicon.ico" sizes="any">
@@ -406,7 +430,7 @@ footer a:hover {
 
 <main>
 <!-- Шапка блога -->
-<section class="min-h-[50vh] flex items-center" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/image-7.jpg'); background-size: cover; background-position: center;">
+<section class="min-h-[50vh] flex items-center" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/image-7.webp'); background-size: cover; background-position: center;">
   <div class="container mx-auto px-4 text-center text-white">
     <h1 class="text-3xl md:text-4xl lg:text-5xl font-['Pacifico'] mb-4">Полезные статьи о мёде</h1>
     <p class="text-xl max-w-2xl mx-auto">Узнайте больше о пользе алтайского мёда и традициях пчеловодства</p>
@@ -418,53 +442,80 @@ footer a:hover {
   <div class="container mx-auto px-4 md:px-6">
     <div class="max-w-4xl mx-auto">
       <!-- Статья 1 -->
-      <div class="blog-post-card bg-white rounded-lg mb-10 overflow-hidden shadow-md">
-        <img src="/images/placeholder.jpg" 
-             data-src="/images/image-8.jpg" 
-             alt="Как выбрать качественный мёд"
-             class="w-full h-64 object-cover lazyload"
-             loading="lazy"
-             decoding="async">
+      <div class="blog-post-card bg-white rounded-lg mb-10 overflow-hidden shadow-md" itemscope itemtype="http://schema.org/BlogPosting">
+        <picture>
+          <source srcset="/images/image-8.webp" type="image/webp">
+          <img src="/images/image-8.jpg" 
+               alt="Как выбрать качественный мёд - полезные советы"
+               class="w-full h-64 object-cover"
+               loading="lazy"
+               decoding="async"
+               width="800"
+               height="533">
+        </picture>
         <div class="p-6">
-          <h2 class="text-xl md:text-2xl font-bold mb-2">Как выбрать качественный мёд</h2>
-          <p class="text-gray-600 mb-4">Экспертные советы по выбору настоящего алтайского мёда. Узнайте, как отличить натуральный продукт от подделки и сохранить все полезные свойства.</p>
-          <a href="/blog/kak-vybrat-med.html" class="text-primary font-medium hover:underline">
+          <h2 class="text-xl md:text-2xl font-bold mb-2" itemprop="headline">Как выбрать качественный мёд</h2>
+          <p class="text-gray-600 mb-4" itemprop="description">Экспертные советы по выбору настоящего алтайского мёда. Узнайте, как отличить натуральный продукт от подделки и сохранить все полезные свойства.</p>
+          <a href="/blog/kak-vybrat-med.html" class="text-primary font-medium hover:underline" itemprop="url">
             Читать статью
           </a>
+          <meta itemprop="datePublished" content="2025-03-15">
+          <meta itemprop="dateModified" content="2025-03-15">
+          <div itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop="name" content="Алтайский мёд">
+          </div>
         </div>
       </div>
       
       <!-- Статья 2 -->
-      <div class="blog-post-card bg-white rounded-lg mb-10 overflow-hidden shadow-md">
-        <img src="/images/placeholder.jpg" 
-             data-src="/images/image-9.jpg" 
-             alt="Мёд в здоровом питании"
-             class="w-full h-64 object-cover lazyload"
-             loading="lazy"
-             decoding="async">
+      <div class="blog-post-card bg-white rounded-lg mb-10 overflow-hidden shadow-md" itemscope itemtype="http://schema.org/BlogPosting">
+        <picture>
+          <source srcset="/images/image-9.webp" type="image/webp">
+          <img src="/images/image-9.jpg" 
+               alt="Мёд в здоровом питании - рецепты и советы"
+               class="w-full h-64 object-cover"
+               loading="lazy"
+               decoding="async"
+               width="800"
+               height="533">
+        </picture>
         <div class="p-6">
-          <h2 class="text-xl md:text-2xl font-bold mb-2">Мёд в здоровом питании</h2>
-          <p class="text-gray-600 mb-4">Как правильно использовать мёд в ежедневном рационе. Рецепты и советы по включению натурального мёда в здоровое питание для всей семьи.</p>
-          <a href="/blog/med-v-zdorovom-pitanii.html" class="text-primary font-medium hover:underline">
+          <h2 class="text-xl md:text-2xl font-bold mb-2" itemprop="headline">Мёд в здоровом питании</h2>
+          <p class="text-gray-600 mb-4" itemprop="description">Как правильно использовать мёд в ежедневном рационе. Рецепты и советы по включению натурального мёда в здоровое питание для всей семьи.</p>
+          <a href="/blog/med-v-zdorovom-pitanii.html" class="text-primary font-medium hover:underline" itemprop="url">
             Читать статью
           </a>
+          <meta itemprop="datePublished" content="2025-03-22">
+          <meta itemprop="dateModified" content="2025-03-22">
+          <div itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop="name" content="Алтайский мёд">
+          </div>
         </div>
       </div>
       
       <!-- Статья 3 -->
-      <div class="blog-post-card bg-white rounded-lg mb-10 overflow-hidden shadow-md">
-        <img src="/images/placeholder.jpg" 
-             data-src="/images/image-10.jpg" 
-             alt="Традиции алтайского пчеловодства"
-             class="w-full h-64 object-cover lazyload"
-             loading="lazy"
-             decoding="async">
+      <div class="blog-post-card bg-white rounded-lg mb-10 overflow-hidden shadow-md" itemscope itemtype="http://schema.org/BlogPosting">
+        <picture>
+          <source srcset="/images/image-10.webp" type="image/webp">
+          <img src="/images/image-10.jpg" 
+               alt="Традиции алтайского пчеловодства - история и секреты"
+               class="w-full h-64 object-cover"
+               loading="lazy"
+               decoding="async"
+               width="800"
+               height="533">
+        </picture>
         <div class="p-6">
-          <h2 class="text-xl md:text-2xl font-bold mb-2">Традиции алтайского пчеловодства</h2>
-          <p class="text-gray-600 mb-4">История и секреты алтайских пасечников. Узнайте о многовековых традициях сбора мёда в горных районах Алтая.</p>
-          <a href="/blog/tradicii-altayskogo-pchelovodstva.html" class="text-primary font-medium hover:underline">
+          <h2 class="text-xl md:text-2xl font-bold mb-2" itemprop="headline">Традиции алтайского пчеловодства</h2>
+          <p class="text-gray-600 mb-4" itemprop="description">История и секреты алтайских пасечников. Узнайте о многовековых традициях сбора мёда в горных районах Алтая.</p>
+          <a href="/blog/tradicii-altayskogo-pchelovodstva.html" class="text-primary font-medium hover:underline" itemprop="url">
             Читать статью
           </a>
+          <meta itemprop="datePublished" content="2025-03-30">
+          <meta itemprop="dateModified" content="2025-03-30">
+          <div itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop="name" content="Алтайский мёд">
+          </div>
         </div>
       </div>
     </div>
@@ -641,10 +692,21 @@ footer a:hover {
     const lazyLoad = function(entries) {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          const img = entry.target;
-          img.src = img.dataset.src;
-          img.classList.remove("lazyload");
-          observer.unobserve(img);
+          const picture = entry.target;
+          const sources = picture.querySelectorAll('source');
+          const img = picture.querySelector('img');
+          
+          sources.forEach(source => {
+            if (source.dataset.srcset) {
+              source.srcset = source.dataset.srcset;
+            }
+          });
+          
+          if (img && img.dataset.src) {
+            img.src = img.dataset.src;
+          }
+          
+          observer.unobserve(picture);
         }
       });
     };
@@ -654,8 +716,8 @@ footer a:hover {
       threshold: 0.01
     });
     
-    document.querySelectorAll("img.lazyload").forEach(img => {
-      observer.observe(img);
+    document.querySelectorAll("picture").forEach(picture => {
+      observer.observe(picture);
     });
   });
 </script>

@@ -32,114 +32,342 @@
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#9f5524">
 
-<!-- Предзагрузка критических ресурсов -->
-<link rel="preload" href="/images/image-7.webp" as="image" type="image/webp">
-<link rel="preload" href="/fonts/pacifico-v22-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/open-sans-v34-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/open-sans-v34-latin-600.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/open-sans-v34-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+<!-- Оптимизированные шрифты -->
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<!-- Критический CSS -->
+<!-- Подключение Tailwind CSS -->
+<link rel="stylesheet" href="/css/style.min.css">
+
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        primary: '#6B8E23',
+        secondary: '#8B4513',
+        orange: '#FFA500'
+      },
+      borderRadius: {
+        'none': '0px',
+        'sm': '4px',
+        DEFAULT: '8px',
+        'md': '12px',
+        'lg': '16px',
+        'xl': '20px',
+        '2xl': '24px',
+        '3xl': '32px',
+        'full': '9999px',
+        'button': '8px'
+      }
+    }
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
 <style>
-/* Минимальные сброс стилей */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html, body { height: 100%; }
-body { 
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
   font-family: 'Open Sans', sans-serif;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  color: #1a202c;
+}
+.texture-bg {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZmZmZmZmIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNmNWRlYjMiIG9wYWNpdHk9IjAuMSI+PC9yZWN0Pgo8L3N2Zz4=');
+}
+
+.nav-link {
+  color: #1a202c !important;
+  transition: color 0.3s;
+}
+.nav-link:hover {
+  color: #6B8E23 !important;
+}
+.nav-btn {
+  background: #6B8E23 !important;
+  color: white !important;
+}
+.header-logo {
+  color: #6B8E23 !important;
+}
+
+footer {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  position: relative;
+  overflow: hidden;
+  background-color: #8B4513;
+  z-index: 1;
+}
+
+/* ИСПРАВЛЕННЫЙ УЗОР ВАФЕЛЬНОЙ СЕТКИ */
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 600%;
+  height: 600%;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+  background-size: 108px 108px;
+  transform: rotate(30deg);
+  transform-origin: 0 0;
+  opacity: 0.6;
+  z-index: 0;
+  margin-left: -220%;
+  margin-top: -220%;
+}
+
+footer .container {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding-right: 1.5rem !important;
+  padding-left: 1.5rem !important;
+  position: relative;
+  z-index: 1;
+}
+
+footer .grid {
+  width: 100% !important;
+  display: grid !important;
+  grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+}
+
+@media (min-width: 768px) {
+  footer .grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  }
+}
+
+.footer-column {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* Уменьшенные отступы для заголовков на 20% */
+.footer-column h4 {
+  text-align: left !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 0 0.64rem 0 !important; /* Уменьшено на 20% */
+  font-weight: bold !important;
+  font-size: 1.125rem !important;
+  line-height: 1.75rem !important;
+}
+
+.footer-column ul {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  list-style: none !important;
+}
+
+.footer-column li {
+  width: 100% !important;
+  text-align: left !important;
+  list-style-type: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.footer-column li a {
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.footer-column .bullet {
+  display: inline-block !important;
+  width: 6px !important;
+  height: 6px !important;
+  background-color: white !important;
+  border-radius: 50% !important;
+  margin-right: 10px !important;
+  flex-shrink: 0 !important;
+}
+
+footer, 
+footer *,
+footer a, 
+footer p, 
+footer span, 
+footer h4, 
+footer li {
+  color: white !important;
+  box-sizing: border-box !important;
+}
+footer a:hover {
+  color: #d1d5db !important;
+}
+
+.footer-column li a {
+  display: flex;
+  align-items: center;
+}
+
+.social-icon-bw {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: transparent;
+  transition: all 0.3s;
+  border: 1px solid #4b5563;
+  color: #4b5563;
+  filter: grayscale(100%);
+}
+
+.social-icon-bw:hover {
+  filter: grayscale(0%);
+  border-color: #6B8E23;
+  color: #6B8E23;
+}
+
+.avito-icon-bw, .yandex-maps-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  filter: grayscale(100%);
+}
+
+.avito-icon-bw svg, .yandex-maps-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.social-icon-bw:hover .avito-icon-bw,
+.social-icon-bw:hover .yandex-maps-icon {
+  filter: grayscale(0%);
+}
+
+/* Дополнительно уменьшенные отступы между пунктами на 25% */
+.footer-link-item {
+  display: flex;
+  align-items: center;
+  padding-top: 0.21rem !important; /* Уменьшено на 25% */
+  padding-bottom: 0.21rem !important; /* Уменьшено на 25% */
+}
+
+.contact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  flex-shrink: 0;
+  width: 24px;
+}
+
+.contact-text {
+  flex-grow: 1;
   line-height: 1.5;
 }
 
-/* Шрифты */
-@font-face {
-  font-family: 'Pacifico';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: local('Pacifico Regular'), local('Pacifico-Regular'),
-       url('/fonts/pacifico-v22-latin-regular.woff2') format('woff2');
+.blog-post-card {
+  transition: all 0.3s ease;
 }
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: local('Open Sans Regular'), local('OpenSans-Regular'),
-       url('/fonts/open-sans-v34-latin-regular.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'),
-       url('/fonts/open-sans-v34-latin-600.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: local('Open Sans Bold'), local('OpenSans-Bold'),
-       url('/fonts/open-sans-v34-latin-700.woff2') format('woff2');
+.blog-post-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
-/* Навигация - только критичные стили */
-.bg-white { background-color: #fff; }
-.shadow-sm { box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); }
-.sticky { position: sticky; }
-.top-0 { top: 0; }
-.z-50 { z-index: 50; }
-.container { width: 100%; max-width: 1280px; margin-left: auto; margin-right: auto; }
-.px-4 { padding-left: 1rem; padding-right: 1rem; }
-.py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
-.flex { display: flex; }
-.items-center { align-items: center; }
-.justify-between { justify-content: space-between; }
-.text-2xl { font-size: 1.5rem; }
-.text-3xl { font-size: 1.875rem; }
-.font-['Pacifico'] { font-family: 'Pacifico', cursive; }
-.header-logo { color: #6B8E23; }
-.hidden { display: none; }
-.space-x-6 > * + * { margin-left: 1.5rem; }
-.nav-link { color: #1a202c; transition: color 0.3s; }
-.nav-link:hover { color: #6B8E23; }
-.nav-btn { background: #6B8E23; color: white; }
-.px-4 { padding-left: 1rem; padding-right: 1rem; }
-.py-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
-.py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
-.whitespace-nowrap { white-space: nowrap; }
-.rounded-button { border-radius: 8px; }
-.hover\:bg-opacity-90:hover { opacity: 0.9; }
-.transition-all { transition-property: all; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
+.active-nav-link-alt {
+  border: 2px solid #6B8E23 !important;
+  border-radius: 8px !important;
+  padding: 4px 12px !important;
+  color: #6B8E23 !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease;
+}
 
-/* Hero section */
-.min-h-\[50vh\] { min-height: 50vh; }
-.items-center { align-items: center; }
-.text-center { text-align: center; }
-.text-white { color: #fff; }
-.text-3xl { font-size: 1.875rem; }
-.text-4xl { font-size: 2.25rem; }
-.text-5xl { font-size: 3rem; }
-.mb-4 { margin-bottom: 1rem; }
-.text-xl { font-size: 1.25rem; }
-.max-w-2xl { max-width: 42rem; }
-.mx-auto { margin-left: auto; margin-right: auto; }
+.active-nav-link-alt:hover {
+  background: rgba(107, 142, 35, 0.1) !important;
+}
 
-/* Основные стили будут загружены асинхронно */
+.floating-back-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 50;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background: #6B8E23;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.floating-back-button:hover {
+  background: #5a7a1c;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transform: scale(1.05);
+}
+
+.back-arrow {
+  width: 24px;
+  height: 24px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23ffffff' d='M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: transform 0.3s ease;
+}
+
+.floating-back-button:hover .back-arrow {
+  transform: translateX(-4px);
+}
+
+/* БЕЛЫЙ ЦВЕТ ТЕКСТА В ПЕРВОМ БЛОКЕ ФУТЕРА */
+#footer-contacts .footer-column:first-child,
+#footer-contacts .footer-column:first-child * {
+  color: white !important;
+}
+
+/* УТОЧНЕННЫЕ СТИЛИ ДЛЯ ПЕРВОГО БЛОКА ФУТЕРА */
+.footer-column:first-child {
+  justify-content: flex-start;
+}
+.footer-column:first-child .logo-wrapper {
+  margin-bottom: 0.4rem; /* Увеличено на 20% */
+}
+.footer-column:first-child .description-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.footer-column:first-child .description-wrapper p {
+  margin: 0;
+  font-size: 0.7rem; /* Уменьшено на 20% (относительно 0.875rem) */
+  line-height: 1.25;
+}
+.footer-column:first-child .description-wrapper p:first-child {
+  margin-bottom: 0.3rem; /* Увеличено на 20% */
+}
 </style>
-
-<!-- Асинхронная загрузка остального CSS -->
-<link rel="preload" href="/css/tailwind.min.css" as="style" onload="this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="/css/tailwind.min.css"></noscript>
-
-<!-- Асинхронная загрузка Remix Icon -->
-<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" as="style" onload="this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"></noscript>
-<link rel="stylesheet" href="/fonts/fonts.css">
 </head>
 <body>
 <!-- Навигация -->
@@ -152,14 +380,13 @@ body {
       <a href="/#products" class="nav-link">Каталог</a>
       <a href="/#about" class="nav-link">О нас</a>
       <a href="/#footer-contacts" class="nav-link">Контакты</a>
+      <!-- Активная ссылка на Блог -->
       <a href="/blog/" class="active-nav-link-alt">Блог</a>
       <a href="/#order" class="nav-btn px-4 md:px-6 py-1 md:py-2 !rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">Заказать</a>
     </div>
     
     <button class="md:hidden w-10 h-10 flex items-center justify-center" id="mobile-menu-button">
-      <svg class="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-      </svg>
+      <i class="ri-menu-line text-gray-900 ri-xl"></i>
     </button>
   </div>
   
@@ -170,6 +397,7 @@ body {
       <a href="/#products" class="nav-link py-2">Каталог</a>
       <a href="/#about" class="nav-link py-2">О нас</a>
       <a href="/#footer-contacts" class="nav-link py-2">Контакты</a>
+      <!-- Активная ссылка на Блог (мобильная версия) -->
       <a href="/blog/" class="active-nav-link-alt py-2 text-center">Блог</a>
       <a href="/#order" class="nav-btn py-2 text-center !rounded-button hover:bg-opacity-90 transition-all">Заказать</a>
     </div>
@@ -178,7 +406,7 @@ body {
 
 <main>
 <!-- Шапка блога -->
-<section class="min-h-[50vh] flex items-center" id="hero-section">
+<section class="min-h-[50vh] flex items-center" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/image-7.jpg'); background-size: cover; background-position: center;">
   <div class="container mx-auto px-4 text-center text-white">
     <h1 class="text-3xl md:text-4xl lg:text-5xl font-['Pacifico'] mb-4">Полезные статьи о мёде</h1>
     <p class="text-xl max-w-2xl mx-auto">Узнайте больше о пользе алтайского мёда и традициях пчеловодства</p>
@@ -191,16 +419,12 @@ body {
     <div class="max-w-4xl mx-auto">
       <!-- Статья 1 -->
       <div class="blog-post-card bg-white rounded-lg mb-10 overflow-hidden shadow-md">
-        <picture>
-          <source srcset="/images/image-8.webp" type="image/webp">
-          <img src="/images/image-8.jpg" 
-               alt="Как выбрать качественный мёд"
-               width="800"
-               height="450"
-               class="w-full h-64 object-cover lazyload"
-               loading="lazy"
-               decoding="async">
-        </picture>
+        <img src="/images/placeholder.jpg" 
+             data-src="/images/image-8.jpg" 
+             alt="Как выбрать качественный мёд"
+             class="w-full h-64 object-cover lazyload"
+             loading="lazy"
+             decoding="async">
         <div class="p-6">
           <h2 class="text-xl md:text-2xl font-bold mb-2">Как выбрать качественный мёд</h2>
           <p class="text-gray-600 mb-4">Экспертные советы по выбору настоящего алтайского мёда. Узнайте, как отличить натуральный продукт от подделки и сохранить все полезные свойства.</p>
@@ -212,16 +436,12 @@ body {
       
       <!-- Статья 2 -->
       <div class="blog-post-card bg-white rounded-lg mb-10 overflow-hidden shadow-md">
-        <picture>
-          <source srcset="/images/image-9.webp" type="image/webp">
-          <img src="/images/image-9.jpg" 
-               alt="Мёд в здоровом питании"
-               width="800"
-               height="450"
-               class="w-full h-64 object-cover lazyload"
-               loading="lazy"
-               decoding="async">
-        </picture>
+        <img src="/images/placeholder.jpg" 
+             data-src="/images/image-9.jpg" 
+             alt="Мёд в здоровом питании"
+             class="w-full h-64 object-cover lazyload"
+             loading="lazy"
+             decoding="async">
         <div class="p-6">
           <h2 class="text-xl md:text-2xl font-bold mb-2">Мёд в здоровом питании</h2>
           <p class="text-gray-600 mb-4">Как правильно использовать мёд в ежедневном рационе. Рецепты и советы по включению натурального мёда в здоровое питание для всей семьи.</p>
@@ -233,16 +453,12 @@ body {
       
       <!-- Статья 3 -->
       <div class="blog-post-card bg-white rounded-lg mb-10 overflow-hidden shadow-md">
-        <picture>
-          <source srcset="/images/image-10.webp" type="image/webp">
-          <img src="/images/image-10.jpg" 
-               alt="Традиции алтайского пчеловодства"
-               width="800"
-               height="450"
-               class="w-full h-64 object-cover lazyload"
-               loading="lazy"
-               decoding="async">
-        </picture>
+        <img src="/images/placeholder.jpg" 
+             data-src="/images/image-10.jpg" 
+             alt="Традиции алтайского пчеловодства"
+             class="w-full h-64 object-cover lazyload"
+             loading="lazy"
+             decoding="async">
         <div class="p-6">
           <h2 class="text-xl md:text-2xl font-bold mb-2">Традиции алтайского пчеловодства</h2>
           <p class="text-gray-600 mb-4">История и секреты алтайских пасечников. Узнайте о многовековых традициях сбора мёда в горных районах Алтая.</p>
@@ -256,7 +472,7 @@ body {
 </section>
 </main>
 
-<!-- Футер -->
+<!-- Футер с точно выровненным текстом -->
 <footer class="py-10 md:py-12 w-full">
   <div id="footer-contacts" class="container mx-auto px-4 md:px-6 w-full">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 w-full">
@@ -403,7 +619,7 @@ body {
                 </svg>
               </div>
             </a>
-            <!-- Иконка Яндекс Карт -->
+            <!-- Иконка Яндекс Карт - обновленная версия -->
             <a href="https://yandex.ru/maps/" target="_blank" class="social-icon-bw">
               <div class="yandex-maps-icon">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -419,25 +635,14 @@ body {
   </div>
 </footer>
 
-<!-- Скрипты с отложенной загрузкой -->
-<script defer>
-  // Инициализация Intersection Observer для lazy loading
+<!-- Скрипт lazy loading -->
+<script>
   document.addEventListener("DOMContentLoaded", function() {
     const lazyLoad = function(entries) {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const img = entry.target;
-          const sources = img.parentElement.querySelectorAll('source');
-          
-          // Загружаем WebP и оригинальный формат
-          sources.forEach(source => {
-            source.srcset = source.dataset.srcset;
-          });
-          
-          if (img.dataset.src) {
-            img.src = img.dataset.src;
-          }
-          
+          img.src = img.dataset.src;
           img.classList.remove("lazyload");
           observer.unobserve(img);
         }
@@ -452,8 +657,17 @@ body {
     document.querySelectorAll("img.lazyload").forEach(img => {
       observer.observe(img);
     });
-    
-    // Управление плавающей кнопкой "Назад"
+  });
+</script>
+
+<!-- Плавающая кнопка "Назад" -->
+<a href="#" id="back-button" class="floating-back-button">
+  <div class="back-arrow"></div>
+</a>
+
+<!-- Скрипт для управления плавающей кнопкой -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
     const backButton = document.getElementById('back-button');
     
     // Показываем/скрываем кнопку при скролле
@@ -480,8 +694,12 @@ body {
         window.location.href = '/';
       }
     });
-    
-    // Обработка мобильного меню
+  });
+</script>
+
+<!-- Обработка мобильного меню -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
     
@@ -519,36 +737,6 @@ body {
       });
     });
   });
-  
-  // Загрузка стиля для hero section после загрузки страницы
-  window.addEventListener('load', function() {
-    const heroSection = document.getElementById('hero-section');
-    if (heroSection) {
-      heroSection.style.background = "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/image-7.jpg')";
-      heroSection.style.backgroundSize = "cover";
-      heroSection.style.backgroundPosition = "center";
-      
-      // Добавляем WebP версию если поддерживается
-      const supportsWebP = (function() {
-        const elem = document.createElement('canvas');
-        if (!!(elem.getContext && elem.getContext('2d'))) {
-          return elem.toDataURL('image/webp').indexOf('data:image/webp') == 0;
-        }
-        return false;
-      })();
-      
-      if (supportsWebP) {
-        heroSection.style.background = "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/image-7.webp')";
-        heroSection.style.backgroundSize = "cover";
-        heroSection.style.backgroundPosition = "center";
-      }
-    }
-  });
 </script>
-
-<!-- Плавающая кнопка "Назад" -->
-<a href="#" id="back-button" class="floating-back-button">
-  <div class="back-arrow"></div>
-</a>
 </body>
 </html>

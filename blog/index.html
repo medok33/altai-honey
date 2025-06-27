@@ -32,24 +32,42 @@
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#9f5524">
 
-<!-- Предзагрузка ключевых ресурсов -->
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" as="style">
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" as="style">
-<link rel="preload" href="/css/style.min.css" as="style">
-<link rel="preload" href="/images/image-7.jpg" as="image">
-<link rel="preload" href="/fonts/remixicon/remixicon.min.css" as="style">
-
 <!-- Оптимизированные шрифты -->
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-
-<!-- Локальные иконки -->
-<link rel="stylesheet" href="/fonts/remixicon/remixicon.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- Подключение Tailwind CSS -->
-<link rel="stylesheet" href="/css/style.min.css" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="/css/style.min.css">
 
-<!-- Инлайн критического CSS -->
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        primary: '#6B8E23',
+        secondary: '#8B4513',
+        orange: '#FFA500'
+      },
+      borderRadius: {
+        'none': '0px',
+        'sm': '4px',
+        DEFAULT: '8px',
+        'md': '12px',
+        'lg': '16px',
+        'xl': '20px',
+        '2xl': '24px',
+        '3xl': '32px',
+        'full': '9999px',
+        'button': '8px'
+      }
+    }
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
 <style>
 :where([class^="ri-"])::before { content: "\f3c2"; }
 body {
@@ -142,7 +160,7 @@ footer .grid {
   text-align: left !important;
   width: 100% !important;
   padding: 0 !important;
-  margin: 0 0 0.64rem 0 !important;
+  margin: 0 0 0.64rem 0 !important; /* Уменьшено на 20% */
   font-weight: bold !important;
   font-size: 1.125rem !important;
   line-height: 1.75rem !important;
@@ -247,8 +265,8 @@ footer a:hover {
 .footer-link-item {
   display: flex;
   align-items: center;
-  padding-top: 0.21rem !important;
-  padding-bottom: 0.21rem !important;
+  padding-top: 0.21rem !important; /* Уменьшено на 25% */
+  padding-bottom: 0.21rem !important; /* Уменьшено на 25% */
 }
 
 .contact-icon {
@@ -334,7 +352,7 @@ footer a:hover {
   justify-content: flex-start;
 }
 .footer-column:first-child .logo-wrapper {
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.4rem; /* Увеличено на 20% */
 }
 .footer-column:first-child .description-wrapper {
   display: flex;
@@ -343,17 +361,11 @@ footer a:hover {
 }
 .footer-column:first-child .description-wrapper p {
   margin: 0;
-  font-size: 0.7rem;
+  font-size: 0.7rem; /* Уменьшено на 20% (относительно 0.875rem) */
   line-height: 1.25;
 }
 .footer-column:first-child .description-wrapper p:first-child {
-  margin-bottom: 0.3rem;
-}
-
-/* Оптимизация анимаций */
-*, *::before, *::after {
-  will-change: transform, opacity;
-  backface-visibility: hidden;
+  margin-bottom: 0.3rem; /* Увеличено на 20% */
 }
 </style>
 </head>
@@ -407,16 +419,12 @@ footer a:hover {
     <div class="max-w-4xl mx-auto">
       <!-- Статья 1 -->
       <div class="blog-post-card bg-white rounded-lg mb-10 overflow-hidden shadow-md">
-        <picture>
-          <source srcset="/images/image-8.webp" type="image/webp">
-          <img src="/images/image-8.jpg" 
-               alt="Как выбрать качественный мёд"
-               class="w-full h-64 object-cover"
-               loading="lazy"
-               decoding="async"
-               width="800"
-               height="450">
-        </picture>
+        <img src="/images/placeholder.jpg" 
+             data-src="/images/image-8.jpg" 
+             alt="Как выбрать качественный мёд"
+             class="w-full h-64 object-cover lazyload"
+             loading="lazy"
+             decoding="async">
         <div class="p-6">
           <h2 class="text-xl md:text-2xl font-bold mb-2">Как выбрать качественный мёд</h2>
           <p class="text-gray-600 mb-4">Экспертные советы по выбору настоящего алтайского мёда. Узнайте, как отличить натуральный продукт от подделки и сохранить все полезные свойства.</p>
@@ -428,16 +436,12 @@ footer a:hover {
       
       <!-- Статья 2 -->
       <div class="blog-post-card bg-white rounded-lg mb-10 overflow-hidden shadow-md">
-        <picture>
-          <source srcset="/images/image-9.webp" type="image/webp">
-          <img src="/images/image-9.jpg" 
-               alt="Мёд в здоровом питании"
-               class="w-full h-64 object-cover"
-               loading="lazy"
-               decoding="async"
-               width="800"
-               height="450">
-        </picture>
+        <img src="/images/placeholder.jpg" 
+             data-src="/images/image-9.jpg" 
+             alt="Мёд в здоровом питании"
+             class="w-full h-64 object-cover lazyload"
+             loading="lazy"
+             decoding="async">
         <div class="p-6">
           <h2 class="text-xl md:text-2xl font-bold mb-2">Мёд в здоровом питании</h2>
           <p class="text-gray-600 mb-4">Как правильно использовать мёд в ежедневном рационе. Рецепты и советы по включению натурального мёда в здоровое питание для всей семьи.</p>
@@ -449,16 +453,12 @@ footer a:hover {
       
       <!-- Статья 3 -->
       <div class="blog-post-card bg-white rounded-lg mb-10 overflow-hidden shadow-md">
-        <picture>
-          <source srcset="/images/image-10.webp" type="image/webp">
-          <img src="/images/image-10.jpg" 
-               alt="Традиции алтайского пчеловодства"
-               class="w-full h-64 object-cover"
-               loading="lazy"
-               decoding="async"
-               width="800"
-               height="450">
-        </picture>
+        <img src="/images/placeholder.jpg" 
+             data-src="/images/image-10.jpg" 
+             alt="Традиции алтайского пчеловодства"
+             class="w-full h-64 object-cover lazyload"
+             loading="lazy"
+             decoding="async">
         <div class="p-6">
           <h2 class="text-xl md:text-2xl font-bold mb-2">Традиции алтайского пчеловодства</h2>
           <p class="text-gray-600 mb-4">История и секреты алтайских пасечников. Узнайте о многовековых традициях сбора мёда в горных районах Алтая.</p>
@@ -642,9 +642,8 @@ footer a:hover {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const img = entry.target;
-          if (img.dataset.src) {
-            img.src = img.dataset.src;
-          }
+          img.src = img.dataset.src;
+          img.classList.remove("lazyload");
           observer.unobserve(img);
         }
       });
@@ -655,7 +654,7 @@ footer a:hover {
       threshold: 0.01
     });
     
-    document.querySelectorAll("img[data-src]").forEach(img => {
+    document.querySelectorAll("img.lazyload").forEach(img => {
       observer.observe(img);
     });
   });
@@ -675,14 +674,12 @@ footer a:hover {
     let isScrolling;
     window.addEventListener('scroll', function() {
       backButton.style.opacity = "1";
-      backButton.style.pointerEvents = "auto";
       
       clearTimeout(isScrolling);
       isScrolling = setTimeout(function() {
         backButton.style.opacity = "0";
-        backButton.style.pointerEvents = "none";
       }, 2000);
-    }, {passive: true});
+    });
     
     // Обработка нажатия на кнопку "Назад"
     backButton.addEventListener('click', function(e) {
@@ -740,33 +737,6 @@ footer a:hover {
       });
     });
   });
-</script>
-
-<!-- Tailwind Config -->
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          primary: '#6B8E23',
-          secondary: '#8B4513',
-          orange: '#FFA500'
-        },
-        borderRadius: {
-          'none': '0px',
-          'sm': '4px',
-          DEFAULT: '8px',
-          'md': '12px',
-          'lg': '16px',
-          'xl': '20px',
-          '2xl': '24px',
-          '3xl': '32px',
-          'full': '9999px',
-          'button': '8px'
-        }
-      }
-    }
-  }
 </script>
 </body>
 </html>

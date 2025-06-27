@@ -8,10 +8,9 @@
 <meta name="description" content="Натуральный алтайский мёд от производителя. Доставка по всей России. Гречишный, таёжный, цветочный мёд.">
 
 <!-- Предзагрузка критических ресурсов -->
-<link rel="preload" href="/images/image-1.webp" as="image" fetchpriority="high">
+<link rel="preload" href="/images/image-1.webp" as="image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 
 <!-- Мета-теги верификации -->
 <meta name="yandex-verification" content="9c5350476939e370" />
@@ -44,7 +43,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- Оптимизированные иконки -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" media="print" onload="this.media='all'">
 
 <!-- Оптимизированный Tailwind -->
 <script src="https://cdn.tailwindcss.com/3.4.16?minify=true"></script>
@@ -1526,7 +1525,7 @@ img.product-image.loaded {
 </div>
 
 <script>
-// Оптимизированная загрузка аналитики
+// Аналитика загружается после полной загрузки страницы
 window.addEventListener('load', function() {
   // Google Analytics
   var gaScript = document.createElement('script');
@@ -1541,8 +1540,8 @@ window.addEventListener('load', function() {
 
   // Yandex Metrika
   var yaScript = document.createElement('script');
-  yaScript.async = true;
   yaScript.src = 'https://mc.yandex.ru/metrika/tag.js';
+  yaScript.async = true;
   document.head.appendChild(yaScript);
 
   yaScript.onload = function() {

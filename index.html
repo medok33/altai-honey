@@ -9,8 +9,9 @@
 
 <!-- Предзагрузка критических ресурсов -->
 <link rel="preload" href="/images/image-1.webp" as="image">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="/fonts/pacifico-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/opensans-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/opensans-700.woff2" as="font" type="font/woff2" crossorigin>
 
 <!-- Мета-теги верификации -->
 <meta name="yandex-verification" content="9c5350476939e370" />
@@ -37,10 +38,6 @@
 <!-- Web Manifest -->
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#9f5524">
-
-<!-- Оптимизированные шрифты -->
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- Оптимизированные иконки -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" media="print" onload="this.media='all'">
@@ -74,6 +71,51 @@ tailwind.config = {
 </script>
 
 <style>
+@font-face {
+  font-family: 'Pacifico';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/pacifico-regular.woff2') format('woff2'),
+       url('/fonts/pacifico-regular.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/opensans-regular.woff2') format('woff2'),
+       url('/fonts/opensans-regular.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/fonts/opensans-500.woff2') format('woff2'),
+       url('/fonts/opensans-500.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url('/fonts/opensans-600.woff2') format('woff2'),
+       url('/fonts/opensans-600.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/opensans-700.woff2') format('woff2'),
+       url('/fonts/opensans-700.woff') format('woff');
+  font-display: swap;
+}
+
 :where([class^="ri-"])::before { content: "\f3c2"; }
 body {
   font-family: 'Open Sans', sans-serif;
@@ -494,7 +536,47 @@ footer a:hover {
   font-weight: 500;
 }
 
+/* Оптимизация CLS для изображений "О нас" */
+.about-image {
+  aspect-ratio: 3/2;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 @media (max-width: 768px) {
+  /* Отключение анимаций на мобильных устройствах */
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  .benefit-card, .product-card, .about-image,
+  .step-circle, .benefit-icon {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+  
+  .section-animate {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  
+  .step-circle.animate {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+  
   .about-check-icon {
     width: 2rem;
     height: 2rem;
@@ -553,24 +635,14 @@ footer a:hover {
     padding: 1rem 1.5rem;
     font-size: 1.1rem;
   }
-
-  /* Оптимизация анимаций для мобильных */
-  .benefit-card:hover, 
-  .product-card:hover,
-  .step-circle:hover {
-    transform: none !important;
-    box-shadow: none !important;
-  }
-  
-  .benefit-card:hover .benefit-icon {
-    transform: none !important;
-  }
 }
 
 /* Исправление для изображений */
 img.product-image {
   transition: opacity 0.5s ease-in-out;
   opacity: 0;
+  width: 100%;
+  height: auto;
 }
 
 img.product-image.loaded {
@@ -877,21 +949,33 @@ img.product-image.loaded {
   animation-delay: 0.8s;
 }
 
-/* Задержки для секций */
-#benefits {
-  transition-delay: 0.1s;
+/* УТОЧНЕННЫЕ СТИЛИ ДЛЯ ПЕРВОГО БЛОКА ФУТЕРА */
+.footer-column:first-child {
+  justify-content: flex-start;
 }
-#products {
-  transition-delay: 0.2s;
+.footer-column:first-child .logo-wrapper {
+  margin-bottom: 0.4rem;
 }
-#about {
-  transition-delay: 0.3s;
+.footer-column:first-child .description-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
-#order {
-  transition-delay: 0.4s;
+.footer-column:first-child .description-wrapper p {
+  margin: 0;
+  font-size: 0.7rem;
+  line-height: 1.25;
 }
-#workflow {
-  transition-delay: 0.5s;
+.footer-column:first-child .description-wrapper p:first-child {
+  margin-bottom: 0.3rem;
+}
+
+/* Отключение анимаций для пользователей с prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
 }
 </style>
 

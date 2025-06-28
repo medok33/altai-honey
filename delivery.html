@@ -394,28 +394,6 @@
   .region-link:hover {
     color: #6B8E23;
   }
-  .region-toggle-btn {
-    background: none;
-    border: none;
-    color: #6B8E23;
-    font-weight: 600;
-    cursor: pointer;
-    padding: 8px 0;
-    display: inline-flex;
-    align-items: center;
-    transition: all 0.3s;
-  }
-  .region-toggle-btn:hover {
-    color: #5a7a1c;
-  }
-  .region-toggle-btn span {
-    margin-left: 5px;
-    font-size: 0.85rem;
-  }
-  #hidden-regions {
-    display: none;
-    padding-top: 8px;
-  }
   .regions-container {
     margin-top: 16px;
     margin-bottom: 24px;
@@ -431,41 +409,49 @@
     display: flex;
     flex-wrap: nowrap;
     overflow: hidden;
-    position: relative;
-    padding-right: 120px; /* Место для кнопки */
   }
-  .regions-toggle-container {
+  .triangle-toggle {
     position: absolute;
     right: 0;
     top: 0;
     height: 100%;
     display: flex;
     align-items: center;
+    padding-left: 10px;
     background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 50%);
-    padding-left: 40px;
-  }
-  .regions-toggle-btn {
-    background: white;
-    border: 1px solid #e5e5e5;
-    border-radius: 24px;
-    padding: 4px 12px;
-    font-size: 0.9rem;
-    font-weight: 500;
     cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .triangle-toggle.visible {
+    opacity: 1;
+  }
+  .triangle {
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 8px solid #6B8E23;
     transition: all 0.3s;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    white-space: nowrap;
+    margin-right: 8px;
   }
-  .regions-toggle-btn:hover {
-    background: #f5f5f5;
-    border-color: #d1d5db;
+  .triangle-toggle:hover .triangle {
+    border-top-color: #5a7a1c;
+    transform: translateY(2px);
   }
-  .regions-toggle-btn:after {
-    content: ' ▼';
-    font-size: 0.8em;
+  #hidden-regions {
+    display: none;
+    padding-top: 8px;
   }
-  .regions-toggle-btn.expanded:after {
-    content: ' ▲';
+  .hidden-regions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 10px;
+  }
+  .hidden-regions-grid .region-tag {
+    margin: 0;
+    width: 100%;
+    text-align: center;
   }
 </style>
 </head>
@@ -550,25 +536,27 @@
             <!-- Блок с регионами доставки -->
             <div class="regions-container">
               <h4 class="regions-header">Регионы доставки:</h4>
-              <div class="regions-row" id="regions-row">
-                <div class="region-tag">Москва</div>
-                <div class="region-tag">Санкт-Петербург</div>
-                <div class="region-tag">Казань</div>
-                <div class="region-tag">Новосибирск</div>
-                <a href="/delivery-kovrov.html" class="region-tag region-link">Ковров</a>
-                <a href="/delivery-vladimir.html" class="region-tag region-link">Владимир</a>
-                <div class="region-tag">Нижний Новгород</div>
-                <div class="region-tag">Екатеринбург</div>
-                <div class="region-tag">Краснодар</div>
-                <div class="region-tag">Ростов-на-Дону</div>
-              </div>
-              <div class="regions-toggle-container">
-                <button id="toggle-regions" class="regions-toggle-btn">остальные регионы</button>
+              <div class="relative">
+                <div class="regions-row" id="regions-row">
+                  <div class="region-tag">Москва</div>
+                  <div class="region-tag">Санкт-Петербург</div>
+                  <div class="region-tag">Казань</div>
+                  <div class="region-tag">Новосибирск</div>
+                  <a href="/delivery-kovrov.html" class="region-tag region-link">Ковров</a>
+                  <a href="/delivery-vladimir.html" class="region-tag region-link">Владимир</a>
+                  <div class="region-tag">Нижний Новгород</div>
+                  <div class="region-tag">Екатеринбург</div>
+                  <div class="region-tag">Краснодар</div>
+                  <div class="region-tag">Ростов-на-Дону</div>
+                </div>
+                <div class="triangle-toggle" id="triangle-toggle">
+                  <div class="triangle"></div>
+                </div>
               </div>
             </div>
             
             <div id="hidden-regions" class="hidden mt-4">
-              <div class="flex flex-wrap">
+              <div class="hidden-regions-grid">
                 <div class="region-tag">Новосибирск</div>
                 <a href="/delivery-kovrov.html" class="region-tag region-link">Ковров</a>
                 <a href="/delivery-vladimir.html" class="region-tag region-link">Владимир</a>
@@ -931,28 +919,36 @@
     });
   </script>
   
-  <!-- Скрипт для управления регионами -->
+  <!-- Скрипт для управления регионами с треугольником -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const toggleBtn = document.getElementById('toggle-regions');
+      const regionsRow = document.getElementById('regions-row');
+      const triangleToggle = document.getElementById('triangle-toggle');
       const hiddenRegions = document.getElementById('hidden-regions');
       
-      if (toggleBtn && hiddenRegions) {
-        toggleBtn.addEventListener('click', function() {
-          if (hiddenRegions.style.display === 'block') {
-            hiddenRegions.style.display = 'none';
-            toggleBtn.textContent = 'остальные регионы';
-            toggleBtn.classList.remove('expanded');
-          } else {
-            hiddenRegions.style.display = 'block';
-            toggleBtn.textContent = 'скрыть';
-            toggleBtn.classList.add('expanded');
-          }
-        });
-        
-        // Инициализация при загрузке
-        hiddenRegions.style.display = 'none';
+      // Проверяем, нужно ли показывать треугольник
+      function checkOverflow() {
+        if (regionsRow.scrollWidth > regionsRow.clientWidth) {
+          triangleToggle.classList.add('visible');
+        } else {
+          triangleToggle.classList.remove('visible');
+        }
       }
+      
+      // Обработка нажатия на треугольник
+      triangleToggle.addEventListener('click', function() {
+        if (hiddenRegions.style.display === 'block') {
+          hiddenRegions.style.display = 'none';
+          triangleToggle.querySelector('.triangle').style.transform = 'rotate(0deg)';
+        } else {
+          hiddenRegions.style.display = 'block';
+          triangleToggle.querySelector('.triangle').style.transform = 'rotate(180deg)';
+        }
+      });
+      
+      // Проверяем при загрузке и при изменении размера окна
+      checkOverflow();
+      window.addEventListener('resize', checkOverflow);
     });
   </script>
 

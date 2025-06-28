@@ -7,10 +7,24 @@
 <title>Алтайский мёд - Натуральные продукты пчеловодства</title>
 <meta name="description" content="Натуральный алтайский мёд от производителя. Доставка по всей России. Гречишный, таёжный, цветочный мёд.">
 
+<!-- Критический CSS для герой-секции -->
+<style>
+  .hero-section {
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/images/image-1-mobile.webp');
+    background-size: cover;
+    background-position: center;
+    min-height: 60vh;
+  }
+  @media (min-width: 768px) {
+    .hero-section {
+      background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/images/image-1.webp');
+      min-height: 80vh;
+    }
+  }
+</style>
+
 <!-- Предзагрузка критических ресурсов -->
-<link rel="preload" href="/images/image-1-mobile.webp" as="image" media="(max-width: 767px)">
-<link rel="preload" href="/images/image-1.webp" as="image" media="(min-width: 768px)">
-<!-- Предзагрузка шрифта -->
+<link rel="preload" href="/images/image-1-mobile.webp" as="image">
 <link rel="preload" href="/fonts/Pacifico-Regular.woff2" as="font" type="font/woff2" crossorigin>
 
 <!-- Мета-теги верификации -->
@@ -39,9 +53,8 @@
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#9f5524">
 
-<!-- Оптимизированные иконки -->
+<!-- Иконки -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="assets/css/remix-icons.css" media="print" onload="this.media='all'">
 
 <!-- Локальный Tailwind CSS -->
 <link rel="stylesheet" href="assets/css/tailwind.min.css?v=2">
@@ -119,7 +132,7 @@
 
 <main>
 <!-- Герой-секция -->
-<section class="hero-section min-h-[70vh] md:min-h-[80vh] flex items-center">
+<section class="hero-section flex items-center">
   <div class="container mx-auto px-4 md:px-6 py-16 md:py-20 w-full">
     <div class="max-w-2xl text-white">
       <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-pacifico mb-4 md:mb-6">Натуральный мёд с Алтайских гор</h1>
@@ -206,17 +219,14 @@
       <!-- Продукт 1 -->
       <div id="product-1" class="product-card bg-white rounded-lg shadow-md overflow-hidden">
         <div class="h-56 md:h-64 overflow-hidden">
-          <picture>
-            <source 
-              srcset="/images/image-2-sm.webp 400w, /images/image-2.webp 800w"
-              sizes="(max-width: 600px) 400px, 800px"
-              type="image/webp">
-            <img src="/images/image-2.jpg" 
-                 alt="Разнотравный мёд с Алтая" 
-                 loading="lazy"
-                 class="w-full h-full object-cover object-top product-image"
-                 onload="this.classList.add('loaded')">
-          </picture>
+          <img 
+            src="/images/image-2.webp" 
+            srcset="/images/image-2-sm.webp 400w, /images/image-2.webp 800w"
+            sizes="(max-width: 600px) 400px, 800px"
+            alt="Разнотравный мёд с Алтая" 
+            loading="lazy"
+            class="w-full h-full object-cover object-top product-image"
+            onload="this.classList.add('loaded')">
         </div>
         <div class="p-5 md:p-6">
           <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-2">Разнотравье</h3>
@@ -231,17 +241,14 @@
       <!-- Продукт 2 -->
       <div id="product-2" class="product-card bg-white rounded-lg shadow-md overflow-hidden">
         <div class="h-56 md:h-64 overflow-hidden">
-          <picture>
-            <source 
-              srcset="/images/image-3-sm.webp 400w, /images/image-3.webp 800w"
-              sizes="(max-width: 600px) 400px, 800px"
-              type="image/webp">
-            <img src="/images/image-3.jpg" 
-                 alt="Таёжный мёд из Алтайского края" 
-                 loading="lazy"
-                 class="w-full h-full object-cover object-top product-image"
-                 onload="this.classList.add('loaded')">
-          </picture>
+          <img 
+            src="/images/image-3.webp" 
+            srcset="/images/image-3-sm.webp 400w, /images/image-3.webp 800w"
+            sizes="(max-width: 600px) 400px, 800px"
+            alt="Таёжный мёд из Алтайского края" 
+            loading="lazy"
+            class="w-full h-full object-cover object-top product-image"
+            onload="this.classList.add('loaded')">
         </div>
         <div class="p-5 md:p-6">
           <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-2">Таёжный мёд</h3>
@@ -256,17 +263,14 @@
       <!-- Продукт 3 -->
       <div id="product-3" class="product-card bg-white rounded-lg shadow-md overflow-hidden">
         <div class="h-56 md:h-64 overflow-hidden">
-          <picture>
-            <source 
-              srcset="/images/image-4-sm.webp 400w, /images/image-4.webp 800w"
-              sizes="(max-width: 600px) 400px, 800px"
-              type="image/webp">
-            <img src="/images/image-4.jpg" 
-                 alt="Гречишный мёд от производителя" 
-                 loading="lazy"
-                 class="w-full h-full object-cover object-top product-image"
-                 onload="this.classList.add('loaded')">
-          </picture>
+          <img 
+            src="/images/image-4.webp" 
+            srcset="/images/image-4-sm.webp 400w, /images/image-4.webp 800w"
+            sizes="(max-width: 600px) 400px, 800px"
+            alt="Гречишный мёд от производителя" 
+            loading="lazy"
+            class="w-full h-full object-cover object-top product-image"
+            onload="this.classList.add('loaded')">
         </div>
         <div class="p-5 md:p-6">
           <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-2">Гречишный мёд</h3>
@@ -295,30 +299,24 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
       <div class="order-2 md:order-1">
         <div class="about-image bg-white p-3 shadow-lg rotate-2 mb-6 md:mb-8 max-w-md mx-auto">
-          <picture>
-            <source 
-              srcset="/images/image-5-sm.webp 400w, /images/image-5.webp 800w"
-              sizes="(max-width: 600px) 400px, 800px"
-              type="image/webp">
-            <img src="/images/image-5.jpg" 
-                 alt="Семейная пасека на Алтае" 
-                 loading="lazy"
-                 class="w-full h-auto product-image"
-                 onload="this.classList.add('loaded')">
-          </picture>
+          <img 
+            src="/images/image-5.webp" 
+            srcset="/images/image-5-sm.webp 400w, /images/image-5.webp 800w"
+            sizes="(max-width: 600px) 400px, 800px"
+            alt="Семейная пасека на Алтае" 
+            loading="lazy"
+            class="w-full h-auto product-image"
+            onload="this.classList.add('loaded')">
         </div>
         <div class="about-image bg-white p-3 shadow-lg -rotate-3 max-w-md mx-auto">
-          <picture>
-            <source 
-              srcset="/images/image-6-sm.webp 400w, /images/image-6.webp 800w"
-              sizes="(max-width: 600px) 400px, 800px"
-              type="image/webp">
-            <img src="/images/image-6.jpg" 
-                 alt="Экологически чистый мёд с Алтая" 
-                 loading="lazy"
-                 class="w-full h-auto product-image"
-                 onload="this.classList.add('loaded')">
-          </picture>
+          <img 
+            src="/images/image-6.webp" 
+            srcset="/images/image-6-sm.webp 400w, /images/image-6.webp 800w"
+            sizes="(max-width: 600px) 400px, 800px"
+            alt="Экологически чистый мёд с Алтая" 
+            loading="lazy"
+            class="w-full h-auto product-image"
+            onload="this.classList.add('loaded')">
         </div>
       </div>
       
@@ -723,9 +721,7 @@ function loadAnalytics() {
 }
 
 // Загружаем аналитику с задержкой
-window.addEventListener('load', () => {
-  setTimeout(loadAnalytics, 1000);
-});
+setTimeout(loadAnalytics, 5000);
 
 document.addEventListener('DOMContentLoaded', function() {
   const mobileMenuButton = document.querySelector('.md\\:hidden');

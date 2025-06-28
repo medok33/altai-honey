@@ -8,18 +8,9 @@
 <meta name="description" content="Натуральный алтайский мёд от производителя. Доставка по всей России. Гречишный, таёжный, цветочный мёд.">
 
 <!-- Предзагрузка критических ресурсов -->
-<link rel="preload" href="images/image-1.webp" as="image">
+<link rel="preload" href="/images/image-1.webp" as="image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<!-- Основные стили Tailwind -->
-<link rel="stylesheet" href="assets/css/tailwind.min.css">
-  
-<!-- Шрифты -->
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<!-- Иконки -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" media="print" onload="this.media='all'">
 
 <!-- Мета-теги верификации -->
 <meta name="yandex-verification" content="9c5350476939e370" />
@@ -47,6 +38,41 @@
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#9f5524">
 
+<!-- Оптимизированные шрифты -->
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Оптимизированные иконки -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" media="print" onload="this.media='all'">
+
+<!-- Оптимизированный Tailwind -->
+<script src="https://cdn.tailwindcss.com/3.4.16?minify=true"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        primary: '#6B8E23',
+        secondary: '#8B4513',
+        orange: '#FFA500'
+      },
+      borderRadius: {
+        'none': '0px',
+        'sm': '4px',
+        DEFAULT: '8px',
+        'md': '12px',
+        'lg': '16px',
+        'xl': '20px',
+        '2xl': '24px',
+        '3xl': '32px',
+        'full': '9999px',
+        'button': '8px'
+      }
+    }
+  }
+}
+</script>
+
 <style>
 :where([class^="ri-"])::before { content: "\f3c2"; }
 body {
@@ -60,6 +86,9 @@ body {
                    url('/images/image-1.webp');
   background-size: cover;
   background-position: center;
+}
+.texture-bg {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZmZmZmZmIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNmNWRlYjMiIG9wYWNpdHk9IjAuMSI+PC9yZWN0Pgo8L3N2Zz4=');
 }
 
 /* Исправления цветов */
@@ -102,6 +131,7 @@ footer {
 }
 
 /* ФИКС: ВЫРАВНИВАНИЕ ПОДВАЛА ДЛЯ TILDA */
+/* Основные исправления для футера */
 footer {
   width: 100% !important;
   box-sizing: border-box !important;
@@ -110,6 +140,7 @@ footer {
   z-index: 1;
 }
 
+/* ИСПРАВЛЕННЫЙ УЗОР ВАФЕЛЬНОЙ СЕТКИ */
 footer::before {
   content: "";
   position: absolute;
@@ -160,6 +191,7 @@ footer .grid {
   box-sizing: border-box !important;
 }
 
+/* Уменьшенные отступы для заголовков на 20% */
 .footer-column h4 {
   text-align: left !important;
   width: 100% !important;
@@ -265,6 +297,7 @@ footer a:hover {
   filter: grayscale(0%);
 }
 
+/* Дополнительно уменьшенные отступы между пунктами на 25% */
 .footer-link-item {
   display: flex;
   align-items: center;
@@ -286,11 +319,13 @@ footer a:hover {
   line-height: 1.5;
 }
 
+/* БЕЛЫЙ ЦВЕТ ТЕКСТА В ПЕРВОМ БЛОКЕ ФУТЕРА */
 #footer-contacts .footer-column:first-child,
 #footer-contacts .footer-column:first-child * {
   color: white !important;
 }
 
+/* УТОЧНЕННЫЕ СТИЛИ ДЛЯ ПЕРВОГО БЛОКА ФУТЕРА */
 .footer-column:first-child {
   justify-content: flex-start;
 }
@@ -311,6 +346,7 @@ footer a:hover {
   margin-bottom: 0.3rem;
 }
 
+/* Анимации для карточек */
 .benefit-card, .product-card, .about-image {
   transition: all 0.3s ease;
 }
@@ -328,6 +364,7 @@ footer a:hover {
   transform: scale(1.03);
 }
 
+/* Стили для модального окна */
 .modal {
   display: none;
   position: fixed;
@@ -340,7 +377,18 @@ footer a:hover {
   justify-content: center;
   align-items: center;
 }
-
+.modal-content {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  max-width: 500px;
+  width: 90%;
+  animation: modalAppear 0.3s ease-out;
+}
+@keyframes modalAppear {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 .close-modal {
   position: absolute;
   top: 16px;
@@ -354,6 +402,7 @@ footer a:hover {
   color: #374151;
 }
 
+/* Стили для модального окна успеха */
 .success-modal-content {
   background: white;
   border-radius: 16px;
@@ -362,6 +411,7 @@ footer a:hover {
   width: 90%;
   padding: 40px 30px;
   text-align: center;
+  animation: modalAppear 0.4s ease-out;
 }
 .success-icon {
   width: 80px;
@@ -372,6 +422,12 @@ footer a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 .success-icon i {
   font-size: 40px;
@@ -407,6 +463,7 @@ footer a:hover {
   box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
+/* Адаптивные исправления для блока "О нас" */
 .about-check-item {
   display: flex;
   align-items: center;
@@ -497,6 +554,7 @@ footer a:hover {
     font-size: 1.1rem;
   }
 
+  /* Оптимизация анимаций для мобильных */
   .benefit-card:hover, 
   .product-card:hover,
   .step-circle:hover {
@@ -509,6 +567,7 @@ footer a:hover {
   }
 }
 
+/* Исправление для изображений */
 img.product-image {
   transition: opacity 0.5s ease-in-out;
   opacity: 0;
@@ -518,6 +577,7 @@ img.product-image.loaded {
   opacity: 1;
 }
 
+/* Новые стили для блока "Как мы работаем" */
 .workflow-container {
   position: relative;
   padding: 60px 0;
@@ -766,6 +826,7 @@ img.product-image.loaded {
   }
 }
 
+/* ИСПРАВЛЕНИЯ ДЛЯ ПОДВАЛА */
 .contact-item {
   display: flex;
   align-items: center;
@@ -778,6 +839,7 @@ img.product-image.loaded {
   margin-right: 12px;
 }
 
+/* Анимации для появления секций */
 .section-animate {
   opacity: 0;
   transform: translateY(30px);
@@ -789,6 +851,19 @@ img.product-image.loaded {
   transform: translateY(0);
 }
 
+/* Анимации для появления элементов */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Задержки для анимации шагов */
 .step-circle:nth-child(1).animate {
   animation-delay: 0.2s;
 }
@@ -802,6 +877,7 @@ img.product-image.loaded {
   animation-delay: 0.8s;
 }
 
+/* Задержки для секций */
 #benefits {
   transition-delay: 0.1s;
 }
@@ -855,7 +931,7 @@ img.product-image.loaded {
 <nav class="bg-white shadow-sm sticky top-0 z-50">
   <div class="container mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
     <!-- Зеленый логотип в шапке -->
-    <a href="#" class="text-2xl md:text-3xl font-pacifico header-logo">Алтайский мёд</a>
+    <a href="#" class="text-2xl md:text-3xl font-['Pacifico'] header-logo">Алтайский мёд</a>
     
     <div class="hidden md:flex items-center space-x-6 md:space-x-8">
       <a href="#benefits" class="nav-link">Преимущества</a>
@@ -887,7 +963,7 @@ img.product-image.loaded {
 <section class="hero-section min-h-[70vh] md:min-h-[80vh] flex items-center">
   <div class="container mx-auto px-4 md:px-6 py-16 md:py-20 w-full">
     <div class="max-w-2xl text-white">
-      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-pacifico mb-4 md:mb-6">Натуральный мёд с Алтайских гор</h1>
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-['Pacifico'] mb-4 md:mb-6">Натуральный мёд с Алтайских гор</h1>
       <p class="text-lg md:text-xl mb-6 md:mb-8 max-w-lg">Наслаждайтесь вкусом и пользой настоящего алтайского мёда, собранного с любовью в экологически чистых районах.</p>
       
       <div class="flex flex-wrap gap-3 md:gap-4 hero-buttons">
@@ -906,7 +982,7 @@ img.product-image.loaded {
 <!-- Преимущества -->
 <section id="benefits" class="py-16 md:py-20 texture-bg bg-[#F5DEB3] bg-opacity-20 section-animate">
   <div class="container mx-auto px-4 md:px-6">
-    <h2 class="text-3xl md:text-4xl font-pacifico text-center text-secondary mb-12 md:mb-16">Почему выбирают наш мёд</h2>
+    <h2 class="text-3xl md:text-4xl font-['Pacifico'] text-center text-secondary mb-12 md:mb-16">Почему выбирают наш мёд</h2>
     
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
       <!-- Карточка 1 -->
@@ -965,7 +1041,7 @@ img.product-image.loaded {
 <!-- Каталог продукции -->
 <section id="products" class="py-16 md:py-20 bg-white section-animate">
   <div class="container mx-auto px-4 md:px-6">
-    <h2 class="text-3xl md:text-4xl font-pacifico text-center text-secondary mb-12 md:mb-16">Наши продукты</h2>
+    <h2 class="text-3xl md:text-4xl font-['Pacifico'] text-center text-secondary mb-12 md:mb-16">Наши продукты</h2>
     
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
       <!-- Продукт 1 -->
@@ -1049,7 +1125,7 @@ img.product-image.loaded {
 <!-- О нас -->
 <section id="about" class="py-16 md:py-20 bg-[#F5DEB3] bg-opacity-20 texture-bg relative section-animate">
   <div class="container mx-auto px-4 md:px-6 relative z-10">
-    <h2 class="text-3xl md:text-4xl font-pacifico text-center text-secondary mb-12 md:mb-16">О нашей пасеке</h2>
+    <h2 class="text-3xl md:text-4xl font-['Pacifico'] text-center text-secondary mb-12 md:mb-16">О нашей пасеке</h2>
     
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
       <div class="order-2 md:order-1">
@@ -1113,7 +1189,7 @@ img.product-image.loaded {
     <div class="max-w-4xl mx-auto bg-gradient-to-br from-primary to-[#8ea745] rounded-lg shadow-xl overflow-hidden">
       <div class="grid grid-cols-1 md:grid-cols-2">
         <div class="p-6 md:p-10 text-white">
-          <h2 class="text-2xl md:text-3xl font-pacifico mb-4 md:mb-6">Заказать мёд</h2>
+          <h2 class="text-2xl md:text-3xl font-['Pacifico'] mb-4 md:mb-6">Заказать мёд</h2>
           <p class="mb-6 md:mb-8 text-sm md:text-base">Заполните форму, и мы свяжемся с вами для уточнения деталей заказа и доставки.</p>
           
           <div class="mb-4 md:mb-6">
@@ -1173,7 +1249,7 @@ img.product-image.loaded {
 <!-- Как мы работаем -->
 <section id="workflow" class="py-16 md:py-20 bg-[#F5DEB3] bg-opacity-20 texture-bg section-animate">
   <div class="container mx-auto px-4 md:px-6">
-    <h2 class="text-3xl md:text-4xl font-pacifico text-center text-secondary mb-16 md:mb-20">Как мы работаем</h2>
+    <h2 class="text-3xl md:text-4xl font-['Pacifico'] text-center text-secondary mb-16 md:mb-20">Как мы работаем</h2>
     
     <div class="workflow-container">
       <div class="workflow-steps">
@@ -1233,7 +1309,7 @@ img.product-image.loaded {
       <!-- Лого и описание -->
       <div class="footer-column">
         <div class="logo-wrapper">
-          <a href="/" class="text-2xl md:text-3xl font-pacifico mb-3 md:mb-4 block">Алтайский мёд</a>
+          <a href="/" class="text-2xl md:text-3xl font-['Pacifico'] mb-3 md:mb-4 block">Алтайский мёд</a>
         </div>
         <div class="description-wrapper">
           <p class="text-xs">Натуральные продукты пчеловодства с Алтайских гор.</p>
@@ -1816,15 +1892,5 @@ ${message}
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/102951378" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
-  <script>
-  // Проверка подключения CSS
-  const styles = Array.from(document.styleSheets);
-  const tailwindLoaded = styles.some(sheet => sheet.href && sheet.href.includes('tailwind.min.css'));
-  
-  console.log('Tailwind CSS loaded:', tailwindLoaded);
-  if (!tailwindLoaded) {
-    alert('ОШИБКА: Tailwind CSS не подключен! Проверьте путь к файлу.');
-  }
-</script>
 </body>
 </html>

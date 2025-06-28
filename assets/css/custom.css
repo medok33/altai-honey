@@ -836,4 +836,20 @@ img.product-image.loaded {
 #workflow {
   transition-delay: 0.5s;
 }
+@media (max-width: 768px) {
+  .benefit-card:hover, 
+  .product-card:hover,
+  .step-circle:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+  
+  .benefit-card:hover .benefit-icon {
+    transform: none !important;
+  }
+  
+  .hero-section {
+    min-height: 60vh;
+  }
+}
 </style>

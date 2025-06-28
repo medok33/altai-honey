@@ -8,28 +8,6 @@ body {
 }
 
 /* Все остальные кастомные стили из вашего оригинального index.html */
-<style>
-:where([class^="ri-"])::before { content: "\f3c2"; }
-body {
-  font-family: 'Open Sans', sans-serif;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-/* Замените существующий .hero-section */
-.hero-section {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-                   url('/images/image-1-mobile.webp');
-  background-size: cover;
-  background-position: center;
-}
-
-@media (min-width: 768px) {
-  .hero-section {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-                     url('/images/image-1.webp');
-  }
-}
 .texture-bg {
   background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZmZmZmZmIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNmNWRlYjMiIG9wYWNpdHk9IjAuMSI+PC9yZWN0Pgo8L3N2Zz4=');
 }
@@ -496,18 +474,6 @@ footer a:hover {
     padding: 1rem 1.5rem;
     font-size: 1.1rem;
   }
-
-  /* Оптимизация анимаций для мобильных */
-  .benefit-card:hover, 
-  .product-card:hover,
-  .step-circle:hover {
-    transform: none !important;
-    box-shadow: none !important;
-  }
-  
-  .benefit-card:hover .benefit-icon {
-    transform: none !important;
-  }
 }
 
 /* Исправление для изображений */
@@ -519,18 +485,6 @@ img.product-image {
 
 img.product-image.loaded {
   opacity: 1;
-}
-
-/* Исправление CLS: фиксированные пропорции */
-.product-image {
-  aspect-ratio: 3 / 2;
-  width: 100%;
-  height: auto;
-}
-
-/* Герой-секция (Hero): стабильная высота */
-.hero-section {
-  aspect-ratio: 16 / 9;
 }
 
 /* Новые стили для блока "Как мы работаем" */
@@ -849,6 +803,32 @@ img.product-image.loaded {
 #workflow {
   transition-delay: 0.5s;
 }
+
+/* ОПТИМИЗАЦИИ ДЛЯ МОБИЛЬНОЙ ПРОИЗВОДИТЕЛЬНОСТИ */
+/* Разные изображения для мобильных и десктопов */
+.hero-section {
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                   url('/images/image-1-mobile.webp');
+  background-size: cover;
+  background-position: center;
+  aspect-ratio: 16/9;
+}
+
+@media (min-width: 768px) {
+  .hero-section {
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                     url('/images/image-1.webp');
+  }
+}
+
+/* Фиксированные пропорции для CLS */
+.product-image {
+  aspect-ratio: 3/2;
+  width: 100%;
+  height: auto;
+}
+
+/* Отключение hover-эффектов на мобильных */
 @media (max-width: 768px) {
   .benefit-card:hover, 
   .product-card:hover,
@@ -865,4 +845,3 @@ img.product-image.loaded {
     min-height: 60vh;
   }
 }
-</style>

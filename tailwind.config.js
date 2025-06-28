@@ -23,30 +23,27 @@ module.exports = {
         'full': '9999px',
         'button': '8px'
       },
-      fontFamily: {
-        sans: ['Open Sans', 'sans-serif'],
-        pacifico: ['Pacifico', 'cursive']
-      },
       minHeight: {
         '70vh': '70vh',
         '80vh': '80vh'
       },
-      boxShadow: {
-        'custom': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)'
+      backgroundImage: {
+        'texture': "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZmZmZmZmIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNmNWRlYjMiIG9wYWNpdHk9IjAuMSI+PC9yZWN0Pgo8L3N2Zz4=')"
       },
       animation: {
+        'fadeInUp': 'fadeInUp 0.6s ease-out',
         'pulse': 'pulse 1.5s infinite',
-        'fadeInUp': 'fadeInUp 0.6s ease-out forwards',
         'modalAppear': 'modalAppear 0.3s ease-out'
       },
       keyframes: {
-        pulse: {
-          '0%, 100%': { transform: 'scale(1)' },
-          '50%': { transform: 'scale(1.05)' }
-        },
         fadeInUp: {
           '0%': { opacity: 0, transform: 'translateY(30px)' },
           '100%': { opacity: 1, transform: 'translateY(0)' }
+        },
+        pulse: {
+          '0%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.05)' },
+          '100%': { transform: 'scale(1)' }
         },
         modalAppear: {
           '0%': { opacity: 0, transform: 'translateY(-20px)' },

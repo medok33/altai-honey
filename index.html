@@ -10,7 +10,7 @@
 <!-- Предзагрузка критических ресурсов -->
 <link rel="preload" href="/images/image-1.webp" as="image">
 <!-- Предзагрузка шрифта -->
-<link rel="preload" href="assets/fonts/Pacifico-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/Pacifico-Regular.woff2" as="font" type="font/woff2" crossorigin>
 
 <!-- Мета-теги верификации -->
 <meta name="yandex-verification" content="9c5350476939e370" />
@@ -42,19 +42,11 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" media="print" onload="this.media='all'">
 
 <!-- Локальный Tailwind CSS -->
-<link rel="stylesheet" href="assets/css/tailwind.min.css">
+<link rel="stylesheet" href="assets/css/tailwind.min.css?v=1">
 
 <!-- Локальные шрифты -->
+<link rel="stylesheet" href="assets/css/fonts.css" media="print" onload="this.media='all'">
 <style>
-  @font-face {
-    font-family: 'Pacifico';
-    font-style: normal;
-    font-weight: 400;
-    src: url('assets/fonts/Pacifico-Regular.woff2') format('woff2'),
-         url('assets/fonts/Pacifico-Regular.woff') format('woff');
-    font-display: swap;
-  }
-  
   .font-pacifico {
     font-family: 'Pacifico', cursive;
   }
@@ -690,8 +682,8 @@
 </div>
 
 <script>
-// Аналитика загружается после полной загрузки страницы
-window.addEventListener('load', function() {
+// Оптимизированная загрузка аналитики
+function loadAnalytics() {
   // Google Analytics
   var gaScript = document.createElement('script');
   gaScript.async = true;
@@ -716,7 +708,10 @@ window.addEventListener('load', function() {
       accurateTrackBounce:true
     });
   };
-});
+}
+
+// Загружаем аналитику с задержкой
+setTimeout(loadAnalytics, 3000);
 
 document.addEventListener('DOMContentLoaded', function() {
   const mobileMenuButton = document.querySelector('.md\\:hidden');
@@ -1041,21 +1036,5 @@ ${message}
   });
 });
 </script>
-  <!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();
-   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-   ym(102951378, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true
-   });
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/102951378" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
 </body>
 </html>

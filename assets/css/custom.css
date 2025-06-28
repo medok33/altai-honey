@@ -1,0 +1,11 @@
+/* assets/css/custom.css */
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+  font-family: 'Open Sans', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Все остальные кастомные стили из вашего оригинального index.html */
+/* [ВСТАВЬТЕ СОДЕРЖИМОЕ ТЕГА <style> ИЗ ВАШЕГО ОРИГИНАЛЬНОГО index.html СЮДА] */

@@ -1,5 +1,5 @@
 module.exports = {
-  content: [
+  purge: [
     "./index.html",
     "./delivery.html",
     "./legal.html",

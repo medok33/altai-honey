@@ -3,7 +3,9 @@ module.exports = {
     "./index.html",
     "./delivery.html",
     "./legal.html",
-    "./src/**/*.{html,js}"
+    "./src/**/*.{html,js}",
+    "./**/*.html",
+    "./**/*.js"
   ],
   theme: {
     extend: {

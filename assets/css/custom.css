@@ -16,11 +16,19 @@ body {
   display: flex;
   flex-direction: column;
 }
+/* Замените существующий .hero-section */
 .hero-section {
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-                   url('/images/image-1.webp');
+                   url('/images/image-1-mobile.webp');
   background-size: cover;
   background-position: center;
+}
+
+@media (min-width: 768px) {
+  .hero-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                     url('/images/image-1.webp');
+  }
 }
 .texture-bg {
   background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZmZmZmZmIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNmNWRlYjMiIG9wYWNpdHk9IjAuMSI+PC9yZWN0Pgo8L3N2Zz4=');

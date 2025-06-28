@@ -8,9 +8,18 @@
 <meta name="description" content="Натуральный алтайский мёд от производителя. Доставка по всей России. Гречишный, таёжный, цветочный мёд.">
 
 <!-- Предзагрузка критических ресурсов -->
-<link rel="preload" href="/images/image-1.webp" as="image">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="images/image-1.webp" as="image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Основные стили Tailwind -->
+  <link rel="stylesheet" href="assets/css/tailwind.min.css">
+  
+  <!-- Шрифты -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+   <!-- Иконки -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" media="print" onload="this.media='all'">
 
 <!-- Мета-теги верификации -->
 <meta name="yandex-verification" content="9c5350476939e370" />
@@ -1892,5 +1901,15 @@ ${message}
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/102951378" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
+  <script>
+  // Проверка подключения CSS
+  const styles = Array.from(document.styleSheets);
+  const tailwindLoaded = styles.some(sheet => sheet.href && sheet.href.includes('tailwind.min.css'));
+  
+  console.log('Tailwind CSS loaded:', tailwindLoaded);
+  if (!tailwindLoaded) {
+    alert('ОШИБКА: Tailwind CSS не подключен! Проверьте путь к файлу.');
+  }
+</script>
 </body>
 </html>

@@ -380,6 +380,7 @@
     margin-bottom: 8px;
     transition: all 0.2s ease;
     box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    white-space: nowrap;
   }
   .region-tag:hover {
     background-color: #e5e5e5;
@@ -418,12 +419,53 @@
   .regions-container {
     margin-top: 16px;
     margin-bottom: 24px;
+    position: relative;
   }
   .regions-header {
     font-size: 1.25rem;
     font-weight: 600;
     margin-bottom: 12px;
     color: #333;
+  }
+  .regions-row {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    position: relative;
+    padding-right: 120px; /* Место для кнопки */
+  }
+  .regions-toggle-container {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 50%);
+    padding-left: 40px;
+  }
+  .regions-toggle-btn {
+    background: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 24px;
+    padding: 4px 12px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    white-space: nowrap;
+  }
+  .regions-toggle-btn:hover {
+    background: #f5f5f5;
+    border-color: #d1d5db;
+  }
+  .regions-toggle-btn:after {
+    content: ' ▼';
+    font-size: 0.8em;
+  }
+  .regions-toggle-btn.expanded:after {
+    content: ' ▲';
   }
 </style>
 </head>
@@ -508,23 +550,32 @@
             <!-- Блок с регионами доставки -->
             <div class="regions-container">
               <h4 class="regions-header">Регионы доставки:</h4>
-              <div class="flex flex-wrap">
+              <div class="regions-row" id="regions-row">
                 <div class="region-tag">Москва</div>
                 <div class="region-tag">Санкт-Петербург</div>
                 <div class="region-tag">Казань</div>
+                <div class="region-tag">Новосибирск</div>
+                <a href="/delivery-kovrov.html" class="region-tag region-link">Ковров</a>
+                <a href="/delivery-vladimir.html" class="region-tag region-link">Владимир</a>
+                <div class="region-tag">Нижний Новгород</div>
+                <div class="region-tag">Екатеринбург</div>
+                <div class="region-tag">Краснодар</div>
+                <div class="region-tag">Ростов-на-Дону</div>
               </div>
-              
-              <button id="toggle-regions" class="region-toggle-btn">
-                остальные регионы <span>▼</span>
-              </button>
-              
-              <div id="hidden-regions">
-                <div class="flex flex-wrap">
-                  <div class="region-tag">Новосибирск</div>
-                  <a href="/delivery-kovrov.html" class="region-tag region-link">Ковров</a>
-                  <a href="/delivery-vladimir.html" class="region-tag region-link">Владимир</a>
-                  <div class="region-tag">Нижний Новгород</div>
-                </div>
+              <div class="regions-toggle-container">
+                <button id="toggle-regions" class="regions-toggle-btn">остальные регионы</button>
+              </div>
+            </div>
+            
+            <div id="hidden-regions" class="hidden mt-4">
+              <div class="flex flex-wrap">
+                <div class="region-tag">Новосибирск</div>
+                <a href="/delivery-kovrov.html" class="region-tag region-link">Ковров</a>
+                <a href="/delivery-vladimir.html" class="region-tag region-link">Владимир</a>
+                <div class="region-tag">Нижний Новгород</div>
+                <div class="region-tag">Екатеринбург</div>
+                <div class="region-tag">Краснодар</div>
+                <div class="region-tag">Ростов-на-Дону</div>
               </div>
             </div>
             
@@ -890,12 +941,17 @@
         toggleBtn.addEventListener('click', function() {
           if (hiddenRegions.style.display === 'block') {
             hiddenRegions.style.display = 'none';
-            toggleBtn.innerHTML = 'остальные регионы <span>▼</span>';
+            toggleBtn.textContent = 'остальные регионы';
+            toggleBtn.classList.remove('expanded');
           } else {
             hiddenRegions.style.display = 'block';
-            toggleBtn.innerHTML = 'скрыть <span>▲</span>';
+            toggleBtn.textContent = 'скрыть';
+            toggleBtn.classList.add('expanded');
           }
         });
+        
+        // Инициализация при загрузке
+        hiddenRegions.style.display = 'none';
       }
     });
   </script>

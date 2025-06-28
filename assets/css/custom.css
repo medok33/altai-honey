@@ -511,6 +511,7 @@ footer a:hover {
 }
 
 /* Исправление для изображений */
+/* Плавная загрузка изображений */
 img.product-image {
   transition: opacity 0.5s ease-in-out;
   opacity: 0;
@@ -518,6 +519,18 @@ img.product-image {
 
 img.product-image.loaded {
   opacity: 1;
+}
+
+/* Исправление CLS: фиксированные пропорции */
+.product-image {
+  aspect-ratio: 3 / 2;
+  width: 100%;
+  height: auto;
+}
+
+/* Герой-секция (Hero): стабильная высота */
+.hero-section {
+  aspect-ratio: 16 / 9;
 }
 
 /* Новые стили для блока "Как мы работаем" */

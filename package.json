@@ -1,43 +1,14 @@
 {
   "name": "altai-honey",
   "version": "1.0.0",
-  "description": "Интернет-магазин натурального алтайского мёда",
+  "description": "Сайт Алтайский мёд - натуральные продукты пчеловодства",
   "scripts": {
-    "dev": "npm run watch:css",
-    "build": "npm run build:css",
-    "build:css": "tailwindcss -i ./src/input.css -o ./assets/css/tailwind.min.css --minify",
-    "watch:css": "tailwindcss -i ./src/input.css -o ./assets/css/tailwind.min.css --watch --minify",
-    "predeploy": "npm run build",
-    "clean": "rm -rf ./assets/css/tailwind.min.css"
+    "build": "tailwindcss -i ./src/input.css -o ./assets/css/tailwind.min.css --minify",
+    "watch": "tailwindcss -i ./src/input.css -o ./assets/css/tailwind.min.css --watch"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/medok33/altai-honey.git"
-  },
-  "keywords": [
-    "мёд",
-    "алтай",
-    "натуральные продукты",
-    "интернет-магазин"
-  ],
-  "author": "medok33",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/medok33/altai-honey/issues"
-  },
-  "homepage": "https://altaymed.shop",
-  "devDependencies": {
-    "@tailwindcss/aspect-ratio": "^0.4.2",
-    "@tailwindcss/forms": "^0.5.7",
+  "dependencies": {
     "autoprefixer": "^10.4.19",
-    "cssnano": "^7.0.1",
     "postcss": "^8.4.38",
-    "postcss-cli": "^10.1.0",
     "tailwindcss": "^3.4.1"
-  },
-  "browserslist": [
-    "last 2 versions",
-    "> 1%",
-    "not dead"
-  ]
+  }
 }

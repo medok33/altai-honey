@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+<base href="/altai-honey/">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Блог о мёде | Алтайский мёд - Полезные статьи</title>
@@ -57,12 +58,12 @@
 <meta name="theme-color" content="#9f5524">
 
 <!-- Предзагрузка ресурсов -->
-<link rel="preload" href="/fonts/OpenSans-VariableFont.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/Pacifico-Regular.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/images/image-7.webp" as="image">
+<link rel="preload" href="fonts/OpenSans-VariableFont.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/Pacifico-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="images/image-7.webp" as="image">
 
 <!-- Подключение CSS -->
-<link rel="stylesheet" href="/assets/css/tailwind.min.css">
+<link rel="stylesheet" href="assets/css/blog.min.css">
 
 <!-- Критический CSS -->
 <style>
@@ -124,12 +125,9 @@ body {
 
 <main>
 <!-- Шапка блога -->
-<section class="blog-header">
-  <div class="container mx-auto px-4">
-    <h1 class="text-3xl md:text-4xl lg:text-5xl font-pacifico mb-4">Полезные статьи о мёде</h1>
-    <p class="text-xl max-w-2xl mx-auto">Узнайте больше о пользе алтайского мёда и традициях пчеловодства</p>
-  </div>
-</section>
+  <section class="blog-header" 
+         style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/image-7.webp');">
+
 
 <!-- Список статей -->
 <section class="py-16 bg-[#F5DEB3] bg-opacity-20 texture-bg">
@@ -138,7 +136,7 @@ body {
       <!-- Статья 1 -->
       <div class="blog-post-card bg-white rounded-lg mb-10 overflow-hidden shadow-md" itemscope itemtype="http://schema.org/BlogPosting">
         <picture>
-          <source srcset="/public/optimized/image-8.webp" type="image/webp">
+          <source srcset="public/optimized/image-8.webp" type="image/webp">
           <img src="/public/optimized/image-8.jpg" 
                alt="Как выбрать качественный мёд - полезные советы"
                class="w-full h-64 object-cover"

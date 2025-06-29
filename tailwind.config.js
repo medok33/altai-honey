@@ -1,8 +1,9 @@
 module.exports = {
-  purge: [
+  content: [
     "./index.html",
     "./delivery.html",
     "./legal.html",
+    "./blog/**/*.html",  // Добавлено для обработки страниц блога
     "./src/**/*.{html,js}",
     "./**/*.html",
     "./**/*.js"
@@ -27,7 +28,7 @@ module.exports = {
         'button': '8px'
       },
       fontFamily: {
-        'sans': ['Open Sans', 'sans-serif'],
+        'sans': ['"Open Sans"', 'sans-serif'],
         'pacifico': ['Pacifico', 'cursive']
       }
     }

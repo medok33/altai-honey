@@ -40,7 +40,6 @@
 <link rel="preload" href="/images/image-1-mobile.webp" as="image" media="(max-width: 767px)" fetchpriority="high">
 <link rel="preload" href="/images/image-1.webp" as="image" media="(min-width: 768px)" fetchpriority="high">
 <link rel="preload" href="/fonts/Pacifico-Regular.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/fonts/remixicon.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/images/favicon.ico" as="image" type="image/x-icon">
 <link rel="preload" href="/images/favicon.svg" as="image" type="image/svg+xml">
 <link rel="preload" href="/images/apple-touch-icon.png" as="image" type="image/png">
@@ -76,18 +75,9 @@
 
 <!-- Локальные шрифты -->
 <link rel="stylesheet" href="assets/css/fonts.css?v=3" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="assets/css/remixicon.min.css" media="print" onload="this.media='all'">
 <style>
   .font-pacifico {
     font-family: 'Pacifico', cursive;
-  }
-  
-  /* Улучшение отображения иконок до загрузки шрифта */
-  [class^="ri-"] {
-    display: inline-block;
-    min-width: 1em;
-    min-height: 1em;
-    background-color: transparent;
   }
 </style>
 
@@ -718,20 +708,6 @@ img.product-image.loaded {
   }
 }
 
-.step-icon i {
-  font-size: 30px;
-  color: #8B4513;
-  transform: rotate(20deg);
-}
-
-.step-title {
-  font-size: 18px;
-  font-weight: 700;
-  color: #2d3748;
-  line-height: 1.4;
-  text-align: center;
-}
-
 @supports not (top: calc(sin(1rad))) {
   .step-icon {
     top: 105px;
@@ -769,10 +745,6 @@ img.product-image.loaded {
         translate(-50%, -50%)
         rotate(-20deg);
     }
-  }
-  
-  .step-icon i {
-    font-size: 27px;
   }
   
   .step-number {
@@ -813,10 +785,6 @@ img.product-image.loaded {
     }
   }
   
-  .step-icon i {
-    font-size: 25px;
-  }
-  
   .step-title {
     font-size: 17px;
   }
@@ -855,10 +823,6 @@ img.product-image.loaded {
         translate(-50%, -50%)
         rotate(-20deg);
     }
-  }
-  
-  .step-icon i {
-    font-size: 23px;
   }
   
   .step-title {
@@ -1015,7 +979,7 @@ img.product-image.loaded {
       <!-- Карточка 1 -->
       <div class="benefit-card bg-white p-6 md:p-8 rounded-lg shadow-md flex flex-col items-center text-center">
         <div class="benefit-icon w-14 h-14 md:w-16 md:h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4 md:mb-6">
-          <i class="ri-plant-line ri-lg md:ri-xl text-primary"></i>
+          <img src="/images/icons/eco.svg" alt="Экологичность" class="w-8 h-8 md:w-10 md:h-10">
         </div>
         <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-3 md:mb-4">Экологически чистый продукт</h3>
         <p class="text-gray-600 text-sm md:text-base">Наши пасеки расположены в заповедных зонах Алтая, вдали от промышленных объектов и дорог.</p>
@@ -1024,7 +988,7 @@ img.product-image.loaded {
       <!-- Карточка 2 -->
       <div class="benefit-card bg-white p-6 md:p-8 rounded-lg shadow-md flex flex-col items-center text-center">
         <div class="benefit-icon w-14 h-14 md:w-16 md:h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4 md:mb-6">
-          <i class="ri-leaf-line ri-lg md:ri-xl text-primary"></i>
+          <img src="/images/icons/variety.svg" alt="Разнообразие" class="w-8 h-8 md:w-10 md:h-10">
         </div>
         <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-3 md:mb-4">Разнообразие сортов</h3>
         <p class="text-gray-600 text-sm md:text-base">Мы предлагаем широкий ассортимент меда с разнообразными вкусовыми и полезными свойствами.</p>
@@ -1033,7 +997,7 @@ img.product-image.loaded {
       <!-- Карточка 3 -->
       <div class="benefit-card bg-white p-6 md:p-8 rounded-lg shadow-md flex flex-col items-center text-center">
         <div class="benefit-icon w-14 h-14 md:w-16 md:h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4 md:mb-6">
-          <i class="ri-award-line ri-lg md:ri-xl text-primary"></i>
+          <img src="/images/icons/quality.svg" alt="Качество" class="w-8 h-8 md:w-10 md:h-10">
         </div>
         <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-3 md:mb-4">Проверенное качество</h3>
         <p class="text-gray-600 text-sm md:text-base">Каждая партия меда проходит строгий контроль и проверку на соответствие стандартам.</p>
@@ -1046,7 +1010,7 @@ img.product-image.loaded {
         <!-- Карточка 4 -->
         <div class="benefit-card bg-white p-6 md:p-8 rounded-lg shadow-md flex flex-col items-center text-center">
           <div class="benefit-icon w-14 h-14 md:w-16 md:h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4 md:mb-6">
-            <i class="ri-truck-line ri-lg md:ri-xl text-primary"></i>
+            <img src="/images/icons/delivery.svg" alt="Доставка" class="w-8 h-8 md:w-10 md:h-10">
           </div>
           <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-3 md:mb-4">Доставка по всей России</h3>
           <p class="text-gray-600 text-sm md:text-base">Мы доставляем наш мёд в любой регион России, сохраняя все полезные свойства продукта.</p>
@@ -1055,7 +1019,7 @@ img.product-image.loaded {
         <!-- Карточка 5 -->
         <div class="benefit-card bg-white p-6 md:p-8 rounded-lg shadow-md flex flex-col items-center text-center">
           <div class="benefit-icon w-14 h-14 md:w-16 md:h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4 md:mb-6">
-            <i class="ri-heart-line ri-lg md:ri-xl text-primary"></i>
+            <img src="/images/icons/family.svg" alt="Семейные традиции" class="w-8 h-8 md:w-10 md:h-10">
           </div>
           <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-3 md:mb-4">Семейные традиции</h3>
           <p class="text-gray-600 text-sm md:text-base">Наша пасека существует уже более 30 лет, и мы бережно храним секреты пчеловодства.</p>
@@ -1192,21 +1156,21 @@ img.product-image.loaded {
         <!-- Исправленные элементы с галочками -->
         <div class="about-check-item">
           <div class="about-check-icon">
-            <i class="ri-check-line"></i>
+            <img src="/images/icons/check.svg" alt="Галочка" class="w-4 h-4 md:w-5 md:h-5">
           </div>
           <p class="about-check-text">Более 300 пчелиных семей</p>
         </div>
         
         <div class="about-check-item">
           <div class="about-check-icon">
-            <i class="ri-check-line"></i>
+            <img src="/images/icons/check.svg" alt="Галочка" class="w-4 h-4 md:w-5 md:h-5">
           </div>
           <p class="about-check-text">Ежегодно производим более 5 тонн мёда</p>
         </div>
         
         <div class="about-check-item">
           <div class="about-check-icon">
-            <i class="ri-check-line"></i>
+            <img src="/images/icons/check.svg" alt="Галочка" class="w-4 h-4 md:w-5 md:h-5">
           </div>
           <p class="about-check-text">Работаем по экологическим стандартам, заботимся о пчелах и природе</p>
         </div>
@@ -1227,21 +1191,21 @@ img.product-image.loaded {
           <div class="mb-4 md:mb-6">
             <div class="flex items-center space-x-3 mb-2">
               <div class="w-7 h-7 md:w-8 md:h-8 flex items-center justify-center bg-white bg-opacity-20 rounded-full">
-                <i class="ri-truck-line ri-sm md:ri-base text-white"></i>
+                <img src="/images/icons/delivery-white.svg" alt="Доставка" class="w-4 h-4 md:w-5 md:h-5">
               </div>
               <span class="font-medium text-sm md:text-base">Доставка по всей России</span>
             </div>
             
             <div class="flex items-center space-x-3 mb-2">
               <div class="w-7 h-7 md:w-8 md:h-8 flex items-center justify-center bg-white bg-opacity-20 rounded-full">
-                <i class="ri-secure-payment-line ri-sm md:ri-base text-white"></i>
+                <img src="/images/icons/payment-white.svg" alt="Оплата" class="w-4 h-4 md:w-5 md:h-5">
               </div>
               <span class="font-medium text-sm md:text-base">Безопасная оплата</span>
             </div>
             
             <div class="flex items-center space-x-3">
               <div class="w-7 h-7 md:w-8 md:h-8 flex items-center justify-center bg-white bg-opacity-20 rounded-full">
-                <i class="ri-shield-check-line ri-sm md:ri-base text-white"></i>
+                <img src="/images/icons/guarantee-white.svg" alt="Гарантия" class="w-4 h-4 md:w-5 md:h-5">
               </div>
               <span class="font-medium text-sm md:text-base">Гарантия качества</span>
             </div>
@@ -1289,7 +1253,7 @@ img.product-image.loaded {
         <div class="step-circle">
           <div class="step-number">1</div>
           <div class="step-icon">
-            <i class="ri-chat-3-line"></i>
+            <img src="/images/icons/chat.svg" alt="Заявка" class="w-8 h-8">
           </div>
           <div class="step-content">
             <h3 class="step-title">Вы оставляете заявку</h3>
@@ -1300,7 +1264,7 @@ img.product-image.loaded {
         <div class="step-circle">
           <div class="step-number">2</div>
           <div class="step-icon">
-            <i class="ri-phone-line"></i>
+            <img src="/images/icons/phone.svg" alt="Звонок" class="w-8 h-8">
           </div>
           <div class="step-content">
             <h3 class="step-title">Мы связываемся с вами</h3>
@@ -1311,7 +1275,7 @@ img.product-image.loaded {
         <div class="step-circle">
           <div class="step-number">3</div>
           <div class="step-icon">
-            <i class="ri-truck-line"></i>
+            <img src="/images/icons/delivery-box.svg" alt="Доставка" class="w-8 h-8">
           </div>
           <div class="step-content">
             <h3 class="step-title">Отправляем вам мед</h3>
@@ -1322,7 +1286,7 @@ img.product-image.loaded {
         <div class="step-circle">
           <div class="step-number">4</div>
           <div class="step-icon">
-            <i class="ri-gift-line"></i>
+            <img src="/images/icons/gift.svg" alt="Подарок" class="w-8 h-8">
           </div>
           <div class="step-content">
             <h3 class="step-title">Вы наслаждаетесь вкусом</h3>
@@ -1437,7 +1401,7 @@ img.product-image.loaded {
           <li>
             <a class="footer-link-item">
               <div class="contact-icon">
-                <i class="ri-map-pin-2-line ri-sm md:ri-base"></i>
+                <img src="/images/icons/map-white.svg" alt="Адрес" class="w-4 h-4 md:w-5 md:h-5">
               </div>
               <span class="contact-text">Владимирская обл., г.Ковров</span>
             </a>
@@ -1445,7 +1409,7 @@ img.product-image.loaded {
           <li>
             <a href="tel:+79209400222" class="footer-link-item">
               <div class="contact-icon">
-                <i class="ri-phone-line ri-sm md:ri-base"></i>
+                <img src="/images/icons/phone-white.svg" alt="Телефон" class="w-4 h-4 md:w-5 md:h-5">
               </div>
               <span class="contact-text">+7 (920) 940-02-22</span>
             </a>
@@ -1453,7 +1417,7 @@ img.product-image.loaded {
           <li>
             <a href="mailto:altaymed.shop@yandex.ru" class="footer-link-item">
               <div class="contact-icon">
-                <i class="ri-mail-line ri-sm md:ri-base"></i>
+                <img src="/images/icons/mail-white.svg" alt="Почта" class="w-4 h-4 md:w-5 md:h-5">
               </div>
               <span class="contact-text">altaymed.shop@yandex.ru</span>
             </a>

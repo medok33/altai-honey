@@ -724,7 +724,7 @@ img.product-image.loaded {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 50px;
+  gap: 30px;
   position: relative;
   z-index: 2;
 }
@@ -779,22 +779,17 @@ img.product-image.loaded {
 /* Контейнер для иконки с анимацией */
 .icon-container {
   position: absolute;
-  top: 50%;
+  top: 0;
   left: 50%;
   width: 60px;
   height: 60px;
-  /* Начальное положение: 30 градусов по часовой стрелке */
-  transform: rotate(30deg) translate(100px) rotate(-30deg);
-  transform-origin: center;
+  transform: translateX(-50%) translateY(-50%);
   z-index: 4;
   transition: transform 0.3s ease;
 }
 
 /* Иконка внутри контейнера */
 .orbit-icon {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 60px;
   height: 60px;
   display: flex;
@@ -804,21 +799,27 @@ img.product-image.loaded {
   border-radius: 50%;
   border: 2px solid #8B4513;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
 }
 
 /* Анимация вращения по орбите */
 @keyframes orbitRotation {
   0% {
-    transform: rotate(30deg) translate(100px) rotate(-30deg);
+    transform: translateX(-50%) translateY(-50%) rotate(0deg) translate(100px) rotate(0deg);
   }
   100% {
-    transform: rotate(390deg) translate(100px) rotate(-390deg);
+    transform: translateX(-50%) translateY(-50%) rotate(360deg) translate(100px) rotate(-360deg);
   }
 }
 
 /* При наведении запускаем анимацию */
 .step-circle:hover .icon-container {
-  animation: orbitRotation 8s linear infinite;
+  animation: orbitRotation 10s linear infinite;
+}
+
+/* При наведении увеличиваем иконку */
+.step-circle:hover .orbit-icon {
+  transform: scale(1.1);
 }
 
 /* Адаптация для планшетов */
@@ -828,16 +829,30 @@ img.product-image.loaded {
     height: 180px;
   }
   
+  .step-number {
+    font-size: 90px;
+  }
+  
+  .orbit-icon {
+    width: 55px;
+    height: 55px;
+  }
+  
   .icon-container {
-    transform: rotate(30deg) translate(90px) rotate(-30deg);
+    width: 55px;
+    height: 55px;
+  }
+  
+  .step-title {
+    font-size: 17px;
   }
   
   @keyframes orbitRotation {
     0% {
-      transform: rotate(30deg) translate(90px) rotate(-30deg);
+      transform: translateX(-50%) translateY(-50%) rotate(0deg) translate(90px) rotate(0deg);
     }
     100% {
-      transform: rotate(390deg) translate(90px) rotate(-390deg);
+      transform: translateX(-50%) translateY(-50%) rotate(360deg) translate(90px) rotate(-360deg);
     }
   }
 }
@@ -855,16 +870,35 @@ img.product-image.loaded {
     height: 170px;
   }
   
+  .step-number {
+    font-size: 85px;
+  }
+  
+  .orbit-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
   .icon-container {
-    transform: rotate(30deg) translate(85px) rotate(-30deg);
+    width: 50px;
+    height: 50px;
+  }
+  
+  .step-title {
+    font-size: 16px;
+  }
+  
+  .workflow-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
   }
   
   @keyframes orbitRotation {
     0% {
-      transform: rotate(30deg) translate(85px) rotate(-30deg);
+      transform: translateX(-50%) translateY(-50%) rotate(0deg) translate(85px) rotate(0deg);
     }
     100% {
-      transform: rotate(390deg) translate(85px) rotate(-390deg);
+      transform: translateX(-50%) translateY(-50%) rotate(360deg) translate(85px) rotate(-360deg);
     }
   }
 }
@@ -876,16 +910,12 @@ img.product-image.loaded {
     height: 160px;
   }
   
-  .icon-container {
-    transform: rotate(30deg) translate(80px) rotate(-30deg);
-  }
-  
   @keyframes orbitRotation {
     0% {
-      transform: rotate(30deg) translate(80px) rotate(-30deg);
+      transform: translateX(-50%) translateY(-50%) rotate(0deg) translate(80px) rotate(0deg);
     }
     100% {
-      transform: rotate(390deg) translate(80px) rotate(-390deg);
+      transform: translateX(-50%) translateY(-50%) rotate(360deg) translate(80px) rotate(-360deg);
     }
   }
 }

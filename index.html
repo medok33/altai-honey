@@ -688,8 +688,8 @@ img.product-image.loaded {
 
 .step-icon {
   position: absolute;
-  width: 62px; /* Увеличен на 20% */
-  height: 62px; /* Увеличен на 20% */
+  width: 62px; /* Увеличено на 20% */
+  height: 62px; /* Увеличено на 20% */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -703,31 +703,13 @@ img.product-image.loaded {
   transform: 
     translate(105px, 105px)
     translate(105px * cos(330deg), 105px * sin(330deg))
-    translate(-50%, -50%)
-    rotate(-20deg);
+    translate(-50%, -50%);
 }
 
 .step-icon img {
-  width: 56%; /* Уменьшено на 20% */
-  height: 56%; /* Уменьшено на 20% */
-  stroke: #8B4513; /* Цвет контура как у круга */
-  stroke-width: 1.05; /* Увеличенная толщина контура */
-}
-
-@supports (top: calc(sin(1rad))) {
-  .step-icon {
-    transform: 
-      translate(105px, 105px)
-      translate(calc(105px * cos(330deg)), calc(105px * sin(330deg)))
-      translate(-50%, -50%)
-      rotate(-20deg);
-  }
-}
-
-.step-icon i {
-  font-size: 30px;
-  color: #8B4513;
-  transform: rotate(20deg);
+  width: 24px; /* Уменьшено на 20% */
+  height: 24px; /* Уменьшено на 20% */
+  filter: invert(24%) sepia(89%) saturate(1197%) hue-rotate(353deg) brightness(92%) contrast(101%); /* Цвет как контур кругов */
 }
 
 .step-title {
@@ -738,137 +720,39 @@ img.product-image.loaded {
   text-align: center;
 }
 
-@supports not (top: calc(sin(1rad))) {
-  .step-icon {
-    top: 105px;
-    left: 105px;
-    transform: 
-      translate(calc(105px * 0.866), calc(105px * -0.5))
-      translate(-50%, -50%)
-      rotate(-20deg);
-  }
-}
-
 @media (min-width: 1024px) {
-  .step-circle {
-    width: 185px;
-    height: 185px;
-    margin: 0 5px 50px;
-  }
-  
   .step-icon {
-    width: 50px; /* Увеличен на 20% */
-    height: 50px; /* Увеличен на 20% */
-    transform: 
-      translate(92.5px, 92.5px)
-      translate(calc(92.5px * cos(330deg)), calc(92.5px * sin(330deg)))
-      translate(-50%, -50%)
-      rotate(-20deg);
+    width: 50px; /* Увеличено на 20% */
+    height: 50px; /* Увеличено на 20% */
   }
   
-  @supports not (top: calc(sin(1rad))) {
-    .step-icon {
-      top: 92.5px;
-      left: 92.5px;
-      transform: 
-        translate(calc(92.5px * 0.866), calc(92.5px * -0.5))
-        translate(-50%, -50%)
-        rotate(-20deg);
-    }
-  }
-  
-  .step-icon i {
-    font-size: 27px;
-  }
-  
-  .step-number {
-    font-size: 100px;
+  .step-icon img {
+    width: 22px; /* Уменьшено на 20% */
+    height: 22px; /* Уменьшено на 20% */
   }
 }
 
 @media (min-width: 768px) {
-  .workflow-steps {
-    justify-content: center;
-    gap: 40px;
-  }
-  
-  .step-circle {
-    width: 175px;
-    height: 175px;
-    margin: 0 0 50px;
-  }
-  
   .step-icon {
-    width: 50px; /* Увеличен на 20% */
-    height: 50px; /* Увеличен на 20% */
-    transform: 
-      translate(87.5px, 87.5px)
-      translate(calc(87.5px * cos(330deg)), calc(87.5px * sin(330deg)))
-      translate(-50%, -50%)
-      rotate(-20deg);
+    width: 50px; /* Увеличено на 20% */
+    height: 50px; /* Увеличено на 20% */
   }
   
-  @supports not (top: calc(sin(1rad))) {
-    .step-icon {
-      top: 87.5px;
-      left: 87.5px;
-      transform: 
-        translate(calc(87.5px * 0.866), calc(87.5px * -0.5))
-        translate(-50%, -50%)
-        rotate(-20deg);
-    }
-  }
-  
-  .step-icon i {
-    font-size: 25px;
-  }
-  
-  .step-title {
-    font-size: 17px;
-  }
-  
-  .step-number {
-    font-size: 90px;
+  .step-icon img {
+    width: 20px; /* Уменьшено на 20% */
+    height: 20px; /* Уменьшено на 20% */
   }
 }
 
-@media (max-width: 480px) {
-  .step-circle {
-    width: 165px;
-    height: 165px;
-  }
-  
-  .step-number {
-    font-size: 85px;
-  }
-  
+@media (min-width: 480px) {
   .step-icon {
-    width: 50px; /* Увеличен на 20% */
-    height: 50px; /* Увеличен на 20% */
-    transform: 
-      translate(82.5px, 82.5px)
-      translate(calc(82.5px * cos(330deg)), calc(82.5px * sin(330deg)))
-      translate(-50%, -50%)
-      rotate(-20deg);
+    width: 50px; /* Увеличено на 20% */
+    height: 50px; /* Увеличено на 20% */
   }
   
-  @supports not (top: calc(sin(1rad))) {
-    .step-icon {
-      top: 82.5px;
-      left: 82.5px;
-      transform: 
-        translate(calc(82.5px * 0.866), calc(82.5px * -0.5))
-        translate(-50%, -50%)
-        rotate(-20deg);
-    }
-  }
-  
-  .step-icon i {
-    font-size: 23px;
-  }
-  
-  .step-title {
-    font-size: 16px;
+  .step-icon img {
+    width: 18px; /* Уменьшено на 20% */
+    height: 18px; /* Уменьшено на 20% */
   }
 }
 
@@ -885,7 +769,7 @@ img.product-image.loaded {
   margin-right: 12px;
 }
 
-/* Анимации для появления секций при скролле */
+/* Анимации для появления секций */
 .section-animate {
   opacity: 0;
   transform: translateY(30px);
@@ -963,8 +847,8 @@ img.product-image.loaded {
   width: 20px !important;
   height: 20px !important;
   filter: 
-    drop-shadow(0 0 1px #999) 
-    invert(42%) sepia(31%) saturate(1000%) hue-rotate(48deg) brightness(95%) contrast(85%); /* Темно-зеленый цвет */
+    invert(48%) sepia(79%) saturate(2476%) hue-rotate(34deg) brightness(88%) contrast(119%) /* Темно-зеленый как лого */
+    drop-shadow(0 0 0.5px #000); /* Утолщение контура */
 }
 
 @media (min-width: 768px) {
@@ -976,26 +860,33 @@ img.product-image.loaded {
 
 /* Изменения для иконок в футере */
 #footer-contacts .contact-icon img {
-  width: 15px !important; /* Увеличен на 5% */
-  height: 15px !important; /* Увеличен на 5% */
+  width: 15px !important; /* Увеличено на 5% */
+  height: 15px !important; /* Увеличено на 5% */
   filter: 
-    brightness(0) invert(1) 
-    drop-shadow(0 0 1px white); /* Жирный контур */
+    brightness(0) invert(1) /* Белый цвет */
+    drop-shadow(0 0 0.7px white); /* Утолщение контура */
 }
 
-/* Изменения для иконок в блоке "Заказать мёд" */
-#order .w-7.h-7 img, 
-#order .w-8.h-8 img {
+/* Изменения для иконок в блоке "О нас" */
+.about-check-icon img {
+  filter: 
+    invert(48%) sepia(79%) saturate(2476%) hue-rotate(34deg) brightness(88%) contrast(119%) /* Цвет как лого */
+    drop-shadow(0 0 0.5px #000); /* Утолщение контура */
+}
+
+/* Изменения для иконок в блоке заказа */
+#order .flex .flex img {
   width: 14px; /* Уменьшено на 15% */
   height: 14px; /* Уменьшено на 15% */
-  filter: brightness(0) invert(1); /* Белый цвет */
+  filter: 
+    brightness(0) invert(1) /* Белый цвет */
+    drop-shadow(0 0 0.5px white); /* Утолщение контура */
 }
 
 @media (min-width: 768px) {
-  #order .w-7.h-7 img, 
-  #order .w-8.h-8 img {
+  #order .flex .flex img {
     width: 17px; /* Уменьшено на 15% */
-    height: 17px;
+    height: 17px; /* Уменьшено на 15% */
   }
 }
 </style>

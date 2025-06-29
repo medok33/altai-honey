@@ -56,345 +56,579 @@
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#9f5524">
 
-<!-- Подключение локальных стилей -->
-<link rel="stylesheet" href="/assets/css/blog.min.css">
-
-<!-- Критический CSS для первого экрана -->
+<!-- Встроенные стили -->
 <style>
-/* Минимальные стили для быстрой отрисовки */
-body {
-  font-family: 'Open Sans', sans-serif;
+/* Базовые сбросы */
+*, *::before, *::after {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fffdf9;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #fffdf9;
 }
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Навигация */
+nav {
+  background: white;
+  padding: 15px 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.8rem;
+  color: #6B8E23;
+}
+
+.desktop-menu {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.desktop-menu a {
+  position: relative;
+  padding: 5px 0;
+  font-weight: 500;
+}
+
+.desktop-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #6B8E23;
+  transition: width 0.3s ease;
+}
+
+.desktop-menu a:hover::after {
+  width: 100%;
+}
+
+.nav-btn {
+  background: #6B8E23;
+  color: white !important;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.nav-btn:hover {
+  background: #5a7a1c;
+}
+
+.nav-btn:hover::after {
+  display: none;
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  display: none;
+  background: white;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.mobile-menu a {
+  display: block;
+  padding: 10px 0;
+  font-weight: 500;
+  border-bottom: 1px solid #eee;
+}
+
+.mobile-menu a:last-child {
+  border-bottom: none;
+}
+
+/* Шапка блога */
 .blog-header {
   min-height: 50vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/image-7.webp');
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/images/image-7.webp');
   background-size: cover;
   background-position: center;
   color: white;
   text-align: center;
   padding: 2rem 1rem;
 }
-.nav-link {
-  color: #1a202c;
-  transition: color 0.3s;
+
+.blog-header h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
-.nav-link:hover {
+
+.blog-header p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Список статей */
+.blog-posts {
+  padding: 60px 0;
+  background-color: rgba(245, 222, 179, 0.2);
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZmZmZmZmIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNmNWRlYjMiIG9wYWNpdHk9IjAuMSI+PC9yZWN0Pgo8L3N2Zz4=');
+}
+
+.blog-list {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.blog-post-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  margin-bottom: 40px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-post-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.post-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.post-content {
+  padding: 25px;
+}
+
+.post-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.post-content p {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.read-more {
   color: #6B8E23;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+
+/* Футер */
+footer {
+  background: #8B4513;
+  color: white;
+  padding: 60px 0 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 600%;
+  height: 600%;
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px);
+  background-size: 108px 108px;
+  transform: rotate(30deg);
+  transform-origin: 0 0;
+  opacity: 0.6;
+  z-index: 0;
+  margin-left: -220%;
+  margin-top: -220%;
+}
+
+.footer-container {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+}
+
+.footer-column h4 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.footer-column h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background: #d4a373;
+}
+
+.footer-column ul {
+  list-style: none;
+}
+
+.footer-column li {
+  margin-bottom: 12px;
+}
+
+.footer-column a {
+  display: flex;
+  align-items: center;
+  transition: opacity 0.3s ease;
+}
+
+.footer-column a:hover {
+  opacity: 0.8;
+}
+
+.bullet {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.contact-icon {
+  margin-right: 12px;
+  min-width: 24px;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.3);
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background: #6B8E23;
+  border-color: #6B8E23;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .desktop-menu {
+    display: none;
+  }
+  
+  .mobile-menu-btn {
+    display: block;
+  }
+  
+  .mobile-menu {
+    display: block;
+  }
+  
+  .blog-header h1 {
+    font-size: 2rem;
+  }
+  
+  .post-image {
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .blog-header p {
+    font-size: 1rem;
+  }
+  
+  .post-image {
+    height: 200px;
+  }
+}
+
+/* Шрифты */
+@font-face {
+  font-family: 'Pacifico';
+  src: url('/fonts/Pacifico-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/fonts/OpenSans-VariableFont.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
 }
 </style>
 </head>
 <body>
-<!-- Навигация -->
-<nav class="bg-white shadow-sm sticky top-0 z-50">
-  <div class="container mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
-    <a href="/" class="text-2xl md:text-3xl font-pacifico text-primary">Алтайский мёд</a>
-    
-    <div class="hidden md:flex items-center space-x-6 md:space-x-8">
-      <a href="/#benefits" class="nav-link">Преимущества</a>
-      <a href="/#products" class="nav-link">Каталог</a>
-      <a href="/#about" class="nav-link">О нас</a>
-      <a href="/#footer-contacts" class="nav-link">Контакты</a>
-      <a href="/blog/" class="active-nav-link-alt">Блог</a>
-      <a href="/#order" class="nav-btn px-4 md:px-6 py-1 md:py-2 rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">Заказать</a>
-    </div>
-    
-    <button class="md:hidden w-10 h-10 flex items-center justify-center" id="mobile-menu-button">
-      <svg class="w-6 h-6" fill="currentColor">
-        <path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"/>
-      </svg>
-    </button>
-  </div>
-  
-  <!-- Мобильное меню -->
-  <div class="md:hidden hidden bg-white shadow-md px-4 py-3" id="mobile-menu">
-    <div class="flex flex-col space-y-4">
-      <a href="/#benefits" class="nav-link py-2">Преимущества</a>
-      <a href="/#products" class="nav-link py-2">Каталог</a>
-      <a href="/#about" class="nav-link py-2">О нас</a>
-      <a href="/#footer-contacts" class="nav-link py-2">Контакты</a>
-      <a href="/blog/" class="active-nav-link-alt py-2 text-center">Блог</a>
-      <a href="/#order" class="nav-btn py-2 text-center rounded-button hover:bg-opacity-90 transition-all">Заказать</a>
-    </div>
-  </div>
-</nav>
-
-<main>
-<!-- Шапка блога -->
-<section class="blog-header">
-  <div class="container mx-auto px-4">
-    <h1 class="text-3xl md:text-4xl lg:text-5xl font-pacifico mb-4">Полезные статьи о мёде</h1>
-    <p class="text-xl max-w-2xl mx-auto">Узнайте больше о пользе алтайского мёда и традициях пчеловодства</p>
-  </div>
-</section>
-
-<!-- Список статей -->
-<section class="py-16 bg-[#F5DEB3] bg-opacity-20 texture-bg">
-  <div class="container mx-auto px-4 md:px-6">
-    <div class="max-w-4xl mx-auto">
-      <!-- Статья 1 -->
-      <div class="blog-post-card bg-white rounded-lg mb-10 overflow-hidden shadow-md">
-        <img src="/images/image-8.webp" 
-             alt="Как выбрать качественный мёд - полезные советы"
-             class="w-full h-64 object-cover"
-             loading="lazy"
-             decoding="async"
-             width="800"
-             height="533">
-        <div class="p-6">
-          <h2 class="text-xl md:text-2xl font-bold mb-2">Как выбрать качественный мёд</h2>
-          <p class="text-gray-600 mb-4">Экспертные советы по выбору настоящего алтайского мёда. Узнайте, как отличить натуральный продукт от подделки и сохранить все полезные свойства.</p>
-          <a href="/blog/kak-vybrat-med.html" class="text-primary font-medium hover:underline">
-            Читать статью
-          </a>
-        </div>
+  <!-- Навигация -->
+  <nav>
+    <div class="container nav-container">
+      <a href="/" class="logo">Алтайский мёд</a>
+      
+      <div class="desktop-menu">
+        <a href="/#benefits">Преимущества</a>
+        <a href="/#products">Каталог</a>
+        <a href="/#about">О нас</a>
+        <a href="/#footer-contacts">Контакты</a>
+        <a href="/blog/" style="border: 2px solid #6B8E23; border-radius: 8px; padding: 5px 15px;">Блог</a>
+        <a href="/#order" class="nav-btn">Заказать</a>
       </div>
+      
+      <button class="mobile-menu-btn" id="mobile-menu-button">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 12H21" stroke="black" stroke-width="2" stroke-linecap="round"/>
+          <path d="M3 6H21" stroke="black" stroke-width="2" stroke-linecap="round"/>
+          <path d="M3 18H21" stroke="black" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="/#benefits">Преимущества</a>
+      <a href="/#products">Каталог</a>
+      <a href="/#about">О нас</a>
+      <a href="/#footer-contacts">Контакты</a>
+      <a href="/blog/">Блог</a>
+      <a href="/#order">Заказать</a>
+    </div>
+  </nav>
+
+  <!-- Шапка блога -->
+  <section class="blog-header">
+    <div class="container">
+      <h1>Полезные статьи о мёде</h1>
+      <p>Узнайте больше о пользе алтайского мёда и традициях пчеловодства</p>
+    </div>
+  </section>
+
+  <!-- Список статей -->
+  <section class="blog-posts">
+    <div class="container blog-list">
+      <!-- Статья 1 -->
+      <article class="blog-post-card">
+        <img src="/images/image-8.webp" alt="Как выбрать качественный мёд" class="post-image">
+        <div class="post-content">
+          <h2>Как выбрать качественный мёд</h2>
+          <p>Экспертные советы по выбору настоящего алтайского мёда. Узнайте, как отличить натуральный продукт от подделки и сохранить все полезные свойства.</p>
+          <a href="/blog/kak-vybrat-med.html" class="read-more">Читать статью →</a>
+        </div>
+      </article>
       
       <!-- Статья 2 -->
-      <div class="blog-post-card bg-white rounded-lg mb-10 overflow-hidden shadow-md">
-        <img src="/images/image-9.webp" 
-             alt="Мёд в здоровом питании - рецепты и советы"
-             class="w-full h-64 object-cover"
-             loading="lazy"
-             decoding="async"
-             width="800"
-             height="533">
-        <div class="p-6">
-          <h2 class="text-xl md:text-2xl font-bold mb-2">Мёд в здоровом питании</h2>
-          <p class="text-gray-600 mb-4">Как правильно использовать мёд в ежедневном рационе. Рецепты и советы по включению натурального мёда в здоровое питание для всей семьи.</p>
-          <a href="/blog/med-v-zdorovom-pitanii.html" class="text-primary font-medium hover:underline">
-            Читать статью
-          </a>
+      <article class="blog-post-card">
+        <img src="/images/image-9.webp" alt="Мёд в здоровом питании" class="post-image">
+        <div class="post-content">
+          <h2>Мёд в здоровом питании</h2>
+          <p>Как правильно использовать мёд в ежедневном рационе. Рецепты и советы по включению натурального мёда в здоровое питание для всей семьи.</p>
+          <a href="/blog/med-v-zdorovom-pitanii.html" class="read-more">Читать статью →</a>
         </div>
-      </div>
+      </article>
       
       <!-- Статья 3 -->
-      <div class="blog-post-card bg-white rounded-lg mb-10 overflow-hidden shadow-md">
-        <img src="/images/image-10.webp" 
-             alt="Традиции алтайского пчеловодства - история и секреты"
-             class="w-full h-64 object-cover"
-             loading="lazy"
-             decoding="async"
-             width="800"
-             height="533">
-        <div class="p-6">
-          <h2 class="text-xl md:text-2xl font-bold mb-2">Традиции алтайского пчеловодства</h2>
-          <p class="text-gray-600 mb-4">История и секреты алтайских пасечников. Узнайте о многовековых традициях сбора мёда в горных районах Алтая.</p>
-          <a href="/blog/tradicii-altayskogo-pchelovodstva.html" class="text-primary font-medium hover:underline">
-            Читать статью
+      <article class="blog-post-card">
+        <img src="/images/image-10.webp" alt="Традиции алтайского пчеловодства" class="post-image">
+        <div class="post-content">
+          <h2>Традиции алтайского пчеловодства</h2>
+          <p>История и секреты алтайских пасечников. Узнайте о многовековых традициях сбора мёда в горных районах Алтая.</p>
+          <a href="/blog/tradicii-altayskogo-pchelovodstva.html" class="read-more">Читать статью →</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Футер -->
+  <footer>
+    <div class="container footer-container">
+      <div class="footer-column">
+        <a href="/" class="logo" style="font-size: 1.8rem; display: block; margin-bottom: 15px;">Алтайский мёд</a>
+        <p style="font-size: 0.9rem; margin-bottom: 10px;">Натуральные продукты пчеловодства с Алтайских гор.</p>
+        <p style="font-size: 0.9rem;">© 2025 Алтайский мёд. Все права защищены.</p>
+      </div>
+      
+      <div class="footer-column">
+        <h4>Каталог</h4>
+        <ul>
+          <li><a href="/#product-1"><span class="bullet"></span> Разнотравье</a></li>
+          <li><a href="/#product-2"><span class="bullet"></span> Таёжный мёд</a></li>
+          <li><a href="/#product-3"><span class="bullet"></span> Гречишный мёд</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h4>Материалы</h4>
+        <ul>
+          <li><a href="/blog/"><span class="bullet"></span> Блог</a></li>
+          <li><a href="/faq/"><span class="bullet"></span> FAQ</a></li>
+          <li><a href="/legal.html"><span class="bullet"></span> Правовая информация</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h4>Информация</h4>
+        <ul>
+          <li><a href="/#benefits"><span class="bullet"></span> Преимущества</a></li>
+          <li><a href="/#about"><span class="bullet"></span> О нас</a></li>
+          <li><a href="/#footer-contacts"><span class="bullet"></span> Контакты</a></li>
+          <li><a href="/delivery.html"><span class="bullet"></span> Доставка и оплата</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h4>Контакты</h4>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/>
+            </svg>
+          </div>
+          <span>Владимирская обл. Город Ковров</span>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+              <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+            </svg>
+          </div>
+          <a href="tel:+79209400222">+7 (920) 940-02-22</a>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+          </div>
+          <a href="mailto:9209400222@mail.ru">9209400222@mail.ru</a>
+        </div>
+        
+        <div class="social-links">
+          <a href="https://vk.com/honeybuckwheat" target="_blank" class="social-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+              <path d="M12.65 15.42c-4.5 0-7.1-3.75-7.23-10.04H6.3c.09 5.25 2.5 7.06 3.92 7.5V5.38h2.92v4.28c1.42-.16 2.92-1.8 3.42-4.28h2.92c-.32 3.05-2.2 5.34-3.42 6.1 1.22.44 3.18 1.8 3.92 4.8h-3.2c-.5-1.86-1.86-3.26-3.92-3.48v3.48h-.43z"/>
+            </svg>
+          </a>
+          <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" class="social-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.78 5.42-.9 6.8-.06.67-.36.9-.86.56-2.49-1.73-3.57-2.84-5.79-4.55-.54-.4-.19-.62.33-1 .53-.41 5.79-5.24 5.93-5.33.26-.18.52-.08.52.17 0 .19.01 6.03.01 6.03 0 .23.06.38.2.48.18.12.4.1.66-.04.85-.47 2.38-2.13 3.05-3.14.23-.35.12-.64-.33-.64l-3.43.01c-.26 0-.48-.09-.62-.26-.15-.18-.12-.42.05-.67.32-.46.94-1.4.94-1.4.1-.17.24-.27.42-.27.05 0 .09.01.14.03.5.17 3.06 2.92 3.38 3.22.13.13.2.3.2.5 0 .2-.07.38-.2.5-.1.1-2.1 1.99-3.22 3.06-.34.33-.49.53-.76.53-.1 0-.2-.01-.29-.04-.5-.14-1.4-.46-2.46-.74-1.89-.5-3.13-.61-4.52-.65-1.38-.04-1.61.03-2.15.33-.46.26-.82.85-.6.86.5.03 1.61.31 2.28.57 3.29 1.29 3.81 2.5 5.73 3.04.66.19 1.17.16 1.61.05.49-.13 1.5-.94 1.7-1.38.2-.44.2-.82.14-.92-.07-.11-.25-.16-.57-.28z"/>
+            </svg>
+          </a>
+          <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000" 
+             target="_blank" class="social-icon">
+            <svg width="20" height="20" viewBox="0 0 192 192">
+              <path fill="#04e061" d="M61.924 172.07c26.468 0 47.924-21.456 47.924-47.924S88.392 76.222 61.924 76.222 14 97.678 14 124.146s21.456 47.925 47.924 47.925z" transform="translate(7.024 7.024) scale(.92683)"/>
+              <path fill="#ff4053" d="M149.044 166.007c15.992 0 28.956-12.963 28.956-28.955 0-15.992-12.964-28.955-28.956-28.955-15.99 0-28.954 12.963-28.954 28.955 0 15.992 12.963 28.955 28.954 28.955z" transform="translate(7.024 7.024) scale(.92683)"/>
+              <path fill="#965eeb" d="M71.086 65.979c9.898 0 17.922-8.024 17.922-17.921 0-9.898-8.024-17.922-17.922-17.922-9.898 0-17.921 8.024-17.921 17.922 0 9.897 8.023 17.921 17.921 17.921z" transform="translate(7.024 7.024) scale(.92683)"/>
+              <path fill="#0af" d="M137.789 97.856c21.519 0 38.964-17.444 38.964-38.963 0-21.52-17.445-38.964-38.964-38.964-21.52 0-38.964 17.445-38.964 38.964s17.445 38.963 38.964 38.963z" transform="translate(7.024 7.024) scale(.92683)"/>
+            </svg>
           </a>
         </div>
       </div>
     </div>
-  </div>
-</section>
-</main>
+  </footer>
 
-<!-- Футер -->
-<footer class="py-10 md:py-12 w-full">
-  <div id="footer-contacts" class="container mx-auto px-4 md:px-6 w-full">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 w-full">
-      <!-- Лого и описание -->
-      <div class="footer-column">
-        <div class="logo-wrapper">
-          <a href="/" class="text-2xl md:text-3xl font-pacifico mb-3 md:mb-4 block">Алтайский мёд</a>
-        </div>
-        <div class="description-wrapper">
-          <p class="text-xs">Натуральные продукты пчеловодства с Алтайских гор.</p>
-          <p class="text-xs">© 2025 Алтайский мёд. Все права защищены.</p>
-        </div>
-      </div>
+  <!-- Скрипты -->
+  <script>
+    // Обработка мобильного меню
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
       
-      <!-- Каталог -->
-      <div class="footer-column">
-        <h4 class="text-base md:text-lg font-bold">Каталог</h4>
-        <ul>
-          <li>
-            <a href="/#product-1" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">Разнотравье</span>
-            </a>
-          </li>
-          <li>
-            <a href="/#product-2" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">Таёжный мёд</span>
-            </a>
-          </li>
-          <li>
-            <a href="/#product-3" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">Гречишный мёд</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-      
-      <!-- Материалы -->
-      <div class="footer-column">
-        <h4 class="text-base md:text-lg font-bold">Материалы</h4>
-        <ul>
-          <li>
-            <a href="/blog/" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">Блог</span>
-            </a>
-          </li>
-          <li>
-            <a href="/faq/" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">FAQ</span>
-            </a>
-          </li>
-          <li>
-            <a href="/legal.html" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">Правовая информация</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-      
-      <!-- Информация -->
-      <div class="footer-column">
-        <h4 class="text-base md:text-lg font-bold">Информация</h4>
-        <ul>
-          <li>
-            <a href="/#benefits" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">Преимущества</span>
-            </a>
-          </li>
-          <li>
-            <a href="/#about" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">О нас</span>
-            </a>
-          </li>
-          <li>
-            <a href="/#footer-contacts" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">Контакты</span>
-            </a>
-          </li>
-          <li>
-            <a href="/delivery.html" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">Доставка и оплата</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-      
-      <!-- Контакты -->
-      <div class="footer-column">
-        <h4 class="text-base md:text-lg font-bold">Контакты</h4>
-        <ul>
-          <li>
-            <a class="footer-link-item">
-              <div class="contact-icon">
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/>
-                </svg>
-              </div>
-              <span class="contact-text">Владимирская обл. Город Ковров</span>
-            </a>
-          </li>
-          <li>
-            <a href="tel:+79209400222" class="footer-link-item">
-              <div class="contact-icon">
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-                </svg>
-              </div>
-              <span class="contact-text">+7 (920) 940-02-22</span>
-            </a>
-          </li>
-          <li>
-            <a href="mailto:9209400222@mail.ru" class="footer-link-item">
-              <div class="contact-icon">
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                </svg>
-              </div>
-              <span class="contact-text">9209400222@mail.ru</span>
-            </a>
-          </li>
-        </ul>
-        
-        <!-- Социальные сети -->
-        <div class="mt-4 md:mt-6">
-          <p class="text-base md:text-lg font-bold mb-2 md:mb-3">Следите за нами</p>
-          <div class="flex space-x-2 md:space-x-3">
-            <a href="https://vk.com/honeybuckwheat" target="_blank" class="social-icon-bw">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12.65 15.42c-4.5 0-7.1-3.75-7.23-10.04H6.3c.09 5.25 2.5 7.06 3.92 7.5V5.38h2.92v4.28c1.42-.16 2.92-1.8 3.42-4.28h2.92c-.32 3.05-2.2 5.34-3.42 6.1 1.22.44 3.18 1.8 3.92 4.8h-3.2c-.5-1.86-1.86-3.26-3.92-3.48v3.48h-.43z"/>
-              </svg>
-            </a>
-            <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" class="social-icon-bw">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.78 5.42-.9 6.8-.06.67-.36.9-.86.56-2.49-1.73-3.57-2.84-5.79-4.55-.54-.4-.19-.62.33-1 .53-.41 5.79-5.24 5.93-5.33.26-.18.52-.08.52.17 0 .19.01 6.03.01 6.03 0 .23.06.38.2.48.18.12.4.1.66-.04.85-.47 2.38-2.13 3.05-3.14.23-.35.12-.64-.33-.64l-3.43.01c-.26 0-.48-.09-.62-.26-.15-.18-.12-.42.05-.67.32-.46.94-1.4.94-1.4.1-.17.24-.27.42-.27.05 0 .09.01.14.03.5.17 3.06 2.92 3.38 3.22.13.13.2.3.2.5 0 .2-.07.38-.2.5-.1.1-2.1 1.99-3.22 3.06-.34.33-.49.53-.76.53-.1 0-.2-.01-.29-.04-.5-.14-1.4-.46-2.46-.74-1.89-.5-3.13-.61-4.52-.65-1.38-.04-1.61.03-2.15.33-.46.26-.82.85-.6.86.5.03 1.61.31 2.28.57 3.29 1.29 3.81 2.5 5.73 3.04.66.19 1.17.16 1.61.05.49-.13 1.5-.94 1.7-1.38.2-.44.2-.82.14-.92-.07-.11-.25-.16-.57-.28z"/>
-              </svg>
-            </a>
-            <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing" 
-               target="_blank" class="social-icon-bw">
-              <svg class="w-5 h-5" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg">
-                <path fill="#04e061" d="M61.924 172.07c26.468 0 47.924-21.456 47.924-47.924S88.392 76.222 61.924 76.222 14 97.678 14 124.146s21.456 47.925 47.924 47.925z" transform="translate(7.024 7.024) scale(.92683)"/>
-                <path fill="#ff4053" d="M149.044 166.007c15.992 0 28.956-12.963 28.956-28.955 0-15.992-12.964-28.955-28.956-28.955-15.99 0-28.954 12.963-28.954 28.955 0 15.992 12.963 28.955 28.954 28.955z" transform="translate(7.024 7.024) scale(.92683)"/>
-                <path fill="#965eeb" d="M71.086 65.979c9.898 0 17.922-8.024 17.922-17.921 0-9.898-8.024-17.922-17.922-17.922-9.898 0-17.921 8.024-17.921 17.922 0 9.897 8.023 17.921 17.921 17.921z" transform="translate(7.024 7.024) scale(.92683)"/>
-                <path fill="#0af" d="M137.789 97.856c21.519 0 38.964-17.444 38.964-38.963 0-21.52-17.445-38.964-38.964-38.964-21.52 0-38.964 17.445-38.964 38.964s17.445 38.963 38.964 38.963z" transform="translate(7.024 7.024) scale(.92683)"/>
-              </svg>
-            </a>
-            <a href="https://yandex.ru/maps/" target="_blank" class="social-icon-bw">
-              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2C8.13 2 5 5.13 5 9C5 13.17 9.42 18.92 11.24 21.11C11.64 21.59 12.37 21.59 12.77 21.11C14.58 18.92 19 13.17 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<!-- Скрипты -->
-<script>
-  // Обработка мобильного меню
-  document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    
-    mobileMenuButton.addEventListener('click', function() {
-      if (mobileMenu.classList.contains('hidden')) {
-        mobileMenu.classList.remove('hidden');
-        mobileMenu.classList.add('block');
-      } else {
-        mobileMenu.classList.add('hidden');
-        mobileMenu.classList.remove('block');
-      }
+      mobileMenuButton.addEventListener('click', function() {
+        if (mobileMenu.style.display === 'block') {
+          mobileMenu.style.display = 'none';
+        } else {
+          mobileMenu.style.display = 'block';
+        }
+      });
     });
-  });
-</script>
+  </script>
+  
+  <!-- Яндекс.Метрика -->
+  <script>
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();
+    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-<!-- Yandex.Metrika counter -->
-<script>
-  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-  m[i].l=1*new Date();
-  k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-  (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-  ym(102951378, "init", {
-       clickmap:true,
-       trackLinks:true,
-       accurateTrackBounce:true
-  });
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/102951378" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    ym(102951378, "init", {
+         clickmap:true,
+         trackLinks:true,
+         accurateTrackBounce:true
+    });
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/102951378" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 </body>
 </html>

@@ -30,6 +30,6 @@ jobs:
         with:
           commit_message: "Build Tailwind CSS"
           branch: main
-          file_pattern: assets/css/*.css
+          file_pattern: assets/css/*.css public/optimized/*
           commit_user_name: GitHub Actions
           commit_user_email: actions@github.com

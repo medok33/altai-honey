@@ -3,10 +3,9 @@ module.exports = {
     "./index.html",
     "./delivery.html",
     "./legal.html",
-    "./blog/**/*.html",  // Добавлено для обработки страниц блога
-    "./src/**/*.{html,js}",
-    "./**/*.html",
-    "./**/*.js"
+    "./blog/**/*.html",
+    "./src/**/*.{html,js,css}",
+    "./**/*.html"
   ],
   theme: {
     extend: {

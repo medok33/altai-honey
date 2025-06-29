@@ -628,12 +628,12 @@ img.product-image.loaded {
   position: relative;
   z-index: 2;
   flex-wrap: wrap;
-  gap: 48.4px; /* Увеличен gap на 10% */
+  gap: 53.24px; /* Увеличен gap на 10% */
 }
 
 .step-circle {
-  width: 254px;  /* Увеличен на 10% (было 231px) */
-  height: 254px; /* Увеличен на 10% (было 231px) */
+  width: 280px;  /* Увеличен на 10% (было 254px) */
+  height: 280px; /* Увеличен на 10% (было 254px) */
   border-radius: 50%;
   background: white;
   display: flex;
@@ -646,7 +646,7 @@ img.product-image.loaded {
   z-index: 3;
   transition: all 0.3s ease;
   padding: 25px;
-  margin: 0 13.31px 72.6px; /* Увеличен горизонтальный и вертикальный отступ на 10% */
+  margin: 0 14.64px 79.86px; /* Увеличен горизонтальный и вертикальный отступ на 10% */
   overflow: visible;
   opacity: 0;
   transform: translateY(30px);
@@ -667,7 +667,7 @@ img.product-image.loaded {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 133.1px; /* Увеличен на 10% (было 121px) */
+  font-size: 146px; /* Увеличен на 10% (было 133.1px) */
   font-weight: 800;
   color: rgba(139, 69, 19, 0.08);
   z-index: 1;
@@ -689,8 +689,8 @@ img.product-image.loaded {
 
 .step-icon {
   position: absolute;
-  width: 75px; /* Увеличен на 10% (было 68.2px) */
-  height: 75px; /* Увеличен на 10% (было 68.2px) */
+  width: 83px; /* Увеличен на 10% (было 75px) */
+  height: 83px; /* Увеличен на 10% (было 75px) */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -702,32 +702,33 @@ img.product-image.loaded {
   top: 0;
   left: 0;
   transform: 
-    translate(127px, 127px) /* Увеличен на 10% (было 115.5px) */
-    translate(calc(127px * 0.866), calc(127px * -0.5)) /* Увеличен на 10% */
+    translate(140px, 140px) /* Увеличен на 10% (было 127px) */
+    translate(calc(140px * 0.866), calc(140px * -0.5)) /* Увеличен на 10% */
     translate(-50%, -50%)
     rotate(-20deg);
 }
 
 .step-icon img {
-  width: 49.5%; /* Увеличен на 10% (было 45%) */
-  height: 49.5%; /* Увеличен на 10% (было 45%) */
+  width: 54.5%; /* Увеличен на 10% (было 49.5%) */
+  height: 54.5%; /* Увеличен на 10% (было 49.5%) */
   stroke: #8B4513; /* Цвет контура как у кругов */
   stroke-width: 1.05;
   transform: rotate(20deg); /* Компенсация вращения малого круга */
+  filter: brightness(0) saturate(100%) invert(24%) sepia(95%) saturate(900%) hue-rotate(350deg) brightness(92%) contrast(87%); /* Фильтр для цвета #8B4513 */
 }
 
 @supports (top: calc(sin(1rad))) {
   .step-icon {
     transform: 
-      translate(127px, 127px) /* Увеличен на 10% */
-      translate(calc(127px * cos(330deg)), calc(127px * sin(330deg)))
+      translate(140px, 140px) /* Увеличен на 10% */
+      translate(calc(140px * cos(330deg)), calc(140px * sin(330deg)))
       translate(-50%, -50%)
       rotate(-20deg);
   }
 }
 
 .step-title {
-  font-size: 19.8px; /* Увеличен на 10% (было 18px) */
+  font-size: 21.78px; /* Увеличен на 10% (было 19.8px) */
   font-weight: 700;
   color: #2d3748;
   line-height: 1.4;
@@ -736,10 +737,10 @@ img.product-image.loaded {
 
 @supports not (top: calc(sin(1rad))) {
   .step-icon {
-    top: 127px; /* Увеличен на 10% */
-    left: 127px; /* Увеличен на 10% */
+    top: 140px; /* Увеличен на 10% */
+    left: 140px; /* Увеличен на 10% */
     transform: 
-      translate(calc(127px * 0.866), calc(127px * -0.5)) /* Увеличен на 10% */
+      translate(calc(140px * 0.866), calc(140px * -0.5)) /* Увеличен на 10% */
       translate(-50%, -50%)
       rotate(-20deg);
   }
@@ -747,125 +748,125 @@ img.product-image.loaded {
 
 @media (min-width: 1024px) {
   .step-circle {
-    width: 223.85px; /* Увеличен на 10% (было 203.5px) */
-    height: 223.85px; /* Увеличен на 10% (было 203.5px) */
-    margin: 0 13.31px 60.5px; /* Увеличен горизонтальный и вертикальный отступ на 10% */
+    width: 246px; /* Увеличен на 10% (было 223.85px) */
+    height: 246px; /* Увеличен на 10% (было 223.85px) */
+    margin: 0 14.64px 66.55px; /* Увеличен горизонтальный и вертикальный отступ на 10% */
   }
   
   .step-icon {
-    width: 60.5px; /* Увеличен на 10% (было 55px) */
-    height: 60.5px; /* Увеличен на 10% (было 55px) */
+    width: 66.55px; /* Увеличен на 10% (было 60.5px) */
+    height: 66.55px; /* Увеличен на 10% (было 60.5px) */
     transform: 
-      translate(111.925px, 111.925px) /* Увеличен на 10% */
-      translate(calc(111.925px * cos(330deg)), calc(111.925px * sin(330deg)))
+      translate(123px, 123px) /* Увеличен на 10% */
+      translate(calc(123px * cos(330deg)), calc(123px * sin(330deg)))
       translate(-50%, -50%)
       rotate(-20deg);
   }
   
   @supports not (top: calc(sin(1rad))) {
     .step-icon {
-      top: 111.925px; /* Увеличен на 10% */
-      left: 111.925px; /* Увеличен на 10% */
+      top: 123px; /* Увеличен на 10% */
+      left: 123px; /* Увеличен на 10% */
       transform: 
-        translate(calc(111.925px * 0.866), calc(111.925px * -0.5)) /* Увеличен на 10% */
+        translate(calc(123px * 0.866), calc(123px * -0.5)) /* Увеличен на 10% */
         translate(-50%, -50%)
         rotate(-20deg);
     }
   }
   
   .step-icon i {
-    font-size: 29.7px; /* Увеличен на 10% (было 27px) */
+    font-size: 32.67px; /* Увеличен на 10% (было 29.7px) */
   }
   
   .step-number {
-    font-size: 121px; /* Увеличен на 10% (было 110px) */
+    font-size: 133px; /* Увеличен на 10% (было 121px) */
   }
 }
 
 @media (min-width: 768px) {
   .workflow-steps {
     justify-content: center;
-    gap: 53.24px; /* Увеличен gap на 10% (было 48.4px) */
+    gap: 58.56px; /* Увеличен gap на 10% */
   }
   
   .step-circle {
-    width: 211.75px; /* Увеличен на 10% (было 192.5px) */
-    height: 211.75px; /* Увеличен на 10% (было 192.5px) */
-    margin: 0 0 60.5px; /* Увеличен вертикальный отступ на 10% (было 55px) */
+    width: 233px; /* Увеличен на 10% (было 211.75px) */
+    height: 233px; /* Увеличен на 10% (было 211.75px) */
+    margin: 0 0 66.55px; /* Увеличен вертикальный отступ на 10% */
   }
   
   .step-icon {
-    width: 60.5px; /* Увеличен на 10% (было 55px) */
-    height: 60.5px; /* Увеличен на 10% (было 55px) */
+    width: 66.55px; /* Увеличен на 10% (было 60.5px) */
+    height: 66.55px; /* Увеличен на 10% (было 60.5px) */
     transform: 
-      translate(105.875px, 105.875px) /* Увеличен на 10% */
-      translate(calc(105.875px * cos(330deg)), calc(105.875px * sin(330deg)))
+      translate(116.5px, 116.5px) /* Увеличен на 10% */
+      translate(calc(116.5px * cos(330deg)), calc(116.5px * sin(330deg)))
       translate(-50%, -50%)
       rotate(-20deg);
   }
   
   @supports not (top: calc(sin(1rad))) {
     .step-icon {
-      top: 105.875px; /* Увеличен на 10% */
-      left: 105.875px; /* Увеличен на 10% */
+      top: 116.5px; /* Увеличен на 10% */
+      left: 116.5px; /* Увеличен на 10% */
       transform: 
-        translate(calc(105.875px * 0.866), calc(105.875px * -0.5)) /* Увеличен на 10% */
+        translate(calc(116.5px * 0.866), calc(116.5px * -0.5)) /* Увеличен на 10% */
         translate(-50%, -50%)
         rotate(-20deg);
     }
   }
   
   .step-icon i {
-    font-size: 27.5px; /* Увеличен на 10% (было 25px) */
+    font-size: 30.25px; /* Увеличен на 10% (было 27.5px) */
   }
   
   .step-title {
-    font-size: 18.7px; /* Увеличен на 10% (было 17px) */
+    font-size: 20.57px; /* Увеличен на 10% (было 18.7px) */
   }
   
   .step-number {
-    font-size: 108.9px; /* Увеличен на 10% (было 99px) */
+    font-size: 119.79px; /* Увеличен на 10% (было 108.9px) */
   }
 }
 
 @media (max-width: 480px) {
   .step-circle {
-    width: 199.65px; /* Увеличен на 10% (было 181.5px) */
-    height: 199.65px; /* Увеличен на 10% (было 181.5px) */
-    margin: 0 13.31px 72.6px; /* Увеличен горизонтальный и вертикальный отступ на 10% */
+    width: 220px; /* Увеличен на 10% (было 199.65px) */
+    height: 220px; /* Увеличен на 10% (было 199.65px) */
+    margin: 0 14.64px 79.86px; /* Увеличен горизонтальный и вертикальный отступ на 10% */
   }
   
   .step-number {
-    font-size: 102.85px; /* Увеличен на 10% (было 93.5px) */
+    font-size: 113px; /* Увеличен на 10% (было 102.85px) */
   }
   
   .step-icon {
-    width: 60.5px; /* Увеличен на 10% (было 55px) */
-    height: 60.5px; /* Увеличен на 10% (было 55px) */
+    width: 66.55px; /* Увеличен на 10% (было 60.5px) */
+    height: 66.55px; /* Увеличен на 10% (было 60.5px) */
     transform: 
-      translate(99.825px, 99.825px) /* Увеличен на 10% */
-      translate(calc(99.825px * cos(330deg)), calc(99.825px * sin(330deg)))
+      translate(110px, 110px) /* Увеличен на 10% */
+      translate(calc(110px * cos(330deg)), calc(110px * sin(330deg)))
       translate(-50%, -50%)
       rotate(-20deg);
   }
   
   @supports not (top: calc(sin(1rad))) {
     .step-icon {
-      top: 99.825px; /* Увеличен на 10% */
-      left: 99.825px; /* Увеличен на 10% */
+      top: 110px; /* Увеличен на 10% */
+      left: 110px; /* Увеличен на 10% */
       transform: 
-        translate(calc(99.825px * 0.866), calc(99.825px * -0.5)) /* Увеличен на 10% */
+        translate(calc(110px * 0.866), calc(110px * -0.5)) /* Увеличен на 10% */
         translate(-50%, -50%)
         rotate(-20deg);
     }
   }
   
   .step-icon i {
-    font-size: 25.3px; /* Увеличен на 10% (было 23px) */
+    font-size: 27.83px; /* Увеличен на 10% (было 25.3px) */
   }
   
   .step-title {
-    font-size: 17.6px; /* Увеличен на 10% (было 16px) */
+    font-size: 19.36px; /* Увеличен на 10% (было 17.6px) */
   }
 }
 

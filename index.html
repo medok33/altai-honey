@@ -34,34 +34,13 @@
     opacity: 1;
     transform: none;
   }
-  
-  /* Минифицированные иконки */
-  .ri {
-    display: inline-block;
-    font-style: normal;
-    line-height: 1;
-  }
-  .ri-menu-line:before { content: "\f3c2"; }
-  .ri-plant-line:before { content: "\f6a5"; }
-  .ri-leaf-line:before { content: "\f1b5"; }
-  .ri-award-line:before { content: "\f3b9"; }
-  .ri-truck-line:before { content: "\f4f4"; }
-  .ri-heart-line:before { content: "\f1d6"; }
-  .ri-chat-3-line:before { content: "\f114"; }
-  .ri-phone-line:before { content: "\f3d2"; }
-  .ri-truck-line:before { content: "\f4f4"; }
-  .ri-gift-line:before { content: "\f1d9"; }
-  .ri-map-pin-2-line:before { content: "\f2b2"; }
-  .ri-mail-line:before { content: "\f2b7"; }
-  .ri-vk-line:before { content: "\f578"; }
-  .ri-telegram-line:before { content: "\f4c7"; }
-  .ri-check-line:before { content: "\f12b"; }
 </style>
 
 <!-- Предзагрузка критических ресурсов -->
 <link rel="preload" href="/images/image-1-mobile.webp" as="image" media="(max-width: 767px)" fetchpriority="high">
 <link rel="preload" href="/images/image-1.webp" as="image" media="(min-width: 768px)" fetchpriority="high">
 <link rel="preload" href="/fonts/Pacifico-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/remixicon.woff2" as="font" type="font/woff2" crossorigin>
 
 <!-- Мета-теги верификации -->
 <meta name="yandex-verification" content="9c5350476939e370" />
@@ -94,16 +73,18 @@
 
 <!-- Локальные шрифты -->
 <link rel="stylesheet" href="assets/css/fonts.css?v=3" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="assets/css/remixicon.min.css" media="print" onload="this.media='all'">
 <style>
   .font-pacifico {
     font-family: 'Pacifico', cursive;
   }
   
-  /* Оптимизированные стили для иконок */
-  .ri {
+  /* Улучшение отображения иконок до загрузки шрифта */
+  [class^="ri-"] {
     display: inline-block;
-    font-style: normal;
-    line-height: 1;
+    min-width: 1em;
+    min-height: 1em;
+    background-color: transparent;
   }
 </style>
 
@@ -154,7 +135,7 @@
     </div>
     
     <button class="md:hidden w-10 h-10 flex items-center justify-center">
-      <i class="ri ri-menu-line text-gray-900 ri-xl"></i>
+      <i class="ri-menu-line text-gray-900 ri-xl"></i>
     </button>
   </div>
   
@@ -200,7 +181,7 @@
       <!-- Карточка 1 -->
       <div class="benefit-card bg-white p-6 md:p-8 rounded-lg shadow-md flex flex-col items-center text-center">
         <div class="benefit-icon w-14 h-14 md:w-16 md:h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4 md:mb-6">
-          <i class="ri ri-plant-line ri-lg md:ri-xl text-primary"></i>
+          <i class="ri-plant-line ri-lg md:ri-xl text-primary"></i>
         </div>
         <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-3 md:mb-4">Экологически чистый продукт</h3>
         <p class="text-gray-600 text-sm md:text-base">Наши пасеки расположены в заповедных зонах Алтая, вдали от промышленных объектов и дорог.</p>
@@ -209,7 +190,7 @@
       <!-- Карточка 2 -->
       <div class="benefit-card bg-white p-6 md:p-8 rounded-lg shadow-md flex flex-col items-center text-center">
         <div class="benefit-icon w-14 h-14 md:w-16 md:h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4 md:mb-6">
-          <i class="ri ri-leaf-line ri-lg md:ri-xl text-primary"></i>
+          <i class="ri-leaf-line ri-lg md:ri-xl text-primary"></i>
         </div>
         <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-3 md:mb-4">Разнообразие сортов</h3>
         <p class="text-gray-600 text-sm md:text-base">Мы предлагаем широкий ассортимент меда с разнообразными вкусовыми и полезными свойствами.</p>
@@ -218,7 +199,7 @@
       <!-- Карточка 3 -->
       <div class="benefit-card bg-white p-6 md:p-8 rounded-lg shadow-md flex flex-col items-center text-center">
         <div class="benefit-icon w-14 h-14 md:w-16 md:h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4 md:mb-6">
-          <i class="ri ri-award-line ri-lg md:ri-xl text-primary"></i>
+          <i class="ri-award-line ri-lg md:ri-xl text-primary"></i>
         </div>
         <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-3 md:mb-4">Проверенное качество</h3>
         <p class="text-gray-600 text-sm md:text-base">Каждая партия меда проходит строгий контроль и проверку на соответствие стандартам.</p>
@@ -231,7 +212,7 @@
         <!-- Карточка 4 -->
         <div class="benefit-card bg-white p-6 md:p-8 rounded-lg shadow-md flex flex-col items-center text-center">
           <div class="benefit-icon w-14 h-14 md:w-16 md:h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4 md:mb-6">
-            <i class="ri ri-truck-line ri-lg md:ri-xl text-primary"></i>
+            <i class="ri-truck-line ri-lg md:ri-xl text-primary"></i>
           </div>
           <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-3 md:mb-4">Доставка по всей России</h3>
           <p class="text-gray-600 text-sm md:text-base">Мы доставляем наш мёд в любой регион России, сохраняя все полезные свойства продукта.</p>
@@ -240,7 +221,7 @@
         <!-- Карточка 5 -->
         <div class="benefit-card bg-white p-6 md:p-8 rounded-lg shadow-md flex flex-col items-center text-center">
           <div class="benefit-icon w-14 h-14 md:w-16 md:h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4 md:mb-6">
-            <i class="ri ri-heart-line ri-lg md:ri-xl text-primary"></i>
+            <i class="ri-heart-line ri-lg md:ri-xl text-primary"></i>
           </div>
           <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-3 md:mb-4">Семейные традиции</h3>
           <p class="text-gray-600 text-sm md:text-base">Наша пасека существует уже более 30 лет, и мы бережно храним секреты пчеловодства.</p>
@@ -377,21 +358,21 @@
         <!-- Исправленные элементы с галочками -->
         <div class="about-check-item">
           <div class="about-check-icon">
-            <i class="ri ri-check-line"></i>
+            <i class="ri-check-line"></i>
           </div>
           <p class="about-check-text">Более 300 пчелиных семей</p>
         </div>
         
         <div class="about-check-item">
           <div class="about-check-icon">
-            <i class="ri ri-check-line"></i>
+            <i class="ri-check-line"></i>
           </div>
           <p class="about-check-text">Ежегодно производим более 5 тонн мёда</p>
         </div>
         
         <div class="about-check-item">
           <div class="about-check-icon">
-            <i class="ri ri-check-line"></i>
+            <i class="ri-check-line"></i>
           </div>
           <p class="about-check-text">Работаем по экологическим стандартам, заботимся о пчелах и природе</p>
         </div>
@@ -412,21 +393,21 @@
           <div class="mb-4 md:mb-6">
             <div class="flex items-center space-x-3 mb-2">
               <div class="w-7 h-7 md:w-8 md:h-8 flex items-center justify-center bg-white bg-opacity-20 rounded-full">
-                <i class="ri ri-truck-line ri-sm md:ri-base text-white"></i>
+                <i class="ri-truck-line ri-sm md:ri-base text-white"></i>
               </div>
               <span class="font-medium text-sm md:text-base">Доставка по всей России</span>
             </div>
             
             <div class="flex items-center space-x-3 mb-2">
               <div class="w-7 h-7 md:w-8 md:h-8 flex items-center justify-center bg-white bg-opacity-20 rounded-full">
-                <i class="ri ri-secure-payment-line ri-sm md:ri-base text-white"></i>
+                <i class="ri-secure-payment-line ri-sm md:ri-base text-white"></i>
               </div>
               <span class="font-medium text-sm md:text-base">Безопасная оплата</span>
             </div>
             
             <div class="flex items-center space-x-3">
               <div class="w-7 h-7 md:w-8 md:h-8 flex items-center justify-center bg-white bg-opacity-20 rounded-full">
-                <i class="ri ri-shield-check-line ri-sm md:ri-base text-white"></i>
+                <i class="ri-shield-check-line ri-sm md:ri-base text-white"></i>
               </div>
               <span class="font-medium text-sm md:text-base">Гарантия качества</span>
             </div>
@@ -474,7 +455,7 @@
         <div class="step-circle">
           <div class="step-number">1</div>
           <div class="step-icon">
-            <i class="ri ri-chat-3-line"></i>
+            <i class="ri-chat-3-line"></i>
           </div>
           <div class="step-content">
             <h3 class="step-title">Вы оставляете заявку</h3>
@@ -485,7 +466,7 @@
         <div class="step-circle">
           <div class="step-number">2</div>
           <div class="step-icon">
-            <i class="ri ri-phone-line"></i>
+            <i class="ri-phone-line"></i>
           </div>
           <div class="step-content">
             <h3 class="step-title">Мы связываемся с вами</h3>
@@ -496,7 +477,7 @@
         <div class="step-circle">
           <div class="step-number">3</div>
           <div class="step-icon">
-            <i class="ri ri-truck-line"></i>
+            <i class="ri-truck-line"></i>
           </div>
           <div class="step-content">
             <h3 class="step-title">Отправляем вам мед</h3>
@@ -507,7 +488,7 @@
         <div class="step-circle">
           <div class="step-number">4</div>
           <div class="step-icon">
-            <i class="ri ri-gift-line"></i>
+            <i class="ri-gift-line"></i>
           </div>
           <div class="step-content">
             <h3 class="step-title">Вы наслаждаетесь вкусом</h3>
@@ -622,7 +603,7 @@
           <li>
             <a class="footer-link-item">
               <div class="contact-icon">
-                <i class="ri ri-map-pin-2-line ri-sm md:ri-base"></i>
+                <i class="ri-map-pin-2-line ri-sm md:ri-base"></i>
               </div>
               <span class="contact-text">Владимирская обл., г.Ковров</span>
             </a>
@@ -630,7 +611,7 @@
           <li>
             <a href="tel:+79209400222" class="footer-link-item">
               <div class="contact-icon">
-                <i class="ri ri-phone-line ri-sm md:ri-base"></i>
+                <i class="ri-phone-line ri-sm md:ri-base"></i>
               </div>
               <span class="contact-text">+7 (920) 940-02-22</span>
             </a>
@@ -638,7 +619,7 @@
           <li>
             <a href="mailto:altaymed.shop@yandex.ru" class="footer-link-item">
               <div class="contact-icon">
-                <i class="ri ri-mail-line ri-sm md:ri-base"></i>
+                <i class="ri-mail-line ri-sm md:ri-base"></i>
               </div>
               <span class="contact-text">altaymed.shop@yandex.ru</span>
             </a>
@@ -650,10 +631,10 @@
           <p class="text-base md:text-lg font-bold mb-2 md:mb-3">Следите за нами</p>
           <div class="flex space-x-2 md:space-x-3">
             <a href="https://vk.com/honeybuckwheat" target="_blank" class="social-icon-bw">
-              <i class="ri ri-vk-line ri-lg"></i>
+              <i class="ri-vk-line ri-lg"></i>
             </a>
             <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" class="social-icon-bw">
-              <i class="ri ri-telegram-line ri-lg"></i>
+              <i class="ri-telegram-line ri-lg"></i>
             </a>
             <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing" 
                target="_blank" class="social-icon-bw">
@@ -733,7 +714,7 @@
 <div id="success-modal" class="modal">
   <div class="success-modal-content">
     <div class="success-icon">
-      <i class="ri ri-check-line"></i>
+      <i class="ri-check-line"></i>
     </div>
     <h3 class="success-title">Заказ оформлен!</h3>
     <p class="success-text">Спасибо за ваш заказ! Мы свяжемся с вами в течение 10 минут для подтверждения деталей.</p>

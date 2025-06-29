@@ -752,10 +752,8 @@ img.product-image.loaded {
   left: 50%;
   width: 60px;
   height: 60px;
-  /* Начальное положение: 45 градусов по часовой стрелке */
-  transform: translateX(-50%) translateY(-50%) rotate(45deg) translate(100px) rotate(-45deg);
+  transform: translateX(-50%) translateY(-50%);
   z-index: 4;
-  transition: transform 0.3s ease;
 }
 
 /* Иконка внутри контейнера */
@@ -770,11 +768,26 @@ img.product-image.loaded {
   border: 2px solid #8B4513;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   transition: all 0.3s ease;
+  transform: translate(0, -100%);
 }
 
 /* При наведении увеличиваем иконку */
 .step-circle:hover .orbit-icon {
-  transform: scale(1.1);
+  transform: translate(0, -100%) scale(1.1);
+}
+
+/* Позиционирование иконок для каждого шага */
+.step-circle:nth-child(1) .orbit-icon {
+  transform: translate(0, -100%);
+}
+.step-circle:nth-child(2) .orbit-icon {
+  transform: translate(100%, 0);
+}
+.step-circle:nth-child(3) .orbit-icon {
+  transform: translate(0, 100%);
+}
+.step-circle:nth-child(4) .orbit-icon {
+  transform: translate(-100%, 0);
 }
 
 /* Адаптация для планшетов */
@@ -784,23 +797,14 @@ img.product-image.loaded {
     height: 180px;
   }
   
-  .step-number {
-    font-size: 90px;
+  .icon-container {
+    width: 55px;
+    height: 55px;
   }
   
   .orbit-icon {
     width: 55px;
     height: 55px;
-  }
-  
-  .icon-container {
-    width: 55px;
-    height: 55px;
-    transform: translateX(-50%) translateY(-50%) rotate(45deg) translate(90px) rotate(-45deg);
-  }
-  
-  .step-title {
-    font-size: 17px;
   }
 }
 
@@ -817,23 +821,14 @@ img.product-image.loaded {
     height: 170px;
   }
   
-  .step-number {
-    font-size: 85px;
+  .icon-container {
+    width: 50px;
+    height: 50px;
   }
   
   .orbit-icon {
     width: 50px;
     height: 50px;
-  }
-  
-  .icon-container {
-    width: 50px;
-    height: 50px;
-    transform: translateX(-50%) translateY(-50%) rotate(45deg) translate(85px) rotate(-45deg);
-  }
-  
-  .step-title {
-    font-size: 16px;
   }
   
   .workflow-title {
@@ -847,10 +842,6 @@ img.product-image.loaded {
   .step-circle {
     width: 160px;
     height: 160px;
-  }
-  
-  .icon-container {
-    transform: translateX(-50%) translateY(-50%) rotate(45deg) translate(80px) rotate(-45deg);
   }
 }
 

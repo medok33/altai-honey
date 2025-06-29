@@ -7,48 +7,38 @@
 <title>Алтайский мёд - Натуральные продукты пчеловодства</title>
 <meta name="description" content="Натуральный алтайский мёд от производителя. Доставка по всей России. Гречишный, таёжный, цветочный мёд.">
 
-<!-- Критический CSS для герой-секции (минифицированный) -->
+<!-- Критический CSS для герой-секции -->
 <style>
-.hero-section{background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('/images/image-1-mobile.webp');background-size:cover;background-position:center;min-height:60vh}@media (min-width:768px){.hero-section{background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('/images/image-1.webp');min-height:80vh}}.hero-section>.container{display:flex;flex-direction:column;justify-content:center}.critical-content{opacity:1;transform:none}
-
-/* Встроенные шрифты с font-display: swap */
-@font-face {
-  font-family: 'Pacifico';
-  src: url('/fonts/Pacifico-Regular.woff2') format('woff2'),
-       url('/fonts/Pacifico-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Open Sans';
-  src: url('/fonts/OpenSans-Regular.woff2') format('woff2'),
-       url('/fonts/OpenSans-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Open Sans';
-  src: url('/fonts/OpenSans-Medium.woff2') format('woff2'),
-       url('/fonts/OpenSans-Medium.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Open Sans';
-  src: url('/fonts/OpenSans-Bold.woff2') format('woff2'),
-       url('/fonts/OpenSans-Bold.woff') format('woff');
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-.font-pacifico{font-family:'Pacifico',cursive}[class^="ri-"]{display:inline-block;min-width:1em;min-height:1em;background-color:transparent}
+  .hero-section {
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/images/image-1-mobile.webp');
+    background-size: cover;
+    background-position: center;
+    min-height: 60vh;
+  }
+  @media (min-width: 768px) {
+    .hero-section {
+      background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/images/image-1.webp');
+      min-height: 80vh;
+    }
+  }
+  
+  /* Оптимизированные стили для LCP */
+  .hero-section > .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  /* Стили для быстрого отображения контента */
+  .critical-content {
+    opacity: 1;
+    transform: none;
+  }
 </style>
 
 <!-- Предзагрузка критических ресурсов -->
-<link rel="preload" href="/images/image-1.webp" as="image" fetchpriority="high">
+<link rel="preload" href="/images/image-1-mobile.webp" as="image" media="(max-width: 767px)" fetchpriority="high">
+<link rel="preload" href="/images/image-1.webp" as="image" media="(min-width: 768px)" fetchpriority="high">
 <link rel="preload" href="/fonts/Pacifico-Regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.woff" as="font" type="font/woff2" crossorigin>
 
@@ -78,11 +68,27 @@
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#9f5524">
 
-<!-- Иконки Remix (оптимизированная загрузка) -->
+<!-- Иконки (оптимизированная загрузка) -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" media="print" onload="this.media='all'">
 
 <!-- Локальный Tailwind CSS -->
 <link rel="stylesheet" href="assets/css/tailwind.min.css?v=3">
+
+<!-- Локальные шрифты -->
+<link rel="stylesheet" href="assets/css/fonts.css?v=3" media="print" onload="this.media='all'">
+<style>
+  .font-pacifico {
+    font-family: 'Pacifico', cursive;
+  }
+  
+  /* Улучшение отображения иконок до загрузки шрифта */
+  [class^="ri-"] {
+    display: inline-block;
+    min-width: 1em;
+    min-height: 1em;
+    background-color: transparent;
+  }
+</style>
 
 <!-- Schema.org разметка -->
 <script type="application/ld+json">
@@ -242,7 +248,6 @@
             sizes="(max-width: 600px) 400px, 800px"
             alt="Разнотравный мёд с Алтая" 
             loading="lazy"
-            decoding="async"
             width="800"
             height="600"
             class="w-full h-full object-cover object-top product-image"
@@ -267,7 +272,6 @@
             sizes="(max-width: 600px) 400px, 800px"
             alt="Таёжный мёд из Алтайского края" 
             loading="lazy"
-            decoding="async"
             width="800"
             height="600"
             class="w-full h-full object-cover object-top product-image"
@@ -292,7 +296,6 @@
             sizes="(max-width: 600px) 400px, 800px"
             alt="Гречишный мёд от производителя" 
             loading="lazy"
-            decoding="async"
             width="800"
             height="600"
             class="w-full h-full object-cover object-top product-image"
@@ -331,7 +334,6 @@
             sizes="(max-width: 600px) 400px, 800px"
             alt="Семейная пасека на Алтае" 
             loading="lazy"
-            decoding="async"
             width="800"
             height="533"
             class="w-full h-auto product-image"
@@ -344,7 +346,6 @@
             sizes="(max-width: 600px) 400px, 800px"
             alt="Экологически чистый мёд с Алтая" 
             loading="lazy"
-            decoding="async"
             width="800"
             height="533"
             class="w-full h-auto product-image"
@@ -508,34 +509,34 @@
       <!-- Лого и описание -->
       <div class="footer-column">
         <div class="logo-wrapper">
-          <a href="/" class="text-2xl md:text-3xl font-pacifico mb-3 md:mb-4 block text-white">Алтайский мёд</a>
+          <a href="/" class="text-2xl md:text-3xl font-pacifico mb-3 md:mb-4 block">Алтайский мёд</a>
         </div>
         <div class="description-wrapper">
-          <p class="text-xs text-white">Натуральные продукты пчеловодства с Алтайских гор.</p>
-          <p class="text-xs text-white">© 2025 Алтайский мёд. Все права защищены.</p>
+          <p class="text-xs">Натуральные продукты пчеловодства с Алтайских гор.</p>
+          <p class="text-xs">© 2025 Алтайский мёд. Все права защищены.</p>
         </div>
       </div>
       
       <!-- Каталог -->
       <div class="footer-column">
-        <h4 class="text-base md:text-lg font-bold text-white">Каталог</h4>
+        <h4 class="text-base md:text-lg font-bold">Каталог</h4>
         <ul>
           <li>
             <a href="#product-1" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
               <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base text-white">Разнотравье</span>
+              <span class="text-sm md:text-base">Разнотравье</span>
             </a>
           </li>
           <li>
             <a href="#product-2" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
               <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base text-white">Таёжный мёд</span>
+              <span class="text-sm md:text-base">Таёжный мёд</span>
             </a>
           </li>
           <li>
             <a href="#product-3" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
               <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base text-white">Гречишный мёд</span>
+              <span class="text-sm md:text-base">Гречишный мёд</span>
             </a>
           </li>
         </ul>
@@ -543,24 +544,24 @@
       
       <!-- Материалы -->
       <div class="footer-column">
-        <h4 class="text-base md:text-lg font-bold text-white">Материалы</h4>
+        <h4 class="text-base md:text-lg font-bold">Материалы</h4>
         <ul>
           <li>
             <a href="/blog/" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
               <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base text-white">Блог</span>
+              <span class="text-sm md:text-base">Блог</span>
             </a>
           </li>
           <li>
             <a href="/faq/" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
               <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base text-white">FAQ</span>
+              <span class="text-sm md:text-base">FAQ</span>
             </a>
           </li>
           <li>
             <a href="/legal.html" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
               <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base text-white">Правовая информация</span>
+              <span class="text-sm md:text-base">Правовая информация</span>
             </a>
           </li>
         </ul>
@@ -568,30 +569,30 @@
       
       <!-- Информация -->
       <div class="footer-column">
-        <h4 class="text-base md:text-lg font-bold text-white">Информация</h4>
+        <h4 class="text-base md:text-lg font-bold">Информация</h4>
         <ul>
           <li>
             <a href="#benefits" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
               <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base text-white">Преимущества</span>
+              <span class="text-sm md:text-base">Преимущества</span>
             </a>
           </li>
           <li>
             <a href="#about" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
               <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base text-white">О нас</span>
+              <span class="text-sm md:text-base">О нас</span>
             </a>
           </li>
           <li>
             <a href="#footer-contacts" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
               <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base text-white">Контакты</span>
+              <span class="text-sm md:text-base">Контакты</span>
             </a>
           </li>
           <li>
             <a href="/delivery.html" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
               <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base text-white">Доставка и оплата</span>
+              <span class="text-sm md:text-base">Доставка и оплата</span>
             </a>
           </li>
         </ul>
@@ -599,14 +600,14 @@
       
       <!-- Контакты -->
       <div class="footer-column">
-        <h4 class="text-base md:text-lg font-bold text-white">Контакты</h4>
+        <h4 class="text-base md:text-lg font-bold">Контакты</h4>
         <ul>
           <li>
             <a class="footer-link-item">
               <div class="contact-icon">
                 <i class="ri-map-pin-2-line ri-sm md:ri-base"></i>
               </div>
-              <span class="contact-text text-white">Владимирская обл., г.Ковров</span>
+              <span class="contact-text">Владимирская обл., г.Ковров</span>
             </a>
           </li>
           <li>
@@ -614,7 +615,7 @@
               <div class="contact-icon">
                 <i class="ri-phone-line ri-sm md:ri-base"></i>
               </div>
-              <span class="contact-text text-white">+7 (920) 940-02-22</span>
+              <span class="contact-text">+7 (920) 940-02-22</span>
             </a>
           </li>
           <li>
@@ -622,14 +623,14 @@
               <div class="contact-icon">
                 <i class="ri-mail-line ri-sm md:ri-base"></i>
               </div>
-              <span class="contact-text text-white">altaymed.shop@yandex.ru</span>
+              <span class="contact-text">altaymed.shop@yandex.ru</span>
             </a>
           </li>
         </ul>
         
         <!-- Социальные сети -->
         <div class="mt-4 md:mt-6">
-          <p class="text-base md:text-lg font-bold mb-2 md:mb-3 text-white">Следите за нами</p>
+          <p class="text-base md:text-lg font-bold mb-2 md:mb-3">Следите за нами</p>
           <div class="flex space-x-2 md:space-x-3">
             <a href="https://vk.com/honeybuckwheat" target="_blank" class="social-icon-bw">
               <i class="ri-vk-line ri-lg"></i>
@@ -727,41 +728,38 @@
 // Оптимизированная загрузка аналитики
 function loadAnalytics() {
   // Yandex Metrika
-  try {
-    var yaScript = document.createElement('script');
-    yaScript.src = 'https://mc.yandex.ru/metrika/tag.js';
-    yaScript.async = true;
-    document.head.appendChild(yaScript);
+  var yaScript = document.createElement('script');
+  yaScript.src = 'https://mc.yandex.ru/metrika/tag.js';
+  yaScript.async = true;
+  document.head.appendChild(yaScript);
 
-    yaScript.onload = function() {
-      if (typeof ym === 'function') {
-        ym(102951378, "init", {
-          clickmap:true,
-          trackLinks:true,
-          accurateTrackBounce:true
-        });
-      }
-    };
-  } catch (e) {
-    console.error('Yandex Metrika loading error:', e);
-  }
+  yaScript.onload = function() {
+    ym(102951378, "init", {
+      clickmap:true,
+      trackLinks:true,
+      accurateTrackBounce:true
+    });
+  };
 }
 
 // Загружаем аналитику после полной загрузки страницы
 window.addEventListener('load', function() {
-  setTimeout(loadAnalytics, 1500);
+  setTimeout(loadAnalytics, 5000);
 });
 
 document.addEventListener('DOMContentLoaded', function() {
   const mobileMenuButton = document.querySelector('.md\\:hidden');
   const mobileMenu = document.getElementById('mobile-menu');
   
-  if (mobileMenuButton && mobileMenu) {
-    mobileMenuButton.addEventListener('click', function() {
-      mobileMenu.classList.toggle('hidden');
-      mobileMenu.classList.toggle('block');
-    });
-  }
+  mobileMenuButton.addEventListener('click', function() {
+    if (mobileMenu.classList.contains('hidden')) {
+      mobileMenu.classList.remove('hidden');
+      mobileMenu.classList.add('block');
+    } else {
+      mobileMenu.classList.add('hidden');
+      mobileMenu.classList.remove('block');
+    }
+  });
   
   // Плавная прокрутка к якорям
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -779,7 +777,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         // Закрыть мобильное меню при клике на ссылку
-        if (mobileMenu && !mobileMenu.classList.contains('hidden') && window.innerWidth < 768) {
+        if (!mobileMenu.classList.contains('hidden') && window.innerWidth < 768) {
           mobileMenu.classList.add('hidden');
           mobileMenu.classList.remove('block');
         }
@@ -810,13 +808,8 @@ document.addEventListener('DOMContentLoaded', function() {
     return new Promise((resolve) => {
       xhr.onload = function() {
         if (xhr.status === 200) {
-          try {
-            const response = JSON.parse(xhr.responseText);
-            resolve(response.ok);
-          } catch (e) {
-            console.error('Telegram response parse error:', e);
-            resolve(false);
-          }
+          const response = JSON.parse(xhr.responseText);
+          resolve(response.ok);
         } else {
           console.error('Ошибка отправки:', xhr.statusText);
           resolve(false);
@@ -861,11 +854,9 @@ document.addEventListener('DOMContentLoaded', function() {
         if (success) {
           // Показываем модальное окно успеха
           const successModal = document.getElementById('success-modal');
-          if (successModal) {
-            successModal.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-            orderForm.reset();
-          }
+          successModal.style.display = 'flex';
+          document.body.style.overflow = 'hidden';
+          orderForm.reset();
         } else {
           alert('⚠️ Ошибка при отправке заказа. Пожалуйста, позвоните нам: +7 (920) 940-02-22');
         }
@@ -889,58 +880,44 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Функция для обновления стоимости
   function updateTotalPrice() {
-    if (!quantityInput || !totalPrice || !pricePerLiter) return;
-    
     const quantity = parseInt(quantityInput.value) || 1;
     const total = currentPrice * quantity;
     totalPrice.textContent = total.toLocaleString('ru-RU') + ' ₽';
-    
-    const priceSpan = pricePerLiter.querySelector('span');
-    if (priceSpan) {
-      priceSpan.textContent = currentPrice.toLocaleString('ru-RU');
-    }
+    pricePerLiter.querySelector('span').textContent = currentPrice.toLocaleString('ru-RU');
   }
   
   // Открытие модального окна
-  if (buyButtons && modal && quickProductInput) {
-    buyButtons.forEach(button => {
-      button.addEventListener('click', function() {
-        const product = this.getAttribute('data-product');
-        const price = parseInt(this.getAttribute('data-price'));
-        currentPrice = price;
-        
-        quickProductInput.value = product;
-        modal.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-        
-        // Обновляем стоимость
-        updateTotalPrice();
-      });
+  buyButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const product = this.getAttribute('data-product');
+      const price = parseInt(this.getAttribute('data-price'));
+      currentPrice = price;
+      
+      quickProductInput.value = product;
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+      
+      // Обновляем стоимость
+      updateTotalPrice();
     });
-  }
+  });
   
   // Закрытие модального окна
-  if (closeModal) {
-    closeModal.addEventListener('click', function() {
-      modal.style.display = 'none';
-      document.body.style.overflow = 'auto';
-    });
-  }
+  closeModal.addEventListener('click', function() {
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  });
   
   // Закрытие при клике вне окна
-  if (modal) {
-    window.addEventListener('click', function(event) {
-      if (event.target === modal) {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-      }
-    });
-  }
+  window.addEventListener('click', function(event) {
+    if (event.target === modal) {
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+  });
   
   // Обновление стоимости при изменении количества
-  if (quantityInput) {
-    quantityInput.addEventListener('input', updateTotalPrice);
-  }
+  quantityInput.addEventListener('input', updateTotalPrice);
   
   // Обработка быстрого заказа
   if (quickOrderForm) {
@@ -971,20 +948,16 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (success) {
           // Закрываем модальное окно заказа
-          if (modal) {
-            modal.style.display = 'none';
-          }
+          modal.style.display = 'none';
           document.body.style.overflow = 'auto';
           
           // Показываем модальное окно успеха
           const successModal = document.getElementById('success-modal');
-          if (successModal) {
-            successModal.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-            
-            // Сбрасываем форму
-            quickOrderForm.reset();
-          }
+          successModal.style.display = 'flex';
+          document.body.style.overflow = 'hidden';
+          
+          // Сбрасываем форму
+          quickOrderForm.reset();
         } else {
           alert('⚠️ Ошибка при отправке заказа. Пожалуйста, позвоните нам.');
         }
@@ -999,70 +972,62 @@ document.addEventListener('DOMContentLoaded', function() {
   const closeSuccessModal = document.getElementById('close-success-modal');
   const successModal = document.getElementById('success-modal');
   
-  if (closeSuccessModal && successModal) {
-    closeSuccessModal.addEventListener('click', function() {
+  closeSuccessModal.addEventListener('click', function() {
+    successModal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  });
+  
+  // Закрытие при клике вне окна
+  window.addEventListener('click', function(event) {
+    if (event.target === successModal) {
       successModal.style.display = 'none';
       document.body.style.overflow = 'auto';
-    });
-    
-    // Закрытие при клике вне окна
-    window.addEventListener('click', function(event) {
-      if (event.target === successModal) {
-        successModal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-      }
-    });
-  }
+    }
+  });
   
   // Анимация для появления секций при скролле
   const animateSections = document.querySelectorAll('.section-animate');
   
-  if (animateSections.length) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('section-visible');
-        }
-      });
-    }, {
-      threshold: 0.1
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('section-visible');
+      }
     });
-    
-    animateSections.forEach(section => {
-      observer.observe(section);
-    });
-  }
+  }, {
+    threshold: 0.1
+  });
+  
+  animateSections.forEach(section => {
+    observer.observe(section);
+  });
   
   // Анимация для шагов в блоке "Как мы работаем"
   const workflowSteps = document.querySelectorAll('.step-circle');
   
-  if (workflowSteps.length) {
-    const stepObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            entry.target.classList.add('animate');
-          }, 300);
-        }
-      });
-    }, {
-      threshold: 0.2
+  const stepObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('animate');
+        }, 300);
+      }
     });
-    
-    workflowSteps.forEach(step => {
-      stepObserver.observe(step);
-    });
-  }
+  }, {
+    threshold: 0.2
+  });
+  
+  workflowSteps.forEach(step => {
+    stepObserver.observe(step);
+  });
   
   // Предзагрузка изображений для плавного появления
   const productImages = document.querySelectorAll('.product-image');
-  if (productImages.length) {
-    productImages.forEach(img => {
-      if (img.complete) {
-        img.classList.add('loaded');
-      }
-    });
-  }
+  productImages.forEach(img => {
+    if (img.complete) {
+      img.classList.add('loaded');
+    }
+  });
 });
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/102951378" style="position:absolute; left:-9999px;" alt="" /></div></noscript>

@@ -1,12 +1,20 @@
 User-agent: *
 Allow: /
-
 Disallow: /cart
 Disallow: /user
 Disallow: /search
 Disallow: /admin
+Disallow: /checkout
+Disallow: /account
 Disallow: /*?*
-
+Disallow: /private/
 Crawl-delay: 2
+
+# Специфичные правила для ботов
+User-agent: AhrefsBot
+Crawl-delay: 5
+
+User-agent: SemrushBot
+Crawl-delay: 5
 
 Sitemap: https://altaymed.shop/sitemap.xml

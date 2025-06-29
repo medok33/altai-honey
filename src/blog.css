@@ -290,3 +290,35 @@ footer a:hover {
   text-align: center;
   padding: 2rem 1rem;
 }
+/* src/blog.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Подключение шрифтов */
+@font-face {
+  font-family: 'Pacifico';
+  src: url('/fonts/Pacifico-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/fonts/OpenSans-VariableFont.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Основные стили */
+body {
+  font-family: 'Open Sans', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+/* ... весь остальной CSS из предыдущего ответа ... */

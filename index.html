@@ -5,7 +5,7 @@
 <link rel="canonical" href="https://altaymed.shop/" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Алтайский мёд - Натуральные продукты пчеловодства</title>
-<meta name="description" content="Натуральный алтайский мёд от производителя. Доставка по всей России. Гречишный, таёжный, цветочный мёд">
+<meta name="description" content="Натуральный алтайский мёд от производителя. Доставка по всей России. Гречишный, таёжный, цветочный мёд.">
 
 <!-- Критический CSS для герой-секции -->
 <style>
@@ -616,259 +616,6 @@ img.product-image.loaded {
   opacity: 1;
 }
 
-/* Новые стили для блока "Как мы работаем" */
-.workflow-container {
-  position: relative;
-  padding: 60px 0;
-}
-
-.workflow-steps {
-  display: flex;
-  justify-content: space-around;
-  position: relative;
-  z-index: 2;
-  flex-wrap: wrap;
-}
-
-.step-circle {
-  width: 210px;
-  height: 210px;
-  border-radius: 50%;
-  background: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-  border: 2px solid #8B4513;
-  position: relative;
-  z-index: 3;
-  transition: all 0.3s ease;
-  padding: 25px;
-  margin: 0 10px 60px;
-  overflow: visible;
-  opacity: 0;
-  transform: translateY(30px);
-  animation-fill-mode: forwards;
-}
-
-.step-circle.animate {
-  animation: fadeInUp 0.6s ease-out forwards;
-}
-
-.step-circle:hover {
-  transform: scale(1.15);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-
-.step-number {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 110px;
-  font-weight: 800;
-  color: rgba(139, 69, 19, 0.08);
-  z-index: 1;
-  pointer-events: none;
-}
-
-.step-content {
-  position: relative;
-  z-index: 4;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
-  text-align: center;
-  transform: translateY(0);
-}
-
-/* ИЗМЕНЕНИЕ: уменьшили размер иконок на 20% */
-.step-icon {
-  position: absolute;
-  width: 52px;   /* было 65px */
-  height: 52px;  /* было 65px */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: white;
-  border-radius: 50%;
-  border: 2px solid #8B4513;
-  z-index: 5;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  top: 0;
-  left: 0;
-  transform: 
-    translate(105px, 105px)
-    translate(105px * cos(330deg), 105px * sin(330deg))
-    translate(-50%, -50%)
-    rotate(-20deg);
-}
-
-@supports (top: calc(sin(1rad))) {
-  .step-icon {
-    transform: 
-      translate(105px, 105px)
-      translate(calc(105px * cos(330deg)), calc(105px * sin(330deg)))
-      translate(-50%, -50%)
-      rotate(-20deg);
-  }
-}
-
-.step-icon i {
-  font-size: 30px;
-  color: #8B4513;
-  transform: rotate(20deg);
-}
-
-.step-title {
-  font-size: 18px;
-  font-weight: 700;
-  color: #2d3748;
-  line-height: 1.4;
-  text-align: center;
-}
-
-@supports not (top: calc(sin(1rad))) {
-  .step-icon {
-    top: 105px;
-    left: 105px;
-    transform: 
-      translate(calc(105px * 0.866), calc(105px * -0.5))
-      translate(-50%, -50%)
-      rotate(-20deg);
-  }
-}
-
-@media (max-width: 1024px) {
-  .step-circle {
-    width: 185px;
-    height: 185px;
-    margin: 0 5px 50px;
-  }
-  
-  /* ИЗМЕНЕНИЕ: уменьшили размер иконок на 20% */
-  .step-icon {
-    width: 48px;   /* было 60px */
-    height: 48px;  /* было 60px */
-    transform: 
-      translate(92.5px, 92.5px)
-      translate(calc(92.5px * cos(330deg)), calc(92.5px * sin(330deg)))
-      translate(-50%, -50%)
-      rotate(-20deg);
-  }
-  
-  @supports not (top: calc(sin(1rad))) {
-    .step-icon {
-      top: 92.5px;
-      left: 92.5px;
-      transform: 
-        translate(calc(92.5px * 0.866), calc(92.5px * -0.5))
-        translate(-50%, -50%)
-        rotate(-20deg);
-    }
-  }
-  
-  .step-icon i {
-    font-size: 27px;
-  }
-  
-  .step-number {
-    font-size: 100px;
-  }
-}
-
-@media (max-width: 768px) {
-  .workflow-steps {
-    justify-content: center;
-    gap: 40px;
-  }
-  
-  .step-circle {
-    width: 175px;
-    height: 175px;
-    margin: 0 0 50px;
-  }
-  
-  /* ИЗМЕНЕНИЕ: уменьшили размер иконок на 20% */
-  .step-icon {
-    width: 44px;   /* было 55px */
-    height: 44px;  /* было 55px */
-    transform: 
-      translate(87.5px, 87.5px)
-      translate(calc(87.5px * cos(330deg)), calc(87.5px * sin(330deg)))
-      translate(-50%, -50%)
-      rotate(-20deg);
-  }
-  
-  @supports not (top: calc(sin(1rad))) {
-    .step-icon {
-      top: 87.5px;
-      left: 87.5px;
-      transform: 
-        translate(calc(87.5px * 0.866), calc(87.5px * -0.5))
-        translate(-50%, -50%)
-        rotate(-20deg);
-    }
-  }
-  
-  .step-icon i {
-    font-size: 25px;
-  }
-  
-  .step-title {
-    font-size: 17px;
-  }
-  
-  .step-number {
-    font-size: 90px;
-  }
-}
-
-@media (max-width: 480px) {
-  .step-circle {
-    width: 165px;
-    height: 165px;
-  }
-  
-  .step-number {
-    font-size: 85px;
-  }
-  
-  /* ИЗМЕНЕНИЕ: уменьшили размер иконок на 20% */
-  .step-icon {
-    width: 40px;   /* было 50px */
-    height: 40px;  /* было 50px */
-    transform: 
-      translate(82.5px, 82.5px)
-      translate(calc(82.5px * cos(330deg)), calc(82.5px * sin(330deg)))
-      translate(-50%, -50%)
-      rotate(-20deg);
-  }
-  
-  @supports not (top: calc(sin(1rad))) {
-    .step-icon {
-      top: 82.5px;
-      left: 82.5px;
-      transform: 
-        translate(calc(82.5px * 0.866), calc(82.5px * -0.5))
-        translate(-50%, -50%)
-        rotate(-20deg);
-    }
-  }
-  
-  .step-icon i {
-    font-size: 23px;
-  }
-  
-  .step-title {
-    font-size: 16px;
-  }
-}
-
 /* ИСПРАВЛЕНИЯ ДЛЯ ПОДВАЛА */
 .contact-item {
   display: flex;
@@ -940,8 +687,7 @@ img.product-image.loaded {
 /* Оптимизации для мобильной производительности */
 @media (max-width: 768px) {
   .benefit-card:hover, 
-  .product-card:hover,
-  .step-circle:hover {
+  .product-card:hover {
     transform: none !important;
     box-shadow: none !important;
   }
@@ -954,6 +700,251 @@ img.product-image.loaded {
     min-height: 60vh;
   }
 }
+
+/* =============== НОВЫЕ СТИЛИ ДЛЯ РАЗДЕЛА "КАК МЫ РАБОТАЕМ" =============== */
+
+/* Контейнер для всего раздела */
+.workflow-container {
+  position: relative;
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+/* Заголовок раздела */
+.workflow-title {
+  text-align: center;
+  margin-bottom: 60px;
+  font-family: 'Pacifico', cursive;
+  font-size: 2.5rem;
+  color: #8B4513;
+}
+
+/* Обертка для шагов */
+.workflow-steps {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Основной круг шага */
+.step-circle {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 25px rgba(139, 69, 19, 0.15);
+  border: 2px solid #8B4513;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+/* Номер шага (фон) */
+.step-number {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 100px;
+  font-weight: 800;
+  color: rgba(139, 69, 19, 0.08);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Контент внутри круга */
+.step-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Заголовок шага */
+.step-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #2d3748;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Иконка шага */
+.step-icon {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 50%;
+  border: 2px solid #8B4513;
+  z-index: 4;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+/* Орбита для анимации */
+.orbit-path {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  animation: rotateOrbit 15s linear infinite paused;
+}
+
+/* Анимация вращения по орбите */
+@keyframes rotateOrbit {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Контейнер для иконки с анимацией */
+.icon-container {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  transform: translateX(-50%);
+  transition: transform 0.3s ease;
+}
+
+/* При наведении запускаем анимацию */
+.step-circle:hover .orbit-path {
+  animation-play-state: running;
+}
+
+.step-circle:hover .icon-container {
+  transform: translateX(-50%) scale(1.15);
+}
+
+/* Иконка внутри контейнера */
+.orbit-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 50%;
+  border: 2px solid #8B4513;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+/* Адаптация для планшетов */
+@media (max-width: 1024px) {
+  .step-circle {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .step-number {
+    font-size: 90px;
+  }
+  
+  .step-icon {
+    width: 55px;
+    height: 55px;
+    top: -27px;
+  }
+  
+  .orbit-icon {
+    width: 55px;
+    height: 55px;
+  }
+  
+  .icon-container {
+    width: 55px;
+    height: 55px;
+  }
+  
+  .step-title {
+    font-size: 17px;
+  }
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+  .workflow-steps {
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+  }
+  
+  .step-circle {
+    width: 170px;
+    height: 170px;
+  }
+  
+  .step-number {
+    font-size: 85px;
+  }
+  
+  .step-icon {
+    width: 50px;
+    height: 50px;
+    top: -25px;
+  }
+  
+  .orbit-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .icon-container {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .step-title {
+    font-size: 16px;
+  }
+  
+  .workflow-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+}
+
+/* Анимация для появления шагов */
+.step-circle {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.step-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Задержки для анимации шагов */
+.step-circle:nth-child(1) { transition-delay: 0.1s; }
+.step-circle:nth-child(2) { transition-delay: 0.2s; }
+.step-circle:nth-child(3) { transition-delay: 0.3s; }
+.step-circle:nth-child(4) { transition-delay: 0.4s; }
 </style>
 </head>
 <body>
@@ -1281,54 +1272,64 @@ img.product-image.loaded {
   </div>
 </section>
 
-<!-- Как мы работаем -->
+<!-- Как мы работаем - ПЕРЕРАБОТАННЫЙ РАЗДЕЛ -->
 <section id="workflow" class="py-16 md:py-20 bg-[#F5DEB3] bg-opacity-20 texture-bg section-animate">
-  <div class="container mx-auto px-4 md:px-6">
-    <h2 class="text-3xl md:text-4xl font-pacifico text-center text-secondary mb-16 md:mb-20">Как мы работаем</h2>
+  <div class="workflow-container">
+    <h2 class="workflow-title">Как мы работаем</h2>
     
-    <div class="workflow-container">
-      <div class="workflow-steps">
-        <!-- Шаг 1 -->
-        <div class="step-circle">
-          <div class="step-number">1</div>
-          <div class="step-icon">
-            <img src="/images/icons/chat.svg" alt="Заявка" class="w-7/10 h-7/10 rotate-[20deg]">
-          </div>
-          <div class="step-content">
-            <h3 class="step-title">Вы оставляете заявку</h3>
+    <div class="workflow-steps">
+      <!-- Шаг 1 -->
+      <div class="step-circle">
+        <div class="step-number">1</div>
+        <div class="orbit-path"></div>
+        <div class="step-content">
+          <h3 class="step-title">Вы оставляете заявку</h3>
+        </div>
+        <div class="icon-container">
+          <div class="orbit-icon">
+            <img src="/images/icons/chat.svg" alt="Заявка" class="w-7 h-7">
           </div>
         </div>
-        
-        <!-- Шаг 2 -->
-        <div class="step-circle">
-          <div class="step-number">2</div>
-          <div class="step-icon">
-            <img src="/images/icons/phone.svg" alt="Звонок" class="w-7/10 h-7/10 rotate-[20deg]">
-          </div>
-          <div class="step-content">
-            <h3 class="step-title">Мы связываемся с вами</h3>
+      </div>
+      
+      <!-- Шаг 2 -->
+      <div class="step-circle">
+        <div class="step-number">2</div>
+        <div class="orbit-path"></div>
+        <div class="step-content">
+          <h3 class="step-title">Мы связываемся с вами</h3>
+        </div>
+        <div class="icon-container">
+          <div class="orbit-icon">
+            <img src="/images/icons/phone.svg" alt="Звонок" class="w-7 h-7">
           </div>
         </div>
-        
-        <!-- Шаг 3 -->
-        <div class="step-circle">
-          <div class="step-number">3</div>
-          <div class="step-icon">
-            <img src="/images/icons/truck.svg" alt="Доставка" class="w-7/10 h-7/10 rotate-[20deg]">
-          </div>
-          <div class="step-content">
-            <h3 class="step-title">Отправляем вам мед</h3>
+      </div>
+      
+      <!-- Шаг 3 -->
+      <div class="step-circle">
+        <div class="step-number">3</div>
+        <div class="orbit-path"></div>
+        <div class="step-content">
+          <h3 class="step-title">Отправляем вам мед</h3>
+        </div>
+        <div class="icon-container">
+          <div class="orbit-icon">
+            <img src="/images/icons/truck.svg" alt="Доставка" class="w-7 h-7">
           </div>
         </div>
-        
-        <!-- Шаг 4 -->
-        <div class="step-circle">
-          <div class="step-number">4</div>
-          <div class="step-icon">
-            <img src="/images/icons/gift.svg" alt="Подарок" class="w-7/10 h-7/10 rotate-[20deg]">
-          </div>
-          <div class="step-content">
-            <h3 class="step-title">Вы наслаждаетесь вкусом</h3>
+      </div>
+      
+      <!-- Шаг 4 -->
+      <div class="step-circle">
+        <div class="step-number">4</div>
+        <div class="orbit-path"></div>
+        <div class="step-content">
+          <h3 class="step-title">Вы наслаждаетесь вкусом</h3>
+        </div>
+        <div class="icon-container">
+          <div class="orbit-icon">
+            <img src="/images/icons/gift.svg" alt="Подарок" class="w-7 h-7">
           </div>
         </div>
       </div>
@@ -1839,7 +1840,7 @@ document.addEventListener('DOMContentLoaded', function() {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         setTimeout(() => {
-          entry.target.classList.add('animate');
+          entry.target.classList.add('step-visible');
         }, 300);
       }
     });

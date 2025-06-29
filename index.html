@@ -632,8 +632,8 @@ img.product-image.loaded {
 }
 
 .step-circle {
-  width: 231px;  /* Увеличен на 10% */
-  height: 231px; /* Увеличен на 10% */
+  width: 254px;  /* Увеличен на 10% (было 231px) */
+  height: 254px; /* Увеличен на 10% (было 231px) */
   border-radius: 50%;
   background: white;
   display: flex;
@@ -646,7 +646,7 @@ img.product-image.loaded {
   z-index: 3;
   transition: all 0.3s ease;
   padding: 25px;
-  margin: 0 12.1px 66px; /* Увеличен горизонтальный и вертикальный отступ на 10% */
+  margin: 0 13.31px 72.6px; /* Увеличен горизонтальный и вертикальный отступ на 10% */
   overflow: visible;
   opacity: 0;
   transform: translateY(30px);
@@ -667,7 +667,7 @@ img.product-image.loaded {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 121px; /* Увеличен на 10% */
+  font-size: 133.1px; /* Увеличен на 10% (было 121px) */
   font-weight: 800;
   color: rgba(139, 69, 19, 0.08);
   z-index: 1;
@@ -689,8 +689,8 @@ img.product-image.loaded {
 
 .step-icon {
   position: absolute;
-  width: 68.2px; /* Увеличен на 10% */
-  height: 68.2px; /* Увеличен на 10% */
+  width: 75px; /* Увеличен на 10% (было 68.2px) */
+  height: 75px; /* Увеличен на 10% (было 68.2px) */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -702,15 +702,15 @@ img.product-image.loaded {
   top: 0;
   left: 0;
   transform: 
-    translate(115.5px, 115.5px)
-    translate(calc(115.5px * 0.866), calc(115.5px * -0.5))
+    translate(127px, 127px) /* Увеличен на 10% (было 115.5px) */
+    translate(calc(127px * 0.866), calc(127px * -0.5)) /* Увеличен на 10% */
     translate(-50%, -50%)
     rotate(-20deg);
 }
 
 .step-icon img {
-  width: 45%; /* Уменьшено на 20% */
-  height: 45%; /* Уменьшено на 20% */
+  width: 49.5%; /* Увеличен на 10% (было 45%) */
+  height: 49.5%; /* Увеличен на 10% (было 45%) */
   stroke: #8B4513; /* Цвет контура как у кругов */
   stroke-width: 1.05;
   transform: rotate(20deg); /* Компенсация вращения малого круга */
@@ -719,21 +719,15 @@ img.product-image.loaded {
 @supports (top: calc(sin(1rad))) {
   .step-icon {
     transform: 
-      translate(115.5px, 115.5px)
-      translate(calc(115.5px * cos(330deg)), calc(115.5px * sin(330deg)))
+      translate(127px, 127px) /* Увеличен на 10% */
+      translate(calc(127px * cos(330deg)), calc(127px * sin(330deg)))
       translate(-50%, -50%)
       rotate(-20deg);
   }
 }
 
-.step-icon i {
-  font-size: 30px;
-  color: #8B4513; /* Цвет иконки как у кругов */
-  transform: rotate(20deg);
-}
-
 .step-title {
-  font-size: 18px;
+  font-size: 19.8px; /* Увеличен на 10% (было 18px) */
   font-weight: 700;
   color: #2d3748;
   line-height: 1.4;
@@ -742,10 +736,10 @@ img.product-image.loaded {
 
 @supports not (top: calc(sin(1rad))) {
   .step-icon {
-    top: 115.5px;
-    left: 115.5px;
+    top: 127px; /* Увеличен на 10% */
+    left: 127px; /* Увеличен на 10% */
     transform: 
-      translate(calc(115.5px * 0.866), calc(115.5px * -0.5))
+      translate(calc(127px * 0.866), calc(127px * -0.5)) /* Увеличен на 10% */
       translate(-50%, -50%)
       rotate(-20deg);
   }
@@ -753,125 +747,125 @@ img.product-image.loaded {
 
 @media (min-width: 1024px) {
   .step-circle {
-    width: 203.5px; /* Увеличен на 10% */
-    height: 203.5px; /* Увеличен на 10% */
-    margin: 0 12.1px 55px; /* Увеличен горизонтальный и вертикальный отступ на 10% */
+    width: 223.85px; /* Увеличен на 10% (было 203.5px) */
+    height: 223.85px; /* Увеличен на 10% (было 203.5px) */
+    margin: 0 13.31px 60.5px; /* Увеличен горизонтальный и вертикальный отступ на 10% */
   }
   
   .step-icon {
-    width: 55px; /* Увеличен на 10% */
-    height: 55px; /* Увеличен на 10% */
+    width: 60.5px; /* Увеличен на 10% (было 55px) */
+    height: 60.5px; /* Увеличен на 10% (было 55px) */
     transform: 
-      translate(101.75px, 101.75px)
-      translate(calc(101.75px * cos(330deg)), calc(101.75px * sin(330deg)))
+      translate(111.925px, 111.925px) /* Увеличен на 10% */
+      translate(calc(111.925px * cos(330deg)), calc(111.925px * sin(330deg)))
       translate(-50%, -50%)
       rotate(-20deg);
   }
   
   @supports not (top: calc(sin(1rad))) {
     .step-icon {
-      top: 101.75px;
-      left: 101.75px;
+      top: 111.925px; /* Увеличен на 10% */
+      left: 111.925px; /* Увеличен на 10% */
       transform: 
-        translate(calc(101.75px * 0.866), calc(101.75px * -0.5))
+        translate(calc(111.925px * 0.866), calc(111.925px * -0.5)) /* Увеличен на 10% */
         translate(-50%, -50%)
         rotate(-20deg);
     }
   }
   
   .step-icon i {
-    font-size: 27px;
+    font-size: 29.7px; /* Увеличен на 10% (было 27px) */
   }
   
   .step-number {
-    font-size: 110px; /* Увеличен на 10% */
+    font-size: 121px; /* Увеличен на 10% (было 110px) */
   }
 }
 
 @media (min-width: 768px) {
   .workflow-steps {
     justify-content: center;
-    gap: 48.4px; /* Увеличен gap на 10% */
+    gap: 53.24px; /* Увеличен gap на 10% (было 48.4px) */
   }
   
   .step-circle {
-    width: 192.5px; /* Увеличен на 10% */
-    height: 192.5px; /* Увеличен на 10% */
-    margin: 0 0 55px; /* Увеличен вертикальный отступ на 10% */
+    width: 211.75px; /* Увеличен на 10% (было 192.5px) */
+    height: 211.75px; /* Увеличен на 10% (было 192.5px) */
+    margin: 0 0 60.5px; /* Увеличен вертикальный отступ на 10% (было 55px) */
   }
   
   .step-icon {
-    width: 55px; /* Увеличен на 10% */
-    height: 55px; /* Увеличен на 10% */
+    width: 60.5px; /* Увеличен на 10% (было 55px) */
+    height: 60.5px; /* Увеличен на 10% (было 55px) */
     transform: 
-      translate(96.25px, 96.25px)
-      translate(calc(96.25px * cos(330deg)), calc(96.25px * sin(330deg)))
+      translate(105.875px, 105.875px) /* Увеличен на 10% */
+      translate(calc(105.875px * cos(330deg)), calc(105.875px * sin(330deg)))
       translate(-50%, -50%)
       rotate(-20deg);
   }
   
   @supports not (top: calc(sin(1rad))) {
     .step-icon {
-      top: 96.25px;
-      left: 96.25px;
+      top: 105.875px; /* Увеличен на 10% */
+      left: 105.875px; /* Увеличен на 10% */
       transform: 
-        translate(calc(96.25px * 0.866), calc(96.25px * -0.5))
+        translate(calc(105.875px * 0.866), calc(105.875px * -0.5)) /* Увеличен на 10% */
         translate(-50%, -50%)
         rotate(-20deg);
     }
   }
   
   .step-icon i {
-    font-size: 25px;
+    font-size: 27.5px; /* Увеличен на 10% (было 25px) */
   }
   
   .step-title {
-    font-size: 17px;
+    font-size: 18.7px; /* Увеличен на 10% (было 17px) */
   }
   
   .step-number {
-    font-size: 99px; /* Увеличен на 10% */
+    font-size: 108.9px; /* Увеличен на 10% (было 99px) */
   }
 }
 
 @media (max-width: 480px) {
   .step-circle {
-    width: 181.5px; /* Увеличен на 10% */
-    height: 181.5px; /* Увеличен на 10% */
-    margin: 0 12.1px 66px; /* Увеличен горизонтальный и вертикальный отступ на 10% */
+    width: 199.65px; /* Увеличен на 10% (было 181.5px) */
+    height: 199.65px; /* Увеличен на 10% (было 181.5px) */
+    margin: 0 13.31px 72.6px; /* Увеличен горизонтальный и вертикальный отступ на 10% */
   }
   
   .step-number {
-    font-size: 93.5px; /* Увеличен на 10% */
+    font-size: 102.85px; /* Увеличен на 10% (было 93.5px) */
   }
   
   .step-icon {
-    width: 55px; /* Увеличен на 10% */
-    height: 55px; /* Увеличен на 10% */
+    width: 60.5px; /* Увеличен на 10% (было 55px) */
+    height: 60.5px; /* Увеличен на 10% (было 55px) */
     transform: 
-      translate(90.75px, 90.75px)
-      translate(calc(90.75px * cos(330deg)), calc(90.75px * sin(330deg)))
+      translate(99.825px, 99.825px) /* Увеличен на 10% */
+      translate(calc(99.825px * cos(330deg)), calc(99.825px * sin(330deg)))
       translate(-50%, -50%)
       rotate(-20deg);
   }
   
   @supports not (top: calc(sin(1rad))) {
     .step-icon {
-      top: 90.75px;
-      left: 90.75px;
+      top: 99.825px; /* Увеличен на 10% */
+      left: 99.825px; /* Увеличен на 10% */
       transform: 
-        translate(calc(90.75px * 0.866), calc(90.75px * -0.5))
+        translate(calc(99.825px * 0.866), calc(99.825px * -0.5)) /* Увеличен на 10% */
         translate(-50%, -50%)
         rotate(-20deg);
     }
   }
   
   .step-icon i {
-    font-size: 23px;
+    font-size: 25.3px; /* Увеличен на 10% (было 23px) */
   }
   
   .step-title {
-    font-size: 16px;
+    font-size: 17.6px; /* Увеличен на 10% (было 16px) */
   }
 }
 

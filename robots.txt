@@ -4,13 +4,10 @@ Disallow: /cart
 Disallow: /user
 Disallow: /search
 Disallow: /admin
-Disallow: /checkout
-Disallow: /account
 Disallow: /*?*
-Disallow: /private/
 Crawl-delay: 2
 
-# Специфичные правила для ботов
+# Специальные правила для агрессивных ботов
 User-agent: AhrefsBot
 Crawl-delay: 5
 

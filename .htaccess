@@ -1,0 +1,25 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  
+  # Перенаправление HTTP -> HTTPS
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  
+  # Блокировка доступа к служебным файлам
+  <FilesMatch "(\.env|\.gitignore|\.htaccess)$">
+    Order allow,deny
+    Deny from all
+  </FilesMatch>
+  
+  # Настройки кэширования
+  <FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf)$">
+    Header set Cache-Control "max-age=604800, public"
+  </FilesMatch>
+</IfModule>
+
+# Заголовок безопасности
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

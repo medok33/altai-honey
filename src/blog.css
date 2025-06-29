@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Добавьте сюда все кастомные стили из HTML */
+.texture-bg { ... }
+.nav-link { ... }
+/* ... и т.д. */

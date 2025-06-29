@@ -1,0 +1,18 @@
+{
+  "name": "altai-honey",
+  "version": "1.0.0",
+  "description": "Сайт Алтайский мёд - натуральные продукты пчеловодства",
+  "scripts": {
+    "build": "npm run build:main && npm run build:blog && npm run optimize-images",
+    "build:main": "tailwindcss -i ./src/input.css -o ./assets/css/tailwind.min.css --minify",
+    "build:blog": "tailwindcss -i ./src/blog.css -o ./assets/css/blog.min.css --minify",
+    "optimize-images": "squoosh-cli --webp 'public/images/*' -d public/optimized",
+    "watch": "npm run build:main -- --watch"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.1",
+    "squoosh-cli": "^1.0.0"
+  }
+}

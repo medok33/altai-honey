@@ -818,4 +818,38 @@ img.product-image.loaded {
   .hero-section {
     min-height: 60vh;
   }
+  /* Исправление выравнивания контактных иконок */
+.contact-item {
+  display: flex;
+  align-items: center; /* Центрирование по вертикали */
+}
+
+.contact-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0; /* Запрет сжатия */
+  margin-right: 12px;
+}
+
+.contact-icon img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
+/* Фиксированный размер для социальных иконок */
+.social-icon-bw {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icon-bw img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
 }

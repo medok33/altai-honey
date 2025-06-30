@@ -305,6 +305,11 @@ footer::before {
   gap: 30px;
 }
 
+.footer-column {
+  display: flex;
+  flex-direction: column;
+}
+
 .footer-column h4 {
   font-size: 1.2rem;
   margin-bottom: 20px;
@@ -363,13 +368,14 @@ footer::before {
   justify-content: center;
 }
 
+/* Стили для иконок социальных сетей */
 .social-links {
   display: flex;
   gap: 15px;
   margin-top: 20px;
 }
 
-.social-icon {
+.social-icon-bw {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -378,11 +384,20 @@ footer::before {
   border-radius: 50%;
   border: 1px solid rgba(255,255,255,0.3);
   transition: all 0.3s ease;
+  filter: grayscale(100%);
+  opacity: 0.7;
 }
 
-.social-icon:hover {
-  background: #6B8E23;
+.social-icon-bw:hover {
+  filter: grayscale(0%);
+  opacity: 1;
   border-color: #6B8E23;
+  background: #6B8E23;
+}
+
+.social-icon-bw svg {
+  width: 20px;
+  height: 20px;
 }
 
 /* Плавающая кнопка "Назад" */
@@ -448,6 +463,11 @@ footer::before {
   .nav-btn {
     padding: 8px 16px;
     font-size: 0.9rem;
+  }
+  
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 }
 
@@ -623,19 +643,19 @@ footer::before {
         </div>
         
         <div class="social-links">
-          <a href="https://vk.com/honeybuckwheat" target="_blank" class="social-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+          <a href="https://vk.com/honeybuckwheat" target="_blank" class="social-icon-bw">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12.65 15.42c-4.5 0-7.1-3.75-7.23-10.04H6.3c.09 5.25 2.5 7.06 3.92 7.5V5.38h2.92v4.28c1.42-.16 2.92-1.8 3.42-4.28h2.92c-.32 3.05-2.2 5.34-3.42 6.1 1.22.44 3.18 1.8 3.92 4.8h-3.2c-.5-1.86-1.86-3.26-3.92-3.48v3.48h-.43z"/>
             </svg>
           </a>
-          <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" class="social-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+          <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" class="social-icon-bw">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.78 5.42-.9 6.8-.06.67-.36.9-.86.56-2.49-1.73-3.57-2.84-5.79-4.55-.54-.4-.19-.62.33-1 .53-.41 5.79-5.24 5.93-5.33.26-.18.52-.08.52.17 0 .19.01 6.03.01 6.03 0 .23.06.38.2.48.18.12.4.1.66-.04.85-.47 2.38-2.13 3.05-3.14.23-.35.12-.64-.33-.64l-3.43.01c-.26 0-.48-.09-.62-.26-.15-.18-.12-.42.05-.67.32-.46.94-1.4.94-1.4.1-.17.24-.27.42-.27.05 0 .09.01.14.03.5.17 3.06 2.92 3.38 3.22.13.13.2.3.2.5 0 .2-.07.38-.2.5-.1.1-2.1 1.99-3.22 3.06-.34.33-.49.53-.76.53-.1 0-.2-.01-.29-.04-.5-.14-1.4-.46-2.46-.74-1.89-.5-3.13-.61-4.52-.65-1.38-.04-1.61.03-2.15.33-.46.26-.82.85-.6.86.5.03 1.61.31 2.28.57 3.29 1.29 3.81 2.5 5.73 3.04.66.19 1.17.16 1.61.05.49-.13 1.5-.94 1.7-1.38.2-.44.2-.82.14-.92-.07-.11-.25-.16-.57-.28z"/>
             </svg>
           </a>
           <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000" 
-             target="_blank" class="social-icon">
-            <svg width="20" height="20" viewBox="0 0 192 192">
+             target="_blank" class="social-icon-bw">
+            <svg viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg">
               <path fill="#04e061" d="M61.924 172.07c26.468 0 47.924-21.456 47.924-47.924S88.392 76.222 61.924 76.222 14 97.678 14 124.146s21.456 47.925 47.924 47.925z" transform="translate(7.024 7.024) scale(.92683)"/>
               <path fill="#ff4053" d="M149.044 166.007c15.992 0 28.956-12.963 28.956-28.955 0-15.992-12.964-28.955-28.956-28.955-15.99 0-28.954 12.963-28.954 28.955 0 15.992 12.963 28.955 28.954 28.955z" transform="translate(7.024 7.024) scale(.92683)"/>
               <path fill="#965eeb" d="M71.086 65.979c9.898 0 17.922-8.024 17.922-17.921 0-9.898-8.024-17.922-17.922-17.922-9.898 0-17.921 8.024-17.921 17.922 0 9.897 8.023 17.921 17.921 17.921z" transform="translate(7.024 7.024) scale(.92683)"/>
@@ -643,8 +663,8 @@ footer::before {
             </svg>
           </a>
           <!-- Иконка Яндекс Карт -->
-          <a href="https://yandex.ru/maps/" target="_blank" class="social-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+          <a href="https://yandex.ru/maps/" target="_blank" class="social-icon-bw">
+            <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 11.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/>
             </svg>
           </a>

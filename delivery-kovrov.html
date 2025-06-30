@@ -659,40 +659,16 @@
             margin-top: 1rem;
         }
         
-        /* Исправления для FAQ */
-        .faq-item {
-            position: relative;
+        /* Исправления для раздела преимуществ */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
         }
-        
-        .faq-item input {
-            position: absolute;
-            opacity: 0;
-            z-index: -1;
-        }
-        
-        .faq-item .question {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem;
-            background-color: #F9FAFB;
-            border-radius: 0.5rem;
-            cursor: pointer;
-        }
-        
-        .faq-item .answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-        
-        .faq-item input:checked ~ .answer {
-            max-height: 1000px;
-            padding: 0 1rem 1rem;
-        }
-        
-        .faq-item input:checked ~ .question i {
-            transform: rotate(45deg);
+        @media (min-width: 768px) {
+            .benefits-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
         }
         
         /* Исправления для раздела географии доставки */
@@ -701,7 +677,6 @@
             flex-direction: column;
             gap: 2rem;
         }
-        
         @media (min-width: 768px) {
             .map-container {
                 flex-direction: row;
@@ -772,6 +747,42 @@
         
         .city-list i {
             margin-right: 0.5rem;
+        }
+        
+        /* Исправления для FAQ */
+        .faq-item {
+            position: relative;
+        }
+        
+        .faq-item input {
+            position: absolute;
+            opacity: 0;
+            z-index: -1;
+        }
+        
+        .faq-item .question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background-color: #F9FAFB;
+            border-radius: 0.5rem;
+            cursor: pointer;
+        }
+        
+        .faq-item .answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-item input:checked ~ .answer {
+            max-height: 1000px;
+            padding: 0 1rem 1rem;
+        }
+        
+        .faq-item input:checked ~ .question i {
+            transform: rotate(45deg);
         }
         
         /* Выравнивание футера */
@@ -879,7 +890,7 @@
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Преимущества доставки мёда в Ковров</h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="benefits-grid">
                 <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
                     <div class="w-16 h-16 flex items-center justify-center bg-primary/10 text-primary rounded-full mb-4">
                         <i class="ri-truck-line ri-2x"></i>

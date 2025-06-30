@@ -1,75 +1,308 @@
-/* assets/css/custom.css */
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Блог о мёде | Алтайский мёд - Полезные статьи</title>
+<meta name="description" content="Читайте полезные статьи о мёде, пчеловодстве и здоровом питании. Узнайте о пользе алтайского мёда.">
+<link rel="canonical" href="https://altaymed.shop/blog/" />
+
+<!-- Schema.org разметка -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://altaymed.shop/blog/"
+  },
+  "headline": "Блог о мёде | Алтайский мёд",
+  "description": "Полезные статьи о мёде, пчеловодстве и здоровом питании",
+  "image": "https://altaymed.shop/images/image-7.webp",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Алтайский мёд",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://altaymed.shop/images/logo.webp"
+    }
+  }
+}
+</script>
+
+<!-- Мета-теги верификации -->
+<meta name="yandex-verification" content="9c5350476939e370" />
+<meta name="google-site-verification" content="JsJoSVyM5o4vxTSdN88FHLrAwPaoQ0nEjpJkiub50AE">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Блог о мёде | Алтайский мёд">
+<meta property="og:description" content="Полезные статьи о мёде, пчеловодстве и здоровом питании">
+<meta property="og:image" content="https://altaymed.shop/images/og-preview.webp">
+<meta property="og:url" content="https://altaymed.shop/blog/">
+<meta property="og:type" content="website">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Блог о мёде | Алтайский мёд">
+<meta name="twitter:description" content="Читайте полезные статьи о мёде и пчеловодстве">
+<meta name="twitter:image" content="https://altaymed.shop/images/twitter-preview.webp">
+
+<!-- Favicon -->
+<link rel="icon" href="/images/favicon.ico" sizes="any">
+<link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+
+<!-- Web Manifest -->
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#9f5524">
+
+<!-- Встроенные стили -->
+<style>
+/* Базовые сбросы */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fffdf9;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-.texture-bg {
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Навигация */
+nav {
+  background: white;
+  padding: 15px 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.8rem;
+  color: #6B8E23;
+}
+
+.desktop-menu {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.desktop-menu a {
+  position: relative;
+  padding: 5px 0;
+  font-weight: 500;
+}
+
+.desktop-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #6B8E23;
+  transition: width 0.3s ease;
+}
+
+.desktop-menu a:hover::after {
+  width: 100%;
+}
+
+.nav-btn {
+  background: #6B8E23;
+  color: white !important;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+  font-size: 1rem;
+  min-width: 110px;
+  text-align: center;
+}
+
+.nav-btn:hover {
+  background: #5a7a1c;
+}
+
+.nav-btn:hover::after {
+  display: none;
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  display: none;
+  background: white;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.mobile-menu a {
+  display: block;
+  padding: 10px 0;
+  font-weight: 500;
+  border-bottom: 1px solid #eee;
+}
+
+.mobile-menu a:last-child {
+  border-bottom: none;
+}
+
+.active-nav-link-alt {
+  border: 2px solid #6B8E23 !important;
+  border-radius: 8px !important;
+  padding: 4px 12px !important;
+  color: #6B8E23 !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease;
+}
+
+.active-nav-link-alt:hover {
+  background: rgba(107, 142, 35, 0.1) !important;
+}
+
+/* Шапка блога */
+.blog-header {
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/images/image-7.webp');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.blog-header h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.blog-header p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Список статей */
+.blog-posts {
+  padding: 60px 0;
+  background-color: rgba(245, 222, 179, 0.2);
   background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZmZmZmZmIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNmNWRlYjMiIG9wYWNpdHk9IjAuMSI+PC9yZWN0Pgo8L3N2Zz4=');
 }
 
-/* Исправления цветов */
-.nav-link {
-  color: #1a202c !important;
-  transition: color 0.3s;
-}
-.nav-link:hover {
-  color: #6B8E23 !important;
-}
-.nav-btn {
-  background: #6B8E23 !important;
-  color: white !important;
-}
-.hero-btn-primary {
-  background: #FFA500 !important;
-  color: white !important;
-}
-.hero-btn-secondary {
-  color: white !important;
-  border-color: white !important;
+.blog-list {
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-/* ФИКС: Зеленый цвет логотипа в шапке */
-.header-logo {
-  color: #6B8E23 !important;
+.blog-post-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  margin-bottom: 40px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* ФИКС: Выравнивание иконок в подвале */
-.footer-icon {
-  margin-top: 3px;
+.blog-post-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
 }
 
-/* ФИКС: Проблемы с отображением */
-main {
-  flex: 1;
+.post-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
 }
+
+.post-content {
+  padding: 25px;
+}
+
+.post-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.post-content p {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.read-more {
+  color: #6B8E23;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+
+/* Футер */
 footer {
-  margin-top: auto;
-}
-
-/* ФИКС: ВЫРАВНИВАНИЕ ПОДВАЛА ДЛЯ TILDA */
-/* Основные исправления для футера */
-footer {
-  width: 100% !important;
-  box-sizing: border-box !important;
+  background: #8B4513;
+  color: white;
+  padding: 60px 0 30px;
   position: relative;
   overflow: hidden;
-  z-index: 1;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* ИСПРАВЛЕННЫЙ УЗОР ВАФЕЛЬНОЙ СЕТКИ */
 footer::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 600%;
   height: 600%;
   background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+    linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px);
   background-size: 108px 108px;
   transform: rotate(30deg);
   transform-origin: 0 0;
@@ -79,101 +312,98 @@ footer::before {
   margin-top: -220%;
 }
 
-footer .container {
-  width: 100% !important;
-  max-width: 100% !important;
-  padding-right: 1.5rem !important;
-  padding-left: 1.5rem !important;
+.footer-container {
   position: relative;
   z-index: 1;
-}
-
-footer .grid {
-  width: 100% !important;
-  display: grid !important;
-  grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
-}
-
-@media (min-width: 768px) {
-  footer .grid {
-    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
-  }
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
 .footer-column {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: flex-start !important;
-  width: 100% !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  box-sizing: border-box !important;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Уменьшенные отступы для заголовков на 20% */
 .footer-column h4 {
-  text-align: left !important;
-  width: 100% !important;
-  padding: 0 !important;
-  margin: 0 0 0.64rem 0 !important;
-  font-weight: bold !important;
-  font-size: 1.125rem !important;
-  line-height: 1.75rem !important;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.footer-column h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background: #d4a373;
 }
 
 .footer-column ul {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: flex-start !important;
-  width: 100% !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  list-style: none !important;
+  list-style: none;
 }
 
 .footer-column li {
-  width: 100% !important;
-  text-align: left !important;
-  list-style-type: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  box-sizing: border-box !important;
+  margin-bottom: 12px;
 }
 
-.footer-column li a {
-  display: flex !important;
-  align-items: center !important;
-  width: 100% !important;
-  box-sizing: border-box !important;
-}
-
-.footer-column .bullet {
-  display: inline-block !important;
-  width: 6px !important;
-  height: 6px !important;
-  background-color: white !important;
-  border-radius: 50% !important;
-  margin-right: 10px !important;
-  flex-shrink: 0 !important;
-}
-
-footer, 
-footer *,
-footer a, 
-footer p, 
-footer span, 
-footer h4, 
-footer li {
-  color: white !important;
-  box-sizing: border-box !important;
-}
-footer a:hover {
-  color: #d1d5db !important;
-}
-
-.footer-column li a {
+.footer-column a {
   display: flex;
   align-items: center;
+  transition: opacity 0.3s ease;
+}
+
+.footer-column a:hover {
+  opacity: 0.8;
+}
+
+.bullet {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center; /* Центрирование по вертикали */
+  margin-bottom: 15px;
+}
+
+.contact-icon {
+  margin-right: 12px;
+  width: 24px; /* Фиксированная ширина */
+  height: 24px; /* Фиксированная высота */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0; /* Запрет сжатия */
+}
+
+.contact-icon img {
+  width: 100%; /* Иконка заполняет контейнер */
+  height: auto; /* Сохраняем пропорции */
+}
+
+.contact-text {
+  flex: 1;
+  line-height: 1.5;
+}
+
+/* Стили для иконок социальных сетей */
+.social-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
 }
 
 .social-icon-bw {
@@ -183,682 +413,358 @@ footer a:hover {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: transparent;
-  transition: all 0.3s;
-  border: 1px solid #4b5563;
-  color: #4b5563;
+  border: 1px solid rgba(255,255,255,0.3);
+  transition: all 0.3s ease;
   filter: grayscale(100%);
+  opacity: 0.7;
 }
 
 .social-icon-bw:hover {
   filter: grayscale(0%);
+  opacity: 1;
   border-color: #6B8E23;
-  color: #6B8E23;
-}
-
-.avito-icon-bw, .yandex-maps-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  position: relative;
-  filter: grayscale(100%);
-}
-
-.avito-icon-bw svg, .yandex-maps-icon svg {
-  width: 100%;
-  height: 100%;
-}
-
-.social-icon-bw:hover .avito-icon-bw,
-.social-icon-bw:hover .yandex-maps-icon {
-  filter: grayscale(0%);
-}
-
-/* Дополнительно уменьшенные отступы между пунктами на 25% */
-.footer-link-item {
-  display: flex;
-  align-items: center;
-  padding-top: 0.21rem !important;
-  padding-bottom: 0.21rem !important;
-}
-
-.contact-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 12px;
-  flex-shrink: 0;
-  width: 24px;
-  height: 24px;
-}
-
-.contact-text {
-  flex-grow: 1;
-  line-height: 1.5;
-}
-
-/* БЕЛЫЙ ЦВЕТ ТЕКСТА В ПЕРВОМ БЛОКЕ ФУТЕРА */
-#footer-contacts .footer-column:first-child,
-#footer-contacts .footer-column:first-child * {
-  color: white !important;
-}
-
-/* УТОЧНЕННЫЕ СТИЛИ ДЛЯ ПЕРВОГО БЛОКА ФУТЕРА */
-.footer-column:first-child {
-  justify-content: flex-start;
-}
-.footer-column:first-child .logo-wrapper {
-  margin-bottom: 0.4rem;
-}
-.footer-column:first-child .description-wrapper {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-.footer-column:first-child .description-wrapper p {
-  margin: 0;
-  font-size: 0.7rem;
-  line-height: 1.25;
-}
-.footer-column:first-child .description-wrapper p:first-child {
-  margin-bottom: 0.3rem;
-}
-
-/* Анимации для карточек */
-.benefit-card, .product-card, .about-image {
-  transition: all 0.3s ease;
-}
-.benefit-card:hover, .product-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-}
-.benefit-icon {
-  transition: transform 0.3s ease;
-}
-.benefit-card:hover .benefit-icon {
-  transform: scale(1.15);
-}
-.about-image:hover {
-  transform: scale(1.03);
-}
-
-/* Стили для модального окна */
-.modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
-  justify-content: center;
-  align-items: center;
-}
-.modal-content {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  max-width: 500px;
-  width: 90%;
-  animation: modalAppear 0.3s ease-out;
-}
-@keyframes modalAppear {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.close-modal {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  font-size: 24px;
-  cursor: pointer;
-  color: #6b7280;
-  transition: color 0.2s;
-}
-.close-modal:hover {
-  color: #374151;
-}
-
-/* Стили для модального окна успеха */
-.success-modal-content {
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  max-width: 450px;
-  width: 90%;
-  padding: 40px 30px;
-  text-align: center;
-  animation: modalAppear 0.4s ease-out;
-}
-.success-icon {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 20px;
-  background-color: #6B8E23;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: pulse 1.5s infinite;
-}
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
-}
-.success-icon i {
-  font-size: 40px;
-  color: white;
-}
-.success-title {
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 15px;
-  color: #2d3748;
-}
-.success-text {
-  font-size: 18px;
-  color: #4a5568;
-  margin-bottom: 25px;
-  line-height: 1.5;
-}
-.success-btn {
   background: #6B8E23;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 12px 30px;
-  font-size: 18px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: inline-block;
-}
-.success-btn:hover {
-  background: #5a7a1d;
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
-/* Адаптивные исправления для блока "О нас" */
-.about-check-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1.5rem;
-  gap: 1rem;
-}
-
-.about-check-icon {
-  flex-shrink: 0;
-  width: 2.5rem;
-  height: 2.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(107, 142, 35, 0.1);
-  border-radius: 50%;
-}
-
-.about-check-icon i {
-  font-size: 1.25rem;
-  color: #6B8E23;
-}
-
-.about-check-text {
-  flex-grow: 1;
-  font-size: 1rem;
-  line-height: 1.5;
-  font-weight: 500;
-}
-
-@media (max-width: 768px) {
-  .about-check-icon {
-    width: 2rem;
-    height: 2rem;
-  }
-  
-  .about-check-icon i {
-    font-size: 1rem;
-  }
-  
-  .about-check-text {
-    font-size: 0.9375rem;
-  }
-  
-  .hero-section {
-    min-height: 60vh;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-  }
-  
-  .hero-section h1 {
-    font-size: 2.5rem;
-    line-height: 1.2;
-  }
-  
-  .hero-buttons {
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-  
-  .hero-btn-primary, .hero-btn-secondary {
-    width: 100%;
-    text-align: center;
-  }
-  
-  .benefit-card, .product-card {
-    margin-bottom: 1.5rem;
-  }
-  
-  .footer-column {
-    margin-bottom: 2rem;
-  }
-  
-  .footer-column:last-child {
-    margin-bottom: 0;
-  }
-  
-  .contact-info-box {
-    padding: 1.5rem;
-  }
-  
-  .contact-photo-box {
-    min-height: 250px;
-  }
-  
-  .contact-cta {
-    padding: 1rem 1.5rem;
-    font-size: 1.1rem;
-  }
-}
-
-/* Исправление для изображений */
-/* Плавная загрузка изображений */
-img.product-image {
-  transition: opacity 0.5s ease-in-out;
-  opacity: 0;
-}
-
-img.product-image.loaded {
-  opacity: 1;
-}
-
-/* Новые стили для блока "Как мы работаем" */
-.workflow-container {
-  position: relative;
-  padding: 60px 0;
-}
-
-.workflow-steps {
-  display: flex;
-  justify-content: space-around;
-  position: relative;
-  z-index: 2;
-  flex-wrap: wrap;
-}
-
-.step-circle {
-  width: 210px;
-  height: 210px;
-  border-radius: 50%;
-  background: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-  border: 2px solid #8B4513;
-  position: relative;
-  z-index: 3;
-  transition: all 0.3s ease;
-  padding: 25px;
-  margin: 0 10px 60px;
-  overflow: visible;
-  opacity: 0;
-  transform: translateY(30px);
-  animation-fill-mode: forwards;
-}
-
-.step-circle.animate {
-  animation: fadeInUp 0.6s ease-out forwards;
-}
-
-.step-circle:hover {
-  transform: scale(1.15);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-
-.step-number {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 110px;
-  font-weight: 800;
-  color: rgba(139, 69, 19, 0.08);
-  z-index: 1;
-  pointer-events: none;
-}
-
-.step-content {
-  position: relative;
-  z-index: 4;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
-  text-align: center;
-  transform: translateY(0);
-}
-
-.step-icon {
-  position: absolute;
-  width: 65px;
-  height: 65px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: white;
-  border-radius: 50%;
-  border: 2px solid #8B4513;
-  z-index: 5;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  top: 0;
-  left: 0;
-  transform: 
-    translate(105px, 105px)
-    translate(105px * cos(330deg), 105px * sin(330deg))
-    translate(-50%, -50%)
-    rotate(-20deg);
-}
-
-@supports (top: calc(sin(1rad))) {
-  .step-icon {
-    transform: 
-      translate(105px, 105px)
-      translate(calc(105px * cos(330deg)), calc(105px * sin(330deg)))
-      translate(-50%, -50%)
-      rotate(-20deg);
-  }
-}
-
-.step-icon i {
-  font-size: 30px;
-  color: #8B4513;
-  transform: rotate(20deg);
-}
-
-.step-title {
-  font-size: 18px;
-  font-weight: 700;
-  color: #2d3748;
-  line-height: 1.4;
-  text-align: center;
-}
-
-@supports not (top: calc(sin(1rad))) {
-  .step-icon {
-    top: 105px;
-    left: 105px;
-    transform: 
-      translate(calc(105px * 0.866), calc(105px * -0.5))
-      translate(-50%, -50%)
-      rotate(-20deg);
-  }
-}
-
-@media (max-width: 1024px) {
-  .step-circle {
-    width: 185px;
-    height: 185px;
-    margin: 0 5px 50px;
-  }
-  
-  .step-icon {
-    width: 60px;
-    height: 60px;
-    transform: 
-      translate(92.5px, 92.5px)
-      translate(calc(92.5px * cos(330deg)), calc(92.5px * sin(330deg)))
-      translate(-50%, -50%)
-      rotate(-20deg);
-  }
-  
-  @supports not (top: calc(sin(1rad))) {
-    .step-icon {
-      top: 92.5px;
-      left: 92.5px;
-      transform: 
-        translate(calc(92.5px * 0.866), calc(92.5px * -0.5))
-        translate(-50%, -50%)
-        rotate(-20deg);
-    }
-  }
-  
-  .step-icon i {
-    font-size: 27px;
-  }
-  
-  .step-number {
-    font-size: 100px;
-  }
-}
-
-@media (max-width: 768px) {
-  .workflow-steps {
-    justify-content: center;
-    gap: 40px;
-  }
-  
-  .step-circle {
-    width: 175px;
-    height: 175px;
-    margin: 0 0 50px;
-  }
-  
-  .step-icon {
-    width: 55px;
-    height: 55px;
-    transform: 
-      translate(87.5px, 87.5px)
-      translate(calc(87.5px * cos(330deg)), calc(87.5px * sin(330deg)))
-      translate(-50%, -50%)
-      rotate(-20deg);
-  }
-  
-  @supports not (top: calc(sin(1rad))) {
-    .step-icon {
-      top: 87.5px;
-      left: 87.5px;
-      transform: 
-        translate(calc(87.5px * 0.866), calc(87.5px * -0.5))
-        translate(-50%, -50%)
-        rotate(-20deg);
-    }
-  }
-  
-  .step-icon i {
-    font-size: 25px;
-  }
-  
-  .step-title {
-    font-size: 17px;
-  }
-  
-  .step-number {
-    font-size: 90px;
-  }
-}
-
-@media (max-width: 480px) {
-  .step-circle {
-    width: 165px;
-    height: 165px;
-  }
-  
-  .step-number {
-    font-size: 85px;
-  }
-  
-  .step-icon {
-    width: 50px;
-    height: 50px;
-    transform: 
-      translate(82.5px, 82.5px)
-      translate(calc(82.5px * cos(330deg)), calc(82.5px * sin(330deg)))
-      translate(-50%, -50%)
-      rotate(-20deg);
-  }
-  
-  @supports not (top: calc(sin(1rad))) {
-    .step-icon {
-      top: 82.5px;
-      left: 82.5px;
-      transform: 
-        translate(calc(82.5px * 0.866), calc(82.5px * -0.5))
-        translate(-50%, -50%)
-        rotate(-20deg);
-    }
-  }
-  
-  .step-icon i {
-    font-size: 23px;
-  }
-  
-  .step-title {
-    font-size: 16px;
-  }
-}
-
-/* ИСПРАВЛЕНИЯ ДЛЯ ПОДВАЛА */
-.contact-item {
-  display: flex;
-  align-items: center;
-}
-
-.contact-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 12px;
-  width: 24px;
-  height: 24px;
-  flex-shrink: 0;
-}
-
-.contact-icon img {
-  width: 100%;
-  height: auto;
-}
-
-/* Анимации для появления секций */
-.section-animate {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.section-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Анимации для появления элементов */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Задержки для анимации шагов */
-.step-circle:nth-child(1).animate {
-  animation-delay: 0.2s;
-}
-.step-circle:nth-child(2).animate {
-  animation-delay: 0.4s;
-}
-.step-circle:nth-child(3).animate {
-  animation-delay: 0.6s;
-}
-.step-circle:nth-child(4).animate {
-  animation-delay: 0.8s;
-}
-
-/* Задержки для секций */
-#benefits {
-  transition-delay: 0.1s;
-}
-#products {
-  transition-delay: 0.2s;
-}
-#about {
-  transition-delay: 0.3s;
-}
-#order {
-  transition-delay: 0.4s;
-}
-#workflow {
-  transition-delay: 0.5s;
-}
-
-/* Оптимизации для мобильной производительности */
-@media (max-width: 768px) {
-  .benefit-card:hover, 
-  .product-card:hover,
-  .step-circle:hover {
-    transform: none !important;
-    box-shadow: none !important;
-  }
-  
-  .benefit-card:hover .benefit-icon {
-    transform: none !important;
-  }
-  
-  .hero-section {
-    min-height: 60vh;
-  }
-  /* Исправление выравнивания контактных иконок */
-.contact-item {
-  display: flex;
-  align-items: center;
-}
-
-.contact-icon {
-  width: 24px;
-  height: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  margin-right: 12px;
-}
-
-.contact-icon img {
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-}
-
-/* Фиксированный размер для социальных иконок */
-.social-icon-bw {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .social-icon-bw img {
   width: 20px;
   height: 20px;
-  object-fit: contain;
 }
+
+/* Плавающая кнопка "Назад" */
+.floating-back-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 50;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background: #6B8E23;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: scale(0.95);
 }
+
+.floating-back-button:hover {
+  background: #5a7a1c;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transform: scale(1.05);
+}
+
+.back-arrow {
+  width: 24px;
+  height: 24px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23ffffff' d='M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: transform 0.3s ease;
+}
+
+.floating-back-button:hover .back-arrow {
+  transform: translateX(-4px);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .desktop-menu {
+    display: none;
+  }
+  
+  .mobile-menu-btn {
+    display: block;
+  }
+  
+  .mobile-menu {
+    display: block;
+  }
+  
+  .blog-header h1 {
+    font-size: 2rem;
+  }
+  
+  .post-image {
+    height: 250px;
+  }
+
+  .nav-btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+  
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .blog-header p {
+    font-size: 1rem;
+  }
+  
+  .post-image {
+    height: 200px;
+  }
+  
+  .contact-item {
+    flex-direction: row;
+    align-items: center; /* Центрирование вместо flex-start */
+  }
+  
+  .contact-icon {
+    margin-top: 0; /* Убираем отступ */
+  }
+  
+  .contact-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+/* Шрифты */
+@font-face {
+  font-family: 'Pacifico';
+  src: url('/fonts/Pacifico-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/fonts/OpenSans-VariableFont.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+}
+</style>
+</head>
+<body>
+  <!-- Навигация -->
+  <nav>
+    <div class="container nav-container">
+      <a href="/" class="logo">Алтайский мёд</a>
+      
+      <div class="desktop-menu">
+        <a href="/#benefits">Преимущества</a>
+        <a href="/#products">Каталог</a>
+        <a href="/#about">О нас</a>
+        <a href="/#footer-contacts">Контакты</a>
+        <a href="/blog/" class="active-nav-link-alt">Блог</a>
+        <a href="/#order" class="nav-btn">Заказать</a>
+      </div>
+      
+      <button class="mobile-menu-btn" id="mobile-menu-button">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 12H21" stroke="black" stroke-width="2" stroke-linecap="round"/>
+          <path d="M3 6H21" stroke="black" stroke-width="2" stroke-linecap="round"/>
+          <path d="M3 18H21" stroke="black" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="/#benefits">Преимущества</a>
+      <a href="/#products">Каталог</a>
+      <a href="/#about">О нас</a>
+      <a href="/#footer-contacts">Контакты</a>
+      <a href="/blog/" class="active-nav-link-alt">Блог</a>
+      <a href="/#order" class="nav-btn" style="display: inline-block; margin-top: 10px; text-align: center;">Заказать</a>
+    </div>
+  </nav>
+
+  <!-- Шапка блога -->
+  <section class="blog-header">
+    <div class="container">
+      <h1>Полезные статьи о мёде</h1>
+      <p>Узнайте больше о пользе алтайского мёда и традициях пчеловодства</p>
+    </div>
+  </section>
+
+  <!-- Список статей -->
+  <section class="blog-posts">
+    <div class="container blog-list">
+      <!-- Статья 1 -->
+      <article class="blog-post-card">
+        <img src="/images/image-8.webp" alt="Как выбрать качественный мёд" class="post-image">
+        <div class="post-content">
+          <h2>Как выбрать качественный мёд</h2>
+          <p>Экспертные советы по выбору настоящего алтайского мёда. Узнайте, как отличить натуральный продукт от подделки и сохранить все полезные свойства.</p>
+          <a href="/blog/kak-vybrat-med.html" class="read-more">Читать статью →</a>
+        </div>
+      </article>
+      
+      <!-- Статья 2 -->
+      <article class="blog-post-card">
+        <img src="/images/image-9.webp" alt="Мёд в здоровом питании" class="post-image">
+        <div class="post-content">
+          <h2>Мёд в здоровом питании</h2>
+          <p>Как правильно использовать мёд в ежедневном рационе. Рецепты и советы по включению натурального мёда в здоровое питание для всей семьи.</p>
+          <a href="/blog/med-v-zdorovom-pitanii.html" class="read-more">Читать статью →</a>
+        </div>
+      </article>
+      
+      <!-- Статья 3 -->
+      <article class="blog-post-card">
+        <img src="/images/image-10.webp" alt="Традиции алтайского пчеловодства" class="post-image">
+        <div class="post-content">
+          <h2>Традиции алтайского пчеловодства</h2>
+          <p>История и секреты алтайских пасечников. Узнайте о многовековых традициях сбора мёда в горных районах Алтая.</p>
+          <a href="/blog/tradicii-altayskogo-pchelovodstva.html" class="read-more">Читать статью →</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Футер -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-column">
+        <a href="/" class="logo" style="font-size: 1.8rem; display: block; margin-bottom: 15px;">Алтайский мёд</a>
+        <p style="font-size: 0.9rem; margin-bottom: 10px;">Натуральные продукты пчеловодства с Алтайских гор.</p>
+        <p style="font-size: 0.9rem;">© 2025 Алтайский мёд. Все права защищены.</p>
+      </div>
+      
+      <div class="footer-column">
+        <h4>Каталог</h4>
+        <ul>
+          <li><a href="/#product-1"><span class="bullet"></span> Разнотравье</a></li>
+          <li><a href="/#product-2"><span class="bullet"></span> Таёжный мёд</a></li>
+          <li><a href="/#product-3"><span class="bullet"></span> Гречишный мёд</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h4>Материалы</h4>
+        <ul>
+          <li><a href="/blog/"><span class="bullet"></span> Блог</a></li>
+          <li><a href="/faq/"><span class="bullet"></span> FAQ</a></li>
+          <li><a href="/legal.html"><span class="bullet"></span> Правовая информация</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h4>Информация</h4>
+        <ul>
+          <li><a href="/#benefits"><span class="bullet"></span> Преимущества</a></li>
+          <li><a href="/#about"><span class="bullet"></span> О нас</a></li>
+          <li><a href="/#footer-contacts"><span class="bullet"></span> Контакты</a></li>
+          <li><a href="/delivery.html"><span class="bullet"></span> Доставка и оплата</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h4>Контакты</h4>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <img src="/assets/icons/remixicon/map-pin-line.svg" alt="Адрес" width="24" height="24">
+          </div>
+          <span class="contact-text">Владимирская обл. Город Ковров</span>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <img src="/assets/icons/remixicon/phone-line.svg" alt="Телефон" width="24" height="24">
+          </div>
+          <a href="tel:+79209400222" class="contact-text">+7 (920) 940-02-22</a>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <img src="/assets/icons/remixicon/mail-line.svg" alt="Почта" width="24" height="24">
+          </div>
+          <a href="mailto:9209400222@mail.ru" class="contact-text">9209400222@mail.ru</a>
+        </div>
+        
+        <div class="social-links">
+          <a href="https://vk.com/honeybuckwheat" target="_blank" class="social-icon-bw">
+            <img src="/assets/icons/remixicon/vk-line.svg" alt="ВКонтакте" width="20" height="20">
+          </a>
+          <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" class="social-icon-bw">
+            <img src="/assets/icons/remixicon/telegram-line.svg" alt="Telegram" width="20" height="20">
+          </a>
+          <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000" 
+             target="_blank" class="social-icon-bw">
+            <img src="/assets/icons/remixicon/avito-line.svg" alt="Avito" width="20" height="20">
+          </a>
+          <a href="https://yandex.ru/maps/" target="_blank" class="social-icon-bw">
+            <img src="/assets/icons/remixicon/yandex-maps-line.svg" alt="Яндекс Карты" width="20" height="20">
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Плавающая кнопка "Назад" -->
+  <a href="#" id="back-button" class="floating-back-button">
+    <div class="back-arrow"></div>
+  </a>
+
+  <!-- Скрипты -->
+  <script>
+    // Обработка мобильного меню
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      mobileMenuButton.addEventListener('click', function() {
+        if (mobileMenu.style.display === 'block') {
+          mobileMenu.style.display = 'none';
+        } else {
+          mobileMenu.style.display = 'block';
+        }
+      });
+
+      // Управление плавающей кнопкой "Назад"
+      const backButton = document.getElementById('back-button');
+      
+      // Показываем/скрываем кнопку при скролле
+      let isScrolling;
+      window.addEventListener('scroll', function() {
+        backButton.style.opacity = "1";
+        
+        clearTimeout(isScrolling);
+        isScrolling = setTimeout(function() {
+          backButton.style.opacity = "0";
+        }, 2000);
+      });
+      
+      // Обработка нажатия на кнопку "Назад"
+      backButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Проверяем историю переходов
+        if (document.referrer && document.referrer.includes(window.location.host)) {
+          // Если есть предыдущая страница на нашем сайте
+          window.history.back();
+        } else {
+          // Если нет истории или пришел с другого сайта
+          window.location.href = '/';
+        }
+      });
+    });
+  </script>
+  
+  <!-- Яндекс.Метрика -->
+  <script>
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();
+    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(102951378, "init", {
+         clickmap:true,
+         trackLinks:true,
+         accurateTrackBounce:true
+    });
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/102951378" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+</body>
+</html>

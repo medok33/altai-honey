@@ -199,6 +199,44 @@
         .ri-3x { font-size: 3em; }
         .ri-4x { font-size: 4em; }
         .ri-fw { width: 1.28571429em; text-align: center; }
+
+        /* FIXES */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        @media (min-width: 768px) {
+            .benefits-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        .map-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        @media (min-width: 768px) {
+            .map-container {
+                flex-direction: row;
+            }
+        }
+        .map-placeholder {
+            background-color: #e5e7eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6b7280;
+            font-weight: 500;
+        }
+        .icon-fallback {
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            background-color: currentColor;
+            border-radius: 2px;
+            margin-right: 0.5rem;
+        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -247,7 +285,7 @@
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Преимущества доставки мёда в Ковров</h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="benefits-grid">
                 <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
                     <div class="w-16 h-16 flex items-center justify-center bg-primary/10 text-primary rounded-full mb-4">
                         <i class="ri-truck-line ri-2x"></i>
@@ -409,7 +447,7 @@
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">География доставки</h2>
             
-            <div class="flex flex-col md:flex-row gap-8">
+            <div class="map-container">
                 <div class="md:w-1/2">
                     <div class="bg-white p-6 rounded-lg shadow-md h-full">
                         <h3 class="text-xl font-semibold mb-4">Доставка по Владимирской области</h3>
@@ -464,8 +502,11 @@
                     </div>
                 </div>
                 
-                <div class="md:w-1/2 h-[400px] rounded-lg overflow-hidden shadow-md relative">
-                    <div class="absolute inset-0 bg-center bg-cover" style="background-image: url('images/map-placeholder.png');"></div>
+                <div class="md:w-1/2 h-[400px] rounded-lg overflow-hidden shadow-md relative map-placeholder">
+                    <img src="images/map-placeholder.png" alt="Карта доставки по Владимирской области" class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gray-200 flex items-center justify-center">
+                        <span>Изображение карты доставки</span>
+                    </div>
                 </div>
             </div>
         </div>

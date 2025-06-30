@@ -519,6 +519,8 @@ footer a:hover {
   align-items: center;
   margin-bottom: 1.5rem;
   gap: 1rem;
+  margin-left: 5%; /* Сдвиг вправо на 5% */
+  margin-top: 3%; /* Сдвиг вниз на 3% */
 }
 
 .about-check-icon {
@@ -530,6 +532,7 @@ footer a:hover {
   justify-content: center;
   background-color: rgba(107, 142, 35, 0.1);
   border-radius: 50%;
+  border: 2px solid #6B8E23; /* Жирная окантовка цвета логотипа */
 }
 
 .about-check-icon i {
@@ -704,7 +707,6 @@ img.product-image.loaded {
   transform: 
     translate(140px, 140px) /* Увеличен на 10% (было 127px) */
     translate(calc(140px * 0.866), calc(140px * -0.5)) /* Увеличен на 10% */
-    translate(-50%, -50%)
     rotate(-20deg);
 }
 
@@ -995,6 +997,19 @@ img.product-image.loaded {
     width: 17px;
     height: 17px;
   }
+}
+
+/* Иконки соцсетей в футере - оригинальные цвета при наведении */
+.social-icon-bw.vk:hover img {
+  filter: grayscale(0%) brightness(0) saturate(100%) invert(32%) sepia(88%) saturate(1000%) hue-rotate(180deg) brightness(90%) contrast(90%);
+}
+
+.social-icon-bw.telegram:hover img {
+  filter: grayscale(0%) brightness(0) saturate(100%) invert(52%) sepia(91%) saturate(1000%) hue-rotate(160deg) brightness(95%) contrast(95%);
+}
+
+.social-icon-bw.yandex:hover img {
+  filter: grayscale(0%) brightness(0) saturate(100%) invert(20%) sepia(100%) saturate(1000%) hue-rotate(330deg) brightness(100%) contrast(100%);
 }
 </style>
 </head>
@@ -1509,10 +1524,10 @@ img.product-image.loaded {
         <div class="mt-4 md:mt-6">
           <p class="text-base md:text-lg font-bold mb-2 md:mb-3">Следите за нами</p>
           <div class="flex space-x-2 md:space-x-3">
-            <a href="https://vk.com/honeybuckwheat" target="_blank" class="social-icon-bw">
+            <a href="https://vk.com/honeybuckwheat" target="_blank" class="social-icon-bw vk">
               <img src="/images/icons/vk.svg" alt="VK" class="social-icon-img">
             </a>
-            <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" class="social-icon-bw">
+            <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" class="social-icon-bw telegram">
               <img src="/images/icons/telegram.svg" alt="Telegram" class="social-icon-img">
             </a>
             <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing" 
@@ -1527,7 +1542,7 @@ img.product-image.loaded {
               </div>
             </a>
             <!-- Иконка Яндекс Карт - обновленная версия -->
-            <a href="https://yandex.ru/maps/" target="_blank" class="social-icon-bw">
+            <a href="https://yandex.ru/maps/" target="_blank" class="social-icon-bw yandex">
               <img src="/images/icons/yandex.svg" alt="Яндекс.Карты" class="social-icon-img">
             </a>
           </div>

@@ -256,9 +256,12 @@
         @media (min-width: 768px) {
             .map-container {
                 flex-direction: row;
+                align-items: stretch;
             }
             .map-container > div {
                 flex: 1;
+                display: flex;
+                flex-direction: column;
             }
         }
         
@@ -270,6 +273,56 @@
             color: #6b7280;
             font-weight: 500;
             height: 400px;
+            flex: 1;
+        }
+        
+        /* Исправления для выравнивания иконок */
+        .cities-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .cities-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        
+        @media (min-width: 640px) {
+            .cities-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .city-column {
+            position: relative;
+        }
+        
+        .city-column-header {
+            position: relative;
+            padding-left: 1.75rem;
+            margin-bottom: 1rem;
+        }
+        
+        .city-column-header i {
+            position: absolute;
+            left: 0;
+            top: 0.25rem;
+        }
+        
+        .city-list {
+            padding-left: 1.75rem;
+        }
+        
+        .city-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        .city-list i {
+            margin-right: 0.5rem;
         }
         
         /* Исправления для FAQ */
@@ -404,7 +457,7 @@
         </div>
     </section>
 
-    <!-- Benefits Section - ВЕРНУЛ ИСХОДНУЮ ВЕРСТКУ -->
+    <!-- Benefits Section -->
     <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Преимущества доставки мёда в Ковров</h2>
@@ -437,7 +490,7 @@
         </div>
     </section>
 
-    <!-- Delivery Methods - ВЕРНУЛ ИСХОДНУЮ ВЕРСТКУ -->
+    <!-- Delivery Methods -->
     <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Способы доставки в Ковров</h2>
@@ -566,62 +619,68 @@
         </div>
     </section>
 
-    <!-- Map Section - ИСПРАВЛЕНА СТРУКТУРА -->
+    <!-- Map Section - ОБНОВЛЕННЫЙ РАЗДЕЛ -->
     <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">География доставки</h2>
             
             <div class="map-container">
-                <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="bg-white p-6 rounded-lg shadow-md cities-section">
                     <h3 class="text-xl font-semibold mb-4">Доставка по Владимирской области</h3>
                     <p class="text-gray-600 mb-6">Помимо Коврова, мы осуществляем доставку мёда и в другие города Владимирской области:</p>
                     
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-                        <div>
-                            <h4 class="font-medium text-gray-800 mb-2">Крупные города:</h4>
-                            <ul class="space-y-2">
-                                <li class="flex items-center">
-                                    <i class="ri-map-pin-line text-primary mr-2"></i>
+                    <div class="cities-grid">
+                        <div class="city-column">
+                            <h4 class="city-column-header font-medium text-gray-800">
+                                <i class="ri-map-pin-line text-primary"></i>
+                                Крупные города:
+                            </h4>
+                            <ul class="city-list">
+                                <li>
+                                    <i class="ri-map-pin-line text-primary"></i>
                                     <span class="text-gray-600">Владимир</span>
                                 </li>
-                                <li class="flex items-center">
-                                    <i class="ri-map-pin-line text-primary mr-2"></i>
+                                <li>
+                                    <i class="ri-map-pin-line text-primary"></i>
                                     <span class="text-gray-600">Муром</span>
                                 </li>
-                                <li class="flex items-center">
-                                    <i class="ri-map-pin-line text-primary mr-2"></i>
+                                <li>
+                                    <i class="ri-map-pin-line text-primary"></i>
                                     <span class="text-gray-600">Александров</span>
                                 </li>
-                                <li class="flex items-center">
-                                    <i class="ri-map-pin-line text-primary mr-2"></i>
+                                <li>
+                                    <i class="ri-map-pin-line text-primary"></i>
                                     <span class="text-gray-600">Гусь-Хрустальный</span>
                                 </li>
                             </ul>
                         </div>
-                        <div>
-                            <h4 class="font-medium text-gray-800 mb-2">Другие населенные пункты:</h4>
-                            <ul class="space-y-2">
-                                <li class="flex items-center">
-                                    <i class="ri-map-pin-line text-primary mr-2"></i>
+                        <div class="city-column">
+                            <h4 class="city-column-header font-medium text-gray-800">
+                                <i class="ri-map-pin-line text-primary"></i>
+                                Другие населенные пункты:
+                            </h4>
+                            <ul class="city-list">
+                                <li>
+                                    <i class="ri-map-pin-line text-primary"></i>
                                     <span class="text-gray-600">Вязники</span>
                                 </li>
-                                <li class="flex items-center">
-                                    <i class="ri-map-pin-line text-primary mr-2"></i>
+                                <li>
+                                    <i class="ri-map-pin-line text-primary"></i>
                                     <span class="text-gray-600">Киржач</span>
                                 </li>
-                                <li class="flex items-center">
-                                    <i class="ri-map-pin-line text-primary mr-2"></i>
+                                <li>
+                                    <i class="ri-map-pin-line text-primary"></i>
                                     <span class="text-gray-600">Кольчугино</span>
                                 </li>
-                                <li class="flex items-center">
-                                    <i class="ri-map-pin-line text-primary mr-2"></i>
+                                <li>
+                                    <i class="ri-map-pin-line text-primary"></i>
                                     <span class="text-gray-600">Юрьев-Польский</span>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     
-                    <p class="text-gray-600">Сроки и стоимость доставки в другие города области могут отличаться. Для уточнения деталей свяжитесь с нашими менеджерами.</p>
+                    <p class="text-gray-600 mt-6">Сроки и стоимость доставки в другие города области могут отличаться. Для уточнения деталей свяжитесь с нашими менеджерами.</p>
                 </div>
                 
                 <div class="map-placeholder rounded-lg overflow-hidden shadow-md">
@@ -632,7 +691,7 @@
         </div>
     </section>
 
-    <!-- FAQ Section - ИСПРАВЛЕНА АНИМАЦИЯ -->
+    <!-- FAQ Section -->
     <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Часто задаваемые вопросы о доставке</h2>
@@ -764,7 +823,7 @@
         </div>
     </section>
 
-    <!-- Footer - ВЫРОВНЕН -->
+    <!-- Footer -->
     <footer class="bg-gray-900 text-white pt-12 pb-6">
         <div class="container mx-auto px-4">
             <div class="footer-grid">

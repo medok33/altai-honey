@@ -7,15 +7,56 @@
     <meta name="description" content="Быстрая доставка натурального алтайского мёда в Ковров. Свежий мёд с пасек Алтая с доставкой за 2-3 дня. Выгодные условия и широкий ассортимент.">
     
     <!-- Локальные шрифты -->
+    <link rel="stylesheet" href="fonts/remixicon/remixicon.css">
     <style>
+        /* Подключение шрифтов */
         @font-face {
             font-family: 'Pacifico';
-            src: url('fonts/Pacifico-Regular.ttf') format('truetype'),
-                 url('https://fonts.gstatic.com/s/pacifico/v22/FwZY7-Qmy14u9lezJ-6H6MmBp0u-.woff2') format('woff2');
+            src: url('fonts/Pacifico-Regular.woff2') format('woff2'),
+                 url('fonts/Pacifico-Regular.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
         }
-        
+
+        @font-face {
+            font-family: 'Open Sans';
+            src: url('fonts/OpenSans-Regular.woff2') format('woff2'),
+                 url('fonts/OpenSans-Regular.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Open Sans';
+            src: url('fonts/OpenSans-Medium.woff2') format('woff2'),
+                 url('fonts/OpenSans-Medium.woff') format('woff');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Open Sans';
+            src: url('fonts/OpenSans-SemiBold.woff2') format('woff2'),
+                 url('fonts/OpenSans-SemiBold.woff') format('woff');
+            font-weight: 600;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Open Sans';
+            src: url('fonts/OpenSans-Bold.woff2') format('woff2'),
+                 url('fonts/OpenSans-Bold.woff') format('woff');
+            font-weight: bold;
+            font-style: normal;
+            font-display: swap;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: 'Open Sans', sans-serif;
         }
         
         .hero-section {
@@ -189,28 +230,6 @@
         .mt-4 { margin-top: 1rem; }
         .space-x-4 > :not([hidden]) ~ :not([hidden]) { margin-left: 1rem; }
         
-        /* Icon sizes */
-        .icon-xs {
-            width: 1rem;
-            height: 1rem;
-        }
-        .icon-sm {
-            width: 1.5rem;
-            height: 1.5rem;
-        }
-        .icon-md {
-            width: 2rem;
-            height: 2rem;
-        }
-        .icon-lg {
-            width: 2.5rem;
-            height: 2.5rem;
-        }
-        .icon-xl {
-            width: 3rem;
-            height: 3rem;
-        }
-
         /* FIXES */
         .benefits-grid {
             display: grid;
@@ -258,16 +277,16 @@
             
             <div class="flex items-center space-x-4">
                 <a href="/cart" class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary transition-colors">
-                    <img src="/assets/icons/remixicon/System/shopping-cart-line.svg" alt="Корзина" class="icon-md">
+                    <i class="ri-shopping-cart-line ri-lg"></i>
                 </a>
                 <a href="/tel:+79001234567" class="hidden md:flex items-center text-gray-700 hover:text-primary transition-colors">
                     <div class="w-10 h-10 flex items-center justify-center">
-                        <img src="/assets/icons/remixicon/Device/phone-line.svg" alt="Телефон" class="icon-md">
+                        <i class="ri-phone-line ri-lg"></i>
                     </div>
                     <span>+7 (900) 123-45-67</span>
                 </a>
                 <button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700">
-                    <img src="/assets/icons/remixicon/System/menu-line.svg" alt="Меню" class="icon-md">
+                    <i class="ri-menu-line ri-lg"></i>
                 </button>
             </div>
         </div>
@@ -291,7 +310,7 @@
             <div class="benefits-grid">
                 <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
                     <div class="w-16 h-16 flex items-center justify-center bg-primary/10 text-primary rounded-full mb-4">
-                        <img src="/assets/icons/remixicon/Map/truck-line.svg" alt="Доставка" class="icon-xl">
+                        <i class="ri-truck-line ri-2x"></i>
                     </div>
                     <h3 class="text-xl font-semibold mb-3">Быстрая доставка</h3>
                     <p class="text-gray-600">Доставляем мёд в Ковров всего за 2-3 дня. Ваш заказ будет у вас максимально быстро!</p>
@@ -299,7 +318,7 @@
                 
                 <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
                     <div class="w-16 h-16 flex items-center justify-center bg-primary/10 text-primary rounded-full mb-4">
-                        <img src="/assets/icons/remixicon/Finance/leaf-line.svg" alt="Натуральный продукт" class="icon-xl">
+                        <i class="ri-leaf-line ri-2x"></i>
                     </div>
                     <h3 class="text-xl font-semibold mb-3">100% натуральный продукт</h3>
                     <p class="text-gray-600">Мёд собран на экологически чистых пасеках Алтая и доставляется в Ковров без добавок и консервантов.</p>
@@ -307,7 +326,7 @@
                 
                 <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
                     <div class="w-16 h-16 flex items-center justify-center bg-primary/10 text-primary rounded-full mb-4">
-                        <img src="/assets/icons/remixicon/System/shield-check-line.svg" alt="Гарантия" class="icon-xl">
+                        <i class="ri-shield-check-line ri-2x"></i>
                     </div>
                     <h3 class="text-xl font-semibold mb-3">Гарантия свежести</h3>
                     <p class="text-gray-600">Мы гарантируем свежесть мёда при доставке в Ковров. Специальная упаковка сохраняет все полезные свойства.</p>
@@ -339,25 +358,25 @@
                             <h4 class="font-medium text-gray-800 mb-2">Пункты выдачи СДЭК в Коврове:</h4>
                             <ul class="space-y-2 text-gray-600 mb-6">
                                 <li class="flex items-start">
-                                    <img src="/assets/icons/remixicon/Map/map-pin-line.svg" alt="Местоположение" class="icon-sm mt-1 mr-2 text-primary">
+                                    <i class="ri-map-pin-line ri-lg mt-1 mr-2 text-primary"></i>
                                     <span>ул. Грибоедова, 15 (ТЦ "Треугольник")</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <img src="/assets/icons/remixicon/Map/map-pin-line.svg" alt="Местоположение" class="icon-sm mt-1 mr-2 text-primary">
+                                    <i class="ri-map-pin-line ri-lg mt-1 mr-2 text-primary"></i>
                                     <span>пр-т Ленина, 35 (ТЦ "Ковров Молл")</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <img src="/assets/icons/remixicon/Map/map-pin-line.svg" alt="Местоположение" class="icon-sm mt-1 mr-2 text-primary">
+                                    <i class="ri-map-pin-line ri-lg mt-1 mr-2 text-primary"></i>
                                     <span>ул. Строителей, 28 (ТЦ "Русь")</span>
                                 </li>
                             </ul>
                             
                             <div class="flex items-center text-gray-600 mb-2">
-                                <img src="/assets/icons/remixicon/Device/time-line.svg" alt="Срок доставки" class="icon-sm mr-2 text-primary">
+                                <i class="ri-time-line ri-lg mr-2 text-primary"></i>
                                 <span>Срок доставки: 2-3 рабочих дня</span>
                             </div>
                             <div class="flex items-center text-gray-600">
-                                <img src="/assets/icons/remixicon/Finance/money-dollar-circle-line.svg" alt="Стоимость" class="icon-sm mr-2 text-primary">
+                                <i class="ri-money-dollar-circle-line ri-lg mr-2 text-primary"></i>
                                 <span>Стоимость: от 300 ₽ (зависит от веса заказа)</span>
                             </div>
                         </div>
@@ -366,19 +385,19 @@
                             <h4 class="font-medium text-gray-800 mb-3">Преимущества доставки СДЭК:</h4>
                             <ul class="space-y-2">
                                 <li class="flex items-start">
-                                    <img src="/assets/icons/remixicon/System/check-line.svg" alt="Преимущество" class="icon-sm mt-1 mr-2 text-primary">
+                                    <i class="ri-check-line ri-lg mt-1 mr-2 text-primary"></i>
                                     <span class="text-gray-600">Надежная упаковка и сохранность товара</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <img src="/assets/icons/remixicon/System/check-line.svg" alt="Преимущество" class="icon-sm mt-1 mr-2 text-primary">
+                                    <i class="ri-check-line ri-lg mt-1 mr-2 text-primary"></i>
                                     <span class="text-gray-600">Возможность отслеживания заказа</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <img src="/assets/icons/remixicon/System/check-line.svg" alt="Преимущество" class="icon-sm mt-1 mr-2 text-primary">
+                                    <i class="ri-check-line ri-lg mt-1 mr-2 text-primary"></i>
                                     <span class="text-gray-600">Удобные пункты выдачи в Коврове</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <img src="/assets/icons/remixicon/System/check-line.svg" alt="Преимущество" class="icon-sm mt-1 mr-2 text-primary">
+                                    <i class="ri-check-line ri-lg mt-1 mr-2 text-primary"></i>
                                     <span class="text-gray-600">Оплата при получении</span>
                                 </li>
                             </ul>
@@ -461,19 +480,19 @@
                                 <h4 class="font-medium text-gray-800 mb-2">Крупные города:</h4>
                                 <ul class="space-y-2">
                                     <li class="flex items-center">
-                                        <img src="/assets/icons/remixicon/Map/map-pin-line.svg" alt="Местоположение" class="icon-sm mr-2 text-primary">
+                                        <i class="ri-map-pin-line ri-lg text-primary mr-2"></i>
                                         <span class="text-gray-600">Владимир</span>
                                     </li>
                                     <li class="flex items-center">
-                                        <img src="/assets/icons/remixicon/Map/map-pin-line.svg" alt="Местоположение" class="icon-sm mr-2 text-primary">
+                                        <i class="ri-map-pin-line ri-lg text-primary mr-2"></i>
                                         <span class="text-gray-600">Муром</span>
                                     </li>
                                     <li class="flex items-center">
-                                        <img src="/assets/icons/remixicon/Map/map-pin-line.svg" alt="Местоположение" class="icon-sm mr-2 text-primary">
+                                        <i class="ri-map-pin-line ri-lg text-primary mr-2"></i>
                                         <span class="text-gray-600">Александров</span>
                                     </li>
                                     <li class="flex items-center">
-                                        <img src="/assets/icons/remixicon/Map/map-pin-line.svg" alt="Местоположение" class="icon-sm mr-2 text-primary">
+                                        <i class="ri-map-pin-line ri-lg text-primary mr-2"></i>
                                         <span class="text-gray-600">Гусь-Хрустальный</span>
                                     </li>
                                 </ul>
@@ -482,19 +501,19 @@
                                 <h4 class="font-medium text-gray-800 mb-2">Другие населенные пункты:</h4>
                                 <ul class="space-y-2">
                                     <li class="flex items-center">
-                                        <img src="/assets/icons/remixicon/Map/map-pin-line.svg" alt="Местоположение" class="icon-sm mr-2 text-primary">
+                                        <i class="ri-map-pin-line ri-lg text-primary mr-2"></i>
                                         <span class="text-gray-600">Вязники</span>
                                     </li>
                                     <li class="flex items-center">
-                                        <img src="/assets/icons/remixicon/Map/map-pin-line.svg" alt="Местоположение" class="icon-sm mr-2 text-primary">
+                                        <i class="ri-map-pin-line ri-lg text-primary mr-2"></i>
                                         <span class="text-gray-600">Киржач</span>
                                     </li>
                                     <li class="flex items-center">
-                                        <img src="/assets/icons/remixicon/Map/map-pin-line.svg" alt="Местоположение" class="icon-sm mr-2 text-primary">
+                                        <i class="ri-map-pin-line ri-lg text-primary mr-2"></i>
                                         <span class="text-gray-600">Кольчугино</span>
                                     </li>
                                     <li class="flex items-center">
-                                        <img src="/assets/icons/remixicon/Map/map-pin-line.svg" alt="Местоположение" class="icon-sm mr-2 text-primary">
+                                        <i class="ri-map-pin-line ri-lg text-primary mr-2"></i>
                                         <span class="text-gray-600">Юрьев-Польский</span>
                                     </li>
                                 </ul>
@@ -506,11 +525,7 @@
                 </div>
                 
                 <div class="md:w-1/2 h-[400px] rounded-lg overflow-hidden shadow-md relative">
-                    <!-- Fallback if image doesn't load -->
-                    <div class="absolute inset-0 bg-gray-200 flex items-center justify-center">
-                        <span class="text-gray-500">Изображение карты доставки</span>
-                    </div>
-                    <img src="images/map-placeholder.png" alt="Карта доставки по Владимирской области" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+                    <div class="absolute inset-0 bg-center bg-cover" style="background-image: url('images/map-placeholder.png');"></div>
                 </div>
             </div>
         </div>
@@ -527,7 +542,7 @@
                     <label for="faq-1" class="question block p-4 cursor-pointer">
                         <div class="flex justify-between items-center">
                             <span class="font-medium text-gray-900">Как долго доставляется мёд в Ковров?</span>
-                            <img src="/assets/icons/remixicon/System/add-line.svg" alt="Раскрыть" class="icon-sm text-primary transition-transform duration-300">
+                            <i class="ri-add-line text-primary transition-transform duration-300"></i>
                         </div>
                     </label>
                     <div class="answer max-h-0 overflow-hidden transition-all duration-300 px-4">
@@ -540,7 +555,7 @@
                     <label for="faq-2" class="question block p-4 cursor-pointer">
                         <div class="flex justify-between items-center">
                             <span class="font-medium text-gray-900">Как происходит оплата заказа?</span>
-                            <img src="/assets/icons/remixicon/System/add-line.svg" alt="Раскрыть" class="icon-sm text-primary transition-transform duration-300">
+                            <i class="ri-add-line text-primary transition-transform duration-300"></i>
                         </div>
                     </label>
                     <div class="answer max-h-0 overflow-hidden transition-all duration-300 px-4">
@@ -558,7 +573,7 @@
                     <label for="faq-3" class="question block p-4 cursor-pointer">
                         <div class="flex justify-between items-center">
                             <span class="font-medium text-gray-900">Как упаковывается мёд для доставки в Ковров?</span>
-                            <img src="/assets/icons/remixicon/System/add-line.svg" alt="Раскрыть" class="icon-sm text-primary transition-transform duration-300">
+                            <i class="ri-add-line text-primary transition-transform duration-300"></i>
                         </div>
                     </label>
                     <div class="answer max-h-0 overflow-hidden transition-all duration-300 px-4">
@@ -571,7 +586,7 @@
                     <label for="faq-4" class="question block p-4 cursor-pointer">
                         <div class="flex justify-between items-center">
                             <span class="font-medium text-gray-900">Можно ли отследить статус доставки?</span>
-                            <img src="/assets/icons/remixicon/System/add-line.svg" alt="Раскрыть" class="icon-sm text-primary transition-transform duration-300">
+                            <i class="ri-add-line text-primary transition-transform duration-300"></i>
                         </div>
                     </label>
                     <div class="answer max-h-0 overflow-hidden transition-all duration-300 px-4">
@@ -584,7 +599,7 @@
                     <label for="faq-5" class="question block p-4 cursor-pointer">
                         <div class="flex justify-between items-center">
                             <span class="font-medium text-gray-900">Что делать, если мёд пришел с повреждениями?</span>
-                            <img src="/assets/icons/remixicon/System/add-line.svg" alt="Раскрыть" class="icon-sm text-primary transition-transform duration-300">
+                            <i class="ri-add-line text-primary transition-transform duration-300"></i>
                         </div>
                     </label>
                     <div class="answer max-h-0 overflow-hidden transition-all duration-300 px-4">
@@ -615,7 +630,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
                 <div class="bg-white p-4 rounded-lg shadow-md">
                     <div class="w-12 h-12 flex items-center justify-center bg-primary/10 text-primary rounded-full mx-auto mb-3">
-                        <img src="/assets/icons/remixicon/Map/truck-line.svg" alt="Доставка" class="icon-lg">
+                        <i class="ri-truck-line ri-lg"></i>
                     </div>
                     <h3 class="font-medium text-gray-900 mb-1">Быстрая доставка</h3>
                     <p class="text-sm text-gray-600">2-3 дня до Коврова</p>
@@ -623,7 +638,7 @@
                 
                 <div class="bg-white p-4 rounded-lg shadow-md">
                     <div class="w-12 h-12 flex items-center justify-center bg-primary/10 text-primary rounded-full mx-auto mb-3">
-                        <img src="/assets/icons/remixicon/System/shield-check-line.svg" alt="Гарантия" class="icon-lg">
+                        <i class="ri-shield-check-line ri-lg"></i>
                     </div>
                     <h3 class="font-medium text-gray-900 mb-1">Гарантия качества</h3>
                     <p class="text-sm text-gray-600">100% натуральный мёд</p>
@@ -631,7 +646,7 @@
                 
                 <div class="bg-white p-4 rounded-lg shadow-md">
                     <div class="w-12 h-12 flex items-center justify-center bg-primary/10 text-primary rounded-full mx-auto mb-3">
-                        <img src="/assets/icons/remixicon/Finance/secure-payment-line.svg" alt="Оплата" class="icon-lg">
+                        <i class="ri-secure-payment-line ri-lg"></i>
                     </div>
                     <h3 class="font-medium text-gray-900 mb-1">Удобная оплата</h3>
                     <p class="text-sm text-gray-600">Картой или наличными</p>
@@ -639,7 +654,7 @@
                 
                 <div class="bg-white p-4 rounded-lg shadow-md">
                     <div class="w-12 h-12 flex items-center justify-center bg-primary/10 text-primary rounded-full mx-auto mb-3">
-                        <img src="/assets/icons/remixicon/User/customer-service-2-line.svg" alt="Поддержка" class="icon-lg">
+                        <i class="ri-customer-service-2-line ri-lg"></i>
                     </div>
                     <h3 class="font-medium text-gray-900 mb-1">Поддержка</h3>
                     <p class="text-sm text-gray-600">Ответим на все вопросы</p>
@@ -657,13 +672,13 @@
                     <p class="text-gray-400 mb-4">Натуральный мёд с пасек Алтая с доставкой по всей России, включая Ковров и Владимирскую область.</p>
                     <div class="flex space-x-4">
                         <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 hover:bg-primary/20 text-white rounded-full transition-colors">
-                            <img src="/assets/icons/remixicon/Logos/vk-line.svg" alt="VK" class="icon-sm">
+                            <i class="ri-vk-line ri-lg"></i>
                         </a>
                         <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 hover:bg-primary/20 text-white rounded-full transition-colors">
-                            <img src="/assets/icons/remixicon/Logos/telegram-line.svg" alt="Telegram" class="icon-sm">
+                            <i class="ri-telegram-line ri-lg"></i>
                         </a>
                         <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 hover:bg-primary/20 text-white rounded-full transition-colors">
-                            <img src="/assets/icons/remixicon/Logos/instagram-line.svg" alt="Instagram" class="icon-sm">
+                            <i class="ri-instagram-line ri-lg"></i>
                         </a>
                     </div>
                 </div>
@@ -694,21 +709,21 @@
                     <h3 class="text-lg font-semibold mb-4">Контакты</h3>
                     <ul class="space-y-3">
                         <li class="flex items-start">
-                            <img src="/assets/icons/remixicon/Device/phone-line.svg" alt="Телефон" class="icon-md mt-1 mr-3 text-primary">
+                            <i class="ri-phone-line ri-2x mt-1 mr-3 text-primary"></i>
                             <div>
                                 <p class="text-white">+7 (900) 123-45-67</p>
                                 <p class="text-gray-400 text-sm">Ежедневно с 9:00 до 21:00</p>
                             </div>
                         </li>
                         <li class="flex items-start">
-                            <img src="/assets/icons/remixicon/Business/mail-line.svg" alt="Email" class="icon-md mt-1 mr-3 text-primary">
+                            <i class="ri-mail-line ri-2x mt-1 mr-3 text-primary"></i>
                             <div>
                                 <p class="text-white">info@altaymed.ru</p>
                                 <p class="text-gray-400 text-sm">Для заказов и вопросов</p>
                             </div>
                         </li>
                         <li class="flex items-start">
-                            <img src="/assets/icons/remixicon/Map/map-pin-line.svg" alt="Адрес" class="icon-md mt-1 mr-3 text-primary">
+                            <i class="ri-map-pin-line ri-2x mt-1 mr-3 text-primary"></i>
                             <div>
                                 <p class="text-white">г. Барнаул, ул. Алтайская, 10</p>
                                 <p class="text-gray-400 text-sm">Главный офис</p>
@@ -721,10 +736,10 @@
             <div class="pt-6 border-t border-gray-800 text-center text-gray-400 text-sm">
                 <p>© 2025 АлтайМёд. Все права защищены.</p>
                 <div class="flex justify-center mt-4 space-x-4">
-                    <img src="/assets/icons/remixicon/Finance/visa-line.svg" alt="Visa" class="icon-md">
-                    <img src="/assets/icons/remixicon/Finance/mastercard-line.svg" alt="Mastercard" class="icon-md">
-                    <img src="/assets/icons/remixicon/Finance/paypal-line.svg" alt="PayPal" class="icon-md">
-                    <img src="/assets/icons/remixicon/Finance/alipay-line.svg" alt="Alipay" class="icon-md">
+                    <i class="ri-visa-line ri-2x"></i>
+                    <i class="ri-mastercard-line ri-2x"></i>
+                    <i class="ri-paypal-line ri-2x"></i>
+                    <i class="ri-alipay-line ri-2x"></i>
                 </div>
             </div>
         </div>

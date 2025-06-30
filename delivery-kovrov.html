@@ -230,34 +230,140 @@
         .mt-4 { margin-top: 1rem; }
         .space-x-4 > :not([hidden]) ~ :not([hidden]) { margin-left: 1rem; }
         
-        /* FIXES */
-        .benefits-grid {
+        /* Исправления для раздела "География доставки" */
+        .map-section .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .map-content {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        
+        @media (min-width: 768px) {
+            .map-content {
+                flex-direction: row;
+                gap: 2rem;
+            }
+        }
+        
+        .delivery-info {
+            flex: 1;
+        }
+        
+        .map-wrapper {
+            flex: 1;
+            height: 400px;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+        }
+        
+        .cities-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+        
+        @media (min-width: 640px) {
+            .cities-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+        }
+        
+        /* Исправления для FAQ */
+        .faq-item {
+            position: relative;
+        }
+        
+        .faq-item input {
+            position: absolute;
+            opacity: 0;
+            z-index: -1;
+        }
+        
+        .faq-item .question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background-color: #F9FAFB;
+            border-radius: 0.5rem;
+            cursor: pointer;
+        }
+        
+        .faq-item .answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 1rem;
+        }
+        
+        .faq-item input:checked ~ .answer {
+            max-height: 1000px;
+            padding: 1rem;
+        }
+        
+        /* Выравнивание футера */
+        .footer-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 2rem;
         }
+        
         @media (min-width: 768px) {
-            .benefits-grid {
-                grid-template-columns: repeat(3, 1fr);
+            .footer-grid {
+                grid-template-columns: repeat(4, 1fr);
             }
         }
-        .map-container {
+        
+        .footer-column {
             display: flex;
             flex-direction: column;
-            gap: 2rem;
         }
-        @media (min-width: 768px) {
-            .map-container {
-                flex-direction: row;
-            }
+        
+        .footer-logo {
+            margin-bottom: 1rem;
         }
-        .map-placeholder {
-            background-color: #e5e7eb;
+        
+        .footer-social {
             display: flex;
-            align-items: center;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .footer-contacts li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-contacts i {
+            margin-top: 0.25rem;
+            margin-right: 0.75rem;
+        }
+        
+        .footer-bottom {
+            padding-top: 1.5rem;
+            border-top: 1px solid #374151;
+            text-align: center;
+        }
+        
+        .footer-payments {
+            display: flex;
             justify-content: center;
-            color: #6b7280;
-            font-weight: 500;
+            gap: 1rem;
+            margin-top: 1rem;
         }
     </style>
 </head>
@@ -307,7 +413,7 @@
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Преимущества доставки мёда в Ковров</h2>
             
-            <div class="benefits-grid">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
                     <div class="w-16 h-16 flex items-center justify-center bg-primary/10 text-primary rounded-full mb-4">
                         <i class="ri-truck-line ri-2x"></i>
@@ -465,67 +571,68 @@
     </section>
 
     <!-- Map Section -->
-    <section class="py-16 bg-gray-50">
+    <section class="py-16 bg-gray-50 map-section">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">География доставки</h2>
             
-            <div class="map-container">
-                <div class="md:w-1/2">
-                    <div class="bg-white p-6 rounded-lg shadow-md h-full">
-                        <h3 class="text-xl font-semibold mb-4">Доставка по Владимирской области</h3>
-                        <p class="text-gray-600 mb-6">Помимо Коврова, мы осуществляем доставку мёда и в другие города Владимирской области:</p>
-                        
-                        <div class="grid grid-cols-2 gap-4 mb-6">
-                            <div>
-                                <h4 class="font-medium text-gray-800 mb-2">Крупные города:</h4>
-                                <ul class="space-y-2">
-                                    <li class="flex items-center">
-                                        <i class="ri-map-pin-line ri-lg text-primary mr-2"></i>
-                                        <span class="text-gray-600">Владимир</span>
-                                    </li>
-                                    <li class="flex items-center">
-                                        <i class="ri-map-pin-line ri-lg text-primary mr-2"></i>
-                                        <span class="text-gray-600">Муром</span>
-                                    </li>
-                                    <li class="flex items-center">
-                                        <i class="ri-map-pin-line ri-lg text-primary mr-2"></i>
-                                        <span class="text-gray-600">Александров</span>
-                                    </li>
-                                    <li class="flex items-center">
-                                        <i class="ri-map-pin-line ri-lg text-primary mr-2"></i>
-                                        <span class="text-gray-600">Гусь-Хрустальный</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 class="font-medium text-gray-800 mb-2">Другие населенные пункты:</h4>
-                                <ul class="space-y-2">
-                                    <li class="flex items-center">
-                                        <i class="ri-map-pin-line ri-lg text-primary mr-2"></i>
-                                        <span class="text-gray-600">Вязники</span>
-                                    </li>
-                                    <li class="flex items-center">
-                                        <i class="ri-map-pin-line ri-lg text-primary mr-2"></i>
-                                        <span class="text-gray-600">Киржач</span>
-                                    </li>
-                                    <li class="flex items-center">
-                                        <i class="ri-map-pin-line ri-lg text-primary mr-2"></i>
-                                        <span class="text-gray-600">Кольчугино</span>
-                                    </li>
-                                    <li class="flex items-center">
-                                        <i class="ri-map-pin-line ri-lg text-primary mr-2"></i>
-                                        <span class="text-gray-600">Юрьев-Польский</span>
-                                    </li>
-                                </ul>
-                            </div>
+            <div class="map-content">
+                <div class="delivery-info bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-4 text-center md:text-left">Доставка по Владимирской области</h3>
+                    <p class="text-gray-600 mb-6">Помимо Коврова, мы осуществляем доставку мёда и в другие города Владимирской области:</p>
+                    
+                    <div class="cities-grid">
+                        <div>
+                            <h4 class="font-medium text-gray-800 mb-2">Крупные города:</h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-center">
+                                    <i class="ri-map-pin-line text-primary mr-2"></i>
+                                    <span class="text-gray-600">Владимир</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="ri-map-pin-line text-primary mr-2"></i>
+                                    <span class="text-gray-600">Муром</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="ri-map-pin-line text-primary mr-2"></i>
+                                    <span class="text-gray-600">Александров</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="ri-map-pin-line text-primary mr-2"></i>
+                                    <span class="text-gray-600">Гусь-Хрустальный</span>
+                                </li>
+                            </ul>
                         </div>
-                        
-                        <p class="text-gray-600">Сроки и стоимость доставки в другие города области могут отличаться. Для уточнения деталей свяжитесь с нашими менеджерами.</p>
+                        <div>
+                            <h4 class="font-medium text-gray-800 mb-2">Другие населенные пункты:</h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-center">
+                                    <i class="ri-map-pin-line text-primary mr-2"></i>
+                                    <span class="text-gray-600">Вязники</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="ri-map-pin-line text-primary mr-2"></i>
+                                    <span class="text-gray-600">Киржач</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="ri-map-pin-line text-primary mr-2"></i>
+                                    <span class="text-gray-600">Кольчугино</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="ri-map-pin-line text-primary mr-2"></i>
+                                    <span class="text-gray-600">Юрьев-Польский</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
+                    
+                    <p class="text-gray-600 mt-6">Сроки и стоимость доставки в другие города области могут отличаться. Для уточнения деталей свяжитесь с нашими менеджерами.</p>
                 </div>
                 
-                <div class="md:w-1/2 h-[400px] rounded-lg overflow-hidden shadow-md relative">
-                    <div class="absolute inset-0 bg-center bg-cover" style="background-image: url('images/map-placeholder.png');"></div>
+                <div class="map-wrapper relative">
+                    <div class="absolute inset-0 bg-gray-200 flex items-center justify-center">
+                        <span class="text-gray-500">Изображение карты доставки</span>
+                    </div>
+                    <img src="images/map-placeholder.png" alt="Карта доставки по Владимирской области" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
                 </div>
             </div>
         </div>
@@ -538,29 +645,29 @@
             
             <div class="max-w-3xl mx-auto space-y-4">
                 <div class="faq-item bg-gray-50 rounded-lg overflow-hidden">
-                    <input type="checkbox" id="faq-1" class="absolute opacity-0 h-0 w-0">
-                    <label for="faq-1" class="question block p-4 cursor-pointer">
-                        <div class="flex justify-between items-center">
+                    <input type="checkbox" id="faq-1" class="absolute opacity-0">
+                    <label for="faq-1" class="question block cursor-pointer">
+                        <div class="flex justify-between items-center p-4">
                             <span class="font-medium text-gray-900">Как долго доставляется мёд в Ковров?</span>
                             <i class="ri-add-line text-primary transition-transform duration-300"></i>
                         </div>
                     </label>
-                    <div class="answer max-h-0 overflow-hidden transition-all duration-300 px-4">
-                        <p class="text-gray-600">Доставка мёда в Ковров занимает от 2 до 3 рабочих дней с момента отправки заказа. При выборе курьерской доставки в пределах города срок может сократиться до 1-2 дней. Точный срок доставки зависит от выбранного способа доставки и адреса получения.</p>
+                    <div class="answer">
+                        <p class="text-gray-600 px-4 pb-4">Доставка мёда в Ковров занимает от 2 до 3 рабочих дней с момента отправки заказа. При выборе курьерской доставки в пределах города срок может сократиться до 1-2 дней. Точный срок доставки зависит от выбранного способа доставки и адреса получения.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item bg-gray-50 rounded-lg overflow-hidden">
-                    <input type="checkbox" id="faq-2" class="absolute opacity-0 h-0 w-0">
-                    <label for="faq-2" class="question block p-4 cursor-pointer">
-                        <div class="flex justify-between items-center">
+                    <input type="checkbox" id="faq-2" class="absolute opacity-0">
+                    <label for="faq-2" class="question block cursor-pointer">
+                        <div class="flex justify-between items-center p-4">
                             <span class="font-medium text-gray-900">Как происходит оплата заказа?</span>
                             <i class="ri-add-line text-primary transition-transform duration-300"></i>
                         </div>
                     </label>
-                    <div class="answer max-h-0 overflow-hidden transition-all duration-300 px-4">
-                        <p class="text-gray-600">Вы можете оплатить заказ несколькими способами:</p>
-                        <ul class="list-disc pl-5 mt-2 space-y-1 text-gray-600">
+                    <div class="answer">
+                        <p class="text-gray-600 px-4 pb-4">Вы можете оплатить заказ несколькими способами:</p>
+                        <ul class="list-disc pl-5 mt-2 space-y-1 text-gray-600 px-4 pb-4">
                             <li>Онлайн-оплата банковской картой на сайте</li>
                             <li>Оплата при получении наличными или картой (для курьерской доставки и в пунктах выдачи СДЭК в Коврове)</li>
                             <li>Банковский перевод (для юридических лиц)</li>
@@ -569,47 +676,47 @@
                 </div>
                 
                 <div class="faq-item bg-gray-50 rounded-lg overflow-hidden">
-                    <input type="checkbox" id="faq-3" class="absolute opacity-0 h-0 w-0">
-                    <label for="faq-3" class="question block p-4 cursor-pointer">
-                        <div class="flex justify-between items-center">
+                    <input type="checkbox" id="faq-3" class="absolute opacity-0">
+                    <label for="faq-3" class="question block cursor-pointer">
+                        <div class="flex justify-between items-center p-4">
                             <span class="font-medium text-gray-900">Как упаковывается мёд для доставки в Ковров?</span>
                             <i class="ri-add-line text-primary transition-transform duration-300"></i>
                         </div>
                     </label>
-                    <div class="answer max-h-0 overflow-hidden transition-all duration-300 px-4">
-                        <p class="text-gray-600">Мы используем специальную упаковку, которая надежно защищает мёд при транспортировке. Каждая банка мёда упаковывается в пузырчатую пленку и размещается в картонной коробке с наполнителем, чтобы исключить повреждения при доставке в Ковров. Такая упаковка сохраняет все полезные свойства мёда и защищает от внешних воздействий.</p>
+                    <div class="answer">
+                        <p class="text-gray-600 px-4 pb-4">Мы используем специальную упаковку, которая надежно защищает мёд при транспортировке. Каждая банка мёда упаковывается в пузырчатую пленку и размещается в картонной коробке с наполнителем, чтобы исключить повреждения при доставке в Ковров. Такая упаковка сохраняет все полезные свойства мёда и защищает от внешних воздействий.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item bg-gray-50 rounded-lg overflow-hidden">
-                    <input type="checkbox" id="faq-4" class="absolute opacity-0 h-0 w-0">
-                    <label for="faq-4" class="question block p-4 cursor-pointer">
-                        <div class="flex justify-between items-center">
+                    <input type="checkbox" id="faq-4" class="absolute opacity-0">
+                    <label for="faq-4" class="question block cursor-pointer">
+                        <div class="flex justify-between items-center p-4">
                             <span class="font-medium text-gray-900">Можно ли отследить статус доставки?</span>
                             <i class="ri-add-line text-primary transition-transform duration-300"></i>
                         </div>
                     </label>
-                    <div class="answer max-h-0 overflow-hidden transition-all duration-300 px-4">
-                        <p class="text-gray-600">Да, при отправке заказа вы получите трек-номер, по которому можно отслеживать статус доставки на сайте транспортной компании. Также наши менеджеры могут предоставить информацию о местонахождении вашего заказа по телефону.</p>
+                    <div class="answer">
+                        <p class="text-gray-600 px-4 pb-4">Да, при отправке заказа вы получите трек-номер, по которому можно отслеживать статус доставки на сайте транспортной компании. Также наши менеджеры могут предоставить информацию о местонахождении вашего заказа по телефону.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item bg-gray-50 rounded-lg overflow-hidden">
-                    <input type="checkbox" id="faq-5" class="absolute opacity-0 h-0 w-0">
-                    <label for="faq-5" class="question block p-4 cursor-pointer">
-                        <div class="flex justify-between items-center">
+                    <input type="checkbox" id="faq-5" class="absolute opacity-0">
+                    <label for="faq-5" class="question block cursor-pointer">
+                        <div class="flex justify-between items-center p-4">
                             <span class="font-medium text-gray-900">Что делать, если мёд пришел с повреждениями?</span>
                             <i class="ri-add-line text-primary transition-transform duration-300"></i>
                         </div>
                     </label>
-                    <div class="answer max-h-0 overflow-hidden transition-all duration-300 px-4">
-                        <p class="text-gray-600">В случае повреждения товара при доставке в Ковров, необходимо:</p>
-                        <ol class="list-decimal pl-5 mt-2 space-y-1 text-gray-600">
+                    <div class="answer">
+                        <p class="text-gray-600 px-4 pb-4">В случае повреждения товара при доставке в Ковров, необходимо:</p>
+                        <ol class="list-decimal pl-5 mt-2 space-y-1 text-gray-600 px-4 pb-4">
                             <li>Зафиксировать повреждения (сделать фото)</li>
                             <li>Связаться с нами по телефону или электронной почте</li>
                             <li>Мы оперативно решим вопрос с заменой товара или возвратом средств</li>
                         </ol>
-                        <p class="mt-2 text-gray-600">Мы гарантируем качество нашей продукции и берем на себя ответственность за сохранность при доставке.</p>
+                        <p class="mt-2 text-gray-600 px-4 pb-4">Мы гарантируем качество нашей продукции и берем на себя ответственность за сохранность при доставке.</p>
                     </div>
                 </div>
             </div>
@@ -666,11 +773,11 @@
     <!-- Footer -->
     <footer class="bg-gray-900 text-white pt-12 pb-6">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-                <div>
-                    <a href="/" class="text-3xl font-['Pacifico'] text-primary mb-4 inline-block">АлтайМёд</a>
-                    <p class="text-gray-400 mb-4">Натуральный мёд с пасек Алтая с доставкой по всей России, включая Ковров и Владимирскую область.</p>
-                    <div class="flex space-x-4">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <a href="/" class="footer-logo text-3xl font-['Pacifico'] text-primary inline-block">АлтайМёд</a>
+                    <p class="text-gray-400">Натуральный мёд с пасек Алтая с доставкой по всей России, включая Ковров и Владимирскую область.</p>
+                    <div class="footer-social">
                         <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 hover:bg-primary/20 text-white rounded-full transition-colors">
                             <i class="ri-vk-line ri-lg"></i>
                         </a>
@@ -683,47 +790,47 @@
                     </div>
                 </div>
                 
-                <div>
+                <div class="footer-column">
                     <h3 class="text-lg font-semibold mb-4">Каталог</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Цветочный мёд</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Гречишный мёд</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Липовый мёд</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Горный мёд</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Мёд с добавками</a></li>
-                    </ul>
+                    <div class="footer-links">
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">Цветочный мёд</a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">Гречишный мёд</a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">Липовый мёд</a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">Горный мёд</a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">Мёд с добавками</a>
+                    </div>
                 </div>
                 
-                <div>
+                <div class="footer-column">
                     <h3 class="text-lg font-semibold mb-4">Информация</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">О компании</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Доставка и оплата</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Гарантии качества</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Отзывы</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Контакты</a></li>
-                    </ul>
+                    <div class="footer-links">
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">О компании</a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">Доставка и оплата</a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">Гарантии качества</a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">Отзывы</a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">Контакты</a>
+                    </div>
                 </div>
                 
-                <div>
+                <div class="footer-column">
                     <h3 class="text-lg font-semibold mb-4">Контакты</h3>
-                    <ul class="space-y-3">
-                        <li class="flex items-start">
-                            <i class="ri-phone-line ri-2x mt-1 mr-3 text-primary"></i>
+                    <ul class="footer-contacts">
+                        <li>
+                            <i class="ri-phone-line ri-lg text-primary"></i>
                             <div>
                                 <p class="text-white">+7 (900) 123-45-67</p>
                                 <p class="text-gray-400 text-sm">Ежедневно с 9:00 до 21:00</p>
                             </div>
                         </li>
-                        <li class="flex items-start">
-                            <i class="ri-mail-line ri-2x mt-1 mr-3 text-primary"></i>
+                        <li>
+                            <i class="ri-mail-line ri-lg text-primary"></i>
                             <div>
                                 <p class="text-white">info@altaymed.ru</p>
                                 <p class="text-gray-400 text-sm">Для заказов и вопросов</p>
                             </div>
                         </li>
-                        <li class="flex items-start">
-                            <i class="ri-map-pin-line ri-2x mt-1 mr-3 text-primary"></i>
+                        <li>
+                            <i class="ri-map-pin-line ri-lg text-primary"></i>
                             <div>
                                 <p class="text-white">г. Барнаул, ул. Алтайская, 10</p>
                                 <p class="text-gray-400 text-sm">Главный офис</p>
@@ -733,13 +840,13 @@
                 </div>
             </div>
             
-            <div class="pt-6 border-t border-gray-800 text-center text-gray-400 text-sm">
-                <p>© 2025 АлтайМёд. Все права защищены.</p>
-                <div class="flex justify-center mt-4 space-x-4">
-                    <i class="ri-visa-line ri-2x"></i>
-                    <i class="ri-mastercard-line ri-2x"></i>
-                    <i class="ri-paypal-line ri-2x"></i>
-                    <i class="ri-alipay-line ri-2x"></i>
+            <div class="footer-bottom">
+                <p class="text-gray-400 text-sm">© 2025 АлтайМёд. Все права защищены.</p>
+                <div class="footer-payments">
+                    <i class="ri-visa-line ri-lg text-gray-400"></i>
+                    <i class="ri-mastercard-line ri-lg text-gray-400"></i>
+                    <i class="ri-paypal-line ri-lg text-gray-400"></i>
+                    <i class="ri-alipay-line ri-lg text-gray-400"></i>
                 </div>
             </div>
         </div>

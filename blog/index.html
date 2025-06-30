@@ -375,16 +375,23 @@ footer::before {
 
 .contact-item {
   display: flex;
-  align-items: flex-start;
+  align-items: center; /* Центрирование по вертикали */
   margin-bottom: 15px;
 }
 
 .contact-icon {
   margin-right: 12px;
-  min-width: 24px;
+  width: 24px; /* Фиксированная ширина */
+  height: 24px; /* Фиксированная высота */
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0; /* Запрет сжатия */
+}
+
+.contact-icon img {
+  width: 100%; /* Иконка заполняет контейнер */
+  height: auto; /* Сохраняем пропорции */
 }
 
 .contact-text {
@@ -510,11 +517,11 @@ footer::before {
   
   .contact-item {
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center; /* Центрирование вместо flex-start */
   }
   
   .contact-icon {
-    margin-top: 3px;
+    margin-top: 0; /* Убираем отступ */
   }
   
   .contact-text {
@@ -658,36 +665,36 @@ footer::before {
         <h4>Контакты</h4>
         <div class="contact-item">
           <div class="contact-icon">
-            <img src="assets/icons/remixicon/map-pin-line.svg" alt="Адрес" width="20" height="20">
+            <img src="/assets/icons/remixicon/map-pin-line.svg" alt="Адрес" width="24" height="24">
           </div>
           <span class="contact-text">Владимирская обл. Город Ковров</span>
         </div>
         <div class="contact-item">
           <div class="contact-icon">
-            <img src="assets/icons/remixicon/phone-line.svg" alt="Телефон" width="20" height="20">
+            <img src="/assets/icons/remixicon/phone-line.svg" alt="Телефон" width="24" height="24">
           </div>
           <a href="tel:+79209400222" class="contact-text">+7 (920) 940-02-22</a>
         </div>
         <div class="contact-item">
           <div class="contact-icon">
-            <img src="assets/icons/remixicon/mail-line.svg" alt="Почта" width="20" height="20">
+            <img src="/assets/icons/remixicon/mail-line.svg" alt="Почта" width="24" height="24">
           </div>
           <a href="mailto:9209400222@mail.ru" class="contact-text">9209400222@mail.ru</a>
         </div>
         
         <div class="social-links">
           <a href="https://vk.com/honeybuckwheat" target="_blank" class="social-icon-bw">
-            <img src="assets/icons/remixicon/vk-line.svg" alt="ВКонтакте">
+            <img src="/assets/icons/remixicon/vk-line.svg" alt="ВКонтакте" width="20" height="20">
           </a>
           <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" class="social-icon-bw">
-            <img src="assets/icons/remixicon/telegram-line.svg" alt="Telegram">
+            <img src="/assets/icons/remixicon/telegram-line.svg" alt="Telegram" width="20" height="20">
           </a>
           <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000" 
              target="_blank" class="social-icon-bw">
-            <img src="assets/icons/remixicon/avito-line.svg" alt="Avito">
+            <img src="/assets/icons/remixicon/avito-line.svg" alt="Avito" width="20" height="20">
           </a>
           <a href="https://yandex.ru/maps/" target="_blank" class="social-icon-bw">
-            <img src="assets/icons/remixicon/yandex-maps-line.svg" alt="Яндекс Карты">
+            <img src="/assets/icons/remixicon/yandex-maps-line.svg" alt="Яндекс Карты" width="20" height="20">
           </a>
         </div>
       </div>

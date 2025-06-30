@@ -5,25 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Доставка мёда в Ковров — АлтайМёд</title>
     <meta name="description" content="Быстрая доставка натурального алтайского мёда в Ковров. Свежий мёд с пасек Алтая с доставкой за 2-3 дня. Выгодные условия и широкий ассортимент.">
-    
-    <!-- Локальные шрифты -->
-    <link rel="stylesheet" href="fonts/pacifico.css">
-    
-    <!-- Локальные иконки -->
-    <link rel="stylesheet" href="icons/remixicon.css">
-    
-    <!-- Локальный Tailwind CSS -->
-    <link rel="stylesheet" href="assets/css/tailwind.min.css">
-    
     <style>
-        body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        @font-face {
+            font-family: 'Pacifico';
+            src: url('fonts/Pacifico-Regular.ttf') format('truetype');
         }
-        .font-pacifico {
-            font-family: 'Pacifico', cursive;
+        @font-face {
+            font-family: 'remixicon';
+            src: url('fonts/remixicon.woff2') format('woff2');
+        }
+        [class^="ri-"], [class*=" ri-"] {
+            font-family: 'remixicon' !important;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
         .hero-section {
-            background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('assets/optimized/hero-bg.webp');
+            background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('images/hero-bg.jpg');
             background-size: cover;
             background-position: center;
         }
@@ -36,43 +37,187 @@
             transform: rotate(45deg);
         }
         
-        /* Кастомные цвета */
+        /* Tailwind CSS */
+        .container { width: 100%; padding-right: 1rem; padding-left: 1rem; margin-right: auto; margin-left: auto; }
+        @media (min-width: 640px) { .container { max-width: 640px; } }
+        @media (min-width: 768px) { .container { max-width: 768px; } }
+        @media (min-width: 1024px) { .container { max-width: 1024px; } }
+        @media (min-width: 1280px) { .container { max-width: 1280px; } }
+        .mx-auto { margin-left: auto; margin-right: auto; }
+        .px-4 { padding-left: 1rem; padding-right: 1rem; }
+        .py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+        .flex { display: flex; }
+        .items-center { align-items: center; }
+        .justify-between { justify-content: space-between; }
+        .hidden { display: none; }
+        @media (min-width: 768px) { .md\:flex { display: flex; } }
+        .space-x-8 > :not([hidden]) ~ :not([hidden]) { margin-left: 2rem; }
+        .text-gray-700 { color: #374151; }
+        .hover\:text-primary:hover { color: #FFA500; }
+        .transition-colors { transition-property: color; transition-duration: 150ms; }
         .text-primary { color: #FFA500; }
+        .font-medium { font-weight: 500; }
+        .w-10 { width: 2.5rem; }
+        .h-10 { height: 2.5rem; }
+        .space-x-4 > :not([hidden]) ~ :not([hidden]) { margin-left: 1rem; }
+        .sticky { position: sticky; }
+        .top-0 { top: 0; }
+        .z-50 { z-index: 50; }
+        .bg-white { background-color: #fff; }
+        .shadow-sm { box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05); }
+        .py-16 { padding-top: 4rem; padding-bottom: 4rem; }
+        .max-w-3xl { max-width: 48rem; }
+        .text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+        @media (min-width: 768px) { .md\:text-5xl { font-size: 3rem; line-height: 1; } }
+        .font-bold { font-weight: 700; }
+        .text-gray-900 { color: #111827; }
+        .mb-4 { margin-bottom: 1rem; }
+        .text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+        .mb-8 { margin-bottom: 2rem; }
         .bg-primary { background-color: #FFA500; }
-        .hover\:bg-primary:hover { background-color: #FFA500; }
-        .hover\:bg-primary\/90:hover { background-color: rgba(255, 165, 0, 0.9); }
-        .bg-primary\/10 { background-color: rgba(255, 165, 0, 0.1); }
-        .bg-primary\/5 { background-color: rgba(255, 165, 0, 0.05); }
-        .bg-primary\/20 { background-color: rgba(255, 165, 0, 0.2); }
+        .hover\:bg-primary\/90:hover { background-color: rgba(255,165,0,0.9); }
+        .text-white { color: #fff; }
+        .px-8 { padding-left: 2rem; padding-right: 2rem; }
+        .py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+        .text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+        .\!rounded-button { border-radius: 8px; }
+        .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); }
+        .hover\:shadow-xl:hover { box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04); }
+        .transition-all { transition-property: all; transition-duration: 150ms; }
+        .whitespace-nowrap { white-space: nowrap; }
+        .bg-gray-50 { background-color: #F9FAFB; }
+        .text-center { text-align: center; }
+        .mb-12 { margin-bottom: 3rem; }
+        .grid { display: grid; }
+        .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+        @media (min-width: 768px) { .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+        .gap-8 { gap: 2rem; }
+        .p-6 { padding: 1.5rem; }
+        .rounded-lg { border-radius: 0.5rem; }
+        .shadow-md { box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06); }
+        .hover\:shadow-lg:hover { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); }
+        .transition-shadow { transition-property: box-shadow; transition-duration: 150ms; }
+        .w-16 { width: 4rem; }
+        .h-16 { height: 4rem; }
+        .bg-primary\/10 { background-color: rgba(255,165,0,0.1); }
+        .rounded-full { border-radius: 9999px; }
+        .mb-4 { margin-bottom: 1rem; }
+        .ri-2x { font-size: 2em; }
+        .text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+        .font-semibold { font-weight: 600; }
+        .mb-3 { margin-bottom: 0.75rem; }
+        .text-gray-600 { color: #4B5563; }
+        .overflow-hidden { overflow: hidden; }
+        .border-b { border-bottom-width: 1px; }
+        .flex-wrap { flex-wrap: wrap; }
+        .border-b-2 { border-bottom-width: 2px; }
         .border-primary { border-color: #FFA500; }
-        
-        .text-secondary { color: #8B4513; }
-        .bg-secondary { background-color: #8B4513; }
-        
-        /* Кастомные радиусы */
-        .rounded-button { border-radius: 8px; }
-        .\!rounded-button { border-radius: 8px !important; }
+        .whitespace-nowrap { white-space: nowrap; }
+        .focus\:outline-none:focus { outline: 2px solid transparent; outline-offset: 2px; }
+        .flex-col { flex-direction: column; }
+        @media (min-width: 768px) { .md\:flex-row { flex-direction: row; } }
+        .gap-6 { gap: 1.5rem; }
+        .flex-1 { flex: 1 1 0%; }
+        .md\:w-1\/3 { width: 33.333333%; }
+        .p-4 { padding: 1rem; }
+        .space-y-2 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.5rem; }
+        .mt-1 { margin-top: 0.25rem; }
+        .mr-2 { margin-right: 0.5rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .mb-2 { margin-bottom: 0.5rem; }
+        .overflow-x-auto { overflow-x: auto; }
+        .w-full { width: 100%; }
+        .border-collapse { border-collapse: collapse; }
+        .bg-gray-50 { background-color: #F9FAFB; }
+        .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+        .py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+        .text-left { text-align: left; }
+        .text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+        .uppercase { text-transform: uppercase; }
+        .tracking-wider { letter-spacing: 0.05em; }
+        .border-b { border-bottom-width: 1px; }
+        .whitespace-nowrap { white-space: nowrap; }
+        .bg-primary\/5 { background-color: rgba(255,165,0,0.05); }
+        .mt-8 { margin-top: 2rem; }
+        .h-\[400px\] { height: 400px; }
+        .relative { position: relative; }
+        .absolute { position: absolute; }
+        .inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
+        .bg-center { background-position: center; }
+        .bg-cover { background-size: cover; }
+        .space-y-4 > :not([hidden]) ~ :not([hidden]) { margin-top: 1rem; }
+        .cursor-pointer { cursor: pointer; }
+        .justify-between { justify-content: space-between; }
+        .max-h-0 { max-height: 0; }
+        .overflow-hidden { overflow: hidden; }
+        .duration-300 { transition-duration: 300ms; }
+        .px-4 { padding-left: 1rem; padding-right: 1rem; }
+        .bg-primary\/10 { background-color: rgba(255,165,0,0.1); }
+        .md\:text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+        .max-w-3xl { max-width: 48rem; }
+        .flex-col { flex-direction: column; }
+        @media (min-width: 640px) { .sm\:flex-row { flex-direction: row; } }
+        .justify-center { justify-content: center; }
+        .gap-4 { gap: 1rem; }
+        .mb-12 { margin-bottom: 3rem; }
+        .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+        @media (min-width: 640px) { .sm\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+        @media (min-width: 768px) { .md\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+        .gap-6 { gap: 1.5rem; }
+        .max-w-4xl { max-width: 56rem; }
+        .w-12 { width: 3rem; }
+        .h-12 { height: 3rem; }
+        .mx-auto { margin-left: auto; margin-right: auto; }
+        .mb-3 { margin-bottom: 0.75rem; }
+        .text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+        .bg-gray-900 { background-color: #111827; }
+        .pt-12 { padding-top: 3rem; }
+        .pb-6 { padding-bottom: 1.5rem; }
+        @media (min-width: 768px) { .md\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+        .gap-8 { gap: 2rem; }
+        .mb-8 { margin-bottom: 2rem; }
+        .inline-block { display: inline-block; }
+        .text-gray-400 { color: #9CA3AF; }
+        .space-x-4 > :not([hidden]) ~ :not([hidden]) { margin-left: 1rem; }
+        .bg-gray-800 { background-color: #1F2937; }
+        .hover\:bg-primary\/20:hover { background-color: rgba(255,165,0,0.2); }
+        .rounded-full { border-radius: 9999px; }
+        .text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+        .space-y-2 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.5rem; }
+        .space-y-3 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.75rem; }
+        .mr-3 { margin-right: 0.75rem; }
+        .pt-6 { padding-top: 1.5rem; }
+        .border-t { border-top-width: 1px; }
+        .border-gray-800 { border-color: #1F2937; }
+        .text-center { text-align: center; }
+        .mt-4 { margin-top: 1rem; }
+        .space-x-4 > :not([hidden]) ~ :not([hidden]) { margin-left: 1rem; }
+        .ri-lg { font-size: 1.333em; line-height: 0.75em; vertical-align: -0.0667em; }
+        .ri-2x { font-size: 2em; }
+        .ri-3x { font-size: 3em; }
+        .ri-4x { font-size: 4em; }
+        .ri-fw { width: 1.28571429em; text-align: center; }
     </style>
 </head>
 <body class="bg-gray-50">
     <!-- Header -->
     <header class="sticky top-0 z-50 bg-white shadow-sm">
         <div class="container mx-auto px-4 py-3 flex items-center justify-between">
-            <a href="/" class="text-3xl font-pacifico text-primary">АлтайМёд</a>
+            <a href="/" class="text-3xl font-['Pacifico'] text-primary">АлтайМёд</a>
             
             <nav class="hidden md:flex items-center space-x-8">
                 <a href="/" class="text-gray-700 hover:text-primary transition-colors">Главная</a>
-                <a href="catalog.html" class="text-gray-700 hover:text-primary transition-colors">Каталог</a>
-                <a href="delivery.html" class="text-primary font-medium">Доставка</a>
-                <a href="about.html" class="text-gray-700 hover:text-primary transition-colors">О нас</a>
-                <a href="contacts.html" class="text-gray-700 hover:text-primary transition-colors">Контакты</a>
+                <a href="/catalog" class="text-gray-700 hover:text-primary transition-colors">Каталог</a>
+                <a href="/delivery" class="text-primary font-medium">Доставка</a>
+                <a href="/about" class="text-gray-700 hover:text-primary transition-colors">О нас</a>
+                <a href="/contacts" class="text-gray-700 hover:text-primary transition-colors">Контакты</a>
             </nav>
             
             <div class="flex items-center space-x-4">
-                <a href="cart.html" class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary transition-colors">
+                <a href="/cart" class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary transition-colors">
                     <i class="ri-shopping-cart-line ri-lg"></i>
                 </a>
-                <a href="tel:+79001234567" class="hidden md:flex items-center text-gray-700 hover:text-primary transition-colors">
+                <a href="/tel:+79001234567" class="hidden md:flex items-center text-gray-700 hover:text-primary transition-colors">
                     <div class="w-10 h-10 flex items-center justify-center">
                         <i class="ri-phone-line ri-lg"></i>
                     </div>
@@ -84,14 +229,13 @@
             </div>
         </div>
     </header>
-    
     <!-- Hero Section -->
     <section class="hero-section py-16 md:py-24">
         <div class="container mx-auto px-4">
             <div class="max-w-3xl">
                 <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Доставка мёда в Ковров</h1>
                 <p class="text-xl md:text-2xl text-gray-700 mb-8">Свежий алтайский мёд с доставкой за 2-3 дня прямо к вашему дому</p>
-                <a href="catalog.html" class="inline-block bg-primary hover:bg-primary/90 text-white px-8 py-3 text-lg font-medium rounded-button shadow-lg hover:shadow-xl transition-all whitespace-nowrap">Заказать мёд</a>
+                <button class="bg-primary hover:bg-primary/90 text-white px-8 py-3 text-lg font-medium !rounded-button shadow-lg hover:shadow-xl transition-all whitespace-nowrap">Заказать мёд</button>
             </div>
         </div>
     </section>
@@ -319,7 +463,7 @@
                 </div>
                 
                 <div class="md:w-1/2 h-[400px] rounded-lg overflow-hidden shadow-md relative">
-                    <div class="absolute inset-0 bg-center bg-cover" style="background-image: url('assets/optimized/map-placeholder.png');"></div>
+                    <div class="absolute inset-0 bg-center bg-cover" style="background-image: url('images/map-placeholder.png');"></div>
                 </div>
             </div>
         </div>
@@ -417,8 +561,8 @@
             <p class="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">Натуральный алтайский мёд с быстрой доставкой в любую точку Коврова и Владимирской области. Мы гарантируем качество и свежесть каждой баночки.</p>
             
             <div class="flex flex-col sm:flex-row justify-center gap-4 mb-12">
-                <a href="catalog.html" class="bg-primary hover:bg-primary/90 text-white px-8 py-3 text-lg font-medium rounded-button shadow-lg hover:shadow-xl transition-all whitespace-nowrap">Заказать мёд</a>
-                <a href="catalog.html" class="bg-white hover:bg-gray-50 text-primary border border-primary px-8 py-3 text-lg font-medium rounded-button shadow-md hover:shadow-lg transition-all whitespace-nowrap">Каталог продукции</a>
+                <button class="bg-primary hover:bg-primary/90 text-white px-8 py-3 text-lg font-medium !rounded-button shadow-lg hover:shadow-xl transition-all whitespace-nowrap">Заказать мёд</button>
+                <button class="bg-white hover:bg-gray-50 text-primary border border-primary px-8 py-3 text-lg font-medium !rounded-button shadow-md hover:shadow-lg transition-all whitespace-nowrap">Каталог продукции</button>
             </div>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
@@ -462,7 +606,7 @@
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                 <div>
-                    <a href="/" class="text-3xl font-pacifico text-primary mb-4 inline-block">АлтайМёд</a>
+                    <a href="/" class="text-3xl font-['Pacifico'] text-primary mb-4 inline-block">АлтайМёд</a>
                     <p class="text-gray-400 mb-4">Натуральный мёд с пасек Алтая с доставкой по всей России, включая Ковров и Владимирскую область.</p>
                     <div class="flex space-x-4">
                         <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 hover:bg-primary/20 text-white rounded-full transition-colors">
@@ -480,22 +624,22 @@
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Каталог</h3>
                     <ul class="space-y-2">
-                        <li><a href="catalog.html" class="text-gray-400 hover:text-primary transition-colors">Цветочный мёд</a></li>
-                        <li><a href="catalog.html" class="text-gray-400 hover:text-primary transition-colors">Гречишный мёд</a></li>
-                        <li><a href="catalog.html" class="text-gray-400 hover:text-primary transition-colors">Липовый мёд</a></li>
-                        <li><a href="catalog.html" class="text-gray-400 hover:text-primary transition-colors">Горный мёд</a></li>
-                        <li><a href="catalog.html" class="text-gray-400 hover:text-primary transition-colors">Мёд с добавками</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Цветочный мёд</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Гречишный мёд</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Липовый мёд</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Горный мёд</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Мёд с добавками</a></li>
                     </ul>
                 </div>
                 
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Информация</h3>
                     <ul class="space-y-2">
-                        <li><a href="about.html" class="text-gray-400 hover:text-primary transition-colors">О компании</a></li>
-                        <li><a href="delivery.html" class="text-gray-400 hover:text-primary transition-colors">Доставка и оплата</a></li>
-                        <li><a href="legal.html" class="text-gray-400 hover:text-primary transition-colors">Гарантии качества</a></li>
-                        <li><a href="reviews.html" class="text-gray-400 hover:text-primary transition-colors">Отзывы</a></li>
-                        <li><a href="contacts.html" class="text-gray-400 hover:text-primary transition-colors">Контакты</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">О компании</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Доставка и оплата</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Гарантии качества</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Отзывы</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Контакты</a></li>
                     </ul>
                 </div>
                 
@@ -550,7 +694,7 @@
                     checkbox.checked = !checkbox.checked;
                 });
             });
-            
+
             // Delivery Tabs
             const tabButtons = document.querySelectorAll('.border-b button');
             tabButtons.forEach(button => {

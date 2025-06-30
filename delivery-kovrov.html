@@ -14,6 +14,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     
+    <!-- Slick Carousel для карусели отзывов -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    
     <!-- Schema.org микроразметка -->
     <script type="application/ld+json">
     {
@@ -273,7 +277,22 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
         
-        .btn:hover {
+        .btn-minimal {
+            display: inline-block;
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 10px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+        }
+        
+        .btn:hover, .btn-minimal:hover {
             opacity: 0.9;
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(0,0,0,0.25);
@@ -322,8 +341,18 @@
         
         .feature-icon {
             font-size: 48px;
-            color: var(--secondary-color);
             margin-bottom: 20px;
+            filter: grayscale(100%);
+            transition: all 0.3s;
+            display: inline-block;
+            padding: 15px;
+            border-radius: 50%;
+            border: 2px solid transparent;
+        }
+        
+        .feature-card:hover .feature-icon {
+            filter: grayscale(0);
+            border-color: var(--primary-color);
         }
         
         .contact-container {
@@ -406,10 +435,9 @@
             content: '-';
         }
         
-        .reviews-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+        .reviews-slider {
+            max-width: 900px;
+            margin: 0 auto;
         }
         
         .review-card {
@@ -417,6 +445,8 @@
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin: 0 15px;
+            height: auto;
         }
         
         .review-header {
@@ -551,6 +581,56 @@
             .section-title {
                 font-size: 28px;
             }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+        
+        /* Стили для выравнивания контактов */
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .contact-icon {
+            margin-right: 15px;
+            font-size: 24px;
+            color: var(--primary-color);
+            min-width: 30px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .contact-text {
+            flex: 1;
+        }
+        
+        /* Стили для кнопки заказа в герое */
+        .hero-btn-container {
+            margin-top: 20px;
+        }
+        
+        /* Стили для слайдера */
+        .slick-prev:before, .slick-next:before {
+            color: var(--primary-color);
+            font-size: 24px;
+        }
+        
+        .slick-dots li button:before {
+            font-size: 12px;
+            color: var(--primary-color);
+        }
+        
+        .slick-dots li.slick-active button:before {
+            color: var(--primary-color);
         }
     </style>
     
@@ -592,19 +672,6 @@
     </style>
 </head>
 <body>
-    <!-- Хлебные крошки -->
-    <div class="container" style="padding: 15px 20px 0;">
-        <nav aria-label="Хлебные крошки">
-            <ol style="list-style: none; padding: 0; margin: 0; display: flex; gap: 10px; font-size: 14px;">
-                <li><a href="https://altaymed.shop/" style="color: var(--primary-color); text-decoration: none;">Главная</a></li>
-                <li style="color: #999;">&gt;</li>
-                <li><a href="https://altaymed.shop/delivery" style="color: var(--primary-color); text-decoration: none;">Доставка</a></li>
-                <li style="color: #999;">&gt;</li>
-                <li style="color: var(--primary-color); font-weight: 500;">Доставка в Ковров</li>
-            </ol>
-        </nav>
-    </div>
-
     <header>
         <div class="container header-content">
             <a href="https://altaymed.shop/" class="logo font-pacifico">Алтайский мёд</a>
@@ -622,7 +689,9 @@
         <div class="container critical-content">
             <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-pacifico mb-4 md:mb-6 text-white">Доставка мёда в Коврове</h1>
             <p class="text-lg md:text-xl mb-6 md:mb-8 max-w-lg text-white">Натуральный алтайский мёд с доставкой прямо к вашей двери в Коврове. Гарантия качества и свежести!</p>
-            <a href="#order" class="btn" aria-label="Заказать мёд">Заказать сейчас</a>
+            <div class="hero-btn-container">
+                <a href="#order" class="btn-minimal" aria-label="Заказать мёд">Заказать сейчас</a>
+            </div>
         </div>
     </section>
 
@@ -709,7 +778,7 @@
 
     <section class="container">
         <h2 class="section-title">Отзывы клиентов из Коврова</h2>
-        <div class="reviews-container">
+        <div class="reviews-slider">
             <div class="review-card">
                 <div class="review-header">
                     <div class="review-avatar">И</div>
@@ -743,6 +812,83 @@
                 <div class="review-stars">★★★★☆</div>
                 <p>Покупала мёд для всей семьи в Коврове. Очень довольна качеством и вкусом. Особенно порадовала аккуратная упаковка - банки приехали целыми, несмотря на дождь. Единственное - пришлось ждать доставку 2 дня, но это связано с большим количеством заказов. В целом - отличный сервис для Коврова!</p>
             </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="review-avatar">М</div>
+                    <div>
+                        <div class="review-name">Михаил Воронин</div>
+                        <div class="review-location">Ковров</div>
+                    </div>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p>Заказывал мед в подарок родителям. Доставили вовремя, упаковка отличная. Родители в восторге от вкуса! Особенно отметили, что мед настоящий, без примесей. Спасибо за качественный продукт и оперативную доставку по Коврову!</p>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="review-avatar">Е</div>
+                    <div>
+                        <div class="review-name">Екатерина Сидорова</div>
+                        <div class="review-location">Ковров</div>
+                    </div>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p>Я аллергик, но на этот мед реакции не было! Покупала гречишный мед для укрепления иммунитета. Вкус насыщенный, с легкой горчинкой. Доставили заказ в Ковров на следующий день после заказа. Очень довольна сервисом и качеством.</p>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="review-avatar">Д</div>
+                    <div>
+                        <div class="review-name">Дмитрий Новиков</div>
+                        <div class="review-location">Ковров</div>
+                    </div>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p>Беру мед для спортивного питания уже полгода. Заметил улучшение самочувствия и выносливости. Доставка в Ковров всегда пунктуальная. Особенно нравится липовый мед - аромат потрясающий! Цены адекватные за такое качество.</p>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="review-avatar">С</div>
+                    <div>
+                        <div class="review-name">Светлана Иванова</div>
+                        <div class="review-location">Ковров</div>
+                    </div>
+                </div>
+                <div class="review-stars">★★★★☆</div>
+                <p>Покупаю мед для лечения простуды. Отлично помогает с теплым молоком! Доставка быстрая, но один раз привезли на час позже обещанного времени. В остальном - претензий нет. Мед настоящий, густой, ароматный. Рекомендую жителям Коврова!</p>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="review-avatar">В</div>
+                    <div>
+                        <div class="review-name">Виктор Соколов</div>
+                        <div class="review-location">Ковров</div>
+                    </div>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p>Я пчеловод с 20-летним стажем и могу оценить качество меда профессионально. Алтайский мед из Коврова - один из лучших, что я пробовал! Заказываю регулярно для сравнения со своим. Доставка всегда вовремя, персонал вежливый. Отличный сервис!</p>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="review-avatar">Т</div>
+                    <div>
+                        <div class="review-name">Татьяна Морозова</div>
+                        <div class="review-location">Ковров</div>
+                    </div>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p>Заказала мед для выпечки. Результат превзошел ожидания! Тесто получается невероятно ароматным. Доставили в Ковров быстро, курьер позвонил заранее. Теперь буду заказывать только здесь. Спасибо за качественный продукт!</p>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="review-avatar">П</div>
+                    <div>
+                        <div class="review-name">Павел Кузнецов</div>
+                        <div class="review-location">Ковров</div>
+                    </div>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p>Покупал мед для бабушки, у нее проблемы с желудком. После месяца употребления заметили улучшение пищеварения. Доставка в Ковров бесплатная при заказе от 3 литров - очень удобно. Качество меда на высоте, будем заказывать еще!</p>
+            </div>
         </div>
     </section>
 
@@ -751,28 +897,34 @@
         <div class="contact-container">
             <div class="contact-info">
                 <h3>Контактная информация</h3>
-                <div class="flex items-center mb-4">
-                    <i class="ri-phone-fill ri-lg text-primary mr-3"></i>
-                    <div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="ri-phone-fill"></i>
+                    </div>
+                    <div class="contact-text">
                         <div>Телефон:</div>
                         <div class="text-xl font-bold">+7 (920) 940-02-22</div>
                     </div>
                 </div>
-                <div class="flex items-center mb-4">
-                    <i class="ri-mail-fill ri-lg text-primary mr-3"></i>
-                    <div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="ri-mail-fill"></i>
+                    </div>
+                    <div class="contact-text">
                         <div>Email:</div>
                         <div class="text-lg">altaymed.shop@yandex.ru</div>
                     </div>
                 </div>
-                <div class="flex items-center mb-4">
-                    <i class="ri-time-fill ri-lg text-primary mr-3"></i>
-                    <div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="ri-time-fill"></i>
+                    </div>
+                    <div class="contact-text">
                         <div>Время работы:</div>
                         <div>Пн-Сб: 9:00-20:00<br>Вс: выходной</div>
                     </div>
                 </div>
-                <a href="#order-form" class="btn w-full text-center">Заказать доставку</a>
+                <a href="#order-form" class="btn w-full text-center mt-4">Заказать доставку</a>
             </div>
             <div class="map-container">
                 <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A3d1a7f8f2b4e5e6c4f5e6d7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0&amp;source=constructor" frameborder="0"></iframe>
@@ -784,67 +936,7 @@
         <div class="container">
             <h2 class="text-3xl md:text-4xl font-pacifico mb-6">Закажите натуральный алтайский мёд с доставкой в Ковров!</h2>
             <p class="text-xl mb-8 max-w-2xl mx-auto">Свежий, ароматный мёд прямо от алтайских пчеловодов. Гарантия качества и быстрая доставка!</p>
-            <a href="#order-form" class="btn">Сделать заказ</a>
-        </div>
-    </section>
-
-    <section id="order-form" class="container py-16">
-        <div class="max-w-4xl mx-auto bg-gradient-to-br from-primary to-[#8ea745] rounded-lg shadow-xl overflow-hidden">
-            <div class="grid grid-cols-1 md:grid-cols-2">
-                <div class="p-6 md:p-10 text-white">
-                    <h2 class="text-2xl md:text-3xl font-pacifico mb-4 md:mb-6">Заказать мёд</h2>
-                    <p class="mb-6 md:mb-8 text-sm md:text-base">Заполните форму, и мы свяжемся с вами для уточнения деталей заказа и доставки.</p>
-                    
-                    <div class="mb-4 md:mb-6">
-                        <div class="flex items-center space-x-3 mb-2">
-                            <div class="w-7 h-7 md:w-8 md:h-8 flex items-center justify-center bg-white bg-opacity-20 rounded-full">
-                                <i class="ri-truck-line ri-sm md:ri-base text-white"></i>
-                            </div>
-                            <span class="font-medium text-sm md:text-base">Доставка по всей России</span>
-                        </div>
-                        
-                        <div class="flex items-center space-x-3 mb-2">
-                            <div class="w-7 h-7 md:w-8 md:h-8 flex items-center justify-center bg-white bg-opacity-20 rounded-full">
-                                <i class="ri-secure-payment-line ri-sm md:ri-base text-white"></i>
-                            </div>
-                            <span class="font-medium text-sm md:text-base">Безопасная оплата</span>
-                        </div>
-                        
-                        <div class="flex items-center space-x-3">
-                            <div class="w-7 h-7 md:w-8 md:h-8 flex items-center justify-center bg-white bg-opacity-20 rounded-full">
-                                <i class="ri-shield-check-line ri-sm md:ri-base text-white"></i>
-                            </div>
-                            <span class="font-medium text-sm md:text-base">Гарантия качества</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-white p-6 md:p-8 lg:p-10">
-                    <form id="order-form">
-                        <div class="mb-3 md:mb-4">
-                            <label for="name" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Ваше имя</label>
-                            <input type="text" id="name" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="Иван Петров">
-                        </div>
-                        
-                        <div class="mb-3 md:mb-4">
-                            <label for="phone" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Телефон</label>
-                            <input type="tel" id="phone" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="+7 (999) 123-45-67">
-                        </div>
-                        
-                        <div class="mb-3 md:mb-4">
-                            <label for="email" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Email</label>
-                            <input type="email" id="email" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="example@mail.ru">
-                        </div>
-                        
-                        <div class="mb-4 md:mb-6">
-                            <label for="message" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Комментарий к заказу</label>
-                            <textarea id="message" rows="3" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="Укажите интересующие вас сорта мёда и объём"></textarea>
-                        </div>
-                        
-                        <button type="submit" class="w-full bg-gradient-to-r from-primary to-[#8ea745] text-white py-2 md:py-3 rounded-lg hover:opacity-90 transition-all font-medium text-sm md:text-base">Отправить заявку</button>
-                    </form>
-                </div>
-            </div>
+            <a href="#order-form" class="btn-minimal">Сделать заказ</a>
         </div>
     </section>
 
@@ -923,6 +1015,10 @@
         </div>
     </footer>
 
+    <!-- Подключение jQuery и Slick Carousel -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
     <script>
         // Раскрытие/закрытие FAQ
         document.querySelectorAll('.faq-question').forEach(question => {
@@ -985,6 +1081,33 @@
         
         animateSections.forEach(section => {
             observer.observe(section);
+        });
+        
+        // Инициализация карусели отзывов
+        $(document).ready(function(){
+            $('.reviews-slider').slick({
+                dots: true,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
+            });
         });
     </script>
 </body>

@@ -10,14 +10,14 @@
 <!-- Критический CSS для герой-секции -->
 <style>
   .hero-section {
-    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/images/image-1-mobile.webp');
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/image-1-mobile.webp');
     background-size: cover;
     background-position: center;
     min-height: 60vh;
   }
   @media (min-width: 768px) {
     .hero-section {
-      background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/images/image-1.webp');
+      background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/image-1.webp');
       min-height: 80vh;
     }
   }
@@ -37,13 +37,13 @@
 </style>
 
 <!-- Предзагрузка критических ресурсов -->
-<link rel="preload" href="/images/image-1-mobile.webp" as="image" media="(max-width: 767px)" fetchpriority="high">
-<link rel="preload" href="/images/image-1.webp" as="image" media="(min-width: 768px)" fetchpriority="high">
-<link rel="preload" href="/fonts/Pacifico-Regular.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/fonts/remixicon.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/images/favicon.ico" as="image" type="image/x-icon">
-<link rel="preload" href="/images/favicon.svg" as="image" type="image/svg+xml">
-<link rel="preload" href="/images/apple-touch-icon.png" as="image" type="image/png">
+<link rel="preload" href="images/image-1-mobile.webp" as="image" media="(max-width: 767px)" fetchpriority="high">
+<link rel="preload" href="images/image-1.webp" as="image" media="(min-width: 768px)" fetchpriority="high">
+<link rel="preload" href="fonts/Pacifico-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="altai-honey/assets/fonts/remixicon/remixicon.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="images/favicon.ico" as="image" type="image/x-icon">
+<link rel="preload" href="images/favicon.svg" as="image" type="image/svg+xml">
+<link rel="preload" href="images/apple-touch-icon.png" as="image" type="image/png">
 
 <!-- Мета-теги верификации -->
 <meta name="yandex-verification" content="9c5350476939e370" />
@@ -63,22 +63,22 @@
 <meta name="twitter:image" content="https://altaymed.shop/images/twitter-preview.webp">
 
 <!-- Favicon -->
-<link rel="icon" href="/images/favicon.ico" sizes="any">
-<link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="icon" href="images/favicon.ico" sizes="any">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
 <!-- Web Manifest -->
-<link rel="manifest" href="/manifest.json">
+<link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#9f5524">
 
 <!-- Локальный Tailwind CSS -->
 <link rel="stylesheet" href="assets/css/tailwind.min.css?v=3">
 
 <!-- Подключение Remix Icon -->
-<link rel="stylesheet" href="assets/fonts/remixicon.css" type="text/css">
+<link rel="stylesheet" href="altai-honey/assets/fonts/remixicon/remixicon.css" type="text/css">
 
 <!-- Локальные шрифты -->
-<link rel="stylesheet" href="assets/css/fonts.css?v=3" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="fonts/fonts.css?v=3" media="print" onload="this.media='all'">
 <style>
   .font-pacifico {
     font-family: 'Pacifico', cursive;
@@ -1094,8 +1094,8 @@ img.product-image.loaded {
       <div id="product-1" class="product-card bg-white rounded-lg shadow-md overflow-hidden">
         <div class="h-56 md:h-64 overflow-hidden">
           <img 
-            src="/images/image-2.webp" 
-            srcset="/images/image-2-sm.webp 400w, /images/image-2.webp 800w"
+            src="images/image-2.webp" 
+            srcset="images/image-2-sm.webp 400w, images/image-2.webp 800w"
             sizes="(max-width: 600px) 400px, 800px"
             alt="Разнотравный мёд с Алтая" 
             loading="lazy"
@@ -1118,8 +1118,8 @@ img.product-image.loaded {
       <div id="product-2" class="product-card bg-white rounded-lg shadow-md overflow-hidden">
         <div class="h-56 md:h-64 overflow-hidden">
           <img 
-            src="/images/image-3.webp" 
-            srcset="/images/image-3-sm.webp 400w, /images/image-3.webp 800w"
+            src="images/image-3.webp" 
+            srcset="images/image-3-sm.webp 400w, images/image-3.webp 800w"
             sizes="(max-width: 600px) 400px, 800px"
             alt="Таёжный мёд из Алтайского края" 
             loading="lazy"
@@ -1142,8 +1142,8 @@ img.product-image.loaded {
       <div id="product-3" class="product-card bg-white rounded-lg shadow-md overflow-hidden">
         <div class="h-56 md:h-64 overflow-hidden">
           <img 
-            src="/images/image-4.webp" 
-            srcset="/images/image-4-sm.webp 400w, /images/image-4.webp 800w"
+            src="images/image-4.webp" 
+            srcset="images/image-4-sm.webp 400w, images/image-4.webp 800w"
             sizes="(max-width: 600px) 400px, 800px"
             alt="Гречишный мёд от производителя" 
             loading="lazy"
@@ -1180,8 +1180,8 @@ img.product-image.loaded {
       <div class="order-2 md:order-1">
         <div class="about-image bg-white p-3 shadow-lg rotate-2 mb-6 md:mb-8 max-w-md mx-auto">
           <img 
-            src="/images/image-5.webp" 
-            srcset="/images/image-5-sm.webp 400w, /images/image-5.webp 800w"
+            src="images/image-5.webp" 
+            srcset="images/image-5-sm.webp 400w, images/image-5.webp 800w"
             sizes="(max-width: 600px) 400px, 800px"
             alt="Семейная пасека на Алтае" 
             loading="lazy"
@@ -1192,8 +1192,8 @@ img.product-image.loaded {
         </div>
         <div class="about-image bg-white p-3 shadow-lg -rotate-3 max-w-md mx-auto">
           <img 
-            src="/images/image-6.webp" 
-            srcset="/images/image-6-sm.webp 400w, /images/image-6.webp 800w"
+            src="images/image-6.webp" 
+            srcset="images/image-6-sm.webp 400w, images/image-6.webp 800w"
             sizes="(max-width: 600px) 400px, 800px"
             alt="Экологически чистый мёд с Алтая" 
             loading="lazy"

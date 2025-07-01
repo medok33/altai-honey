@@ -3,8 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Доставка мёда в Ковров — Алтайский мёд</title>
-    <meta name="description" content="Быстрая доставка натурального алтайского мёда в Ковров. Свежий мёд с пасек Алтая с доставкой за 2-3 дня. Выгодные условия и широкий ассортимент.">
+    <!-- Динамические мета-теги для SEO -->
+    <title id="seo-title">Доставка мёда в Ковров — Алтайский мёд</title>
+    <meta id="seo-description" name="description" content="Быстрая доставка натурального алтайского мёда в Ковров. Свежий мёд с пасек Алтая с доставкой за 2-3 дня. Выгодные условия и широкий ассортимент.">
+    
+    <!-- Динамические Open Graph теги -->
+    <meta property="og:title" id="og-title" content="Доставка мёда в Ковров — Алтайский мёд">
+    <meta property="og:description" id="og-description" content="Быстрая доставка натурального алтайского мёда в Ковров. Свежий мёд с пасек Алтая с доставкой за 2-3 дня.">
     
     <!-- Favicon -->
     <link rel="icon" href="images/favicon.ico" sizes="any">
@@ -12,8 +17,6 @@
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="Доставка мёда в Ковров — Алтайский мёд">
-    <meta property="og:description" content="Быстрая доставка натурального алтайского мёда в Ковров. Свежий мёд с пасек Алтая с доставкой за 2-3 дня.">
     <meta property="og:image" content="images/og-preview.webp">
     <meta property="og:url" content="https://altaymed.shop/delivery.html">
     <meta property="og:type" content="website">
@@ -24,28 +27,25 @@
     <meta name="twitter:description" content="Быстрая доставка натурального алтайского мёда в Ковров">
     <meta name="twitter:image" content="images/twitter-preview.webp">
     
-    <!-- Критические стили и шрифты -->
+    <!-- Критические стили с оптимизациями -->
     <style>
-        /* Основные стили */
+        /* Оптимизированные :root переменные */
         :root {
             --primary: #FFA500;
             --secondary: #8B4513;
             --gray-50: #F9FAFB;
             --gray-100: #F3F4F6;
             --gray-200: #E5E7EB;
-            --gray-300: #D1D5DB;
-            --gray-400: #9CA3AF;
-            --gray-500: #6B7280;
             --gray-600: #4B5563;
             --gray-700: #374151;
-            --gray-800: #1F2937;
             --gray-900: #111827;
         }
         
-        * {
+        /* Упрощенный reset */
+        *, ::before, ::after {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
         
         body {
@@ -53,6 +53,8 @@
             background-color: var(--gray-50);
             color: var(--gray-700);
             line-height: 1.6;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
         }
         
         /* Контейнеры и секции */
@@ -64,21 +66,21 @@
         }
         
         section {
-            padding: 4rem 0;
+            padding: 3rem 0;
         }
         
-        /* Заголовки */
-        h1, h2, h3, h4, h5, h6 {
+        /* Оптимизированные заголовки */
+        h1, h2, h3 {
             color: var(--gray-900);
             margin-top: 0;
             margin-bottom: 1rem;
         }
         
         h2 {
-            font-size: 1.875rem;
+            font-size: 1.75rem;
             font-weight: 700;
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
         }
         
         /* Кнопки */
@@ -107,18 +109,6 @@
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
         
-        .btn-outline {
-            background-color: #fff;
-            color: var(--primary);
-            border: 1px solid var(--primary);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }
-        
-        .btn-outline:hover {
-            background-color: var(--gray-50);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-        
         /* Хедер */
         header {
             position: sticky;
@@ -144,14 +134,6 @@
         
         .nav-links {
             display: none;
-        }
-        
-        @media (min-width: 768px) {
-            .nav-links {
-                display: flex;
-                align-items: center;
-                gap: 2rem;
-            }
         }
         
         .nav-link {
@@ -187,20 +169,6 @@
         
         .phone-link {
             display: none;
-            align-items: center;
-            color: var(--gray-700);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        @media (min-width: 768px) {
-            .phone-link {
-                display: flex;
-            }
-        }
-        
-        .phone-link:hover {
-            color: var(--primary);
         }
         
         /* Герой секция */
@@ -209,12 +177,6 @@
             background-size: cover;
             background-position: center;
             padding: 4rem 0;
-        }
-        
-        @media (min-width: 768px) {
-            .hero-section {
-                padding: 6rem 0;
-            }
         }
         
         .hero-content {
@@ -227,21 +189,9 @@
             margin-bottom: 1rem;
         }
         
-        @media (min-width: 768px) {
-            .hero-title {
-                font-size: 3rem;
-            }
-        }
-        
         .hero-text {
             font-size: 1.25rem;
             margin-bottom: 2rem;
-        }
-        
-        @media (min-width: 768px) {
-            .hero-text {
-                font-size: 1.5rem;
-            }
         }
         
         /* Преимущества */
@@ -249,12 +199,6 @@
             display: grid;
             grid-template-columns: 1fr;
             gap: 2rem;
-        }
-        
-        @media (min-width: 768px) {
-            .benefits-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
         }
         
         .benefit-card {
@@ -295,7 +239,7 @@
             color: var(--gray-600);
         }
         
-        /* Способы доставки - ОБНОВЛЕННЫЙ СТИЛЬ */
+        /* Способы доставки */
         .delivery-section {
             background-color: var(--gray-50);
         }
@@ -360,12 +304,6 @@
             gap: 1.5rem;
         }
         
-        @media (min-width: 768px) {
-            .delivery-info-wrapper {
-                flex-direction: row;
-            }
-        }
-        
         .delivery-details {
             flex: 1;
         }
@@ -375,12 +313,6 @@
             border-radius: 0.5rem;
             padding: 1.5rem;
             width: 100%;
-        }
-        
-        @media (min-width: 768px) {
-            .delivery-advantages {
-                width: 33%;
-            }
         }
         
         .delivery-points {
@@ -474,7 +406,7 @@
             font-weight: 500;
         }
         
-        /* География доставки - ОБНОВЛЕННЫЙ СТИЛЬ */
+        /* География доставки */
         .map-section {
             background-color: var(--gray-50);
         }
@@ -483,12 +415,6 @@
             display: flex;
             flex-direction: column;
             gap: 2rem;
-        }
-        
-        @media (min-width: 768px) {
-            .delivery-geography {
-                flex-direction: row;
-            }
         }
         
         .cities-container {
@@ -504,12 +430,6 @@
             grid-template-columns: 1fr;
             gap: 2rem;
             margin: 2rem 0;
-        }
-        
-        @media (min-width: 768px) {
-            .cities-grid {
-                grid-template-columns: 1fr 1fr;
-            }
         }
         
         .city-column h4 {
@@ -628,30 +548,12 @@
             margin-top: 2rem;
         }
         
-        @media (min-width: 640px) {
-            .cta-buttons {
-                flex-direction: row;
-            }
-        }
-        
         .features-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 1.5rem;
             max-width: 56rem;
             margin: 0 auto;
-        }
-        
-        @media (min-width: 640px) {
-            .features-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        @media (min-width: 768px) {
-            .features-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
         }
         
         .feature-card {
@@ -699,12 +601,6 @@
             grid-template-columns: 1fr;
             gap: 2rem;
             margin-bottom: 2rem;
-        }
-        
-        @media (min-width: 768px) {
-            .footer-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
         }
         
         .footer-column {
@@ -825,47 +721,6 @@
         .payment-icon {
             color: var(--gray-400);
             font-size: 1.5rem;
-        }
-        
-        /* Утилиты */
-        .text-center {
-            text-align: center;
-        }
-        
-        .text-xl {
-            font-size: 1.25rem;
-        }
-        
-        .font-semibold {
-            font-weight: 600;
-        }
-        
-        .mb-4 {
-            margin-bottom: 1rem;
-        }
-        
-        .mb-6 {
-            margin-bottom: 1.5rem;
-        }
-        
-        .space-y-2 > * + * {
-            margin-top: 0.5rem;
-        }
-        
-        .space-y-3 > * + * {
-            margin-top: 0.75rem;
-        }
-        
-        .list-disc {
-            list-style-type: disc;
-        }
-        
-        .pl-5 {
-            padding-left: 1.25rem;
-        }
-        
-        .mt-2 {
-            margin-top: 0.5rem;
         }
         
         /* Мобильное меню */
@@ -1013,12 +868,6 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
         
-        /* Выравнивание иконок в контактах */
-        .contact-icon i {
-            vertical-align: middle;
-            line-height: 1;
-        }
-        
         /* Стили для формы в модальном окне */
         .form-group {
             margin-bottom: 1.5rem;
@@ -1081,13 +930,31 @@
             font-weight: 600;
             text-align: center;
         }
+
+        /* Упрощенные медиа-запросы */
+        @media (min-width: 768px) {
+            .nav-links { display: flex; align-items: center; gap: 2rem; }
+            .phone-link { display: flex; }
+            .benefits-grid { grid-template-columns: repeat(3, 1fr); }
+            .hero-section { padding: 6rem 0; }
+            .hero-title { font-size: 3rem; }
+            .hero-text { font-size: 1.5rem; }
+            .delivery-info-wrapper { flex-direction: row; }
+            .delivery-advantages { width: 33%; }
+            .cities-grid { grid-template-columns: 1fr 1fr; }
+            .features-grid { grid-template-columns: repeat(4, 1fr); }
+            .footer-grid { grid-template-columns: repeat(4, 1fr); }
+            .cta-buttons { flex-direction: row; }
+        }
+
+        @media (min-width: 640px) {
+            .features-grid { grid-template-columns: repeat(2, 1fr); }
+        }
     </style>
 
     <!-- Предзагрузка критических ресурсов -->
-    <link rel="preload" href="images/hero-bg.jpg" as="image">
+    <link rel="preload" href="images/hero-bg.jpg" as="image" fetchpriority="high">
     <link rel="preload" href="assets/fonts/remixicon/remixicon.css" as="style">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" as="style" crossorigin>
     
     <!-- Асинхронная загрузка стилей -->
     <link rel="stylesheet" href="assets/fonts/remixicon/remixicon.css" media="print" onload="this.media='all'">
@@ -1147,12 +1014,12 @@
         </div>
     </div>
 
-    <!-- Hero Section -->
+    <!-- Hero Section с динамическими данными -->
     <section class="hero-section">
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">Доставка мёда в Ковров</h1>
-                <p class="hero-text">Свежий алтайский мёд с доставкой за 2-3 дня прямо к вашему дому</p>
+                <h1 class="hero-title" id="dynamic-hero-title">Доставка мёда в Ковров</h1>
+                <p class="hero-text" id="dynamic-hero-text">Свежий алтайский мёд с доставкой за 2-3 дня прямо к вашему дому</p>
                 <button class="btn btn-primary" id="open-order-modal">Заказать мёд</button>
             </div>
         </div>
@@ -1191,7 +1058,7 @@
         </div>
     </section>
 
-    <!-- Delivery Methods - ОБНОВЛЕННЫЙ РАЗДЕЛ -->
+    <!-- Delivery Methods -->
     <section class="delivery-section">
         <div class="container">
             <h2>Способы доставки в Ковров</h2>
@@ -1432,12 +1299,12 @@
             </div>
             
             <div class="free-delivery">
-                <p><strong>Бесплатная доставка</strong> при заказе от 5000 ₽ в пределах города Ковров!</p>
+                <p><strong id="free-delivery-text">Бесплатная доставка при заказе от 5000 ₽ в пределах города Ковров!</strong></p>
             </div>
         </div>
     </section>
 
-    <!-- Map Section - ОБНОВЛЕННЫЙ РАЗДЕЛ -->
+    <!-- Map Section -->
     <section class="map-section">
         <div class="container">
             <h2>География доставки</h2>
@@ -1747,8 +1614,152 @@
         </div>
     </div>
 
+    <!-- Schema.org разметка -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Доставка меда",
+        "provider": {
+            "@type": "Organization",
+            "name": "Алтайский мёд",
+            "url": "https://altaymed.shop",
+            "logo": "https://altaymed.shop/images/logo.webp",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+79209400222",
+                "contactType": "Customer service"
+            }
+        },
+        "areaServed": {
+            "@type": "City",
+            "name": "Ковров",
+            "address": {
+                "@type": "PostalAddress",
+                "addressRegion": "Владимирская область",
+                "addressCountry": "RU"
+            }
+        },
+        "serviceArea": {
+            "@type": "AdministrativeArea",
+            "name": "Ковров"
+        },
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Тарифы доставки",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "СДЭК"
+                    },
+                    "price": "300",
+                    "priceCurrency": "RUB"
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Курьерская доставка"
+                    },
+                    "price": "400",
+                    "priceCurrency": "RUB"
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Почта России"
+                    },
+                    "price": "350",
+                    "priceCurrency": "RUB"
+                }
+            ]
+        },
+        "review": {
+            "@type": "Review",
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "4.9",
+                "bestRating": "5"
+            },
+            "author": {
+                "@type": "Person",
+                "name": "Сергей Иванов"
+            }
+        }
+    }
+    </script>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Параметры для региона
+            const regionData = {
+                city: "Ковров",
+                region: "Владимирской области",
+                deliveryDays: "2-3",
+                deliveryTime: "1-2 рабочих дня",
+                phone: "+7 (920) 940-02-22",
+                minOrder: "5000",
+                deliveryCost: "300"
+            };
+            
+            // Динамическое обновление контента
+            const dynamicElements = {
+                // Заголовки
+                'dynamic-hero-title': `Доставка мёда в ${regionData.city}`,
+                'seo-title': `Доставка мёда в ${regionData.city} — Алтайский мёд`,
+                'og-title': `Доставка мёда в ${regionData.city} — Алтайский мёд`,
+                
+                // Описания
+                'dynamic-hero-text': `Свежий алтайский мёд с доставкой за ${regionData.deliveryDays} дня прямо к вашему дому`,
+                'seo-description': `Быстрая доставка натурального алтайского мёда в ${regionData.city}. Свежий мёд с пасек Алтая с доставкой за ${regionData.deliveryDays} дня. Выгодные условия и широкий ассортимент.`,
+                'og-description': `Быстрая доставка натурального алтайского мёда в ${regionData.city}. Свежий мёд с пасек Алтая с доставкой за ${regionData.deliveryDays} дня.`,
+                
+                // Контент на странице
+                'free-delivery-text': `Бесплатная доставка при заказе от ${regionData.minOrder} ₽ в пределах города ${regionData.city}!`,
+                'delivery-time': regionData.deliveryDays,
+                'delivery-region': regionData.region
+            };
+            
+            // Обновляем элементы
+            for (const [id, text] of Object.entries(dynamicElements)) {
+                const element = document.getElementById(id);
+                if (element) {
+                    if (id.includes('title') || id.includes('description')) {
+                        element.textContent = text;
+                    } else if (id === 'seo-description' || id === 'og-description') {
+                        element.setAttribute('content', text);
+                    } else {
+                        element.textContent = text;
+                    }
+                }
+            }
+            
+            // Обновляем все вхождения названия города
+            document.querySelectorAll('.city-replace').forEach(el => {
+                el.textContent = regionData.city;
+            });
+            
+            // Обновляем регион
+            document.querySelectorAll('.region-replace').forEach(el => {
+                el.textContent = regionData.region;
+            });
+            
+            // Обновляем сроки доставки
+            document.querySelectorAll('.delivery-days-replace').forEach(el => {
+                el.textContent = regionData.deliveryDays;
+            });
+            
+            // Обновляем телефон
+            document.querySelectorAll('.phone-replace').forEach(el => {
+                el.textContent = regionData.phone;
+                if (el.tagName === 'A') {
+                    el.href = `tel:${regionData.phone.replace(/[^0-9+]/g, '')}`;
+                }
+            });
+            
             // Tabs
             const tabButtons = document.querySelectorAll('.delivery-tab');
             const tabContents = document.querySelectorAll('.delivery-content');
@@ -1850,27 +1861,6 @@
                     orderForm.reset();
                 });
             }
-        });
-        
-        // Асинхронная загрузка шрифтов
-        function loadCSS(href) {
-            var link = document.createElement('link');
-            link.rel = 'stylesheet';
-            link.href = href;
-            link.crossOrigin = 'anonymous';
-            document.head.appendChild(link);
-        }
-        
-        window.addEventListener('load', function() {
-            // Загружаем шрифты после отрисовки страницы
-            loadCSS('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-            loadCSS('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-            
-            // Применяем шрифты после загрузки
-            document.body.style.fontFamily = "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
-            document.querySelectorAll('.logo, .footer-logo').forEach(el => {
-                el.style.fontFamily = "'Pacifico', 'Comic Sans MS', cursive";
-            });
         });
     </script>
 </body>

@@ -24,1078 +24,52 @@
     <meta name="twitter:description" content="Быстрая доставка натурального алтайского мёда в Ковров">
     <meta name="twitter:image" content="images/twitter-preview.webp">
     
-    <!-- Критические стили и шрифты -->
-    <style>
-        /* Основные стили */
-        :root {
-            --primary: #FFA500;
-            --secondary: #8B4513;
-            --gray-50: #F9FAFB;
-            --gray-100: #F3F4F6;
-            --gray-200: #E5E7EB;
-            --gray-300: #D1D5DB;
-            --gray-400: #9CA3AF;
-            --gray-500: #6B7280;
-            --gray-600: #4B5563;
-            --gray-700: #374151;
-            --gray-800: #1F2937;
-            --gray-900: #111827;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            background-color: var(--gray-50);
-            color: var(--gray-700);
-            line-height: 1.6;
-        }
-        
-        /* Контейнеры и секции */
-        .container {
-            width: 100%;
-            max-width: 1280px;
-            padding: 0 1rem;
-            margin: 0 auto;
-        }
-        
-        section {
-            padding: 4rem 0;
-        }
-        
-        /* Заголовки */
-        h1, h2, h3, h4, h5, h6 {
-            color: var(--gray-900);
-            margin-top: 0;
-            margin-bottom: 1rem;
-        }
-        
-        h2 {
-            font-size: 1.875rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        /* Кнопки */
-        .btn {
-            display: inline-block;
-            padding: 0.75rem 2rem;
-            font-size: 1.125rem;
-            font-weight: 500;
-            text-align: center;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-            text-decoration: none;
-            white-space: nowrap;
-        }
-        
-        .btn-primary {
-            background-color: var(--primary);
-            color: #fff;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-        
-        .btn-primary:hover {
-            background-color: rgba(255, 165, 0, 0.9);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        
-        .btn-outline {
-            background-color: #fff;
-            color: var(--primary);
-            border: 1px solid var(--primary);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }
-        
-        .btn-outline:hover {
-            background-color: var(--gray-50);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-        
-        /* Хедер */
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 50;
-            background-color: #fff;
-            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            padding: 0.75rem 0;
-        }
-        
-        .header-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        
-        .logo {
-            font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', cursive;
-            font-size: 1.875rem;
-            color: var(--primary);
-            text-decoration: none;
-        }
-        
-        .nav-links {
-            display: none;
-        }
-        
-        @media (min-width: 768px) {
-            .nav-links {
-                display: flex;
-                align-items: center;
-                gap: 2rem;
-            }
-        }
-        
-        .nav-link {
-            color: var(--gray-700);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .nav-link:hover, .nav-link.active {
-            color: var(--primary);
-        }
-        
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        
-        .icon-btn {
-            width: 2.5rem;
-            height: 2.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gray-700);
-            transition: color 0.3s;
-        }
-        
-        .icon-btn:hover {
-            color: var(--primary);
-        }
-        
-        .phone-link {
-            display: none;
-            align-items: center;
-            color: var(--gray-700);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        @media (min-width: 768px) {
-            .phone-link {
-                display: flex;
-            }
-        }
-        
-        .phone-link:hover {
-            color: var(--primary);
-        }
-        
-        /* Герой секция */
-        .hero-section {
-            background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('images/hero-bg.jpg');
-            background-size: cover;
-            background-position: center;
-            padding: 4rem 0;
-        }
-        
-        @media (min-width: 768px) {
-            .hero-section {
-                padding: 6rem 0;
-            }
-        }
-        
-        .hero-content {
-            max-width: 48rem;
-        }
-        
-        .hero-title {
-            font-size: 2.25rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-        
-        @media (min-width: 768px) {
-            .hero-title {
-                font-size: 3rem;
-            }
-        }
-        
-        .hero-text {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
-        }
-        
-        @media (min-width: 768px) {
-            .hero-text {
-                font-size: 1.5rem;
-            }
-        }
-        
-        /* Преимущества */
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-        }
-        
-        @media (min-width: 768px) {
-            .benefits-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        
-        .benefit-card {
-            background: #fff;
-            padding: 1.5rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            transition: box-shadow 0.3s;
-        }
-        
-        .benefit-card:hover {
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-        
-        .benefit-icon {
-            width: 4rem;
-            height: 4rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: rgba(255, 165, 0, 0.1);
-            color: var(--primary);
-            border-radius: 50%;
-            margin-bottom: 1rem;
-        }
-        
-        .benefit-icon i {
-            font-size: 2rem;
-        }
-        
-        .benefit-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-        }
-        
-        .benefit-text {
-            color: var(--gray-600);
-        }
-        
-        /* Способы доставки - ОБНОВЛЕННЫЙ СТИЛЬ */
-        .delivery-section {
-            background-color: var(--gray-50);
-        }
-        
-        .delivery-methods {
-            background: white;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
-        
-        .delivery-tabs {
-            display: flex;
-            border-bottom: 1px solid var(--gray-200);
-            background: white;
-            overflow-x: auto;
-        }
-        
-        .delivery-tab {
-            padding: 1.25rem 1.5rem;
-            font-weight: 500;
-            color: var(--gray-500);
-            background: none;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            white-space: nowrap;
-        }
-        
-        .delivery-tab.active {
-            color: var(--primary);
-            font-weight: 600;
-        }
-        
-        .delivery-tab.active::after {
-            content: '';
-            position: absolute;
-            bottom: -1px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: var(--primary);
-        }
-        
-        .delivery-tab:hover {
-            color: var(--gray-700);
-        }
-        
-        .delivery-content {
-            padding: 2rem;
-            display: none;
-        }
-        
-        .delivery-content.active {
-            display: block;
-        }
-        
-        .delivery-info-wrapper {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-        
-        @media (min-width: 768px) {
-            .delivery-info-wrapper {
-                flex-direction: row;
-            }
-        }
-        
-        .delivery-details {
-            flex: 1;
-        }
-        
-        .delivery-advantages {
-            background-color: rgba(255, 165, 0, 0.05);
-            border-radius: 0.5rem;
-            padding: 1.5rem;
-            width: 100%;
-        }
-        
-        @media (min-width: 768px) {
-            .delivery-advantages {
-                width: 33%;
-            }
-        }
-        
-        .delivery-points {
-            list-style: none;
-            padding-left: 0;
-            margin-top: 1rem;
-        }
-        
-        .delivery-points li {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 0.75rem;
-            color: var(--gray-600);
-        }
-        
-        .delivery-points i {
-            color: var(--primary);
-            margin-right: 0.75rem;
-            margin-top: 0.25rem;
-        }
-        
-        .delivery-meta {
-            display: flex;
-            align-items: center;
-            margin-top: 1.5rem;
-            color: var(--gray-600);
-        }
-        
-        .delivery-meta i {
-            color: var(--primary);
-            margin-right: 0.75rem;
-        }
-        
-        .advantage-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 0.75rem;
-            color: var(--gray-600);
-        }
-        
-        .advantage-item i {
-            color: var(--primary);
-            margin-right: 0.75rem;
-            margin-top: 0.25rem;
-        }
-        
-        /* Тарифы */
-        .tariffs-container {
-            overflow-x: auto;
-        }
-        
-        .tariffs-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 2rem;
-            background: #fff;
-            border-radius: 0.5rem;
-            overflow: hidden;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-            min-width: 600px;
-        }
-        
-        .tariffs-table th {
-            padding: 1rem 1.5rem;
-            text-align: left;
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: var(--gray-500);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            border-bottom: 1px solid var(--gray-200);
-            background: var(--gray-50);
-        }
-        
-        .tariffs-table td {
-            padding: 1rem 1.5rem;
-            font-size: 0.875rem;
-            border-bottom: 1px solid var(--gray-200);
-            white-space: nowrap;
-        }
-        
-        .tariffs-table tbody tr.highlighted {
-            background-color: rgba(255, 165, 0, 0.05);
-        }
-        
-        .free-delivery {
-            background-color: rgba(255, 165, 0, 0.1);
-            padding: 1rem;
-            border-radius: 0.5rem;
-            text-align: center;
-            font-weight: 500;
-        }
-        
-        /* География доставки - ОБНОВЛЕННЫЙ СТИЛЬ */
-        .map-section {
-            background-color: var(--gray-50);
-        }
-        
-        .delivery-geography {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-        
-        @media (min-width: 768px) {
-            .delivery-geography {
-                flex-direction: row;
-            }
-        }
-        
-        .cities-container {
-            flex: 1;
-            background: white;
-            padding: 2rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-        
-        .cities-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-        
-        @media (min-width: 768px) {
-            .cities-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-        
-        .city-column h4 {
-            font-weight: 600;
-            margin-bottom: 1.25rem;
-            color: var(--gray-800);
-            font-size: 1.125rem;
-        }
-        
-        .city-list {
-            list-style: none;
-            padding-left: 0;
-        }
-        
-        .city-list li {
-            display: flex;
-            align-items: center;
-            margin-bottom: 0.75rem;
-            color: var(--gray-600);
-        }
-        
-        .city-list i {
-            color: var(--primary);
-            margin-right: 0.75rem;
-        }
-        
-        .map-container {
-            flex: 1;
-            height: 400px;
-            background-color: var(--gray-200);
-            border-radius: 0.5rem;
-            overflow: hidden;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gray-500);
-            font-weight: 500;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-        
-        .map-container .map-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            background-image: url('images/map-placeholder.png');
-        }
-        
-        /* FAQ */
-        .faq-container {
-            max-width: 48rem;
-            margin: 0 auto;
-        }
-        
-        .faq-item {
-            margin-bottom: 1rem;
-            background-color: var(--gray-50);
-            border-radius: 0.5rem;
-            overflow: hidden;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-        }
-        
-        .faq-question {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 1.5rem;
-            background-color: var(--gray-50);
-            cursor: pointer;
-            font-weight: 500;
-        }
-        
-        .faq-question span {
-            color: var(--gray-900);
-            font-size: 1.05rem;
-            flex: 1;
-        }
-        
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-            padding: 0 1.5rem;
-            color: var(--gray-600);
-        }
-        
-        .faq-item.active .faq-answer {
-            max-height: 1000px;
-            padding: 0 1.5rem 1.5rem;
-        }
-        
-        .faq-item.active .faq-question i {
-            transform: rotate(45deg);
-        }
-        
-        .faq-question i {
-            transition: transform 0.3s;
-        }
-        
-        /* CTA */
-        .cta-section {
-            background-color: rgba(255, 165, 0, 0.1);
-            text-align: center;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            justify-content: center;
-            margin-bottom: 3rem;
-            margin-top: 2rem;
-        }
-        
-        @media (min-width: 640px) {
-            .cta-buttons {
-                flex-direction: row;
-            }
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-            max-width: 56rem;
-            margin: 0 auto;
-        }
-        
-        @media (min-width: 640px) {
-            .features-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        @media (min-width: 768px) {
-            .features-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-        
-        .feature-card {
-            background: #fff;
-            padding: 1.5rem 1rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }
-        
-        .feature-icon {
-            width: 3rem;
-            height: 3rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: rgba(255, 165, 0, 0.1);
-            color: var(--primary);
-            border-radius: 50%;
-            margin: 0 auto 1rem;
-        }
-        
-        .feature-title {
-            font-weight: 500;
-            margin-bottom: 0.25rem;
-            color: var(--gray-900);
-            text-align: center;
-        }
-        
-        .feature-text {
-            font-size: 0.875rem;
-            color: var(--gray-600);
-            text-align: center;
-        }
-        
-        /* Футер */
-        footer {
-            background-color: var(--gray-900);
-            color: #fff;
-            padding-top: 3rem;
-            padding-bottom: 1.5rem;
-        }
-        
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-        
-        @media (min-width: 768px) {
-            .footer-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-        
-        .footer-column {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .footer-logo {
-            font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', cursive;
-            font-size: 1.875rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-        
-        .footer-text {
-            color: var(--gray-400);
-            margin-bottom: 1rem;
-        }
-        
-        .footer-social {
-            display: flex;
-            gap: 0.75rem;
-            margin-top: 1rem;
-        }
-        
-        .social-link {
-            width: 2.5rem;
-            height: 2.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: var(--gray-800);
-            color: #fff;
-            border-radius: 50%;
-            transition: background-color 0.3s;
-        }
-        
-        .social-link:hover {
-            background-color: rgba(255, 165, 0, 0.2);
-        }
-        
-        .footer-title {
-            font-size: 1.125rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: #fff;
-        }
-        
-        .footer-links {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-        
-        .footer-link {
-            color: var(--gray-400);
-            text-decoration: none;
-            transition: color 0.3s;
-            font-size: 0.95rem;
-        }
-        
-        .footer-link:hover {
-            color: var(--primary);
-        }
-        
-        .footer-contacts {
-            display: flex;
-            flex-direction: column;
-            gap: 1.25rem;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.75rem;
-        }
-        
-        .contact-icon {
-            color: var(--primary);
-            margin-top: 0.25rem;
-            flex-shrink: 0;
-        }
-        
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .contact-value {
-            color: #fff;
-            font-weight: 500;
-        }
-        
-        .contact-note {
-            color: var(--gray-400);
-            font-size: 0.875rem;
-        }
-        
-        .footer-bottom {
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--gray-700);
-            text-align: center;
-        }
-        
-        .copyright {
-            color: var(--gray-400);
-            font-size: 0.875rem;
-            margin-bottom: 1rem;
-        }
-        
-        .payment-methods {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-        
-        .payment-icon {
-            color: var(--gray-400);
-            font-size: 1.5rem;
-        }
-        
-        /* Утилиты */
-        .text-center {
-            text-align: center;
-        }
-        
-        .text-xl {
-            font-size: 1.25rem;
-        }
-        
-        .font-semibold {
-            font-weight: 600;
-        }
-        
-        .mb-4 {
-            margin-bottom: 1rem;
-        }
-        
-        .mb-6 {
-            margin-bottom: 1.5rem;
-        }
-        
-        .space-y-2 > * + * {
-            margin-top: 0.5rem;
-        }
-        
-        .space-y-3 > * + * {
-            margin-top: 0.75rem;
-        }
-        
-        .list-disc {
-            list-style-type: disc;
-        }
-        
-        .pl-5 {
-            padding-left: 1.25rem;
-        }
-        
-        .mt-2 {
-            margin-top: 0.5rem;
-        }
-        
-        /* Мобильное меню */
-        .mobile-menu {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: white;
-            z-index: 100;
-            padding: 1rem;
-            transform: translateX(-100%);
-            transition: transform 0.3s ease;
-        }
-        
-        .mobile-menu.active {
-            transform: translateX(0);
-        }
-        
-        .mobile-menu-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--gray-200);
-        }
-        
-        .mobile-menu-links {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-        
-        .mobile-menu-link {
-            padding: 0.75rem 0;
-            font-size: 1.125rem;
-            color: var(--gray-700);
-            text-decoration: none;
-            border-bottom: 1px solid var(--gray-100);
-        }
-        
-        .mobile-menu-link.active {
-            color: var(--primary);
-        }
-        
-        /* Модальное окно */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .modal-content {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            max-width: 500px;
-            width: 90%;
-            animation: modalAppear 0.3s ease-out;
-        }
-        @keyframes modalAppear {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .close-modal {
-            position: absolute;
-            top: 16px;
-            right: 16px;
-            font-size: 24px;
-            cursor: pointer;
-            color: #6b7280;
-            transition: color 0.2s;
-        }
-        .close-modal:hover {
-            color: #374151;
-        }
-        
-        /* Модальное окно успеха */
-        .success-modal-content {
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            max-width: 450px;
-            width: 90%;
-            padding: 40px 30px;
-            text-align: center;
-            animation: modalAppear 0.4s ease-out;
-        }
-        .success-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 20px;
-            background-color: #6B8E23;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: pulse 1.5s infinite;
-        }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-        .success-icon i {
-            font-size: 40px;
-            color: white;
-        }
-        .success-title {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: #2d3748;
-        }
-        .success-text {
-            font-size: 18px;
-            color: #4a5568;
-            margin-bottom: 25px;
-            line-height: 1.5;
-        }
-        .success-btn {
-            background: #6B8E23;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            padding: 12px 30px;
-            font-size: 18px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-        .success-btn:hover {
-            background: #5a7a1d;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        
-        /* Выравнивание иконок в контактах */
-        .contact-icon i {
-            vertical-align: middle;
-            line-height: 1;
-        }
-        
-        /* Стили для формы в модальном окне */
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: var(--gray-700);
-        }
-        
-        .form-input {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid var(--gray-300);
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-        
-        .form-input:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(255, 165, 0, 0.2);
-        }
-        
-        .form-textarea {
-            min-height: 100px;
-            resize: vertical;
-        }
-        
-        .submit-btn {
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            padding: 0.75rem 1.5rem;
-            font-size: 1rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            width: 100%;
-        }
-        
-        .submit-btn:hover {
-            background-color: #e69500;
-        }
-        
-        /* Стили для заголовка модального окна */
-        .modal-header {
-            background: linear-gradient(to right, #FFA500, #8B4513);
-            padding: 1.5rem;
-            border-radius: 12px 12px 0 0;
-            color: white;
-        }
-        
-        .modal-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            text-align: center;
-        }
-    </style>
-
     <!-- Предзагрузка критических ресурсов -->
     <link rel="preload" href="images/hero-bg.jpg" as="image">
-    <link rel="preload" href="assets/fonts/remixicon/remixicon.css" as="style">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" as="style" crossorigin>
     
-    <!-- Асинхронная загрузка стилей -->
-    <link rel="stylesheet" href="assets/fonts/remixicon/remixicon.css" media="print" onload="this.media='all'">
+    <!-- Критические стили -->
+    <style>
+        :root{--primary:#FFA500;--secondary:#8B4513;--gray-50:#F9FAFB;--gray-100:#F3F4F6;--gray-200:#E5E7EB;--gray-300:#D1D5DB;--gray-400:#9CA3AF;--gray-500:#6B7280;--gray-600:#4B5563;--gray-700:#374151;--gray-800:#1F2937;--gray-900:#111827}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;background-color:var(--gray-50);color:var(--gray-700);line-height:1.6}.container{width:100%;max-width:1280px;padding:0 1rem;margin:0 auto}section{padding:4rem 0}h1,h2,h3,h4,h5,h6{color:var(--gray-900);margin-top:0;margin-bottom:1rem}h2{font-size:1.875rem;font-weight:700;text-align:center;margin-bottom:3rem}.btn{display:inline-block;padding:0.75rem 2rem;font-size:1.125rem;font-weight:500;text-align:center;border-radius:8px;transition:all 0.3s ease;cursor:pointer;border:none;text-decoration:none;white-space:nowrap}.btn-primary{background-color:var(--primary);color:#fff;box-shadow:0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -2px rgba(0,0,0,0.05)}.btn-primary:hover{background-color:rgba(255,165,0,0.9);box-shadow:0 20px 25px -5px rgba(0,0,0,0.1),0 10px 10px -5px rgba(0,0,0,0.04)}.btn-outline{background-color:#fff;color:var(--primary);border:1px solid var(--primary);box-shadow:0 4px 6px -1px rgba(0,0,0,0.1),0 2px 4px -1px rgba(0,0,0,0.06)}.btn-outline:hover{background-color:var(--gray-50);box-shadow:0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -2px rgba(0,0,0,0.05)}header{position:sticky;top:0;z-index:50;background-color:#fff;box-shadow:0 1px 2px 0 rgba(0,0,0,0.05);padding:0.75rem 0}.header-inner{display:flex;align-items:center;justify-content:space-between}.logo{font-family:'Comic Sans MS','Chalkboard SE','Comic Neue',cursive;font-size:1.875rem;color:var(--primary);text-decoration:none}.nav-links{display:none}@media (min-width:768px){.nav-links{display:flex;align-items:center;gap:2rem}}.nav-link{color:var(--gray-700);text-decoration:none;font-weight:500;transition:color 0.3s}.nav-link:hover,.nav-link.active{color:var(--primary)}.header-actions{display:flex;align-items:center;gap:1rem}.icon-btn{width:2.5rem;height:2.5rem;display:flex;align-items:center;justify-content:center;color:var(--gray-700);transition:color 0.3s}.icon-btn:hover{color:var(--primary)}.phone-link{display:none;align-items:center;color:var(--gray-700);text-decoration:none;transition:color 0.3s}@media (min-width:768px){.phone-link{display:flex}}.phone-link:hover{color:var(--primary)}.hero-section{background-image:linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,0.8)),url('images/hero-bg.jpg');background-size:cover;background-position:center;padding:4rem 0}@media (min-width:768px){.hero-section{padding:6rem 0}}.hero-content{max-width:48rem}.hero-title{font-size:2.25rem;font-weight:700;margin-bottom:1rem}@media (min-width:768px){.hero-title{font-size:3rem}}.hero-text{font-size:1.25rem;margin-bottom:2rem}@media (min-width:768px){.hero-text{font-size:1.5rem}}.icon{width:1em;height:1em;vertical-align:-0.125em;fill:currentColor}.text-center{text-align:center}.text-xl{font-size:1.25rem}.font-semibold{font-weight:600}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.space-y-2>*+*{margin-top:0.5rem}.space-y-3>*+*{margin-top:0.75rem}.mt-2{margin-top:0.5rem}
+    </style>
+
+    <!-- Асинхронная загрузка некритических стилей -->
+    <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="styles.css"></noscript>
+
+    <!-- Шрифты с font-display: swap -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap&family=Pacifico&display=swap" crossorigin="anonymous" media="print" onload="this.media='all'">
     <noscript>
-        <link rel="stylesheet" href="assets/fonts/remixicon/remixicon.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap&family=Pacifico&display=swap">
     </noscript>
 </head>
 <body>
+    <!-- SVG спрайт для иконок -->
+    <svg style="display: none;">
+        <symbol id="ri-close-line" viewBox="0 0 24 24"><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></symbol>
+        <symbol id="ri-menu-line" viewBox="0 0 24 24"><path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"/></symbol>
+        <symbol id="ri-vk-line" viewBox="0 0 24 24"><path d="M19.915 13.028c-.388-.49-.277-.708 0-1.146.005-.005 3.208-4.431 3.538-5.932l.001-.001c.164-.547 0-.949-.793-.949h-2.624c-.668 0-.976.345-1.141.731 0 0-1.336 3.198-3.226 5.271-.61.599-.892.791-1.225.791-.164 0-.419-.192-.419-.739V7.946c0-.656-.187-.949-.74-.949H9.161c-.419 0-.668.306-.668.591 0 .622.945.765 1.043 2.515v3.797c0 .832-.151.985-.486.985-.892 0-3.057-3.211-4.34-6.886-.259-.713-.512-1.001-1.185-1.001H1.78c-.749 0-.9.345-.9.731 0 .682.892 4.073 4.148 8.553C7.124 18.292 9.95 20.5 13.158 20.5c1.669 0 1.875-.368 1.875-1.001v-2.313c0-.737.158-.884.687-.884.388 0 1.056.192 2.616 1.667C19.65 18.216 20.095 18.5 20.9 18.5h2.624c.748 0 1.127-.368.909-1.094-.499-1.527-3.871-4.668-4.023-4.878z"/></symbol>
+        <symbol id="ri-telegram-line" viewBox="0 0 24 24"><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-3.11-8.83l.013-.007.87 2.87c.112.311.266.367.453.341.188-.025.287-.126.41-.244l1.188-1.148 2.55 1.888c.466.257.801.124.917-.432l1.657-7.822c.183-.728-.137-1.02-.702-.788l-9.733 3.76c-.664.266-.66.638-.12.803l2.497.78z"/></symbol>
+        <symbol id="ri-shopping-bag-line" viewBox="0 0 24 24"><path d="M6.5 2h11a1 1 0 0 1 .8.4L21 6v15a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6l2.7-3.6a1 1 0 0 1 .8-.4zm12 4H5v14h14V6h-.5zM9 10H7V8h2v2zm4 0h-2V8h2v2zm4 0h-2V8h2v2zm-8 4H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2z"/></symbol>
+        <symbol id="ri-phone-line" viewBox="0 0 24 24"><path d="M19.95 4.05a5.5 5.5 0 0 0-4.95-1.99c-.36-.11-.75.1-.91.43l-1.88 3.58c-.12.25-.1.54.04.78l1.96 3.24c-2.89 2.89-3.91 5.78-5.5 5.5l-3.09-2.61a.96.96 0 0 0-.78-.04l-3.46 1.48c-.33.16-.54.55-.43.91.25 1.37.98 2.63 2.05 3.7 1.31 1.31 3.14 1.95 5.13 1.95 1.25 0 2.5-.32 3.69-.95l6.67-4.25c1.09-.57 1.67-1.83 1.5-3.05-.13-1.01-.7-1.95-1.59-2.64-.24-.19-.55-.25-.84-.14l-3.03 1.01c-.18.06-.35.03-.5-.06a.9.9 0 0 1-.31-.35l-.51-1.99c1.54-.64 2.26-1.74 1.86-2.62-.07-.14-.17-.26-.29-.36a4.5 4.5 0 0 0-1.87-1.07z"/></symbol>
+        <symbol id="ri-map-pin-line" viewBox="0 0 24 24"><path d="M12 20.9l4.95-4.95a7 7 0 1 0-9.9 0L12 20.9zm0 2.828l-6.364-6.364a9 9 0 1 1 12.728 0L12 23.728zM12 13a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 2a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/></symbol>
+        <symbol id="ri-check-line" viewBox="0 0 24 24"><path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"/></symbol>
+        <symbol id="ri-truck-line" viewBox="0 0 24 24"><path d="M8.965 18a3.5 3.5 0 0 1-6.93 0H1V6a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2h3l3 4.056V18h-2.035a3.5 3.5 0 0 1-6.93 0h-5.07zM15 7H3v8.05a3.5 3.5 0 0 1 5.663.95h5.674c.168-.353.393-.674.663-.95V7zm2 6h3v-.285L18.992 10H17v3zm.5 6a1.5 1.5 0 1 0 0-3.001 1.5 1.5 0 0 0 0 3.001zM7 17.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0z"/></symbol>
+        <symbol id="ri-leaf-line" viewBox="0 0 24 24"><path d="M21 3v2c0 9.627-5.373 14-12 14H7.098c.212-3.012 1.15-4.835 3.598-7.001 2.45-2.168 2.903-3.458 3.83-4.445C16.326 6.638 20 5.5 21 3zM5.615 9.504c-1.375 1.375-1.375 4.41 1.878 8.875.317.437.034 1.036-.44.93-3.742-.84-5.53-2.61-6.053-5.326-.106-.556.437-.927.847-.516.876.876 2.822.65 4.52-.62 1.455-1.095 2.187-2.397 2.056-3.783-.1-1.038-.766-1.789-1.808-1.56z"/></symbol>
+        <symbol id="ri-shield-check-line" viewBox="0 0 24 24"><path d="M12 1l8.217 1.826a1 1 0 0 1 .783.976v9.987a6 6 0 0 1-2.672 4.992L12 23l-6.328-4.219A6 6 0 0 1 3 13.79V3.802a1 1 0 0 1 .783-.976L12 1zm0 2.049L5 4.604v9.185a4 4 0 0 0 1.781 3.328L12 20.597l5.219-3.48A4 4 0 0 0 19 13.79V4.604L12 3.05zm-1.293 6.46l-1.414-1.414-1.414 1.414L10.586 14l-3.707 3.707 1.414 1.414L12 15.414l3.707 3.707 1.414-1.414L13.414 14l3.707-3.707-1.414-1.414L12 11.586l-1.293-1.293z"/></symbol>
+        <symbol id="ri-shopping-cart-line" viewBox="0 0 24 24"><path d="M4 16V4H2V2h3a1 1 0 0 1 1 1v12h12.438l2-8H8V5h13.72a1 1 0 0 1 .97 1.243l-2.5 10a1 1 0 0 1-.97.757H5a1 1 0 0 1-1-1zm2 7a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm12 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></symbol>
+        <symbol id="ri-time-line" viewBox="0 0 24 24"><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-8h4v2h-6V7h2v5z"/></symbol>
+        <symbol id="ri-money-dollar-circle-line" viewBox="0 0 24 24"><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-3.5-6H14a.5.5 0 1 0 0-1h-4a2.5 2.5 0 1 1 0-5h1V6h2v2h2.5v2H10a.5.5 0 1 0 0 1h4a2.5 2.5 0 1 1 0 5h-1v2h-2v-2H8.5v-2z"/></symbol>
+        <symbol id="ri-add-line" viewBox="0 0 24 24"><path d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2h6z"/></symbol>
+        <symbol id="ri-checkbox-circle-line" viewBox="0 0 24 24"><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-.997-4L6.76 11.757l1.414-1.414 2.829 2.829 5.656-5.657 1.415 1.414L11.003 16z"/></symbol>
+        <symbol id="ri-visa-line" viewBox="0 0 24 24"><path d="M22.222 15.768l-.225-1.125h-2.514l-.4 1.117-2.015.004c1.498-3.39 4.387-7.27 7.057-7.381.075-.01.136.04.136.116l-.006 1.124 1.918.001-.067.13c-1.274.313-2.568 1.201-3.893 6.016zm-2.903-3.73h1.622l-.605-2.82-1.017 2.82zM7.408 9.15c0 .25-.11.472-.29.577a.7.7 0 0 1-.334.07h-.88l2.197-5.355H8.77c.433 0 .732.383.732.838v.01l-1.094 3.86zM13.61 9.748l-2.056-5.355H9.253L6.62 15.73h2.173l.36-1.13h2.112l.222 1.13h2.543l-1.381-5.984zm-2.473 1.61l.282 1.461h-1.502l.567-1.46zM1.175 9.15l-1.13 5.58H0l1.175-5.58h1.972l1.17 5.58h1.483l1.232-5.58h1.942l-1.232 5.58h1.561l1.17-5.58h1.978l-1.17 5.58h1.495l1.233-5.58H14l-1.233 5.58h1.917l.185-.878 1.242-1.5L18.5 15h3.396l.014-.058.034-.15H22v-.01l-.018-.07 1.205-5.52H21.11l-1.18 5.55h-1.925l-1.416-5.55h-1.938l-1.42 5.55h-1.364l.24-1.05c-.46.03-.907-.03-1.283-.22a2.027 2.027 0 0 1-.73-.65c-.31-.45-.44-1.05-.4-1.75V9.15H7.573v.05c.06 1.13.43 1.95 1.11 2.42.67.47 1.54.44 2.58-.01l-.92 2.34c-1.4.46-2.68.45-3.82-.01-1.16-.46-1.89-1.35-2.2-2.66-.08-.33-.12-.72-.1-1.17L1.175 9.15z"/></symbol>
+        <symbol id="ri-mastercard-line" viewBox="0 0 24 24"><path d="M12 6.654a6.792 6.792 0 0 1 2.596 5.344A6.79 6.79 0 0 1 12 17.34a6.79 6.79 0 0 1-2.596-5.343A6.79 6.79 0 0 1 12 6.654zm-.87-.582A7.785 7.785 0 0 0 8.4 12a7.785 7.785 0 0 0 2.728 5.926 6.766 6.766 0 1 1 8.923-9.08A7.032 7.032 0 0 1 22 12c0 3.015-1.942 5.58-4.653 6.546a6.72 6.72 0 0 1-3.01.76 6.772 6.772 0 0 1-5.2-2.36 7.76 7.76 0 0 0 1.15.09c.486 0 .965-.056 1.429-.165a6.789 6.789 0 0 1-1.023-3.49c0-1.302.361-2.52.99-3.562zm-.162-3.558a10.94 10.94 0 0 0-1.874 1.46 8.228 8.228 0 0 1 6.152 7.02 8.247 8.247 0 0 1-1.763 5.113c.49.045.99.07 1.5.07a10.899 10.899 0 0 0 3.078-.445 9.242 9.242 0 0 0 3.058-1.585 10.948 10.948 0 0 0-1.864-1.46 8.247 8.247 0 0 1-7.077 2.53 8.2 8.2 0 0 1-4.772-3.13A8.203 8.203 0 0 1 3 12a8.2 8.2 0 0 1 1.042-4.037A10.94 10.94 0 0 0 2 12c0 3.312 1.34 6.31 3.505 8.48A10.878 10.878 0 0 0 12 23c3.312 0 6.31-1.34 8.48-3.505A10.878 10.878 0 0 0 24 12c0-3.312-1.34-6.31-3.505-8.48A10.878 10.878 0 0 0 12 0c-1.5 0-2.91.264-4.223.748l.09.766z"/></symbol>
+        <symbol id="ri-paypal-line" viewBox="0 0 24 24"><path d="M8.495 20.667h1.551l.538-3.376a2.805 2.805 0 0 1 2.77-2.366h.5c2.677 0 4.06-.983 4.55-3.503.208-1.066.117-1.73-.171-2.102-1.207 3.054-3.79 4.16-6.962 4.16h-.884c-.384 0-.794.209-.852.58l-1.04 6.607zm-4.944-.294a.551.551 0 0 1-.544-.637L5.68 2.776A.92.92 0 0 1 6.59 2h6.424c2.212 0 3.942.467 4.899 1.558.87.99 1.123 2.334.761 4.043-.739 3.34-3.036 4.557-6.338 4.557H8.723c-.317 0-.625.105-.814.307a.968.968 0 0 0-.26.88l.975 6.169zm7.836-8.894h.884c3.19 0 4.895-1.212 5.483-4.229.02-.11.04-.22.058-.331C20.87 5.25 19.832 5 17.899 5h-6.315L9.95 18.373l2.433-6.794z"/></symbol>
+        <symbol id="ri-alipay-line" viewBox="0 0 24 24"><path d="M18.408 16.79c-2.173-.95-3.72-1.646-4.64-2.086-1.4 1.696-2.872 2.72-4.592 2.72-1.834 0-2.92-1.2-2.92-2.54 0-1.27.803-2.57 2.14-2.67.766-.06 1.125.22 1.73.22.525 0 .803-.05 1.22-.2.116-.04.238-.085.367-.135.42-.18 1.1-.47 1.94-.47.37 0 .71.04 1.03.11V7.4c-.36-.1-1-.3-1.97-.3-1.27 0-2.39.45-3.25 1.35-.88.9-1.32 2.13-1.32 3.64 0 1.46.48 2.84 1.45 3.88 1.02 1.11 2.32 1.67 3.85 1.67 1.1 0 2.08-.18 3.06-.54.34-.13.67-.27 1.01-.43.22.22.55.57.88.95.33.38.59.65.78.8.19.17.41.26.66.26.18 0 .35-.05.51-.14.26-.15.45-.4.57-.75.13-.36.15-.76.07-1.22-.07-.46-.25-.85-.54-1.17-.25-.27-.58-.44-1.01-.52zm-2.3-4.53c-.38.18-.77.27-1.22.27-.5 0-.87-.1-1.13-.3-.25-.2-.38-.48-.38-.84 0-.35.13-.65.38-.88.26-.23.63-.35 1.13-.35.49 0 .86.12 1.13.35.26.23.4.53.4.88 0 .36-.14.64-.41.87zm-7.1-1.2c-.3-.2-.67-.3-1.12-.3-.5 0-.88.1-1.15.3-.26.2-.4.48-.4.85 0 .36.13.64.4.86.27.22.64.34 1.15.34.44 0 .81-.11 1.12-.34.3-.22.46-.5.46-.86 0-.37-.15-.65-.46-.85zM12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-3.5-5.5v-.5h7v.5a1.5 1.5 0 0 1-1.5 1.5h-4a1.5 1.5 0 0 1-1.5-1.5z"/></symbol>
+        <symbol id="ri-mail-line" viewBox="0 0 24 24"><path d="M3 3h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm17 4.238l-7.928 7.1L4 7.216V19h16V7.238zM4.511 5l7.55 6.662L19.502 5H4.511z"/></symbol>
+    </svg>
+
     <!-- Header -->
     <header>
         <div class="container">
@@ -1112,16 +86,16 @@
                 
                 <div class="header-actions">
                     <a href="/cart.html" class="icon-btn">
-                        <i class="ri-shopping-cart-line ri-lg"></i>
+                        <svg class="icon"><use href="#ri-shopping-cart-line"></use></svg>
                     </a>
                     <a href="tel:+79209400222" class="phone-link">
                         <div class="icon-btn">
-                            <i class="ri-phone-line ri-lg"></i>
+                            <svg class="icon"><use href="#ri-phone-line"></use></svg>
                         </div>
                         <span>+7 (920) 940-02-22</span>
                     </a>
                     <button class="icon-btn md:hidden" id="mobile-menu-toggle">
-                        <i class="ri-menu-line ri-lg"></i>
+                        <svg class="icon"><use href="#ri-menu-line"></use></svg>
                     </button>
                 </div>
             </div>
@@ -1133,7 +107,7 @@
         <div class="mobile-menu-header">
             <a href="/" class="logo">Алтайский мёд</a>
             <button id="close-mobile-menu">
-                <i class="ri-close-line ri-lg"></i>
+                <svg class="icon"><use href="#ri-close-line"></use></svg>
             </button>
         </div>
         <div class="mobile-menu-links">
@@ -1166,7 +140,7 @@
             <div class="benefits-grid">
                 <div class="benefit-card">
                     <div class="benefit-icon">
-                        <i class="ri-truck-line ri-2x"></i>
+                        <svg class="icon"><use href="#ri-truck-line"></use></svg>
                     </div>
                     <h3 class="benefit-title">Быстрая доставка</h3>
                     <p class="benefit-text">Доставляем мёд в Ковров всего за 2-3 дня. Ваш заказ будет у вас максимально быстро!</p>
@@ -1174,7 +148,7 @@
                 
                 <div class="benefit-card">
                     <div class="benefit-icon">
-                        <i class="ri-leaf-line ri-2x"></i>
+                        <svg class="icon"><use href="#ri-leaf-line"></use></svg>
                     </div>
                     <h3 class="benefit-title">100% натуральный продукт</h3>
                     <p class="benefit-text">Мёд собран на экологически чистых пасеках Алтая и доставляется в Ковров без добавок и консервантов.</p>
@@ -1182,7 +156,7 @@
                 
                 <div class="benefit-card">
                     <div class="benefit-icon">
-                        <i class="ri-shield-check-line ri-2x"></i>
+                        <svg class="icon"><use href="#ri-shield-check-line"></use></svg>
                     </div>
                     <h3 class="benefit-title">Гарантия свежести</h3>
                     <p class="benefit-text">Мы гарантируем свежесть мёда при доставке в Ковров. Специальная упаковка сохраняет все полезные свойства.</p>
@@ -1191,7 +165,7 @@
         </div>
     </section>
 
-    <!-- Delivery Methods - ОБНОВЛЕННЫЙ РАЗДЕЛ -->
+    <!-- Delivery Methods -->
     <section class="delivery-section">
         <div class="container">
             <h2>Способы доставки в Ковров</h2>
@@ -1213,25 +187,25 @@
                             <h4 class="font-medium text-gray-800 mb-3">Пункты выдачи СДЭК в Коврове:</h4>
                             <ul class="delivery-points">
                                 <li>
-                                    <i class="ri-map-pin-line"></i>
+                                    <svg class="icon"><use href="#ri-map-pin-line"></use></svg>
                                     <span>ул. Грибоедова, 15 (ТЦ "Треугольник")</span>
                                 </li>
                                 <li>
-                                    <i class="ri-map-pin-line"></i>
+                                    <svg class="icon"><use href="#ri-map-pin-line"></use></svg>
                                     <span>пр-т Ленина, 35 (ТЦ "Ковров Молл")</span>
                                 </li>
                                 <li>
-                                    <i class="ri-map-pin-line"></i>
+                                    <svg class="icon"><use href="#ri-map-pin-line"></use></svg>
                                     <span>ул. Строителей, 28 (ТЦ "Русь")</span>
                                 </li>
                             </ul>
                             
                             <div class="delivery-meta">
-                                <i class="ri-time-line"></i>
+                                <svg class="icon"><use href="#ri-time-line"></use></svg>
                                 <span>Срок доставки: 2-3 рабочих дня</span>
                             </div>
                             <div class="delivery-meta">
-                                <i class="ri-money-dollar-circle-line"></i>
+                                <svg class="icon"><use href="#ri-money-dollar-circle-line"></use></svg>
                                 <span>Стоимость: от 300 ₽ (зависит от веса заказа)</span>
                             </div>
                         </div>
@@ -1240,19 +214,19 @@
                             <h4 class="font-medium text-gray-800 mb-3">Преимущества доставки СДЭК:</h4>
                             <ul>
                                 <li class="advantage-item">
-                                    <i class="ri-check-line"></i>
+                                    <svg class="icon"><use href="#ri-check-line"></use></svg>
                                     <span>Надежная упаковка и сохранность товара</span>
                                 </li>
                                 <li class="advantage-item">
-                                    <i class="ri-check-line"></i>
+                                    <svg class="icon"><use href="#ri-check-line"></use></svg>
                                     <span>Возможность отслеживания заказа</span>
                                 </li>
                                 <li class="advantage-item">
-                                    <i class="ri-check-line"></i>
+                                    <svg class="icon"><use href="#ri-check-line"></use></svg>
                                     <span>Удобные пункты выдачи в Коврове</span>
                                 </li>
                                 <li class="advantage-item">
-                                    <i class="ri-check-line"></i>
+                                    <svg class="icon"><use href="#ri-check-line"></use></svg>
                                     <span>Оплата при получении</span>
                                 </li>
                             </ul>
@@ -1270,29 +244,29 @@
                             <h4 class="font-medium text-gray-800 mb-3">Работаем по всему Коврову:</h4>
                             <ul class="delivery-points">
                                 <li>
-                                    <i class="ri-map-pin-line"></i>
+                                    <svg class="icon"><use href="#ri-map-pin-line"></use></svg>
                                     <span>Центральный район</span>
                                 </li>
                                 <li>
-                                    <i class="ri-map-pin-line"></i>
+                                    <svg class="icon"><use href="#ri-map-pin-line"></use></svg>
                                     <span>Южный микрорайон</span>
                                 </li>
                                 <li>
-                                    <i class="ri-map-pin-line"></i>
+                                    <svg class="icon"><use href="#ri-map-pin-line"></use></svg>
                                     <span>Северный микрорайон</span>
                                 </li>
                                 <li>
-                                    <i class="ri-map-pin-line"></i>
+                                    <svg class="icon"><use href="#ri-map-pin-line"></use></svg>
                                     <span>Заречный район</span>
                                 </li>
                             </ul>
                             
                             <div class="delivery-meta">
-                                <i class="ri-time-line"></i>
+                                <svg class="icon"><use href="#ri-time-line"></use></svg>
                                 <span>Время доставки: с 9:00 до 21:00</span>
                             </div>
                             <div class="delivery-meta">
-                                <i class="ri-money-dollar-circle-line"></i>
+                                <svg class="icon"><use href="#ri-money-dollar-circle-line"></use></svg>
                                 <span>Стоимость: от 400 ₽ (зависит от веса заказа)</span>
                             </div>
                         </div>
@@ -1301,19 +275,19 @@
                             <h4 class="font-medium text-gray-800 mb-3">Преимущества курьерской доставки:</h4>
                             <ul>
                                 <li class="advantage-item">
-                                    <i class="ri-check-line"></i>
+                                    <svg class="icon"><use href="#ri-check-line"></use></svg>
                                     <span>Удобная доставка "до двери"</span>
                                 </li>
                                 <li class="advantage-item">
-                                    <i class="ri-check-line"></i>
+                                    <svg class="icon"><use href="#ri-check-line"></use></svg>
                                     <span>Быстрая доставка по городу</span>
                                 </li>
                                 <li class="advantage-item">
-                                    <i class="ri-check-line"></i>
+                                    <svg class="icon"><use href="#ri-check-line"></use></svg>
                                     <span>Оплата наличными или картой при получении</span>
                                 </li>
                                 <li class="advantage-item">
-                                    <i class="ri-check-line"></i>
+                                    <svg class="icon"><use href="#ri-check-line"></use></svg>
                                     <span>Гибкий график доставки</span>
                                 </li>
                             </ul>
@@ -1331,25 +305,25 @@
                             <h4 class="font-medium text-gray-800 mb-3">Основные отделения в Коврове:</h4>
                             <ul class="delivery-points">
                                 <li>
-                                    <i class="ri-map-pin-line"></i>
+                                    <svg class="icon"><use href="#ri-map-pin-line"></use></svg>
                                     <span>Отделение №1: ул. Первомайская, 25</span>
                                 </li>
                                 <li>
-                                    <i class="ri-map-pin-line"></i>
+                                    <svg class="icon"><use href="#ri-map-pin-line"></use></svg>
                                     <span>Отделение №2: пр-т Ленина, 47</span>
                                 </li>
                                 <li>
-                                    <i class="ri-map-pin-line"></i>
+                                    <svg class="icon"><use href="#ri-map-pin-line"></use></svg>
                                     <span>Отделение №3: ул. Дегтярева, 12</span>
                                 </li>
                             </ul>
                             
                             <div class="delivery-meta">
-                                <i class="ri-time-line"></i>
+                                <svg class="icon"><use href="#ri-time-line"></use></svg>
                                 <span>Срок доставки: 3-5 рабочих дней</span>
                             </div>
                             <div class="delivery-meta">
-                                <i class="ri-money-dollar-circle-line"></i>
+                                <svg class="icon"><use href="#ri-money-dollar-circle-line"></use></svg>
                                 <span>Стоимость: от 350 ₽ (зависит от веса заказа)</span>
                             </div>
                         </div>
@@ -1358,19 +332,19 @@
                             <h4 class="font-medium text-gray-800 mb-3">Преимущества Почты России:</h4>
                             <ul>
                                 <li class="advantage-item">
-                                    <i class="ri-check-line"></i>
+                                    <svg class="icon"><use href="#ri-check-line"></use></svg>
                                     <span>Широкая сеть отделений в Коврове</span>
                                 </li>
                                 <li class="advantage-item">
-                                    <i class="ri-check-line"></i>
+                                    <svg class="icon"><use href="#ri-check-line"></use></svg>
                                     <span>Возможность отслеживания отправления</span>
                                 </li>
                                 <li class="advantage-item">
-                                    <i class="ri-check-line"></i>
+                                    <svg class="icon"><use href="#ri-check-line"></use></svg>
                                     <span>Оплата при получении</span>
                                 </li>
                                 <li class="advantage-item">
-                                    <i class="ri-check-line"></i>
+                                    <svg class="icon"><use href="#ri-check-line"></use></svg>
                                     <span>Доставка в отдаленные районы города</span>
                                 </li>
                             </ul>
@@ -1437,7 +411,7 @@
         </div>
     </section>
 
-    <!-- Map Section - ОБНОВЛЕННЫЙ РАЗДЕЛ -->
+    <!-- Map Section -->
     <section class="map-section">
         <div class="container">
             <h2>География доставки</h2>
@@ -1452,19 +426,19 @@
                             <h4>Крупные города:</h4>
                             <ul class="city-list">
                                 <li>
-                                    <i class="ri-map-pin-line"></i>
+                                    <svg class="icon"><use href="#ri-map-pin-line"></use></svg>
                                     <span>Владимир</span>
                                 </li>
                                 <li>
-                                    <i class="ri-map-pin-line"></i>
+                                    <svg class="icon"><use href="#ri-map-pin-line"></use></svg>
                                     <span>Муром</span>
                                 </li>
                                 <li>
-                                    <i class="ri-map-pin-line"></i>
+                                    <svg class="icon"><use href="#ri-map-pin-line"></use></svg>
                                     <span>Александров</span>
                                 </li>
                                 <li>
-                                    <i class="ri-map-pin-line"></i>
+                                    <svg class="icon"><use href="#ri-map-pin-line"></use></svg>
                                     <span>Гусь-Хрустальный</span>
                                 </li>
                             </ul>
@@ -1473,19 +447,19 @@
                             <h4>Другие населенные пункты:</h4>
                             <ul class="city-list">
                                 <li>
-                                    <i class="ri-map-pin-line"></i>
+                                    <svg class="icon"><use href="#ri-map-pin-line"></use></svg>
                                     <span>Вязники</span>
                                 </li>
                                 <li>
-                                    <i class="ri-map-pin-line"></i>
+                                    <svg class="icon"><use href="#ri-map-pin-line"></use></svg>
                                     <span>Киржач</span>
                                 </li>
                                 <li>
-                                    <i class="ri-map-pin-line"></i>
+                                    <svg class="icon"><use href="#ri-map-pin-line"></use></svg>
                                     <span>Кольчугино</span>
                                 </li>
                                 <li>
-                                    <i class="ri-map-pin-line"></i>
+                                    <svg class="icon"><use href="#ri-map-pin-line"></use></svg>
                                     <span>Юрьев-Польский</span>
                                 </li>
                             </ul>
@@ -1512,7 +486,7 @@
                 <div class="faq-item">
                     <div class="faq-question">
                         <span>Как долго доставляется мёд в Ковров?</span>
-                        <i class="ri-add-line text-primary"></i>
+                        <svg class="icon text-primary"><use href="#ri-add-line"></use></svg>
                     </div>
                     <div class="faq-answer">
                         <p>Доставка мёда в Ковров занимает от 2 до 3 рабочих дней с момента отправки заказа. При выборе курьерской доставки в пределах города срок может сократиться до 1-2 дней. Точный срок доставки зависит от выбранного способа доставки и адреса получения.</p>
@@ -1522,7 +496,7 @@
                 <div class="faq-item">
                     <div class="faq-question">
                         <span>Как происходит оплата заказа?</span>
-                        <i class="ri-add-line text-primary"></i>
+                        <svg class="icon text-primary"><use href="#ri-add-line"></use></svg>
                     </div>
                     <div class="faq-answer">
                         <p>Вы можете оплатить заказ несколькими способами:</p>
@@ -1537,7 +511,7 @@
                 <div class="faq-item">
                     <div class="faq-question">
                         <span>Как упаковывается мёд для доставки в Ковров?</span>
-                        <i class="ri-add-line text-primary"></i>
+                        <svg class="icon text-primary"><use href="#ri-add-line"></use></svg>
                     </div>
                     <div class="faq-answer">
                         <p>Мы используем специальную упаковку, которая надежно защищает мёд при транспортировке. Каждая банка мёда упаковывается в пузырчатую пленку и размещается в картонной коробке с наполнителем, чтобы исключить повреждения при доставке в Ковров. Такая упаковка сохраняет все полезные свойства мёда и защищает от внешних воздействий.</p>
@@ -1547,7 +521,7 @@
                 <div class="faq-item">
                     <div class="faq-question">
                         <span>Можно ли отследить статус доставки?</span>
-                        <i class="ri-add-line text-primary"></i>
+                        <svg class="icon text-primary"><use href="#ri-add-line"></use></svg>
                     </div>
                     <div class="faq-answer">
                         <p>Да, при отправке заказа вы получите трек-номер, по которому можно отслеживать статус доставки на сайте транспортной компании. Также наши менеджеры могут предоставить информацию о местонахождении вашего заказа по телефону.</p>
@@ -1557,7 +531,7 @@
                 <div class="faq-item">
                     <div class="faq-question">
                         <span>Что делать, если мёд пришел с повреждениями?</span>
-                        <i class="ri-add-line text-primary"></i>
+                        <svg class="icon text-primary"><use href="#ri-add-line"></use></svg>
                     </div>
                     <div class="faq-answer">
                         <p>В случае повреждения товара при доставке в Ковров, необходимо:</p>
@@ -1587,7 +561,7 @@
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="ri-truck-line ri-lg"></i>
+                        <svg class="icon"><use href="#ri-truck-line"></use></svg>
                     </div>
                     <h3 class="feature-title">Быстрая доставка</h3>
                     <p class="feature-text">2-3 дня до Коврова</p>
@@ -1595,7 +569,7 @@
                 
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="ri-shield-check-line ri-lg"></i>
+                        <svg class="icon"><use href="#ri-shield-check-line"></use></svg>
                     </div>
                     <h3 class="feature-title">Гарантия качества</h3>
                     <p class="feature-text">100% натуральный мёд</p>
@@ -1603,7 +577,7 @@
                 
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="ri-secure-payment-line ri-lg"></i>
+                        <svg class="icon"><use href="#ri-secure-payment-line"></use></svg>
                     </div>
                     <h3 class="feature-title">Удобная оплата</h3>
                     <p class="feature-text">Картой или наличными</p>
@@ -1611,7 +585,7 @@
                 
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="ri-customer-service-2-line ri-lg"></i>
+                        <svg class="icon"><use href="#ri-customer-service-2-line"></use></svg>
                     </div>
                     <h3 class="feature-title">Поддержка</h3>
                     <p class="feature-text">Ответим на все вопросы</p>
@@ -1629,13 +603,13 @@
                     <p class="footer-text">Натуральный мёд с пасек Алтая с доставкой по всей России, включая Ковров и Владимирскую область.</p>
                     <div class="footer-social">
                         <a href="https://vk.com/honeybuckwheat" class="social-link">
-                            <i class="ri-vk-line"></i>
+                            <svg class="icon"><use href="#ri-vk-line"></use></svg>
                         </a>
                         <a href="https://t.me/HONEYBUCKWHEAT" class="social-link">
-                            <i class="ri-telegram-line"></i>
+                            <svg class="icon"><use href="#ri-telegram-line"></use></svg>
                         </a>
                         <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing" class="social-link">
-                            <i class="ri-shopping-bag-line"></i>
+                            <svg class="icon"><use href="#ri-shopping-bag-line"></use></svg>
                         </a>
                     </div>
                 </div>
@@ -1664,21 +638,21 @@
                     <h3 class="footer-title">Контакты</h3>
                     <div class="footer-contacts">
                         <div class="contact-item">
-                            <i class="ri-phone-line ri-lg contact-icon"></i>
+                            <svg class="icon contact-icon"><use href="#ri-phone-line"></use></svg>
                             <div class="contact-info">
                                 <span class="contact-value">+7 (920) 940-02-22</span>
                                 <span class="contact-note">Ежедневно с 9:00 до 21:00</span>
                             </div>
                         </div>
                         <div class="contact-item">
-                            <i class="ri-mail-line ri-lg contact-icon"></i>
+                            <svg class="icon contact-icon"><use href="#ri-mail-line"></use></svg>
                             <div class="contact-info">
                                 <span class="contact-value">altaymed.shop@yandex.ru</span>
                                 <span class="contact-note">Для заказов и вопросов</span>
                             </div>
                         </div>
                         <div class="contact-item">
-                            <i class="ri-map-pin-line ri-lg contact-icon"></i>
+                            <svg class="icon contact-icon"><use href="#ri-map-pin-line"></use></svg>
                             <div class="contact-info">
                                 <span class="contact-value">г. Ковров, ул. Первомайская, 25</span>
                                 <span class="contact-note">Пункт выдачи заказов</span>
@@ -1691,10 +665,10 @@
             <div class="footer-bottom">
                 <p class="copyright">© 2025 Алтайский мёд. Все права защищены.</p>
                 <div class="payment-methods">
-                    <i class="ri-visa-line payment-icon"></i>
-                    <i class="ri-mastercard-line payment-icon"></i>
-                    <i class="ri-paypal-line payment-icon"></i>
-                    <i class="ri-alipay-line payment-icon"></i>
+                    <svg class="icon payment-icon"><use href="#ri-visa-line"></use></svg>
+                    <svg class="icon payment-icon"><use href="#ri-mastercard-line"></use></svg>
+                    <svg class="icon payment-icon"><use href="#ri-paypal-line"></use></svg>
+                    <svg class="icon payment-icon"><use href="#ri-alipay-line"></use></svg>
                 </div>
             </div>
         </div>
@@ -1705,7 +679,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h3 class="modal-title">Оформление заказа</h3>
-                <span class="close-modal"><i class="ri-close-line"></i></span>
+                <span class="close-modal"><svg class="icon"><use href="#ri-close-line"></use></svg></span>
             </div>
             <div class="p-6">
                 <form id="order-form">
@@ -1739,7 +713,7 @@
     <div id="success-modal" class="modal">
         <div class="success-modal-content">
             <div class="success-icon">
-                <i class="ri-checkbox-circle-line"></i>
+                <svg class="icon"><use href="#ri-checkbox-circle-line"></use></svg>
             </div>
             <h3 class="success-title">Заказ оформлен!</h3>
             <p class="success-text">Спасибо за ваш заказ! Мы свяжемся с вами в течение 10 минут для подтверждения деталей.</p>
@@ -1747,6 +721,7 @@
         </div>
     </div>
 
+    <!-- Скрипты -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Tabs
@@ -1850,27 +825,6 @@
                     orderForm.reset();
                 });
             }
-        });
-        
-        // Асинхронная загрузка шрифтов
-        function loadCSS(href) {
-            var link = document.createElement('link');
-            link.rel = 'stylesheet';
-            link.href = href;
-            link.crossOrigin = 'anonymous';
-            document.head.appendChild(link);
-        }
-        
-        window.addEventListener('load', function() {
-            // Загружаем шрифты после отрисовки страницы
-            loadCSS('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-            loadCSS('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-            
-            // Применяем шрифты после загрузки
-            document.body.style.fontFamily = "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
-            document.querySelectorAll('.logo, .footer-logo').forEach(el => {
-                el.style.fontFamily = "'Pacifico', 'Comic Sans MS', cursive";
-            });
         });
     </script>
 </body>

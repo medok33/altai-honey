@@ -1621,7 +1621,7 @@
                         <i class="ri-add-line text-primary"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Мы используем специальную упаковку, которая надежно защищает мёд при транспортировке. Каждая банка мёда упаковывается в пузырчатую пленку и размещается в картонной коробке с наполнителем, чтобы исключить повреждения при доставке в Ковров. Такая упаковка сохраняет все полезные свойства мёда и защищает от внешних воздействий.</p>
+                        <p>Мы используем специальную упаковку, которая надежно защищает мёд при транспортировке. Каждая банка мёд�� упаковывается в пузырчатую пленку и размещается в картонной коробке с наполнителем, чтобы исключить повреждения при доставке в Ковров. Такая упаковка сохраняет все полезные свойства мёда и защищает от внешних воздействий.</p>
                     </div>
                 </div>
                 
@@ -1782,46 +1782,74 @@
         </div>
     </footer>
 
-    <!-- Модальное окно для заказа -->
+    <!-- Модальное окно для заказа - РАБОЧАЯ ВЕРСИЯ ИЗ INDEX57 -->
     <div id="order-modal" class="modal">
         <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title">Оформление заказа</h3>
-                <span class="close-modal"><i class="ri-close-line"></i></span>
-            </div>
-            <div class="p-6">
-                <form id="order-form">
-                    <div class="form-group">
-                        <label for="name" class="form-label">Ваше имя</label>
-                        <input type="text" id="name" class="form-input" placeholder="Иван Петров" required>
+            <div class="bg-gradient-to-br from-primary to-[#8ea745] rounded-lg shadow-xl overflow-hidden">
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                    <div class="p-6 md:p-10 text-white">
+                        <h2 class="text-2xl md:text-3xl font-pacifico mb-4 md:mb-6">Заказать мёд</h2>
+                        <p class="mb-6 md:mb-8 text-sm md:text-base">Заполните форму, и мы свяжемся с вами для уточнения деталей заказа и доставки.</p>
+                        
+                        <div class="mb-4 md:mb-6">
+                            <div class="flex items-center space-x-3 mb-2">
+                                <div class="w-7 h-7 md:w-8 md:h-8 flex items-center justify-center bg-white bg-opacity-20 rounded-full">
+                                    <i class="ri-truck-line text-white"></i>
+                                </div>
+                                <span class="font-medium text-sm md:text-base">Доставка по всей России</span>
+                            </div>
+                            
+                            <div class="flex items-center space-x-3 mb-2">
+                                <div class="w-7 h-7 md:w-8 md:h-8 flex items-center justify-center bg-white bg-opacity-20 rounded-full">
+                                    <i class="ri-shield-check-line text-white"></i>
+                                </div>
+                                <span class="font-medium text-sm md:text-base">Безопасная оплата</span>
+                            </div>
+                            
+                            <div class="flex items-center space-x-3">
+                                <div class="w-7 h-7 md:w-8 md:h-8 flex items-center justify-center bg-white bg-opacity-20 rounded-full">
+                                    <i class="ri-medal-line text-white"></i>
+                                </div>
+                                <span class="font-medium text-sm md:text-base">Гарантия качества</span>
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="form-group">
-                        <label for="phone" class="form-label">Телефон</label>
-                        <input type="tel" id="phone" class="form-input" placeholder="+7 (999) 123-45-67" required>
+                    <div class="bg-white p-6 md:p-8 lg:p-10">
+                        <form id="order-form">
+                            <div class="mb-3 md:mb-4">
+                                <label for="name" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Ваше имя</label>
+                                <input type="text" id="name" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="Иван Петров" required>
+                            </div>
+                            
+                            <div class="mb-3 md:mb-4">
+                                <label for="phone" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Телефон</label>
+                                <input type="tel" id="phone" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="+7 (999) 123-45-67" required>
+                            </div>
+                            
+                            <div class="mb-3 md:mb-4">
+                                <label for="email" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Email</label>
+                                <input type="email" id="email" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="example@mail.ru">
+                            </div>
+                            
+                            <div class="mb-4 md:mb-6">
+                                <label for="message" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Комментарий к заказу</label>
+                                <textarea id="message" rows="3" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="Укажите интересующие вас сорта мёда и объём"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-orange text-white py-2 md:py-3 !rounded-button hover:bg-opacity-90 transition-all font-medium text-sm md:text-base">Отправить заявку</button>
+                        </form>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" id="email" class="form-input" placeholder="example@mail.ru">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message" class="form-label">Комментарий к заказу</label>
-                        <textarea id="message" class="form-input form-textarea" placeholder="Укажите интересующие вас сорта мёда и объём"></textarea>
-                    </div>
-                    
-                    <button type="submit" class="submit-btn">Отправить заявку</button>
-                </form>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Модальное окно успешного заказа -->
+    <!-- Модальное окно успешного заказа - РАБОЧАЯ ВЕРСИЯ ИЗ INDEX57 -->
     <div id="success-modal" class="modal">
         <div class="success-modal-content">
             <div class="success-icon">
-                <i class="ri-checkbox-circle-line"></i>
+                <i class="ri-checkbox-circle-line text-4xl text-white"></i>
             </div>
             <h3 class="success-title">Заказ оформлен!</h3>
             <p class="success-text">Спасибо за ваш заказ! Мы свяжемся с вами в течение 10 минут для подтверждения деталей.</p>
@@ -1918,12 +1946,49 @@
                 document.body.style.overflow = 'auto';
             });
             
-            // Обработка формы заказа
+            // Обработка формы заказа - РАБОЧИЙ КОД ИЗ INDEX57
             const orderForm = document.getElementById('order-form');
+            
+            // Функция для отправки сообщения в Telegram
+            function sendToTelegram(message) {
+                const botToken = '8078729850:AAFrAZpEXRDYIQ6WuTIEsV0VK4rQx9tIPJ4';
+                const chatId = '5192881217';
+                const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+                
+                const params = new URLSearchParams({
+                    chat_id: chatId,
+                    text: message,
+                    parse_mode: 'HTML'
+                });
+
+                const xhr = new XMLHttpRequest();
+                xhr.open('POST', url, true);
+                xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                
+                return new Promise((resolve) => {
+                    xhr.onload = function() {
+                        if (xhr.status === 200) {
+                            const response = JSON.parse(xhr.responseText);
+                            resolve(response.ok);
+                        } else {
+                            console.error('Ошибка отправки:', xhr.statusText);
+                            resolve(false);
+                        }
+                    };
+                    
+                    xhr.onerror = function() {
+                        console.error('Ошибка сети');
+                        resolve(false);
+                    };
+                    
+                    xhr.send(params.toString());
+                });
+            }
+
+            // Обработчик формы заказа
             if (orderForm) {
                 orderForm.addEventListener('submit', async function(e) {
                     e.preventDefault();
-                    
                     const name = document.getElementById('name').value;
                     const phone = document.getElementById('phone').value;
                     const email = document.getElementById('email').value;
@@ -1943,13 +2008,21 @@
 <b>Комментарий:</b> ${message || 'нет комментария'}
                     `;
                     
-                    // Отправка в Telegram (заглушка)
-                    console.log('Отправка в Telegram:', telegramMessage);
-                    
-                    // Показываем окно успеха
-                    orderModal.style.display = 'none';
-                    successModal.style.display = 'flex';
-                    orderForm.reset();
+                    try {
+                        const success = await sendToTelegram(telegramMessage);
+                        
+                        if (success) {
+                            // Показываем окно успеха
+                            orderModal.style.display = 'none';
+                            successModal.style.display = 'flex';
+                            orderForm.reset();
+                        } else {
+                            alert('⚠️ Ошибка при отправке заказа. Пожалуйста, позвоните нам: +7 (920) 940-02-22');
+                        }
+                    } catch (error) {
+                        console.error('Ошибка:', error);
+                        alert('⚠️ Произошла ошибка. Пожалуйста, попробуйте еще раз или позвоните нам.');
+                    }
                 });
             }
         });

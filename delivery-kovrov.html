@@ -990,6 +990,69 @@
             vertical-align: middle;
             line-height: 1;
         }
+        
+        /* Стили для формы в модальном окне */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--gray-700);
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--gray-300);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(255, 165, 0, 0.2);
+        }
+        
+        .form-textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+        
+        .submit-btn:hover {
+            background-color: #e69500;
+        }
+        
+        /* Стили для заголовка модального окна */
+        .modal-header {
+            background: linear-gradient(to right, #FFA500, #8B4513);
+            padding: 1.5rem;
+            border-radius: 12px 12px 0 0;
+            color: white;
+        }
+        
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -1601,35 +1664,33 @@
     <!-- Модальное окно для заказа -->
     <div id="order-modal" class="modal">
         <div class="modal-content">
-            <div class="bg-gradient-to-r from-[#FFA500] to-[#8ea745] p-4 md:p-6 rounded-t-lg">
-                <div class="flex justify-between items-center">
-                    <h3 class="text-xl md:text-2xl font-bold text-white w-full text-center">Оформление заказа</h3>
-                    <span class="close-modal text-white"><i class="ri-close-line text-2xl"></i></span>
-                </div>
+            <div class="modal-header">
+                <h3 class="modal-title">Оформление заказа</h3>
+                <span class="close-modal"><i class="ri-close-line"></i></span>
             </div>
-            <div class="p-4 md:p-6">
+            <div class="p-6">
                 <form id="order-form">
-                    <div class="mb-3 md:mb-4">
-                        <label for="name" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Ваше имя</label>
-                        <input type="text" id="name" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="Иван Петров">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Ваше имя</label>
+                        <input type="text" id="name" class="form-input" placeholder="Иван Петров" required>
                     </div>
                     
-                    <div class="mb-3 md:mb-4">
-                        <label for="phone" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Телефон</label>
-                        <input type="tel" id="phone" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="+7 (999) 123-45-67">
+                    <div class="form-group">
+                        <label for="phone" class="form-label">Телефон</label>
+                        <input type="tel" id="phone" class="form-input" placeholder="+7 (999) 123-45-67" required>
                     </div>
                     
-                    <div class="mb-3 md:mb-4">
-                        <label for="email" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Email</label>
-                        <input type="email" id="email" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="example@mail.ru">
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" class="form-input" placeholder="example@mail.ru">
                     </div>
                     
-                    <div class="mb-4 md:mb-6">
-                        <label for="message" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Комментарий к заказу</label>
-                        <textarea id="message" rows="3" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="Укажите интересующие вас сорта мёда и объём"></textarea>
+                    <div class="form-group">
+                        <label for="message" class="form-label">Комментарий к заказу</label>
+                        <textarea id="message" class="form-input form-textarea" placeholder="Укажите интересующие вас сорта мёда и объём"></textarea>
                     </div>
                     
-                    <button type="submit" class="w-full bg-[#FFA500] text-white py-2 md:py-3 rounded-button hover:bg-opacity-90 transition-all font-medium text-sm md:text-base">Отправить заявку</button>
+                    <button type="submit" class="submit-btn">Отправить заявку</button>
                 </form>
             </div>
         </div>
@@ -1639,7 +1700,7 @@
     <div id="success-modal" class="modal">
         <div class="success-modal-content">
             <div class="success-icon">
-                <i class="ri-checkbox-circle-line text-4xl text-white"></i>
+                <i class="ri-checkbox-circle-line"></i>
             </div>
             <h3 class="success-title">Заказ оформлен!</h3>
             <p class="success-text">Спасибо за ваш заказ! Мы свяжемся с вами в течение 10 минут для подтверждения деталей.</p>
@@ -1739,7 +1800,7 @@
             // Обработка формы заказа
             const orderForm = document.getElementById('order-form');
             if (orderForm) {
-                orderForm.addEventListener('submit', async (e) => {
+                orderForm.addEventListener('submit', (e) => {
                     e.preventDefault();
                     
                     // Здесь должна быть логика отправки данных

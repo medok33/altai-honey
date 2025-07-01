@@ -6,10 +6,13 @@
     <title>Доставка мёда в Ковров — АлтайМёд</title>
     <meta name="description" content="Быстрая доставка натурального алтайского мёда в Ковров. Свежий мёд с пасек Алтая с доставкой за 2-3 дня. Выгодные условия и широкий ассортимент.">
     
-    <!-- Локальные стили и иконки -->
+    <!-- Локальные шрифты и иконки -->
     <link rel="stylesheet" href="/assets/fonts/remixicon/remixicon.css">
+    <link rel="stylesheet" href="/assets/fonts/inter/inter.css">
+    <link rel="stylesheet" href="/assets/fonts/pacifico/pacifico.css">
+    
     <style>
-        /* Общие настройки */
+        /* Основные стили */
         :root {
             --primary: #FFA500;
             --secondary: #8B4513;
@@ -188,7 +191,7 @@
         
         /* Герой секция */
         .hero-section {
-            background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('images/hero-bg.jpg');
+            background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('/assets/images/hero-bg.jpg');
             background-size: cover;
             background-position: center;
             padding: 4rem 0;
@@ -284,6 +287,8 @@
             flex-wrap: wrap;
             border-bottom: 1px solid var(--gray-200);
             background: #fff;
+            overflow-x: auto;
+            white-space: nowrap;
         }
         
         .tab-btn {
@@ -296,6 +301,7 @@
             color: var(--gray-500);
             position: relative;
             transition: color 0.3s;
+            display: inline-block;
         }
         
         .tab-btn.active {
@@ -407,6 +413,7 @@
             padding: 1rem 1.5rem;
             font-size: 0.875rem;
             border-bottom: 1px solid var(--gray-200);
+            white-space: nowrap;
         }
         
         .tariffs-table tbody tr.highlighted {
@@ -510,7 +517,7 @@
             height: 100%;
             background-size: cover;
             background-position: center;
-            background-image: url('images/map-placeholder.png');
+            background-image: url('/assets/images/map-placeholder.png');
         }
         
         /* FAQ */

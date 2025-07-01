@@ -3,11 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Доставка мёда в Ковров — АлтайМёд</title>
+    <title>Доставка мёда в Ковров — Алтайский мёд</title>
     <meta name="description" content="Быстрая доставка натурального алтайского мёда в Ковров. Свежий мёд с пасек Алтая с доставкой за 2-3 дня. Выгодные условия и широкий ассортимент.">
     
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" sizes="any">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Доставка мёда в Ковров — Алтайский мёд">
+    <meta property="og:description" content="Быстрая доставка натурального алтайского мёда в Ковров. Свежий мёд с пасек Алтая с доставкой за 2-3 дня.">
+    <meta property="og:image" content="images/og-preview.webp">
+    <meta property="og:url" content="https://altaymed.shop/delivery.html">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Доставка мёда в Ковров — Алтайский мёд">
+    <meta name="twitter:description" content="Быстрая доставка натурального алтайского мёда в Ковров">
+    <meta name="twitter:image" content="images/twitter-preview.webp">
+    
     <!-- Подключение шрифтов -->
-    <link rel="stylesheet" href="/assets/fonts/remixicon/remixicon.css">
+    <link rel="stylesheet" href="assets/fonts/remixicon/remixicon.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -193,7 +211,7 @@
         
         /* Герой секция */
         .hero-section {
-            background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('/assets/images/hero-bg.jpg');
+            background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('images/hero-bg.jpg');
             background-size: cover;
             background-position: center;
             padding: 4rem 0;
@@ -512,7 +530,7 @@
             height: 100%;
             background-size: cover;
             background-position: center;
-            background-image: url('/assets/images/map-placeholder.png');
+            background-image: url('images/map-placeholder.png');
         }
         
         /* FAQ */
@@ -553,17 +571,17 @@
             color: var(--gray-600);
         }
         
-        .faq-item input[type="checkbox"] {
-            display: none;
-        }
-        
-        .faq-item input[type="checkbox"]:checked ~ .faq-answer {
+        .faq-item.active .faq-answer {
             max-height: 1000px;
             padding: 0 1.5rem 1.5rem;
         }
         
-        .faq-item input[type="checkbox"]:checked ~ .faq-question i {
+        .faq-item.active .faq-question i {
             transform: rotate(45deg);
+        }
+        
+        .faq-question i {
+            transition: transform 0.3s;
         }
         
         /* CTA */
@@ -871,18 +889,18 @@
     <header>
         <div class="container">
             <div class="header-inner">
-                <a href="/" class="logo">АлтайМёд</a>
+                <a href="/" class="logo">Алтайский мёд</a>
                 
                 <nav class="nav-links">
                     <a href="/" class="nav-link">Главная</a>
-                    <a href="/catalog" class="nav-link">Каталог</a>
-                    <a href="/delivery" class="nav-link active">Доставка</a>
-                    <a href="/about" class="nav-link">О нас</a>
-                    <a href="/contacts" class="nav-link">Контакты</a>
+                    <a href="/catalog.html" class="nav-link">Каталог</a>
+                    <a href="/delivery.html" class="nav-link active">Доставка</a>
+                    <a href="/about.html" class="nav-link">О нас</a>
+                    <a href="/contacts.html" class="nav-link">Контакты</a>
                 </nav>
                 
                 <div class="header-actions">
-                    <a href="/cart" class="icon-btn">
+                    <a href="/cart.html" class="icon-btn">
                         <i class="ri-shopping-cart-line ri-lg"></i>
                     </a>
                     <a href="tel:+79209400222" class="phone-link">
@@ -902,19 +920,19 @@
     <!-- Мобильное меню -->
     <div class="mobile-menu" id="mobile-menu">
         <div class="mobile-menu-header">
-            <a href="/" class="logo">АлтайМёд</a>
+            <a href="/" class="logo">Алтайский мёд</a>
             <button id="close-mobile-menu">
                 <i class="ri-close-line ri-lg"></i>
             </button>
         </div>
         <div class="mobile-menu-links">
             <a href="/" class="mobile-menu-link">Главная</a>
-            <a href="/catalog" class="mobile-menu-link">Каталог</a>
-            <a href="/delivery" class="mobile-menu-link active">Доставка</a>
-            <a href="/about" class="mobile-menu-link">О нас</a>
-            <a href="/contacts" class="mobile-menu-link">Контакты</a>
+            <a href="/catalog.html" class="mobile-menu-link">Каталог</a>
+            <a href="/delivery.html" class="mobile-menu-link active">Доставка</a>
+            <a href="/about.html" class="mobile-menu-link">О нас</a>
+            <a href="/contacts.html" class="mobile-menu-link">Контакты</a>
             <a href="tel:+79209400222" class="mobile-menu-link">+7 (920) 940-02-22</a>
-            <a href="/cart" class="mobile-menu-link">Корзина</a>
+            <a href="/cart.html" class="mobile-menu-link">Корзина</a>
         </div>
     </div>
 
@@ -1281,22 +1299,20 @@
             
             <div class="faq-container">
                 <div class="faq-item">
-                    <input type="checkbox" id="faq-1">
-                    <label for="faq-1" class="faq-question">
+                    <div class="faq-question">
                         <span>Как долго доставляется мёд в Ковров?</span>
                         <i class="ri-add-line text-primary"></i>
-                    </label>
+                    </div>
                     <div class="faq-answer">
                         <p>Доставка мёда в Ковров занимает от 2 до 3 рабочих дней с момента отправки заказа. При выборе курьерской доставки в пределах города срок может сократиться до 1-2 дней. Точный срок доставки зависит от выбранного способа доставки и адреса получения.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
-                    <input type="checkbox" id="faq-2">
-                    <label for="faq-2" class="faq-question">
+                    <div class="faq-question">
                         <span>Как происходит оплата заказа?</span>
                         <i class="ri-add-line text-primary"></i>
-                    </label>
+                    </div>
                     <div class="faq-answer">
                         <p>Вы можете оплатить заказ несколькими способами:</p>
                         <ul class="list-disc pl-5 mt-2 space-y-1">
@@ -1308,33 +1324,30 @@
                 </div>
                 
                 <div class="faq-item">
-                    <input type="checkbox" id="faq-3">
-                    <label for="faq-3" class="faq-question">
+                    <div class="faq-question">
                         <span>Как упаковывается мёд для доставки в Ковров?</span>
                         <i class="ri-add-line text-primary"></i>
-                    </label>
+                    </div>
                     <div class="faq-answer">
                         <p>Мы используем специальную упаковку, которая надежно защищает мёд при транспортировке. Каждая банка мёда упаковывается в пузырчатую пленку и размещается в картонной коробке с наполнителем, чтобы исключить повреждения при доставке в Ковров. Такая упаковка сохраняет все полезные свойства мёда и защищает от внешних воздействий.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
-                    <input type="checkbox" id="faq-4">
-                    <label for="faq-4" class="faq-question">
+                    <div class="faq-question">
                         <span>Можно ли отследить статус доставки?</span>
                         <i class="ri-add-line text-primary"></i>
-                    </label>
+                    </div>
                     <div class="faq-answer">
                         <p>Да, при отправке заказа вы получите трек-номер, по которому можно отслеживать статус доставки на сайте транспортной компании. Также наши менеджеры могут предоставить информацию о местонахождении вашего заказа по телефону.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
-                    <input type="checkbox" id="faq-5">
-                    <label for="faq-5" class="faq-question">
+                    <div class="faq-question">
                         <span>Что делать, если мёд пришел с повреждениями?</span>
                         <i class="ri-add-line text-primary"></i>
-                    </label>
+                    </div>
                     <div class="faq-answer">
                         <p>В случае повреждения товара при доставке в Ковров, необходимо:</p>
                         <ol class="list-decimal pl-5 mt-2 space-y-1">
@@ -1357,7 +1370,7 @@
             
             <div class="cta-buttons">
                 <button class="btn btn-primary" onclick="location.href='#order'">Заказать мёд</button>
-                <button class="btn btn-outline" onclick="location.href='/catalog'">Каталог продукции</button>
+                <button class="btn btn-outline" onclick="location.href='/catalog.html'">Каталог продукции</button>
             </div>
             
             <div class="features-grid">
@@ -1401,7 +1414,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-column">
-                    <div class="footer-logo">АлтайМёд</div>
+                    <div class="footer-logo">Алтайский мёд</div>
                     <p class="footer-text">Натуральный мёд с пасек Алтая с доставкой по всей России, включая Ковров и Владимирскую область.</p>
                     <div class="footer-social">
                         <a href="https://vk.com/honeybuckwheat" class="social-link">
@@ -1419,22 +1432,21 @@
                 <div class="footer-column">
                     <h3 class="footer-title">Каталог</h3>
                     <div class="footer-links">
-                        <a href="/catalog#product-1" class="footer-link">Разнотравье</a>
-                        <a href="/catalog#product-2" class="footer-link">Таёжный мёд</a>
-                        <a href="/catalog#product-3" class="footer-link">Гречишный мёд</a>
-                        <a href="/catalog" class="footer-link">Горный мёд</a>
-                        <a href="/catalog" class="footer-link">Мёд с добавками</a>
+                        <a href="/catalog.html#product-1" class="footer-link">Разнотравье</a>
+                        <a href="/catalog.html#product-2" class="footer-link">Таёжный мёд</a>
+                        <a href="/catalog.html#product-3" class="footer-link">Гречишный мёд</a>
+                        <a href="/catalog.html" class="footer-link">Горный мёд</a>
+                        <a href="/catalog.html" class="footer-link">Мёд с добавками</a>
                     </div>
                 </div>
                 
                 <div class="footer-column">
                     <h3 class="footer-title">Информация</h3>
                     <div class="footer-links">
-                        <a href="/about" class="footer-link">О компании</a>
-                        <a href="/delivery" class="footer-link">Доставка и оплата</a>
-                        <a href="/about#quality" class="footer-link">Гарантии качества</a>
-                        <a href="/reviews" class="footer-link">Отзывы</a>
-                        <a href="/contacts" class="footer-link">Контакты</a>
+                        <a href="/about.html" class="footer-link">О компании</a>
+                        <a href="/delivery.html" class="footer-link">Доставка и оплата</a>
+                        <a href="https://altaymed.shop/blog/" class="footer-link">Гарантии качества</a>
+                        <a href="https://altaymed.shop/legal.html" class="footer-link">Правовая информация</a>
                     </div>
                 </div>
                 
@@ -1467,7 +1479,7 @@
             </div>
             
             <div class="footer-bottom">
-                <p class="copyright">© 2025 АлтайМёд. Все права защищены.</p>
+                <p class="copyright">© 2025 Алтайский мёд. Все права защищены.</p>
                 <div class="payment-methods">
                     <i class="ri-visa-line payment-icon"></i>
                     <i class="ri-mastercard-line payment-icon"></i>
@@ -1510,8 +1522,8 @@
             const faqQuestions = document.querySelectorAll('.faq-question');
             faqQuestions.forEach(question => {
                 question.addEventListener('click', () => {
-                    const checkbox = question.previousElementSibling;
-                    checkbox.checked = !checkbox.checked;
+                    const faqItem = question.parentElement;
+                    faqItem.classList.toggle('active');
                 });
             });
             

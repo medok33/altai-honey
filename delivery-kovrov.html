@@ -301,35 +301,43 @@
             color: var(--gray-600);
         }
         
-        /* Способы доставки */
+        /* Способы доставки - ОБНОВЛЕННЫЙ СТИЛЬ */
+        .delivery-section {
+            background-color: var(--gray-50);
+        }
+        
+        .delivery-methods {
+            background: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
         .delivery-tabs {
             display: flex;
-            flex-wrap: wrap;
             border-bottom: 1px solid var(--gray-200);
-            background: #fff;
+            background: white;
             overflow-x: auto;
-            white-space: nowrap;
         }
         
-        .tab-btn {
-            padding: 1rem 1.5rem;
+        .delivery-tab {
+            padding: 1.25rem 1.5rem;
             font-weight: 500;
-            cursor: pointer;
-            border: none;
-            background: transparent;
-            white-space: nowrap;
             color: var(--gray-500);
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
             position: relative;
-            transition: color 0.3s;
-            display: inline-block;
+            white-space: nowrap;
         }
         
-        .tab-btn.active {
+        .delivery-tab.active {
             color: var(--primary);
             font-weight: 600;
         }
         
-        .tab-btn.active::after {
+        .delivery-tab.active::after {
             content: '';
             position: absolute;
             bottom: -1px;
@@ -339,66 +347,90 @@
             background-color: var(--primary);
         }
         
-        .tab-btn:hover {
+        .delivery-tab:hover {
             color: var(--gray-700);
         }
         
-        .tab-content {
+        .delivery-content {
+            padding: 2rem;
             display: none;
-            padding: 1.5rem;
-            background: #fff;
         }
         
-        .tab-content.active {
+        .delivery-content.active {
             display: block;
         }
         
-        .delivery-content {
+        .delivery-info-wrapper {
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
         }
         
         @media (min-width: 768px) {
-            .delivery-content {
+            .delivery-info-wrapper {
                 flex-direction: row;
             }
         }
         
-        .delivery-info {
+        .delivery-details {
             flex: 1;
         }
         
         .delivery-advantages {
-            width: 100%;
-            background-color: var(--gray-50);
-            padding: 1.5rem;
+            background-color: rgba(255, 165, 0, 0.05);
             border-radius: 0.5rem;
+            padding: 1.5rem;
+            width: 100%;
         }
         
         @media (min-width: 768px) {
             .delivery-advantages {
-                width: 33.333333%;
+                width: 33%;
             }
         }
         
-        .advantage-list {
+        .delivery-points {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 1rem;
+        }
+        
+        .delivery-points li {
             display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
+            align-items: flex-start;
+            margin-bottom: 0.75rem;
+            color: var(--gray-600);
+        }
+        
+        .delivery-points i {
+            color: var(--primary);
+            margin-right: 0.75rem;
+            margin-top: 0.25rem;
+        }
+        
+        .delivery-meta {
+            display: flex;
+            align-items: center;
+            margin-top: 1.5rem;
+            color: var(--gray-600);
+        }
+        
+        .delivery-meta i {
+            color: var(--primary);
+            margin-right: 0.75rem;
         }
         
         .advantage-item {
             display: flex;
             align-items: flex-start;
-            gap: 0.75rem;
+            margin-bottom: 0.75rem;
             color: var(--gray-600);
         }
         
         .advantage-item i {
             color: var(--primary);
+            margin-right: 0.75rem;
             margin-top: 0.25rem;
-            flex-shrink: 0;
         }
         
         /* Тарифы */
@@ -448,51 +480,54 @@
             font-weight: 500;
         }
         
-        /* География доставки */
+        /* География доставки - ОБНОВЛЕННЫЙ СТИЛЬ */
         .map-section {
+            background-color: var(--gray-50);
+        }
+        
+        .delivery-geography {
             display: flex;
             flex-direction: column;
             gap: 2rem;
         }
         
         @media (min-width: 768px) {
-            .map-section {
+            .delivery-geography {
                 flex-direction: row;
             }
         }
         
         .cities-container {
             flex: 1;
-            background: #fff;
-            padding: 1.5rem;
+            background: white;
+            padding: 2rem;
             border-radius: 0.5rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
         
         .cities-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
+            gap: 2rem;
+            margin: 2rem 0;
         }
         
-        @media (min-width: 640px) {
+        @media (min-width: 768px) {
             .cities-grid {
                 grid-template-columns: 1fr 1fr;
             }
         }
         
-        .city-column-header {
-            position: relative;
-            padding-left: 0;
-            margin-bottom: 1rem;
+        .city-column h4 {
             font-weight: 600;
+            margin-bottom: 1.25rem;
             color: var(--gray-800);
+            font-size: 1.125rem;
         }
         
         .city-list {
-            padding-left: 0;
             list-style: none;
+            padding-left: 0;
         }
         
         .city-list li {
@@ -503,9 +538,8 @@
         }
         
         .city-list i {
-            margin-right: 0.5rem;
             color: var(--primary);
-            flex-shrink: 0;
+            margin-right: 0.75rem;
         }
         
         .map-container {
@@ -520,7 +554,7 @@
             justify-content: center;
             color: var(--gray-500);
             font-weight: 500;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
         
         .map-container .map-bg {
@@ -1151,69 +1185,69 @@
         </div>
     </section>
 
-    <!-- Delivery Methods -->
-    <section class="bg-gray-100">
+    <!-- Delivery Methods - ОБНОВЛЕННЫЙ РАЗДЕЛ -->
+    <section class="delivery-section">
         <div class="container">
             <h2>Способы доставки в Ковров</h2>
             
-            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="delivery-methods">
                 <div class="delivery-tabs">
-                    <button class="tab-btn active" data-tab="sdek">СДЭК</button>
-                    <button class="tab-btn" data-tab="courier">Курьерская доставка</button>
-                    <button class="tab-btn" data-tab="post">Почта России</button>
+                    <button class="delivery-tab active" data-tab="sdek">СДЭК</button>
+                    <button class="delivery-tab" data-tab="courier">Курьерская доставка</button>
+                    <button class="delivery-tab" data-tab="post">Почта России</button>
                 </div>
                 
                 <!-- СДЭК -->
-                <div class="tab-content active" id="sdek-content">
-                    <div class="delivery-content">
-                        <div class="delivery-info">
+                <div class="delivery-content active" id="sdek-content">
+                    <div class="delivery-info-wrapper">
+                        <div class="delivery-details">
                             <h3 class="text-xl font-semibold mb-4">Доставка СДЭК в Ковров</h3>
                             <p class="text-gray-600 mb-4">Доставка осуществляется до пунктов выдачи СДЭК в Коврове. Срок доставки составляет 2-3 рабочих дня с момента отправки заказа.</p>
                             
                             <h4 class="font-medium text-gray-800 mb-3">Пункты выдачи СДЭК в Коврове:</h4>
-                            <ul class="space-y-2 mb-6">
-                                <li class="flex items-start">
-                                    <i class="ri-map-pin-line ri-lg mt-1 mr-2 text-primary"></i>
-                                    <span class="text-gray-600">ул. Грибоедова, 15 (ТЦ "Треугольник")</span>
+                            <ul class="delivery-points">
+                                <li>
+                                    <i class="ri-map-pin-line"></i>
+                                    <span>ул. Грибоедова, 15 (ТЦ "Треугольник")</span>
                                 </li>
-                                <li class="flex items-start">
-                                    <i class="ri-map-pin-line ri-lg mt-1 mr-2 text-primary"></i>
-                                    <span class="text-gray-600">пр-т Ленина, 35 (ТЦ "Ковров Молл")</span>
+                                <li>
+                                    <i class="ri-map-pin-line"></i>
+                                    <span>пр-т Ленина, 35 (ТЦ "Ковров Молл")</span>
                                 </li>
-                                <li class="flex items-start">
-                                    <i class="ri-map-pin-line ri-lg mt-1 mr-2 text-primary"></i>
-                                    <span class="text-gray-600">ул. Строителей, 28 (ТЦ "Русь")</span>
+                                <li>
+                                    <i class="ri-map-pin-line"></i>
+                                    <span>ул. Строителей, 28 (ТЦ "Русь")</span>
                                 </li>
                             </ul>
                             
-                            <div class="flex items-center text-gray-600 mb-2">
-                                <i class="ri-time-line ri-lg mr-2 text-primary"></i>
+                            <div class="delivery-meta">
+                                <i class="ri-time-line"></i>
                                 <span>Срок доставки: 2-3 рабочих дня</span>
                             </div>
-                            <div class="flex items-center text-gray-600">
-                                <i class="ri-money-dollar-circle-line ri-lg mr-2 text-primary"></i>
+                            <div class="delivery-meta">
+                                <i class="ri-money-dollar-circle-line"></i>
                                 <span>Стоимость: от 300 ₽ (зависит от веса заказа)</span>
                             </div>
                         </div>
                         
                         <div class="delivery-advantages">
                             <h4 class="font-medium text-gray-800 mb-3">Преимущества доставки СДЭК:</h4>
-                            <ul class="space-y-2">
-                                <li class="flex items-start">
-                                    <i class="ri-check-line ri-lg mt-1 mr-2 text-primary"></i>
-                                    <span class="text-gray-600">Надежная упаковка и сохранность товара</span>
+                            <ul>
+                                <li class="advantage-item">
+                                    <i class="ri-check-line"></i>
+                                    <span>Надежная упаковка и сохранность товара</span>
                                 </li>
-                                <li class="flex items-start">
-                                    <i class="ri-check-line ri-lg mt-1 mr-2 text-primary"></i>
-                                    <span class="text-gray-600">Возможность отслеживания заказа</span>
+                                <li class="advantage-item">
+                                    <i class="ri-check-line"></i>
+                                    <span>Возможность отслеживания заказа</span>
                                 </li>
-                                <li class="flex items-start">
-                                    <i class="ri-check-line ri-lg mt-1 mr-2 text-primary"></i>
-                                    <span class="text-gray-600">Удобные пункты выдачи в Коврове</span>
+                                <li class="advantage-item">
+                                    <i class="ri-check-line"></i>
+                                    <span>Удобные пункты выдачи в Коврове</span>
                                 </li>
-                                <li class="flex items-start">
-                                    <i class="ri-check-line ri-lg mt-1 mr-2 text-primary"></i>
-                                    <span class="text-gray-600">Оплата при получении</span>
+                                <li class="advantage-item">
+                                    <i class="ri-check-line"></i>
+                                    <span>Оплата при получении</span>
                                 </li>
                             </ul>
                         </div>
@@ -1221,60 +1255,60 @@
                 </div>
                 
                 <!-- Курьерская доставка -->
-                <div class="tab-content" id="courier-content">
-                    <div class="delivery-content">
-                        <div class="delivery-info">
+                <div class="delivery-content" id="courier-content">
+                    <div class="delivery-info-wrapper">
+                        <div class="delivery-details">
                             <h3 class="text-xl font-semibold mb-4">Курьерская доставка по Коврову</h3>
                             <p class="text-gray-600 mb-4">Доставка осуществляется курьером по указанному адресу в Коврове. Срок доставки - 1-2 рабочих дня после формирования заказа.</p>
                             
                             <h4 class="font-medium text-gray-800 mb-3">Работаем по всему Коврову:</h4>
-                            <ul class="space-y-2 mb-6">
-                                <li class="flex items-start">
-                                    <i class="ri-map-pin-line ri-lg mt-1 mr-2 text-primary"></i>
-                                    <span class="text-gray-600">Центральный район</span>
+                            <ul class="delivery-points">
+                                <li>
+                                    <i class="ri-map-pin-line"></i>
+                                    <span>Центральный район</span>
                                 </li>
-                                <li class="flex items-start">
-                                    <i class="ri-map-pin-line ri-lg mt-1 mr-2 text-primary"></i>
-                                    <span class="text-gray-600">Южный микрорайон</span>
+                                <li>
+                                    <i class="ri-map-pin-line"></i>
+                                    <span>Южный микрорайон</span>
                                 </li>
-                                <li class="flex items-start">
-                                    <i class="ri-map-pin-line ri-lg mt-1 mr-2 text-primary"></i>
-                                    <span class="text-gray-600">Северный микрорайон</span>
+                                <li>
+                                    <i class="ri-map-pin-line"></i>
+                                    <span>Северный микрорайон</span>
                                 </li>
-                                <li class="flex items-start">
-                                    <i class="ri-map-pin-line ri-lg mt-1 mr-2 text-primary"></i>
-                                    <span class="text-gray-600">Заречный район</span>
+                                <li>
+                                    <i class="ri-map-pin-line"></i>
+                                    <span>Заречный район</span>
                                 </li>
                             </ul>
                             
-                            <div class="flex items-center text-gray-600 mb-2">
-                                <i class="ri-time-line ri-lg mr-2 text-primary"></i>
+                            <div class="delivery-meta">
+                                <i class="ri-time-line"></i>
                                 <span>Время доставки: с 9:00 до 21:00</span>
                             </div>
-                            <div class="flex items-center text-gray-600">
-                                <i class="ri-money-dollar-circle-line ri-lg mr-2 text-primary"></i>
+                            <div class="delivery-meta">
+                                <i class="ri-money-dollar-circle-line"></i>
                                 <span>Стоимость: от 400 ₽ (зависит от веса заказа)</span>
                             </div>
                         </div>
                         
                         <div class="delivery-advantages">
                             <h4 class="font-medium text-gray-800 mb-3">Преимущества курьерской доставки:</h4>
-                            <ul class="space-y-2">
-                                <li class="flex items-start">
-                                    <i class="ri-check-line ri-lg mt-1 mr-2 text-primary"></i>
-                                    <span class="text-gray-600">Удобная доставка "до двери"</span>
+                            <ul>
+                                <li class="advantage-item">
+                                    <i class="ri-check-line"></i>
+                                    <span>Удобная доставка "до двери"</span>
                                 </li>
-                                <li class="flex items-start">
-                                    <i class="ri-check-line ri-lg mt-1 mr-2 text-primary"></i>
-                                    <span class="text-gray-600">Быстрая доставка по городу</span>
+                                <li class="advantage-item">
+                                    <i class="ri-check-line"></i>
+                                    <span>Быстрая доставка по городу</span>
                                 </li>
-                                <li class="flex items-start">
-                                    <i class="ri-check-line ri-lg mt-1 mr-2 text-primary"></i>
-                                    <span class="text-gray-600">Оплата наличными или картой при получении</span>
+                                <li class="advantage-item">
+                                    <i class="ri-check-line"></i>
+                                    <span>Оплата наличными или картой при получении</span>
                                 </li>
-                                <li class="flex items-start">
-                                    <i class="ri-check-line ri-lg mt-1 mr-2 text-primary"></i>
-                                    <span class="text-gray-600">Гибкий график доставки</span>
+                                <li class="advantage-item">
+                                    <i class="ri-check-line"></i>
+                                    <span>Гибкий график доставки</span>
                                 </li>
                             </ul>
                         </div>
@@ -1282,56 +1316,56 @@
                 </div>
                 
                 <!-- Почта России -->
-                <div class="tab-content" id="post-content">
-                    <div class="delivery-content">
-                        <div class="delivery-info">
+                <div class="delivery-content" id="post-content">
+                    <div class="delivery-info-wrapper">
+                        <div class="delivery-details">
                             <h3 class="text-xl font-semibold mb-4">Доставка Почтой России</h3>
                             <p class="text-gray-600 mb-4">Доставка осуществляется до отделений Почты России в Коврове. Срок доставки - 3-5 рабочих дней после отправки заказа.</p>
                             
                             <h4 class="font-medium text-gray-800 mb-3">Основные отделения в Коврове:</h4>
-                            <ul class="space-y-2 mb-6">
-                                <li class="flex items-start">
-                                    <i class="ri-map-pin-line ri-lg mt-1 mr-2 text-primary"></i>
-                                    <span class="text-gray-600">Отделение №1: ул. Первомайская, 25</span>
+                            <ul class="delivery-points">
+                                <li>
+                                    <i class="ri-map-pin-line"></i>
+                                    <span>Отделение №1: ул. Первомайская, 25</span>
                                 </li>
-                                <li class="flex items-start">
-                                    <i class="ri-map-pin-line ri-lg mt-1 mr-2 text-primary"></i>
-                                    <span class="text-gray-600">Отделение №2: пр-т Ленина, 47</span>
+                                <li>
+                                    <i class="ri-map-pin-line"></i>
+                                    <span>Отделение №2: пр-т Ленина, 47</span>
                                 </li>
-                                <li class="flex items-start">
-                                    <i class="ri-map-pin-line ri-lg mt-1 mr-2 text-primary"></i>
-                                    <span class="text-gray-600">Отделение №3: ул. Дегтярева, 12</span>
+                                <li>
+                                    <i class="ri-map-pin-line"></i>
+                                    <span>Отделение №3: ул. Дегтярева, 12</span>
                                 </li>
                             </ul>
                             
-                            <div class="flex items-center text-gray-600 mb-2">
-                                <i class="ri-time-line ri-lg mr-2 text-primary"></i>
+                            <div class="delivery-meta">
+                                <i class="ri-time-line"></i>
                                 <span>Срок доставки: 3-5 рабочих дней</span>
                             </div>
-                            <div class="flex items-center text-gray-600">
-                                <i class="ri-money-dollar-circle-line ri-lg mr-2 text-primary"></i>
+                            <div class="delivery-meta">
+                                <i class="ri-money-dollar-circle-line"></i>
                                 <span>Стоимость: от 350 ₽ (зависит от веса заказа)</span>
                             </div>
                         </div>
                         
                         <div class="delivery-advantages">
                             <h4 class="font-medium text-gray-800 mb-3">Преимущества Почты России:</h4>
-                            <ul class="space-y-2">
-                                <li class="flex items-start">
-                                    <i class="ri-check-line ri-lg mt-1 mr-2 text-primary"></i>
-                                    <span class="text-gray-600">Широкая сеть отделений в Коврове</span>
+                            <ul>
+                                <li class="advantage-item">
+                                    <i class="ri-check-line"></i>
+                                    <span>Широкая сеть отделений в Коврове</span>
                                 </li>
-                                <li class="flex items-start">
-                                    <i class="ri-check-line ri-lg mt-1 mr-2 text-primary"></i>
-                                    <span class="text-gray-600">Возможность отслеживания отправления</span>
+                                <li class="advantage-item">
+                                    <i class="ri-check-line"></i>
+                                    <span>Возможность отслеживания отправления</span>
                                 </li>
-                                <li class="flex items-start">
-                                    <i class="ri-check-line ri-lg mt-1 mr-2 text-primary"></i>
-                                    <span class="text-gray-600">Оплата при получении</span>
+                                <li class="advantage-item">
+                                    <i class="ri-check-line"></i>
+                                    <span>Оплата при получении</span>
                                 </li>
-                                <li class="flex items-start">
-                                    <i class="ri-check-line ri-lg mt-1 mr-2 text-primary"></i>
-                                    <span class="text-gray-600">Доставка в отдаленные районы города</span>
+                                <li class="advantage-item">
+                                    <i class="ri-check-line"></i>
+                                    <span>Доставка в отдаленные районы города</span>
                                 </li>
                             </ul>
                         </div>
@@ -1397,19 +1431,19 @@
         </div>
     </section>
 
-    <!-- Map Section -->
-    <section class="bg-gray-100">
+    <!-- Map Section - ОБНОВЛЕННЫЙ РАЗДЕЛ -->
+    <section class="map-section">
         <div class="container">
             <h2>География доставки</h2>
             
-            <div class="map-section">
+            <div class="delivery-geography">
                 <div class="cities-container">
                     <h3 class="text-xl font-semibold mb-4">Доставка по Владимирской области</h3>
                     <p class="text-gray-600 mb-6">Помимо Коврова, мы осуществляем доставку мёда и в другие города Владимирской области:</p>
                     
                     <div class="cities-grid">
                         <div class="city-column">
-                            <h4 class="city-column-header">Крупные города:</h4>
+                            <h4>Крупные города:</h4>
                             <ul class="city-list">
                                 <li>
                                     <i class="ri-map-pin-line"></i>
@@ -1430,7 +1464,7 @@
                             </ul>
                         </div>
                         <div class="city-column">
-                            <h4 class="city-column-header">Другие населенные пункты:</h4>
+                            <h4>Другие населенные пункты:</h4>
                             <ul class="city-list">
                                 <li>
                                     <i class="ri-map-pin-line"></i>
@@ -1710,8 +1744,8 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Tabs
-            const tabButtons = document.querySelectorAll('.tab-btn');
-            const tabContents = document.querySelectorAll('.tab-content');
+            const tabButtons = document.querySelectorAll('.delivery-tab');
+            const tabContents = document.querySelectorAll('.delivery-content');
             
             tabButtons.forEach(button => {
                 button.addEventListener('click', () => {

@@ -492,6 +492,7 @@
         
         .city-list {
             padding-left: 0;
+            list-style: none; /* Убраны точки */
         }
         
         .city-list li {
@@ -596,6 +597,7 @@
             gap: 1rem;
             justify-content: center;
             margin-bottom: 3rem;
+            margin-top: 2rem; /* Добавлен отступ сверху */
         }
         
         @media (min-width: 640px) {
@@ -882,6 +884,112 @@
         .mobile-menu-link.active {
             color: var(--primary);
         }
+        
+        /* Модальное окно */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            max-width: 500px;
+            width: 90%;
+            animation: modalAppear 0.3s ease-out;
+        }
+        @keyframes modalAppear {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .close-modal {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #6b7280;
+            transition: color 0.2s;
+        }
+        .close-modal:hover {
+            color: #374151;
+        }
+        
+        /* Модальное окно успеха */
+        .success-modal-content {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            max-width: 450px;
+            width: 90%;
+            padding: 40px 30px;
+            text-align: center;
+            animation: modalAppear 0.4s ease-out;
+        }
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background-color: #6B8E23;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .success-icon i {
+            font-size: 40px;
+            color: white;
+        }
+        .success-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #2d3748;
+        }
+        .success-text {
+            font-size: 18px;
+            color: #4a5568;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+        .success-btn {
+            background: #6B8E23;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 30px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        .success-btn:hover {
+            background: #5a7a1d;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        /* Выравнивание иконок в контактах */
+        .contact-icon i {
+            vertical-align: middle;
+            line-height: 1;
+        }
     </style>
 </head>
 <body>
@@ -942,7 +1050,7 @@
             <div class="hero-content">
                 <h1 class="hero-title">Доставка мёда в Ковров</h1>
                 <p class="hero-text">Свежий алтайский мёд с доставкой за 2-3 дня прямо к вашему дому</p>
-                <button class="btn btn-primary" onclick="location.href='#order'">Заказать мёд</button>
+                <button class="btn btn-primary" id="open-order-modal">Заказать мёд</button>
             </div>
         </div>
     </section>
@@ -1369,7 +1477,7 @@
             <p class="text-center">Натуральный алтайский мёд с быстрой доставкой в любую точку Коврова и Владимирской области. Мы гарантируем качество и свежесть каждой баночки.</p>
             
             <div class="cta-buttons">
-                <button class="btn btn-primary" onclick="location.href='#order'">Заказать мёд</button>
+                <button class="btn btn-primary" id="open-order-modal-bottom">Заказать мёд</button>
                 <button class="btn btn-outline" onclick="location.href='/catalog.html'">Каталог продукции</button>
             </div>
             
@@ -1436,7 +1544,7 @@
                         <a href="/catalog.html#product-2" class="footer-link">Таёжный мёд</a>
                         <a href="/catalog.html#product-3" class="footer-link">Гречишный мёд</a>
                         <a href="/catalog.html" class="footer-link">Горный мёд</a>
-                        <a href="/catalog.html" class="footer-link">Мёд с добавками</a>
+                        <!-- Убран пункт "Мёд с добавками" -->
                     </div>
                 </div>
                 
@@ -1490,6 +1598,55 @@
         </div>
     </footer>
 
+    <!-- Модальное окно для заказа -->
+    <div id="order-modal" class="modal">
+        <div class="modal-content">
+            <div class="bg-gradient-to-r from-[#FFA500] to-[#8ea745] p-4 md:p-6 rounded-t-lg">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-xl md:text-2xl font-bold text-white w-full text-center">Оформление заказа</h3>
+                    <span class="close-modal text-white"><i class="ri-close-line text-2xl"></i></span>
+                </div>
+            </div>
+            <div class="p-4 md:p-6">
+                <form id="order-form">
+                    <div class="mb-3 md:mb-4">
+                        <label for="name" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Ваше имя</label>
+                        <input type="text" id="name" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="Иван Петров">
+                    </div>
+                    
+                    <div class="mb-3 md:mb-4">
+                        <label for="phone" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Телефон</label>
+                        <input type="tel" id="phone" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="+7 (999) 123-45-67">
+                    </div>
+                    
+                    <div class="mb-3 md:mb-4">
+                        <label for="email" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Email</label>
+                        <input type="email" id="email" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="example@mail.ru">
+                    </div>
+                    
+                    <div class="mb-4 md:mb-6">
+                        <label for="message" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Комментарий к заказу</label>
+                        <textarea id="message" rows="3" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="Укажите интересующие вас сорта мёда и объём"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-[#FFA500] text-white py-2 md:py-3 rounded-button hover:bg-opacity-90 transition-all font-medium text-sm md:text-base">Отправить заявку</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно успешного заказа -->
+    <div id="success-modal" class="modal">
+        <div class="success-modal-content">
+            <div class="success-icon">
+                <i class="ri-checkbox-circle-line text-4xl text-white"></i>
+            </div>
+            <h3 class="success-title">Заказ оформлен!</h3>
+            <p class="success-text">Спасибо за ваш заказ! Мы свяжемся с вами в течение 10 минут для подтверждения деталей.</p>
+            <button class="success-btn" id="close-success-modal">Отлично</button>
+        </div>
+    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Tabs
@@ -1539,6 +1696,60 @@
             closeMobileMenu.addEventListener('click', () => {
                 mobileMenu.classList.remove('active');
             });
+            
+            // Модальное окно заказа
+            const orderModal = document.getElementById('order-modal');
+            const successModal = document.getElementById('success-modal');
+            const closeModal = document.querySelector('.close-modal');
+            const closeSuccessModal = document.getElementById('close-success-modal');
+            const openOrderButtons = document.querySelectorAll('#open-order-modal, #open-order-modal-bottom');
+            
+            // Открытие модального окна
+            openOrderButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    orderModal.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+            
+            // Закрытие модального окна
+            closeModal.addEventListener('click', () => {
+                orderModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            // Закрытие при клике вне окна
+            window.addEventListener('click', (event) => {
+                if (event.target === orderModal) {
+                    orderModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+                if (event.target === successModal) {
+                    successModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Закрытие окна успеха
+            closeSuccessModal.addEventListener('click', () => {
+                successModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            // Обработка формы заказа
+            const orderForm = document.getElementById('order-form');
+            if (orderForm) {
+                orderForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    
+                    // Здесь должна быть логика отправки данных
+                    // Для примера просто покажем окно успеха
+                    
+                    orderModal.style.display = 'none';
+                    successModal.style.display = 'flex';
+                    orderForm.reset();
+                });
+            }
         });
     </script>
 </body>

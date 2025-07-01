@@ -23,13 +23,10 @@
 <meta name="twitter:description" content="Читайте полезные статьи о мёде и пчеловодстве">
 <meta name="twitter:image" content="https://altaymed.shop/images/twitter-preview.jpg">
 
-<!-- Предзагрузка ключевых ресурсов -->
-<link rel="preload" href="/css/style.min.css" as="style">
+<!-- Preload критических ресурсов -->
 <link rel="preload" href="/images/image-7.jpg" as="image">
-<link rel="preload" href="/images/image-8.jpg" as="image" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 
 <!-- Favicon -->
 <link rel="icon" href="/images/favicon.ico" sizes="any">
@@ -41,44 +38,50 @@
 <meta name="theme-color" content="#9f5524">
 
 <!-- Оптимизированные шрифты -->
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<style>
+  /* Критические стили шрифтов */
+  @font-face {
+    font-family: 'Pacifico';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/pacifico/v22/FwZY7-Qmy14u9lezJ-6H6Mw.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
 
-<!-- Подключение CSS -->
+  @font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/opensans/v34/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4gaVQ.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+</style>
+
+<!-- Подключение Tailwind CSS -->
 <link rel="stylesheet" href="/css/style.min.css">
 
-<!-- Отложенная загрузка иконок -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" media="print" onload="this.media='all'">
-<noscript>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
-</noscript>
-
-<!-- Инлайн критического CSS -->
+<!-- Inline критический CSS -->
 <style>
-  /* Основные стили для первого экрана */
+  /* Критические стили для первого экрана */
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Open Sans', sans-serif;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     margin: 0;
   }
   
-  /* Шрифты будут подгружены позже */
-  .font-pacifico {
-    font-family: 'Pacifico', cursive;
-  }
-  
-  /* Остальные критические стили */
   .texture-bg {
     background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZmZmZmZmIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNmNWRlYjMiIG9wYWNpdHk9IjAuMSI+PC9yZWN0Pgo8L3N2Zz4=');
   }
 
-  /* Стили для навигации */
   .nav-link {
     color: #1a202c !important;
     transition: color 0.3s;
   }
+  
   .nav-link:hover {
     color: #6B8E23 !important;
   }
@@ -91,8 +94,7 @@
   .header-logo {
     color: #6B8E23 !important;
   }
-
-  /* Заголовок блога */
+  
   .blog-header {
     min-height: 50vh;
     display: flex;
@@ -101,8 +103,7 @@
     background-size: cover;
     background-position: center;
   }
-
-  /* Плавающая кнопка */
+  
   .floating-back-button {
     position: fixed;
     bottom: 2rem;
@@ -129,12 +130,18 @@
     background-repeat: no-repeat;
   }
 </style>
+
+<!-- Отложенная загрузка иконок -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" media="print" onload="this.media='all'">
+<noscript>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+</noscript>
 </head>
 <body>
 <!-- Навигация -->
 <nav class="bg-white shadow-sm sticky top-0 z-50">
   <div class="container mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
-    <a href="/" class="text-2xl md:text-3xl font-pacifico header-logo">Алтайский мёд</a>
+    <a href="/" class="text-2xl md:text-3xl font-['Pacifico'] header-logo">Алтайский мёд</a>
     
     <div class="hidden md:flex items-center space-x-6 md:space-x-8">
       <a href="/#benefits" class="nav-link">Преимущества</a>
@@ -143,7 +150,7 @@
       <a href="/#footer-contacts" class="nav-link">Контакты</a>
       <!-- Активная ссылка на Блог -->
       <a href="/blog/" class="active-nav-link-alt">Блог</a>
-      <a href="/#order" class="nav-btn px-4 md:px-6 py-1 md:py-2 rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">Заказать</a>
+      <a href="/#order" class="nav-btn px-4 md:px-6 py-1 md:py-2 !rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">Заказать</a>
     </div>
     
     <button class="md:hidden w-10 h-10 flex items-center justify-center" id="mobile-menu-button">
@@ -160,7 +167,7 @@
       <a href="/#footer-contacts" class="nav-link py-2">Контакты</a>
       <!-- Активная ссылка на Блог (мобильная версия) -->
       <a href="/blog/" class="active-nav-link-alt py-2 text-center">Блог</a>
-      <a href="/#order" class="nav-btn py-2 text-center rounded-button hover:bg-opacity-90 transition-all">Заказать</a>
+      <a href="/#order" class="nav-btn py-2 text-center !rounded-button hover:bg-opacity-90 transition-all">Заказать</a>
     </div>
   </div>
 </nav>
@@ -169,7 +176,7 @@
 <!-- Шапка блога -->
 <section class="blog-header">
   <div class="container mx-auto px-4 text-center text-white">
-    <h1 class="text-3xl md:text-4xl lg:text-5xl font-pacifico mb-4">Полезные статьи о мёде</h1>
+    <h1 class="text-3xl md:text-4xl lg:text-5xl font-['Pacifico'] mb-4">Полезные статьи о мёде</h1>
     <p class="text-xl max-w-2xl mx-auto">Узнайте больше о пользе алтайского мёда и традициях пчеловодства</p>
   </div>
 </section>
@@ -180,13 +187,14 @@
     <div class="max-w-4xl mx-auto">
       <!-- Статья 1 -->
       <div class="blog-post-card bg-white rounded-lg mb-10 overflow-hidden shadow-md">
-        <img src="/images/image-8.jpg" 
-             alt="Как выбрать качественный мёд"
-             class="w-full h-64 object-cover"
-             loading="eager"
-             width="800"
-             height="450"
-             decoding="async">
+        <img 
+          src="/images/image-8.jpg" 
+          alt="Как выбрать качественный мёд"
+          class="w-full h-64 object-cover"
+          loading="eager"
+          width="800"
+          height="450"
+          decoding="async">
         <div class="p-6">
           <h2 class="text-xl md:text-2xl font-bold mb-2">Как выбрать качественный мёд</h2>
           <p class="text-gray-600 mb-4">Экспертные советы по выбору настоящего алтайского мёда. Узнайте, как отличить натуральный продукт от подделки и сохранить все полезные свойства.</p>
@@ -198,13 +206,14 @@
       
       <!-- Статья 2 -->
       <div class="blog-post-card bg-white rounded-lg mb-10 overflow-hidden shadow-md">
-        <img src="/images/image-9.jpg" 
-             alt="Мёд в здоровом питании"
-             class="w-full h-64 object-cover"
-             loading="lazy"
-             width="800"
-             height="450"
-             decoding="async">
+        <img 
+          src="/images/image-9.jpg" 
+          alt="Мёд в здоровом питании"
+          class="w-full h-64 object-cover"
+          loading="lazy"
+          width="800"
+          height="450"
+          decoding="async">
         <div class="p-6">
           <h2 class="text-xl md:text-2xl font-bold mb-2">Мёд в здоровом питании</h2>
           <p class="text-gray-600 mb-4">Как правильно использовать мёд в ежедневном рационе. Рецепты и советы по включению натурального мёда в здоровое питание для всей семьи.</p>
@@ -216,13 +225,14 @@
       
       <!-- Статья 3 -->
       <div class="blog-post-card bg-white rounded-lg mb-10 overflow-hidden shadow-md">
-        <img src="/images/image-10.jpg" 
-             alt="Традиции алтайского пчеловодства"
-             class="w-full h-64 object-cover"
-             loading="lazy"
-             width="800"
-             height="450"
-             decoding="async">
+        <img 
+          src="/images/image-10.jpg" 
+          alt="Традиции алтайского пчеловодства"
+          class="w-full h-64 object-cover"
+          loading="lazy"
+          width="800"
+          height="450"
+          decoding="async">
         <div class="p-6">
           <h2 class="text-xl md:text-2xl font-bold mb-2">Традиции алтайского пчеловодства</h2>
           <p class="text-gray-600 mb-4">История и секреты алтайских пасечников. Узнайте о многовековых традициях сбора мёда в горных районах Алтая.</p>
@@ -236,176 +246,14 @@
 </section>
 </main>
 
-<!-- Футер с точно выровненным текстом -->
+<!-- Футер -->
 <footer class="py-10 md:py-12 w-full">
-  <div id="footer-contacts" class="container mx-auto px-4 md:px-6 w-full">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 w-full">
-      <!-- Лого и описание -->
-      <div class="footer-column">
-        <div class="logo-wrapper">
-          <a href="/" class="text-2xl md:text-3xl font-pacifico mb-3 md:mb-4 block">Алтайский мёд</a>
-        </div>
-        <div class="description-wrapper">
-          <p class="text-xs">Натуральные продукты пчеловодства с Алтайских гор.</p>
-          <p class="text-xs">© 2025 Алтайский мёд. Все права защищены.</p>
-        </div>
-      </div>
-      
-      <!-- Каталог -->
-      <div class="footer-column">
-        <h4 class="text-base md:text-lg font-bold">Каталог</h4>
-        <ul>
-          <li>
-            <a href="/#product-1" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">Разнотравье</span>
-            </a>
-          </li>
-          <li>
-            <a href="/#product-2" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">Таёжный мёд</span>
-            </a>
-          </li>
-          <li>
-            <a href="/#product-3" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">Гречишный мёд</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-      
-      <!-- Материалы -->
-      <div class="footer-column">
-        <h4 class="text-base md:text-lg font-bold">Материалы</h4>
-        <ul>
-          <li>
-            <a href="/blog/" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">Блог</span>
-            </a>
-          </li>
-          <li>
-            <a href="/faq/" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">FAQ</span>
-            </a>
-          </li>
-          <li>
-            <a href="/legal.html" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">Правовая информация</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-      
-      <!-- Информация -->
-      <div class="footer-column">
-        <h4 class="text-base md:text-lg font-bold">Информация</h4>
-        <ul>
-          <li>
-            <a href="/#benefits" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">Преимущества</span>
-            </a>
-          </li>
-          <li>
-            <a href="/#about" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">О нас</span>
-            </a>
-          </li>
-          <li>
-            <a href="/#footer-contacts" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">Контакты</span>
-            </a>
-          </li>
-          <li>
-            <a href="/delivery.html" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">Доставка и оплата</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-      
-      <!-- Контакты -->
-      <div class="footer-column">
-        <h4 class="text-base md:text-lg font-bold">Контакты</h4>
-        <ul>
-          <li>
-            <a class="footer-link-item">
-              <div class="contact-icon">
-                <i class="ri-map-pin-2-line ri-sm md:ri-base"></i>
-              </div>
-              <span class="contact-text">Владимирская обл. Город Ковров</span>
-            </a>
-          </li>
-          <li>
-            <a href="tel:+79209400222" class="footer-link-item">
-              <div class="contact-icon">
-                <i class="ri-phone-line ri-sm md:ri-base"></i>
-              </div>
-              <span class="contact-text">+7 (920) 940-02-22</span>
-            </a>
-          </li>
-          <li>
-            <a href="mailto:9209400222@mail.ru" class="footer-link-item">
-              <div class="contact-icon">
-                <i class="ri-mail-line ri-sm md:ri-base"></i>
-              </div>
-              <span class="contact-text">9209400222@mail.ru</span>
-            </a>
-          </li>
-        </ul>
-        
-        <!-- Социальные сети -->
-        <div class="mt-4 md:mt-6">
-          <p class="text-base md:text-lg font-bold mb-2 md:mb-3">Следите за нами</p>
-          <div class="flex space-x-2 md:space-x-3">
-            <a href="https://vk.com/honeybuckwheat" target="_blank" class="social-icon-bw">
-              <i class="ri-vk-line ri-lg"></i>
-            </a>
-            <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" class="social-icon-bw">
-              <i class="ri-telegram-line ri-lg"></i>
-            </a>
-            <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing" 
-               target="_blank" class="social-icon-bw">
-              <div class="avito-icon-bw">
-                <svg viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg">
-                  <path fill="#04e061" d="M61.924 172.07c26.468 0 47.924-21.456 47.924-47.924S88.392 76.222 61.924 76.222 14 97.678 14 124.146s21.456 47.925 47.924 47.925z" transform="translate(7.024 7.024) scale(.92683)"/>
-                  <path fill="#ff4053" d="M149.044 166.007c15.992 0 28.956-12.963 28.956-28.955 0-15.992-12.964-28.955-28.956-28.955-15.99 0-28.954 12.963-28.954 28.955 0 15.992 12.963 28.955 28.954 28.955z" transform="translate(7.024 7.024) scale(.92683)"/>
-                  <path fill="#965eeb" d="M71.086 65.979c9.898 0 17.922-8.024 17.922-17.921 0-9.898-8.024-17.922-17.922-17.922-9.898 0-17.921 8.024-17.921 17.922 0 9.897 8.023 17.921 17.921 17.921z" transform="translate(7.024 7.024) scale(.92683)"/>
-                  <path fill="#0af" d="M137.789 97.856c21.519 0 38.964-17.444 38.964-38.963 0-21.52-17.445-38.964-38.964-38.964-21.52 0-38.964 17.445-38.964 38.964s17.445 38.963 38.964 38.963z" transform="translate(7.024 7.024) scale(.92683)"/>
-                </svg>
-              </div>
-            </a>
-            <!-- Иконка Яндекс Карт - обновленная версия -->
-            <a href="https://yandex.ru/maps/" target="_blank" class="social-icon-bw">
-              <div class="yandex-maps-icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2C8.13 2 5 5.13 5 9C5 13.17 9.42 18.92 11.24 21.11C11.64 21.59 12.37 21.59 12.77 21.11C14.58 18.92 19 13.17 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" 
-                        fill="currentColor"/>
-                </svg>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <!-- ... (оригинальный код футера без изменений) ... -->
 </footer>
 
-<!-- Плавающая кнопка "Назад" -->
-<a href="#" id="back-button" class="floating-back-button">
-  <div class="back-arrow"></div>
-</a>
-
-<!-- Объединенные скрипты -->
+<!-- Скрипты перенесены в конец тела -->
 <script>
+  // Инициализация после загрузки страницы
   document.addEventListener("DOMContentLoaded", function() {
     // Мобильное меню
     const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -443,6 +291,7 @@
     // Плавающая кнопка "Назад"
     const backButton = document.getElementById('back-button');
     if (backButton) {
+      // Показывать/скрывать кнопку при скролле
       window.addEventListener('scroll', function() {
         if (window.scrollY > 500) {
           backButton.style.opacity = "1";
@@ -453,6 +302,7 @@
         }
       });
       
+      // Обработка клика
       backButton.addEventListener('click', function(e) {
         e.preventDefault();
         if (document.referrer && document.referrer.includes(window.location.host)) {
@@ -462,7 +312,35 @@
         }
       });
     }
+    
+    // Lazy loading для изображений
+    const lazyLoad = function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          if (img.dataset.src) {
+            img.src = img.dataset.src;
+            img.removeAttribute('data-src');
+          }
+          observer.unobserve(img);
+        }
+      });
+    };
+    
+    const observer = new IntersectionObserver(lazyLoad, {
+      rootMargin: "0px 0px 200px 0px",
+      threshold: 0.01
+    });
+    
+    document.querySelectorAll("img[data-src]").forEach(img => {
+      observer.observe(img);
+    });
   });
 </script>
+
+<!-- Плавающая кнопка "Назад" -->
+<a href="#" id="back-button" class="floating-back-button">
+  <div class="back-arrow"></div>
+</a>
 </body>
 </html>

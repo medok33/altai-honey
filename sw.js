@@ -1,30 +1,27 @@
-const CACHE_NAME = 'static-cache-v6'; // Увеличена версия до v6
+const CACHE_NAME = 'static-cache-v7';
 const OFFLINE_URL = '/offline.html';
 
-// Список ресурсов для предварительного кеширования
 const urlsToCache = [
   '/',
   OFFLINE_URL,
-  
-  // Основные страницы
   '/blog/',
   '/faq/',
   '/legal.html',
   '/delivery.html',
-  
-  // CSS с версиями
-  '/assets/css/tailwind.min.css?v=3.1',
-  '/assets/fonts/remixicon/remixicon.css?v=3.1',
-  '/fonts/fonts.css?v=3.1',
-  
-  // Шрифты
+
+  // CSS
+  '/assets/css/tailwind.min.css?v=20250701',
+  '/assets/fonts/remixicon/remixicon.css?v=20250701',
+  '/fonts/fonts.css?v=20250701',
+
+  // Fonts
   '/fonts/Pacifico-Regular.woff2',
   '/fonts/OpenSans-Medium.woff2',
   '/fonts/OpenSans-Regular.woff2',
   '/fonts/OpenSans-Bold.woff2',
   '/assets/fonts/remixicon/remixicon.woff2',
-  
-  // Изображения
+
+  // Images
   '/images/favicon.ico',
   '/images/favicon.svg',
   '/images/apple-touch-icon.png',
@@ -38,9 +35,9 @@ const urlsToCache = [
   '/images/pwa-192.png',
   '/images/pwa-512.png',
   '/images/og-preview.webp',
-  
+
   // JS
-  '/register-sw.js'
+  '/register-sw.js?v=20250701'
 ];
 
 self.addEventListener('install', event => {
@@ -51,6 +48,7 @@ self.addEventListener('install', event => {
         return cache.addAll(urlsToCache);
       })
       .then(() => self.skipWaiting())
+      .catch(err => console.error('Ошибка при кешировании ресурсов:', err))
   );
 });
 
@@ -70,60 +68,40 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('fetch', event => {
-  // Игнорируем POST-запросы и chrome-extension
-  if (event.request.method !== 'GET' || 
-      event.request.url.startsWith('chrome-extension://')) {
-    return;
-  }
+  if (event.request.method !== 'GET' || event.request.url.startsWith('chrome-extension://')) return;
 
-  // Для HTML-страниц: Network First, затем Cache
   if (event.request.headers.get('Accept').includes('text/html')) {
     event.respondWith(
       fetch(event.request)
         .then(networkResponse => {
-          // Обновляем кеш при успешном ответе
-          const responseClone = networkResponse.clone();
-          caches.open(CACHE_NAME)
-            .then(cache => cache.put(event.request, responseClone));
+          const clone = networkResponse.clone();
+          caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
           return networkResponse;
         })
-        .catch(() => {
-          return caches.match(event.request) || 
-                 caches.match(OFFLINE_URL);
-        })
+        .catch(() => caches.match(event.request) || caches.match(OFFLINE_URL))
     );
     return;
   }
 
-  // Для статических ресурсов: Cache First, затем Network
   event.respondWith(
     caches.match(event.request)
       .then(cachedResponse => {
-        // 1. Возвращаем кешированный ресурс, если есть
         if (cachedResponse) {
-          // Фоновое обновление кеша
-          fetch(event.request)
-            .then(networkResponse => {
-              const responseClone = networkResponse.clone();
-              caches.open(CACHE_NAME)
-                .then(cache => cache.put(event.request, responseClone));
-            });
+          fetch(event.request).then(networkResponse => {
+            caches.open(CACHE_NAME).then(cache => cache.put(event.request, networkResponse.clone()));
+          });
           return cachedResponse;
         }
-        
-        // 2. Если нет в кеше - загружаем из сети
+
         return fetch(event.request)
           .then(networkResponse => {
-            // Кешируем только успешные ответы
             if (networkResponse.status === 200) {
-              const responseClone = networkResponse.clone();
-              caches.open(CACHE_NAME)
-                .then(cache => cache.put(event.request, responseClone));
+              const clone = networkResponse.clone();
+              caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
             }
             return networkResponse;
           })
           .catch(() => {
-            // Заглушки для различных типов ресурсов
             if (event.request.url.match(/\.(jpe?g|png|gif|svg|webp)$/i)) {
               return caches.match('/images/favicon.svg');
             }
@@ -134,7 +112,5 @@ self.addEventListener('fetch', event => {
 });
 
 self.addEventListener('message', event => {
-  if (event.data.action === 'skipWaiting') {
-    self.skipWaiting();
-  }
+  if (event.data.action === 'skipWaiting') self.skipWaiting();
 });

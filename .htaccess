@@ -1,25 +1,29 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  
-  # Перенаправление HTTP -> HTTPS
+
+  # 1) HTTP → HTTPS в один шаг
   RewriteCond %{HTTPS} off
-  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-  
-  # Блокировка доступа к служебным файлам
-  <FilesMatch "(\.env|\.gitignore|\.htaccess)$">
-    Order allow,deny
-    Deny from all
-  </FilesMatch>
-  
-  # Настройки кэширования
-  <FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf)$">
-    Header set Cache-Control "max-age=604800, public"
-  </FilesMatch>
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 </IfModule>
 
-# Заголовок безопасности
+# 2) Статические ресурсы – кеш на год, immutable
 <IfModule mod_headers.c>
-  Header set X-Content-Type-Options "nosniff"
-  Header set X-Frame-Options "SAMEORIGIN"
-  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  <FilesMatch "\.(css|js|png|jpe?g|gif|webp|svg|ico|woff2?|ttf|eot)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # HTML и другие динамические ответы – короткий кеш
+  <FilesMatch "\.(html|php)$">
+    Header set Cache-Control "public, max-age=300, must-revalidate"
+  </FilesMatch>
+
+  # Служебные файлы – запрет доступа
+  <FilesMatch "^(\.env|\.gitignore|\.htaccess)$">
+    Require all denied
+  </FilesMatch>
+
+  # Security headers
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
 </IfModule>

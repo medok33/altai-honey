@@ -1,21 +1,21 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # 1) HTTP → HTTPS одним редиректом
+  # 1) HTTP → HTTPS в один шаг
   RewriteCond %{HTTPS} off
   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 </IfModule>
 
 <IfModule mod_headers.c>
-  # 2) HSTS: навсегда HTTPS (2 года)
+  # 2) HSTS: браузеры навсегда переходят на HTTPS
   Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
 
-  # 3) Статические ресурсы – кеш на год, immutable
+  # 3) Статика – кеш на год, immutable
   <FilesMatch "\.(css|js|png|jpe?g|gif|webp|svg|ico|woff2?|ttf|eot)$">
     Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
 
-  # 4) Service Worker – всегда брать свежий файл
+  # 4) Service Worker – всегда подтягивать новую версию
   <Files "sw.js">
     Header set Cache-Control "no-cache, must-revalidate"
   </Files>
@@ -25,7 +25,7 @@
     Header set Cache-Control "public, max-age=3600, must-revalidate"
   </Files>
 
-  # 6) HTML и другие динамические ответы – короткий кеш (5 мин)
+  # 6) HTML и динамический контент – короткий кеш (5 минут)
   <FilesMatch "\.(html|php)$">
     Header set Cache-Control "public, max-age=300, must-revalidate"
   </FilesMatch>

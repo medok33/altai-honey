@@ -1,41 +1,41 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # 1) HTTP → HTTPS в один шаг
+  # 1) HTTP → HTTPS одним редиректом
   RewriteCond %{HTTPS} off
   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 </IfModule>
 
 <IfModule mod_headers.c>
-  # HSTS: браузеры сохраняют HTTPS-настройку на 2 года
+  # 2) HSTS: навсегда HTTPS (2 года)
   Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
 
-  # 2) Статические ресурсы – кеш на год, immutable
+  # 3) Статические ресурсы – кеш на год, immutable
   <FilesMatch "\.(css|js|png|jpe?g|gif|webp|svg|ico|woff2?|ttf|eot)$">
     Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
 
-  # 3) Service Worker – всегда подтягивать новую версию
+  # 4) Service Worker – всегда брать свежий файл
   <Files "sw.js">
     Header set Cache-Control "no-cache, must-revalidate"
   </Files>
 
-  # HTML и другие динамические ответы – короткий кеш
-  <FilesMatch "\.(html|php)$">
-    Header set Cache-Control "public, max-age=300, must-revalidate"
-  </FilesMatch>
-
-  # 4) Offline page – кешируем на час
+  # 5) Offline-страница – кеш на час
   <Files "offline.html">
     Header set Cache-Control "public, max-age=3600, must-revalidate"
   </Files>
 
-  # Служебные файлы – запрет доступа
+  # 6) HTML и другие динамические ответы – короткий кеш (5 мин)
+  <FilesMatch "\.(html|php)$">
+    Header set Cache-Control "public, max-age=300, must-revalidate"
+  </FilesMatch>
+
+  # 7) Запрет доступа к служебным файлам
   <FilesMatch "^(\.env|\.gitignore|\.htaccess)$">
     Require all denied
   </FilesMatch>
 
-  # Security headers
+  # 8) Security headers
   Header always set X-Content-Type-Options "nosniff"
   Header always set X-Frame-Options "SAMEORIGIN"
   Header always set Referrer-Policy "strict-origin-when-cross-origin"

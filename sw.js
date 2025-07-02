@@ -1,11 +1,18 @@
-// Версия кеша
-const CACHE_NAME = 'static-cache-v4';
+const CACHE_NAME = 'static-cache-v6'; // Увеличена версия до v6
+const OFFLINE_URL = '/offline.html';
+
+// Список ресурсов для предварительного кеширования
 const urlsToCache = [
   '/',
-  '/index.html',
-  '/offline.html',
+  OFFLINE_URL,
   
-  // CSS
+  // Основные страницы
+  '/blog/',
+  '/faq/',
+  '/legal.html',
+  '/delivery.html',
+  
+  // CSS с версиями
   '/assets/css/tailwind.min.css?v=3.1',
   '/assets/fonts/remixicon/remixicon.css?v=3.1',
   '/fonts/fonts.css?v=3.1',
@@ -33,28 +40,20 @@ const urlsToCache = [
   '/images/og-preview.webp',
   
   // JS
-  '/register-sw.js',
-  
-  // Страницы
-  '/blog/',
-  '/faq/',
-  '/legal.html',
-  '/delivery.html'
+  '/register-sw.js'
 ];
 
-// Установка Service Worker
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => {
-        console.log('Кеширование статических ресурсов');
+        console.log(`Кеширование ${urlsToCache.length} ресурсов`);
         return cache.addAll(urlsToCache);
       })
       .then(() => self.skipWaiting())
   );
 });
 
-// Активация и очистка старых кешей
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys().then(cacheNames => {
@@ -70,65 +69,70 @@ self.addEventListener('activate', event => {
   );
 });
 
-// Стратегия кеширования: Cache First с обновлением
 self.addEventListener('fetch', event => {
+  // Игнорируем POST-запросы и chrome-extension
   if (event.request.method !== 'GET' || 
       event.request.url.startsWith('chrome-extension://')) {
     return;
   }
 
-  // Удаляем параметры версий из URL
-  const requestUrl = new URL(event.request.url);
-  const cacheUrl = requestUrl.origin + requestUrl.pathname;
-
-  // Обработка HTML-страниц
+  // Для HTML-страниц: Network First, затем Cache
   if (event.request.headers.get('Accept').includes('text/html')) {
     event.respondWith(
       fetch(event.request)
         .then(networkResponse => {
-          if (networkResponse && networkResponse.status === 200) {
-            const responseClone = networkResponse.clone();
-            caches.open(CACHE_NAME)
-              .then(cache => cache.put(cacheUrl, responseClone));
-          }
+          // Обновляем кеш при успешном ответе
+          const responseClone = networkResponse.clone();
+          caches.open(CACHE_NAME)
+            .then(cache => cache.put(event.request, responseClone));
           return networkResponse;
         })
         .catch(() => {
-          return caches.match(cacheUrl) || caches.match('/offline.html');
+          return caches.match(event.request) || 
+                 caches.match(OFFLINE_URL);
         })
     );
     return;
   }
 
-  // Обработка остальных ресурсов
+  // Для статических ресурсов: Cache First, затем Network
   event.respondWith(
-    caches.match(cacheUrl)
+    caches.match(event.request)
       .then(cachedResponse => {
-        // Всегда обновляем кеш в фоне
-        const fetchPromise = fetch(event.request)
-          .then(networkResponse => {
-            if (networkResponse && networkResponse.status === 200) {
+        // 1. Возвращаем кешированный ресурс, если есть
+        if (cachedResponse) {
+          // Фоновое обновление кеша
+          fetch(event.request)
+            .then(networkResponse => {
               const responseClone = networkResponse.clone();
               caches.open(CACHE_NAME)
-                .then(cache => cache.put(cacheUrl, responseClone));
+                .then(cache => cache.put(event.request, responseClone));
+            });
+          return cachedResponse;
+        }
+        
+        // 2. Если нет в кеше - загружаем из сети
+        return fetch(event.request)
+          .then(networkResponse => {
+            // Кешируем только успешные ответы
+            if (networkResponse.status === 200) {
+              const responseClone = networkResponse.clone();
+              caches.open(CACHE_NAME)
+                .then(cache => cache.put(event.request, responseClone));
             }
             return networkResponse;
           })
-          .catch(() => {}); // Игнорируем ошибки фонового обновления
-
-        // Возвращаем кешированный ответ немедленно
-        return cachedResponse || fetchPromise;
-      })
-      .catch(() => {
-        if (event.request.url.match(/\.(jpe?g|png|gif|svg|webp)$/)) {
-          return caches.match('/images/favicon.svg');
-        }
-        return new Response('Offline', { status: 503 });
+          .catch(() => {
+            // Заглушки для различных типов ресурсов
+            if (event.request.url.match(/\.(jpe?g|png|gif|svg|webp)$/i)) {
+              return caches.match('/images/favicon.svg');
+            }
+            return new Response('Offline', { status: 503 });
+          });
       })
   );
 });
 
-// Сообщения для обновления SW
 self.addEventListener('message', event => {
   if (event.data.action === 'skipWaiting') {
     self.skipWaiting();

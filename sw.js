@@ -4,15 +4,15 @@ const OFFLINE_URL = '/offline.html';
 const urlsToCache = [
   '/',
   OFFLINE_URL,
-  '/blog/',
-  '/faq/',
+  '/blog/index.html',
+  '/faq/index.html',
   '/legal.html',
   '/delivery.html',
 
   // CSS
-  '/assets/css/tailwind.min.css?v=20250701',
-  '/assets/fonts/remixicon/remixicon.css?v=20250701',
-  '/fonts/fonts.css?v=20250701',
+  '/assets/css/tailwind.min.css',
+  '/assets/fonts/remixicon/remixicon.css',
+  '/fonts/fonts.css',
 
   // Fonts
   '/fonts/Pacifico-Regular.woff2',
@@ -37,7 +37,7 @@ const urlsToCache = [
   '/images/og-preview.webp',
 
   // JS
-  '/register-sw.js?v=20250701'
+  '/register-sw.js'
 ];
 
 self.addEventListener('install', event => {
@@ -54,63 +54,66 @@ self.addEventListener('install', event => {
 
 self.addEventListener('activate', event => {
   event.waitUntil(
-    caches.keys().then(cacheNames => {
-      return Promise.all(
-        cacheNames.map(cacheName => {
-          if (cacheName !== CACHE_NAME) {
-            console.log('Удаление старого кеша:', cacheName);
-            return caches.delete(cacheName);
+    caches.keys().then(cacheNames =>
+      Promise.all(
+        cacheNames.map(name => {
+          if (name !== CACHE_NAME) {
+            console.log('Удаление старого кеша:', name);
+            return caches.delete(name);
           }
         })
-      );
-    }).then(() => self.clients.claim())
+      )
+    ).then(() => self.clients.claim())
   );
 });
 
 self.addEventListener('fetch', event => {
   if (event.request.method !== 'GET' || event.request.url.startsWith('chrome-extension://')) return;
 
+  // HTML pages: network-first, fallback to cache or offline page
   if (event.request.headers.get('Accept').includes('text/html')) {
     event.respondWith(
       fetch(event.request)
-        .then(networkResponse => {
-          const clone = networkResponse.clone();
-          caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
-          return networkResponse;
+        .then(response => {
+          const copy = response.clone();
+          caches.open(CACHE_NAME).then(cache => cache.put(event.request, copy));
+          return response;
         })
-        .catch(() => caches.match(event.request) || caches.match(OFFLINE_URL))
+        .catch(() => caches.match(event.request).then(cached => cached || caches.match(OFFLINE_URL)))
     );
     return;
   }
 
+  // Other GET requests: cache-first with background update
   event.respondWith(
-    caches.match(event.request)
-      .then(cachedResponse => {
-        if (cachedResponse) {
-          fetch(event.request).then(networkResponse => {
-            caches.open(CACHE_NAME).then(cache => cache.put(event.request, networkResponse.clone()));
-          });
-          return cachedResponse;
-        }
-
-        return fetch(event.request)
-          .then(networkResponse => {
-            if (networkResponse.status === 200) {
-              const clone = networkResponse.clone();
-              caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
-            }
-            return networkResponse;
-          })
-          .catch(() => {
-            if (event.request.url.match(/\.(jpe?g|png|gif|svg|webp)$/i)) {
-              return caches.match('/images/favicon.svg');
-            }
-            return new Response('Offline', { status: 503 });
-          });
-      })
+    caches.match(event.request).then(cachedResponse => {
+      if (cachedResponse) {
+        // Update cache in background
+        fetch(event.request).then(networkResponse => {
+          caches.open(CACHE_NAME).then(cache => cache.put(event.request, networkResponse.clone()));
+        });
+        return cachedResponse;
+      }
+      return fetch(event.request)
+        .then(networkResponse => {
+          if (networkResponse && networkResponse.status === 200) {
+            const copy = networkResponse.clone();
+            caches.open(CACHE_NAME).then(cache => cache.put(event.request, copy));
+          }
+          return networkResponse;
+        })
+        .catch(() => {
+          if (event.request.url.match(/\.(jpe?g|png|gif|svg|webp)$/i)) {
+            return caches.match('/images/favicon.svg');
+          }
+          return new Response('Offline', { status: 503, statusText: 'Offline' });
+        });
+    })
   );
 });
 
 self.addEventListener('message', event => {
-  if (event.data.action === 'skipWaiting') self.skipWaiting();
+  if (event.data.action === 'skipWaiting') {
+    self.skipWaiting();
+  }
 });

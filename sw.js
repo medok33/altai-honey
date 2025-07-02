@@ -1,5 +1,5 @@
-// Версия кеша - измените при обновлении ресурсов
-const CACHE_NAME = 'static-cache-v1';
+// Версия кеша - изменено на v2
+const CACHE_NAME = 'static-cache-v2';
 const urlsToCache = [
   '/',
   '/index.html',
@@ -28,12 +28,21 @@ const urlsToCache = [
   '/images/image-4.webp',
   '/images/image-5.webp',
   '/images/image-6.webp',
+  '/images/pwa-192.png',      // Добавлено
+  '/images/pwa-512.png',      // Добавлено
+  '/images/og-preview.webp',  // Добавлено
   
   // JS
-  '/register-sw.js'
+  '/register-sw.js',
+  
+  // Новые страницы
+  '/blog/',         // Добавлено
+  '/faq/',          // Добавлено
+  '/legal.html',    // Добавлено
+  '/delivery.html'  // Добавлено
 ];
 
-// Установка Service Worker
+// Установка Service Worker (без изменений)
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
@@ -41,11 +50,11 @@ self.addEventListener('install', event => {
         console.log('Кеширование статических ресурсов');
         return cache.addAll(urlsToCache);
       })
-      .then(() => self.skipWaiting()) // Активируем сразу
+      .then(() => self.skipWaiting())
   );
 });
 
-// Активация и очистка старых кешей
+// Активация и очистка старых кешей (без изменений)
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys().then(cacheNames => {
@@ -57,23 +66,20 @@ self.addEventListener('activate', event => {
           }
         })
       );
-    }).then(() => self.clients.claim()) // Контроль над всеми клиентами
+    }).then(() => self.clients.claim())
   );
 });
 
-// Стратегия кеширования: Cache First с обновлением
+// Стратегия кеширования: Cache First с обновлением (без изменений)
 self.addEventListener('fetch', event => {
-  // Пропускаем не-GET запросы и chrome-extension
   if (event.request.method !== 'GET' || event.request.url.startsWith('chrome-extension://')) {
     return;
   }
 
-  // Для HTML: Network First
   if (event.request.headers.get('Accept').includes('text/html')) {
     event.respondWith(
       fetch(event.request)
         .then(networkResponse => {
-          // Обновляем кеш
           const responseClone = networkResponse.clone();
           caches.open(CACHE_NAME)
             .then(cache => cache.put(event.request, responseClone));
@@ -86,16 +92,13 @@ self.addEventListener('fetch', event => {
     return;
   }
 
-  // Для статических ресурсов: Cache First
   event.respondWith(
     caches.match(event.request)
       .then(cachedResponse => {
-        // Возвращаем кешированный ресурс если есть
         if (cachedResponse) {
           return cachedResponse;
         }
         
-        // Иначе загружаем из сети и кешируем
         return fetch(event.request).then(networkResponse => {
           const responseClone = networkResponse.clone();
           caches.open(CACHE_NAME)
@@ -104,7 +107,6 @@ self.addEventListener('fetch', event => {
         });
       })
       .catch(() => {
-        // Fallback для изображений
         if (event.request.url.match(/\.(jpe?g|png|gif|svg|webp)$/)) {
           return caches.match('/images/favicon.svg');
         }
@@ -112,7 +114,7 @@ self.addEventListener('fetch', event => {
   );
 });
 
-// Сообщения для обновления SW
+// Сообщения для обновления SW (без изменений)
 self.addEventListener('message', event => {
   if (event.data.action === 'skipWaiting') {
     self.skipWaiting();

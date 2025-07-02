@@ -1,62 +1,53 @@
 {
-  "name": "Алтайский мёд",
+  "name": "Алтайский мёд - Натуральные продукты пчеловодства",
   "short_name": "Алтайский мёд",
+  "description": "Натуральный алтайский мёд от производителя. Доставка по всей России",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#9f5524",
-  "description": "Натуральный алтайский мёд от производителя. Доставка по всей России.",
-  "icons": [
-    {
-      "src": "/images/favicon-192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "/images/favicon-512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
-  ],
-  "related_applications": [
-    {
-      "platform": "web",
-      "url": "https://altaymed.shop"
-    }
-  ]
-}
-{
-  "name": "AltayMed - Алтайский мёд",
-  "short_name": "AltayMed",
-  "description": "Натуральный алтайский мёд с доставкой по России",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#d1a054",
+  "theme_color": "#9f5524", // Цвет из тега theme-color в index.html
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/favicon.svg",
+      "src": "/images/favicon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"
     },
     {
-      "src": "/apple-touch-icon.png",
+      "src": "/images/apple-touch-icon.png",
       "sizes": "180x180",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/images/image-2.jpg",
+      "src": "/images/pwa-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/pwa-512.png",
       "sizes": "512x512",
-      "type": "image/jpeg",
+      "type": "image/png",
       "purpose": "any maskable"
     }
   ],
-  "related_applications": [],
-  "prefer_related_applications": false,
   "categories": ["food", "health", "shopping"],
   "lang": "ru-RU",
-  "dir": "ltr"
+  "dir": "ltr",
+  "screenshots": [
+    {
+      "src": "/images/screenshot1.webp",
+      "sizes": "1280x720",
+      "type": "image/webp",
+      "label": "Главная страница"
+    },
+    {
+      "src": "/images/screenshot2.webp",
+      "sizes": "1280x720",
+      "type": "image/webp",
+      "label": "Каталог продукции"
+    }
+  ]
 }

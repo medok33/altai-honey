@@ -1,5 +1,5 @@
-// Версия кеша - изменено на v2
-const CACHE_NAME = 'static-cache-v2';
+// Версия кеша
+const CACHE_NAME = 'static-cache-v3';
 const urlsToCache = [
   '/',
   '/index.html',
@@ -28,21 +28,21 @@ const urlsToCache = [
   '/images/image-4.webp',
   '/images/image-5.webp',
   '/images/image-6.webp',
-  '/images/pwa-192.png',      // Добавлено
-  '/images/pwa-512.png',      // Добавлено
-  '/images/og-preview.webp',  // Добавлено
+  '/images/pwa-192.png',
+  '/images/pwa-512.png',
+  '/images/og-preview.webp',
   
   // JS
   '/register-sw.js',
   
-  // Новые страницы
-  '/blog/',         // Добавлено
-  '/faq/',          // Добавлено
-  '/legal.html',    // Добавлено
-  '/delivery.html'  // Добавлено
+  // Страницы
+  '/blog/',
+  '/faq/',
+  '/legal.html',
+  '/delivery.html'
 ];
 
-// Установка Service Worker (без изменений)
+// Установка Service Worker
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
@@ -54,7 +54,7 @@ self.addEventListener('install', event => {
   );
 });
 
-// Активация и очистка старых кешей (без изменений)
+// Активация и очистка старых кешей
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys().then(cacheNames => {
@@ -70,19 +70,23 @@ self.addEventListener('activate', event => {
   );
 });
 
-// Стратегия кеширования: Cache First с обновлением (без изменений)
+// Стратегия кеширования: Cache First с обновлением
 self.addEventListener('fetch', event => {
-  if (event.request.method !== 'GET' || event.request.url.startsWith('chrome-extension://')) {
+  if (event.request.method !== 'GET' || 
+      event.request.url.startsWith('chrome-extension://')) {
     return;
   }
 
+  // Обработка HTML-страниц
   if (event.request.headers.get('Accept').includes('text/html')) {
     event.respondWith(
       fetch(event.request)
         .then(networkResponse => {
-          const responseClone = networkResponse.clone();
-          caches.open(CACHE_NAME)
-            .then(cache => cache.put(event.request, responseClone));
+          if (networkResponse && networkResponse.status === 200) {
+            const responseClone = networkResponse.clone();
+            caches.open(CACHE_NAME)
+              .then(cache => cache.put(event.request, responseClone));
+          }
           return networkResponse;
         })
         .catch(() => {
@@ -92,6 +96,7 @@ self.addEventListener('fetch', event => {
     return;
   }
 
+  // Обработка остальных ресурсов
   event.respondWith(
     caches.match(event.request)
       .then(cachedResponse => {
@@ -100,9 +105,11 @@ self.addEventListener('fetch', event => {
         }
         
         return fetch(event.request).then(networkResponse => {
-          const responseClone = networkResponse.clone();
-          caches.open(CACHE_NAME)
-            .then(cache => cache.put(event.request, responseClone));
+          if (networkResponse && networkResponse.status === 200) {
+            const responseClone = networkResponse.clone();
+            caches.open(CACHE_NAME)
+              .then(cache => cache.put(event.request, responseClone));
+          }
           return networkResponse;
         });
       })
@@ -110,11 +117,12 @@ self.addEventListener('fetch', event => {
         if (event.request.url.match(/\.(jpe?g|png|gif|svg|webp)$/)) {
           return caches.match('/images/favicon.svg');
         }
+        return new Response('Offline', { status: 503 });
       })
   );
 });
 
-// Сообщения для обновления SW (без изменений)
+// Сообщения для обновления SW
 self.addEventListener('message', event => {
   if (event.data.action === 'skipWaiting') {
     self.skipWaiting();

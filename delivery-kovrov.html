@@ -6,10 +6,12 @@
     <title>Доставка мёда в Ковров — АлтайМёд</title>
     <meta name="description" content="Быстрая доставка натурального алтайского мёда в Ковров. Свежий мёд с пасек Алтая с доставкой за 2-3 дня. Выгодные условия и широкий ассортимент.">
     
-    <!-- Локальные шрифты и иконки -->
+    <!-- Подключение шрифтов -->
     <link rel="stylesheet" href="/assets/fonts/remixicon/remixicon.css">
-    <link rel="stylesheet" href="/assets/fonts/inter/inter.css">
-    <link rel="stylesheet" href="/assets/fonts/pacifico/pacifico.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     
     <style>
         /* Основные стили */
@@ -464,21 +466,14 @@
         
         .city-column-header {
             position: relative;
-            padding-left: 1.75rem;
+            padding-left: 0;
             margin-bottom: 1rem;
             font-weight: 600;
             color: var(--gray-800);
         }
         
-        .city-column-header i {
-            position: absolute;
-            left: 0;
-            top: 0.25rem;
-            color: var(--primary);
-        }
-        
         .city-list {
-            padding-left: 1.75rem;
+            padding-left: 0;
         }
         
         .city-list li {
@@ -824,6 +819,51 @@
         .mt-2 {
             margin-top: 0.5rem;
         }
+        
+        /* Мобильное меню */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            z-index: 100;
+            padding: 1rem;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        
+        .mobile-menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        
+        .mobile-menu-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .mobile-menu-link {
+            padding: 0.75rem 0;
+            font-size: 1.125rem;
+            color: var(--gray-700);
+            text-decoration: none;
+            border-bottom: 1px solid var(--gray-100);
+        }
+        
+        .mobile-menu-link.active {
+            color: var(--primary);
+        }
     </style>
 </head>
 <body>
@@ -845,13 +885,13 @@
                     <a href="/cart" class="icon-btn">
                         <i class="ri-shopping-cart-line ri-lg"></i>
                     </a>
-                    <a href="/tel:+79001234567" class="phone-link">
+                    <a href="tel:+79209400222" class="phone-link">
                         <div class="icon-btn">
                             <i class="ri-phone-line ri-lg"></i>
                         </div>
-                        <span>+7 (900) 123-45-67</span>
+                        <span>+7 (920) 940-02-22</span>
                     </a>
-                    <button class="icon-btn md:hidden">
+                    <button class="icon-btn md:hidden" id="mobile-menu-toggle">
                         <i class="ri-menu-line ri-lg"></i>
                     </button>
                 </div>
@@ -859,13 +899,32 @@
         </div>
     </header>
 
+    <!-- Мобильное меню -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-header">
+            <a href="/" class="logo">АлтайМёд</a>
+            <button id="close-mobile-menu">
+                <i class="ri-close-line ri-lg"></i>
+            </button>
+        </div>
+        <div class="mobile-menu-links">
+            <a href="/" class="mobile-menu-link">Главная</a>
+            <a href="/catalog" class="mobile-menu-link">Каталог</a>
+            <a href="/delivery" class="mobile-menu-link active">Доставка</a>
+            <a href="/about" class="mobile-menu-link">О нас</a>
+            <a href="/contacts" class="mobile-menu-link">Контакты</a>
+            <a href="tel:+79209400222" class="mobile-menu-link">+7 (920) 940-02-22</a>
+            <a href="/cart" class="mobile-menu-link">Корзина</a>
+        </div>
+    </div>
+
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="container">
             <div class="hero-content">
                 <h1 class="hero-title">Доставка мёда в Ковров</h1>
                 <p class="hero-text">Свежий алтайский мёд с доставкой за 2-3 дня прямо к вашему дому</p>
-                <button class="btn btn-primary">Заказать мёд</button>
+                <button class="btn btn-primary" onclick="location.href='#order'">Заказать мёд</button>
             </div>
         </div>
     </section>
@@ -1161,10 +1220,7 @@
                     
                     <div class="cities-grid">
                         <div class="city-column">
-                            <h4 class="city-column-header">
-                                <i class="ri-map-pin-line"></i>
-                                Крупные города:
-                            </h4>
+                            <h4 class="city-column-header">Крупные города:</h4>
                             <ul class="city-list">
                                 <li>
                                     <i class="ri-map-pin-line"></i>
@@ -1185,10 +1241,7 @@
                             </ul>
                         </div>
                         <div class="city-column">
-                            <h4 class="city-column-header">
-                                <i class="ri-map-pin-line"></i>
-                                Другие населенные пункты:
-                            </h4>
+                            <h4 class="city-column-header">Другие населенные пункты:</h4>
                             <ul class="city-list">
                                 <li>
                                     <i class="ri-map-pin-line"></i>
@@ -1303,8 +1356,8 @@
             <p class="text-center">Натуральный алтайский мёд с быстрой доставкой в любую точку Коврова и Владимирской области. Мы гарантируем качество и свежесть каждой баночки.</p>
             
             <div class="cta-buttons">
-                <button class="btn btn-primary">Заказать мёд</button>
-                <button class="btn btn-outline">Каталог продукции</button>
+                <button class="btn btn-primary" onclick="location.href='#order'">Заказать мёд</button>
+                <button class="btn btn-outline" onclick="location.href='/catalog'">Каталог продукции</button>
             </div>
             
             <div class="features-grid">
@@ -1351,14 +1404,14 @@
                     <div class="footer-logo">АлтайМёд</div>
                     <p class="footer-text">Натуральный мёд с пасек Алтая с доставкой по всей России, включая Ковров и Владимирскую область.</p>
                     <div class="footer-social">
-                        <a href="#" class="social-link">
+                        <a href="https://vk.com/honeybuckwheat" class="social-link">
                             <i class="ri-vk-line"></i>
                         </a>
-                        <a href="#" class="social-link">
+                        <a href="https://t.me/HONEYBUCKWHEAT" class="social-link">
                             <i class="ri-telegram-line"></i>
                         </a>
-                        <a href="#" class="social-link">
-                            <i class="ri-instagram-line"></i>
+                        <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing" class="social-link">
+                            <i class="ri-shopping-bag-line"></i>
                         </a>
                     </div>
                 </div>
@@ -1366,22 +1419,22 @@
                 <div class="footer-column">
                     <h3 class="footer-title">Каталог</h3>
                     <div class="footer-links">
-                        <a href="#" class="footer-link">Цветочный мёд</a>
-                        <a href="#" class="footer-link">Гречишный мёд</a>
-                        <a href="#" class="footer-link">Липовый мёд</a>
-                        <a href="#" class="footer-link">Горный мёд</a>
-                        <a href="#" class="footer-link">Мёд с добавками</a>
+                        <a href="/catalog#product-1" class="footer-link">Разнотравье</a>
+                        <a href="/catalog#product-2" class="footer-link">Таёжный мёд</a>
+                        <a href="/catalog#product-3" class="footer-link">Гречишный мёд</a>
+                        <a href="/catalog" class="footer-link">Горный мёд</a>
+                        <a href="/catalog" class="footer-link">Мёд с добавками</a>
                     </div>
                 </div>
                 
                 <div class="footer-column">
                     <h3 class="footer-title">Информация</h3>
                     <div class="footer-links">
-                        <a href="#" class="footer-link">О компании</a>
-                        <a href="#" class="footer-link">Доставка и оплата</a>
-                        <a href="#" class="footer-link">Гарантии качества</a>
-                        <a href="#" class="footer-link">Отзывы</a>
-                        <a href="#" class="footer-link">Контакты</a>
+                        <a href="/about" class="footer-link">О компании</a>
+                        <a href="/delivery" class="footer-link">Доставка и оплата</a>
+                        <a href="/about#quality" class="footer-link">Гарантии качества</a>
+                        <a href="/reviews" class="footer-link">Отзывы</a>
+                        <a href="/contacts" class="footer-link">Контакты</a>
                     </div>
                 </div>
                 
@@ -1391,22 +1444,22 @@
                         <div class="contact-item">
                             <i class="ri-phone-line ri-lg contact-icon"></i>
                             <div class="contact-info">
-                                <span class="contact-value">+7 (900) 123-45-67</span>
+                                <span class="contact-value">+7 (920) 940-02-22</span>
                                 <span class="contact-note">Ежедневно с 9:00 до 21:00</span>
                             </div>
                         </div>
                         <div class="contact-item">
                             <i class="ri-mail-line ri-lg contact-icon"></i>
                             <div class="contact-info">
-                                <span class="contact-value">info@altaymed.ru</span>
+                                <span class="contact-value">altaymed.shop@yandex.ru</span>
                                 <span class="contact-note">Для заказов и вопросов</span>
                             </div>
                         </div>
                         <div class="contact-item">
                             <i class="ri-map-pin-line ri-lg contact-icon"></i>
                             <div class="contact-info">
-                                <span class="contact-value">г. Барнаул, ул. Алтайская, 10</span>
-                                <span class="contact-note">Главный офис</span>
+                                <span class="contact-value">г. Ковров, ул. Первомайская, 25</span>
+                                <span class="contact-note">Пункт выдачи заказов</span>
                             </div>
                         </div>
                     </div>
@@ -1460,6 +1513,19 @@
                     const checkbox = question.previousElementSibling;
                     checkbox.checked = !checkbox.checked;
                 });
+            });
+            
+            // Mobile menu
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const closeMobileMenu = document.getElementById('close-mobile-menu');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuToggle.addEventListener('click', () => {
+                mobileMenu.classList.add('active');
+            });
+            
+            closeMobileMenu.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
             });
         });
     </script>

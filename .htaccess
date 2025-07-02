@@ -2,8 +2,10 @@
   RewriteEngine On
 
   # 1) HTTP → HTTPS в один шаг
-  RewriteCond %{HTTPS} off
-  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  # HTTP и www → сразу HTTPS без www
+  RewriteCond %{HTTPS} off [OR]
+  RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+  RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
 </IfModule>
 
 <IfModule mod_headers.c>

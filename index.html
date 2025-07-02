@@ -48,13 +48,13 @@
 <meta name="theme-color" content="#9f5524">
 
 <!-- Локальный Tailwind CSS -->
-<link rel="stylesheet" href="assets/css/tailwind.min.css?v=3.1" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="assets/css/tailwind.min.css" media="print" onload="this.media='all'">
 
 <!-- Подключение Remix Icon -->
-<link rel="stylesheet" href="assets/fonts/remixicon/remixicon.css?v=3.1" type="text/css" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="assets/fonts/remixicon/remixicon.css" type="text/css" media="print" onload="this.media='all'">
 
 <!-- Локальные шрифты -->
-<link rel="stylesheet" href="/fonts/fonts.css?v=3.1" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="/fonts/fonts.css" media="print" onload="this.media='all'">
 <style>
   .font-pacifico {
     font-family: 'Pacifico', cursive;
@@ -964,12 +964,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (img.complete) {
       img.classList.add('loaded');
     }
-  });
-
-  // Удаление параметров версий для шрифтов
-  const fontLinks = document.querySelectorAll('link[as="font"]');
-  fontLinks.forEach(link => {
-    link.href = link.href.split('?')[0];
   });
 });
 </script>

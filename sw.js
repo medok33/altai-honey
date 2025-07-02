@@ -1,3 +1,4 @@
+// Версия кеша
 const CACHE_NAME = 'static-cache-v4';
 const urlsToCache = [
   '/',
@@ -5,9 +6,9 @@ const urlsToCache = [
   '/offline.html',
   
   // CSS
-  '/assets/css/tailwind.min.css',
-  '/assets/fonts/remixicon/remixicon.css',
-  '/fonts/fonts.css',
+  '/assets/css/tailwind.min.css?v=3.1',
+  '/assets/fonts/remixicon/remixicon.css?v=3.1',
+  '/fonts/fonts.css?v=3.1',
   
   // Шрифты
   '/fonts/Pacifico-Regular.woff2',
@@ -41,6 +42,7 @@ const urlsToCache = [
   '/delivery.html'
 ];
 
+// Установка Service Worker
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
@@ -52,6 +54,7 @@ self.addEventListener('install', event => {
   );
 });
 
+// Активация и очистка старых кешей
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys().then(cacheNames => {
@@ -67,42 +70,65 @@ self.addEventListener('activate', event => {
   );
 });
 
+// Стратегия кеширования: Cache First с обновлением
 self.addEventListener('fetch', event => {
-  // Полностью игнорируем HTTP-кеш для всех запросов
-  if (event.request.method !== 'GET') return;
-  
+  if (event.request.method !== 'GET' || 
+      event.request.url.startsWith('chrome-extension://')) {
+    return;
+  }
+
+  // Удаляем параметры версий из URL
+  const requestUrl = new URL(event.request.url);
+  const cacheUrl = requestUrl.origin + requestUrl.pathname;
+
+  // Обработка HTML-страниц
+  if (event.request.headers.get('Accept').includes('text/html')) {
+    event.respondWith(
+      fetch(event.request)
+        .then(networkResponse => {
+          if (networkResponse && networkResponse.status === 200) {
+            const responseClone = networkResponse.clone();
+            caches.open(CACHE_NAME)
+              .then(cache => cache.put(cacheUrl, responseClone));
+          }
+          return networkResponse;
+        })
+        .catch(() => {
+          return caches.match(cacheUrl) || caches.match('/offline.html');
+        })
+    );
+    return;
+  }
+
+  // Обработка остальных ресурсов
   event.respondWith(
-    caches.match(event.request)
+    caches.match(cacheUrl)
       .then(cachedResponse => {
-        // Всегда возвращаем кешированный ресурс, если он есть
-        if (cachedResponse) return cachedResponse;
-        
-        // Для некритических ресурсов: загружаем из сети
-        return fetch(event.request)
+        // Всегда обновляем кеш в фоне
+        const fetchPromise = fetch(event.request)
           .then(networkResponse => {
-            // Кешируем только успешные ответы
-            if (networkResponse.status === 200) {
+            if (networkResponse && networkResponse.status === 200) {
               const responseClone = networkResponse.clone();
               caches.open(CACHE_NAME)
-                .then(cache => cache.put(event.request, responseClone));
+                .then(cache => cache.put(cacheUrl, responseClone));
             }
             return networkResponse;
           })
-          .catch(() => {
-            // Для изображений возвращаем заглушку
-            if (event.request.url.match(/\.(jpe?g|png|gif|svg|webp)$/)) {
-              return caches.match('/images/favicon.svg');
-            }
-            // Для страниц возвращаем offline.html
-            if (event.request.headers.get('Accept').includes('text/html')) {
-              return caches.match('/offline.html');
-            }
-            return new Response('Offline', { status: 503 });
-          });
+          .catch(() => {}); // Игнорируем ошибки фонового обновления
+
+        // Возвращаем кешированный ответ немедленно
+        return cachedResponse || fetchPromise;
+      })
+      .catch(() => {
+        if (event.request.url.match(/\.(jpe?g|png|gif|svg|webp)$/)) {
+          return caches.match('/images/favicon.svg');
+        }
+        return new Response('Offline', { status: 503 });
       })
   );
 });
 
+// Сообщения для обновления SW
 self.addEventListener('message', event => {
   if (event.data.action === 'skipWaiting') {
     self.skipWaiting();

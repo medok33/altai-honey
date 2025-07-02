@@ -1,4 +1,4 @@
-const CACHE_NAME = 'static-cache-v7';
+const CACHE_NAME = 'static-cache-v8';
 const OFFLINE_URL = '/offline.html';
 
 const urlsToCache = [

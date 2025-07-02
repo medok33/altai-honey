@@ -6,15 +6,14 @@
     <title>Доставка мёда в Ковров — АлтайМёд</title>
     <meta name="description" content="Быстрая доставка натурального алтайского мёда в Ковров. Свежий мёд с пасек Алтая с доставкой за 2-3 дня. Выгодные условия и широкий ассортимент.">
     
-    <!-- Подключение шрифтов -->
-    <link rel="stylesheet" href="/assets/fonts/remixicon/remixicon.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
     
+    <!-- Локальные иконки -->
+    <link rel="stylesheet" href="/assets/fonts/remixicon/remixicon.css">
     <style>
-        /* Основные стили */
+        /* Обновленные стили */
         :root {
             --primary: #FFA500;
             --secondary: #8B4513;
@@ -30,20 +29,17 @@
             --gray-900: #111827;
         }
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+        /* Общие стили */
         body {
             font-family: 'Inter', Arial, sans-serif;
             background-color: var(--gray-50);
+            margin: 0;
+            padding: 0;
             color: var(--gray-700);
             line-height: 1.6;
         }
         
-        /* Контейнеры и секции */
+        /* Контейнер */
         .container {
             width: 100%;
             max-width: 1280px;
@@ -51,6 +47,7 @@
             margin: 0 auto;
         }
         
+        /* Секции */
         section {
             padding: 4rem 0;
         }
@@ -193,7 +190,7 @@
         
         /* Герой секция */
         .hero-section {
-            background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('/assets/images/hero-bg.jpg');
+            background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('images/hero-bg.jpg');
             background-size: cover;
             background-position: center;
             padding: 4rem 0;
@@ -283,14 +280,11 @@
             color: var(--gray-600);
         }
         
-        /* Способы доставки */
+        /* Способы доставки - ОБНОВЛЕНО */
         .delivery-tabs {
             display: flex;
             flex-wrap: wrap;
-            border-bottom: 1px solid var(--gray-200);
             background: #fff;
-            overflow-x: auto;
-            white-space: nowrap;
         }
         
         .tab-btn {
@@ -302,8 +296,6 @@
             white-space: nowrap;
             color: var(--gray-500);
             position: relative;
-            transition: color 0.3s;
-            display: inline-block;
         }
         
         .tab-btn.active {
@@ -314,7 +306,7 @@
         .tab-btn.active::after {
             content: '';
             position: absolute;
-            bottom: -1px;
+            bottom: 0;
             left: 0;
             width: 100%;
             height: 2px;
@@ -326,13 +318,8 @@
         }
         
         .tab-content {
-            display: none;
             padding: 1.5rem;
             background: #fff;
-        }
-        
-        .tab-content.active {
-            display: block;
         }
         
         .delivery-content {
@@ -380,23 +367,13 @@
         .advantage-item i {
             color: var(--primary);
             margin-top: 0.25rem;
-            flex-shrink: 0;
         }
         
         /* Тарифы */
-        .tariffs-container {
-            overflow-x: auto;
-        }
-        
         .tariffs-table {
             width: 100%;
             border-collapse: collapse;
             margin-bottom: 2rem;
-            background: #fff;
-            border-radius: 0.5rem;
-            overflow: hidden;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-            min-width: 600px;
         }
         
         .tariffs-table th {
@@ -408,14 +385,12 @@
             text-transform: uppercase;
             letter-spacing: 0.05em;
             border-bottom: 1px solid var(--gray-200);
-            background: var(--gray-50);
         }
         
         .tariffs-table td {
             padding: 1rem 1.5rem;
             font-size: 0.875rem;
             border-bottom: 1px solid var(--gray-200);
-            white-space: nowrap;
         }
         
         .tariffs-table tbody tr.highlighted {
@@ -427,10 +402,9 @@
             padding: 1rem;
             border-radius: 0.5rem;
             text-align: center;
-            font-weight: 500;
         }
         
-        /* География доставки */
+        /* География доставки - ОБНОВЛЕНО */
         .map-section {
             display: flex;
             flex-direction: column;
@@ -466,14 +440,21 @@
         
         .city-column-header {
             position: relative;
-            padding-left: 0;
+            padding-left: 1.75rem;
             margin-bottom: 1rem;
-            font-weight: 600;
+            font-weight: 500;
             color: var(--gray-800);
         }
         
+        .city-column-header i {
+            position: absolute;
+            left: 0;
+            top: 0.25rem;
+            color: var(--primary);
+        }
+        
         .city-list {
-            padding-left: 0;
+            padding-left: 1.75rem;
         }
         
         .city-list li {
@@ -486,7 +467,6 @@
         .city-list i {
             margin-right: 0.5rem;
             color: var(--primary);
-            flex-shrink: 0;
         }
         
         .map-container {
@@ -512,10 +492,9 @@
             height: 100%;
             background-size: cover;
             background-position: center;
-            background-image: url('/assets/images/map-placeholder.png');
         }
         
-        /* FAQ */
+        /* FAQ - ОБНОВЛЕНО */
         .faq-container {
             max-width: 48rem;
             margin: 0 auto;
@@ -533,7 +512,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 1.5rem;
+            padding: 1rem 1.25rem;
             background-color: var(--gray-50);
             cursor: pointer;
             font-weight: 500;
@@ -542,14 +521,13 @@
         .faq-question span {
             color: var(--gray-900);
             font-size: 1.05rem;
-            flex: 1;
         }
         
         .faq-answer {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease;
-            padding: 0 1.5rem;
+            padding: 0 1.25rem;
             color: var(--gray-600);
         }
         
@@ -559,7 +537,7 @@
         
         .faq-item input[type="checkbox"]:checked ~ .faq-answer {
             max-height: 1000px;
-            padding: 0 1.5rem 1.5rem;
+            padding: 0 1.25rem 1.25rem;
         }
         
         .faq-item input[type="checkbox"]:checked ~ .faq-question i {
@@ -608,7 +586,7 @@
         
         .feature-card {
             background: #fff;
-            padding: 1.5rem 1rem;
+            padding: 1rem;
             border-radius: 0.5rem;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
@@ -622,20 +600,18 @@
             background-color: rgba(255, 165, 0, 0.1);
             color: var(--primary);
             border-radius: 50%;
-            margin: 0 auto 1rem;
+            margin: 0 auto 0.75rem;
         }
         
         .feature-title {
             font-weight: 500;
             margin-bottom: 0.25rem;
             color: var(--gray-900);
-            text-align: center;
         }
         
         .feature-text {
             font-size: 0.875rem;
             color: var(--gray-600);
-            text-align: center;
         }
         
         /* Футер */
@@ -702,20 +678,18 @@
             font-size: 1.125rem;
             font-weight: 600;
             margin-bottom: 1rem;
-            color: #fff;
         }
         
         .footer-links {
             display: flex;
             flex-direction: column;
-            gap: 0.75rem;
+            gap: 0.5rem;
         }
         
         .footer-link {
             color: var(--gray-400);
             text-decoration: none;
             transition: color 0.3s;
-            font-size: 0.95rem;
         }
         
         .footer-link:hover {
@@ -725,7 +699,7 @@
         .footer-contacts {
             display: flex;
             flex-direction: column;
-            gap: 1.25rem;
+            gap: 1rem;
         }
         
         .contact-item {
@@ -737,7 +711,6 @@
         .contact-icon {
             color: var(--primary);
             margin-top: 0.25rem;
-            flex-shrink: 0;
         }
         
         .contact-info {
@@ -747,7 +720,6 @@
         
         .contact-value {
             color: #fff;
-            font-weight: 500;
         }
         
         .contact-note {
@@ -778,92 +750,6 @@
             color: var(--gray-400);
             font-size: 1.5rem;
         }
-        
-        /* Утилиты */
-        .text-center {
-            text-align: center;
-        }
-        
-        .text-xl {
-            font-size: 1.25rem;
-        }
-        
-        .font-semibold {
-            font-weight: 600;
-        }
-        
-        .mb-4 {
-            margin-bottom: 1rem;
-        }
-        
-        .mb-6 {
-            margin-bottom: 1.5rem;
-        }
-        
-        .space-y-2 > * + * {
-            margin-top: 0.5rem;
-        }
-        
-        .space-y-3 > * + * {
-            margin-top: 0.75rem;
-        }
-        
-        .list-disc {
-            list-style-type: disc;
-        }
-        
-        .pl-5 {
-            padding-left: 1.25rem;
-        }
-        
-        .mt-2 {
-            margin-top: 0.5rem;
-        }
-        
-        /* Мобильное меню */
-        .mobile-menu {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: white;
-            z-index: 100;
-            padding: 1rem;
-            transform: translateX(-100%);
-            transition: transform 0.3s ease;
-        }
-        
-        .mobile-menu.active {
-            transform: translateX(0);
-        }
-        
-        .mobile-menu-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--gray-200);
-        }
-        
-        .mobile-menu-links {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-        
-        .mobile-menu-link {
-            padding: 0.75rem 0;
-            font-size: 1.125rem;
-            color: var(--gray-700);
-            text-decoration: none;
-            border-bottom: 1px solid var(--gray-100);
-        }
-        
-        .mobile-menu-link.active {
-            color: var(--primary);
-        }
     </style>
 </head>
 <body>
@@ -885,13 +771,13 @@
                     <a href="/cart" class="icon-btn">
                         <i class="ri-shopping-cart-line ri-lg"></i>
                     </a>
-                    <a href="tel:+79209400222" class="phone-link">
+                    <a href="/tel:+79001234567" class="phone-link">
                         <div class="icon-btn">
                             <i class="ri-phone-line ri-lg"></i>
                         </div>
-                        <span>+7 (920) 940-02-22</span>
+                        <span>+7 (900) 123-45-67</span>
                     </a>
-                    <button class="icon-btn md:hidden" id="mobile-menu-toggle">
+                    <button class="icon-btn md:hidden">
                         <i class="ri-menu-line ri-lg"></i>
                     </button>
                 </div>
@@ -899,32 +785,13 @@
         </div>
     </header>
 
-    <!-- Мобильное меню -->
-    <div class="mobile-menu" id="mobile-menu">
-        <div class="mobile-menu-header">
-            <a href="/" class="logo">АлтайМёд</a>
-            <button id="close-mobile-menu">
-                <i class="ri-close-line ri-lg"></i>
-            </button>
-        </div>
-        <div class="mobile-menu-links">
-            <a href="/" class="mobile-menu-link">Главная</a>
-            <a href="/catalog" class="mobile-menu-link">Каталог</a>
-            <a href="/delivery" class="mobile-menu-link active">Доставка</a>
-            <a href="/about" class="mobile-menu-link">О нас</a>
-            <a href="/contacts" class="mobile-menu-link">Контакты</a>
-            <a href="tel:+79209400222" class="mobile-menu-link">+7 (920) 940-02-22</a>
-            <a href="/cart" class="mobile-menu-link">Корзина</a>
-        </div>
-    </div>
-
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="container">
             <div class="hero-content">
                 <h1 class="hero-title">Доставка мёда в Ковров</h1>
                 <p class="hero-text">Свежий алтайский мёд с доставкой за 2-3 дня прямо к вашему дому</p>
-                <button class="btn btn-primary" onclick="location.href='#order'">Заказать мёд</button>
+                <button class="btn btn-primary">Заказать мёд</button>
             </div>
         </div>
     </section>
@@ -969,13 +836,12 @@
             
             <div class="bg-white rounded-lg shadow-md overflow-hidden">
                 <div class="delivery-tabs">
-                    <button class="tab-btn active" data-tab="sdek">СДЭК</button>
-                    <button class="tab-btn" data-tab="courier">Курьерская доставка</button>
-                    <button class="tab-btn" data-tab="post">Почта России</button>
+                    <button class="tab-btn active">СДЭК</button>
+                    <button class="tab-btn">Курьерская доставка</button>
+                    <button class="tab-btn">Почта России</button>
                 </div>
                 
-                <!-- СДЭК -->
-                <div class="tab-content active" id="sdek-content">
+                <div class="tab-content">
                     <div class="delivery-content">
                         <div class="delivery-info">
                             <h3 class="text-xl font-semibold mb-4">Доставка СДЭК в Ковров</h3>
@@ -1030,124 +896,6 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- Курьерская доставка -->
-                <div class="tab-content" id="courier-content">
-                    <div class="delivery-content">
-                        <div class="delivery-info">
-                            <h3 class="text-xl font-semibold mb-4">Курьерская доставка по Коврову</h3>
-                            <p class="text-gray-600 mb-4">Доставка осуществляется курьером по указанному адресу в Коврове. Срок доставки - 1-2 рабочих дня после формирования заказа.</p>
-                            
-                            <h4 class="font-medium text-gray-800 mb-3">Работаем по всему Коврову:</h4>
-                            <ul class="space-y-2 mb-6">
-                                <li class="flex items-start">
-                                    <i class="ri-map-pin-line ri-lg mt-1 mr-2 text-primary"></i>
-                                    <span class="text-gray-600">Центральный район</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="ri-map-pin-line ri-lg mt-1 mr-2 text-primary"></i>
-                                    <span class="text-gray-600">Южный микрорайон</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="ri-map-pin-line ri-lg mt-1 mr-2 text-primary"></i>
-                                    <span class="text-gray-600">Северный микрорайон</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="ri-map-pin-line ri-lg mt-1 mr-2 text-primary"></i>
-                                    <span class="text-gray-600">Заречный район</span>
-                                </li>
-                            </ul>
-                            
-                            <div class="flex items-center text-gray-600 mb-2">
-                                <i class="ri-time-line ri-lg mr-2 text-primary"></i>
-                                <span>Время доставки: с 9:00 до 21:00</span>
-                            </div>
-                            <div class="flex items-center text-gray-600">
-                                <i class="ri-money-dollar-circle-line ri-lg mr-2 text-primary"></i>
-                                <span>Стоимость: от 400 ₽ (зависит от веса заказа)</span>
-                            </div>
-                        </div>
-                        
-                        <div class="delivery-advantages">
-                            <h4 class="font-medium text-gray-800 mb-3">Преимущества курьерской доставки:</h4>
-                            <ul class="space-y-2">
-                                <li class="flex items-start">
-                                    <i class="ri-check-line ri-lg mt-1 mr-2 text-primary"></i>
-                                    <span class="text-gray-600">Удобная доставка "до двери"</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="ri-check-line ri-lg mt-1 mr-2 text-primary"></i>
-                                    <span class="text-gray-600">Быстрая доставка по городу</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="ri-check-line ri-lg mt-1 mr-2 text-primary"></i>
-                                    <span class="text-gray-600">Оплата наличными или картой при получении</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="ri-check-line ri-lg mt-1 mr-2 text-primary"></i>
-                                    <span class="text-gray-600">Гибкий график доставки</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Почта России -->
-                <div class="tab-content" id="post-content">
-                    <div class="delivery-content">
-                        <div class="delivery-info">
-                            <h3 class="text-xl font-semibold mb-4">Доставка Почтой России</h3>
-                            <p class="text-gray-600 mb-4">Доставка осуществляется до отделений Почты России в Коврове. Срок доставки - 3-5 рабочих дней после отправки заказа.</p>
-                            
-                            <h4 class="font-medium text-gray-800 mb-3">Основные отделения в Коврове:</h4>
-                            <ul class="space-y-2 mb-6">
-                                <li class="flex items-start">
-                                    <i class="ri-map-pin-line ri-lg mt-1 mr-2 text-primary"></i>
-                                    <span class="text-gray-600">Отделение №1: ул. Первомайская, 25</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="ri-map-pin-line ri-lg mt-1 mr-2 text-primary"></i>
-                                    <span class="text-gray-600">Отделение №2: пр-т Ленина, 47</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="ri-map-pin-line ri-lg mt-1 mr-2 text-primary"></i>
-                                    <span class="text-gray-600">Отделение №3: ул. Дегтярева, 12</span>
-                                </li>
-                            </ul>
-                            
-                            <div class="flex items-center text-gray-600 mb-2">
-                                <i class="ri-time-line ri-lg mr-2 text-primary"></i>
-                                <span>Срок доставки: 3-5 рабочих дней</span>
-                            </div>
-                            <div class="flex items-center text-gray-600">
-                                <i class="ri-money-dollar-circle-line ri-lg mr-2 text-primary"></i>
-                                <span>Стоимость: от 350 ₽ (зависит от веса заказа)</span>
-                            </div>
-                        </div>
-                        
-                        <div class="delivery-advantages">
-                            <h4 class="font-medium text-gray-800 mb-3">Преимущества Почты России:</h4>
-                            <ul class="space-y-2">
-                                <li class="flex items-start">
-                                    <i class="ri-check-line ri-lg mt-1 mr-2 text-primary"></i>
-                                    <span class="text-gray-600">Широкая сеть отделений в Коврове</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="ri-check-line ri-lg mt-1 mr-2 text-primary"></i>
-                                    <span class="text-gray-600">Возможность отслеживания отправления</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="ri-check-line ri-lg mt-1 mr-2 text-primary"></i>
-                                    <span class="text-gray-600">Оплата при получении</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="ri-check-line ri-lg mt-1 mr-2 text-primary"></i>
-                                    <span class="text-gray-600">Доставка в отдаленные районы города</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -1157,7 +905,7 @@
         <div class="container">
             <h2>Тарифы на доставку мёда в Ковров</h2>
             
-            <div class="tariffs-container">
+            <div class="overflow-x-auto">
                 <table class="tariffs-table">
                     <thead>
                         <tr>
@@ -1220,7 +968,10 @@
                     
                     <div class="cities-grid">
                         <div class="city-column">
-                            <h4 class="city-column-header">Крупные города:</h4>
+                            <h4 class="city-column-header">
+                                <i class="ri-map-pin-line"></i>
+                                Крупные города:
+                            </h4>
                             <ul class="city-list">
                                 <li>
                                     <i class="ri-map-pin-line"></i>
@@ -1241,7 +992,10 @@
                             </ul>
                         </div>
                         <div class="city-column">
-                            <h4 class="city-column-header">Другие населенные пункты:</h4>
+                            <h4 class="city-column-header">
+                                <i class="ri-map-pin-line"></i>
+                                Другие населенные пункты:
+                            </h4>
                             <ul class="city-list">
                                 <li>
                                     <i class="ri-map-pin-line"></i>
@@ -1267,7 +1021,7 @@
                 </div>
                 
                 <div class="map-container">
-                    <div class="map-bg"></div>
+                    <div class="map-bg" style="background-image: url('images/map-placeholder.png');"></div>
                     <span>Изображение карты доставки</span>
                 </div>
             </div>
@@ -1353,11 +1107,11 @@
     <section class="cta-section">
         <div class="container">
             <h2>Закажите мёд с доставкой в Ковров — почувствуйте вкус Алтая уже через 3 дня!</h2>
-            <p class="text-center">Натуральный алтайский мёд с быстрой доставкой в любую точку Коврова и Владимирской области. Мы гарантируем качество и свежесть каждой баночки.</p>
+            <p>Натуральный алтайский мёд с быстрой доставкой в любую точку Коврова и Владимирской области. Мы гарантируем качество и свежесть каждой баночки.</p>
             
             <div class="cta-buttons">
-                <button class="btn btn-primary" onclick="location.href='#order'">Заказать мёд</button>
-                <button class="btn btn-outline" onclick="location.href='/catalog'">Каталог продукции</button>
+                <button class="btn btn-primary">Заказать мёд</button>
+                <button class="btn btn-outline">Каталог продукции</button>
             </div>
             
             <div class="features-grid">
@@ -1404,14 +1158,14 @@
                     <div class="footer-logo">АлтайМёд</div>
                     <p class="footer-text">Натуральный мёд с пасек Алтая с доставкой по всей России, включая Ковров и Владимирскую область.</p>
                     <div class="footer-social">
-                        <a href="https://vk.com/honeybuckwheat" class="social-link">
+                        <a href="#" class="social-link">
                             <i class="ri-vk-line"></i>
                         </a>
-                        <a href="https://t.me/HONEYBUCKWHEAT" class="social-link">
+                        <a href="#" class="social-link">
                             <i class="ri-telegram-line"></i>
                         </a>
-                        <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing" class="social-link">
-                            <i class="ri-shopping-bag-line"></i>
+                        <a href="#" class="social-link">
+                            <i class="ri-instagram-line"></i>
                         </a>
                     </div>
                 </div>
@@ -1419,22 +1173,22 @@
                 <div class="footer-column">
                     <h3 class="footer-title">Каталог</h3>
                     <div class="footer-links">
-                        <a href="/catalog#product-1" class="footer-link">Разнотравье</a>
-                        <a href="/catalog#product-2" class="footer-link">Таёжный мёд</a>
-                        <a href="/catalog#product-3" class="footer-link">Гречишный мёд</a>
-                        <a href="/catalog" class="footer-link">Горный мёд</a>
-                        <a href="/catalog" class="footer-link">Мёд с добавками</a>
+                        <a href="#" class="footer-link">Цветочный мёд</a>
+                        <a href="#" class="footer-link">Гречишный мёд</a>
+                        <a href="#" class="footer-link">Липовый мёд</a>
+                        <a href="#" class="footer-link">Горный мёд</a>
+                        <a href="#" class="footer-link">Мёд с добавками</a>
                     </div>
                 </div>
                 
                 <div class="footer-column">
                     <h3 class="footer-title">Информация</h3>
                     <div class="footer-links">
-                        <a href="/about" class="footer-link">О компании</a>
-                        <a href="/delivery" class="footer-link">Доставка и оплата</a>
-                        <a href="/about#quality" class="footer-link">Гарантии качества</a>
-                        <a href="/reviews" class="footer-link">Отзывы</a>
-                        <a href="/contacts" class="footer-link">Контакты</a>
+                        <a href="#" class="footer-link">О компании</a>
+                        <a href="#" class="footer-link">Доставка и оплата</a>
+                        <a href="#" class="footer-link">Гарантии качества</a>
+                        <a href="#" class="footer-link">Отзывы</a>
+                        <a href="#" class="footer-link">Контакты</a>
                     </div>
                 </div>
                 
@@ -1444,22 +1198,22 @@
                         <div class="contact-item">
                             <i class="ri-phone-line ri-lg contact-icon"></i>
                             <div class="contact-info">
-                                <span class="contact-value">+7 (920) 940-02-22</span>
+                                <span class="contact-value">+7 (900) 123-45-67</span>
                                 <span class="contact-note">Ежедневно с 9:00 до 21:00</span>
                             </div>
                         </div>
                         <div class="contact-item">
                             <i class="ri-mail-line ri-lg contact-icon"></i>
                             <div class="contact-info">
-                                <span class="contact-value">altaymed.shop@yandex.ru</span>
+                                <span class="contact-value">info@altaymed.ru</span>
                                 <span class="contact-note">Для заказов и вопросов</span>
                             </div>
                         </div>
                         <div class="contact-item">
                             <i class="ri-map-pin-line ri-lg contact-icon"></i>
                             <div class="contact-info">
-                                <span class="contact-value">г. Ковров, ул. Первомайская, 25</span>
-                                <span class="contact-note">Пункт выдачи заказов</span>
+                                <span class="contact-value">г. Барнаул, ул. Алтайская, 10</span>
+                                <span class="contact-note">Главный офис</span>
                             </div>
                         </div>
                     </div>
@@ -1482,27 +1236,15 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Tabs
             const tabButtons = document.querySelectorAll('.tab-btn');
-            const tabContents = document.querySelectorAll('.tab-content');
-            
             tabButtons.forEach(button => {
                 button.addEventListener('click', () => {
-                    const tabId = button.getAttribute('data-tab');
-                    
                     // Remove active class from all buttons
                     tabButtons.forEach(btn => {
                         btn.classList.remove('active');
                     });
                     
-                    // Hide all tab contents
-                    tabContents.forEach(content => {
-                        content.classList.remove('active');
-                    });
-                    
                     // Add active class to clicked button
                     button.classList.add('active');
-                    
-                    // Show corresponding content
-                    document.getElementById(`${tabId}-content`).classList.add('active');
                 });
             });
             
@@ -1513,19 +1255,6 @@
                     const checkbox = question.previousElementSibling;
                     checkbox.checked = !checkbox.checked;
                 });
-            });
-            
-            // Mobile menu
-            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-            const closeMobileMenu = document.getElementById('close-mobile-menu');
-            const mobileMenu = document.getElementById('mobile-menu');
-            
-            mobileMenuToggle.addEventListener('click', () => {
-                mobileMenu.classList.add('active');
-            });
-            
-            closeMobileMenu.addEventListener('click', () => {
-                mobileMenu.classList.remove('active');
             });
         });
     </script>

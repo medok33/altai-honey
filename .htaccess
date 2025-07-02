@@ -6,16 +6,29 @@
   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 </IfModule>
 
-# 2) Статические ресурсы – кеш на год, immutable
 <IfModule mod_headers.c>
+  # HSTS: браузеры сохраняют HTTPS-настройку на 2 года
+  Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+
+  # 2) Статические ресурсы – кеш на год, immutable
   <FilesMatch "\.(css|js|png|jpe?g|gif|webp|svg|ico|woff2?|ttf|eot)$">
     Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
+
+  # 3) Service Worker – всегда подтягивать новую версию
+  <Files "sw.js">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </Files>
 
   # HTML и другие динамические ответы – короткий кеш
   <FilesMatch "\.(html|php)$">
     Header set Cache-Control "public, max-age=300, must-revalidate"
   </FilesMatch>
+
+  # 4) Offline page – кешируем на час
+  <Files "offline.html">
+    Header set Cache-Control "public, max-age=3600, must-revalidate"
+  </Files>
 
   # Служебные файлы – запрет доступа
   <FilesMatch "^(\.env|\.gitignore|\.htaccess)$">

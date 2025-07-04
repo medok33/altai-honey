@@ -1,4 +1,4 @@
-const CACHE_VERSION = 8;
+const CACHE_VERSION = 9;
 const CACHE_NAME = `static-cache-v${CACHE_VERSION}`;
 const OFFLINE_URL = '/offline.html';
 

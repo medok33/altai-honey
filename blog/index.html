@@ -306,6 +306,19 @@
   .lazyloaded {
     opacity: 1;
   }
+  
+  /* Исправление изображений статей */
+  .blog-image-container {
+    height: 16rem; /* h-64 */
+    overflow: hidden;
+  }
+  
+  .blog-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
 </style>
 </head>
 <body>
@@ -356,12 +369,14 @@
     <div class="max-w-4xl mx-auto">
       <!-- Статья 1 -->
       <div class="blog-post-card bg-white rounded-lg mb-10 overflow-hidden shadow-md">
-        <img src="/images/placeholder.jpg" 
-             data-src="/images/image-8.jpg" 
-             alt="Как выбрать качественный мёд"
-             class="w-full h-64 object-cover lazyload"
-             loading="lazy"
-             decoding="async">
+        <div class="blog-image-container">
+          <img src="/images/placeholder.jpg" 
+               data-src="/images/image-8.jpg" 
+               alt="Как выбрать качественный мёд"
+               class="blog-image lazyload"
+               loading="lazy"
+               decoding="async">
+        </div>
         <div class="p-6">
           <h2 class="text-xl md:text-2xl font-bold mb-2">Как выбрать качественный мёд</h2>
           <p class="text-gray-600 mb-4">Экспертные советы по выбору настоящего алтайского мёда. Узнайте, как отличить натуральный продукт от подделки и сохранить все полезные свойства.</p>
@@ -373,12 +388,14 @@
       
       <!-- Статья 2 -->
       <div class="blog-post-card bg-white rounded-lg mb-10 overflow-hidden shadow-md">
-        <img src="/images/placeholder.jpg" 
-             data-src="/images/image-9.jpg" 
-             alt="Мёд в здоровом питании"
-             class="w-full h-64 object-cover lazyload"
-             loading="lazy"
-             decoding="async">
+        <div class="blog-image-container">
+          <img src="/images/placeholder.jpg" 
+               data-src="/images/image-9.jpg" 
+               alt="Мёд в здоровом питании"
+               class="blog-image lazyload"
+               loading="lazy"
+               decoding="async">
+        </div>
         <div class="p-6">
           <h2 class="text-xl md:text-2xl font-bold mb-2">Мёд в здоровом питании</h2>
           <p class="text-gray-600 mb-4">Как правильно использовать мёд в ежедневном рационе. Рецепты и советы по включению натурального мёда в здоровое питание для всей семьи.</p>
@@ -390,12 +407,14 @@
       
       <!-- Статья 3 -->
       <div class="blog-post-card bg-white rounded-lg mb-10 overflow-hidden shadow-md">
-        <img src="/images/placeholder.jpg" 
-             data-src="/images/image-10.jpg" 
-             alt="Традиции алтайского пчеловодства"
-             class="w-full h-64 object-cover lazyload"
-             loading="lazy"
-             decoding="async">
+        <div class="blog-image-container">
+          <img src="/images/placeholder.jpg" 
+               data-src="/images/image-10.jpg" 
+               alt="Традиции алтайского пчеловодства"
+               class="blog-image lazyload"
+               loading="lazy"
+               decoding="async">
+        </div>
         <div class="p-6">
           <h2 class="text-xl md:text-2xl font-bold mb-2">Традиции алтайского пчеловодства</h2>
           <p class="text-gray-600 mb-4">История и секреты алтайских пасечников. Узнайте о многовековых традициях сбора мёда в горных районах Алтая.</p>

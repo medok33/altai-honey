@@ -141,11 +141,17 @@
     color: var(--primary);
   }
   
+  /* ГАРАНТИРОВАННОЕ ЗАКРУГЛЕНИЕ ДЛЯ КНОПОК */
   .nav-btn {
     background: var(--primary);
     color: white;
-    /* Исправление: скругление для кнопок */
     border-radius: 8px !important;
+    padding: 0.5rem 1.5rem !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 600;
   }
   
   .header-logo {
@@ -395,7 +401,7 @@
       <a href="/#footer-contacts" class="nav-link">Контакты</a>
       <a href="/blog/" class="active-nav-link-alt">Блог</a>
       <!-- Исправленная кнопка "Заказать" -->
-      <a href="/#order" class="nav-btn px-4 md:px-6 py-1 md:py-2 hover:bg-opacity-90 transition-all whitespace-nowrap">Заказать</a>
+      <a href="/#order" class="nav-btn hover:bg-opacity-90 transition-all whitespace-nowrap">Заказать</a>
     </div>
     
     <button class="md:hidden w-10 h-10 flex items-center justify-center" id="mobile-menu-button">

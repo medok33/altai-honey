@@ -14,7 +14,7 @@
   <!-- Open Graph -->
   <meta property="og:title" content="FAQ | Алтайский мёд - Часто задаваемые вопросы">
   <meta property="og:description" content="Ответы на частые вопросы о мёде, доставке и оплате. Узнайте больше о наших продуктах.">
-  <meta property="og:image" content="https://altaymed.shop/images/og-faq.webp">
+  <meta property="og:image" content="https://altaymed.shop/images/og-faq.jpg">
   <meta property="og:url" content="https://altaymed.shop/faq/">
   <meta property="og:type" content="website">
 
@@ -22,12 +22,12 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="FAQ | Алтайский мёд">
   <meta name="twitter:description" content="Часто задаваемые вопросы о мёде и доставке">
-  <meta name="twitter:image" content="https://altaymed.shop/images/twitter-faq.webp">
+  <meta name="twitter:image" content="https://altaymed.shop/images/twitter-faq.jpg">
 
   <!-- Favicon -->
   <link rel="icon" href="/images/favicon.ico" sizes="any">
   <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/images/apple-touch-icon.webp">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
 
   <!-- Web Manifest -->
   <link rel="manifest" href="/manifest.json">
@@ -39,7 +39,7 @@
   <link rel="preload" href="/fonts/OpenSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/OpenSans-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/OpenSans-Bold.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/images/faq-banner.webp" as="image" fetchpriority="high">
+  <link rel="preload" href="/images/faq-banner.jpg" as="image" fetchpriority="high">
 
   <!-- Локальные шрифты -->
   <style>
@@ -435,7 +435,7 @@
     
     /* FAQ стили */
     .faq-item {
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
       padding-bottom: 1.5rem;
       border-bottom: 1px solid #e5e7eb;
     }
@@ -444,15 +444,12 @@
     }
     .faq-question {
       display: flex;
-      align-items: flex-start;
-      cursor: pointer;
+      align-items: center;
     }
     .faq-icon {
       margin-right: 12px;
-      flex-shrink: 0;
       color: #6B8E23;
       font-size: 1.25rem;
-      transition: transform 0.3s ease;
     }
     .faq-answer {
       padding-left: 2rem;
@@ -517,7 +514,7 @@
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Алтайский мёд",
-    "image": "https://altaymed.shop/images/logo.webp",
+    "image": "https://altaymed.shop/images/logo.jpg",
     "@id": "https://altaymed.shop",
     "url": "https://altaymed.shop",
     "telephone": "+79209400222",
@@ -594,20 +591,6 @@
   <main>
     <!-- Шапка FAQ -->
     <section class="hero-container">
-      <!-- Оптимизированный баннер для LCP -->
-      <picture>
-        <source srcset="/images/faq-banner.webp" type="image/webp">
-        <img 
-          src="/images/faq-banner.jpg" 
-          alt="Часто задаваемые вопросы о натуральном алтайском мёде"
-          class="hero-image"
-          loading="eager"
-          decoding="async"
-          width="1920"
-          height="1080"
-          aria-hidden="true"
-        >
-      </picture>
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <div class="container mx-auto px-4 text-center text-white">
@@ -822,7 +805,7 @@
                 <div class="contact-icon">
                   <i class="ri-map-pin-2-line ri-sm md:ri-base" aria-hidden="true"></i>
                 </div>
-                <span class="contact-text">Владимирская обл. Город Ковров</span>
+                <span class="contact-text">Владимирская обл., г.Ковров</span>
               </a>
             </li>
             <li>

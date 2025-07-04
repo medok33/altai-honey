@@ -35,18 +35,41 @@
 
   <!-- Предзагрузка критических ресурсов -->
   <link rel="preload" href="/css/style.min.css" as="style">
-  <link rel="preload" href="/fonts/Pacifico-Regular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/OpenSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/OpenSans-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/images/delivery-banner-small.webp" as="image" media="(max-width: 640px)">
-  <link rel="preload" href="/images/delivery-banner-medium.webp" as="image" media="(min-width: 641px) and (max-width: 1024px)">
-  <link rel="preload" href="/images/delivery-banner-desktop.webp" as="image" media="(min-width: 1025px)" fetchpriority="high">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" as="style">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" as="style">
+  <link rel="preload" href="/images/delivery-banner.webp" as="image">
 
-  <!-- Локальные стили -->
+  <!-- Подключение Tailwind CSS -->
   <link rel="stylesheet" href="/css/style.min.css">
-  <link rel="stylesheet" href="/fonts/fonts.css" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="/assets/fonts/remixicon/remixicon.css">
 
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          primary: '#6B8E23',
+          secondary: '#8B4513',
+          orange: '#FFA500'
+        },
+        borderRadius: {
+          'none': '0px',
+          'sm': '4px',
+          DEFAULT: '8px',
+          'md': '12px',
+          'lg': '16px',
+          'xl': '20px',
+          '2xl': '24px',
+          '3xl': '32px',
+          'full': '9999px',
+          'button': '8px'
+        }
+      }
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+  
   <!-- Schema.org markup -->
   <script type="application/ld+json">
   {
@@ -75,61 +98,44 @@
   </script>
 
   <style>
-  :root {
-    --primary: #6B8E23;
-    --secondary: #8B4513;
-    --orange: #FFA500;
-  }
-  
-  .font-pacifico {
-    font-family: 'Pacifico', cursive;
-    font-display: swap;
-  }
-  
+  :where([class^="ri-"])::before { content: "\f3c2"; }
   body {
     font-family: 'Open Sans', sans-serif;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
   }
-  
   .texture-bg {
     background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZmZmZmZmIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNmNWRlYjMiIG9wYWNpdHk9IjAuMSI+PC9yZWN0Pgo8L3N2Zz4=');
   }
 
   .nav-link {
-    color: #1a202c;
+    color: #1a202c !important;
     transition: color 0.3s;
   }
-  
   .nav-link:hover {
-    color: var(--primary);
+    color: #6B8E23 !important;
   }
-  
   .nav-btn {
-    background: var(--primary);
-    color: white;
+    background: #6B8E23 !important;
+    color: white !important;
     border-radius: 8px !important;
     padding: 0.5rem 1.5rem !important;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-weight: 600;
   }
-  
   .header-logo {
-    color: var(--primary);
+    color: #6B8E23 !important;
   }
 
   footer {
-    width: 100%;
+    width: 100% !important;
+    box-sizing: border-box !important;
     position: relative;
     overflow: hidden;
-    background-color: var(--secondary);
+    background-color: #8B4513;
     z-index: 1;
   }
 
+  /* ИСПРАВЛЕННЫЙ УЗОР ВАФЕЛЬНОЙ СЕТКИ */
   footer::before {
     content: "";
     position: absolute;
@@ -140,7 +146,7 @@
     background-image: 
       linear-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
       linear-gradient(90deg, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
-    background-size: 90px 90px;
+    background-size: 108px 108px;
     transform: rotate(30deg);
     transform-origin: 0 0;
     opacity: 0.6;
@@ -150,53 +156,81 @@
   }
 
   footer .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-right: 1.5rem !important;
+    padding-left: 1.5rem !important;
     position: relative;
     z-index: 1;
   }
 
-  .footer-column {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+  footer .grid {
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
   }
 
+  @media (min-width: 768px) {
+    footer .grid {
+      grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    }
+  }
+
+  .footer-column {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Уменьшенные отступы для заголовков на 20% */
   .footer-column h4 {
-    text-align: left;
-    margin: 0 0 0.8rem 0;
-    font-weight: bold;
-    font-size: 1.125rem;
-    line-height: 1.75rem;
+    text-align: left !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 0 0.64rem 0 !important; /* Уменьшено на 20% */
+    font-weight: bold !important;
+    font-size: 1.125rem !important;
+    line-height: 1.75rem !important;
   }
 
   .footer-column ul {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    list-style: none !important;
   }
 
   .footer-column li {
-    width: 100%;
-    text-align: left;
-    list-style-type: none;
+    width: 100% !important;
+    text-align: left !important;
+    list-style-type: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
   }
 
   .footer-column li a {
-    display: flex;
-    align-items: center;
-    width: 100%;
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   .footer-column .bullet {
-    display: inline-block;
-    width: 6px;
-    height: 6px;
-    background-color: white;
-    border-radius: 50%;
-    margin-right: 10px;
-    flex-shrink: 0;
+    display: inline-block !important;
+    width: 6px !important;
+    height: 6px !important;
+    background-color: white !important;
+    border-radius: 50% !important;
+    margin-right: 10px !important;
+    flex-shrink: 0 !important;
   }
 
   footer, 
@@ -206,11 +240,16 @@
   footer span, 
   footer h4, 
   footer li {
-    color: white;
+    color: white !important;
+    box-sizing: border-box !important;
   }
-  
   footer a:hover {
-    color: #d1d5db;
+    color: #d1d5db !important;
+  }
+
+  .footer-column li a {
+    display: flex;
+    align-items: center;
   }
 
   .social-icon-bw {
@@ -229,14 +268,36 @@
 
   .social-icon-bw:hover {
     filter: grayscale(0%);
-    border-color: var(--primary);
-    color: var(--primary);
+    border-color: #6B8E23;
+    color: #6B8E23;
   }
 
+  .avito-icon-bw, .yandex-maps-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    filter: grayscale(100%);
+  }
+
+  .avito-icon-bw svg, .yandex-maps-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .social-icon-bw:hover .avito-icon-bw,
+  .social-icon-bw:hover .yandex-maps-icon {
+    filter: grayscale(0%);
+  }
+
+  /* Дополнительно уменьшенные отступы между пунктами на 25% */
   .footer-link-item {
     display: flex;
     align-items: center;
-    padding: 0.3rem 0;
+    padding-top: 0.21rem !important; /* Уменьшено на 25% */
+    padding-bottom: 0.21rem !important; /* Уменьшено на 25% */
   }
 
   .contact-icon {
@@ -253,17 +314,25 @@
     line-height: 1.5;
   }
 
+  .blog-post-card {
+    transition: all 0.3s ease;
+  }
+  .blog-post-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+
   .active-nav-link-alt {
-    border: 2px solid var(--primary);
-    border-radius: 8px;
-    padding: 4px 12px;
-    color: var(--primary);
-    font-weight: 600;
+    border: 2px solid #6B8E23 !important;
+    border-radius: 8px !important;
+    padding: 4px 12px !important;
+    color: #6B8E23 !important;
+    font-weight: 600 !important;
     transition: all 0.3s ease;
   }
 
   .active-nav-link-alt:hover {
-    background: rgba(107, 142, 35, 0.1);
+    background: rgba(107, 142, 35, 0.1) !important;
   }
 
   .floating-back-button {
@@ -274,7 +343,7 @@
     width: 3.5rem;
     height: 3.5rem;
     border-radius: 50%;
-    background: var(--primary);
+    background: #6B8E23;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -303,7 +372,34 @@
     transform: translateX(-4px);
   }
 
-  /* Стили для регионов доставки */
+  /* БЕЛЫЙ ЦВЕТ ТЕКСТА В ПЕРВОМ БЛОКЕ ФУТЕРА */
+  #footer-contacts .footer-column:first-child,
+  #footer-contacts .footer-column:first-child * {
+    color: white !important;
+  }
+
+  /* УТОЧНЕННЫЕ СТИЛИ ДЛЯ ПЕРВОГО БЛОКА ФУТЕРА */
+  .footer-column:first-child {
+    justify-content: flex-start;
+  }
+  .footer-column:first-child .logo-wrapper {
+    margin-bottom: 0.4rem; /* Увеличено на 20% */
+  }
+  .footer-column:first-child .description-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .footer-column:first-child .description-wrapper p {
+    margin: 0;
+    font-size: 0.7rem; /* Уменьшено на 20% (относительно 0.875rem) */
+    line-height: 1.25;
+  }
+  .footer-column:first-child .description-wrapper p:first-child {
+    margin-bottom: 0.3rem; /* Увеличено на 20% */
+  }
+  
+  /* СТИЛИ ДЛЯ РЕГИОНОВ ДОСТАВКИ */
   .region-tag {
     display: inline-block;
     background-color: #f5f5f5;
@@ -326,7 +422,7 @@
     font-weight: 500;
   }
   .region-link:hover {
-    color: var(--primary);
+    color: #6B8E23;
   }
   .regions-container {
     margin-top: 16px;
@@ -365,7 +461,7 @@
     height: 0;
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
-    border-top: 8px solid var(--primary);
+    border-top: 8px solid #6B8E23;
     transition: all 0.3s;
     margin-right: 8px;
   }
@@ -400,67 +496,20 @@
     transform: translateY(0);
   }
 
-  /* Стили для изображений оплаты */
-  .payment-card {
-    transition: all 0.3s ease;
-    border-radius: 12px;
-    overflow: hidden;
-  }
-  .payment-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  /* Оптимизация изображений */
+  .lazyload,
+  .lazyloading {
+    opacity: 0;
+    transition: opacity 0.3s;
   }
 
-  /* Адаптивные фоны для шапки */
-  @media (max-width: 640px) {
-    .hero-bg-delivery {
-      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/delivery-banner-small.webp');
-      background-size: cover;
-      background-position: center;
-    }
-  }
-  
-  @media (min-width: 641px) and (max-width: 1024px) {
-    .hero-bg-delivery {
-      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/delivery-banner-medium.webp');
-      background-size: cover;
-      background-position: center;
-    }
-  }
-  
-  @media (min-width: 1025px) {
-    .hero-bg-delivery {
-      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/delivery-banner-desktop.webp');
-      background-size: cover;
-      background-position: center;
-    }
-  }
-
-  /* Для старых браузеров */
-  @supports not (display: grid) {
-    .regions-row {
-      display: flex;
-      flex-wrap: wrap;
-    }
-    .hidden-regions-grid {
-      display: flex;
-      flex-wrap: wrap;
-    }
-  }
-
-  /* Отключение анимаций */
-  @media (prefers-reduced-motion: reduce) {
-    .section-animate, .payment-card, .floating-back-button,
-    .region-tag, .triangle-toggle, .back-arrow {
-      transition: none !important;
-      animation: none !important;
-      transform: none !important;
-    }
+  .lazyloaded {
+    opacity: 1;
   }
 
   /* Focus стили */
   a:focus, button:focus {
-    outline: 2px solid var(--primary);
+    outline: 2px solid #6B8E23;
     outline-offset: 2px;
   }
 </style>
@@ -469,7 +518,7 @@
   <!-- Навигация -->
   <nav class="bg-white shadow-sm sticky top-0 z-50">
     <div class="container mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
-      <a href="/" class="text-2xl md:text-3xl font-pacifico header-logo">Алтайский мёд</a>
+      <a href="/" class="text-2xl md:text-3xl font-['Pacifico'] header-logo">Алтайский мёд</a>
       
       <div class="hidden md:flex items-center space-x-6 md:space-x-8">
         <a href="/#benefits" class="nav-link">Преимущества</a>
@@ -478,7 +527,7 @@
         <a href="/#footer-contacts" class="nav-link">Контакты</a>
         <a href="/blog/" class="nav-link">Блог</a>
         <a href="/delivery.html" class="active-nav-link-alt">Доставка</a>
-        <a href="/#order" class="nav-btn hover:bg-opacity-90 transition-all whitespace-nowrap">Заказать</a>
+        <a href="/#order" class="nav-btn px-4 md:px-6 py-1 md:py-2 !rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">Заказать</a>
       </div>
       
       <button class="md:hidden w-10 h-10 flex items-center justify-center" 
@@ -497,16 +546,16 @@
         <a href="/#footer-contacts" class="nav-link py-2">Контакты</a>
         <a href="/blog/" class="nav-link py-2">Блог</a>
         <a href="/delivery.html" class="active-nav-link-alt py-2 text-center">Доставка</a>
-        <a href="/#order" class="nav-btn py-2 text-center hover:bg-opacity-90 transition-all">Заказать</a>
+        <a href="/#order" class="nav-btn py-2 text-center !rounded-button hover:bg-opacity-90 transition-all">Заказать</a>
       </div>
     </div>
   </nav>
 
   <main>
     <!-- Шапка страницы доставки -->
-    <section class="min-h-[50vh] flex items-center hero-bg-delivery">
+    <section class="min-h-[50vh] flex items-center" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/delivery-banner.webp'); background-size: cover; background-position: center;">
       <div class="container mx-auto px-4 text-center text-white">
-        <h1 class="text-3xl md:text-4xl lg:text-5xl font-pacifico mb-4">Доставка и оплата алтайского мёда</h1>
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-['Pacifico'] mb-4">Доставка и оплата алтайского мёда</h1>
         <p class="text-xl max-w-2xl mx-auto">Быстрая доставка натурального мёда с пасеки Алтая по всей России</p>
       </div>
     </section>
@@ -515,7 +564,7 @@
     <section id="delivery" class="py-16 md:py-20 bg-[#F5DEB3] bg-opacity-20 texture-bg section-animate">
       <div class="container mx-auto px-4 md:px-6">
         <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-md p-6 md:p-8">
-          <h2 class="text-3xl md:text-4xl font-pacifico text-center text-secondary mb-8">
+          <h2 class="text-3xl md:text-4xl font-['Pacifico'] text-center text-secondary mb-8">
             Условия доставки и оплаты
           </h2>
           <div class="prose prose-lg max-w-none text-gray-800">
@@ -563,24 +612,12 @@
             
             <div class="mt-8">
               <picture>
-                <source 
-                  type="image/webp" 
-                  srcset="
-                    /images/delivery-map-410.webp 410w,
-                    /images/delivery-map-800.webp 800w"
-                  sizes="(max-width: 640px) 410px, 800px"
-                >
-                <img 
-                  src="/images/delivery-map.jpg" 
-                  srcset="
-                    /images/delivery-map-410.jpg 410w,
-                    /images/delivery-map-800.jpg 800w"
-                  sizes="(max-width: 640px) 410px, 800px"
-                  alt="Зоны доставки алтайского мёда по России - Ковров, Владимирская область, Центральная Россия, Урал, Сибирь, Дальний Восток"
-                  width="800" height="450"
-                  class="w-full h-auto rounded-lg shadow-md mt-4"
-                  loading="lazy"
-                  decoding="async">
+                <source srcset="/images/delivery-map.webp" type="image/webp">
+                <img src="/images/delivery-map.jpg" 
+                     alt="Зоны доставки алтайского мёда по России - Ковров, Владимирская область, Центральная Россия, Урал, Сибирь, Дальний Восток"
+                     width="800" height="450"
+                     class="w-full h-auto rounded-lg shadow-md mt-4"
+                     loading="lazy">
               </picture>
             </div>
             
@@ -593,72 +630,36 @@
             </ul>
             
             <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div class="text-center payment-card">
+              <div class="text-center">
                 <picture>
-                  <source 
-                    type="image/webp" 
-                    srcset="
-                      /images/payment-card-410.webp 410w,
-                      /images/payment-card-800.webp 800w"
-                    sizes="(max-width: 640px) 410px, 800px"
-                  >
-                  <img 
-                    src="/images/payment-card.jpg" 
-                    srcset="
-                      /images/payment-card-410.jpg 410w,
-                      /images/payment-card-800.jpg 800w"
-                    sizes="(max-width: 640px) 410px, 800px"
-                    alt="Оплата банковской картой за алтайский мёд онлайн"
-                    width="300" height="200"
-                    class="w-full h-auto rounded-lg shadow-md"
-                    loading="lazy"
-                    decoding="async">
+                  <source srcset="/images/payment-card.webp" type="image/webp">
+                  <img src="/images/payment-card.jpg" 
+                       alt="Оплата банковской картой за алтайский мёд онлайн"
+                       width="300" height="200"
+                       class="w-full h-auto rounded-lg shadow-md"
+                       loading="lazy">
                 </picture>
                 <p class="mt-2 font-medium">Оплата банковской картой</p>
               </div>
-              <div class="text-center payment-card">
+              <div class="text-center">
                 <picture>
-                  <source 
-                    type="image/webp" 
-                    srcset="
-                      /images/payment-cash-410.webp 410w,
-                      /images/payment-cash-800.webp 800w"
-                    sizes="(max-width: 640px) 410px, 800px"
-                  >
-                  <img 
-                    src="/images/payment-cash.jpg" 
-                    srcset="
-                      /images/payment-cash-410.jpg 410w,
-                      /images/payment-cash-800.jpg 800w"
-                    sizes="(max-width: 640px) 410px, 800px"
-                    alt="Оплата наличными при получении алтайского мёда в Коврове"
-                    width="300" height="200"
-                    class="w-full h-auto rounded-lg shadow-md"
-                    loading="lazy"
-                    decoding="async">
+                  <source srcset="/images/payment-cash.webp" type="image/webp">
+                  <img src="/images/payment-cash.jpg" 
+                       alt="Оплата наличными при получении алтайского мёда в Коврове"
+                       width="300" height="200"
+                       class="w-full h-auto rounded-lg shadow-md"
+                       loading="lazy">
                 </picture>
                 <p class="mt-2 font-medium">Наличными курьеру</p>
               </div>
-              <div class="text-center payment-card">
+              <div class="text-center">
                 <picture>
-                  <source 
-                    type="image/webp" 
-                    srcset="
-                      /images/payment-post-410.webp 410w,
-                      /images/payment-post-800.webp 800w"
-                    sizes="(max-width: 640px) 410px, 800px"
-                  >
-                  <img 
-                    src="/images/payment-post.jpg" 
-                    srcset="
-                      /images/payment-post-410.jpg 410w,
-                      /images/payment-post-800.jpg 800w"
-                    sizes="(max-width: 640px) 410px, 800px"
-                    alt="Оплата наложенным платежом при получении алтайского мёда в отделении"
-                    width="300" height="200"
-                    class="w-full h-auto rounded-lg shadow-md"
-                    loading="lazy"
-                    decoding="async">
+                  <source srcset="/images/payment-post.webp" type="image/webp">
+                  <img src="/images/payment-post.jpg" 
+                       alt="Оплата наложенным платежом при получении алтайского мёда в отделении"
+                       width="300" height="200"
+                       class="w-full h-auto rounded-lg shadow-md"
+                       loading="lazy">
                 </picture>
                 <p class="mt-2 font-medium">Наложенный платёж</p>
               </div>
@@ -694,14 +695,14 @@
     </section>
   </main>
 
-  <!-- Футер -->
+  <!-- Футер с точно выровненным текстом -->
   <footer class="py-10 md:py-12 w-full">
     <div id="footer-contacts" class="container mx-auto px-4 md:px-6 w-full">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 w-full">
         <!-- Лого и описание -->
         <div class="footer-column">
           <div class="logo-wrapper">
-            <a href="/" class="text-2xl md:text-3xl font-pacifico mb-3 md:mb-4 block">Алтайский мёд</a>
+            <a href="/" class="text-2xl md:text-3xl font-['Pacifico'] mb-3 md:mb-4 block">Алтайский мёд</a>
           </div>
           <div class="description-wrapper">
             <p class="text-xs">Натуральные продукты пчеловодства с Алтайских гор.</p>
@@ -752,7 +753,7 @@
             </li>
             <li>
               <a href="/legal.html" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-                <span class="bullet mr-2"></span>
+                <span class="bullet mr=2"></span>
                 <span class="text-sm md:text-base">Правовая информация</span>
               </a>
             </li>
@@ -824,18 +825,31 @@
           <div class="mt-4 md:mt-6">
             <p class="text-base md:text-lg font-bold mb-2 md:mb-3">Следите за нами</p>
             <div class="flex space-x-2 md:space-x-3">
-              <a href="https://vk.com/honeybuckwheat" target="_blank" rel="noopener" class="social-icon-bw">
+              <a href="https://vk.com/honeybuckwheat" target="_blank" class="social-icon-bw">
                 <i class="ri-vk-line ri-lg"></i>
               </a>
-              <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" rel="noopener" class="social-icon-bw">
+              <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" class="social-icon-bw">
                 <i class="ri-telegram-line ri-lg"></i>
               </a>
               <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing" 
-                 target="_blank" rel="noopener" class="social-icon-bw">
-                <i class="ri-shopping-bag-line ri-lg"></i>
+                 target="_blank" class="social-icon-bw">
+                <div class="avito-icon-bw">
+                  <svg viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#04e061" d="M61.924 172.07c26.468 0 47.924-21.456 47.924-47.924S88.392 76.222 61.924 76.222 14 97.678 14 124.146s21.456 47.925 47.924 47.925z" transform="translate(7.024 7.024) scale(.92683)"/>
+                    <path fill="#ff4053" d="M149.044 166.007c15.992 0 28.956-12.963 28.956-28.955 0-15.992-12.964-28.955-28.956-28.955-15.99 0-28.954 12.963-28.954 28.955 0 15.992 12.963 28.955 28.954 28.955z" transform="translate(7.024 7.024) scale(.92683)"/>
+                    <path fill="#965eeb" d="M71.086 65.979c9.898 0 17.922-8.024 17.922-17.921 0-9.898-8.024-17.922-17.922-17.922-9.898 0-17.921 8.024-17.921 17.922 0 9.897 8.023 17.921 17.921 17.921z" transform="translate(7.024 7.024) scale(.92683)"/>
+                    <path fill="#0af" d="M137.789 97.856c21.519 0 38.964-17.444 38.964-38.963 0-21.52-17.445-38.964-38.964-38.964-21.52 0-38.964 17.445-38.964 38.964s17.445 38.963 38.964 38.963z" transform="translate(7.024 7.024) scale(.92683)"/>
+                  </svg>
+                </div>
               </a>
-              <a href="https://yandex.ru/maps/" target="_blank" rel="noopener" class="social-icon-bw">
-                <i class="ri-map-2-line ri-lg"></i>
+              <!-- Иконка Яндекс Карт - обновленная версия -->
+              <a href="https://yandex.ru/maps/" target="_blank" class="social-icon-bw">
+                <div class="yandex-maps-icon">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C8.13 2 5 5.13 5 9C5 13.17 9.42 18.92 11.24 21.11C11.64 21.59 12.37 21.59 12.77 21.11C14.58 18.92 19 13.17 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" 
+                          fill="currentColor"/>
+                  </svg>
+                </div>
               </a>
             </div>
           </div>
@@ -850,17 +864,20 @@
   </a>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener("DOMContentLoaded", function() {
       // Мобильное меню
       const mobileMenuButton = document.getElementById('mobile-menu-button');
       const mobileMenu = document.getElementById('mobile-menu');
       
-      if (mobileMenuButton) {
-        mobileMenuButton.addEventListener('click', function() {
-          mobileMenu.classList.toggle('hidden');
-          mobileMenu.classList.toggle('block');
-        });
-      }
+      mobileMenuButton.addEventListener('click', function() {
+        if (mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.remove('hidden');
+          mobileMenu.classList.add('block');
+        } else {
+          mobileMenu.classList.add('hidden');
+          mobileMenu.classList.remove('block');
+        }
+      });
       
       // Плавная прокрутка к якорям
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -878,7 +895,7 @@
             });
             
             // Закрыть мобильное меню при клике на ссылку
-            if (mobileMenu && !mobileMenu.classList.contains('hidden') && window.innerWidth < 768) {
+            if (!mobileMenu.classList.contains('hidden') && window.innerWidth < 768) {
               mobileMenu.classList.add('hidden');
               mobileMenu.classList.remove('block');
             }
@@ -889,38 +906,37 @@
       // Плавающая кнопка "Назад"
       const backButton = document.getElementById('back-button');
       
-      if (backButton) {
-        // Показываем/скрываем кнопку при скролле
-        let isScrolling;
-        window.addEventListener('scroll', function() {
-          backButton.style.opacity = "1";
-          
-          clearTimeout(isScrolling);
-          isScrolling = setTimeout(function() {
-            backButton.style.opacity = "0";
-          }, 2000);
-        });
+      // Показываем/скрываем кнопку при скролле
+      let isScrolling;
+      window.addEventListener('scroll', function() {
+        backButton.style.opacity = "1";
         
-        // Обработка нажатия на кнопку "Назад"
-        backButton.addEventListener('click', function(e) {
-          e.preventDefault();
-          
-          // Проверяем историю переходов
-          if (document.referrer && document.referrer.includes(window.location.host)) {
-            // Если есть предыдущая страница на нашем сайте
-            window.history.back();
-          } else {
-            // Если нет истории или пришел с другого сайта
-            window.location.href = '/';
-          }
-        });
-      }
+        clearTimeout(isScrolling);
+        isScrolling = setTimeout(function() {
+          backButton.style.opacity = "0";
+        }, 2000);
+      });
+      
+      // Обработка нажатия на кнопку "Назад"
+      backButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Проверяем историю переходов
+        if (document.referrer && document.referrer.includes(window.location.host)) {
+          // Если есть предыдущая страница на нашем сайте
+          window.history.back();
+        } else {
+          // Если нет истории или пришел с другого сайта
+          window.location.href = '/';
+        }
+      });
       
       // Регионы с треугольником
       const regionsRow = document.getElementById('regions-row');
       const triangleToggle = document.getElementById('triangle-toggle');
       const hiddenRegions = document.getElementById('hidden-regions');
       
+      // Проверяем, нужно ли показывать треугольник
       function checkOverflow() {
         if (regionsRow.scrollWidth > regionsRow.clientWidth) {
           triangleToggle.classList.add('visible');
@@ -929,6 +945,7 @@
         }
       }
       
+      // Обработка нажатия на треугольник
       triangleToggle.addEventListener('click', function() {
         if (hiddenRegions.style.display === 'block') {
           hiddenRegions.style.display = 'none';
@@ -939,6 +956,7 @@
         }
       });
       
+      // Проверяем при загрузке и при изменении размера окна
       checkOverflow();
       window.addEventListener('resize', checkOverflow);
       
@@ -960,18 +978,8 @@
       });
     });
 
-    // Отложенная загрузка аналитики и Service Worker
+    // Отложенная загрузка аналитики
     window.addEventListener('load', function() {
-      // Service Worker
-      setTimeout(function() {
-        if ('serviceWorker' in navigator) {
-          navigator.serviceWorker.register('/register-sw.js')
-            .then(registration => console.log('SW registered: ', registration))
-            .catch(error => console.log('SW registration failed: ', error));
-        }
-      }, 1000);
-      
-      // Яндекс.Метрика
       setTimeout(function() {
         const yaScript = document.createElement('script');
         yaScript.src = 'https://mc.yandex.ru/metrika/tag.js';
@@ -988,6 +996,8 @@
       }, 3000);
     });
   </script>
-  <noscript><div><img src="https://mc.yandex.ru/watch/102951378" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+  <noscript>
+    <div><img src="https://mc.yandex.ru/watch/102951378" style="position:absolute; left:-9999px;" alt=""></div>
+  </noscript>
 </body>
 </html>

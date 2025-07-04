@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FAQ | Алтайский мёд - Часто задаваемые вопросы</title>
 <meta name="description" content="Ответы на часто задаваемые вопросы о мёде, доставке и оплате. Узнайте больше о наших продуктах.">
-<link rel="canonical" href="https://altaymed.shop/faq/" />
 
 <!-- Мета-теги верификации -->
 <meta name="yandex-verification" content="9c5350476939e370" />
@@ -33,263 +32,342 @@
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#9f5524">
 
+<!-- Оптимизированные шрифты -->
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <!-- Подключение Tailwind CSS -->
 <link rel="stylesheet" href="/css/style.min.css">
 
-<!-- Локальные стили -->
-<style>
-  /* Основные стили */
-  body {
-    font-family: 'Open Sans', sans-serif;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
-  }
-  
-  .texture-bg {
-    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZmZmZmZmIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNmNWRlYjMiIG9wYWNpdHk9IjAuMSI+PC9yZWN0Pgo8L3N2Zz4=');
-  }
-
-  /* Навигация */
-  .nav-link {
-    color: #1a202c !important;
-    transition: color 0.3s;
-  }
-  .nav-link:hover {
-    color: #6B8E23 !important;
-  }
-  .nav-btn {
-    background: #6B8E23 !important;
-    color: white !important;
-  }
-  .header-logo {
-    color: #6B8E23 !important;
-    font-family: 'Pacifico', cursive;
-  }
-
-  /* Шапка FAQ */
-  .faq-header {
-    min-height: 50vh;
-    display: flex;
-    align-items: center;
-    position: relative;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/image-14.jpg');
-    background-size: cover;
-    background-position: center;
-  }
-
-  /* Футер */
-  footer {
-    width: 100% !important;
-    box-sizing: border-box !important;
-    position: relative;
-    overflow: hidden;
-    background-color: #8B4513;
-    z-index: 1;
-    margin-top: auto;
-  }
-
-  footer::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 600%;
-    height: 600%;
-    background-image: 
-      linear-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
-    background-size: 108px 108px;
-    transform: rotate(30deg);
-    transform-origin: 0 0;
-    opacity: 0.6;
-    z-index: 0;
-    margin-left: -220%;
-    margin-top: -220%;
-  }
-
-  .footer-column h4 {
-    text-align: left !important;
-    width: 100% !important;
-    padding: 0 !important;
-    margin: 0 0 0.64rem 0 !important;
-    font-weight: bold !important;
-    font-size: 1.125rem !important;
-    line-height: 1.75rem !important;
-  }
-
-  footer, 
-  footer *,
-  footer a, 
-  footer p, 
-  footer span, 
-  footer h4, 
-  footer li {
-    color: white !important;
-    box-sizing: border-box !important;
-  }
-  footer a:hover {
-    color: #d1d5db !important;
-  }
-
-  /* Активная ссылка */
-  .active-nav-link-alt {
-    border: 2px solid #6B8E23 !important;
-    border-radius: 8px !important;
-    padding: 4px 12px !important;
-    color: #6B8E23 !important;
-    font-weight: 600 !important;
-    transition: all 0.3s ease;
-  }
-
-  .active-nav-link-alt:hover {
-    background: rgba(107, 142, 35, 0.1) !important;
-  }
-
-  /* Плавающая кнопка "Назад" */
-  .floating-back-button {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    z-index: 50;
-    width: 3.5rem;
-    height: 3.5rem;
-    border-radius: 50%;
-    background: #6B8E23;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-    opacity: 0;
-    transform: scale(0.95);
-  }
-
-  .floating-back-button:hover {
-    background: #5a7a1c;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    transform: scale(1.05);
-  }
-
-  .back-arrow {
-    width: 24px;
-    height: 24px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23ffffff' d='M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z'/%3E%3C/svg%3E");
-    background-size: contain;
-    background-repeat: no-repeat;
-    transition: transform 0.3s ease;
-  }
-
-  .floating-back-button:hover .back-arrow {
-    transform: translateX(-4px);
-  }
-
-  /* Анимации */
-  .section-animate {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-  }
-
-  .section-visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-</style>
-
-<!-- Schema.org markup -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Как хранить мёд?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Мёд следует хранить в стеклянной или керамической посуде с плотно закрытой крышкой при комнатной температуре (18-20°C). Избегайте попадания прямых солнечных лучей и влаги. При правильном хранении мёд сохраняет свои свойства годами."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Почему мёд кристаллизуется?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Кристаллизация — естественный процесс для натурального мёда. Скорость кристаллизации зависит от сорта мёда и соотношения глюкозы и фруктозы. Если мёд не кристаллизуется длительное время, это может указывать на его ненатуральность или термическую обработку."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Какой срок доставки?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Срок доставки зависит от вашего региона: По городу Ковров: в течении дня; По России: 3-5 дней; Отдаленные регионы: до 14 дней. Точный срок доставки уточняйте при оформлении заказа."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Как оплатить заказ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Мы принимаем следующие способы оплаты: Наличными при получении (для жителей города Ковров); Банковской картой онлайн; Переводом на карту; Через СБП (по номеру телефона)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Есть ли противопоказания?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Мёд не рекомендуется: Детям до 1 года; Людям с аллергией на продукты пчеловодства; При сахарном диабете (требуется консультация врача); При обострении гастрита или язвенной болезни. В остальных случаях рекомендуемая суточная доза — 1-2 столовые ложки для взрослых."
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        primary: '#6B8E23',
+        secondary: '#8B4513',
+        orange: '#FFA500'
+      },
+      borderRadius: {
+        'none': '0px',
+        'sm': '4px',
+        DEFAULT: '8px',
+        'md': '12px',
+        'lg': '16px',
+        'xl': '20px',
+        '2xl': '24px',
+        '3xl': '32px',
+        'full': '9999px',
+        'button': '8px'
       }
     }
-  ]
+  }
 }
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+  font-family: 'Open Sans', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.texture-bg {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZmZmZmZmIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNmNWRlYjMiIG9wYWNpdHk9IjAuMSI+PC9yZWN0Pgo8L3N2Zz4=');
+}
 
-<!-- LocalBusiness Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Алтайский мёд",
-  "image": "https://altaymed.shop/images/logo.jpg",
-  "@id": "https://altaymed.shop",
-  "url": "https://altaymed.shop",
-  "telephone": "+79209400222",
-  "priceRange": "₽₽",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Владимирская обл. Город Ковров",
-    "addressRegion": "Владимирская область",
-    "postalCode": "601900",
-    "addressCountry": "RU"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 56.3572,
-    "longitude": 41.3192
-  },
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday"
-    ],
-    "opens": "09:00",
-    "closes": "18:00"
-  },
-  "sameAs": [
-    "https://vk.com/honeybuckwheat",
-    "https://t.me/HONEYBUCKWHEAT"
-  ]
+.nav-link {
+  color: #1a202c !important;
+  transition: color 0.3s;
 }
-</script>
+.nav-link:hover {
+  color: #6B8E23 !important;
+}
+.nav-btn {
+  background: #6B8E23 !important;
+  color: white !important;
+}
+.header-logo {
+  color: #6B8E23 !important;
+}
+
+footer {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  position: relative;
+  overflow: hidden;
+  background-color: #8B4513;
+  z-index: 1;
+}
+
+/* ИСПРАВЛЕННЫЙ УЗОР ВАФЕЛЬНОЙ СЕТКИ */
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 600%;
+  height: 600%;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+  background-size: 108px 108px;
+  transform: rotate(30deg);
+  transform-origin: 0 0;
+  opacity: 0.6;
+  z-index: 0;
+  margin-left: -220%;
+  margin-top: -220%;
+}
+
+footer .container {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding-right: 1.5rem !important;
+  padding-left: 1.5rem !important;
+  position: relative;
+  z-index: 1;
+}
+
+footer .grid {
+  width: 100% !important;
+  display: grid !important;
+  grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+}
+
+@media (min-width: 768px) {
+  footer .grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  }
+}
+
+.footer-column {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* Уменьшенные отступы для заголовков на 20% */
+.footer-column h4 {
+  text-align: left !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 0 0.64rem 0 !important;
+  font-weight: bold !important;
+  font-size: 1.125rem !important;
+  line-height: 1.75rem !important;
+}
+
+.footer-column ul {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  list-style: none !important;
+}
+
+.footer-column li {
+  width: 100% !important;
+  text-align: left !important;
+  list-style-type: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.footer-column li a {
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.footer-column .bullet {
+  display: inline-block !important;
+  width: 6px !important;
+  height: 6px !important;
+  background-color: white !important;
+  border-radius: 50% !important;
+  margin-right: 10px !important;
+  flex-shrink: 0 !important;
+}
+
+footer, 
+footer *,
+footer a, 
+footer p, 
+footer span, 
+footer h4, 
+footer li {
+  color: white !important;
+  box-sizing: border-box !important;
+}
+footer a:hover {
+  color: #d1d5db !important;
+}
+
+.footer-column li a {
+  display: flex;
+  align-items: center;
+}
+
+.social-icon-bw {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: transparent;
+  transition: all 0.3s;
+  border: 1px solid #4b5563;
+  color: #4b5563;
+  filter: grayscale(100%);
+}
+
+.social-icon-bw:hover {
+  filter: grayscale(0%);
+  border-color: #6B8E23;
+  color: #6B8E23;
+}
+
+.avito-icon-bw, .yandex-maps-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  filter: grayscale(100%);
+}
+
+.avito-icon-bw svg, .yandex-maps-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.social-icon-bw:hover .avito-icon-bw,
+.social-icon-bw:hover .yandex-maps-icon {
+  filter: grayscale(0%);
+}
+
+/* Дополнительно уменьшенные отступы между пунктами на 25% */
+.footer-link-item {
+  display: flex;
+  align-items: center;
+  padding-top: 0.21rem !important;
+  padding-bottom: 0.21rem !important;
+}
+
+.contact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  flex-shrink: 0;
+  width: 24px;
+}
+
+.contact-text {
+  flex-grow: 1;
+  line-height: 1.5;
+}
+
+.blog-post-card {
+  transition: all 0.3s ease;
+}
+.blog-post-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.active-nav-link-alt {
+  border: 2px solid #6B8E23 !important;
+  border-radius: 8px !important;
+  padding: 4px 12px !important;
+  color: #6B8E23 !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease;
+}
+
+.active-nav-link-alt:hover {
+  background: rgba(107, 142, 35, 0.1) !important;
+}
+
+.floating-back-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 50;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background: #6B8E23;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.floating-back-button:hover {
+  background: #5a7a1c;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transform: scale(1.05);
+}
+
+.back-arrow {
+  width: 24px;
+  height: 24px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23ffffff' d='M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: transform 0.3s ease;
+}
+
+.floating-back-button:hover .back-arrow {
+  transform: translateX(-4px);
+}
+
+/* БЕЛЫЙ ЦВЕТ ТЕКСТА В ПЕРВОМ БЛОКЕ ФУТЕРА */
+#footer-contacts .footer-column:first-child,
+#footer-contacts .footer-column:first-child * {
+  color: white !important;
+}
+
+/* УТОЧНЕННЫЕ СТИЛИ ДЛЯ ПЕРВОГО БЛОКА ФУТЕРА */
+.footer-column:first-child {
+  justify-content: flex-start;
+}
+.footer-column:first-child .logo-wrapper {
+  margin-bottom: 0.4rem;
+}
+.footer-column:first-child .description-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.footer-column:first-child .description-wrapper p {
+  margin: 0;
+  font-size: 0.7rem;
+  line-height: 1.25;
+}
+.footer-column:first-child .description-wrapper p:first-child {
+  margin-bottom: 0.3rem;
+}
+</style>
 </head>
 <body>
 <!-- Навигация -->
@@ -302,14 +380,12 @@
       <a href="/#products" class="nav-link">Каталог</a>
       <a href="/#about" class="nav-link">О нас</a>
       <a href="/#footer-contacts" class="nav-link">Контакты</a>
-      <a href="/blog/" class="nav-link">Блог</a>
+      <!-- Активная ссылка на FAQ -->
       <a href="/faq/" class="active-nav-link-alt">FAQ</a>
-      <a href="/#order" class="nav-btn px-4 md:px-6 py-1 md:py-2 rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">Заказать</a>
+      <a href="/#order" class="nav-btn px-4 md:px-6 py-1 md:py-2 !rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">Заказать</a>
     </div>
     
-    <button class="md:hidden w-10 h-10 flex items-center justify-center" 
-            id="mobile-menu-button"
-            aria-label="Открыть меню">
+    <button class="md:hidden w-10 h-10 flex items-center justify-center" id="mobile-menu-button">
       <i class="ri-menu-line text-gray-900 ri-xl"></i>
     </button>
   </div>
@@ -321,24 +397,23 @@
       <a href="/#products" class="nav-link py-2">Каталог</a>
       <a href="/#about" class="nav-link py-2">О нас</a>
       <a href="/#footer-contacts" class="nav-link py-2">Контакты</a>
-      <a href="/blog/" class="nav-link py-2">Блог</a>
+      <!-- Активная ссылка на FAQ (мобильная версия) -->
       <a href="/faq/" class="active-nav-link-alt py-2 text-center">FAQ</a>
-      <a href="/#order" class="nav-btn py-2 text-center rounded-button hover:bg-opacity-90 transition-all">Заказать</a>
+      <a href="/#order" class="nav-btn py-2 text-center !rounded-button hover:bg-opacity-90 transition-all">Заказать</a>
     </div>
   </div>
 </nav>
 
 <main>
 <!-- Шапка FAQ -->
-<section class="faq-header">
+<section class="min-h-[50vh] flex items-center" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/image-14.jpg'); background-size: cover; background-position: center;">
   <div class="container mx-auto px-4 text-center text-white">
     <h1 class="text-3xl md:text-4xl lg:text-5xl font-['Pacifico'] mb-4">Часто задаваемые вопросы</h1>
-    <p class="text-xl max-w-2xl mx-auto">Ответы на самые популярные вопросы о мёде, доставке и оплате</p>
   </div>
 </section>
 
 <!-- Содержимое FAQ -->
-<section class="py-16 bg-[#F5DEB3] bg-opacity-20 texture-bg section-animate">
+<section class="py-16 bg-[#F5DEB3] bg-opacity-20 texture-bg">
   <div class="container mx-auto px-4 md:px-6">
     <div class="max-w-3xl mx-auto bg-white p-6 md:p-8 rounded-lg shadow-md">
       <div class="faq-item mb-6 pb-6 border-b">
@@ -407,7 +482,7 @@
 </section>
 </main>
 
-<!-- Футер -->
+<!-- Футер с точно выровненным текстом -->
 <footer class="py-10 md:py-12 w-full">
   <div id="footer-contacts" class="container mx-auto px-4 md:px-6 w-full">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 w-full">
@@ -427,20 +502,20 @@
         <h4 class="text-base md:text-lg font-bold">Каталог</h4>
         <ul>
           <li>
-            <a href="/#product-1" class="hover:text-gray-300 transition-colors flex items-center py-1">
-              <span class="w-2 h-2 bg-white rounded-full mr-2"></span>
+            <a href="/#product-1" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+              <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Разнотравье</span>
             </a>
           </li>
           <li>
-            <a href="/#product-2" class="hover:text-gray-300 transition-colors flex items-center py-1">
-              <span class="w-2 h-2 bg-white rounded-full mr-2"></span>
+            <a href="/#product-2" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+              <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Таёжный мёд</span>
             </a>
           </li>
           <li>
-            <a href="/#product-3" class="hover:text-gray-300 transition-colors flex items-center py-1">
-              <span class="w-2 h-2 bg-white rounded-full mr-2"></span>
+            <a href="/#product-3" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+              <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Гречишный мёд</span>
             </a>
           </li>
@@ -452,20 +527,20 @@
         <h4 class="text-base md:text-lg font-bold">Материалы</h4>
         <ul>
           <li>
-            <a href="/blog/" class="hover:text-gray-300 transition-colors flex items-center py-1">
-              <span class="w-2 h-2 bg-white rounded-full mr-2"></span>
+            <a href="/blog/" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+              <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Блог</span>
             </a>
           </li>
           <li>
-            <a href="/faq/" class="hover:text-gray-300 transition-colors flex items-center py-1">
-              <span class="w-2 h-2 bg-white rounded-full mr-2"></span>
+            <a href="/faq/" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+              <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">FAQ</span>
             </a>
           </li>
           <li>
-            <a href="/legal.html" class="hover:text-gray-300 transition-colors flex items-center py-1">
-              <span class="w-2 h-2 bg-white rounded-full mr-2"></span>
+            <a href="/legal.html" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+              <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Правовая информация</span>
             </a>
           </li>
@@ -477,26 +552,26 @@
         <h4 class="text-base md:text-lg font-bold">Информация</h4>
         <ul>
           <li>
-            <a href="/#benefits" class="hover:text-gray-300 transition-colors flex items-center py-1">
-              <span class="w-2 h-2 bg-white rounded-full mr-2"></span>
+            <a href="/#benefits" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+              <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Преимущества</span>
             </a>
           </li>
           <li>
-            <a href="/#about" class="hover:text-gray-300 transition-colors flex items-center py-1">
-              <span class="w-2 h-2 bg-white rounded-full mr-2"></span>
+            <a href="/#about" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+              <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">О нас</span>
             </a>
           </li>
           <li>
-            <a href="/#footer-contacts" class="hover:text-gray-300 transition-colors flex items-center py-1">
-              <span class="w-2 h-2 bg-white rounded-full mr-2"></span>
+            <a href="/#footer-contacts" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+              <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Контакты</span>
             </a>
           </li>
           <li>
-            <a href="/delivery.html" class="hover:text-gray-300 transition-colors flex items-center py-1">
-              <span class="w-2 h-2 bg-white rounded-full mr-2"></span>
+            <a href="/delivery.html" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+              <span class="bullet mr-2"></span>
               <span class="text-sm md:text-base">Доставка и оплата</span>
             </a>
           </li>
@@ -507,22 +582,28 @@
       <div class="footer-column">
         <h4 class="text-base md:text-lg font-bold">Контакты</h4>
         <ul>
-          <li class="py-1">
-            <div class="flex items-center">
-              <i class="ri-map-pin-2-line ri-sm md:ri-base mr-2"></i>
-              <span>Владимирская обл., г.Ковров</span>
-            </div>
-          </li>
-          <li class="py-1">
-            <a href="tel:+79209400222" class="flex items-center hover:text-gray-300">
-              <i class="ri-phone-line ri-sm md:ri-base mr-2"></i>
-              <span>+7 (920) 940-02-22</span>
+          <li>
+            <a class="footer-link-item">
+              <div class="contact-icon">
+                <i class="ri-map-pin-2-line ri-sm md:ri-base"></i>
+              </div>
+              <span class="contact-text">Владимирская обл., г.Ковров</span>
             </a>
           </li>
-          <li class="py-1">
-            <a href="mailto:altaymed.shop@yandex.ru" class="flex items-center hover:text-gray-300">
-              <i class="ri-mail-line ri-sm md:ri-base mr-2"></i>
-              <span>altaymed.shop@yandex.ru</span>
+          <li>
+            <a href="tel:+79209400222" class="footer-link-item">
+              <div class="contact-icon">
+                <i class="ri-phone-line ri-sm md:ri-base"></i>
+              </div>
+              <span class="contact-text">+7 (920) 940-02-22</span>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:altaymed.shop@yandex.ru" class="footer-link-item">
+              <div class="contact-icon">
+                <i class="ri-mail-line ri-sm md:ri-base"></i>
+              </div>
+              <span class="contact-text">altaymed.shop@yandex.ru</span>
             </a>
           </li>
         </ul>
@@ -530,12 +611,32 @@
         <!-- Социальные сети -->
         <div class="mt-4 md:mt-6">
           <p class="text-base md:text-lg font-bold mb-2 md:mb-3">Следите за нами</p>
-          <div class="flex space-x-3">
-            <a href="https://vk.com/honeybuckwheat" target="_blank" class="text-white hover:text-[#6B8E23] transition-colors">
+          <div class="flex space-x-2 md:space-x-3">
+            <a href="https://vk.com/honeybuckwheat" target="_blank" class="social-icon-bw">
               <i class="ri-vk-line ri-lg"></i>
             </a>
-            <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" class="text-white hover:text-[#6B8E23] transition-colors">
+            <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" class="social-icon-bw">
               <i class="ri-telegram-line ri-lg"></i>
+            </a>
+            <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing" 
+               target="_blank" class="social-icon-bw">
+              <div class="avito-icon-bw">
+                <svg viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg">
+                  <path fill="#04e061" d="M61.924 172.07c26.468 0 47.924-21.456 47.924-47.924S88.392 76.222 61.924 76.222 14 97.678 14 124.146s21.456 47.925 47.924 47.925z" transform="translate(7.024 7.024) scale(.92683)"/>
+                  <path fill="#ff4053" d="M149.044 166.007c15.992 0 28.956-12.963 28.956-28.955 0-15.992-12.964-28.955-28.956-28.955-15.99 0-28.954 12.963-28.954 28.955 0 15.992 12.963 28.955 28.954 28.955z" transform="translate(7.024 7.024) scale(.92683)"/>
+                  <path fill="#965eeb" d="M71.086 65.979c9.898 0 17.922-8.024 17.922-17.921 0-9.898-8.024-17.922-17.922-17.922-9.898 0-17.921 8.024-17.921 17.922 0 9.897 8.023 17.921 17.921 17.921z" transform="translate(7.024 7.024) scale(.92683)"/>
+                  <path fill="#0af" d="M137.789 97.856c21.519 0 38.964-17.444 38.964-38.963 0-21.52-17.445-38.964-38.964-38.964-21.52 0-38.964 17.445-38.964 38.964s17.445 38.963 38.964 38.963z" transform="translate(7.024 7.024) scale(.92683)"/>
+                </svg>
+              </div>
+            </a>
+            <!-- Иконка Яндекс Карт - обновленная версия -->
+            <a href="https://yandex.ru/maps/" target="_blank" class="social-icon-bw">
+              <div class="yandex-maps-icon">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2C8.13 2 5 5.13 5 9C5 13.17 9.42 18.92 11.24 21.11C11.64 21.59 12.37 21.59 12.77 21.11C14.58 18.92 19 13.17 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" 
+                        fill="currentColor"/>
+                </svg>
+              </div>
             </a>
           </div>
         </div>
@@ -545,32 +646,59 @@
 </footer>
 
 <!-- Плавающая кнопка "Назад" -->
-<a href="#" id="back-button" class="floating-back-button" aria-label="Вернуться назад">
+<a href="#" id="back-button" class="floating-back-button">
   <div class="back-arrow"></div>
 </a>
 
-<!-- Скрипты -->
+<!-- Скрипт для управления плавающей кнопкой -->
 <script>
-  // Анимация появления секции
-  document.addEventListener('DOMContentLoaded', function() {
-    const faqSection = document.querySelector('.section-animate');
-    if (faqSection) {
-      setTimeout(() => {
-        faqSection.classList.add('section-visible');
-      }, 300);
-    }
+  document.addEventListener("DOMContentLoaded", function() {
+    const backButton = document.getElementById('back-button');
+    
+    // Показываем/скрываем кнопку при скролле
+    let isScrolling;
+    window.addEventListener('scroll', function() {
+      backButton.style.opacity = "1";
+      
+      clearTimeout(isScrolling);
+      isScrolling = setTimeout(function() {
+        backButton.style.opacity = "0";
+      }, 2000);
+    });
+    
+    // Обработка нажатия на кнопку "Назад"
+    backButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      // Проверяем историю переходов
+      if (document.referrer && document.referrer.includes(window.location.host)) {
+        // Если есть предыдущая страница на нашем сайте
+        window.history.back();
+      } else {
+        // Если нет истории или пришел с другого сайта
+        window.location.href = '/';
+      }
+    });
+  });
+</script>
 
-    // Показ/скрытие мобильного меню
+<!-- Обработка мобильного меню -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
     
-    if (mobileMenuButton && mobileMenu) {
-      mobileMenuButton.addEventListener('click', function() {
-        mobileMenu.classList.toggle('hidden');
-      });
-    }
-
-    // Плавная прокрутка
+    mobileMenuButton.addEventListener('click', function() {
+      if (mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.remove('hidden');
+        mobileMenu.classList.add('block');
+      } else {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('block');
+      }
+    });
+    
+    // Плавная прокрутка к якорям
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         if (this.getAttribute('href') === '#') return;
@@ -585,59 +713,32 @@
             behavior: 'smooth'
           });
           
-          // Закрыть мобильное меню
-          if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+          // Закрыть мобильное меню при клике на ссылку
+          if (!mobileMenu.classList.contains('hidden') && window.innerWidth < 768) {
             mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('block');
           }
         }
       });
     });
-
-    // Плавающая кнопка "Назад"
-    const backButton = document.getElementById('back-button');
-    if (backButton) {
-      // Показываем/скрываем кнопку при скролле
-      let isScrolling;
-      window.addEventListener('scroll', function() {
-        backButton.style.opacity = "1";
-        
-        clearTimeout(isScrolling);
-        isScrolling = setTimeout(function() {
-          backButton.style.opacity = "0";
-        }, 2000);
-      });
-      
-      // Обработка нажатия
-      backButton.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        if (document.referrer && document.referrer.includes(window.location.host)) {
-          window.history.back();
-        } else {
-          window.location.href = '/';
-        }
-      });
-    }
-  });
-
-  // Инициализация Яндекс.Метрики
-  window.addEventListener('load', function() {
-    setTimeout(function() {
-      const yaScript = document.createElement('script');
-      yaScript.src = 'https://mc.yandex.ru/metrika/tag.js';
-      yaScript.async = true;
-      document.head.appendChild(yaScript);
-
-      yaScript.onload = function() {
-        ym(102951378, "init", {
-          clickmap: true,
-          trackLinks: true,
-          accurateTrackBounce: true
-        });
-      };
-    }, 3000);
   });
 </script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(102951378, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });
+</script>
 <noscript><div><img src="https://mc.yandex.ru/watch/102951378" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
 </body>
 </html>

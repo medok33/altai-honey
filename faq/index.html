@@ -33,66 +33,25 @@
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#9f5524">
 
-<!-- Предзагрузка критических ресурсов -->
-<link rel="preload" href="/css/style.min.css" as="style">
-<link rel="preload" href="/fonts/Pacifico-Regular.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/OpenSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/OpenSans-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/OpenSans-Bold.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/images/image-14.jpg" as="image" fetchpriority="high">
+<!-- Подключение Tailwind CSS -->
+<link rel="stylesheet" href="/css/style.min.css">
 
-<!-- Локальные шрифты -->
+<!-- Локальные стили -->
 <style>
-  @font-face {
-    font-family: 'Pacifico';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url('/fonts/Pacifico-Regular.woff2') format('woff2');
-  }
-  
-  @font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url('/fonts/OpenSans-Regular.woff2') format('woff2');
-  }
-  
-  @font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 500;
-    font-display: swap;
-    src: url('/fonts/OpenSans-Medium.woff2') format('woff2');
-  }
-  
-  @font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 600;
-    font-display: swap;
-    src: url('/fonts/OpenSans-SemiBold.woff2') format('woff2');
-  }
-  
-  @font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 700;
-    font-display: swap;
-    src: url('/fonts/OpenSans-Bold.woff2') format('woff2');
-  }
-  
+  /* Основные стили */
   body {
     font-family: 'Open Sans', sans-serif;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: #fff;
   }
+  
   .texture-bg {
     background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZmZmZmZmIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNmNWRlYjMiIG9wYWNpdHk9IjAuMSI+PC9yZWN0Pgo8L3N2Zz4=');
   }
 
+  /* Навигация */
   .nav-link {
     color: #1a202c !important;
     transition: color 0.3s;
@@ -111,6 +70,18 @@
     font-family: 'Pacifico', cursive;
   }
 
+  /* Шапка FAQ */
+  .faq-header {
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/image-14.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* Футер */
   footer {
     width: 100% !important;
     box-sizing: border-box !important;
@@ -118,9 +89,9 @@
     overflow: hidden;
     background-color: #8B4513;
     z-index: 1;
+    margin-top: auto;
   }
 
-  /* ИСПРАВЛЕННЫЙ УЗОР ВАФЕЛЬНОЙ СЕТКИ */
   footer::before {
     content: "";
     position: absolute;
@@ -140,38 +111,6 @@
     margin-top: -220%;
   }
 
-  footer .container {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding-right: 1.5rem !important;
-    padding-left: 1.5rem !important;
-    position: relative;
-    z-index: 1;
-  }
-
-  footer .grid {
-    width: 100% !important;
-    display: grid !important;
-    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
-  }
-
-  @media (min-width: 768px) {
-    footer .grid {
-      grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
-    }
-  }
-
-  .footer-column {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    width: 100% !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    box-sizing: border-box !important;
-  }
-
-  /* Уменьшенные отступы для заголовков на 20% */
   .footer-column h4 {
     text-align: left !important;
     width: 100% !important;
@@ -180,42 +119,6 @@
     font-weight: bold !important;
     font-size: 1.125rem !important;
     line-height: 1.75rem !important;
-  }
-
-  .footer-column ul {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    width: 100% !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    list-style: none !important;
-  }
-
-  .footer-column li {
-    width: 100% !important;
-    text-align: left !important;
-    list-style-type: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    box-sizing: border-box !important;
-  }
-
-  .footer-column li a {
-    display: flex !important;
-    align-items: center !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-
-  .footer-column .bullet {
-    display: inline-block !important;
-    width: 6px !important;
-    height: 6px !important;
-    background-color: white !important;
-    border-radius: 50% !important;
-    margin-right: 10px !important;
-    flex-shrink: 0 !important;
   }
 
   footer, 
@@ -232,76 +135,7 @@
     color: #d1d5db !important;
   }
 
-  .social-icon-bw {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: transparent;
-    transition: all 0.3s;
-    border: 1px solid #4b5563;
-    color: #4b5563;
-    filter: grayscale(100%);
-  }
-
-  .social-icon-bw:hover {
-    filter: grayscale(0%);
-    border-color: #6B8E23;
-    color: #6B8E23;
-  }
-
-  .avito-icon-bw, .yandex-maps-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 24px;
-    height: 24px;
-    position: relative;
-    filter: grayscale(100%);
-  }
-
-  .avito-icon-bw svg, .yandex-maps-icon svg {
-    width: 100%;
-    height: 100%;
-  }
-
-  .social-icon-bw:hover .avito-icon-bw,
-  .social-icon-bw:hover .yandex-maps-icon {
-    filter: grayscale(0%);
-  }
-
-  /* Дополнительно уменьшенные отступы между пунктами на 25% */
-  .footer-link-item {
-    display: flex;
-    align-items: center;
-    padding-top: 0.21rem !important;
-    padding-bottom: 0.21rem !important;
-  }
-
-  .contact-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 12px;
-    flex-shrink: 0;
-    width: 24px;
-  }
-
-  .contact-text {
-    flex-grow: 1;
-    line-height: 1.5;
-  }
-
-  .blog-post-card {
-    transition: all 0.3s ease;
-  }
-  .blog-post-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  }
-
+  /* Активная ссылка */
   .active-nav-link-alt {
     border: 2px solid #6B8E23 !important;
     border-radius: 8px !important;
@@ -315,6 +149,7 @@
     background: rgba(107, 142, 35, 0.1) !important;
   }
 
+  /* Плавающая кнопка "Назад" */
   .floating-back-button {
     position: fixed;
     bottom: 2rem;
@@ -352,33 +187,6 @@
     transform: translateX(-4px);
   }
 
-  /* БЕЛЫЙ ЦВЕТ ТЕКСТА В ПЕРВОМ БЛОКЕ ФУТЕРА */
-  #footer-contacts .footer-column:first-child,
-  #footer-contacts .footer-column:first-child * {
-    color: white !important;
-  }
-
-  /* УТОЧНЕННЫЕ СТИЛИ ДЛЯ ПЕРВОГО БЛОКА ФУТЕРА */
-  .footer-column:first-child {
-    justify-content: flex-start;
-  }
-  .footer-column:first-child .logo-wrapper {
-    margin-bottom: 0.4rem;
-  }
-  .footer-column:first-child .description-wrapper {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-  .footer-column:first-child .description-wrapper p {
-    margin: 0;
-    font-size: 0.7rem;
-    line-height: 1.25;
-  }
-  .footer-column:first-child .description-wrapper p:first-child {
-    margin-bottom: 0.3rem;
-  }
-  
   /* Анимации */
   .section-animate {
     opacity: 0;
@@ -389,23 +197,6 @@
   .section-visible {
     opacity: 1;
     transform: translateY(0);
-  }
-
-  /* Focus стили */
-  a:focus, button:focus {
-    outline: 2px solid #6B8E23;
-    outline-offset: 2px;
-  }
-  
-  /* Шапка FAQ */
-  .faq-header {
-    min-height: 50vh;
-    display: flex;
-    align-items: center;
-    position: relative;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/image-14.jpg');
-    background-size: cover;
-    background-position: center;
   }
 </style>
 
@@ -515,13 +306,15 @@
       <a href="/#footer-contacts" class="nav-link">Контакты</a>
       <a href="/blog/" class="nav-link">Блог</a>
       <a href="/faq/" class="active-nav-link-alt">FAQ</a>
-      <a href="/#order" class="nav-btn px-4 md:px-6 py-1 md:py-2 !rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">Заказать</a>
+      <a href="/#order" class="nav-btn px-4 md:px-6 py-1 md:py-2 hover:bg-opacity-90 transition-all whitespace-nowrap">Заказать</a>
     </div>
     
     <button class="md:hidden w-10 h-10 flex items-center justify-center" 
             id="mobile-menu-button"
             aria-label="Открыть меню">
-      <i class="ri-menu-line text-gray-900 ri-xl" aria-hidden="true"></i>
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+      </svg>
     </button>
   </div>
   
@@ -534,7 +327,7 @@
       <a href="/#footer-contacts" class="nav-link py-2">Контакты</a>
       <a href="/blog/" class="nav-link py-2">Блог</a>
       <a href="/faq/" class="active-nav-link-alt py-2 text-center">FAQ</a>
-      <a href="/#order" class="nav-btn py-2 text-center !rounded-button hover:bg-opacity-90 transition-all">Заказать</a>
+      <a href="/#order" class="nav-btn py-2 text-center hover:bg-opacity-90 transition-all">Заказать</a>
     </div>
   </div>
 </nav>
@@ -549,28 +342,34 @@
 </section>
 
 <!-- Содержимое FAQ -->
-<section class="py-16 bg-[#F5DEB3] bg-opacity-20 texture-bg section-animate">
+<section class="py-16 bg-[#F5DEB3] bg-opacity-20 texture-bg">
   <div class="container mx-auto px-4 md:px-6">
-    <div class="max-w-3xl mx-auto bg-white p-6 md:p-8 rounded-lg shadow-md">
+    <div class="max-w-3xl mx-auto bg-white p-6 md:p-8 rounded-lg shadow-md section-animate">
       <div class="faq-item mb-6 pb-6 border-b">
-        <h3 class="text-xl font-bold text-secondary mb-3 flex items-center">
-          <i class="ri-question-line text-primary mr-2"></i>
+        <h3 class="text-xl font-bold text-[#8B4513] mb-3 flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#6B8E23] mr-2" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+          </svg>
           Как хранить мёд?
         </h3>
         <p class="text-gray-700">Мёд следует хранить в стеклянной или керамической посуде с плотно закрытой крышкой при комнатной температуре (18-20°C). Избегайте попадания прямых солнечных лучей и влаги. При правильном хранении мёд сохраняет свои свойства годами.</p>
       </div>
       
       <div class="faq-item mb-6 pb-6 border-b">
-        <h3 class="text-xl font-bold text-secondary mb-3 flex items-center">
-          <i class="ri-question-line text-primary mr-2"></i>
+        <h3 class="text-xl font-bold text-[#8B4513] mb-3 flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#6B8E23] mr-2" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+          </svg>
           Почему мёд кристаллизуется?
         </h3>
         <p class="text-gray-700">Кристаллизация — естественный процесс для натурального мёда. Скорость кристаллизации зависит от сорта мёда и соотношения глюкозы и фруктозы. Если мёд не кристаллизуется длительное время, это может указывать на его ненатуральность или термическую обработку.</p>
       </div>
       
       <div class="faq-item mb-6 pb-6 border-b">
-        <h3 class="text-xl font-bold text-secondary mb-3 flex items-center">
-          <i class="ri-question-line text-primary mr-2"></i>
+        <h3 class="text-xl font-bold text-[#8B4513] mb-3 flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#6B8E23] mr-2" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+          </svg>
           Какой срок доставки?
         </h3>
         <p class="text-gray-700">Срок доставки зависит от вашего региона:
@@ -584,8 +383,10 @@
       </div>
       
       <div class="faq-item mb-6 pb-6 border-b">
-        <h3 class="text-xl font-bold text-secondary mb-3 flex items-center">
-          <i class="ri-question-line text-primary mr-2"></i>
+        <h3 class="text-xl font-bold text-[#8B4513] mb-3 flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#6B8E23] mr-2" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+          </svg>
           Как оплатить заказ?
         </h3>
         <p class="text-gray-700">Мы принимаем следующие способы оплаты:
@@ -599,8 +400,10 @@
       </div>
       
       <div class="faq-item">
-        <h3 class="text-xl font-bold text-secondary mb-3 flex items-center">
-          <i class="ri-question-line text-primary mr-2"></i>
+        <h3 class="text-xl font-bold text-[#8B4513] mb-3 flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#6B8E23] mr-2" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+          </svg>
           Есть ли противопоказания?
         </h3>
         <p class="text-gray-700">Мёд не рекомендуется:
@@ -618,7 +421,7 @@
 </section>
 </main>
 
-<!-- Футер с точно выровненным текстом -->
+<!-- Футер -->
 <footer class="py-10 md:py-12 w-full">
   <div id="footer-contacts" class="container mx-auto px-4 md:px-6 w-full">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 w-full">
@@ -638,20 +441,20 @@
         <h4 class="text-base md:text-lg font-bold">Каталог</h4>
         <ul>
           <li>
-            <a href="/#product-1" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
+            <a href="/#product-1" class="hover:text-gray-300 transition-colors flex items-center py-1">
+              <span class="w-2 h-2 bg-white rounded-full mr-2"></span>
               <span class="text-sm md:text-base">Разнотравье</span>
             </a>
           </li>
           <li>
-            <a href="/#product-2" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
+            <a href="/#product-2" class="hover:text-gray-300 transition-colors flex items-center py-1">
+              <span class="w-2 h-2 bg-white rounded-full mr-2"></span>
               <span class="text-sm md:text-base">Таёжный мёд</span>
             </a>
           </li>
           <li>
-            <a href="/#product-3" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
+            <a href="/#product-3" class="hover:text-gray-300 transition-colors flex items-center py-1">
+              <span class="w-2 h-2 bg-white rounded-full mr-2"></span>
               <span class="text-sm md:text-base">Гречишный мёд</span>
             </a>
           </li>
@@ -663,20 +466,20 @@
         <h4 class="text-base md:text-lg font-bold">Материалы</h4>
         <ul>
           <li>
-            <a href="/blog/" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
+            <a href="/blog/" class="hover:text-gray-300 transition-colors flex items-center py-1">
+              <span class="w-2 h-2 bg-white rounded-full mr-2"></span>
               <span class="text-sm md:text-base">Блог</span>
             </a>
           </li>
           <li>
-            <a href="/faq/" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
+            <a href="/faq/" class="hover:text-gray-300 transition-colors flex items-center py-1">
+              <span class="w-2 h-2 bg-white rounded-full mr-2"></span>
               <span class="text-sm md:text-base">FAQ</span>
             </a>
           </li>
           <li>
-            <a href="/legal.html" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
+            <a href="/legal.html" class="hover:text-gray-300 transition-colors flex items-center py-1">
+              <span class="w-2 h-2 bg-white rounded-full mr-2"></span>
               <span class="text-sm md:text-base">Правовая информация</span>
             </a>
           </li>
@@ -688,26 +491,26 @@
         <h4 class="text-base md:text-lg font-bold">Информация</h4>
         <ul>
           <li>
-            <a href="/#benefits" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
+            <a href="/#benefits" class="hover:text-gray-300 transition-colors flex items-center py-1">
+              <span class="w-2 h-2 bg-white rounded-full mr-2"></span>
               <span class="text-sm md:text-base">Преимущества</span>
             </a>
           </li>
           <li>
-            <a href="/#about" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
+            <a href="/#about" class="hover:text-gray-300 transition-colors flex items-center py-1">
+              <span class="w-2 h-2 bg-white rounded-full mr-2"></span>
               <span class="text-sm md:text-base">О нас</span>
             </a>
           </li>
           <li>
-            <a href="/#footer-contacts" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
+            <a href="/#footer-contacts" class="hover:text-gray-300 transition-colors flex items-center py-1">
+              <span class="w-2 h-2 bg-white rounded-full mr-2"></span>
               <span class="text-sm md:text-base">Контакты</span>
             </a>
           </li>
           <li>
-            <a href="/delivery.html" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
+            <a href="/delivery.html" class="hover:text-gray-300 transition-colors flex items-center py-1">
+              <span class="w-2 h-2 bg-white rounded-full mr-2"></span>
               <span class="text-sm md:text-base">Доставка и оплата</span>
             </a>
           </li>
@@ -718,28 +521,29 @@
       <div class="footer-column">
         <h4 class="text-base md:text-lg font-bold">Контакты</h4>
         <ul>
-          <li>
-            <a class="footer-link-item">
-              <div class="contact-icon">
-                <i class="ri-map-pin-2-line ri-sm md:ri-base" aria-hidden="true"></i>
-              </div>
-              <span class="contact-text">Владимирская обл., г.Ковров</span>
+          <li class="py-1">
+            <div class="flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white mr-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+              </svg>
+              <span>Владимирская обл., г.Ковров</span>
+            </div>
+          </li>
+          <li class="py-1">
+            <a href="tel:+79209400222" class="flex items-center hover:text-gray-300">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white mr-2" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+              </svg>
+              <span>+7 (920) 940-02-22</span>
             </a>
           </li>
-          <li>
-            <a href="tel:+79209400222" class="footer-link-item">
-              <div class="contact-icon">
-                <i class="ri-phone-line ri-sm md:ri-base" aria-hidden="true"></i>
-              </div>
-              <span class="contact-text">+7 (920) 940-02-22</span>
-            </a>
-          </li>
-          <li>
-            <a href="mailto:altaymed.shop@yandex.ru" class="footer-link-item">
-              <div class="contact-icon">
-                <i class="ri-mail-line ri-sm md:ri-base" aria-hidden="true"></i>
-              </div>
-              <span class="contact-text">altaymed.shop@yandex.ru</span>
+          <li class="py-1">
+            <a href="mailto:altaymed.shop@yandex.ru" class="flex items-center hover:text-gray-300">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white mr-2" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+              </svg>
+              <span>altaymed.shop@yandex.ru</span>
             </a>
           </li>
         </ul>
@@ -747,32 +551,16 @@
         <!-- Социальные сети -->
         <div class="mt-4 md:mt-6">
           <p class="text-base md:text-lg font-bold mb-2 md:mb-3">Следите за нами</p>
-          <div class="flex space-x-2 md:space-x-3">
-            <a href="https://vk.com/honeybuckwheat" target="_blank" class="social-icon-bw" aria-label="Наша страница ВКонтакте">
-              <i class="ri-vk-line ri-lg" aria-hidden="true"></i>
+          <div class="flex space-x-3">
+            <a href="https://vk.com/honeybuckwheat" target="_blank" class="text-white hover:text-[#6B8E23] transition-colors">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M15.073 2H8.938C3.332 2 2 3.333 2 8.927v6.136C2 20.667 3.323 22 8.927 22h6.136C20.667 22 22 20.677 22 15.073V8.938C22 3.332 20.677 2 15.073 2zm3.073 14.27h-1.459c-.552 0-.718-.447-1.708-1.437-.864-.833-1.229-.937-1.448-.937-.302 0-.385.083-.385.5v1.312c0 .354-.115.563-1.042.563-1.52 0-3.124-.927-4.334-2.646-1.76-2.573-2.479-5.145-2.479-5.145S5.01 8.005 5 7.76c-.01-.27.115-.5.5-.5h1.46c.375 0 .51.177.656.573.708 1.688 1.812 3.177 2.375 3.177.188 0 .27-.083.27-.552V9.417c0-1.021-.583-1.416-.583-1.854 0-.208.167-.396.438-.396h2.292c.375 0 .5.198.5.646v3.229c0 .313.135.417.229.417.188 0 .333-.104.677-.448 1.125-1.25 1.812-3.124 1.812-3.124.094-.24.24-.5.615-.5h1.459c.438 0 .542.229.438.542-.135.406-1.354 2.666-1.354 2.666-.125.24-.188.365 0 .615.125.24.552.74.854 1.135.583.677.927 1.136 1.021 1.5.104.438-.083.667-.5.667z"/>
+              </svg>
             </a>
-            <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" class="social-icon-bw" aria-label="Наш Telegram канал">
-              <i class="ri-telegram-line ri-lg" aria-hidden="true"></i>
-            </a>
-            <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing" 
-               target="_blank" class="social-icon-bw" aria-label="Наше объявление на Авито">
-              <div class="avito-icon-bw" aria-hidden="true">
-                <svg viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg">
-                  <path fill="#04e061" d="M61.924 172.07c26.468 0 47.924-21.456 47.924-47.924S88.392 76.222 61.924 76.222 14 97.678 14 124.146s21.456 47.925 47.924 47.925z" transform="translate(7.024 7.024) scale(.92683)"/>
-                  <path fill="#ff4053" d="M149.044 166.007c15.992 0 28.956-12.963 28.956-28.955 0-15.992-12.964-28.955-28.956-28.955-15.99 0-28.954 12.963-28.954 28.955 0 15.992 12.963 28.955 28.954 28.955z" transform="translate(7.024 7.024) scale(.92683)"/>
-                  <path fill="#965eeb" d="M71.086 65.979c9.898 0 17.922-8.024 17.922-17.921 0-9.898-8.024-17.922-17.922-17.922-9.898 0-17.921 8.024-17.921 17.922 0 9.897 8.023 17.921 17.921 17.921z" transform="translate(7.024 7.024) scale(.92683)"/>
-                  <path fill="#0af" d="M137.789 97.856c21.519 0 38.964-17.444 38.964-38.963 0-21.52-17.445-38.964-38.964-38.964-21.52 0-38.964 17.445-38.964 38.964s17.445 38.963 38.964 38.963z" transform="translate(7.024 7.024) scale(.92683)"/>
-                </svg>
-              </div>
-            </a>
-            <!-- Иконка Яндекс Карт - обновленная версия -->
-            <a href="https://yandex.ru/maps/" target="_blank" class="social-icon-bw" aria-label="Наше местоположение на Яндекс Картах">
-              <div class="yandex-maps-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2C8.13 2 5 5.13 5 9C5 13.17 9.42 18.92 11.24 21.11C11.64 21.59 12.37 21.59 12.77 21.11C14.58 18.92 19 13.17 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" 
-                        fill="currentColor"/>
-                </svg>
-              </div>
+            <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" class="text-white hover:text-[#6B8E23] transition-colors">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.14.141-.259.259-.374.261l.213-3.053 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.136-.954l11.566-4.458c.538-.196 1.006.128.832.941z"/>
+              </svg>
             </a>
           </div>
         </div>
@@ -783,75 +571,31 @@
 
 <!-- Плавающая кнопка "Назад" -->
 <a href="#" id="back-button" class="floating-back-button" aria-label="Вернуться назад">
-  <div class="back-arrow" aria-hidden="true"></div>
+  <div class="back-arrow"></div>
 </a>
 
-<!-- Скрипт для управления плавающей кнопкой -->
+<!-- Скрипты -->
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const backButton = document.getElementById('back-button');
-    
-    // Показываем/скрываем кнопку при скролле
-    let isScrolling;
-    window.addEventListener('scroll', function() {
-      backButton.style.opacity = "1";
-      
-      clearTimeout(isScrolling);
-      isScrolling = setTimeout(function() {
-        backButton.style.opacity = "0";
-      }, 2000);
-    });
-    
-    // Обработка нажатия на кнопку "Назад"
-    backButton.addEventListener('click', function(e) {
-      e.preventDefault();
-      
-      // Проверяем историю переходов
-      if (document.referrer && document.referrer.includes(window.location.host)) {
-        // Если есть предыдущая страница на нашем сайте
-        window.history.back();
-      } else {
-        // Если нет истории или пришел с другого сайта
-        window.location.href = '/';
-      }
-    });
-
-    // Анимация появления секций
-    const animateSections = document.querySelectorAll('.section-animate');
-    
-    const sectionObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('section-visible');
-        }
-      });
-    }, {
-      threshold: 0.1
-    });
-    
-    animateSections.forEach(section => {
-      sectionObserver.observe(section);
-    });
-  });
-</script>
-
-<!-- Обработка мобильного меню -->
-<script>
+  // Анимация появления секции
   document.addEventListener('DOMContentLoaded', function() {
+    const faqSection = document.querySelector('.section-animate');
+    if (faqSection) {
+      setTimeout(() => {
+        faqSection.classList.add('section-visible');
+      }, 300);
+    }
+
+    // Показ/скрытие мобильного меню
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
     
-    mobileMenuButton.addEventListener('click', function() {
-      if (mobileMenu.classList.contains('hidden')) {
-        mobileMenu.classList.remove('hidden');
-        mobileMenu.classList.add('block');
-      } else {
-        mobileMenu.classList.add('hidden');
-        mobileMenu.classList.remove('block');
-      }
-    });
-    
-    // Плавная прокрутка к якорям
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+
+    // Плавная прокрутка
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         if (this.getAttribute('href') === '#') return;
@@ -866,34 +610,52 @@
             behavior: 'smooth'
           });
           
-          // Закрыть мобильное меню при клике на ссылку
-          if (!mobileMenu.classList.contains('hidden') && window.innerWidth < 768) {
+          // Закрыть мобильное меню
+          if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
             mobileMenu.classList.add('hidden');
-            mobileMenu.classList.remove('block');
           }
         }
       });
     });
+
+    // Плавающая кнопка "Назад"
+    const backButton = document.getElementById('back-button');
+    if (backButton) {
+      // Показываем/скрываем кнопку при скролле
+      let isScrolling;
+      window.addEventListener('scroll', function() {
+        backButton.style.opacity = "1";
+        
+        clearTimeout(isScrolling);
+        isScrolling = setTimeout(function() {
+          backButton.style.opacity = "0";
+        }, 2000);
+      });
+      
+      // Обработка нажатия
+      backButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        if (document.referrer && document.referrer.includes(window.location.host)) {
+          window.history.back();
+        } else {
+          window.location.href = '/';
+        }
+      });
+    }
   });
-</script>
 
-<!-- Отложенная загрузка Яндекс.Метрики -->
-<script>
-  window.addEventListener('load', function() {
-    setTimeout(function() {
-      const yaScript = document.createElement('script');
-      yaScript.src = 'https://mc.yandex.ru/metrika/tag.js';
-      yaScript.async = true;
-      document.head.appendChild(yaScript);
+  // Инициализация Яндекс.Метрики
+  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+  m[i].l=1*new Date();
+  for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+  k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+  (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-      yaScript.onload = function() {
-        ym(102951378, "init", {
-          clickmap: true,
-          trackLinks: true,
-          accurateTrackBounce: true
-        });
-      };
-    }, 3000);
+  ym(102951378, "init", {
+       clickmap:true,
+       trackLinks:true,
+       accurateTrackBounce:true
   });
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/102951378" style="position:absolute; left:-9999px;" alt="" /></div></noscript>

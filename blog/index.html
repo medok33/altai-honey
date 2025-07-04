@@ -144,6 +144,8 @@
   .nav-btn {
     background: var(--primary);
     color: white;
+    /* Исправление: скругление для кнопок */
+    border-radius: 8px !important;
   }
   
   .header-logo {
@@ -392,7 +394,8 @@
       <a href="/#about" class="nav-link">О нас</a>
       <a href="/#footer-contacts" class="nav-link">Контакты</a>
       <a href="/blog/" class="active-nav-link-alt">Блог</a>
-      <a href="/#order" class="nav-btn px-4 md:px-6 py-1 md:py-2 rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">Заказать</a>
+      <!-- Исправленная кнопка "Заказать" -->
+      <a href="/#order" class="nav-btn px-4 md:px-6 py-1 md:py-2 hover:bg-opacity-90 transition-all whitespace-nowrap">Заказать</a>
     </div>
     
     <button class="md:hidden w-10 h-10 flex items-center justify-center" id="mobile-menu-button">
@@ -408,7 +411,8 @@
       <a href="/#about" class="nav-link py-2">О нас</a>
       <a href="/#footer-contacts" class="nav-link py-2">Контакты</a>
       <a href="/blog/" class="active-nav-link-alt py-2 text-center">Блог</a>
-      <a href="/#order" class="nav-btn py-2 text-center rounded-button hover:bg-opacity-90 transition-all">Заказать</a>
+      <!-- Исправленная кнопка "Заказать" для мобильной версии -->
+      <a href="/#order" class="nav-btn py-2 text-center hover:bg-opacity-90 transition-all">Заказать</a>
     </div>
   </div>
 </nav>

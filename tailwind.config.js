@@ -1,33 +1,36 @@
 module.exports = {
-  // Явно указываем все места, где могут появляться классы Tailwind
+  // Оптимизированные пути для полного покрытия
   content: [
-    // основные HTML в корне
-    './index.html',
-    './delivery.html',
-    './legal.html',
-    './offline.html',
-
-    // разделы с HTML в подпапках
+    // Все HTML-файлы в корне
+    './*.html',
+    
+    // Страницы блога и FAQ
     './blog/**/*.html',
     './faq/**/*.html',
-
-    // все HTML вообще (на всякий случай)
-    './**/*.html',
-
-    // JS-код, где могут динамически добавляться классы
+    
+    // JavaScript
     './scripts/**/*.{js,ts}',
-    './scr/**/*.{js,ts}',
     './src/**/*.{js,ts,jsx}',
-
-    // если у вас есть Vue/React-файлы – добавьте их тоже
-    // './src/**/*.{vue,tsx}',
+    
+    // Временное сохранение старого пути (на 2 недели)
+    './scr/**/*.{js,ts}'
   ],
 
-  // Сохраняем динамические классы, которыми оперируете в JS
+  // Расширенный safelist с защитой всех специфичных классов
   safelist: [
+    // Существующие классы
     'modal-open', 'modal-close',
     'step-1', 'step-2', 'step-3',
-    // …добавьте здесь любые другие классы, которыми манипулируете через JS
+    
+    // Новые классы
+    'carpet-size-selector',
+    
+    // Автозащита по паттернам
+    { pattern: /delivery-.*/ },
+    { pattern: /carpet-.*/ },
+    { pattern: /blog-.*/ },
+    { pattern: /post-.*/ },
+    { pattern: /step-\d/ }
   ],
 
   theme: {
@@ -37,14 +40,23 @@ module.exports = {
         secondary: '#8B4513',
         orange: '#FFA500',
       },
-      borderRadius: {
-        /* ваша текущая градация */
-      },
       fontFamily: {
         sans: ['"Open Sans"', 'sans-serif'],
         pacifico: ['Pacifico', 'cursive']
+      },
+      // Новые кастомизации для безопасности
+      borderRadius: {
+        DEFAULT: '0.25rem',
+        'md': '0.375rem',
+        'carpet': '12px'
       }
     }
   },
-  plugins: []
+  plugins: [],
+  
+  // Экспериментальные функции для совместимости
+  future: {
+    hoverOnlyWhenSupported: true,
+    respectDefaultRingColorOpacity: true
+  }
 };

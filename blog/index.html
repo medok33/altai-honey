@@ -9,7 +9,7 @@
 
 <!-- Мета-теги верификации -->
 <meta name="yandex-verification" content="9c5350476939e370">
-<meta name="google-site-verification" content="JsJoSVyM5o4vxTSdN88FHLrAwPaoQ0nEjpJkiub50AE">
+<meta name="google-site-verification" content="JsJoSVyM5o4vxTSdN88FHLrAwPaoQ0nEjpJpkiub50AE">
 
 <!-- Open Graph -->
 <meta property="og:title" content="Блог о мёде | Алтайский мёд">
@@ -33,24 +33,24 @@
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#9f5524">
 
-<!-- Preload критических ресурсов -->
+<!-- Предзагрузка критических ресурсов -->
 <link rel="preload" href="/assets/css/tailwind.min.css" as="style">
 <link rel="preload" href="/fonts/Pacifico-Regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/OpenSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/OpenSans-Medium.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/OpenSans-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/OpenSans-Bold.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/assets/fonts/remixicon/remixicon.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/images/image-7.jpg" as="image">
+<link rel="preload" href="/images/image-7-large.webp" as="image" fetchpriority="high">
+
+<!-- Предзагрузка адаптивных изображений для фона -->
+<link rel="preload" href="/images/image-7-small.webp" as="image" media="(max-width: 640px)">
+<link rel="preload" href="/images/image-7-medium.webp" as="image" media="(min-width: 641px) and (max-width: 1024px)">
 
 <!-- Локальный Tailwind CSS -->
 <link rel="stylesheet" href="/assets/css/tailwind.min.css">
 
 <!-- Локальные шрифты -->
 <link rel="stylesheet" href="/fonts/fonts.css" media="print" onload="this.media='all'">
-
-<!-- Подключение Remix Icon -->
-<link rel="stylesheet" href="/assets/fonts/remixicon/remixicon.css">
 
 <!-- Schema.org разметка для блога -->
 <script type="application/ld+json">
@@ -386,6 +386,71 @@
     object-fit: cover;
     object-position: top;
   }
+
+  /* Стили для шапки блога */
+  .hero-bg {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+    background-size: cover;
+    background-position: center;
+  }
+  
+  @media (max-width: 640px) {
+    .hero-bg {
+      background-image: url("/images/image-7-small.webp");
+    }
+  }
+  
+  @media (min-width: 641px) and (max-width: 1024px) {
+    .hero-bg {
+      background-image: url("/images/image-7-medium.webp");
+    }
+  }
+  
+  @media (min-width: 1025px) {
+    .hero-bg {
+      background-image: url("/images/image-7-large.webp");
+    }
+  }
+
+  /* Встроенные стили для используемых иконок */
+  [class^="ri-"]::before, [class*=" ri-"]::before {
+    font-family: 'remixicon' !important;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: inline-block;
+    text-decoration: none;
+    text-transform: none;
+  }
+  
+  .ri-menu-line::before { content: "\ef3e"; }
+  .ri-map-pin-2-line::before { content: "\ec47"; }
+  .ri-phone-line::before { content: "\efce"; }
+  .ri-mail-line::before { content: "\eef6"; }
+  .ri-vk-line::before { content: "\f19d"; }
+  .ri-telegram-line::before { content: "\f1d8"; }
+  .ri-shopping-bag-line::before { content: "\f045"; }
+  .ri-map-2-line::before { content: "\ec3f"; }
+
+  /* Анимация для пользователей с предпочтением reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+    
+    .blog-post-card:hover,
+    .floating-back-button:hover {
+      transform: none !important;
+      box-shadow: none !important;
+    }
+    
+    .section-animate {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+  }
 </style>
 </head>
 <body>
@@ -400,7 +465,6 @@
       <a href="/#about" class="nav-link">О нас</a>
       <a href="/#footer-contacts" class="nav-link">Контакты</a>
       <a href="/blog/" class="active-nav-link-alt">Блог</a>
-      <!-- Исправленная кнопка "Заказать" -->
       <a href="/#order" class="nav-btn hover:bg-opacity-90 transition-all whitespace-nowrap">Заказать</a>
     </div>
     
@@ -417,7 +481,6 @@
       <a href="/#about" class="nav-link py-2">О нас</a>
       <a href="/#footer-contacts" class="nav-link py-2">Контакты</a>
       <a href="/blog/" class="active-nav-link-alt py-2 text-center">Блог</a>
-      <!-- Исправленная кнопка "Заказать" для мобильной версии -->
       <a href="/#order" class="nav-btn py-2 text-center hover:bg-opacity-90 transition-all">Заказать</a>
     </div>
   </div>
@@ -425,7 +488,7 @@
 
 <main>
 <!-- Шапка блога -->
-<section class="min-h-[50vh] flex items-center" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/image-7.jpg'); background-size: cover; background-position: center;">
+<section class="min-h-[50vh] flex items-center hero-bg">
   <div class="container mx-auto px-4 text-center text-white">
     <h1 class="text-3xl md:text-4xl lg:text-5xl font-pacifico mb-4">Полезные статьи о мёде</h1>
     <p class="text-xl max-w-2xl mx-auto">Узнайте больше о пользе алтайского мёда и традициях пчеловодства</p>
@@ -439,12 +502,29 @@
       <!-- Статья 1 -->
       <div class="blog-post-card bg-white rounded-lg mb-10 overflow-hidden shadow-md" itemscope itemtype="https://schema.org/BlogPosting">
         <div class="blog-image-container">
-          <img src="/images/image-8.jpg" 
-               alt="Как выбрать качественный мёд"
-               class="blog-image"
-               loading="lazy"
-               decoding="async"
-               itemprop="image">
+          <picture>
+            <source 
+              type="image/webp" 
+              srcset="
+                /images/image-8-410.webp 410w,
+                /images/image-8-800.webp 800w,
+                /images/image-8-1200.webp 1200w"
+              sizes="(max-width: 480px) 410px, (max-width: 1024px) 800px, 1200px"
+            >
+            <img 
+              src="/images/image-8.jpg" 
+              srcset="
+                /images/image-8-410.jpg 410w,
+                /images/image-8-800.jpg 800w,
+                /images/image-8-1200.jpg 1200w"
+              sizes="(max-width: 480px) 410px, (max-width: 1024px) 800px, 1200px"
+              alt="Как выбрать качественный мёд"
+              class="blog-image"
+              loading="lazy"
+              decoding="async"
+              itemprop="image"
+            >
+          </picture>
         </div>
         <div class="p-6">
           <h2 class="text-xl md:text-2xl font-bold mb-2" itemprop="headline">Как выбрать качественный мёд</h2>
@@ -460,12 +540,29 @@
       <!-- Статья 2 -->
       <div class="blog-post-card bg-white rounded-lg mb-10 overflow-hidden shadow-md" itemscope itemtype="https://schema.org/BlogPosting">
         <div class="blog-image-container">
-          <img src="/images/image-9.jpg" 
-               alt="Мёд в здоровом питании"
-               class="blog-image"
-               loading="lazy"
-               decoding="async"
-               itemprop="image">
+          <picture>
+            <source 
+              type="image/webp" 
+              srcset="
+                /images/image-9-410.webp 410w,
+                /images/image-9-800.webp 800w,
+                /images/image-9-1200.webp 1200w"
+              sizes="(max-width: 480px) 410px, (max-width: 1024px) 800px, 1200px"
+            >
+            <img 
+              src="/images/image-9.jpg" 
+              srcset="
+                /images/image-9-410.jpg 410w,
+                /images/image-9-800.jpg 800w,
+                /images/image-9-1200.jpg 1200w"
+              sizes="(max-width: 480px) 410px, (max-width: 1024px) 800px, 1200px"
+              alt="Мёд в здоровом питании"
+              class="blog-image"
+              loading="lazy"
+              decoding="async"
+              itemprop="image"
+            >
+          </picture>
         </div>
         <div class="p-6">
           <h2 class="text-xl md:text-2xl font-bold mb-2" itemprop="headline">Мёд в здоровом питании</h2>
@@ -481,12 +578,29 @@
       <!-- Статья 3 -->
       <div class="blog-post-card bg-white rounded-lg mb-10 overflow-hidden shadow-md" itemscope itemtype="https://schema.org/BlogPosting">
         <div class="blog-image-container">
-          <img src="/images/image-10.jpg" 
-               alt="Традиции алтайского пчеловодства"
-               class="blog-image"
-               loading="lazy"
-               decoding="async"
-               itemprop="image">
+          <picture>
+            <source 
+              type="image/webp" 
+              srcset="
+                /images/image-10-410.webp 410w,
+                /images/image-10-800.webp 800w,
+                /images/image-10-1200.webp 1200w"
+              sizes="(max-width: 480px) 410px, (max-width: 1024px) 800px, 1200px"
+            >
+            <img 
+              src="/images/image-10.jpg" 
+              srcset="
+                /images/image-10-410.jpg 410w,
+                /images/image-10-800.jpg 800w,
+                /images/image-10-1200.jpg 1200w"
+              sizes="(max-width: 480px) 410px, (max-width: 1024px) 800px, 1200px"
+              alt="Традиции алтайского пчеловодства"
+              class="blog-image"
+              loading="lazy"
+              decoding="async"
+              itemprop="image"
+            >
+          </picture>
         </div>
         <div class="p-6">
           <h2 class="text-xl md:text-2xl font-bold mb-2" itemprop="headline">Традиции алтайского пчеловодства</h2>
@@ -741,10 +855,20 @@ document.addEventListener('DOMContentLoaded', function() {
   animateSections.forEach(section => {
     sectionObserver.observe(section);
   });
+});
+
+// Отложенная загрузка аналитики и Service Worker
+window.addEventListener('load', function() {
+  // Загрузка Service Worker с задержкой
+  setTimeout(function() {
+    const script = document.createElement('script');
+    script.src = '/register-sw.js';
+    script.defer = true;
+    document.body.appendChild(script);
+  }, 1000);
   
-  // Оптимизированная загрузка аналитики
-  function loadAnalytics() {
-    // Yandex Metrika
+  // Загрузка аналитики с задержкой
+  setTimeout(function() {
     const yaScript = document.createElement('script');
     yaScript.src = 'https://mc.yandex.ru/metrika/tag.js';
     yaScript.async = true;
@@ -757,17 +881,11 @@ document.addEventListener('DOMContentLoaded', function() {
         accurateTrackBounce: true
       });
     };
-  }
-
-  // Загружаем аналитику после полной загрузки страницы
-  window.addEventListener('load', function() {
-    setTimeout(loadAnalytics, 5000);
-  });
+  }, 3000);
 });
 </script>
 <noscript>
   <div><img src="https://mc.yandex.ru/watch/102951378" style="position:absolute; left:-9999px;" alt=""></div>
 </noscript>
-<script defer src="/register-sw.js"></script>
 </body>
 </html>

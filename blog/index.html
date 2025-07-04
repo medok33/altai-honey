@@ -420,21 +420,24 @@
     opacity: 1;
   }
   
-  /* Изображения статей */
-  .blog-image-container {
-    height: 16rem;
-    overflow: hidden;
+  /* Универсальный класс для затемнения изображений */
+  .image-darken {
+    position: relative;
   }
   
-  .blog-image {
+  .image-darken::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: top;
+    background: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56));
+    z-index: 1;
+    pointer-events: none;
   }
 
   /* Стили для шапки блога */
-  /* Обновленный стиль для баннера */
   .hero-container {
     position: relative;
     min-height: 50vh;
@@ -454,7 +457,6 @@
     z-index: -1;
   }
   
-  /* Уменьшенное затемнение на 20% (с 0.7 до 0.56) */
   .hero-overlay {
     position: absolute;
     top: 0;
@@ -469,6 +471,20 @@
     position: relative;
     z-index: 1;
     text-align: center;
+  }
+  
+  /* Изображения статей */
+  .blog-image-container {
+    position: relative;
+    height: 16rem;
+    overflow: hidden;
+  }
+  
+  .blog-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
   }
   
   /* Анимация для пользователей с предпочтением reduced motion */
@@ -528,7 +544,7 @@
 </nav>
 
 <main>
-<!-- Обновленная шапка блога с уменьшенным затемнением -->
+<!-- Шапка блога с уменьшенным затемнением -->
 <section class="hero-container">
   <!-- Оптимизированный баннер для LCP -->
   <picture>
@@ -547,7 +563,7 @@
     <img 
       src="/images/image-7-desktop.jpg" 
       alt="Алтайский мёд - полезные статьи о пчеловодстве и натуральном мёде"
-      class="hero-image"
+      class="hero-image image-darken" <!-- Добавлен класс затемнения -->
       loading="eager"
       decoding="async"
       width="1920"
@@ -563,13 +579,13 @@
   </div>
 </section>
 
-<!-- Список статей -->
+<!-- Список статей с затемненными изображениями -->
 <section class="py-16 bg-[#F5DEB3] bg-opacity-20 texture-bg section-animate">
   <div class="container mx-auto px-4 md:px-6">
     <div class="max-w-4xl mx-auto">
       <!-- Статья 1 -->
       <div class="blog-post-card bg-white rounded-lg mb-10 overflow-hidden shadow-md" itemscope itemtype="https://schema.org/BlogPosting">
-        <div class="blog-image-container">
+        <div class="blog-image-container image-darken"> <!-- Добавлен класс затемнения -->
           <picture>
             <source 
               type="image/webp" 
@@ -607,7 +623,7 @@
       
       <!-- Статья 2 -->
       <div class="blog-post-card bg-white rounded-lg mb-10 overflow-hidden shadow-md" itemscope itemtype="https://schema.org/BlogPosting">
-        <div class="blog-image-container">
+        <div class="blog-image-container image-darken"> <!-- Добавлен класс затемнения -->
           <picture>
             <source 
               type="image/webp" 
@@ -645,7 +661,7 @@
       
       <!-- Статья 3 -->
       <div class="blog-post-card bg-white rounded-lg mb-10 overflow-hidden shadow-md" itemscope itemtype="https://schema.org/BlogPosting">
-        <div class="blog-image-container">
+        <div class="blog-image-container image-darken"> <!-- Добавлен класс затемнения -->
           <picture>
             <source 
               type="image/webp" 

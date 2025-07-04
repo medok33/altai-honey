@@ -112,6 +112,49 @@
 }
 </script>
 
+<!-- Schema.org LocalBusiness -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Алтайский мёд",
+  "image": "https://altaymed.shop/images/logo.webp",
+  "@id": "https://altaymed.shop",
+  "url": "https://altaymed.shop",
+  "telephone": "+79209400222",
+  "priceRange": "₽₽",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Владимирская обл. Город Ковров",
+    "addressRegion": "Владимирская область",
+    "postalCode": "601900",
+    "addressCountry": "RU"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 56.3572,
+    "longitude": 41.3192
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ],
+    "opens": "09:00",
+    "closes": "18:00"
+  },
+  "sameAs": [
+    "https://vk.com/honeybuckwheat",
+    "https://t.me/HONEYBUCKWHEAT"
+  ]
+}
+</script>
+
 <style>
   :root {
     --primary: #6B8E23;
@@ -391,30 +434,42 @@
   }
 
   /* Стили для шапки блога */
-  .hero-bg {
+  /* Обновленный стиль для баннера */
+  .hero-container {
+    position: relative;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+  
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
-    background-size: cover;
-    background-position: center;
+    z-index: -1;
   }
   
-  @media (max-width: 640px) {
-    .hero-bg {
-      background-image: url("/images/image-7-small.webp");
-    }
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
   }
   
-  @media (min-width: 641px) and (max-width: 1024px) {
-    .hero-bg {
-      background-image: url("/images/image-7-medium.webp");
-    }
-  }
-  
-  @media (min-width: 1025px) {
-    .hero-bg {
-      background-image: url("/images/image-7-desktop.webp");
-    }
-  }
-
   /* Анимация для пользователей с предпочтением reduced motion */
   @media (prefers-reduced-motion: reduce) {
     * {
@@ -451,7 +506,9 @@
       <a href="/#order" class="nav-btn hover:bg-opacity-90 transition-all whitespace-nowrap">Заказать</a>
     </div>
     
-    <button class="md:hidden w-10 h-10 flex items-center justify-center" id="mobile-menu-button">
+    <button class="md:hidden w-10 h-10 flex items-center justify-center" 
+            id="mobile-menu-button"
+            aria-label="Открыть меню">
       <i class="ri-menu-line text-gray-900 ri-xl"></i>
     </button>
   </div>
@@ -470,11 +527,38 @@
 </nav>
 
 <main>
-<!-- Шапка блога -->
-<section class="min-h-[50vh] flex items-center hero-bg">
-  <div class="container mx-auto px-4 text-center text-white">
-    <h1 class="text-3xl md:text-4xl lg:text-5xl font-pacifico mb-4">Полезные статьи о мёде</h1>
-    <p class="text-xl max-w-2xl mx-auto">Узнайте больше о пользе алтайского мёда и традициях пчеловодства</p>
+<!-- Обновленная шапка блога с затемнением -->
+<section class="hero-container">
+  <!-- Оптимизированный баннер для LCP -->
+  <picture>
+    <source 
+      media="(max-width: 640px)" 
+      srcset="/images/image-7-small.webp" 
+      type="image/webp">
+    <source 
+      media="(min-width: 641px) and (max-width: 1024px)" 
+      srcset="/images/image-7-medium.webp" 
+      type="image/webp">
+    <source 
+      media="(min-width: 1025px)" 
+      srcset="/images/image-7-desktop.webp" 
+      type="image/webp">
+    <img 
+      src="/images/image-7-desktop.jpg" 
+      alt="Алтайский мёд - полезные статьи о пчеловодстве и натуральном мёде"
+      class="hero-image"
+      loading="eager"
+      decoding="async"
+      width="1920"
+      height="1080"
+    >
+  </picture>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="container mx-auto px-4 text-center text-white">
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-pacifico mb-4">Полезные статьи о мёде</h1>
+      <p class="text-xl max-w-2xl mx-auto">Узнайте больше о пользе алтайского мёда и традициях пчеловодства</p>
+    </div>
   </div>
 </section>
 
@@ -501,7 +585,7 @@
                 /images/image-8-800.jpg 800w,
                 /images/image-8-1200.jpg 1200w"
               sizes="(max-width: 480px) 410px, (max-width: 1024px) 800px, 1200px"
-              alt="Как выбрать качественный мёд"
+              alt="Как выбрать качественный мёд - советы по определению настоящего алтайского мёда"
               class="blog-image"
               loading="lazy"
               decoding="async"
@@ -539,7 +623,7 @@
                 /images/image-9-800.jpg 800w,
                 /images/image-9-1200.jpg 1200w"
               sizes="(max-width: 480px) 410px, (max-width: 1024px) 800px, 1200px"
-              alt="Мёд в здоровом питании"
+              alt="Мёд в здоровом питании - рецепты и рекомендации по употреблению натурального мёда"
               class="blog-image"
               loading="lazy"
               decoding="async"
@@ -577,7 +661,7 @@
                 /images/image-10-800.jpg 800w,
                 /images/image-10-1200.jpg 1200w"
               sizes="(max-width: 480px) 410px, (max-width: 1024px) 800px, 1200px"
-              alt="Традиции алтайского пчеловодства"
+              alt="Традиции алтайского пчеловодства - история и секреты сбора мёда в горах Алтая"
               class="blog-image"
               loading="lazy"
               decoding="async"
@@ -730,17 +814,17 @@
         <div class="mt-4 md:mt-6">
           <p class="text-base md:text-lg font-bold mb-2 md:mb-3">Следите за нами</p>
           <div class="flex space-x-2 md:space-x-3">
-            <a href="https://vk.com/honeybuckwheat" target="_blank" rel="noopener" class="social-icon-bw">
+            <a href="https://vk.com/honeybuckwheat" target="_blank" rel="noopener" class="social-icon-bw" aria-label="Наша страница ВКонтакте">
               <i class="ri-vk-line ri-lg"></i>
             </a>
-            <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" rel="noopener" class="social-icon-bw">
+            <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" rel="noopener" class="social-icon-bw" aria-label="Наш Telegram канал">
               <i class="ri-telegram-line ri-lg"></i>
             </a>
             <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing" 
-               target="_blank" rel="noopener" class="social-icon-bw">
+               target="_blank" rel="noopener" class="social-icon-bw" aria-label="Наше объявление на Авито">
               <i class="ri-shopping-bag-line ri-lg"></i>
             </a>
-            <a href="https://yandex.ru/maps/" target="_blank" rel="noopener" class="social-icon-bw">
+            <a href="https://yandex.ru/maps/" target="_blank" rel="noopener" class="social-icon-bw" aria-label="Наше местоположение на Яндекс Картах">
               <i class="ri-map-2-line ri-lg"></i>
             </a>
           </div>
@@ -751,7 +835,7 @@
 </footer>
 
 <!-- Плавающая кнопка "Назад" -->
-<a href="#" id="back-button" class="floating-back-button">
+<a href="#" id="back-button" class="floating-back-button" aria-label="Вернуться назад">
   <div class="back-arrow"></div>
 </a>
 

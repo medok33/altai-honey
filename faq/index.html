@@ -62,8 +62,6 @@
   .nav-btn {
     background: #6B8E23 !important;
     color: white !important;
-    border-radius: 8px !important;
-    padding: 0.5rem 1.5rem !important;
   }
   .header-logo {
     color: #6B8E23 !important;
@@ -306,15 +304,13 @@
       <a href="/#footer-contacts" class="nav-link">Контакты</a>
       <a href="/blog/" class="nav-link">Блог</a>
       <a href="/faq/" class="active-nav-link-alt">FAQ</a>
-      <a href="/#order" class="nav-btn px-4 md:px-6 py-1 md:py-2 hover:bg-opacity-90 transition-all whitespace-nowrap">Заказать</a>
+      <a href="/#order" class="nav-btn px-4 md:px-6 py-1 md:py-2 rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">Заказать</a>
     </div>
     
     <button class="md:hidden w-10 h-10 flex items-center justify-center" 
             id="mobile-menu-button"
             aria-label="Открыть меню">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-      </svg>
+      <i class="ri-menu-line text-gray-900 ri-xl"></i>
     </button>
   </div>
   
@@ -327,7 +323,7 @@
       <a href="/#footer-contacts" class="nav-link py-2">Контакты</a>
       <a href="/blog/" class="nav-link py-2">Блог</a>
       <a href="/faq/" class="active-nav-link-alt py-2 text-center">FAQ</a>
-      <a href="/#order" class="nav-btn py-2 text-center hover:bg-opacity-90 transition-all">Заказать</a>
+      <a href="/#order" class="nav-btn py-2 text-center rounded-button hover:bg-opacity-90 transition-all">Заказать</a>
     </div>
   </div>
 </nav>
@@ -342,34 +338,28 @@
 </section>
 
 <!-- Содержимое FAQ -->
-<section class="py-16 bg-[#F5DEB3] bg-opacity-20 texture-bg">
+<section class="py-16 bg-[#F5DEB3] bg-opacity-20 texture-bg section-animate">
   <div class="container mx-auto px-4 md:px-6">
-    <div class="max-w-3xl mx-auto bg-white p-6 md:p-8 rounded-lg shadow-md section-animate">
+    <div class="max-w-3xl mx-auto bg-white p-6 md:p-8 rounded-lg shadow-md">
       <div class="faq-item mb-6 pb-6 border-b">
-        <h3 class="text-xl font-bold text-[#8B4513] mb-3 flex items-center">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#6B8E23] mr-2" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
-          </svg>
+        <h3 class="text-xl font-bold text-secondary mb-3 flex items-center">
+          <i class="ri-question-line text-primary mr-2"></i>
           Как хранить мёд?
         </h3>
         <p class="text-gray-700">Мёд следует хранить в стеклянной или керамической посуде с плотно закрытой крышкой при комнатной температуре (18-20°C). Избегайте попадания прямых солнечных лучей и влаги. При правильном хранении мёд сохраняет свои свойства годами.</p>
       </div>
       
       <div class="faq-item mb-6 pb-6 border-b">
-        <h3 class="text-xl font-bold text-[#8B4513] mb-3 flex items-center">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#6B8E23] mr-2" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
-          </svg>
+        <h3 class="text-xl font-bold text-secondary mb-3 flex items-center">
+          <i class="ri-question-line text-primary mr-2"></i>
           Почему мёд кристаллизуется?
         </h3>
         <p class="text-gray-700">Кристаллизация — естественный процесс для натурального мёда. Скорость кристаллизации зависит от сорта мёда и соотношения глюкозы и фруктозы. Если мёд не кристаллизуется длительное время, это может указывать на его ненатуральность или термическую обработку.</p>
       </div>
       
       <div class="faq-item mb-6 pb-6 border-b">
-        <h3 class="text-xl font-bold text-[#8B4513] mb-3 flex items-center">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#6B8E23] mr-2" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
-          </svg>
+        <h3 class="text-xl font-bold text-secondary mb-3 flex items-center">
+          <i class="ri-question-line text-primary mr-2"></i>
           Какой срок доставки?
         </h3>
         <p class="text-gray-700">Срок доставки зависит от вашего региона:
@@ -383,10 +373,8 @@
       </div>
       
       <div class="faq-item mb-6 pb-6 border-b">
-        <h3 class="text-xl font-bold text-[#8B4513] mb-3 flex items-center">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#6B8E23] mr-2" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
-          </svg>
+        <h3 class="text-xl font-bold text-secondary mb-3 flex items-center">
+          <i class="ri-question-line text-primary mr-2"></i>
           Как оплатить заказ?
         </h3>
         <p class="text-gray-700">Мы принимаем следующие способы оплаты:
@@ -400,10 +388,8 @@
       </div>
       
       <div class="faq-item">
-        <h3 class="text-xl font-bold text-[#8B4513] mb-3 flex items-center">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#6B8E23] mr-2" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
-          </svg>
+        <h3 class="text-xl font-bold text-secondary mb-3 flex items-center">
+          <i class="ri-question-line text-primary mr-2"></i>
           Есть ли противопоказания?
         </h3>
         <p class="text-gray-700">Мёд не рекомендуется:
@@ -523,26 +509,19 @@
         <ul>
           <li class="py-1">
             <div class="flex items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white mr-2" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
-              </svg>
+              <i class="ri-map-pin-2-line ri-sm md:ri-base mr-2"></i>
               <span>Владимирская обл., г.Ковров</span>
             </div>
           </li>
           <li class="py-1">
             <a href="tel:+79209400222" class="flex items-center hover:text-gray-300">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white mr-2" viewBox="0 0 20 20" fill="currentColor">
-                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-              </svg>
+              <i class="ri-phone-line ri-sm md:ri-base mr-2"></i>
               <span>+7 (920) 940-02-22</span>
             </a>
           </li>
           <li class="py-1">
             <a href="mailto:altaymed.shop@yandex.ru" class="flex items-center hover:text-gray-300">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white mr-2" viewBox="0 0 20 20" fill="currentColor">
-                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-              </svg>
+              <i class="ri-mail-line ri-sm md:ri-base mr-2"></i>
               <span>altaymed.shop@yandex.ru</span>
             </a>
           </li>
@@ -553,14 +532,10 @@
           <p class="text-base md:text-lg font-bold mb-2 md:mb-3">Следите за нами</p>
           <div class="flex space-x-3">
             <a href="https://vk.com/honeybuckwheat" target="_blank" class="text-white hover:text-[#6B8E23] transition-colors">
-              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M15.073 2H8.938C3.332 2 2 3.333 2 8.927v6.136C2 20.667 3.323 22 8.927 22h6.136C20.667 22 22 20.677 22 15.073V8.938C22 3.332 20.677 2 15.073 2zm3.073 14.27h-1.459c-.552 0-.718-.447-1.708-1.437-.864-.833-1.229-.937-1.448-.937-.302 0-.385.083-.385.5v1.312c0 .354-.115.563-1.042.563-1.52 0-3.124-.927-4.334-2.646-1.76-2.573-2.479-5.145-2.479-5.145S5.01 8.005 5 7.76c-.01-.27.115-.5.5-.5h1.46c.375 0 .51.177.656.573.708 1.688 1.812 3.177 2.375 3.177.188 0 .27-.083.27-.552V9.417c0-1.021-.583-1.416-.583-1.854 0-.208.167-.396.438-.396h2.292c.375 0 .5.198.5.646v3.229c0 .313.135.417.229.417.188 0 .333-.104.677-.448 1.125-1.25 1.812-3.124 1.812-3.124.094-.24.24-.5.615-.5h1.459c.438 0 .542.229.438.542-.135.406-1.354 2.666-1.354 2.666-.125.24-.188.365 0 .615.125.24.552.74.854 1.135.583.677.927 1.136 1.021 1.5.104.438-.083.667-.5.667z"/>
-              </svg>
+              <i class="ri-vk-line ri-lg"></i>
             </a>
             <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" class="text-white hover:text-[#6B8E23] transition-colors">
-              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.14.141-.259.259-.374.261l.213-3.053 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.136-.954l11.566-4.458c.538-.196 1.006.128.832.941z"/>
-              </svg>
+              <i class="ri-telegram-line ri-lg"></i>
             </a>
           </div>
         </div>
@@ -646,16 +621,21 @@
   });
 
   // Инициализация Яндекс.Метрики
-  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-  m[i].l=1*new Date();
-  for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-  k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-  (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      const yaScript = document.createElement('script');
+      yaScript.src = 'https://mc.yandex.ru/metrika/tag.js';
+      yaScript.async = true;
+      document.head.appendChild(yaScript);
 
-  ym(102951378, "init", {
-       clickmap:true,
-       trackLinks:true,
-       accurateTrackBounce:true
+      yaScript.onload = function() {
+        ym(102951378, "init", {
+          clickmap: true,
+          trackLinks: true,
+          accurateTrackBounce: true
+        });
+      };
+    }, 3000);
   });
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/102951378" style="position:absolute; left:-9999px;" alt="" /></div></noscript>

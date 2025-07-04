@@ -5,127 +5,59 @@
 <link rel="canonical" href="https://altaymed.shop/">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Алтайский мёд - Натуральные продукты пчеловодства</title>
-<meta name="description" content="Купить натуральный алтайский мёд от производителя. Широкий ассортимент: гречишный, таёжный, цветочный мёд. Доставка по всей России. Гарантия качества, экологически чистый продукт.">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src 'none'; object-src 'none';">
-<meta http-equiv="X-Content-Type-Options" content="nosniff">
-<meta http-equiv="X-Frame-Options" content="DENY">
-<meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
+<meta name="description" content="Натуральный алтайский мёд от производителя. Доставка по всей России.">
 
-<!-- Preload фонового LCP-изображения -->
-<link rel="preload"
-      href="/images/image-1-mobile.webp"
-      as="image"
-      media="(max-width: 767px)"
-      fetchpriority="high">
-<link rel="preload"
-      href="/images/image-1.webp"
-      as="image"
-      media="(min-width: 768px)"
-      fetchpriority="high">
+<!-- Уменьшенный критический CSS -->
+   <!-- Preload фонового LCP-изображения -->
+  <link rel="preload"
+        href="/images/image-1-mobile.webp"
+        as="image"
+        media="(max-width: 767px)"
+        fetchpriority="high">
+  <link rel="preload"
+        href="/images/image-1.webp"
+        as="image"
+        media="(min-width: 768px)"
+        fetchpriority="high">
 
-<style>
-  .hero-section {
-    background-image:
-      linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
-      url('/images/image-1-mobile.webp');
-    background-size: cover;
-    background-position: center;
-    min-height: 60vh;
-  }
-  @media (min-width: 768px) {
+  <!-- Уменьшенный критический CSS -->
+  <style>
     .hero-section {
       background-image:
         linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
-        url('/images/image-1.webp');
-      min-height: 80vh;
+        url('/images/image-1-mobile.webp');
+      background-size: cover;
+      background-position: center;
+      min-height: 60vh;
     }
-  }
-  
-  /* Стили для cookie-баннера */
-  #cookie-consent {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.85);
-    color: white;
-    padding: 15px 20px;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-  }
-  
-  .cookie-buttons {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
-  }
-  
-  .cookie-btn {
-    padding: 8px 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-    border: none;
-  }
-  
-  #cookie-accept {
-    background: #9f5524;
-    color: white;
-  }
-  
-  #cookie-reject {
-    background: #555;
-    color: white;
-  }
-  
-  /* Анимации */
-  .section-animate {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-  }
-  
-  .section-visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  .step-circle {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.5s ease;
-  }
-  
-  .step-circle.animate {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  .font-pacifico {
-    font-family: 'Pacifico', cursive;
-    font-display: swap;
-  }
-</style>
+    @media (min-width: 768px) {
+      .hero-section {
+        background-image:
+          linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
+          url('/images/image-1.webp');
+        min-height: 80vh;
+      }
+    }
+    /* …остальной inline-CSS… */
+  </style>
 
-<!-- Предзагрузка критических ресурсов -->
-<link rel="preload" href="/assets/css/tailwind.min.css" as="style">
-<link rel="stylesheet" href="/assets/css/tailwind.min.css">
-<!-- Шрифты -->
-<link rel="preload" href="/fonts/Pacifico-Regular.woff2"      as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/OpenSans-Regular.woff2"      as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/OpenSans-Medium.woff2"       as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/OpenSans-SemiBold.woff2"     as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/OpenSans-Bold.woff2"         as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/assets/fonts/remixicon/remixicon.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Предзагрузка критических ресурсов -->
+  <!-- CSS -->
+  <link rel="preload" href="/assets/css/tailwind.min.css" as="style">
+  <link rel="stylesheet" href="/assets/css/tailwind.min.css">
+  <!-- Шрифты -->
+  <link rel="preload" href="/fonts/Pacifico-Regular.woff2"      as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/OpenSans-Regular.woff2"      as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/OpenSans-Medium.woff2"       as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/OpenSans-SemiBold.woff2"     as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/OpenSans-Bold.woff2"         as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/remixicon/remixicon.woff2" as="font" type="font/woff2" crossorigin>
 
-<!-- Иконки и фавиконки -->
-<link rel="preload" href="/images/favicon.ico"                as="image" type="image/x-icon">
-<link rel="preload" href="/images/favicon.svg"                as="image" type="image/svg+xml">
-<link rel="preload" href="/images/apple-touch-icon.png"       as="image" type="image/png">
+  <!-- Иконки и фавиконки -->
+  <link rel="preload" href="/images/favicon.ico"                as="image" type="image/x-icon">
+  <link rel="preload" href="/images/favicon.svg"                as="image" type="image/svg+xml">
+  <link rel="preload" href="/images/apple-touch-icon.png"       as="image" type="image/png">
+
 
 <!-- Мета-теги верификации -->
 <meta name="yandex-verification" content="9c5350476939e370">
@@ -161,6 +93,13 @@
 <!-- Локальные шрифты -->
 <link rel="stylesheet" href="/fonts/fonts.css" media="print" onload="this.media='all'">
 
+<style>
+  .font-pacifico {
+    font-family: 'Pacifico', cursive;
+    font-display: swap;
+  }
+</style>
+
 <!-- Schema.org разметка -->
 <script type="application/ld+json">
 {
@@ -189,55 +128,6 @@
   "telephone": "+79209400222",
   "openingHours": "Пн-Вс 9:00-21:00",
   "image": "https://altaymed.shop/images/og-preview.webp"
-}
-</script>
-
-<!-- Разметка для продуктов -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  "itemListElement": [
-    {
-      "@type": "Product",
-      "position": 1,
-      "name": "Разнотравье",
-      "description": "Мед с ярким букетом травяных нот, собранных в экологически чистых районах.",
-      "offers": {
-        "@type": "Offer",
-        "price": "1100",
-        "priceCurrency": "RUB",
-        "availability": "https://schema.org/InStock"
-      },
-      "image": "https://altaymed.shop/images/image-2.webp"
-    },
-    {
-      "@type": "Product",
-      "position": 2,
-      "name": "Таёжный мёд",
-      "description": "Редкий и насыщенный мёд из дикой тайги, обладающий уникальными целебными свойствами.",
-      "offers": {
-        "@type": "Offer",
-        "price": "1300",
-        "priceCurrency": "RUB",
-        "availability": "https://schema.org/InStock"
-      },
-      "image": "https://altaymed.shop/images/image-3.webp"
-    },
-    {
-      "@type": "Product",
-      "position": 3,
-      "name": "Гречишный мёд",
-      "description": "Насыщенный тёмный мёд с богатым вкусом и ароматом гречихи.",
-      "offers": {
-        "@type": "Offer",
-        "price": "1000",
-        "priceCurrency": "RUB",
-        "availability": "https://schema.org/InStock"
-      },
-      "image": "https://altaymed.shop/images/image-4.webp"
-    }
-  ]
 }
 </script>
 </head>
@@ -357,6 +247,12 @@
         <div class="h-56 md:h-64 overflow-hidden">
           <picture>
             <source type="image/webp" srcset="images/image-2-sm.webp 400w, images/image-2.webp 800w" sizes="(max-width: 600px) 400px, 800px">
+           <picture>
+            <source
+             srcset="images/image-2-sm.webp 400w, images/image-2.webp 800w"
+              sizes="(max-width: 600px) 400px, 800px"
+              type="image/webp"
+            >
             <img
               src="images/image-2.webp"
               alt="Разнотравный мёд с Алтая"
@@ -367,6 +263,7 @@
               onload="this.classList.add('loaded')"
               decoding="async"
             >
+          </picture>
           </picture>
         </div>
         <div class="p-5 md:p-6">
@@ -763,17 +660,6 @@
   </div>
 </footer>
 
-<!-- Cookie Consent Banner -->
-<div id="cookie-consent" class="hidden">
-  <div class="cookie-text">
-    <p>Мы используем файлы cookie для улучшения работы сайта. Продолжая использовать сайт, вы соглашаетесь с <a href="/privacy.html" style="text-decoration: underline;">политикой конфиденциальности</a>.</p>
-  </div>
-  <div class="cookie-buttons">
-    <button id="cookie-reject" class="cookie-btn">Отклонить</button>
-    <button id="cookie-accept" class="cookie-btn">Принять</button>
-  </div>
-</div>
-
 <!-- Модальные окна -->
 <div id="buy-modal" class="modal">
   <div class="modal-content">
@@ -833,78 +719,21 @@
 </div>
 
 <script>
-// Функция для установки cookie
-function setCookie(name, value, days) {
-  const date = new Date();
-  date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-  const expires = "expires=" + date.toUTCString();
-  document.cookie = name + "=" + value + ";" + expires + ";path=/";
-}
-
-// Функция для получения cookie
-function getCookie(name) {
-  const nameEQ = name + "=";
-  const ca = document.cookie.split(';');
-  for(let i=0; i < ca.length; i++) {
-    let c = ca[i];
-    while (c.charAt(0)==' ') c = c.substring(1, c.length);
-    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-  }
-  return null;
-}
-
-// Управление cookie-баннером
-document.addEventListener('DOMContentLoaded', function() {
-  const cookieConsent = document.getElementById('cookie-consent');
-  const cookieAccept = document.getElementById('cookie-accept');
-  const cookieReject = document.getElementById('cookie-reject');
-  
-  // Проверяем, было ли уже принято решение
-  const consent = getCookie('cookie_consent');
-  
-  if (!consent) {
-    cookieConsent.classList.remove('hidden');
-    cookieConsent.style.display = 'flex';
-  }
-  
-  // Обработка принятия
-  cookieAccept.addEventListener('click', function() {
-    setCookie('cookie_consent', 'accepted', 365);
-    cookieConsent.style.display = 'none';
-    loadAnalytics();
-  });
-  
-  // Обработка отказа
-  cookieReject.addEventListener('click', function() {
-    setCookie('cookie_consent', 'rejected', 365);
-    cookieConsent.style.display = 'none';
-  });
-  
-  // Если ранее было принято - загружаем аналитику
-  if (consent === 'accepted') {
-    loadAnalytics();
-  }
-});
-
 // Оптимизированная загрузка аналитики
 function loadAnalytics() {
   // Yandex Metrika
-  const consent = getCookie('cookie_consent');
-  
-  if (consent === 'accepted') {
-    const yaScript = document.createElement('script');
-    yaScript.src = 'https://mc.yandex.ru/metrika/tag.js';
-    yaScript.async = true;
-    document.head.appendChild(yaScript);
+  var yaScript = document.createElement('script');
+  yaScript.src = 'https://mc.yandex.ru/metrika/tag.js';
+  yaScript.async = true;
+  document.head.appendChild(yaScript);
 
-    yaScript.onload = function() {
-      ym(102951378, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true
-      });
-    };
-  }
+  yaScript.onload = function() {
+    ym(102951378, "init", {
+      clickmap:true,
+      trackLinks:true,
+      accurateTrackBounce:true
+    });
+  };
 }
 
 // Загружаем аналитику после полной загрузки страницы
@@ -954,22 +783,40 @@ document.addEventListener('DOMContentLoaded', function() {
   const orderForm = document.querySelector('#order form');
   const contactForm = document.querySelector('#contacts form');
 
-  // Функция для отправки заказа на сервер
-  async function sendOrder(data) {
-    try {
-      const response = await fetch('/send-order', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-      });
+  // Функция для отправки сообщения в Telegram
+  function sendToTelegram(message) {
+    const botToken = '8078729850:AAFrAZpEXRDYIQ6WuTIEsV0VK4rQx9tIPJ4';
+    const chatId = '5192881217';
+    const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+    
+    const params = new URLSearchParams({
+      chat_id: chatId,
+      text: message,
+      parse_mode: 'HTML'
+    });
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', url, true);
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    
+    return new Promise((resolve) => {
+      xhr.onload = function() {
+        if (xhr.status === 200) {
+          const response = JSON.parse(xhr.responseText);
+          resolve(response.ok);
+        } else {
+          console.error('Ошибка отправки:', xhr.statusText);
+          resolve(false);
+        }
+      };
       
-      return response.ok;
-    } catch (error) {
-      console.error('Ошибка:', error);
-      return false;
-    }
+      xhr.onerror = function() {
+        console.error('Ошибка сети');
+        resolve(false);
+      };
+      
+      xhr.send(params.toString());
+    });
   }
 
   // Обработчик формы заказа
@@ -986,16 +833,17 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
       }
       
-      const orderData = {
-        name: name,
-        phone: phone,
-        email: email || 'не указан',
-        message: message || 'нет комментария',
-        source: 'Основная форма'
-      };
+      // Форматируем сообщение для Telegram
+      const telegramMessage = `
+<b>🔥 НОВЫЙ ЗАКАЗ С САЙТА 🔥</b>
+<b>Имя:</b> ${name}
+<b>Телефон:</b> ${phone}
+<b>Email:</b> ${email || 'не указан'}
+<b>Комментарий:</b> ${message || 'нет комментария'}
+      `;
       
       try {
-        const success = await sendOrder(orderData);
+        const success = await sendToTelegram(telegramMessage);
         
         if (success) {
           // Показываем модальное окно успеха
@@ -1079,17 +927,18 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
       }
       
-      const orderData = {
-        product: product,
-        quantity: quantity,
-        price: currentPrice * parseInt(quantity),
-        address: address,
-        phone: phone,
-        source: 'Быстрый заказ'
-      };
+      // Форматируем сообщение для Telegram
+      const telegramMessage = `
+<b>🛒 БЫСТРЫЙ ЗАКАЗ ТОВАРА</b>
+<b>Товар:</b> ${product}
+<b>Количество:</b> ${quantity} литров
+<b>Стоимость:</b> ${currentPrice * parseInt(quantity)} ₽
+<b>Адрес доставки:</b> ${address}
+<b>Телефон:</b> ${phone}
+      `;
       
       try {
-        const success = await sendOrder(orderData);
+        const success = await sendToTelegram(telegramMessage);
         
         if (success) {
           // Закрываем модальное окно заказа

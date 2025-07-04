@@ -175,7 +175,7 @@
   }
   
   .texture-bg {
-    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI5IiBmaWxsPSIjZmZmZmZmIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNmNWRlYjMiIG9wYWNpdHk9IjAuMSI+PC9yZWN0Pgo8L3N2Zz4=');
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZmZmZmZmIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNmNWRlYjMiIG9wYWNpdHk9IjAuMSI+PC9yZWN0Pgo8L3N2Zz4=');
   }
 
   .nav-link {
@@ -420,7 +420,7 @@
     opacity: 1;
   }
   
-  /* Универсальный класс для затемнения изображений (уменьшено на 50% до 0.28) */
+  /* Универсальный класс для затемнения изображений */
   .image-darken {
     position: relative;
   }
@@ -433,6 +433,23 @@
     width: 100%;
     height: 100%;
     background: linear-gradient(rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.28));
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  /* Специальное затемнение для изображений статей (10% от шапки) */
+  .article-image-darken {
+    position: relative;
+  }
+  
+  .article-image-darken::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.028), rgba(0, 0, 0, 0.028));
     z-index: 1;
     pointer-events: none;
   }
@@ -457,7 +474,6 @@
     z-index: -1;
   }
   
-  /* Обновленный стиль затемнения для шапки (уменьшено на 50% до 0.28) */
   .hero-overlay {
     position: absolute;
     top: 0;
@@ -580,13 +596,13 @@
   </div>
 </section>
 
-<!-- Список статей с уменьшенным затемнением -->
+<!-- Список статей с минимальным затемнением -->
 <section class="py-16 bg-[#F5DEB3] bg-opacity-20 texture-bg section-animate">
   <div class="container mx-auto px-4 md:px-6">
     <div class="max-w-4xl mx-auto">
       <!-- Статья 1 -->
       <div class="blog-post-card bg-white rounded-lg mb-10 overflow-hidden shadow-md" itemscope itemtype="https://schema.org/BlogPosting">
-        <div class="blog-image-container image-darken">
+        <div class="blog-image-container article-image-darken">
           <picture>
             <source 
               type="image/webp" 
@@ -624,7 +640,7 @@
       
       <!-- Статья 2 -->
       <div class="blog-post-card bg-white rounded-lg mb-10 overflow-hidden shadow-md" itemscope itemtype="https://schema.org/BlogPosting">
-        <div class="blog-image-container image-darken">
+        <div class="blog-image-container article-image-darken">
           <picture>
             <source 
               type="image/webp" 
@@ -662,7 +678,7 @@
       
       <!-- Статья 3 -->
       <div class="blog-post-card bg-white rounded-lg mb-10 overflow-hidden shadow-md" itemscope itemtype="https://schema.org/BlogPosting">
-        <div class="blog-image-container image-darken">
+        <div class="blog-image-container article-image-darken">
           <picture>
             <source 
               type="image/webp" 

@@ -2,9 +2,10 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
+<link rel="canonical" href="https://altaymed.shop/blog/">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Блог о мёде | Алтайский мёд - Полезные статьи</title>
-<meta name="description" content="Читайте полезные статьи о мёде, пчеловодстве и здоровом питании. Узнайте о пользе алтайского мёда.">
+<meta name="description" content="Откройте для себя полезные статьи о мёде, пчеловодстве и традициях Алтая. Узнайте, как выбрать натуральный алтайский мёд, сохранить его пользу и применить в здоровом питании всей семьи.">
 
 <!-- Мета-теги верификации -->
 <meta name="yandex-verification" content="9c5350476939e370">
@@ -40,6 +41,7 @@
 <link rel="preload" href="/fonts/OpenSans-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/OpenSans-Bold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/remixicon/remixicon.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/images/image-7.jpg" as="image">
 
 <!-- Локальный Tailwind CSS -->
 <link rel="stylesheet" href="/assets/css/tailwind.min.css">
@@ -49,6 +51,63 @@
 
 <!-- Подключение Remix Icon -->
 <link rel="stylesheet" href="/assets/fonts/remixicon/remixicon.css">
+
+<!-- Schema.org разметка для блога -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Блог Алтайского мёда",
+  "description": "Полезные статьи о мёде, пчеловодстве и здоровом питании",
+  "url": "https://altaymed.shop/blog/",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Алтайский мёд",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://altaymed.shop/images/favicon.svg"
+    }
+  },
+  "blogPost": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Как выбрать качественный мёд",
+      "description": "Экспертные советы по выбору настоящего алтайского мёда. Узнайте, как отличить натуральный продукт от подделки и сохранить все полезные свойства.",
+      "url": "https://altaymed.shop/blog/kak-vybrat-med.html",
+      "image": "https://altaymed.shop/images/image-8.jpg",
+      "datePublished": "2025-06-15",
+      "author": {
+        "@type": "Person",
+        "name": "Алтайский пчеловод"
+      }
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Мёд в здоровом питании",
+      "description": "Как правильно использовать мёд в ежедневном рационе. Рецепты и советы по включению натурального мёда в здоровое питание для всей семьи.",
+      "url": "https://altaymed.shop/blog/med-v-zdorovom-pitanii.html",
+      "image": "https://altaymed.shop/images/image-9.jpg",
+      "datePublished": "2025-05-20",
+      "author": {
+        "@type": "Person",
+        "name": "Алтайский пчеловод"
+      }
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Традиции алтайского пчеловодства",
+      "description": "История и секреты алтайских пасечников. Узнайте о многовековых традициях сбора мёда в горных районах Алтая.",
+      "url": "https://altaymed.shop/blog/tradicii-altayskogo-pchelovodstva.html",
+      "image": "https://altaymed.shop/images/image-10.jpg",
+      "datePublished": "2025-04-10",
+      "author": {
+        "@type": "Person",
+        "name": "Алтайский пчеловод"
+      }
+    }
+  ]
+}
+</script>
 
 <style>
   :root {
@@ -307,9 +366,9 @@
     opacity: 1;
   }
   
-  /* Исправление изображений статей */
+  /* Изображения статей */
   .blog-image-container {
-    height: 16rem; /* h-64 */
+    height: 16rem;
     overflow: hidden;
   }
   
@@ -368,59 +427,65 @@
   <div class="container mx-auto px-4 md:px-6">
     <div class="max-w-4xl mx-auto">
       <!-- Статья 1 -->
-      <div class="blog-post-card bg-white rounded-lg mb-10 overflow-hidden shadow-md">
+      <div class="blog-post-card bg-white rounded-lg mb-10 overflow-hidden shadow-md" itemscope itemtype="https://schema.org/BlogPosting">
         <div class="blog-image-container">
-          <img src="/images/placeholder.jpg" 
-               data-src="/images/image-8.jpg" 
+          <img src="/images/image-8.jpg" 
                alt="Как выбрать качественный мёд"
-               class="blog-image lazyload"
+               class="blog-image"
                loading="lazy"
-               decoding="async">
+               decoding="async"
+               itemprop="image">
         </div>
         <div class="p-6">
-          <h2 class="text-xl md:text-2xl font-bold mb-2">Как выбрать качественный мёд</h2>
-          <p class="text-gray-600 mb-4">Экспертные советы по выбору настоящего алтайского мёда. Узнайте, как отличить натуральный продукт от подделки и сохранить все полезные свойства.</p>
-          <a href="/blog/kak-vybrat-med.html" class="text-primary font-medium hover:underline">
+          <h2 class="text-xl md:text-2xl font-bold mb-2" itemprop="headline">Как выбрать качественный мёд</h2>
+          <p class="text-gray-600 mb-4" itemprop="description">Экспертные советы по выбору настоящего алтайского мёда. Узнайте, как отличить натуральный продукт от подделки и сохранить все полезные свойства.</p>
+          <a href="/blog/kak-vybrat-med.html" class="text-primary font-medium hover:underline" itemprop="url">
             Читать статью
           </a>
+          <meta itemprop="datePublished" content="2025-06-15">
+          <meta itemprop="author" content="Алтайский пчеловод">
         </div>
       </div>
       
       <!-- Статья 2 -->
-      <div class="blog-post-card bg-white rounded-lg mb-10 overflow-hidden shadow-md">
+      <div class="blog-post-card bg-white rounded-lg mb-10 overflow-hidden shadow-md" itemscope itemtype="https://schema.org/BlogPosting">
         <div class="blog-image-container">
-          <img src="/images/placeholder.jpg" 
-               data-src="/images/image-9.jpg" 
+          <img src="/images/image-9.jpg" 
                alt="Мёд в здоровом питании"
-               class="blog-image lazyload"
+               class="blog-image"
                loading="lazy"
-               decoding="async">
+               decoding="async"
+               itemprop="image">
         </div>
         <div class="p-6">
-          <h2 class="text-xl md:text-2xl font-bold mb-2">Мёд в здоровом питании</h2>
-          <p class="text-gray-600 mb-4">Как правильно использовать мёд в ежедневном рационе. Рецепты и советы по включению натурального мёда в здоровое питание для всей семьи.</p>
-          <a href="/blog/med-v-zdorovom-pitanii.html" class="text-primary font-medium hover:underline">
+          <h2 class="text-xl md:text-2xl font-bold mb-2" itemprop="headline">Мёд в здоровом питании</h2>
+          <p class="text-gray-600 mb-4" itemprop="description">Как правильно использовать мёд в ежедневном рационе. Рецепты и советы по включению натурального мёда в здоровое питание для всей семьи.</p>
+          <a href="/blog/med-v-zdorovom-pitanii.html" class="text-primary font-medium hover:underline" itemprop="url">
             Читать статью
           </a>
+          <meta itemprop="datePublished" content="2025-05-20">
+          <meta itemprop="author" content="Алтайский пчеловод">
         </div>
       </div>
       
       <!-- Статья 3 -->
-      <div class="blog-post-card bg-white rounded-lg mb-10 overflow-hidden shadow-md">
+      <div class="blog-post-card bg-white rounded-lg mb-10 overflow-hidden shadow-md" itemscope itemtype="https://schema.org/BlogPosting">
         <div class="blog-image-container">
-          <img src="/images/placeholder.jpg" 
-               data-src="/images/image-10.jpg" 
+          <img src="/images/image-10.jpg" 
                alt="Традиции алтайского пчеловодства"
-               class="blog-image lazyload"
+               class="blog-image"
                loading="lazy"
-               decoding="async">
+               decoding="async"
+               itemprop="image">
         </div>
         <div class="p-6">
-          <h2 class="text-xl md:text-2xl font-bold mb-2">Традиции алтайского пчеловодства</h2>
-          <p class="text-gray-600 mb-4">История и секреты алтайских пасечников. Узнайте о многовековых традициях сбора мёда в горных районах Алтая.</p>
-          <a href="/blog/tradicii-altayskogo-pchelovodstva.html" class="text-primary font-medium hover:underline">
+          <h2 class="text-xl md:text-2xl font-bold mb-2" itemprop="headline">Традиции алтайского пчеловодства</h2>
+          <p class="text-gray-600 mb-4" itemprop="description">История и секреты алтайских пасечников. Узнайте о многовековых традициях сбора мёда в горных районах Алтая.</p>
+          <a href="/blog/tradicii-altayskogo-pchelovodstva.html" class="text-primary font-medium hover:underline" itemprop="url">
             Читать статью
           </a>
+          <meta itemprop="datePublished" content="2025-04-10">
+          <meta itemprop="author" content="Алтайский пчеловод">
         </div>
       </div>
     </div>
@@ -618,28 +683,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       }
     });
-  });
-  
-  // Lazy loading изображений
-  const lazyLoad = function(entries) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const img = entry.target;
-        img.src = img.dataset.src;
-        img.classList.remove("lazyload");
-        img.classList.add("lazyloaded");
-        observer.unobserve(img);
-      }
-    });
-  };
-  
-  const observer = new IntersectionObserver(lazyLoad, {
-    rootMargin: "0px 0px 200px 0px",
-    threshold: 0.01
-  });
-  
-  document.querySelectorAll("img.lazyload").forEach(img => {
-    observer.observe(img);
   });
   
   // Плавающая кнопка "Назад"

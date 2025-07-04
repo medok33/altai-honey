@@ -39,7 +39,7 @@
   <link rel="preload" href="/fonts/OpenSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/OpenSans-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/OpenSans-Bold.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/images/delivery-banner.webp" as="image">
+  <link rel="preload" href="/images/delivery-banner.webp" as="image" fetchpriority="high">
 
   <!-- Подключение стилей -->
   <link rel="stylesheet" href="/css/style.min.css">
@@ -293,11 +293,6 @@
     color: #d1d5db !important;
   }
 
-  .footer-column li a {
-    display: flex;
-    align-items: center;
-  }
-
   .social-icon-bw {
     display: flex;
     align-items: center;
@@ -547,9 +542,140 @@
     outline: 2px solid #6B8E23;
     outline-offset: 2px;
   }
+  
+  /* Хлебные крошки */
+  .breadcrumb {
+    background-color: #f8f8f8;
+    padding: 12px 0;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #eaeaea;
+  }
+  .breadcrumb-nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  .breadcrumb-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .breadcrumb-item {
+    display: flex;
+    align-items: center;
+  }
+  .breadcrumb-item:not(:last-child)::after {
+    content: '/';
+    margin: 0 8px;
+    color: #777;
+  }
+  .breadcrumb-link {
+    color: #6B8E23;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .breadcrumb-link:hover {
+    color: #5a7a1c;
+    text-decoration: underline;
+  }
+  .breadcrumb-current {
+    color: #777;
+  }
+  
+  /* Hero section */
+  .hero-container {
+    position: relative;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+    z-index: -1;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 0 15px;
+  }
 </style>
 </head>
 <body>
+  <!-- Schema.org LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Алтайский мёд",
+    "image": "https://altaymed.shop/images/logo.webp",
+    "@id": "https://altaymed.shop",
+    "url": "https://altaymed.shop",
+    "telephone": "+79209400222",
+    "priceRange": "₽₽",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Владимирская обл. Город Ковров",
+      "addressRegion": "Владимирская область",
+      "postalCode": "601900",
+      "addressCountry": "RU"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 56.3572,
+      "longitude": 41.3192
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "09:00",
+      "closes": "18:00"
+    },
+    "sameAs": [
+      "https://vk.com/honeybuckwheat",
+      "https://t.me/HONEYBUCKWHEAT"
+    ]
+  }
+  </script>
+
+  <!-- Хлебные крошки -->
+  <nav class="breadcrumb" aria-label="breadcrumb">
+    <div class="breadcrumb-nav">
+      <ol class="breadcrumb-list">
+        <li class="breadcrumb-item">
+          <a href="/" class="breadcrumb-link">Главная</a>
+        </li>
+        <li class="breadcrumb-item">
+          <span class="breadcrumb-current" aria-current="page">Доставка и оплата</span>
+        </li>
+      </ol>
+    </div>
+  </nav>
+
   <!-- Навигация -->
   <nav class="bg-white shadow-sm sticky top-0 z-50">
     <div class="container mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
@@ -588,10 +714,27 @@
 
   <main>
     <!-- Шапка страницы доставки -->
-    <section class="min-h-[50vh] flex items-center" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/delivery-banner.webp'); background-size: cover; background-position: center;">
-      <div class="container mx-auto px-4 text-center text-white">
-        <h1 class="text-3xl md:text-4xl lg:text-5xl font-['Pacifico'] mb-4">Доставка и оплата алтайского мёда</h1>
-        <p class="text-xl max-w-2xl mx-auto">Быстрая доставка натурального мёда с пасеки Алтая по всей России</p>
+    <section class="hero-container">
+      <!-- Оптимизированный баннер для LCP -->
+      <picture>
+        <source srcset="/images/delivery-banner.webp" type="image/webp">
+        <img 
+          src="/images/delivery-banner.jpg" 
+          alt="Доставка алтайского мёда по всей России - курьер, почта, транспортные компании"
+          class="hero-image"
+          loading="eager"
+          decoding="async"
+          width="1920"
+          height="1080"
+          aria-hidden="true"
+        >
+      </picture>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="container mx-auto px-4 text-center text-white">
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-['Pacifico'] mb-4">Доставка и оплата алтайского мёда</h1>
+          <p class="text-xl max-w-2xl mx-auto">Быстрая доставка натурального мёда с пасеки Алтая по всей России</p>
+        </div>
       </div>
     </section>
 
@@ -649,11 +792,15 @@
               <picture>
                 <source srcset="/images/delivery-map.webp" type="image/webp">
                 <img src="/images/delivery-map.jpg" 
-                     alt="Зоны доставки алтайского мёда по России - Ковров, Владимирская область, Центральная Россия, Урал, Сибирь, Дальний Восток"
+                     alt="Карта зон доставки алтайского мёда по России - Ковров, Владимирская область, Центральная Россия, Урал, Сибирь, Дальний Восток"
                      width="800" height="450"
                      class="w-full h-auto rounded-lg shadow-md mt-4"
-                     loading="lazy">
+                     loading="lazy"
+                     aria-describedby="map-description">
               </picture>
+              <div id="map-description" class="sr-only">
+                Карта России с выделенными регионами доставки алтайского мёда: Ковров, Владимирская область, Центральная Россия, Урал, Сибирь, Дальний Восток
+              </div>
             </div>
             
             <h3 class="text-2xl font-semibold mt-8 mb-4">Способы оплаты алтайского мёда</h3>
@@ -669,34 +816,40 @@
                 <picture>
                   <source srcset="/images/payment-card.webp" type="image/webp">
                   <img src="/images/payment-card.jpg" 
-                       alt="Оплата банковской картой за алтайский мёд онлайн"
+                       alt="Оплата банковской картой за алтайский мёд через защищенный платежный шлюз"
                        width="300" height="200"
                        class="w-full h-auto rounded-lg shadow-md"
-                       loading="lazy">
+                       loading="lazy"
+                       aria-describedby="card-description">
                 </picture>
                 <p class="mt-2 font-medium">Оплата банковской картой</p>
+                <div id="card-description" class="sr-only">Безопасная онлайн оплата картой Visa, Mastercard, МИР</div>
               </div>
               <div class="text-center">
                 <picture>
                   <source srcset="/images/payment-cash.webp" type="image/webp">
                   <img src="/images/payment-cash.jpg" 
-                       alt="Оплата наличными при получении алтайского мёда в Коврове"
+                       alt="Оплата наличными при получении алтайского мёда курьеру в Коврове"
                        width="300" height="200"
                        class="w-full h-auto rounded-lg shadow-md"
-                       loading="lazy">
+                       loading="lazy"
+                       aria-describedby="cash-description">
                 </picture>
                 <p class="mt-2 font-medium">Наличными курьеру</p>
+                <div id="cash-description" class="sr-only">Оплата наличными при доставке в Коврове</div>
               </div>
               <div class="text-center">
                 <picture>
                   <source srcset="/images/payment-post.webp" type="image/webp">
                   <img src="/images/payment-post.jpg" 
-                       alt="Оплата наложенным платежом при получении алтайского мёда в отделении"
+                       alt="Оплата наложенным платежом при получении алтайского мёда в отделении Почты России"
                        width="300" height="200"
                        class="w-full h-auto rounded-lg shadow-md"
-                       loading="lazy">
+                       loading="lazy"
+                       aria-describedby="post-description">
                 </picture>
                 <p class="mt-2 font-medium">Наложенный платёж</p>
+                <div id="post-description" class="sr-only">Оплата при получении на почте или в пункте выдачи</div>
               </div>
             </div>
             
@@ -713,7 +866,7 @@
             <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mt-8">
               <div class="flex">
                 <div class="flex-shrink-0">
-                  <i class="ri-information-line ri-xl text-yellow-400"></i>
+                  <i class="ri-information-line ri-xl text-yellow-400" aria-hidden="true"></i>
                 </div>
                 <div class="ml-3">
                   <p class="text-sm text-yellow-700">
@@ -833,7 +986,7 @@
             <li>
               <a class="footer-link-item">
                 <div class="contact-icon">
-                  <i class="ri-map-pin-2-line ri-sm md:ri-base"></i>
+                  <i class="ri-map-pin-2-line ri-sm md:ri-base" aria-hidden="true"></i>
                 </div>
                 <span class="contact-text">Владимирская обл. Город Ковров</span>
               </a>
@@ -841,7 +994,7 @@
             <li>
               <a href="tel:+79209400222" class="footer-link-item">
                 <div class="contact-icon">
-                  <i class="ri-phone-line ri-sm md:ri-base"></i>
+                  <i class="ri-phone-line ri-sm md:ri-base" aria-hidden="true"></i>
                 </div>
                 <span class="contact-text">+7 (920) 940-02-22</span>
               </a>
@@ -849,7 +1002,7 @@
             <li>
               <a href="mailto:9209400222@mail.ru" class="footer-link-item">
                 <div class="contact-icon">
-                  <i class="ri-mail-line ri-sm md:ri-base"></i>
+                  <i class="ri-mail-line ri-sm md:ri-base" aria-hidden="true"></i>
                 </div>
                 <span class="contact-text">9209400222@mail.ru</span>
               </a>
@@ -860,15 +1013,15 @@
           <div class="mt-4 md:mt-6">
             <p class="text-base md:text-lg font-bold mb-2 md:mb-3">Следите за нами</p>
             <div class="flex space-x-2 md:space-x-3">
-              <a href="https://vk.com/honeybuckwheat" target="_blank" class="social-icon-bw">
-                <i class="ri-vk-line ri-lg"></i>
+              <a href="https://vk.com/honeybuckwheat" target="_blank" class="social-icon-bw" aria-label="Наша страница ВКонтакте">
+                <i class="ri-vk-line ri-lg" aria-hidden="true"></i>
               </a>
-              <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" class="social-icon-bw">
-                <i class="ri-telegram-line ri-lg"></i>
+              <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" class="social-icon-bw" aria-label="Наш Telegram канал">
+                <i class="ri-telegram-line ri-lg" aria-hidden="true"></i>
               </a>
               <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing" 
-                 target="_blank" class="social-icon-bw">
-                <div class="avito-icon-bw">
+                 target="_blank" class="social-icon-bw" aria-label="Наше объявление на Авито">
+                <div class="avito-icon-bw" aria-hidden="true">
                   <svg viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg">
                     <path fill="#04e061" d="M61.924 172.07c26.468 0 47.924-21.456 47.924-47.924S88.392 76.222 61.924 76.222 14 97.678 14 124.146s21.456 47.925 47.924 47.925z" transform="translate(7.024 7.024) scale(.92683)"/>
                     <path fill="#ff4053" d="M149.044 166.007c15.992 0 28.956-12.963 28.956-28.955 0-15.992-12.964-28.955-28.956-28.955-15.99 0-28.954 12.963-28.954 28.955 0 15.992 12.963 28.955 28.954 28.955z" transform="translate(7.024 7.024) scale(.92683)"/>
@@ -878,8 +1031,8 @@
                 </div>
               </a>
               <!-- Иконка Яндекс Карт - обновленная версия -->
-              <a href="https://yandex.ru/maps/" target="_blank" class="social-icon-bw">
-                <div class="yandex-maps-icon">
+              <a href="https://yandex.ru/maps/" target="_blank" class="social-icon-bw" aria-label="Наше местоположение на Яндекс Картах">
+                <div class="yandex-maps-icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 2C8.13 2 5 5.13 5 9C5 13.17 9.42 18.92 11.24 21.11C11.64 21.59 12.37 21.59 12.77 21.11C14.58 18.92 19 13.17 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" 
                           fill="currentColor"/>
@@ -894,8 +1047,8 @@
   </footer>
 
   <!-- Плавающая кнопка "Назад" -->
-  <a href="#" id="back-button" class="floating-back-button">
-    <div class="back-arrow"></div>
+  <a href="#" id="back-button" class="floating-back-button" aria-label="Вернуться назад">
+    <div class="back-arrow" aria-hidden="true"></div>
   </a>
 
   <script>
@@ -975,6 +1128,7 @@
       function checkOverflow() {
         if (regionsRow.scrollWidth > regionsRow.clientWidth) {
           triangleToggle.classList.add('visible');
+          triangleToggle.setAttribute('aria-label', 'Показать все регионы доставки');
         } else {
           triangleToggle.classList.remove('visible');
         }
@@ -985,9 +1139,11 @@
         if (hiddenRegions.style.display === 'block') {
           hiddenRegions.style.display = 'none';
           triangleToggle.querySelector('.triangle').style.transform = 'rotate(0deg)';
+          triangleToggle.setAttribute('aria-label', 'Показать все регионы доставки');
         } else {
           hiddenRegions.style.display = 'block';
           triangleToggle.querySelector('.triangle').style.transform = 'rotate(180deg)';
+          triangleToggle.setAttribute('aria-label', 'Скрыть регионы доставки');
         }
       });
       

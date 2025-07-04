@@ -505,14 +505,14 @@
       z-index: -1;
     }
     
-    /* Уменьшено затемнение на 20% (с 0.7 до 0.56) */
+    /* Уменьшено затемнение на 10% (с 0.56 до 0.44) */
     .hero-overlay {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56));
+      background: linear-gradient(rgba(0, 0, 0, 0.44), rgba(0, 0, 0, 0.44));
       z-index: -1;
     }
     
@@ -521,25 +521,6 @@
       z-index: 1;
       text-align: center;
       padding: 0 15px;
-    }
-    
-    /* Стиль для затемнения карты */
-    .map-container {
-      position: relative;
-      border-radius: 0.5rem;
-      overflow: hidden;
-      margin-top: 1rem;
-    }
-    
-    /* Затемнение для карты (56%) */
-    .map-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.56);
-      z-index: 1;
     }
   </style>
 
@@ -694,7 +675,7 @@
           aria-hidden="true"
         >
       </picture>
-      <!-- Затемнение уменьшено до 56% -->
+      <!-- Затемнение уменьшено до 44% -->
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <div class="container mx-auto px-4 text-center text-white">
@@ -755,20 +736,16 @@
             </div>
             
             <div class="mt-8">
-              <!-- Контейнер для карты с затемнением -->
-              <div class="map-container">
-                <!-- Затемнение для карты (56%) -->
-                <div class="map-overlay"></div>
-                <picture>
-                  <source srcset="/images/delivery-map.webp" type="image/webp">
-                  <img src="/images/delivery-map.jpg" 
-                       alt="Карта зон доставки алтайского мёда по России - Ковров, Владимирская область, Центральная Россия, Урал, Сибирь, Дальний Восток"
-                       width="800" height="450"
-                       class="w-full h-auto"
-                       loading="lazy"
-                       aria-describedby="map-description">
-                </picture>
-              </div>
+              <!-- Карта доставки без затемнения -->
+              <picture>
+                <source srcset="/images/delivery-map.webp" type="image/webp">
+                <img src="/images/delivery-map.jpg" 
+                     alt="Карта зон доставки алтайского мёда по России - Ковров, Владимирская область, Центральная Россия, Урал, Сибирь, Дальний Восток"
+                     width="800" height="450"
+                     class="w-full h-auto rounded-lg shadow-md mt-4"
+                     loading="lazy"
+                     aria-describedby="map-description">
+              </picture>
               <div id="map-description" class="sr-only">
                 Карта России с выделенными регионами доставки алтайского мёда: Ковров, Владимирская область, Центральная Россия, Урал, Сибирь, Дальний Восток
               </div>

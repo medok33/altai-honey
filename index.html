@@ -45,43 +45,68 @@
     position: relative;
     z-index: 10;
   }
+  
+  /* …остальной inline-CSS… */
 </style>
 
+<!-- Предзагрузка критических ресурсов -->
+<!-- CSS -->
 <link rel="preload" href="/assets/css/tailwind.min.css" as="style">
 <link rel="stylesheet" href="/assets/css/tailwind.min.css">
-<link rel="preload" href="/fonts/Pacifico-Regular.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/OpenSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/OpenSans-Medium.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/OpenSans-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/OpenSans-Bold.woff2" as="font" type="font/woff2" crossorigin>
+<!-- Шрифты -->
+<link rel="preload" href="/fonts/Pacifico-Regular.woff2"      as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/OpenSans-Regular.woff2"      as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/OpenSans-Medium.woff2"       as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/OpenSans-SemiBold.woff2"     as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/OpenSans-Bold.woff2"         as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/remixicon/remixicon.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/images/favicon.ico" as="image" type="image/x-icon">
-<link rel="preload" href="/images/favicon.svg" as="image" type="image/svg+xml">
-<link rel="preload" href="/images/apple-touch-icon.png" as="image" type="image/png">
+
+<!-- Иконки и фавиконки -->
+<link rel="preload" href="/images/favicon.ico"                as="image" type="image/x-icon">
+<link rel="preload" href="/images/favicon.svg"                as="image" type="image/svg+xml">
+<link rel="preload" href="/images/apple-touch-icon.png"       as="image" type="image/png">
+
+
+<!-- Мета-теги верификации -->
 <meta name="yandex-verification" content="9c5350476939e370">
 <meta name="google-site-verification" content="JsJoSVyM5o4vxTSdN88FHLrAwPaoQ0nEjpJkiub50AE">
+
+<!-- Open Graph -->
 <meta property="og:title" content="Алтайский мёд - Натуральные продукты пчеловодства">
 <meta property="og:description" content="Экологически чистый мёд с Алтайских гор. Доставка по всей России">
 <meta property="og:image" content="https://altaymed.shop/images/og-preview.webp">
 <meta property="og:url" content="https://altaymed.shop">
 <meta property="og:type" content="website">
+
+<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Алтайский мёд - Натуральные продукты пчеловодства">
 <meta name="twitter:description" content="Экологически чистый мёд с Алтайских гор">
 <meta name="twitter:image" content="https://altaymed.shop/images/twitter-preview.webp">
+
+<!-- Favicon -->
 <link rel="icon" href="images/favicon.ico" sizes="any">
 <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+<!-- Web Manifest -->
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#9f5524">
+
+<!-- Подключение Remix Icon -->
 <link rel="stylesheet" href="/assets/fonts/remixicon/remixicon.css" media="print" onload="this.media='all'">
+   
+<!-- Локальные шрифты -->
 <link rel="stylesheet" href="/fonts/fonts.css" media="print" onload="this.media='all'">
+
 <style>
   .font-pacifico {
     font-family: 'Pacifico', cursive;
     font-display: swap;
   }
 </style>
+
+<!-- Schema.org разметка -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -92,6 +117,7 @@
   "dateModified": "2025-06-27"
 }
 </script>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -122,9 +148,11 @@
 </script>
 </head>
 <body>
+<!-- Навигация -->
 <nav class="bg-white shadow-sm sticky top-0 z-50">
   <div class="container mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
     <a href="#" class="text-2xl md:text-3xl font-pacifico header-logo">Алтайский мёд</a>
+    
     <div class="hidden md:flex items-center space-x-6 md:space-x-8">
       <a href="#benefits" class="nav-link">Преимущества</a>
       <a href="#products" class="nav-link">Каталог</a>
@@ -133,10 +161,12 @@
       <a href="#footer-contacts" class="nav-link">Контакты</a>
       <a href="#order" class="nav-btn px-4 md:px-6 py-1 md:py-2 !rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">Заказать</a>
     </div>
+    
     <button class="md:hidden w-10 h-10 flex items-center justify-center">
-      <span class="ri-menu-line text-2xl text-gray-800" aria-hidden="true"></span>
+      <i class="ri-menu-line text-2xl text-gray-800" aria-hidden="true"></i>
     </button>
   </div>
+  
   <div class="md:hidden hidden bg-white shadow-md px-4 py-3" id="mobile-menu">
     <div class="flex flex-col space-y-4">
       <a href="#benefits" class="nav-link py-2">Преимущества</a>
@@ -148,7 +178,9 @@
     </div>
   </div>
 </nav>
+
 <main>
+<!-- Герой-секция -->
 <section class="hero-section flex items-center">
   <picture>
     <source media="(max-width: 767px)" srcset="/images/image-1-mobile.webp">
@@ -161,14 +193,17 @@
       height="1080" 
       fetchpriority="high">
   </picture>
+  
   <div class="container mx-auto px-4 md:px-6 py-16 md:py-20 w-full critical-content">
     <div class="max-w-2xl text-white">
       <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-pacifico mb-4 md:mb-6">Натуральный мёд с Алтайских гор</h1>
       <p class="text-lg md:text-xl mb-6 md:mb-8 max-w-lg">Наслаждайтесь вкусом и пользой настоящего алтайского мёда, собранного с любовью в экологически чистых районах.</p>
+      
       <div class="flex flex-wrap gap-3 md:gap-4 hero-buttons">
         <a href="#order" class="hero-btn-primary px-6 py-2 md:px-8 md:py-3 !rounded-button shadow-lg hover:bg-opacity-90 transition-all whitespace-nowrap text-base md:text-lg font-medium">
           Заказать сейчас
         </a>
+        
         <a href="#products" class="hero-btn-secondary bg-white bg-opacity-20 hover:bg-opacity-30 border px-6 py-2 md:px-8 md:py-3 !rounded-button transition-all whitespace-nowrap text-base md:text-lg font-medium">
           Наши продукты
         </a>
@@ -176,44 +211,51 @@
     </div>
   </div>
 </section>
+
+<!-- Преимущества -->
 <section id="benefits" class="py-16 md:py-20 texture-bg bg-[#F5DEB3] bg-opacity-20 section-animate">
   <div class="container mx-auto px-4 md:px-6">
-    <h2 class="text-3xl md:text-4xl font-pacifico text-center text-secondary mb-12 md:mb-16">Уникальные свойства алтайского мёда</h2>
+    <h2 class="text-3xl md:text-4xl font-pacifico text-center text-secondary mb-12 md:mb-16">Почему выбирают наш мёд</h2>
+    
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
       <div class="benefit-card bg-white p-6 md:p-8 rounded-lg shadow-md flex flex-col items-center text-center">
         <div class="benefit-icon w-14 h-14 md:w-16 md:h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4 md:mb-6">
-          <span class="ri-plant-line text-primary text-2xl" aria-hidden="true"></span>
+          <i class="ri-plant-line text-primary text-2xl" aria-hidden="true"></i>
         </div>
         <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-3 md:mb-4">Экологически чистый продукт</h3>
         <p class="text-gray-600 text-sm md:text-base">Наши пасеки расположены в заповедных зонах Алтая, вдали от промышленных объектов и дорог.</p>
       </div>
+      
       <div class="benefit-card bg-white p-6 md:p-8 rounded-lg shadow-md flex flex-col items-center text-center">
         <div class="benefit-icon w-14 h-14 md:w-16 md:h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4 md:mb-6">
-          <span class="ri-leaf-line text-primary text-2xl" aria-hidden="true"></span>
+          <i class="ri-leaf-line text-primary text-2xl" aria-hidden="true"></i>
         </div>
         <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-3 md:mb-4">Разнообразие сортов</h3>
         <p class="text-gray-600 text-sm md:text-base">Мы предлагаем широкий ассортимент меда с разнообразными вкусовыми и полезными свойствами.</p>
       </div>
+      
       <div class="benefit-card bg-white p-6 md:p-8 rounded-lg shadow-md flex flex-col items-center text-center">
         <div class="benefit-icon w-14 h-14 md:w-16 md:h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4 md:mb-6">
-          <span class="ri-award-line text-primary text-2xl" aria-hidden="true"></span>
+          <i class="ri-award-line text-primary text-2xl" aria-hidden="true"></i>
         </div>
         <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-3 md:mb-4">Проверенное качество</h3>
         <p class="text-gray-600 text-sm md:text-base">Каждая партия меда проходит строгий контроль и проверку на соответствие стандартам.</p>
       </div>
     </div>
+    
     <div class="flex justify-center mt-8 md:mt-10">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 max-w-4xl">
         <div class="benefit-card bg-white p-6 md:p-8 rounded-lg shadow-md flex flex-col items-center text-center">
           <div class="benefit-icon w-14 h-14 md:w-16 md:h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4 md:mb-6">
-            <span class="ri-truck-line text-primary text-2xl" aria-hidden="true"></span>
+            <i class="ri-truck-line text-primary text-2xl" aria-hidden="true"></i>
           </div>
           <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-3 md:mb-4">Доставка по всей России</h3>
           <p class="text-gray-600 text-sm md:text-base">Мы доставляем наш мёд в любой регион России, сохраняя все полезные свойства продукта.</p>
         </div>
+        
         <div class="benefit-card bg-white p-6 md:p-8 rounded-lg shadow-md flex flex-col items-center text-center">
           <div class="benefit-icon w-14 h-14 md:w-16 md:h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4 md:mb-6">
-            <span class="ri-heart-line text-primary text-2xl" aria-hidden="true"></span>
+            <i class="ri-heart-line text-primary text-2xl" aria-hidden="true"></i>
           </div>
           <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-3 md:mb-4">Семейные традиции</h3>
           <p class="text-gray-600 text-sm md:text-base">Наша пасека существует уже более 30 лет, и мы бережно храним секреты пчеловодства.</p>
@@ -222,15 +264,34 @@
     </div>
   </div>
 </section>
+
+<!-- Каталог продукции -->
 <section id="products" class="py-16 md:py-20 bg-white section-animate">
   <div class="container mx-auto px-4 md:px-6">
-    <h2 class="text-3xl md:text-4xl font-pacifico text-center text-secondary mb-12 md:mb-16">Наши премиальные сорта мёда</h2>
+    <h2 class="text-3xl md:text-4xl font-pacifico text-center text-secondary mb-12 md:mb-16">Наши продукты</h2>
+    
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
       <div id="product-1" class="product-card bg-white rounded-lg shadow-md overflow-hidden">
         <div class="h-56 md:h-64 overflow-hidden">
           <picture>
-            <source srcset="images/image-2-sm.webp 400w, images/image-2.webp 800w" sizes="(max-width: 600px) 400px, 800px" type="image/webp">
-            <img src="images/image-2.webp" alt="Разнотравный мёд с Алтая" loading="lazy" width="800" height="600" class="w-full h-full object-cover object-top product-image" onload="this.classList.add('loaded')" decoding="async">
+            <source type="image/webp" srcset="images/image-2-sm.webp 400w, images/image-2.webp 800w" sizes="(max-width: 600px) 400px, 800px">
+           <picture>
+            <source
+             srcset="images/image-2-sm.webp 400w, images/image-2.webp 800w"
+              sizes="(max-width: 600px) 400px, 800px"
+              type="image/webp"
+            >
+            <img
+              src="images/image-2.webp"
+              alt="Разнотравный мёд с Алтая"
+              loading="lazy"
+              width="800"
+              height="600"
+              class="w-full h-full object-cover object-top product-image"
+              onload="this.classList.add('loaded')"
+              decoding="async"
+            >
+          </picture>
           </picture>
         </div>
         <div class="p-5 md:p-6">
@@ -240,26 +301,35 @@
             <span class="text-lg md:text-xl font-bold text-primary">1100 ₽ / 1 литр</span>
             <button data-product="Разнотравье" data-price="1100" class="buy-btn bg-gradient-to-r from-primary to-[#8ea745] text-white px-4 py-2 md:px-5 md:py-2 !rounded-button hover:opacity-90 transition-opacity whitespace-nowrap text-sm md:text-base">Купить</button>
           </div>
-        </div>
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org/",
-          "@type": "Product",
-          "name": "Разнотравье",
-          "description": "Мед с ярким букетом травяных нот, собранных в экологически чистых районах Алтая",
-          "offers": {
-            "@type": "Offer",
-            "price": "1100",
-            "priceCurrency": "RUB"
+          <script type="application/ld+json">
+          {
+            "@context": "https://schema.org/",
+            "@type": "Product",
+            "name": "Разнотравье",
+            "description": "Мед с ярким букетом травяных нот, собранных в экологически чистых районах Алтая",
+            "offers": {
+              "@type": "Offer",
+              "price": "1100",
+              "priceCurrency": "RUB"
+            }
           }
-        }
-        </script>
+          </script>
+        </div>
       </div>
+      
       <div id="product-2" class="product-card bg-white rounded-lg shadow-md overflow-hidden">
         <div class="h-56 md:h-64 overflow-hidden">
           <picture>
-            <source srcset="images/image-3-sm.webp 400w, images/image-3.webp 800w" sizes="(max-width: 600px) 400px, 800px" type="image/webp">
-            <img src="images/image-3.webp" alt="Таёжный мёд из Алтайского края" loading="lazy" width="800" height="600" class="w-full h-full object-cover object-top product-image" onload="this.classList.add('loaded')" decoding="async">
+            <source type="image/webp" srcset="images/image-3-sm.webp 400w, images/image-3.webp 800w" sizes="(max-width: 600px) 400px, 800px">
+            <img 
+              src="images/image-3.webp" 
+              alt="Таёжный мёд из Алтайского края" 
+              loading="lazy"
+              width="800"
+              height="600"
+              class="w-full h-full object-cover object-top product-image"
+              onload="this.classList.add('loaded')"
+              decoding="async">
           </picture>
         </div>
         <div class="p-5 md:p-6">
@@ -269,26 +339,35 @@
             <span class="text-lg md:text-xl font-bold text-primary">1300 ₽ / 1 литр</span>
             <button data-product="Таёжный мёд" data-price="1300" class="buy-btn bg-gradient-to-r from-primary to-[#8ea745] text-white px-4 py-2 md:px-5 md:py-2 !rounded-button hover:opacity-90 transition-opacity whitespace-nowrap text-sm md:text-base">Купить</button>
           </div>
-        </div>
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org/",
-          "@type": "Product",
-          "name": "Таёжный мёд",
-          "description": "Редкий и насыщенный мёд из дикой тайги Алтая",
-          "offers": {
-            "@type": "Offer",
-            "price": "1300",
-            "priceCurrency": "RUB"
+          <script type="application/ld+json">
+          {
+            "@context": "https://schema.org/",
+            "@type": "Product",
+            "name": "Таёжный мёд",
+            "description": "Редкий и насыщенный мёд из дикой тайги, обладающий уникальными целебными свойствами",
+            "offers": {
+              "@type": "Offer",
+              "price": "1300",
+              "priceCurrency": "RUB"
+            }
           }
-        }
-        </script>
+          </script>
+        </div>
       </div>
+      
       <div id="product-3" class="product-card bg-white rounded-lg shadow-md overflow-hidden">
         <div class="h-56 md:h-64 overflow-hidden">
           <picture>
-            <source srcset="images/image-4-sm.webp 400w, images/image-4.webp 800w" sizes="(max-width: 600px) 400px, 800px" type="image/webp">
-            <img src="images/image-4.webp" alt="Гречишный мёд от производителя" loading="lazy" width="800" height="600" class="w-full h-full object-cover object-top product-image" onload="this.classList.add('loaded')" decoding="async">
+            <source type="image/webp" srcset="images/image-4-sm.webp 400w, images/image-4.webp 800w" sizes="(max-width: 600px) 400px, 800px">
+            <img 
+              src="images/image-4.webp" 
+              alt="Гречишный мёд от производителя" 
+              loading="lazy"
+              width="800"
+              height="600"
+              class="w-full h-full object-cover object-top product-image"
+              onload="this.classList.add('loaded')"
+              decoding="async">
           </picture>
         </div>
         <div class="p-5 md:p-6">
@@ -298,22 +377,23 @@
             <span class="text-lg md:text-xl font-bold text-primary">1000 ₽ / 1 литр</span>
             <button data-product="Гречишный мёд" data-price="1000" class="buy-btn bg-gradient-to-r from-primary to-[#8ea745] text-white px-4 py-2 md:px-5 md:py-2 !rounded-button hover:opacity-90 transition-opacity whitespace-nowrap text-sm md:text-base">Купить</button>
           </div>
-        </div>
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org/",
-          "@type": "Product",
-          "name": "Гречишный мёд",
-          "description": "Насыщенный тёмный мёд с богатым вкусом и ароматом гречихи",
-          "offers": {
-            "@type": "Offer",
-            "price": "1000",
-            "priceCurrency": "RUB"
+          <script type="application/ld+json">
+          {
+            "@context": "https://schema.org/",
+            "@type": "Product",
+            "name": "Гречишный мёд",
+            "description": "Насыщенный тёмный мёд с богатым вкусом и ароматом гречихи",
+            "offers": {
+              "@type": "Offer",
+              "price": "1000",
+              "priceCurrency": "RUB"
+            }
           }
-        }
-        </script>
+          </script>
+        </div>
       </div>
     </div>
+    
     <div class="text-center mt-10 md:mt-12">
       <a href="#order" class="hero-btn-primary inline-block px-6 py-2 md:px-8 md:py-3 !rounded-button shadow-lg hover:bg-opacity-90 transition-all whitespace-nowrap text-base md:text-lg font-medium">
         Посмотреть все продукты
@@ -321,42 +401,65 @@
     </div>
   </div>
 </section>
+
+<!-- О нас -->
 <section id="about" class="py-16 md:py-20 bg-[#F5DEB3] bg-opacity-20 texture-bg relative section-animate">
   <div class="container mx-auto px-4 md:px-6 relative z-10">
-    <h2 class="text-3xl md:text-4xl font-pacifico text-center text-secondary mb-12 md:mb-16">Традиции алтайского пчеловодства</h2>
+    <h2 class="text-3xl md:text-4xl font-pacifico text-center text-secondary mb-12 md:mb-16">О нашей пасеке</h2>
+    
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
       <div class="order-2 md:order-1">
         <div class="about-image bg-white p-3 shadow-lg rotate-2 mb-6 md:mb-8 max-w-md mx-auto">
           <picture>
-            <source srcset="images/image-5-sm.webp 400w, images/image-5.webp 800w" sizes="(max-width: 600px) 400px, 800px" type="image/webp">
-            <img src="images/image-5.webp" alt="Семейная пасека на Алтае" loading="lazy" width="800" height="533" class="w-full h-auto product-image" onload="this.classList.add('loaded')" decoding="async">
+            <source type="image/webp" srcset="images/image-5-sm.webp 400w, images/image-5.webp 800w" sizes="(max-width: 600px) 400px, 800px">
+            <img 
+              src="images/image-5.webp" 
+              alt="Семейная пасека на Алтае" 
+              loading="lazy"
+              width="800"
+              height="533"
+              class="w-full h-auto product-image"
+              onload="this.classList.add('loaded')"
+              decoding="async">
           </picture>
         </div>
         <div class="about-image bg-white p-3 shadow-lg -rotate-3 max-w-md mx-auto">
           <picture>
-            <source srcset="images/image-6-sm.webp 400w, images/image-6.webp 800w" sizes="(max-width: 600px) 400px, 800px" type="image/webp">
-            <img src="images/image-6.webp" alt="Экологически чистый мёд с Алтая" loading="lazy" width="800" height="533" class="w-full h-auto product-image" onload="this.classList.add('loaded')" decoding="async">
+            <source type="image/webp" srcset="images/image-6-sm.webp 400w, images/image-6.webp 800w" sizes="(max-width: 600px) 400px, 800px">
+            <img 
+              src="images/image-6.webp" 
+              alt="Экологически чистый мёд с Алтая" 
+              loading="lazy"
+              width="800"
+              height="533"
+              class="w-full h-auto product-image"
+              onload="this.classList.add('loaded')"
+              decoding="async">
           </picture>
         </div>
       </div>
+      
       <div class="text-gray-700 order-1 md:order-2">
         <h3 class="text-xl md:text-2xl font-bold text-secondary mb-4 md:mb-6">Семейное дело с 1992 года</h3>
         <p class="mb-4 text-sm md:text-base">Мы находимся в самом сердце Алтая, в Солтонском районе — месте, где природа живет и дышит в гармонии. Наши ульи расположены в окружении чистых лесов и полей, а мед наполняется особым ароматом и богатым вкусом благодаря натуральным источникам. Пчелы питаются только природными ресурсами, ведь для нас важно сохранять чистоту и здоровье природы.</p>
+        
         <div class="about-check-item">
           <div class="about-check-icon">
-            <span class="ri-check-line text-primary" aria-hidden="true"></span>
+            <i class="ri-check-line text-primary" aria-hidden="true"></i>
           </div>
           <p class="about-check-text">Более 300 пчелиных семей</p>
         </div>
+        
         <div class="about-check-item">
           <div class="about-check-icon">
-            <span class="ri-check-line text-primary" aria-hidden="true"></span>
+            <i class="ri-check-line text-primary" aria-hidden="true"></i>
           </div>
           <p class="about-check-text">Ежегодно производим более 5 тонн мёда</p>
         </div>
+        
         <div class="about-check-item">
           <div class="about-check-icon">
-            <span class="ri-check-line text-primary" aria-hidden="true"></span>
+            <i class="ri-check-line text-primary" aria-hidden="true"></i>
           </div>
           <p class="about-check-text">Работаем по экологическим стандартам, заботимся о пчелах и природе</p>
         </div>
@@ -364,6 +467,8 @@
     </div>
   </div>
 </section>
+
+<!-- Форма заказа -->
 <section id="order" class="py-16 md:py-20 bg-white section-animate">
   <div class="container mx-auto px-4 md:px-6">
     <div class="max-w-4xl mx-auto bg-gradient-to-br from-primary to-[#8ea745] rounded-lg shadow-xl overflow-hidden">
@@ -371,45 +476,53 @@
         <div class="p-6 md:p-10 text-white">
           <h2 class="text-2xl md:text-3xl font-pacifico mb-4 md:mb-6">Заказать мёд</h2>
           <p class="mb-6 md:mb-8 text-sm md:text-base">Заполните форму, и мы свяжемся с вами для уточнения деталей заказа и доставки.</p>
+          
           <div class="mb-4 md:mb-6">
             <div class="flex items-center space-x-3 mb-2">
               <div class="w-7 h-7 md:w-8 md:h-8 flex items-center justify-center bg-white bg-opacity-20 rounded-full">
-                <span class="ri-truck-line text-white" aria-hidden="true"></span>
+                <i class="ri-truck-line text-white" aria-hidden="true"></i>
               </div>
               <span class="font-medium text-sm md:text-base">Доставка по всей России</span>
             </div>
+            
             <div class="flex items-center space-x-3 mb-2">
               <div class="w-7 h-7 md:w-8 md:h-8 flex items-center justify-center bg-white bg-opacity-20 rounded-full">
-                <span class="ri-shield-check-line text-white" aria-hidden="true"></span>
+                <i class="ri-shield-check-line text-white" aria-hidden="true"></i>
               </div>
               <span class="font-medium text-sm md:text-base">Безопасная оплата</span>
             </div>
+            
             <div class="flex items-center space-x-3">
               <div class="w-7 h-7 md:w-8 md:h-8 flex items-center justify-center bg-white bg-opacity-20 rounded-full">
-                <span class="ri-medal-line text-white" aria-hidden="true"></span>
+                <i class="ri-medal-line text-white" aria-hidden="true"></i>
               </div>
               <span class="font-medium text-sm md:text-base">Гарантия качества</span>
             </div>
           </div>
         </div>
+        
         <div class="bg-white p-6 md:p-8 lg:p-10">
           <form id="order-form">
             <div class="mb-3 md:mb-4">
               <label for="name" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Ваше имя</label>
               <input type="text" id="name" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="Иван Петров">
             </div>
+            
             <div class="mb-3 md:mb-4">
               <label for="phone" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Телефон</label>
               <input type="tel" id="phone" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="+7 (999) 123-45-67">
             </div>
+            
             <div class="mb-3 md:mb-4">
               <label for="email" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Email</label>
               <input type="email" id="email" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="example@mail.ru">
             </div>
+            
             <div class="mb-4 md:mb-6">
               <label for="message" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Комментарий к заказу</label>
               <textarea id="message" rows="3" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="Укажите интересующие вас сорта мёда и объём"></textarea>
             </div>
+            
             <button type="submit" class="w-full bg-orange text-white py-2 md:py-3 !rounded-button hover:bg-opacity-90 transition-all font-medium text-sm md:text-base">Отправить заявку</button>
           </form>
         </div>
@@ -417,42 +530,48 @@
     </div>
   </div>
 </section>
+
+<!-- Как мы работаем -->
 <section id="workflow" class="py-16 md:py-20 bg-[#F5DEB3] bg-opacity-20 texture-bg section-animate">
   <div class="container mx-auto px-4 md:px-6">
     <h2 class="text-3xl md:text-4xl font-pacifico text-center text-secondary mb-16 md:mb-20">Как мы работаем</h2>
+    
     <div class="workflow-container">
       <div class="workflow-steps">
         <div class="step-circle">
           <div class="step-number">1</div>
           <div class="step-icon">
-            <span class="ri-chat-1-line text-2xl text-[#8B4513]" aria-hidden="true"></span>
+            <i class="ri-chat-1-line text-2xl text-[#8B4513]" aria-hidden="true"></i>
           </div>
           <div class="step-content">
             <h3 class="step-title">Вы оставляете заявку</h3>
           </div>
         </div>
+        
         <div class="step-circle">
           <div class="step-number">2</div>
           <div class="step-icon">
-            <span class="ri-phone-line text-2xl text-[#8B4513]" aria-hidden="true"></span>
+            <i class="ri-phone-line text-2xl text-[#8B4513]" aria-hidden="true"></i>
           </div>
           <div class="step-content">
             <h3 class="step-title">Мы связываемся с вами</h3>
           </div>
         </div>
+        
         <div class="step-circle">
           <div class="step-number">3</div>
           <div class="step-icon">
-            <span class="ri-truck-line text-2xl text-[#8B4513]" aria-hidden="true"></span>
+            <i class="ri-truck-line text-2xl text-[#8B4513]" aria-hidden="true"></i>
           </div>
           <div class="step-content">
             <h3 class="step-title">Отправляем вам мед</h3>
           </div>
         </div>
+        
         <div class="step-circle">
           <div class="step-number">4</div>
           <div class="step-icon">
-            <span class="ri-gift-line text-2xl text-[#8B4513]" aria-hidden="true"></span>
+            <i class="ri-gift-line text-2xl text-[#8B4513]" aria-hidden="true"></i>
           </div>
           <div class="step-content">
             <h3 class="step-title">Вы наслаждаетесь вкусом</h3>
@@ -463,6 +582,8 @@
   </div>
 </section>
 </main>
+
+<!-- Футер -->
 <footer class="py-10 md:py-12 w-full bg-[#8B4513]">
   <div id="footer-contacts" class="container mx-auto px-4 md:px-6 w-full">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 w-full">
@@ -475,6 +596,7 @@
           <p class="text-xs">© 2025 Алтайский мёд. Все права защищены.</p>
         </div>
       </div>
+      
       <div class="footer-column">
         <h4 class="text-base md:text-lg font-bold">Каталог</h4>
         <ul>
@@ -498,6 +620,7 @@
           </li>
         </ul>
       </div>
+      
       <div class="footer-column">
         <h4 class="text-base md:text-lg font-bold">Материалы</h4>
         <ul>
@@ -521,6 +644,7 @@
           </li>
         </ul>
       </div>
+      
       <div class="footer-column">
         <h4 class="text-base md:text-lg font-bold">Информация</h4>
         <ul>
@@ -550,21 +674,22 @@
           </li>
         </ul>
       </div>
+      
       <div class="footer-column">
         <h4 class="text-base md:text-lg font-bold">Контакты</h4>
         <ul>
           <li>
-            <div class="footer-link-item">
+            <a class="footer-link-item">
               <div class="contact-icon">
-                <span class="ri-map-pin-line text-white" aria-hidden="true"></span>
+                <i class="ri-map-pin-line text-white" aria-hidden="true"></i>
               </div>
               <span class="contact-text">Владимирская обл., г.Ковров</span>
-            </div>
+            </a>
           </li>
           <li>
             <a href="tel:+79209400222" class="footer-link-item">
               <div class="contact-icon">
-                <span class="ri-phone-line text-white" aria-hidden="true"></span>
+                <i class="ri-phone-line text-white" aria-hidden="true"></i>
               </div>
               <span class="contact-text">+7 (920) 940-02-22</span>
             </a>
@@ -572,27 +697,28 @@
           <li>
             <a href="mailto:altaymed.shop@yandex.ru" class="footer-link-item">
               <div class="contact-icon">
-                <span class="ri-mail-line text-white" aria-hidden="true"></span>
+                <i class="ri-mail-line text-white" aria-hidden="true"></i>
               </div>
               <span class="contact-text">altaymed.shop@yandex.ru</span>
             </a>
           </li>
         </ul>
+        
         <div class="mt-4 md:mt-6">
           <p class="text-base md:text-lg font-bold mb-2 md:mb-3">Следите за нами</p>
           <div class="flex space-x-2 md:space-x-3">
             <a href="https://vk.com/honeybuckwheat" target="_blank" rel="noopener" class="social-icon-bw vk">
-              <span class="ri-vk-line" aria-hidden="true"></span>
+              <i class="ri-vk-line" aria-hidden="true"></i>
             </a>
             <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" rel="noopener" class="social-icon-bw telegram">
-              <span class="ri-telegram-line" aria-hidden="true"></span>
+              <i class="ri-telegram-line" aria-hidden="true"></i>
             </a>
             <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing" 
                target="_blank" rel="noopener" class="social-icon-bw">
-              <span class="ri-shopping-bag-line" aria-hidden="true"></span>
+              <i class="ri-shopping-bag-line" aria-hidden="true"></i>
             </a>
             <a href="https://yandex.ru/maps/" target="_blank" rel="noopener" class="social-icon-bw yandex">
-              <span class="ri-map-2-line" aria-hidden="true"></span>
+              <i class="ri-map-2-line" aria-hidden="true"></i>
             </a>
           </div>
         </div>
@@ -600,12 +726,14 @@
     </div>
   </div>
 </footer>
+
+<!-- Модальные окна -->
 <div id="buy-modal" class="modal">
   <div class="modal-content">
     <div class="bg-gradient-to-r from-primary to-[#8ea745] p-4 md:p-6 rounded-t-lg">
       <div class="flex justify-between items-center">
         <h3 class="text-xl md:text-2xl font-bold text-white w-full text-center">Оформление заказа</h3>
-        <span class="close-modal text-white"><span class="ri-close-line text-2xl" aria-hidden="true"></span></span>
+        <span class="close-modal text-white"><i class="ri-close-line text-2xl" aria-hidden="true"></i></span>
       </div>
     </div>
     <div class="p-4 md:p-6">
@@ -614,10 +742,12 @@
           <label for="quick-product" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Товар</label>
           <input type="text" id="quick-product" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded bg-gray-50 cursor-not-allowed text-sm md:text-base" readonly>
         </div>
+        
         <div class="mb-3 md:mb-4">
           <label for="quantity" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Количество (литров)</label>
           <input type="number" id="quantity" min="1" value="1" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base">
         </div>
+        
         <div class="mb-3 md:mb-4">
           <label class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Примерная стоимость</label>
           <div class="bg-gray-100 px-3 py-2 md:px-4 md:py-3 rounded flex justify-between items-center">
@@ -625,14 +755,17 @@
             <span id="total-price" class="text-lg md:text-xl font-bold text-primary">1100 ₽</span>
           </div>
         </div>
+        
         <div class="mb-3 md:mb-4">
           <label for="delivery-address" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Адрес доставки</label>
           <textarea id="delivery-address" rows="2" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="Укажите полный адрес доставки"></textarea>
         </div>
+        
         <div class="mb-3 md:mb-4">
           <label for="quick-phone" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Контактный телефон</label>
           <input type="tel" id="quick-phone" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="+7 (999) 123-45-67">
         </div>
+        
         <button type="submit" class="w-full bg-orange text-white py-2 md:py-3 !rounded-button hover:bg-opacity-90 transition-all font-medium text-sm md:text-base">
           Подтвердить заказ
         </button>
@@ -640,53 +773,49 @@
     </div>
   </div>
 </div>
+
 <div id="success-modal" class="modal">
   <div class="success-modal-content">
     <div class="success-icon">
-      <span class="ri-checkbox-circle-line text-4xl text-white" aria-hidden="true"></span>
+      <i class="ri-checkbox-circle-line text-4xl text-white" aria-hidden="true"></i>
     </div>
     <h3 class="success-title">Заказ оформлен!</h3>
     <p class="success-text">Спасибо за ваш заказ! Мы свяжемся с вами в течение 10 минут для подтверждения деталей.</p>
     <button class="success-btn" id="close-success-modal">Отлично</button>
   </div>
 </div>
+
 <div id="error-modal" class="modal">
   <div class="modal-content">
-    <div class="bg-gradient-to-r from-red-500 to-red-700 p-4 md:p-6 rounded-t-lg">
+    <div class="bg-red-600 p-4 md:p-6 rounded-t-lg">
       <div class="flex justify-between items-center">
         <h3 class="text-xl md:text-2xl font-bold text-white w-full text-center">Ошибка</h3>
-        <span class="close-error-modal text-white"><span class="ri-close-line text-2xl" aria-hidden="true"></span></span>
+        <span class="close-error-modal text-white"><i class="ri-close-line text-2xl" aria-hidden="true"></i></span>
       </div>
     </div>
-    <div class="p-6 md:p-8 text-center">
-      <span class="ri-error-warning-line text-red-500 text-4xl mb-4" aria-hidden="true"></span>
-      <p id="error-message" class="text-gray-700 mb-6">Произошла ошибка при отправке заказа. Пожалуйста, попробуйте позже или свяжитесь с нами по телефону.</p>
-      <a href="tel:+79209400222" class="bg-red-500 hover:bg-red-600 text-white py-2 px-6 rounded-button inline-block transition-all">
-        Позвонить: +7 (920) 940-02-22
-      </a>
+    <div class="p-4 md:p-6 text-center">
+      <div class="error-icon mb-4">
+        <i class="ri-error-warning-line text-4xl text-red-600" aria-hidden="true"></i>
+      </div>
+      <p class="error-text mb-6">Произошла ошибка при отправке заказа. Пожалуйста, попробуйте еще раз или позвоните нам по телефону:</p>
+      <a href="tel:+79209400222" class="text-lg md:text-xl font-bold text-primary">+7 (920) 940-02-22</a>
     </div>
   </div>
 </div>
+
 <script>
 // Функция для санитизации ввода
 function sanitize(input) {
-  if (!input) return '';
   return input.replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
-// Управление модальными окнами
+// Унифицированное управление модальными окнами
 function toggleModal(modalId, show) {
   const modal = document.getElementById(modalId);
   if (modal) {
     modal.style.display = show ? 'flex' : 'none';
     document.body.style.overflow = show ? 'hidden' : 'auto';
   }
-}
-
-// Регулярное выражение для проверки телефона
-function isValidPhone(phone) {
-  const regex = /^(\+7|8)[\s-]?\(?\d{3}\)?[\s-]?\d{3}[\s-]?\d{2}[\s-]?\d{2}$/;
-  return regex.test(phone);
 }
 
 // Оптимизированная загрузка аналитики
@@ -706,6 +835,7 @@ function loadAnalytics() {
   };
 }
 
+// Загружаем аналитику после полной загрузки страницы с задержкой 1 сек
 window.addEventListener('load', function() {
   setTimeout(loadAnalytics, 1000);
 });
@@ -724,6 +854,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
   
+  // Плавная прокрутка к якорям
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       if (this.getAttribute('href') === '#') return;
@@ -738,6 +869,7 @@ document.addEventListener('DOMContentLoaded', function() {
           behavior: 'smooth'
         });
         
+        // Закрыть мобильное меню при клике на ссылку
         if (!mobileMenu.classList.contains('hidden') && window.innerWidth < 768) {
           mobileMenu.classList.add('hidden');
           mobileMenu.classList.remove('block');
@@ -748,7 +880,6 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Получаем формы
   const orderForm = document.querySelector('#order form');
-  const quickOrderForm = document.getElementById('quick-order-form');
   const contactForm = document.querySelector('#contacts form');
 
   // Функция для отправки сообщения в Telegram
@@ -795,16 +926,11 @@ document.addEventListener('DOMContentLoaded', function() {
       e.preventDefault();
       const name = sanitize(document.getElementById('name').value);
       const phone = sanitize(document.getElementById('phone').value);
-      const email = sanitize(document.getElementById('email').value || 'не указан');
-      const message = sanitize(document.getElementById('message').value || 'нет комментария');
+      const email = sanitize(document.getElementById('email').value);
+      const message = sanitize(document.getElementById('message').value);
       
       if (!name || !phone) {
         alert('Пожалуйста, заполните имя и телефон');
-        return;
-      }
-      
-      if (!isValidPhone(phone)) {
-        alert('Пожалуйста, введите корректный номер телефона');
         return;
       }
       
@@ -813,14 +939,15 @@ document.addEventListener('DOMContentLoaded', function() {
 <b>🔥 НОВЫЙ ЗАКАЗ С САЙТА 🔥</b>
 <b>Имя:</b> ${name}
 <b>Телефон:</b> ${phone}
-<b>Email:</b> ${email}
-<b>Комментарий:</b> ${message}
+<b>Email:</b> ${email || 'не указан'}
+<b>Комментарий:</b> ${message || 'нет комментария'}
       `;
       
       try {
         const success = await sendToTelegram(telegramMessage);
         
         if (success) {
+          // Показываем модальное окно успеха
           toggleModal('success-modal', true);
           orderForm.reset();
         } else {
@@ -837,6 +964,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const buyButtons = document.querySelectorAll('.buy-btn');
   const modal = document.getElementById('buy-modal');
   const closeModal = document.querySelector('.close-modal');
+  const closeErrorModal = document.querySelector('.close-error-modal');
+  const quickOrderForm = document.getElementById('quick-order-form');
   const quickProductInput = document.getElementById('quick-product');
   const pricePerLiter = document.getElementById('price-per-liter');
   const totalPrice = document.getElementById('total-price');
@@ -866,9 +995,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
-  // Закрытие модального окна
+  // Закрытие модальных окон
   closeModal.addEventListener('click', function() {
     toggleModal('buy-modal', false);
+  });
+  
+  closeErrorModal.addEventListener('click', function() {
+    toggleModal('error-modal', false);
   });
   
   // Закрытие при клике вне окна
@@ -891,18 +1024,13 @@ document.addEventListener('DOMContentLoaded', function() {
   if (quickOrderForm) {
     quickOrderForm.addEventListener('submit', async function(e) {
       e.preventDefault();
-      const product = sanitize(quickProductInput.value);
-      const quantity = sanitize(document.getElementById('quantity').value);
+      const product = quickProductInput.value;
+      const quantity = document.getElementById('quantity').value;
       const address = sanitize(document.getElementById('delivery-address').value);
       const phone = sanitize(document.getElementById('quick-phone').value);
       
       if (!product || !quantity || !address || !phone) {
         alert('Пожалуйста, заполните все поля');
-        return;
-      }
-      
-      if (!isValidPhone(phone)) {
-        alert('Пожалуйста, введите корректный номер телефона');
         return;
       }
       
@@ -920,8 +1048,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const success = await sendToTelegram(telegramMessage);
         
         if (success) {
+          // Закрываем модальное окно заказа
           toggleModal('buy-modal', false);
+          
+          // Показываем модальное окно успеха
           toggleModal('success-modal', true);
+          
+          // Сбрасываем форму
           quickOrderForm.reset();
         } else {
           toggleModal('error-modal', true);
@@ -935,17 +1068,10 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Закрытие модального окна успеха
   const closeSuccessModal = document.getElementById('close-success-modal');
-  const closeErrorModal = document.querySelector('.close-error-modal');
   
   closeSuccessModal.addEventListener('click', function() {
     toggleModal('success-modal', false);
   });
-  
-  if (closeErrorModal) {
-    closeErrorModal.addEventListener('click', function() {
-      toggleModal('error-modal', false);
-    });
-  }
   
   // Анимация для появления секций при скролле
   const animateSections = document.querySelectorAll('.section-animate');
@@ -993,6 +1119,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/102951378" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<script defer src="/register-sw.js"></script>
+  <script defer src="/register-sw.js"></script>
 </body>
 </html>

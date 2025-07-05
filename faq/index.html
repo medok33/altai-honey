@@ -437,6 +437,40 @@ footer a:hover {
   }
 ]
 </script>
+  <style>
+  /* Сброс базовых стилей */
+  *, ::before, ::after {
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: #e5e7eb;
+  }
+
+  /* Убираем подчеркивание */
+  body, p, h1, h2, h3, h4, span, div {
+    text-decoration: none !important;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+
+  /* Восстанавливаем стили блоков вопросов */
+  .faq-item {
+    border-bottom: 1px solid #e5e7eb;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .faq-item:last-child {
+    border-bottom: none;
+  }
+
+  /* Фикс для иконок */
+  .social-icon-bw {
+    text-decoration: none;
+  }
+</style>
 </head>
 <body>
 <nav class="bg-white shadow-sm sticky top-0 z-50">

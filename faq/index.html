@@ -1,319 +1,492 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FAQ | Алтайский мёд - Часто задаваемые вопросы</title>
-<meta name="description" content="Ответы на часто задаваемые вопросы о натуральном алтайском мёде, условиях доставки и оплаты. Профессиональные консультации по хранению и употреблению.">
-
-<link rel="canonical" href="https://altaymed.shop/faq/" />
-
-<!-- Open Graph -->
-<meta property="og:title" content="FAQ | Алтайский мёд">
-<meta property="og:description" content="Ответы на часто задаваемые вопросы о натуральном мёде с Алтая">
-<meta property="og:image" content="https://altaymed.shop/images/og-preview.webp">
-<meta property="og:url" content="https://altaymed.shop/faq/">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Алтайский мёд">
-
-<!-- Twitter Cards -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="FAQ | Алтайский мёд">
-<meta name="twitter:description" content="Профессиональные ответы о качестве, хранении и доставке алтайского мёда">
-<meta name="twitter:image" content="https://altaymed.shop/images/twitter-preview.webp">
-<meta name="twitter:site" content="@altaymed">
-
-<link rel="icon" href="/images/favicon.ico" sizes="any">
-<link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
-
-<link rel="manifest" href="/manifest.json">
-<meta name="theme-color" content="#9f5524">
-
-<!-- Предзагрузка шрифтов -->
-<link rel="preload" href="/fonts/OpenSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/Pacifico-Regular.woff2" as="font" type="font/woff2" crossorigin>
-
-<!-- Встроенный критический CSS -->
-<style>
-/* КРИТИЧЕСКИЕ СТИЛИ ДЛЯ ПЕРВОГО ЭКРАНА */
-:root {
-  --primary: #6B8E23;
-  --secondary: #8B4513;
-}
-
-*, ::before, ::after {
-  box-sizing: border-box;
-  text-decoration: none !important;
-}
-
-body {
-  margin: 0;
-  font-family: 'Open Sans', sans-serif;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background-color: #fff;
-  color: #1a202c;
-}
-
-/* Навигация */
-.navbar {
-  background-color: #fff;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 50;
-}
-
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-.header-logo {
-  font-family: 'Pacifico', cursive;
-  font-size: 1.75rem;
-  color: var(--primary);
-  text-decoration: none !important;
-}
-
-/* Герой-секция */
-.hero-section {
-  min-height: 50vh;
-  display: flex;
-  align-items: center;
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-              url('/images/image-14.jpg');
-  background-size: cover;
-  background-position: center;
-  color: #fff;
-  text-align: center;
-}
-
-.hero-title {
-  font-family: 'Pacifico', cursive;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-/* Только необходимые стили для первого экрана */
-.nav-link {
-  color: #1a202c !important;
-  transition: color 0.3s;
-}
-
-.nav-btn {
-  background: var(--primary) !important;
-  color: white !important;
-  border-radius: 8px;
-  padding: 0.5rem 1.5rem;
-}
-
-/* Скелетоны для контента ниже первого экрана */
-.faq-section, .footer-section {
-  opacity: 0;
-  animation: fadeIn 0.5s forwards;
-  animation-delay: 0.3s;
-}
-
-@keyframes fadeIn {
-  to { opacity: 1; }
-}
-</style>
-
-<!-- Асинхронная загрузка остальных стилей -->
-<link rel="preload" href="/css/tailwind-faq.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="/css/tailwind-faq.min.css"></noscript>
-
-<link rel="preload" href="/css/style.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="/css/style.min.css"></noscript>
-
-<!-- Отложенная загрузка иконок -->
-<link rel="preload" href="/assets/fonts/remixicon/remixicon.css" as="style" media="print" onload="this.media='all'; this.onload=null">
-<noscript><link rel="stylesheet" href="/assets/fonts/remixicon/remixicon.css"></noscript>
-
-<!-- Inline остальные необходимые стили -->
-<style>
-/* СТИЛИ ДЛЯ FAQ БЛОКОВ */
-.faq-item {
-  border-bottom: 1px solid #e5e7eb;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1.5rem;
-}
-
-.faq-item:last-child {
-  border-bottom: none;
-}
-
-.text-gray-700 {
-  color: #374151;
-}
-
-/* СТИЛИ ДЛЯ ФУТЕРА */
-footer {
-  background-color: #8B4513;
-  color: white;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-}
-
-/* ОПТИМИЗАЦИЯ ИКОНОК */
-.social-icon-bw {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: transparent;
-  transition: all 0.3s;
-  border: 1px solid #4b5563;
-  filter: grayscale(100%);
-  text-decoration: none !important;
-}
-</style>
-
-<!-- Структурированные данные -->
-<script type="application/ld+json">
-[
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Как правильно хранить мёд для сохранения его свойств?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Для сохранения качества мёда рекомендуется хранить его в стеклянной или керамической таре с герметичной крышкой при температуре 18-20°C. Место хранения должно быть защищено от прямых солнечных лучей и повышенной влажности. В таких условиях мёд сохраняет свои полезные свойства на протяжении нескольких лет."
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | Алтайский мёд - Часто задаваемые вопросы</title>
+    <meta name="description" content="Ответы на часто задаваемые вопросы о натуральном алтайском мёде, условиях доставки и оплаты">
+    
+    <link rel="canonical" href="https://altaymed.shop/faq/">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="FAQ | Алтайский мёд">
+    <meta property="og:description" content="Ответы на часто задаваемые вопросы о натуральном мёде с Алтая">
+    <meta property="og:image" content="https://altaymed.shop/images/og-preview.webp">
+    <meta property="og:url" content="https://altaymed.shop/faq/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Алтайский мёд">
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="FAQ | Алтайский мёд">
+    <meta name="twitter:description" content="Профессиональные ответы о качестве, хранении и доставке алтайского мёда">
+    <meta name="twitter:image" content="https://altaymed.shop/images/twitter-preview.webp">
+    <meta name="twitter:site" content="@altaymed">
+    
+    <link rel="icon" href="/images/favicon.ico" sizes="any">
+    <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#9f5524">
+    
+    <!-- Критически важные стили -->
+    <style>
+        /* Основные сбросы стилей */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            text-decoration: none !important;
         }
-      },
-      {
-        "@type": "Question",
-        "name": "Почему происходит кристаллизация мёда?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Кристаллизация (засахаривание) - естественный процесс, подтверждающий натуральность мёда. Скорость кристаллизации зависит от ботанического происхождения мёда и соотношения глюкозы и фруктозы. Отсутствие кристаллизации в течение длительного времени может свидетельствовать о фальсификации продукта или его термической обработке."
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+            color: #1a202c;
+            line-height: 1.5;
         }
-      },
-      {
-        "@type": "Question",
-        "name": "Какие сроки доставки вашей продукции?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Сроки доставки зависят от региона получателя: по городу Ковров - в течение дня; по России - 3-5 рабочих дней; в отдаленные регионы - до 14 дней. Точный срок доставки рассчитывается индивидуально при оформлении заказа."
+        
+        /* Навигация */
+        .navbar {
+            background-color: #fff;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 50;
         }
-      },
-      {
-        "@type": "Question",
-        "name": "Какие способы оплаты вы принимаете?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Мы предлагаем несколько вариантов оплаты: наличными при получении (для жителей Коврова), банковской картой онлайн, переводом на карту и через систему быстрых платежей (СБП) по номеру телефона. Все платежные операции защищены современными криптографическими протоколами."
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
         }
-      },
-      {
-        "@type": "Question",
-        "name": "Имеются ли противопоказания к употреблению мёда?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Мёд не рекомендуется: детям до 1 года из-за риска развития ботулизма; людям с индивидуальной непереносимостью продуктов пчеловодства; при сахарном диабете (требуется консультация врача); в период обострения заболеваний ЖКТ. Для здоровых взрослых рекомендуемая суточная норма составляет 1-2 столовые ложки."
+        
+        .header-logo {
+            font-family: 'Pacifico', cursive;
+            font-size: 1.75rem;
+            color: #6B8E23;
         }
-      }
+        
+        /* Герой-секция */
+        .hero-section {
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('/images/image-14.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+        }
+        
+        .hero-title {
+            font-family: 'Pacifico', cursive;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Навигационные ссылки */
+        .nav-link {
+            color: #1a202c !important;
+            transition: color 0.3s;
+        }
+        
+        .nav-btn {
+            background: #6B8E23 !important;
+            color: white !important;
+            border-radius: 8px;
+            padding: 0.5rem 1.5rem;
+        }
+        
+        /* Анимации для контента ниже первого экрана */
+        .faq-section, .footer-section {
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
+            animation-delay: 0.3s;
+        }
+        
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+    </style>
+    
+    <!-- Асинхронная загрузка CSS -->
+    <link rel="preload" href="/css/tailwind-faq.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/css/tailwind-faq.min.css"></noscript>
+    
+    <link rel="preload" href="/css/style.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/css/style.min.css"></noscript>
+    
+    <!-- Отложенная загрузка иконок -->
+    <link rel="preload" href="/assets/fonts/remixicon/remixicon.css" as="style" media="print" onload="this.media='all'; this.onload=null">
+    <noscript><link rel="stylesheet" href="/assets/fonts/remixicon/remixicon.css"></noscript>
+    
+    <!-- Предзагрузка шрифтов -->
+    <link rel="preload" href="/fonts/OpenSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/Pacifico-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <!-- Структурированные данные -->
+    <script type="application/ld+json">
+    [
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "Как правильно хранить мёд для сохранения его свойств?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Для сохранения качества мёда рекомендуется хранить его в стеклянной или керамической таре с герметичной крышкой при температуре 18-20°C. Место хранения должно быть защищено от прямых солнечных лучей и повышенной влажности. В таких условиях мёд сохраняет свои полезные свойства на протяжении нескольких лет."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Почему происходит кристаллизация мёда?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Кристаллизация (засахаривание) - естественный процесс, подтверждающий натуральность мёда. Скорость кристаллизации зависит от ботанического происхождения мёда и соотношения глюкозы и фруктозы. Отсутствие кристаллизации в течение длительного времени может свидетельствовать о фальсификации продукта или его термической обработке."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Какие сроки доставки вашей продукции?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Сроки доставки зависят от региона получателя: по городу Ковров - в течение дня; по России - 3-5 рабочих дней; в отдаленные регионы - до 14 дней. Точный срок доставки рассчитывается индивидуально при оформлении заказа."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Какие способы оплаты вы принимаете?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Мы предлагаем несколько вариантов оплаты: наличными при получении (для жителей Коврова), банковской картой онлайн, переводом на карту и через систему быстрых платежей (СБП) по номеру телефона. Все платежные операции защищены современными криптографическими протоколами."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Имеются ли противопоказания к употреблению мёда?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Мёд не рекомендуется: детям до 1 года из-за риска развития ботулизма; людям с индивидуальной непереносимостью продуктов пчеловодства; при сахарном диабете (требуется консультация врача); в период обострения заболеваний ЖКТ. Для здоровых взрослых рекомендуемая суточная норма составляет 1-2 столовые ложки."
+                    }
+                }
+            ]
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Алтайский мёд",
+            "url": "https://altaymed.shop",
+            "logo": "https://altaymed.shop/images/logo.webp",
+            "description": "Продажа натурального алтайского мёда высшего качества с доставкой по России",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+79209400222",
+                "contactType": "Customer service",
+                "email": "altaymed.shop@yandex.ru",
+                "areaServed": "RU"
+            },
+            "sameAs": [
+                "https://vk.com/honeybuckwheat",
+                "https://t.me/HONEYBUCKWHEAT"
+            ]
+        }
     ]
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Алтайский мёд",
-    "url": "https://altaymed.shop",
-    "logo": "https://altaymed.shop/images/logo.webp",
-    "description": "Продажа натурального алтайского мёда высшего качества с доставкой по России",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+79209400222",
-      "contactType": "Customer service",
-      "email": "altaymed.shop@yandex.ru",
-      "areaServed": "RU"
-    },
-    "sameAs": [
-      "https://vk.com/honeybuckwheat",
-      "https://t.me/HONEYBUCKWHEAT"
-    ]
-  }
-]
-</script>
+    </script>
 </head>
 <body>
-<!-- Навигация и контент остаются без изменений -->
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="container flex items-center justify-between py-3">
+            <a href="/" class="header-logo">Алтайский мёд</a>
+            
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="/#benefits" class="nav-link">Преимущества</a>
+                <a href="/#products" class="nav-link">Каталог</a>
+                <a href="/#about" class="nav-link">О нас</a>
+                <a href="/#footer-contacts" class="nav-link">Контакты</a>
+                <a href="/faq/" class="active-nav-link-alt">FAQ</a>
+                <a href="/#order" class="nav-btn">Заказать</a>
+            </div>
+            
+            <button class="md:hidden w-10 h-10 flex items-center justify-center" id="mobile-menu-button" aria-label="Открыть меню">
+                <i class="ri-menu-line text-gray-900 ri-xl" aria-hidden="true"></i>
+            </button>
+        </div>
+        
+        <!-- Мобильное меню -->
+        <div class="md:hidden hidden bg-white shadow-md px-4 py-3" id="mobile-menu">
+            <div class="flex flex-col space-y-4">
+                <a href="/#benefits" class="nav-link py-2">Преимущества</a>
+                <a href="/#products" class="nav-link py-2">Каталог</a>
+                <a href="/#about" class="nav-link py-2">О нас</a>
+                <a href="/#footer-contacts" class="nav-link py-2">Контакты</a>
+                <a href="/faq/" class="active-nav-link-alt py-2 text-center">FAQ</a>
+                <a href="/#order" class="nav-btn py-2 text-center">Заказать</a>
+            </div>
+        </div>
+    </nav>
 
-<script>
-/* Оптимизированная загрузка ресурсов */
-function loadCSS(href, before, media) {
-  const link = document.createElement('link');
-  link.rel = 'stylesheet';
-  link.href = href;
-  if (media) link.media = media;
-  if (before) before.parentNode.insertBefore(link, before);
-  else document.head.appendChild(link);
-}
+    <!-- Основной контент -->
+    <main>
+        <!-- Герой-секция -->
+        <section class="hero-section">
+            <div class="container px-4">
+                <h1 class="hero-title">Часто задаваемые вопросы</h1>
+                <p class="text-xl max-w-2xl mx-auto">Профессиональные ответы о качестве, хранении и употреблении натурального алтайского мёда</p>
+            </div>
+        </section>
+        
+        <!-- FAQ раздел -->
+        <section class="faq-section py-16 bg-[#F5DEB3] bg-opacity-20">
+            <div class="container px-4 md:px-6">
+                <div class="max-w-3xl mx-auto bg-white p-6 md:p-8 rounded-lg shadow-md">
+                    <h2 class="text-2xl font-bold text-[#8B4513] mb-8 text-center">Популярные вопросы о нашем мёде</h2>
+                    
+                    <div class="faq-item mb-6 pb-6 border-b border-gray-200">
+                        <h3 class="text-xl font-bold text-[#8B4513] mb-3 flex items-center">
+                            <i class="ri-question-line text-[#6B8E23] mr-2" aria-hidden="true"></i>
+                            Как правильно хранить мёд для сохранения его свойств?
+                        </h3>
+                        <p class="text-gray-700">Для сохранения качества мёда рекомендуется хранить его в стеклянной или керамической таре с герметичной крышкой при температуре 18-20°C. Место хранения должно быть защищено от прямых солнечных лучей и повышенной влажности. В таких условиях мёд сохраняет свои полезные свойства на протяжении нескольких лет.</p>
+                    </div>
+                    
+                    <div class="faq-item mb-6 pb-6 border-b border-gray-200">
+                        <h3 class="text-xl font-bold text-[#8B4513] mb-3 flex items-center">
+                            <i class="ri-question-line text-[#6B8E23] mr-2" aria-hidden="true"></i>
+                            Почему происходит кристаллизация мёда?
+                        </h3>
+                        <p class="text-gray-700">Кристаллизация (засахаривание) - естественный процесс, подтверждающий натуральность мёда. Скорость кристаллизации зависит от ботанического происхождения мёда и соотношения глюкозы и фруктозы. Отсутствие кристаллизации в течение длительного времени может свидетельствовать о фальсификации продукта или его термической обработке.</p>
+                    </div>
+                    
+                    <div class="faq-item mb-6 pb-6 border-b border-gray-200">
+                        <h3 class="text-xl font-bold text-[#8B4513] mb-3 flex items-center">
+                            <i class="ri-question-line text-[#6B8E23] mr-2" aria-hidden="true"></i>
+                            Какие сроки доставки вашей продукции?
+                        </h3>
+                        <p class="text-gray-700">Сроки доставки зависят от региона получателя:
+                            <ul class="list-disc pl-6 mt-2">
+                                <li>По городу Ковров: в течение дня</li>
+                                <li>По России: 3-5 рабочих дней</li>
+                                <li>Отдаленные регионы: до 14 дней</li>
+                            </ul>
+                            Точный срок доставки рассчитывается индивидуально при оформлении заказа.
+                        </p>
+                    </div>
+                    
+                    <div class="faq-item mb-6 pb-6 border-b border-gray-200">
+                        <h3 class="text-xl font-bold text-[#8B4513] mb-3 flex items-center">
+                            <i class="ri-question-line text-[#6B8E23] mr-2" aria-hidden="true"></i>
+                            Какие способы оплаты вы принимаете?
+                        </h3>
+                        <p class="text-gray-700">Мы предлагаем несколько вариантов оплаты:
+                            <ul class="list-disc pl-6 mt-2">
+                                <li>Наличными при получении (для жителей Коврова)</li>
+                                <li>Банковской картой онлайн</li>
+                                <li>Переводом на карту</li>
+                                <li>Через систему быстрых платежей (СБП) по номеру телефона</li>
+                            </ul>
+                            Все платежные операции защищены современными криптографическими протоколами.
+                        </p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 class="text-xl font-bold text-[#8B4513] mb-3 flex items-center">
+                            <i class="ri-question-line text-[#6B8E23] mr-2" aria-hidden="true"></i>
+                            Имеются ли противопоказания к употреблению мёда?
+                        </h3>
+                        <p class="text-gray-700">Мёд не рекомендуется:
+                            <ul class="list-disc pl-6 mt-2">
+                                <li>Детям до 1 года из-за риска развития ботулизма</li>
+                                <li>Людям с индивидуальной непереносимостью продуктов пчеловодства</li>
+                                <li>При сахарном диабете (требуется консультация врача)</li>
+                                <li>В период обострения заболеваний ЖКТ</li>
+                            </ul>
+                            Для здоровых взрослых рекомендуемая суточная норма составляет 1-2 столовые ложки.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-/* Загрузка отложенных ресурсов после рендеринга */
-window.addEventListener('load', function() {
-  // Загрузка иконок, если не загрузились
-  if (!document.querySelector('link[href*="remixicon"]')) {
-    loadCSS('/assets/fonts/remixicon/remixicon.css');
-  }
-  
-  // Инициализация аналитики с задержкой
-  setTimeout(initAnalytics, 1500);
-});
+    <!-- Футер -->
+    <footer class="footer-section py-10 md:py-12 w-full bg-[#8B4513] text-white">
+        <div id="footer-contacts" class="container px-4 md:px-6 w-full">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 w-full">
+                <!-- Колонки футера -->
+                <div class="footer-column">
+                    <div class="logo-wrapper">
+                        <a href="/" class="text-2xl md:text-3xl font-['Pacifico'] mb-3 md:mb-4 block">Алтайский мёд</a>
+                    </div>
+                    <div class="description-wrapper">
+                        <p class="text-xs">Натуральные продукты пчеловодства с Алтайских гор.</p>
+                        <p class="text-xs">© 2025 Алтайский мёд. Все права защищены.</p>
+                    </div>
+                </div>
+                
+                <!-- Остальные колонки футера -->
+                <div class="footer-column">
+                    <h4 class="text-base md:text-lg font-bold">Каталог</h4>
+                    <ul>
+                        <li><a href="/#product-1" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">Разнотравье</a></li>
+                        <li><a href="/#product-2" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">Таёжный мёд</a></li>
+                        <li><a href="/#product-3" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">Гречишный мёд</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="text-base md:text-lg font-bold">Материалы</h4>
+                    <ul>
+                        <li><a href="/blog/" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">Блог</a></li>
+                        <li><a href="/faq/" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">FAQ</a></li>
+                        <li><a href="/legal.html" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">Правовая информация</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="text-base md:text-lg font-bold">Информация</h4>
+                    <ul>
+                        <li><a href="/#benefits" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">Преимущества</a></li>
+                        <li><a href="/#about" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">О нас</a></li>
+                        <li><a href="/#footer-contacts" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">Контакты</a></li>
+                        <li><a href="/delivery.html" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">Доставка и оплата</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="text-base md:text-lg font-bold">Контакты</h4>
+                    <ul>
+                        <li><span class="contact-text">Владимирская обл., г.Ковров</span></li>
+                        <li><a href="tel:+79209400222" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">+7 (920) 940-02-22</a></li>
+                        <li><a href="mailto:altaymed.shop@yandex.ru" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">altaymed.shop@yandex.ru</a></li>
+                    </ul>
+                    
+                    <div class="mt-4 md:mt-6">
+                        <p class="text-base md:text-lg font-bold mb-2 md:mb-3">Следите за нами</p>
+                        <div class="flex space-x-2 md:space-x-3">
+                            <a href="https://vk.com/honeybuckwheat" target="_blank" class="social-icon-bw" aria-label="Наш ВКонтакте">
+                                <i class="ri-vk-line ri-lg" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" class="social-icon-bw" aria-label="Наш Telegram">
+                                <i class="ri-telegram-line ri-lg" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing" 
+                               target="_blank" class="social-icon-bw" aria-label="Наш Avito">
+                                <div class="avito-icon-bw" aria-hidden="true">
+                                    <!-- SVG для Avito -->
+                                </div>
+                            </a>
+                            <a href="https://yandex.ru/maps/" target="_blank" class="social-icon-bw" aria-label="Яндекс Карты">
+                                <div class="yandex-maps-icon" aria-hidden="true">
+                                    <!-- SVG для Яндекс Карт -->
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-function initAnalytics() {
-  const script = document.createElement('script');
-  script.innerHTML = `
-    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-    m[i].l=1*new Date();
-    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    <!-- Кнопка "Назад" -->
+    <a href="#" id="back-button" class="floating-back-button" aria-label="Вернуться назад">
+        <div class="back-arrow" aria-hidden="true"></div>
+    </a>
 
-    ym(102951378, "init", {
-      clickmap:true,
-      trackLinks:true,
-      accurateTrackBounce:true
-    });
-  `;
-  document.head.appendChild(script);
-}
-
-/* Приоритизация видимого контента */
-document.addEventListener('DOMContentLoaded', function() {
-  const lazySections = document.querySelectorAll('.faq-section, .footer-section');
-  
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = 1;
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    
-    lazySections.forEach(section => {
-      observer.observe(section);
-    });
-  } else {
-    lazySections.forEach(section => {
-      section.style.opacity = 1;
-    });
-  }
-});
-</script>
+    <!-- Скрипты -->
+    <script>
+        // Обработчики для мобильного меню
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                    mobileMenu.classList.toggle('block');
+                });
+            }
+            
+            // Плавная прокрутка
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    if (this.getAttribute('href') === '#') return;
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Закрытие мобильного меню после клика
+                        if (!mobileMenu.classList.contains('hidden') && window.innerWidth < 768) {
+                            mobileMenu.classList.add('hidden');
+                            mobileMenu.classList.remove('block');
+                        }
+                    }
+                });
+            });
+            
+            // Кнопка "Назад"
+            const backButton = document.getElementById('back-button');
+            if (backButton) {
+                let isScrolling;
+                
+                window.addEventListener('scroll', function() {
+                    backButton.style.opacity = "1";
+                    
+                    clearTimeout(isScrolling);
+                    isScrolling = setTimeout(function() {
+                        backButton.style.opacity = "0";
+                    }, 2000);
+                });
+                
+                backButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    if (document.referrer && document.referrer.includes(window.location.host)) {
+                        window.history.back();
+                    } else {
+                        window.location.href = '/';
+                    }
+                });
+            }
+        });
+        
+        // Оптимизированная загрузка ресурсов
+        window.addEventListener('load', function() {
+            // Загрузка аналитики с задержкой
+            setTimeout(function() {
+                var script = document.createElement('script');
+                script.innerHTML = `
+                    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+                    m[i].l=1*new Date();
+                    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+                    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+                    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+        
+                    ym(102951378, "init", {
+                        clickmap:true,
+                        trackLinks:true,
+                        accurateTrackBounce:true
+                    });
+                `;
+                document.head.appendChild(script);
+            }, 1500);
+        });
+    </script>
 </body>
 </html>

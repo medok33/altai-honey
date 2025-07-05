@@ -8,55 +8,55 @@
 <meta name="description" content="Натуральный алтайский мёд от производителя. Доставка по всей России.">
 
 <!-- Уменьшенный критический CSS -->
-   <!-- Preload фонового LCP-изображения -->
-  <link rel="preload"
-        href="/images/image-1-mobile.webp"
-        as="image"
-        media="(max-width: 767px)"
-        fetchpriority="high">
-  <link rel="preload"
-        href="/images/image-1.webp"
-        as="image"
-        media="(min-width: 768px)"
-        fetchpriority="high">
+<!-- Preload фонового LCP-изображения (ИСПРАВЛЕНЫ ПУТИ) -->
+<link rel="preload"
+      href="images/image-1-mobile.webp"
+      as="image"
+      media="(max-width: 767px)"
+      fetchpriority="high">
+<link rel="preload"
+      href="images/image-1.webp"
+      as="image"
+      media="(min-width: 768px)"
+      fetchpriority="high">
 
-  <!-- Уменьшенный критический CSS -->
-  <style>
+<!-- Уменьшенный критический CSS (ИСПРАВЛЕНЫ ПУТИ) -->
+<style>
+  .hero-section {
+    background-image:
+      linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
+      url('images/image-1-mobile.webp');
+    background-size: cover;
+    background-position: center;
+    min-height: 60vh;
+  }
+  @media (min-width: 768px) {
     .hero-section {
       background-image:
         linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
-        url('/images/image-1-mobile.webp');
-      background-size: cover;
-      background-position: center;
-      min-height: 60vh;
+        url('images/image-1.webp');
+      min-height: 80vh;
     }
-    @media (min-width: 768px) {
-      .hero-section {
-        background-image:
-          linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
-          url('/images/image-1.webp');
-        min-height: 80vh;
-      }
-    }
-    /* …остальной inline-CSS… */
-  </style>
+  }
+  /* …остальной inline-CSS… */
+</style>
 
-  <!-- Предзагрузка критических ресурсов -->
-  <!-- CSS -->
-  <link rel="preload" href="/assets/css/tailwind.min.css" as="style">
-  <link rel="stylesheet" href="/assets/css/tailwind.min.css">
-  <!-- Шрифты -->
-  <link rel="preload" href="/fonts/Pacifico-Regular.woff2"      as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/OpenSans-Regular.woff2"      as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/OpenSans-Medium.woff2"       as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/OpenSans-SemiBold.woff2"     as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/OpenSans-Bold.woff2"         as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/fonts/remixicon/remixicon.woff2" as="font" type="font/woff2" crossorigin>
+<!-- Предзагрузка критических ресурсов -->
+<!-- CSS (УДАЛЕН ДУБЛИКАТ) -->
+<link rel="preload" href="/assets/css/tailwind.min.css" as="style">
+<link rel="stylesheet" href="/assets/css/tailwind.min.css">
+<!-- Шрифты -->
+<link rel="preload" href="/fonts/Pacifico-Regular.woff2"      as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/OpenSans-Regular.woff2"      as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/OpenSans-Medium.woff2"       as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/OpenSans-SemiBold.woff2"     as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/OpenSans-Bold.woff2"         as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/remixicon/remixicon.woff2" as="font" type="font/woff2" crossorigin>
 
-  <!-- Иконки и фавиконки -->
-  <link rel="preload" href="/images/favicon.ico"                as="image" type="image/x-icon">
-  <link rel="preload" href="/images/favicon.svg"                as="image" type="image/svg+xml">
-  <link rel="preload" href="/images/apple-touch-icon.png"       as="image" type="image/png">
+<!-- Иконки и фавиконки (ИСПРАВЛЕНЫ ПУТИ) -->
+<link rel="preload" href="/images/favicon.ico"                as="image" type="image/x-icon">
+<link rel="preload" href="/images/favicon.svg"                as="image" type="image/svg+xml">
+<link rel="preload" href="/images/apple-touch-icon.png"       as="image" type="image/png">
 
 
 <!-- Мета-теги верификации -->
@@ -76,17 +76,14 @@
 <meta name="twitter:description" content="Экологически чистый мёд с Алтайских гор">
 <meta name="twitter:image" content="https://altaymed.shop/images/twitter-preview.webp">
 
-<!-- Favicon -->
-<link rel="icon" href="images/favicon.ico" sizes="any">
-<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<!-- Favicon (ИСПРАВЛЕНЫ ПУТИ) -->
+<link rel="icon" href="/images/favicon.ico" sizes="any">
+<link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
 
 <!-- Web Manifest -->
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#9f5524">
-
-<!-- Локальный Tailwind CSS -->
-<link rel="stylesheet" href="/assets/css/tailwind.min.css">
 
 <!-- Подключение Remix Icon -->
 <link rel="stylesheet" href="/assets/fonts/remixicon/remixicon.css">
@@ -100,7 +97,7 @@
   }
 </style>
 
-<!-- Schema.org разметка -->
+<!-- Schema.org разметка (ИСПРАВЛЕН СИНТАКСИС) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -115,7 +112,7 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": ["Organization", "LocalBusiness"],
+  "@type": "LocalBusiness",
   "name": "Алтайский мёд",
   "url": "https://altaymed.shop/",
   "logo": "https://altaymed.shop/images/favicon.ico",
@@ -245,11 +242,10 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
       <div id="product-1" class="product-card bg-white rounded-lg shadow-md overflow-hidden">
         <div class="h-56 md:h-64 overflow-hidden">
+          <!-- ИСПРАВЛЕНА ВЛОЖЕННОСТЬ PICTURE -->
           <picture>
-            <source type="image/webp" srcset="images/image-2-sm.webp 400w, images/image-2.webp 800w" sizes="(max-width: 600px) 400px, 800px">
-           <picture>
             <source
-             srcset="images/image-2-sm.webp 400w, images/image-2.webp 800w"
+              srcset="images/image-2-sm.webp 400w, images/image-2.webp 800w"
               sizes="(max-width: 600px) 400px, 800px"
               type="image/webp"
             >
@@ -263,7 +259,6 @@
               onload="this.classList.add('loaded')"
               decoding="async"
             >
-          </picture>
           </picture>
         </div>
         <div class="p-5 md:p-6">

@@ -6,7 +6,8 @@
     "dev": "npx tailwindcss -i ./input.css -o ./assets/css/tailwind.css --watch",
     "build": "npx tailwindcss -i ./input.css -o ./assets/css/tailwind.min.css --minify",
     "test": "npx tailwindcss -i ./input.css -o ./assets/css/tailwind-test.css",
-    "predeploy": "npm run build"
+    "predeploy": "npm run build",
+    "build:faq": "npx tailwindcss -i ./src/tailwind-faq.css -o ./css/tailwind-faq.min.css --minify -c ./tailwind-faq.config.js"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.1",

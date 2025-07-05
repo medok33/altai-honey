@@ -43,10 +43,8 @@
 
   <!-- Предзагрузка критических ресурсов -->
   <!-- CSS -->
-    <link rel="stylesheet" href="/assets/css/tailwind.min.css">
-  <link rel="stylesheet" href="/assets/css/custom.css">
-  <link rel="stylesheet" href="/assets/fonts/remixicon/remixicon.css">
-  <link rel="stylesheet" href="/fonts/fonts.css" media="print" onload="this.media='all'">
+  <link rel="preload" href="/assets/css/tailwind.min.css" as="style">
+  <link rel="stylesheet" href="/assets/css/tailwind.min.css">
   <!-- Шрифты -->
   <link rel="preload" href="/fonts/Pacifico-Regular.woff2"      as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/OpenSans-Regular.woff2"      as="font" type="font/woff2" crossorigin>

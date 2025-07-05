@@ -227,10 +227,12 @@
             color: var(--primary);
         }
         
+        /* Исправленная герой-секция */
         .hero-section {
             position: relative;
             padding: 4rem 0;
             background-color: #fff;
+            overflow: hidden;
         }
         
         @media (min-width: 768px) {
@@ -239,15 +241,20 @@
             }
         }
         
-        .hero-bg-image {
+        .hero-bg-container {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            z-index: 0;
+        }
+        
+        .hero-bg-image {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            z-index: -1;
-            opacity: 0.2;
+            opacity: 0.3;
         }
         
         .hero-content {
@@ -573,6 +580,7 @@
             margin-right: 0.75rem;
         }
         
+        /* Исправленный блок карты */
         .map-container {
             flex: 1;
             height: 400px;
@@ -580,12 +588,6 @@
             border-radius: 0.5rem;
             overflow: hidden;
             position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gray-500);
-            font-weight: 500;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
         
         .map-container .map-bg {
@@ -1163,13 +1165,16 @@
         </div>
     </div>
 
+    <!-- Исправленная герой-секция -->
     <section class="hero-section">
-        <img 
-            src="images/hero-bg.jpg" 
-            alt="Натуральный алтайский мёд с доставкой в Ковров" 
-            class="hero-bg-image"
-            fetchpriority="high"
-        >
+        <div class="hero-bg-container">
+            <img 
+                src="images/hero-bg.jpg" 
+                alt="Натуральный алтайский мёд с доставкой в Ковров" 
+                class="hero-bg-image"
+                fetchpriority="high"
+            >
+        </div>
         <div class="container">
             <div class="hero-content">
                 <h1 class="hero-title">Онлайн доставка алтайского мёда в Ковров</h1>
@@ -1510,9 +1515,9 @@
                     <p class="text-gray-600">Сроки и стоимость доставки в другие города области могут отличаться. Для уточнения деталей свяжитесь с нашими менеджерами.</p>
                 </div>
                 
+                <!-- Исправленный блок карты -->
                 <div class="map-container">
                     <div class="map-bg"></div>
-                    <span>Изображение карты доставки</span>
                 </div>
             </div>
         </div>

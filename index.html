@@ -177,9 +177,15 @@
 <!-- Герой-секция -->
 <section class="hero-section flex items-center">
   <picture>
-    <source media="(max-width: 767px)" srcset="/images/image-1-mobile.webp" fetchpriority="high">
-    <source media="(min-width: 768px)" srcset="/images/image-1.webp" fetchpriority="high">
-    <img src="/images/image-1.webp" alt="Натуральный алтайский мёд" class="hero-image" width="1920" height="1080" fetchpriority="high">
+    <source media="(max-width: 767px)" srcset="/images/image-1-mobile.webp">
+    <source media="(min-width: 768px)" srcset="/images/image-1.webp">
+    <img 
+      src="/images/image-1.webp" 
+      alt="Натуральный мёд с Алтайских гор" 
+      class="hero-image" 
+      width="1920" 
+      height="1080" 
+      fetchpriority="high">
   </picture>
   
   <div class="container mx-auto px-4 md:px-6 py-16 md:py-20 w-full critical-content">
@@ -752,9 +758,9 @@ function loadAnalytics() {
   };
 }
 
-// Загружаем аналитику после полной загрузки страницы
+// Загружаем аналитику после полной загрузки страницы с задержкой 1 сек
 window.addEventListener('load', function() {
-  setTimeout(loadAnalytics, 5000);
+  setTimeout(loadAnalytics, 1000);
 });
 
 document.addEventListener('DOMContentLoaded', function() {

@@ -8,55 +8,64 @@
 <meta name="description" content="Натуральный алтайский мёд от производителя. Доставка по всей России.">
 
 <!-- Уменьшенный критический CSS -->
-   <!-- Preload фонового LCP-изображения -->
-  <link rel="preload"
-        href="/images/image-1-mobile.webp"
-        as="image"
-        media="(max-width: 767px)"
-        fetchpriority="high">
-  <link rel="preload"
-        href="/images/image-1.webp"
-        as="image"
-        media="(min-width: 768px)"
-        fetchpriority="high">
-
-  <!-- Уменьшенный критический CSS -->
-  <style>
+<style>
+  .hero-section {
+    position: relative;
+    min-height: 60vh;
+    overflow: hidden;
+  }
+  @media (min-width: 768px) {
     .hero-section {
-      background-image:
-        linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
-        url('/images/image-1-mobile.webp');
-      background-size: cover;
-      background-position: center;
-      min-height: 60vh;
+      min-height: 80vh;
     }
-    @media (min-width: 768px) {
-      .hero-section {
-        background-image:
-          linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
-          url('/images/image-1.webp');
-        min-height: 80vh;
-      }
-    }
-    /* …остальной inline-CSS… */
-  </style>
+  }
+  
+  .hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+  }
+  
+  .hero-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4));
+    z-index: 1;
+  }
+  
+  .critical-content {
+    position: relative;
+    z-index: 10;
+  }
+  
+  /* …остальной inline-CSS… */
+</style>
 
-  <!-- Предзагрузка критических ресурсов -->
-  <!-- CSS -->
-  <link rel="preload" href="/assets/css/tailwind.min.css" as="style">
-  <link rel="stylesheet" href="/assets/css/tailwind.min.css">
-  <!-- Шрифты -->
-  <link rel="preload" href="/fonts/Pacifico-Regular.woff2"      as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/OpenSans-Regular.woff2"      as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/OpenSans-Medium.woff2"       as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/OpenSans-SemiBold.woff2"     as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/OpenSans-Bold.woff2"         as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/fonts/remixicon/remixicon.woff2" as="font" type="font/woff2" crossorigin>
+<!-- Предзагрузка критических ресурсов -->
+<!-- CSS -->
+<link rel="preload" href="/assets/css/tailwind.min.css" as="style">
+<link rel="stylesheet" href="/assets/css/tailwind.min.css">
+<!-- Шрифты -->
+<link rel="preload" href="/fonts/Pacifico-Regular.woff2"      as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/OpenSans-Regular.woff2"      as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/OpenSans-Medium.woff2"       as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/OpenSans-SemiBold.woff2"     as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/OpenSans-Bold.woff2"         as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/remixicon/remixicon.woff2" as="font" type="font/woff2" crossorigin>
 
-  <!-- Иконки и фавиконки -->
-  <link rel="preload" href="/images/favicon.ico"                as="image" type="image/x-icon">
-  <link rel="preload" href="/images/favicon.svg"                as="image" type="image/svg+xml">
-  <link rel="preload" href="/images/apple-touch-icon.png"       as="image" type="image/png">
+<!-- Иконки и фавиконки -->
+<link rel="preload" href="/images/favicon.ico"                as="image" type="image/x-icon">
+<link rel="preload" href="/images/favicon.svg"                as="image" type="image/svg+xml">
+<link rel="preload" href="/images/apple-touch-icon.png"       as="image" type="image/png">
 
 
 <!-- Мета-теги верификации -->
@@ -167,6 +176,12 @@
 <main>
 <!-- Герой-секция -->
 <section class="hero-section flex items-center">
+  <picture>
+    <source media="(max-width: 767px)" srcset="/images/image-1-mobile.webp" fetchpriority="high">
+    <source media="(min-width: 768px)" srcset="/images/image-1.webp" fetchpriority="high">
+    <img src="/images/image-1.webp" alt="Натуральный алтайский мёд" class="hero-image" width="1920" height="1080" fetchpriority="high">
+  </picture>
+  
   <div class="container mx-auto px-4 md:px-6 py-16 md:py-20 w-full critical-content">
     <div class="max-w-2xl text-white">
       <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-pacifico mb-4 md:mb-6">Натуральный мёд с Алтайских гор</h1>

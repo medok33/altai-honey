@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "Интернет-магазин алтайского меда",
   "scripts": {
-    "dev": "npx tailwindcss -i ./input.css -o ./css/tailwind.css --watch",
-    "build": "npx tailwindcss -i ./input.css -o ./css/tailwind.min.css --minify",
-    "test": "npx tailwindcss -i ./input.css -o ./css/tailwind-test.css",
+    "dev": "npx tailwindcss -i ./input.css -o ./assets/css/tailwind.css --watch",
+    "build": "npx tailwindcss -i ./input.css -o ./assets/css/tailwind.min.css --minify",
+    "test": "npx tailwindcss -i ./input.css -o ./assets/css/tailwind-test.css",
     "predeploy": "npm run build"
   },
   "devDependencies": {

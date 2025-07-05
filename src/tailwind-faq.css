@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: 107, 142, 35;
+    --color-secondary: 139, 69, 19;
+    --color-orange: 255, 165, 0;
+  }
+}
+
+@layer components {
+  .rounded-button {
+    border-radius: 8px;
+  }
+}

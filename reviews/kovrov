@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Отзывы покупателей из Коврова | Алтайский мёд</title>
+  <meta name="description" content="Настоящие отзывы покупателей из Коврова о натуральном алтайском мёде.">
+  <link rel="canonical" href="https://altaymed.shop/reviews/kovrov" />
+</head>
+<body>
+  <main>
+    <h1>Отзывы из Коврова</h1>
+    <p>Здесь вы найдёте реальные отзывы клиентов из Коврова о качестве нашей продукции и сервисе.</p>
+    <!-- Блок отзывов (добавь реальные/выдуманные отзывы) -->
+    <blockquote>
+      <p>“Очень вкусный мёд, доставка быстрая, всё честно!”</p>
+      <footer>— Анна, Ковров</footer>
+    </blockquote>
+    <blockquote>
+      <p>“Брал гречишный — насыщенный вкус, рекомендую.”</p>
+      <footer>— Игорь, Ковров</footer>
+    </blockquote>
+    <p><a href="/reviews/">Назад к отзывам</a></p>
+  </main>
+</body>
+</html>

@@ -7,14 +7,10 @@
 <meta name="description" content="Узнайте, как выбрать настоящий мёд летом 2025: признаки качества, простые тесты, лучшие сорта и где купить с гарантией. Советы экспертов.">
 <link rel="canonical" href="https://altaymed.shop/blog/kak-vybrat-nastoyashchiy-myod-letom-2025.html">
 
-<!-- Мета-теги верификации -->
-<meta name="yandex-verification" content="9c5350476939e370" />
-<meta name="google-site-verification" content="JsJoSVyM5o4vxTSdN88FHLrAwPaoQ0nEjpJkiub50AE">
-
 <!-- Open Graph -->
 <meta property="og:title" content="Как выбрать настоящий мёд летом 2025 | Алтайский мёд">
 <meta property="og:description" content="Экспертные советы по выбору настоящего мёда летом 2025">
-<meta property="og:image" content="https://altaymed.shop/images/og-preview.jpg">
+<meta property="og:image" content="https://altaymed.shop/images/social-preview-summer-honey.jpg">
 <meta property="og:url" content="https://altaymed.shop/blog/kak-vybrat-nastoyashchiy-myod-letom-2025.html">
 <meta property="og:type" content="article">
 
@@ -22,7 +18,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Как выбрать настоящий мёд летом 2025">
 <meta name="twitter:description" content="Советы экспертов по выбору качественного мёда летом">
-<meta name="twitter:image" content="https://altaymed.shop/images/twitter-preview.jpg">
+<meta name="twitter:image" content="https://altaymed.shop/images/social-preview-summer-honey.jpg">
 
 <!-- Favicon -->
 <link rel="icon" href="/images/favicon.ico" sizes="any">
@@ -33,9 +29,46 @@
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#9f5524">
 
-<!-- Оптимизированные шрифты -->
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Локальные шрифты -->
+<style>
+@font-face {
+  font-family: 'Pacifico';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/Pacifico-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/OpenSans-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/fonts/OpenSans-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url('/fonts/OpenSans-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/OpenSans-Bold.woff2') format('woff2');
+}
+</style>
+
+<!-- Локальные иконки -->
+<link rel="stylesheet" href="/assets/fonts/remixicon/remixicon.css">
 
 <!-- Подключение Tailwind CSS -->
 <link rel="stylesheet" href="/css/style.min.css">
@@ -66,21 +99,20 @@ tailwind.config = {
   }
 }
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
 <style>
-:where([class^="ri-"])::before { content: "\f3c2"; }
+/* Базовые стили */
 body {
   font-family: 'Open Sans', sans-serif;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  font-size: 16px;
 }
 .texture-bg {
   background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZmZmZmZmIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNmNWRlYjMiIG9wYWNpdHk9IjAuMSI+PC9yZWN0Pgo8L3N2Zz4=');
 }
 
+/* Навигация */
 .nav-link {
   color: #1a202c !important;
   transition: color 0.3s;
@@ -94,8 +126,21 @@ body {
 }
 .header-logo {
   color: #6B8E23 !important;
+  font-family: 'Pacifico', cursive;
+}
+.active-nav-link-alt {
+  border: 2px solid #6B8E23 !important;
+  border-radius: 8px !important;
+  padding: 4px 12px !important;
+  color: #6B8E23 !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease;
+}
+.active-nav-link-alt:hover {
+  background: rgba(107, 142, 35, 0.1) !important;
 }
 
+/* Футер */
 footer {
   width: 100% !important;
   box-sizing: border-box !important;
@@ -104,8 +149,6 @@ footer {
   background-color: #8B4513;
   z-index: 1;
 }
-
-/* ИСПРАВЛЕННЫЙ УЗОР ВАФЕЛЬНОЙ СЕТКИ */
 footer::before {
   content: "";
   position: absolute;
@@ -124,7 +167,6 @@ footer::before {
   margin-left: -220%;
   margin-top: -220%;
 }
-
 footer .container {
   width: 100% !important;
   max-width: 100% !important;
@@ -133,19 +175,16 @@ footer .container {
   position: relative;
   z-index: 1;
 }
-
 footer .grid {
   width: 100% !important;
   display: grid !important;
   grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
 }
-
 @media (min-width: 768px) {
   footer .grid {
     grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
   }
 }
-
 .footer-column {
   display: flex !important;
   flex-direction: column !important;
@@ -155,18 +194,15 @@ footer .grid {
   margin: 0 !important;
   box-sizing: border-box !important;
 }
-
-/* Уменьшенные отступы для заголовков на 20% */
 .footer-column h4 {
   text-align: left !important;
   width: 100% !important;
   padding: 0 !important;
-  margin: 0 0 0.64rem 0 !important; /* Уменьшено на 20% */
+  margin: 0 0 0.64rem 0 !important;
   font-weight: bold !important;
   font-size: 1.125rem !important;
   line-height: 1.75rem !important;
 }
-
 .footer-column ul {
   display: flex !important;
   flex-direction: column !important;
@@ -176,7 +212,6 @@ footer .grid {
   margin: 0 !important;
   list-style: none !important;
 }
-
 .footer-column li {
   width: 100% !important;
   text-align: left !important;
@@ -185,14 +220,12 @@ footer .grid {
   margin: 0 !important;
   box-sizing: border-box !important;
 }
-
 .footer-column li a {
   display: flex !important;
   align-items: center !important;
   width: 100% !important;
   box-sizing: border-box !important;
 }
-
 .footer-column .bullet {
   display: inline-block !important;
   width: 6px !important;
@@ -202,7 +235,6 @@ footer .grid {
   margin-right: 10px !important;
   flex-shrink: 0 !important;
 }
-
 footer, 
 footer *,
 footer a, 
@@ -216,12 +248,24 @@ footer li {
 footer a:hover {
   color: #d1d5db !important;
 }
-
-.footer-column li a {
+.footer-link-item {
   display: flex;
   align-items: center;
+  padding-top: 0.21rem !important;
+  padding-bottom: 0.21rem !important;
 }
-
+.contact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  flex-shrink: 0;
+  width: 24px;
+}
+.contact-text {
+  flex-grow: 1;
+  line-height: 1.5;
+}
 .social-icon-bw {
   display: flex;
   align-items: center;
@@ -235,13 +279,11 @@ footer a:hover {
   color: #4b5563;
   filter: grayscale(100%);
 }
-
 .social-icon-bw:hover {
   filter: grayscale(0%);
   border-color: #6B8E23;
   color: #6B8E23;
 }
-
 .avito-icon-bw, .yandex-maps-icon {
   display: flex;
   align-items: center;
@@ -251,60 +293,77 @@ footer a:hover {
   position: relative;
   filter: grayscale(100%);
 }
-
 .avito-icon-bw svg, .yandex-maps-icon svg {
   width: 100%;
   height: 100%;
 }
-
 .social-icon-bw:hover .avito-icon-bw,
 .social-icon-bw:hover .yandex-maps-icon {
   filter: grayscale(0%);
 }
 
-/* Дополнительно уменьшенные отступы между пунктами на 25% */
-.footer-link-item {
-  display: flex;
-  align-items: center;
-  padding-top: 0.21rem !important; /* Уменьшено на 25% */
-  padding-bottom: 0.21rem !important; /* Уменьшено на 25% */
+/* Элементы статьи */
+.honey-comparison {
+  background-color: #f9f5f0;
+  border-left: 4px solid #6B8E23;
+  padding: 20px;
+  border-radius: 0 8px 8px 0;
+  margin: 25px 0;
 }
-
-.contact-icon {
+.honey-test {
+  background-color: #fff9e6;
+  border: 1px solid #FFA500;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+.honey-test h3 {
+  color: #8B4513;
+  margin-top: 0;
+}
+.recipe-box {
+  background: linear-gradient(to right, #f5deb3, #fff8e1);
+  border: 1px dashed #6B8E23;
+  border-radius: 12px;
+  padding: 20px;
+  position: relative;
+  margin: 30px 0;
+}
+.recipe-box:before {
+  content: "🍯";
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  background: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 12px;
-  flex-shrink: 0;
-  width: 24px;
+  font-size: 18px;
+}
+.faq-item {
+  border-bottom: 1px solid #e2d8c9;
+  padding: 15px 0;
+}
+.faq-item:last-child {
+  border-bottom: none;
+}
+.conclusion-box {
+  background-color: #6B8E23;
+  color: white;
+  padding: 25px;
+  border-radius: 12px;
+  margin: 30px 0;
+  text-align: center;
+}
+.conclusion-box h2 {
+  color: white;
+  margin-top: 0;
 }
 
-.contact-text {
-  flex-grow: 1;
-  line-height: 1.5;
-}
-
-.blog-post-card {
-  transition: all 0.3s ease;
-}
-.blog-post-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-}
-
-.active-nav-link-alt {
-  border: 2px solid #6B8E23 !important;
-  border-radius: 8px !important;
-  padding: 4px 12px !important;
-  color: #6B8E23 !important;
-  font-weight: 600 !important;
-  transition: all 0.3s ease;
-}
-
-.active-nav-link-alt:hover {
-  background: rgba(107, 142, 35, 0.1) !important;
-}
-
+/* Плавающая кнопка */
 .floating-back-button {
   position: fixed;
   bottom: 2rem;
@@ -322,13 +381,11 @@ footer a:hover {
   opacity: 0;
   transform: scale(0.95);
 }
-
 .floating-back-button:hover {
   background: #5a7a1c;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   transform: scale(1.05);
 }
-
 .back-arrow {
   width: 24px;
   height: 24px;
@@ -337,113 +394,51 @@ footer a:hover {
   background-repeat: no-repeat;
   transition: transform 0.3s ease;
 }
-
 .floating-back-button:hover .back-arrow {
   transform: translateX(-4px);
 }
 
-/* БЕЛЫЙ ЦВЕТ ТЕКСТА В ПЕРВОМ БЛОКЕ ФУТЕРА */
-#footer-contacts .footer-column:first-child,
-#footer-contacts .footer-column:first-child * {
-  color: white !important;
-}
-
-/* УТОЧНЕННЫЕ СТИЛИ ДЛЯ ПЕРВОГО БЛОКА ФУТЕРА */
-.footer-column:first-child {
-  justify-content: flex-start;
-}
-.footer-column:first-child .logo-wrapper {
-  margin-bottom: 0.4rem; /* Увеличено на 20% */
-}
-.footer-column:first-child .description-wrapper {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-.footer-column:first-child .description-wrapper p {
-  margin: 0;
-  font-size: 0.7rem; /* Уменьшено на 20% (относительно 0.875rem) */
-  line-height: 1.25;
-}
-.footer-column:first-child .description-wrapper p:first-child {
-  margin-bottom: 0.3rem; /* Увеличено на 20% */
-}
-
-/* Специфичные стили для статьи */
-.honey-comparison {
-  background-color: #f9f5f0;
-  border-left: 4px solid #6B8E23;
-  padding: 20px;
-  border-radius: 0 8px 8px 0;
-  margin: 25px 0;
-}
-
-.honey-test {
-  background-color: #fff9e6;
-  border: 1px solid #FFA500;
-  padding: 15px;
-  border-radius: 8px;
-  margin: 20px 0;
-}
-
-.honey-test h3 {
-  color: #8B4513;
-  margin-top: 0;
-}
-
-.recipe-box {
-  background: linear-gradient(to right, #f5deb3, #fff8e1);
-  border: 1px dashed #6B8E23;
-  border-radius: 12px;
-  padding: 20px;
-  position: relative;
-  margin: 30px 0;
-}
-
-.recipe-box:before {
-  content: "🍯";
-  position: absolute;
-  top: -15px;
-  left: 20px;
-  background: white;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-}
-
-.faq-item {
-  border-bottom: 1px solid #e2d8c9;
-  padding: 15px 0;
-}
-
-.faq-item:last-child {
-  border-bottom: none;
-}
-
-.conclusion-box {
-  background-color: #6B8E23;
-  color: white;
-  padding: 25px;
-  border-radius: 12px;
-  margin: 30px 0;
-  text-align: center;
-}
-
-.conclusion-box h2 {
-  color: white;
-  margin-top: 0;
+/* Улучшения доступности */
+[aria-hidden="true"] {
+  pointer-events: none;
 }
 </style>
+
+<!-- Структурированные данные Schema.org -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://altaymed.shop/blog/kak-vybrat-nastoyashchiy-myod-letom-2025.html"
+  },
+  "headline": "Как выбрать настоящий мёд летом 2025",
+  "description": "Экспертные советы по выбору настоящего мёда летом 2025: признаки качества, простые тесты, лучшие сорта и где купить с гарантией",
+  "image": "https://altaymed.shop/images/social-preview-summer-honey.jpg",
+  "author": {
+    "@type": "Organization",
+    "name": "Алтайский мёд",
+    "url": "https://altaymed.shop"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Алтайский мёд",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://altaymed.shop/images/logo.png"
+    }
+  },
+  "datePublished": "2025-07-01",
+  "dateModified": "2025-07-01"
+}
+</script>
 </head>
 <body>
 <!-- Навигация -->
 <nav class="bg-white shadow-sm sticky top-0 z-50">
   <div class="container mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
-    <a href="/" class="text-2xl md:text-3xl font-['Pacifico'] header-logo">Алтайский мёд</a>
+    <a href="/" class="text-2xl md:text-3xl header-logo">Алтайский мёд</a>
     
     <div class="hidden md:flex items-center space-x-6 md:space-x-8">
       <a href="/#benefits" class="nav-link">Преимущества</a>
@@ -452,11 +447,11 @@ footer a:hover {
       <a href="/#footer-contacts" class="nav-link">Контакты</a>
       <!-- Активная ссылка на Блог -->
       <a href="/blog/" class="active-nav-link-alt">Блог</a>
-      <a href="/#order" class="nav-btn px-4 md:px-6 py-1 md:py-2 !rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">Заказать</a>
+      <a href="/#order" class="nav-btn px-4 md:px-6 py-1 md:py-2 rounded-lg hover:bg-opacity-90 transition-all whitespace-nowrap">Заказать</a>
     </div>
     
-    <button class="md:hidden w-10 h-10 flex items-center justify-center" id="mobile-menu-button">
-      <i class="ri-menu-line text-gray-900 ri-xl"></i>
+    <button class="md:hidden w-10 h-10 flex items-center justify-center" id="mobile-menu-button" aria-label="Открыть меню">
+      <i class="ri-menu-line text-gray-900 ri-xl" aria-hidden="true"></i>
     </button>
   </div>
   
@@ -469,7 +464,7 @@ footer a:hover {
       <a href="/#footer-contacts" class="nav-link py-2">Контакты</a>
       <!-- Активная ссылка на Блог (мобильная версия) -->
       <a href="/blog/" class="active-nav-link-alt py-2 text-center">Блог</a>
-      <a href="/#order" class="nav-btn py-2 text-center !rounded-button hover:bg-opacity-90 transition-all">Заказать</a>
+      <a href="/#order" class="nav-btn py-2 text-center rounded-lg hover:bg-opacity-90 transition-all">Заказать</a>
     </div>
   </div>
 </nav>
@@ -492,8 +487,8 @@ footer a:hover {
       <p class="mb-6 text-gray-700 font-semibold">Как выбрать настоящий мёд, на что обратить внимание, какие сорта попробовать этим летом и где купить мёд с гарантией? Разбираемся подробно!</p>
       
       <img src="/images/article-summer-honey-2.jpg" 
-           alt="Натуральный мёд в сотах" 
-           class="w-full mb-6 rounded"
+           alt="Натуральный алтайский мёд в деревянных сотах - качественный продукт пчеловодства" 
+           class="w-full mb-6 rounded-lg"
            loading="lazy"
            decoding="async">
       
@@ -506,8 +501,8 @@ footer a:hover {
       <h2 class="text-2xl font-bold text-secondary mb-4">5 главных признаков настоящего мёда</h2>
       
       <img src="/images/article-summer-honey-3.jpg" 
-           alt="Разные сорта мёда" 
-           class="w-full mb-6 rounded"
+           alt="Сравнение разных сортов мёда: гречишный, липовый, таёжный и разнотравье" 
+           class="w-full mb-6 rounded-lg"
            loading="lazy"
            decoding="async">
       
@@ -566,7 +561,7 @@ footer a:hover {
       
       <div class="honey-test">
         <h3 class="text-xl font-bold mb-3">Тест с йодом</h3>
-        <p>Разведи немного мёда в воде, капни йод. Если раствор посинел — в мёде есть крахмал (подделка).</p>
+        <p>Разведи немного мёд в воде, капни йод. Если раствор посинел — в мёде есть крахмал (подделка).</p>
       </div>
       
       <div class="honey-test">
@@ -575,8 +570,8 @@ footer a:hover {
       </div>
       
       <img src="/images/article-summer-honey-4.jpg" 
-           alt="Тестирование мёда" 
-           class="w-full mb-6 rounded"
+           alt="Проверка натуральности мёда в домашних условиях - тесты качества" 
+           class="w-full mb-6 rounded-lg"
            loading="lazy"
            decoding="async">
       
@@ -584,35 +579,35 @@ footer a:hover {
       
       <div class="honey-comparison">
         <div class="flex items-start mb-3">
-          <i class="ri-check-line text-primary mt-1 mr-2"></i>
+          <i class="ri-check-line text-primary mt-1 mr-2" aria-hidden="true"></i>
           <div>
             <strong>Алтайский мёд</strong> — из чистейших районов, уникальный состав трав и цветов, густой, ароматный, высокое содержание ферментов и витаминов.
           </div>
         </div>
         
         <div class="flex items-start mb-3">
-          <i class="ri-check-line text-primary mt-1 mr-2"></i>
+          <i class="ri-check-line text-primary mt-1 mr-2" aria-hidden="true"></i>
           <div>
             <strong>Башкирский мёд</strong> — часто липовый, славится своей нежностью, мягким вкусом, подходит детям, для чая, выпечки.
           </div>
         </div>
         
         <div class="flex items-start mb-3">
-          <i class="ri-check-line text-primary mt-1 mr-2"></i>
+          <i class="ri-check-line text-primary mt-1 mr-2" aria-hidden="true"></i>
           <div>
-            <strong>Таёжный мёд</strong> — собран с диких трав, особенно богат по составу, насыщенный, иногда с необычными вкусами.
+            <strong>Таёжный мёд</strong> — собран с диких трав, особенно богат по составу, насыщенный, иногда с необычными вкусами. Узнайте больше о <a href="/blog/tradicii-altayskogo-pchelovodstva.html" class="text-primary font-semibold hover:underline">традициях алтайского пчеловодства</a>.
           </div>
         </div>
         
         <div class="flex items-start mb-3">
-          <i class="ri-check-line text-primary mt-1 mr-2"></i>
+          <i class="ri-check-line text-primary mt-1 mr-2" aria-hidden="true"></i>
           <div>
-            <strong>Гречишный мёд</strong> — "чемпион по железу", помогает при анемии, отлично поддерживает иммунитет.
+            <strong>Гречишный мёд</strong> — "чемпион по железу", помогает при анемии, отлично поддерживает иммунитет. Посмотрите <a href="/#products" class="text-primary font-semibold hover:underline">ассортимент гречишного мёда в нашем каталоге</a>.
           </div>
         </div>
         
         <div class="flex items-start">
-          <i class="ri-check-line text-primary mt-1 mr-2"></i>
+          <i class="ri-check-line text-primary mt-1 mr-2" aria-hidden="true"></i>
           <div>
             <strong>Липовый мёд</strong> — универсален, идеален при простудах, укрепляет горло, поднимает настроение.
           </div>
@@ -645,8 +640,8 @@ footer a:hover {
       </div>
       
       <img src="/images/article-summer-honey-5.jpg" 
-           alt="Ассортимент мёда" 
-           class="w-full mb-6 rounded"
+           alt="Ассортимент натурального мёда от Алтайский мёд - гречишный, липовый, таёжный" 
+           class="w-full mb-6 rounded-lg"
            loading="lazy"
            decoding="async">
       
@@ -654,15 +649,15 @@ footer a:hover {
       
       <ul class="mb-6">
         <li class="mb-2 flex items-start">
-          <i class="ri-check-line text-primary mt-1 mr-2"></i>
+          <i class="ri-check-line text-primary mt-1 mr-2" aria-hidden="true"></i>
           <span>В плотно закрытой банке, в тёмном и прохладном месте (можно в холодильнике, но не в морозильнике)</span>
         </li>
         <li class="mb-2 flex items-start">
-          <i class="ri-check-line text-primary mt-1 mr-2"></i>
+          <i class="ri-check-line text-primary mt-1 mr-2" aria-hidden="true"></i>
           <span>Не держи мёд в железных банках или алюминии</span>
         </li>
         <li class="flex items-start">
-          <i class="ri-check-line text-primary mt-1 mr-2"></i>
+          <i class="ri-check-line text-primary mt-1 mr-2" aria-hidden="true"></i>
           <span>Не нагревай сильно — иначе исчезнет польза!</span>
         </li>
       </ul>
@@ -671,7 +666,7 @@ footer a:hover {
       
       <div class="faq-item">
         <h3 class="text-xl font-semibold">Можно ли есть мёд детям?</h3>
-        <p class="mt-2 text-gray-700">С 2–3 лет, если нет аллергии. Маленьким детям до года — не рекомендуют.</p>
+        <p class="mt-2 text-gray-700">С 2–3 лет, если нет аллергии. Маленьким детям до года — не рекомендуют. Подробнее в нашем <a href="/faq/" class="text-primary font-semibold hover:underline">разделе FAQ</a>.</p>
       </div>
       
       <div class="faq-item">
@@ -697,8 +692,8 @@ footer a:hover {
       </div>
       
       <img src="/images/article-summer-honey-6.jpg" 
-           alt="Летний напиток с мёдом" 
-           class="w-full mb-6 rounded"
+           alt="Освежающий летний напиток с мёдом и лимоном - рецепт для здоровья" 
+           class="w-full mb-6 rounded-lg"
            loading="lazy"
            decoding="async">
       
@@ -714,7 +709,7 @@ footer a:hover {
 </section>
 </main>
 
-<!-- Футер с точно выровненным текстом -->
+<!-- Футер -->
 <footer class="py-10 md:py-12 w-full">
   <div id="footer-contacts" class="container mx-auto px-4 md:px-6 w-full">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 w-full">
@@ -817,7 +812,7 @@ footer a:hover {
           <li>
             <a class="footer-link-item">
               <div class="contact-icon">
-                <i class="ri-map-pin-2-line ri-sm md:ri-base"></i>
+                <i class="ri-map-pin-2-line ri-sm md:ri-base" aria-hidden="true"></i>
               </div>
               <span class="contact-text">Владимирская обл. Город Ковров</span>
             </a>
@@ -825,7 +820,7 @@ footer a:hover {
           <li>
             <a href="tel:+79209400222" class="footer-link-item">
               <div class="contact-icon">
-                <i class="ri-phone-line ri-sm md:ri-base"></i>
+                <i class="ri-phone-line ri-sm md:ri-base" aria-hidden="true"></i>
               </div>
               <span class="contact-text">+7 (920) 940-02-22</span>
             </a>
@@ -833,7 +828,7 @@ footer a:hover {
           <li>
             <a href="mailto:9209400222@mail.ru" class="footer-link-item">
               <div class="contact-icon">
-                <i class="ri-mail-line ri-sm md:ri-base"></i>
+                <i class="ri-mail-line ri-sm md:ri-base" aria-hidden="true"></i>
               </div>
               <span class="contact-text">9209400222@mail.ru</span>
             </a>
@@ -844,16 +839,16 @@ footer a:hover {
         <div class="mt-4 md:mt-6">
           <p class="text-base md:text-lg font-bold mb-2 md:mb-3">Следите за нами</p>
           <div class="flex space-x-2 md:space-x-3">
-            <a href="https://vk.com/honeybuckwheat" target="_blank" class="social-icon-bw">
-              <i class="ri-vk-line ri-lg"></i>
+            <a href="https://vk.com/honeybuckwheat" target="_blank" class="social-icon-bw" aria-label="Наша страница ВКонтакте">
+              <i class="ri-vk-line ri-lg" aria-hidden="true"></i>
             </a>
-            <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" class="social-icon-bw">
-              <i class="ri-telegram-line ri-lg"></i>
+            <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" class="social-icon-bw" aria-label="Наш Telegram канал">
+              <i class="ri-telegram-line ri-lg" aria-hidden="true"></i>
             </a>
             <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing" 
-               target="_blank" class="social-icon-bw">
+               target="_blank" class="social-icon-bw" aria-label="Наше объявление на Авито">
               <div class="avito-icon-bw">
-                <svg viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg">
+                <svg viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                   <path fill="#04e061" d="M61.924 172.07c26.468 0 47.924-21.456 47.924-47.924S88.392 76.222 61.924 76.222 14 97.678 14 124.146s21.456 47.925 47.924 47.925z" transform="translate(7.024 7.024) scale(.92683)"/>
                   <path fill="#ff4053" d="M149.044 166.007c15.992 0 28.956-12.963 28.956-28.955 0-15.992-12.964-28.955-28.956-28.955-15.99 0-28.954 12.963-28.954 28.955 0 15.992 12.963 28.955 28.954 28.955z" transform="translate(7.024 7.024) scale(.92683)"/>
                   <path fill="#965eeb" d="M71.086 65.979c9.898 0 17.922-8.024 17.922-17.921 0-9.898-8.024-17.922-17.922-17.922-9.898 0-17.921 8.024-17.921 17.922 0 9.897 8.023 17.921 17.921 17.921z" transform="translate(7.024 7.024) scale(.92683)"/>
@@ -862,9 +857,9 @@ footer a:hover {
               </div>
             </a>
             <!-- Иконка Яндекс Карт - обновленная версия -->
-            <a href="https://yandex.ru/maps/" target="_blank" class="social-icon-bw">
+            <a href="https://yandex.ru/maps/" target="_blank" class="social-icon-bw" aria-label="Мы на Яндекс Картах">
               <div class="yandex-maps-icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                   <path d="M12 2C8.13 2 5 5.13 5 9C5 13.17 9.42 18.92 11.24 21.11C11.64 21.59 12.37 21.59 12.77 21.11C14.58 18.92 19 13.17 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" 
                         fill="currentColor"/>
                 </svg>
@@ -877,9 +872,50 @@ footer a:hover {
   </div>
 </footer>
 
-<!-- Скрипт lazy loading -->
+<!-- Плавающая кнопка "Назад" -->
+<a href="/blog/" id="back-button" class="floating-back-button" aria-label="Вернуться в блог">
+  <div class="back-arrow" aria-hidden="true"></div>
+</a>
+
+<!-- Скрипты -->
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
+  // Управление мобильным меню
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('block');
+      });
+    }
+
+    // Плавная прокрутка
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        if (this.getAttribute('href') === '#') return;
+        
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+          
+          // Закрыть мобильное меню
+          if (mobileMenu && !mobileMenu.classList.contains('hidden') && window.innerWidth < 768) {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('block');
+          }
+        }
+      });
+    });
+    
+    // Lazy loading
     const lazyLoad = function(entries) {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -899,95 +935,43 @@ footer a:hover {
     document.querySelectorAll("img.lazyload").forEach(img => {
       observer.observe(img);
     });
-  });
-</script>
-
-<!-- Плавающая кнопка "Назад" -->
-<a href="/blog/" id="back-button" class="floating-back-button">
-  <div class="back-arrow"></div>
-</a>
-
-<!-- Скрипт для управления плавающей кнопкой -->
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
+    
+    // Плавающая кнопка "Назад"
     const backButton = document.getElementById('back-button');
-    
-    // Показываем/скрываем кнопку при скролле
-    let isScrolling;
-    window.addEventListener('scroll', function() {
-      backButton.style.opacity = "1";
-      
-      clearTimeout(isScrolling);
-      isScrolling = setTimeout(function() {
-        backButton.style.opacity = "0";
-      }, 2000);
-    });
-    
-    // Обработка нажатия на кнопку "Назад"
-    backButton.addEventListener('click', function(e) {
-      e.preventDefault();
-      window.location.href = '/blog/';
-    });
-  });
-</script>
-
-<!-- Обработка мобильного меню -->
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    
-    mobileMenuButton.addEventListener('click', function() {
-      if (mobileMenu.classList.contains('hidden')) {
-        mobileMenu.classList.remove('hidden');
-        mobileMenu.classList.add('block');
-      } else {
-        mobileMenu.classList.add('hidden');
-        mobileMenu.classList.remove('block');
-      }
-    });
-    
-    // Плавная прокрутка к якорям
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        if (this.getAttribute('href') === '#') return;
+    if (backButton) {
+      let isScrolling;
+      window.addEventListener('scroll', function() {
+        backButton.style.opacity = "1";
         
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 80,
-            behavior: 'smooth'
-          });
-          
-          // Закрыть мобильное меню при клике на ссылку
-          if (!mobileMenu.classList.contains('hidden') && window.innerWidth < 768) {
-            mobileMenu.classList.add('hidden');
-            mobileMenu.classList.remove('block');
-          }
-        }
+        clearTimeout(isScrolling);
+        isScrolling = setTimeout(function() {
+          backButton.style.opacity = "0";
+        }, 2000);
       });
-    });
+      
+      backButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.location.href = '/blog/';
+      });
+    }
+    
+    // Загрузка Яндекс.Метрики с задержкой
+    setTimeout(function() {
+      (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      m[i].l=1*new Date();
+      k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+      ym(102951378, "init", {
+           clickmap:true,
+           trackLinks:true,
+           accurateTrackBounce:true
+      });
+    }, 1000); // Задержка 1 секунда
   });
 </script>
 
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();
-   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-   ym(102951378, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true
-   });
-</script>
+<!-- Noscript для Яндекс.Метрики -->
 <noscript><div><img src="https://mc.yandex.ru/watch/102951378" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
 </body>
 </html>

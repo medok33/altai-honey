@@ -284,6 +284,65 @@ footer a:hover {
 #footer-contacts .footer-column:first-child * {
   @apply text-white !important;
 }
+  /* Явно определите классы, которые соответствуют удалённым паттернам */
+
+/* Delivery-классы */
+.delivery-vladimir,
+.delivery-kovrov {
+  @apply bg-gray-100 p-4 rounded-lg;
+}
+
+/* Carpet-классы */
+.carpet-small,
+.carpet-medium,
+.carpet-large {
+  @apply border-2 border-secondary p-2 text-center;
+}
+
+/* Blog-классы */
+.blog-header,
+.blog-footer {
+  @apply py-4 px-6 bg-gray-50;
+}
+
+/* Post-классы */
+.post-title,
+.post-content {
+  @apply mb-4;
+}
+
+/* Step-классы */
+.step-4,
+.step-5 {
+  @apply hidden; /* Если не используются */
+}
+
+/* Texture-классы */
+.texture-light,
+.texture-dark {
+  @apply bg-repeat;
+}
+
+/* RI-иконки */
+.ri-search-line,
+.ri-user-line {
+  @apply text-primary text-xl;
+}
+
+/* Nav-классы */
+.nav-primary,
+.nav-secondary {
+  @apply transition-colors duration-300;
+}
+
+/* Hero-классы */
+.hero-main,
+.hero-secondary {
+  @apply relative overflow-hidden;
+}
+
+/* Остальное содержимое custom.css оставьте без изменений */
+/* ... ваш существующий CSS ... */
 
 /* Задержки анимаций */
 #benefits { transition-delay: 0.1s; }

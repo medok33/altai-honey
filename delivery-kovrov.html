@@ -3,31 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Обновленные мета-теги с ключевыми фразами -->
     <title>Онлайн доставка алтайского мёда в Ковров | Заказать мёд с доставкой | AltayMed</title>
     <meta name="description" content="Закажите алтайский мёд онлайн с доставкой в Ковров. Быстрая доставка за 2-3 дня. Купить мёд 1 литр с доставкой по Коврову. Оптовые заказы.">
     
-    <!-- Favicon -->
     <link rel="icon" href="images/favicon.ico" sizes="any">
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
     
-    <!-- Open Graph -->
     <meta property="og:title" content="Онлайн доставка алтайского мёда в Ковров">
     <meta property="og:description" content="Закажите настоящий алтайский мёд онлайн с быстрой доставкой по Коврову. Купить мёд 1 литр с доставкой за 2-3 дня.">
     <meta property="og:image" content="images/og-preview.webp">
     <meta property="og:url" content="https://altaymed.shop/delivery-kovrov.html">
     <meta property="og:type" content="website">
 
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Онлайн доставка алтайского мёда в Ковров">
     <meta name="twitter:description" content="Закажите алтайский мёд онлайн с доставкой в Ковров. Быстрая доставка за 2-3 дня.">
     <meta name="twitter:image" content="images/twitter-preview.webp">
     
-    <!-- Критические стили и шрифты -->
     <style>
-        /* Основные стили */
         :root {
             --primary: #FFA500;
             --secondary: #8B4513;
@@ -56,7 +50,6 @@
             line-height: 1.6;
         }
         
-        /* Контейнеры и секции */
         .container {
             width: 100%;
             max-width: 1280px;
@@ -68,7 +61,6 @@
             padding: 4rem 0;
         }
         
-        /* Заголовки */
         h1, h2, h3, h4, h5, h6 {
             color: var(--gray-900);
             margin-top: 0;
@@ -82,7 +74,6 @@
             margin-bottom: 3rem;
         }
         
-        /* Кнопки */
         .btn {
             display: inline-block;
             padding: 0.75rem 2rem;
@@ -120,7 +111,6 @@
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
         
-        /* Хедер */
         header {
             position: sticky;
             top: 0;
@@ -204,7 +194,6 @@
             color: var(--primary);
         }
         
-        /* Герой секция - ОБНОВЛЕННЫЙ ЗАГОЛОВОК */
         .hero-section {
             background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('images/hero-bg.jpg');
             background-size: cover;
@@ -245,7 +234,6 @@
             }
         }
         
-        /* Преимущества */
         .benefits-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -296,7 +284,6 @@
             color: var(--gray-600);
         }
         
-        /* Способы доставки */
         .delivery-section {
             background-color: var(--gray-50);
         }
@@ -428,7 +415,6 @@
             margin-top: 0.25rem;
         }
         
-        /* Тарифы - ОБНОВЛЕНО: выделена строка с 1 литром */
         .tariffs-container {
             overflow-x: auto;
         }
@@ -481,7 +467,6 @@
             font-weight: 500;
         }
         
-        /* География доставки */
         .map-section {
             background-color: var(--gray-50);
         }
@@ -569,7 +554,6 @@
             background-image: url('images/map-placeholder.png');
         }
         
-        /* FAQ - ДОБАВЛЕН НОВЫЙ ВОПРОС */
         .faq-container {
             max-width: 48rem;
             margin: 0 auto;
@@ -620,7 +604,6 @@
             transition: transform 0.3s;
         }
         
-        /* CTA */
         .cta-section {
             background-color: rgba(255, 165, 0, 0.1);
             text-align: center;
@@ -693,7 +676,6 @@
             text-align: center;
         }
         
-        /* Футер - ДОБАВЛЕН РАЗДЕЛ ОТЗЫВОВ */
         footer {
             background-color: var(--gray-900);
             color: #fff;
@@ -834,7 +816,6 @@
             font-size: 1.5rem;
         }
         
-        /* Утилиты */
         .text-center {
             text-align: center;
         }
@@ -875,7 +856,6 @@
             margin-top: 0.5rem;
         }
         
-        /* Мобильное меню */
         .mobile-menu {
             position: fixed;
             top: 0;
@@ -920,7 +900,6 @@
             color: var(--primary);
         }
         
-        /* Модальное окно */
         .modal {
             display: none;
             position: fixed;
@@ -959,7 +938,6 @@
             color: #374151;
         }
         
-        /* Модальное окно успеха */
         .success-modal-content {
             background: white;
             border-radius: 16px;
@@ -1020,13 +998,11 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
         
-        /* Выравнивание иконок в контактах */
         .contact-icon i {
             vertical-align: middle;
             line-height: 1;
         }
         
-        /* Стили для формы в модальном окне */
         .form-group {
             margin-bottom: 1.5rem;
         }
@@ -1075,7 +1051,6 @@
             background-color: #e69500;
         }
         
-        /* Стили для заголовка модального окна */
         .modal-header {
             background: linear-gradient(to right, #FFA500, #8B4513);
             padding: 1.5rem;
@@ -1090,20 +1065,17 @@
         }
     </style>
 
-    <!-- Предзагрузка критических ресурсов -->
     <link rel="preload" href="images/hero-bg.jpg" as="image">
     <link rel="preload" href="assets/fonts/remixicon/remixicon.css" as="style">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" as="style" crossorigin>
     
-    <!-- Асинхронная загрузка стилей -->
     <link rel="stylesheet" href="assets/fonts/remixicon/remixicon.css" media="print" onload="this.media='all'">
     <noscript>
         <link rel="stylesheet" href="assets/fonts/remixicon/remixicon.css">
     </noscript>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="container">
             <div class="header-inner">
@@ -1135,7 +1107,6 @@
         </div>
     </header>
 
-    <!-- Мобильное меню -->
     <div class="mobile-menu" id="mobile-menu">
         <div class="mobile-menu-header">
             <a href="/" class="logo">Алтайский мёд</a>
@@ -1154,7 +1125,6 @@
         </div>
     </div>
 
-    <!-- Hero Section - ОБНОВЛЕННЫЙ ЗАГОЛОВОК -->
     <section class="hero-section">
         <div class="container">
             <div class="hero-content">
@@ -1165,7 +1135,6 @@
         </div>
     </section>
 
-    <!-- Benefits Section -->
     <section class="bg-white">
         <div class="container">
             <h2>Преимущества доставки мёда в Ковров</h2>
@@ -1198,7 +1167,6 @@
         </div>
     </section>
 
-    <!-- Delivery Methods -->
     <section class="delivery-section">
         <div class="container">
             <h2>Способы доставки алтайского мёда в Ковров</h2>
@@ -1210,7 +1178,6 @@
                     <button class="delivery-tab" data-tab="post">Почта России</button>
                 </div>
                 
-                <!-- СДЭК -->
                 <div class="delivery-content active" id="sdek-content">
                     <div class="delivery-info-wrapper">
                         <div class="delivery-details">
@@ -1267,7 +1234,6 @@
                     </div>
                 </div>
                 
-                <!-- Курьерская доставка -->
                 <div class="delivery-content" id="courier-content">
                     <div class="delivery-info-wrapper">
                         <div class="delivery-details">
@@ -1328,7 +1294,6 @@
                     </div>
                 </div>
                 
-                <!-- Почта России -->
                 <div class="delivery-content" id="post-content">
                     <div class="delivery-info-wrapper">
                         <div class="delivery-details">
@@ -1388,7 +1353,6 @@
         </div>
     </section>
 
-    <!-- Tariffs Section - ОБНОВЛЕНО: выделена строка с 1 литром -->
     <section class="bg-white">
         <div class="container">
             <h2>Тарифы на доставку мёда в Ковров</h2>
@@ -1444,7 +1408,6 @@
         </div>
     </section>
 
-    <!-- Map Section -->
     <section class="map-section">
         <div class="container">
             <h2>География доставки</h2>
@@ -1510,7 +1473,6 @@
         </div>
     </section>
 
-    <!-- FAQ Section - ДОБАВЛЕН НОВЫЙ ВОПРОС -->
     <section class="bg-white">
         <div class="container">
             <h2>Часто задаваемые вопросы о доставке</h2>
@@ -1598,7 +1560,6 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
             <h2>Закажите мёд с доставкой в Ковров — почувствуйте вкус Алтая уже через 3 дня!</h2>
@@ -1645,7 +1606,6 @@
         </div>
     </section>
 
-    <!-- Footer - ДОБАВЛЕН РАЗДЕЛ ОТЗЫВОВ -->
     <footer>
         <div class="container">
             <div class="footer-grid">
@@ -1675,7 +1635,6 @@
                     </div>
                 </div>
                 
-                <!-- Новый раздел: Отзывы -->
                 <div class="footer-column">
                     <h3 class="footer-title">Отзывы о доставке</h3>
                     <div class="footer-links">
@@ -1726,7 +1685,6 @@
         </div>
     </footer>
 
-    <!-- Модальное окно для заказа -->
     <div id="order-modal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -1761,7 +1719,6 @@
         </div>
     </div>
 
-    <!-- Модальное окно успешного заказа -->
     <div id="success-modal" class="modal">
         <div class="success-modal-content">
             <div class="success-icon">
@@ -1775,7 +1732,6 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Tabs
             const tabButtons = document.querySelectorAll('.delivery-tab');
             const tabContents = document.querySelectorAll('.delivery-content');
             
@@ -1783,25 +1739,20 @@
                 button.addEventListener('click', () => {
                     const tabId = button.getAttribute('data-tab');
                     
-                    // Remove active class from all buttons
                     tabButtons.forEach(btn => {
                         btn.classList.remove('active');
                     });
                     
-                    // Hide all tab contents
                     tabContents.forEach(content => {
                         content.classList.remove('active');
                     });
                     
-                    // Add active class to clicked button
                     button.classList.add('active');
                     
-                    // Show corresponding content
                     document.getElementById(`${tabId}-content`).classList.add('active');
                 });
             });
             
-            // FAQ Accordion
             const faqQuestions = document.querySelectorAll('.faq-question');
             faqQuestions.forEach(question => {
                 question.addEventListener('click', () => {
@@ -1810,7 +1761,6 @@
                 });
             });
             
-            // Mobile menu
             const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
             const closeMobileMenu = document.getElementById('close-mobile-menu');
             const mobileMenu = document.getElementById('mobile-menu');
@@ -1823,14 +1773,12 @@
                 mobileMenu.classList.remove('active');
             });
             
-            // Модальное окно заказа
             const orderModal = document.getElementById('order-modal');
             const successModal = document.getElementById('success-modal');
             const closeModal = document.querySelector('.close-modal');
             const closeSuccessModal = document.getElementById('close-success-modal');
             const openOrderButtons = document.querySelectorAll('#open-order-modal, #open-order-modal-bottom');
             
-            // Открытие модального окна
             openOrderButtons.forEach(button => {
                 button.addEventListener('click', () => {
                     orderModal.style.display = 'flex';
@@ -1838,13 +1786,11 @@
                 });
             });
             
-            // Закрытие модального окна
             closeModal.addEventListener('click', () => {
                 orderModal.style.display = 'none';
                 document.body.style.overflow = 'auto';
             });
             
-            // Закрытие при клике вне окна
             window.addEventListener('click', (event) => {
                 if (event.target === orderModal) {
                     orderModal.style.display = 'none';
@@ -1856,21 +1802,15 @@
                 }
             });
             
-            // Закрытие окна успеха
             closeSuccessModal.addEventListener('click', () => {
                 successModal.style.display = 'none';
                 document.body.style.overflow = 'auto';
             });
             
-            // Обработка формы заказа
             const orderForm = document.getElementById('order-form');
             if (orderForm) {
                 orderForm.addEventListener('submit', (e) => {
                     e.preventDefault();
-                    
-                    // Здесь должна быть логика отправки данных
-                    // Для примера просто покажем окно успеха
-                    
                     orderModal.style.display = 'none';
                     successModal.style.display = 'flex';
                     orderForm.reset();
@@ -1878,7 +1818,6 @@
             }
         });
         
-        // Асинхронная загрузка шрифтов
         function loadCSS(href) {
             var link = document.createElement('link');
             link.rel = 'stylesheet';
@@ -1888,11 +1827,9 @@
         }
         
         window.addEventListener('load', function() {
-            // Загружаем шрифты после отрисовки страницы
             loadCSS('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
             loadCSS('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
             
-            // Применяем шрифты после загрузки
             document.body.style.fontFamily = "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
             document.querySelectorAll('.logo, .footer-logo').forEach(el => {
                 el.style.fontFamily = "'Pacifico', 'Comic Sans MS', cursive";

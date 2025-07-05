@@ -1,9 +1,8 @@
+/* D:\сайт 05.07.2025\altai-honey-main\src\input.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Шрифты перенесены в отдельный файл */
-@import '../../css/fonts.css';
-
 /* Импорт кастомных стилей */
+@import '../../css/fonts.css';
 @import '../../assets/css/custom.css';

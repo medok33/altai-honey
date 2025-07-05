@@ -30,6 +30,12 @@
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#9f5524">
     
+    <!-- Подключение шрифтов -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Pacifico&display=swap">
+    
+    <!-- Подключение иконок -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+    
     <!-- Критически важные стили -->
     <style>
         /* Основные сбросы стилей */
@@ -41,7 +47,7 @@
         }
         
         body {
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -67,7 +73,7 @@
         }
         
         .header-logo {
-            font-family: 'Pacifico', cursive;
+            font-family: 'Pacifico', cursive, serif;
             font-size: 1.75rem;
             color: #6B8E23;
         }
@@ -114,6 +120,63 @@
         @keyframes fadeIn {
             to { opacity: 1; }
         }
+        
+        /* Стили для кнопки "Назад" */
+        .floating-back-button {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #6B8E23;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .floating-back-button:hover {
+            background-color: #5a7d1c;
+        }
+        
+        .back-arrow {
+            width: 20px;
+            height: 20px;
+            border-top: 3px solid white;
+            border-left: 3px solid white;
+            transform: rotate(-45deg);
+            margin-right: 5px;
+        }
+        
+        /* Стили для иконок в футере */
+        .social-icon-bw {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: background-color 0.3s;
+        }
+        
+        .social-icon-bw:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Стили для FAQ */
+        .faq-item {
+            transition: transform 0.3s;
+        }
+        
+        .faq-item:hover {
+            transform: translateY(-3px);
+        }
     </style>
     
     <!-- Асинхронная загрузка CSS -->
@@ -122,14 +185,6 @@
     
     <link rel="preload" href="/css/style.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/css/style.min.css"></noscript>
-    
-    <!-- Отложенная загрузка иконок -->
-    <link rel="preload" href="/assets/fonts/remixicon/remixicon.css" as="style" media="print" onload="this.media='all'; this.onload=null">
-    <noscript><link rel="stylesheet" href="/assets/fonts/remixicon/remixicon.css"></noscript>
-    
-    <!-- Предзагрузка шрифтов -->
-    <link rel="preload" href="/fonts/OpenSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/fonts/Pacifico-Regular.woff2" as="font" type="font/woff2" crossorigin>
     
     <!-- Структурированные данные -->
     <script type="application/ld+json">
@@ -381,14 +436,10 @@
                             </a>
                             <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing" 
                                target="_blank" class="social-icon-bw" aria-label="Наш Avito">
-                                <div class="avito-icon-bw" aria-hidden="true">
-                                    <!-- SVG для Avito -->
-                                </div>
+                                <i class="ri-shopping-bag-line ri-lg" aria-hidden="true"></i>
                             </a>
                             <a href="https://yandex.ru/maps/" target="_blank" class="social-icon-bw" aria-label="Яндекс Карты">
-                                <div class="yandex-maps-icon" aria-hidden="true">
-                                    <!-- SVG для Яндекс Карт -->
-                                </div>
+                                <i class="ri-map-pin-line ri-lg" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>

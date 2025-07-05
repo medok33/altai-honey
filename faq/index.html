@@ -30,8 +30,11 @@
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#9f5524">
 
-<!-- Локальное подключение иконок -->
-<link rel="stylesheet" href="/assets/fonts/remixicon/remixicon.css">
+<!-- Локальное подключение иконок с оптимизацией -->
+<link rel="stylesheet" href="/assets/fonts/remixicon/remixicon.css" media="print" onload="this.media='all'">
+<noscript>
+  <link rel="stylesheet" href="/assets/fonts/remixicon/remixicon.css">
+</noscript>
 
 <!-- Локальное подключение шрифтов -->
 <style>
@@ -40,6 +43,7 @@
   font-style: normal;
   font-weight: 400;
   src: url('/fonts/OpenSans-Regular.woff2') format('woff2');
+  font-display: swap;
 }
 
 @font-face {
@@ -47,6 +51,7 @@
   font-style: normal;
   font-weight: 500;
   src: url('/fonts/OpenSans-Medium.woff2') format('woff2');
+  font-display: swap;
 }
 
 @font-face {
@@ -54,6 +59,7 @@
   font-style: normal;
   font-weight: 600;
   src: url('/fonts/OpenSans-SemiBold.woff2') format('woff2');
+  font-display: swap;
 }
 
 @font-face {
@@ -61,6 +67,7 @@
   font-style: normal;
   font-weight: 700;
   src: url('/fonts/OpenSans-Bold.woff2') format('woff2');
+  font-display: swap;
 }
 
 @font-face {
@@ -68,6 +75,13 @@
   font-style: normal;
   font-weight: 400;
   src: url('/fonts/Pacifico-Regular.woff2') format('woff2');
+  font-display: swap;
+}
+
+/* Инлайновые стили для критических иконок */
+.menu-icon::before {
+  content: "\f3c2";
+  font-family: 'remixicon';
 }
 </style>
 
@@ -79,7 +93,6 @@
 
 <style>
 /* Инлайновые стили для FAQ */
-:where([class^="ri-"])::before { content: "\f3c2"; }
 body {
   font-family: 'Open Sans', sans-serif;
   min-height: 100vh;
@@ -453,7 +466,7 @@ footer a:hover {
     </div>
     
     <button class="md:hidden w-10 h-10 flex items-center justify-center" id="mobile-menu-button" aria-label="Открыть меню">
-      <i class="ri-menu-line text-gray-900 ri-xl" aria-hidden="true"></i>
+      <i class="menu-icon text-gray-900 ri-xl" aria-hidden="true"></i>
     </button>
   </div>
   

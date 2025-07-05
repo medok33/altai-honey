@@ -1,22 +1,16 @@
+// D:\сайт 05.07.2025\altai-honey-main\tailwind.config.js
 module.exports = {
   content: [
-    './index.html',
-    './about.html',
-    './products.html',
-    './contact.html',
-    './legal.html',
-    './faq.html',
-    './delivery.html',
-    './delivery-vladimir.html',
-    './delivery-kovrov.html',
-    './blog/index.html',
-    './blog/kak-vybrat-med.html',
-    './blog/med-v-zdorovom-pitanii.html',
-    './blog/tradicii-altayskogo-pchelovodstva.html',
-    './categories/**/*.html',
+    './*.html',
+    './**/*.html',
+    './assets/css/**/*.css',
+    './css/**/*.css',
+    './images/css/**/*.css',
+    './src/**/*.css',
     './scripts/**/*.{js,ts}',
     './src/**/*.{js,ts,jsx}',
-    './scr/**/*.{js,ts}'
+    './scr/**/*.{js,ts}',
+    './images/icons/**/*.svg'
   ],
   safelist: [
     'modal-open', 'modal-close',
@@ -38,7 +32,12 @@ module.exports = {
     { pattern: /texture-.*/ },
     { pattern: /ri-.*/ },
     { pattern: /nav-.*/ },
-    { pattern: /hero-.*/ }
+    { pattern: /hero-.*/ },
+    { pattern: /icon-.*/ },
+    { pattern: /map-.*/ },
+    { pattern: /swiper-.*/ },
+    { pattern: /^is-.*/ },
+    { pattern: /^js-.*/ }
   ],
   theme: {
     extend: {
@@ -75,5 +74,8 @@ module.exports = {
   future: {
     hoverOnlyWhenSupported: true,
     respectDefaultRingColorOpacity: true
+  },
+  corePlugins: {
+    preflight: false
   }
 };

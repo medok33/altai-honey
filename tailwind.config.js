@@ -1,41 +1,26 @@
 module.exports = {
   content: [
-    // Основные страницы
     './index.html',
     './about.html',
     './products.html',
     './contact.html',
     './legal.html',
     './faq.html',
-    
-    // Страницы доставки
     './delivery.html',
     './delivery-vladimir.html',
     './delivery-kovrov.html',
-    
-    // Страницы блога
     './blog/index.html',
     './blog/kak-vybrat-med.html',
     './blog/med-v-zdorovom-pitanii.html',
     './blog/tradicii-altayskogo-pchelovodstva.html',
-    
-    // Категории
     './categories/**/*.html',
-    
-    // JavaScript
     './scripts/**/*.{js,ts}',
     './src/**/*.{js,ts,jsx}',
-    
-    // Старые пути
     './scr/**/*.{js,ts}'
   ],
-
   safelist: [
-    // Основные классы
     'modal-open', 'modal-close',
     'step-1', 'step-2', 'step-3',
-    
-    // Специфичные классы
     'carpet-size-selector',
     'blog-post-card',
     'floating-back-button',
@@ -44,8 +29,6 @@ module.exports = {
     'section-visible',
     'active-nav-link-alt',
     'hero-overlay',
-    
-    // Автозащита по паттернам
     { pattern: /delivery-.*/ },
     { pattern: /carpet-.*/ },
     { pattern: /blog-.*/ },
@@ -57,7 +40,6 @@ module.exports = {
     { pattern: /nav-.*/ },
     { pattern: /hero-.*/ }
   ],
-
   theme: {
     extend: {
       colors: {
@@ -90,7 +72,6 @@ module.exports = {
     require('@tailwindcss/forms'),
     require('@tailwindcss/typography')
   ],
-  
   future: {
     hoverOnlyWhenSupported: true,
     respectDefaultRingColorOpacity: true

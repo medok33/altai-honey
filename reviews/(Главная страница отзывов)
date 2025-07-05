@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Отзывы покупателей | Алтайский мёд</title>
+  <meta name="description" content="Отзывы покупателей о магазине Алтайский мёд. Реальный опыт, мнения и оценки клиентов.">
+  <link rel="canonical" href="https://altaymed.shop/reviews/" />
+</head>
+<body>
+  <main>
+    <h1>Отзывы о Алтайском мёде</h1>
+    <ul>
+      <li><a href="/reviews/kovrov">Отзывы из Коврова</a></li>
+      <li><a href="/reviews/grechishny">Отзывы о гречишном мёде</a></li>
+      <li><a href="/reviews/taiga">Отзывы о таёжном мёде</a></li>
+    </ul>
+    <p>Оставьте ваш отзыв, чтобы помочь другим выбрать натуральный мёд!</p>
+  </main>
+</body>
+</html>

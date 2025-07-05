@@ -71,35 +71,15 @@
 }
 </style>
 
+<!-- Локальный Tailwind CSS для FAQ -->
+<link rel="stylesheet" href="/css/tailwind-faq.min.css">
+
+<!-- Основные стили сайта -->
 <link rel="stylesheet" href="/css/style.min.css">
 
-<script src="https://cdn.tailwindcss.com/3.4.16"></script>
-<script>
-tailwind.config = {
-  theme: {
-    extend: {
-      colors: {
-        primary: '#6B8E23',
-        secondary: '#8B4513',
-        orange: '#FFA500'
-      },
-      borderRadius: {
-        'none': '0px',
-        'sm': '4px',
-        DEFAULT: '8px',
-        'md': '12px',
-        'lg': '16px',
-        'xl': '20px',
-        '2xl': '24px',
-        '3xl': '32px',
-        'full': '9999px',
-        'button': '8px'
-      }
-    }
-  }
-}
-</script>
 <style>
+/* Инлайновые стили для FAQ */
+:where([class^="ri-"])::before { content: "\f3c2"; }
 body {
   font-family: 'Open Sans', sans-serif;
   min-height: 100vh;

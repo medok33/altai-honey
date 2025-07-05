@@ -1,13 +1,10 @@
 User-agent: *
 Allow: /
 Disallow: /cart
-Disallow: /user
-Disallow: /search
 Disallow: /admin
 Disallow: /checkout
-Disallow: /account
-Disallow: /*?*
 Disallow: /private/
+Disallow: /*?*
 Crawl-delay: 2
 
 # Блокировка агрессивных сканеров
@@ -20,5 +17,4 @@ Crawl-delay: 5
 User-agent: MJ12bot
 Disallow: /
 
-# Указание карты сайта
 Sitemap: https://altaymed.shop/sitemap.xml

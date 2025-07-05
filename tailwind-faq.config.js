@@ -1,10 +1,11 @@
 // tailwind-faq.config.js
 module.exports = {
   content: [
-    './faq/index.html', // только файл FAQ
+    './faq/index.html', // Только файл FAQ
+    './src/tailwind-faq.css' // Только стили для FAQ
   ],
   safelist: [
-    // Только необходимые классы для FAQ
+    // Минимальный набор классов для FAQ
     'faq-item', 'border-b', 'mb-6', 'pb-6',
     'text-primary', 'text-secondary', 'text-gray-700',
     'list-disc', 'pl-6', 'mt-2',
@@ -42,7 +43,7 @@ module.exports = {
     }
   },
   plugins: [
-    require('@tailwindcss/typography'),
+    require('@tailwindcss/typography'), // Только typography
   ],
   corePlugins: {
     preflight: true,

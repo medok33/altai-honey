@@ -70,6 +70,7 @@ tailwind.config = {
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
 <style>
+/* Базовые стили */
 :where([class^="ri-"])::before { content: "\f3c2"; }
 body {
   font-family: 'Open Sans', sans-serif;
@@ -81,6 +82,7 @@ body {
   background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZmZmZmZmIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNmNWRlYjMiIG9wYWNpdHk9IjAuMSI+PC9yZWN0Pgo8L3N2Zz4=');
 }
 
+/* Навигация */
 .nav-link {
   color: #1a202c !important;
   transition: color 0.3s;
@@ -95,7 +97,19 @@ body {
 .header-logo {
   color: #6B8E23 !important;
 }
+.active-nav-link-alt {
+  border: 2px solid #6B8E23 !important;
+  border-radius: 8px !important;
+  padding: 4px 12px !important;
+  color: #6B8E23 !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease;
+}
+.active-nav-link-alt:hover {
+  background: rgba(107, 142, 35, 0.1) !important;
+}
 
+/* Футер */
 footer {
   width: 100% !important;
   box-sizing: border-box !important;
@@ -104,8 +118,6 @@ footer {
   background-color: #8B4513;
   z-index: 1;
 }
-
-/* ИСПРАВЛЕННЫЙ УЗОР ВАФЕЛЬНОЙ СЕТКИ */
 footer::before {
   content: "";
   position: absolute;
@@ -124,7 +136,6 @@ footer::before {
   margin-left: -220%;
   margin-top: -220%;
 }
-
 footer .container {
   width: 100% !important;
   max-width: 100% !important;
@@ -133,19 +144,16 @@ footer .container {
   position: relative;
   z-index: 1;
 }
-
 footer .grid {
   width: 100% !important;
   display: grid !important;
   grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
 }
-
 @media (min-width: 768px) {
   footer .grid {
     grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
   }
 }
-
 .footer-column {
   display: flex !important;
   flex-direction: column !important;
@@ -155,18 +163,15 @@ footer .grid {
   margin: 0 !important;
   box-sizing: border-box !important;
 }
-
-/* Уменьшенные отступы для заголовков на 20% */
 .footer-column h4 {
   text-align: left !important;
   width: 100% !important;
   padding: 0 !important;
-  margin: 0 0 0.64rem 0 !important; /* Уменьшено на 20% */
+  margin: 0 0 0.64rem 0 !important;
   font-weight: bold !important;
   font-size: 1.125rem !important;
   line-height: 1.75rem !important;
 }
-
 .footer-column ul {
   display: flex !important;
   flex-direction: column !important;
@@ -176,7 +181,6 @@ footer .grid {
   margin: 0 !important;
   list-style: none !important;
 }
-
 .footer-column li {
   width: 100% !important;
   text-align: left !important;
@@ -185,14 +189,12 @@ footer .grid {
   margin: 0 !important;
   box-sizing: border-box !important;
 }
-
 .footer-column li a {
   display: flex !important;
   align-items: center !important;
   width: 100% !important;
   box-sizing: border-box !important;
 }
-
 .footer-column .bullet {
   display: inline-block !important;
   width: 6px !important;
@@ -202,7 +204,6 @@ footer .grid {
   margin-right: 10px !important;
   flex-shrink: 0 !important;
 }
-
 footer, 
 footer *,
 footer a, 
@@ -216,12 +217,24 @@ footer li {
 footer a:hover {
   color: #d1d5db !important;
 }
-
-.footer-column li a {
+.footer-link-item {
   display: flex;
   align-items: center;
+  padding-top: 0.21rem !important;
+  padding-bottom: 0.21rem !important;
 }
-
+.contact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  flex-shrink: 0;
+  width: 24px;
+}
+.contact-text {
+  flex-grow: 1;
+  line-height: 1.5;
+}
 .social-icon-bw {
   display: flex;
   align-items: center;
@@ -235,13 +248,11 @@ footer a:hover {
   color: #4b5563;
   filter: grayscale(100%);
 }
-
 .social-icon-bw:hover {
   filter: grayscale(0%);
   border-color: #6B8E23;
   color: #6B8E23;
 }
-
 .avito-icon-bw, .yandex-maps-icon {
   display: flex;
   align-items: center;
@@ -251,60 +262,77 @@ footer a:hover {
   position: relative;
   filter: grayscale(100%);
 }
-
 .avito-icon-bw svg, .yandex-maps-icon svg {
   width: 100%;
   height: 100%;
 }
-
 .social-icon-bw:hover .avito-icon-bw,
 .social-icon-bw:hover .yandex-maps-icon {
   filter: grayscale(0%);
 }
 
-/* Дополнительно уменьшенные отступы между пунктами на 25% */
-.footer-link-item {
-  display: flex;
-  align-items: center;
-  padding-top: 0.21rem !important; /* Уменьшено на 25% */
-  padding-bottom: 0.21rem !important; /* Уменьшено на 25% */
+/* Элементы статьи */
+.honey-comparison {
+  background-color: #f9f5f0;
+  border-left: 4px solid #6B8E23;
+  padding: 20px;
+  border-radius: 0 8px 8px 0;
+  margin: 25px 0;
 }
-
-.contact-icon {
+.honey-test {
+  background-color: #fff9e6;
+  border: 1px solid #FFA500;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+.honey-test h3 {
+  color: #8B4513;
+  margin-top: 0;
+}
+.recipe-box {
+  background: linear-gradient(to right, #f5deb3, #fff8e1);
+  border: 1px dashed #6B8E23;
+  border-radius: 12px;
+  padding: 20px;
+  position: relative;
+  margin: 30px 0;
+}
+.recipe-box:before {
+  content: "🍯";
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  background: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 12px;
-  flex-shrink: 0;
-  width: 24px;
+  font-size: 18px;
+}
+.faq-item {
+  border-bottom: 1px solid #e2d8c9;
+  padding: 15px 0;
+}
+.faq-item:last-child {
+  border-bottom: none;
+}
+.conclusion-box {
+  background-color: #6B8E23;
+  color: white;
+  padding: 25px;
+  border-radius: 12px;
+  margin: 30px 0;
+  text-align: center;
+}
+.conclusion-box h2 {
+  color: white;
+  margin-top: 0;
 }
 
-.contact-text {
-  flex-grow: 1;
-  line-height: 1.5;
-}
-
-.blog-post-card {
-  transition: all 0.3s ease;
-}
-.blog-post-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-}
-
-.active-nav-link-alt {
-  border: 2px solid #6B8E23 !important;
-  border-radius: 8px !important;
-  padding: 4px 12px !important;
-  color: #6B8E23 !important;
-  font-weight: 600 !important;
-  transition: all 0.3s ease;
-}
-
-.active-nav-link-alt:hover {
-  background: rgba(107, 142, 35, 0.1) !important;
-}
-
+/* Плавающая кнопка */
 .floating-back-button {
   position: fixed;
   bottom: 2rem;
@@ -322,13 +350,11 @@ footer a:hover {
   opacity: 0;
   transform: scale(0.95);
 }
-
 .floating-back-button:hover {
   background: #5a7a1c;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   transform: scale(1.05);
 }
-
 .back-arrow {
   width: 24px;
   height: 24px;
@@ -337,105 +363,8 @@ footer a:hover {
   background-repeat: no-repeat;
   transition: transform 0.3s ease;
 }
-
 .floating-back-button:hover .back-arrow {
   transform: translateX(-4px);
-}
-
-/* БЕЛЫЙ ЦВЕТ ТЕКСТА В ПЕРВОМ БЛОКЕ ФУТЕРА */
-#footer-contacts .footer-column:first-child,
-#footer-contacts .footer-column:first-child * {
-  color: white !important;
-}
-
-/* УТОЧНЕННЫЕ СТИЛИ ДЛЯ ПЕРВОГО БЛОКА ФУТЕРА */
-.footer-column:first-child {
-  justify-content: flex-start;
-}
-.footer-column:first-child .logo-wrapper {
-  margin-bottom: 0.4rem; /* Увеличено на 20% */
-}
-.footer-column:first-child .description-wrapper {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-.footer-column:first-child .description-wrapper p {
-  margin: 0;
-  font-size: 0.7rem; /* Уменьшено на 20% (относительно 0.875rem) */
-  line-height: 1.25;
-}
-.footer-column:first-child .description-wrapper p:first-child {
-  margin-bottom: 0.3rem; /* Увеличено на 20% */
-}
-
-/* Специфичные стили для статьи */
-.honey-comparison {
-  background-color: #f9f5f0;
-  border-left: 4px solid #6B8E23;
-  padding: 20px;
-  border-radius: 0 8px 8px 0;
-  margin: 25px 0;
-}
-
-.honey-test {
-  background-color: #fff9e6;
-  border: 1px solid #FFA500;
-  padding: 15px;
-  border-radius: 8px;
-  margin: 20px 0;
-}
-
-.honey-test h3 {
-  color: #8B4513;
-  margin-top: 0;
-}
-
-.recipe-box {
-  background: linear-gradient(to right, #f5deb3, #fff8e1);
-  border: 1px dashed #6B8E23;
-  border-radius: 12px;
-  padding: 20px;
-  position: relative;
-  margin: 30px 0;
-}
-
-.recipe-box:before {
-  content: "🍯";
-  position: absolute;
-  top: -15px;
-  left: 20px;
-  background: white;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-}
-
-.faq-item {
-  border-bottom: 1px solid #e2d8c9;
-  padding: 15px 0;
-}
-
-.faq-item:last-child {
-  border-bottom: none;
-}
-
-.conclusion-box {
-  background-color: #6B8E23;
-  color: white;
-  padding: 25px;
-  border-radius: 12px;
-  margin: 30px 0;
-  text-align: center;
-}
-
-.conclusion-box h2 {
-  color: white;
-  margin-top: 0;
 }
 </style>
 </head>
@@ -452,7 +381,7 @@ footer a:hover {
       <a href="/#footer-contacts" class="nav-link">Контакты</a>
       <!-- Активная ссылка на Блог -->
       <a href="/blog/" class="active-nav-link-alt">Блог</a>
-      <a href="/#order" class="nav-btn px-4 md:px-6 py-1 md:py-2 !rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">Заказать</a>
+      <a href="/#order" class="nav-btn px-4 md:px-6 py-1 md:py-2 rounded-lg hover:bg-opacity-90 transition-all whitespace-nowrap">Заказать</a>
     </div>
     
     <button class="md:hidden w-10 h-10 flex items-center justify-center" id="mobile-menu-button">
@@ -469,7 +398,7 @@ footer a:hover {
       <a href="/#footer-contacts" class="nav-link py-2">Контакты</a>
       <!-- Активная ссылка на Блог (мобильная версия) -->
       <a href="/blog/" class="active-nav-link-alt py-2 text-center">Блог</a>
-      <a href="/#order" class="nav-btn py-2 text-center !rounded-button hover:bg-opacity-90 transition-all">Заказать</a>
+      <a href="/#order" class="nav-btn py-2 text-center rounded-lg hover:bg-opacity-90 transition-all">Заказать</a>
     </div>
   </div>
 </nav>
@@ -493,7 +422,7 @@ footer a:hover {
       
       <img src="/images/article-summer-honey-2.jpg" 
            alt="Натуральный мёд в сотах" 
-           class="w-full mb-6 rounded"
+           class="w-full mb-6 rounded-lg"
            loading="lazy"
            decoding="async">
       
@@ -507,7 +436,7 @@ footer a:hover {
       
       <img src="/images/article-summer-honey-3.jpg" 
            alt="Разные сорта мёда" 
-           class="w-full mb-6 rounded"
+           class="w-full mb-6 rounded-lg"
            loading="lazy"
            decoding="async">
       
@@ -566,7 +495,7 @@ footer a:hover {
       
       <div class="honey-test">
         <h3 class="text-xl font-bold mb-3">Тест с йодом</h3>
-        <p>Разведи немного мёда в воде, капни йод. Если раствор посинел — в мёде есть крахмал (подделка).</p>
+        <p>Разведи немного мёд в воде, капни йод. Если раствор посинел — в мёде есть крахмал (подделка).</p>
       </div>
       
       <div class="honey-test">
@@ -576,7 +505,7 @@ footer a:hover {
       
       <img src="/images/article-summer-honey-4.jpg" 
            alt="Тестирование мёда" 
-           class="w-full mb-6 rounded"
+           class="w-full mb-6 rounded-lg"
            loading="lazy"
            decoding="async">
       
@@ -646,7 +575,7 @@ footer a:hover {
       
       <img src="/images/article-summer-honey-5.jpg" 
            alt="Ассортимент мёда" 
-           class="w-full mb-6 rounded"
+           class="w-full mb-6 rounded-lg"
            loading="lazy"
            decoding="async">
       
@@ -698,7 +627,7 @@ footer a:hover {
       
       <img src="/images/article-summer-honey-6.jpg" 
            alt="Летний напиток с мёдом" 
-           class="w-full mb-6 rounded"
+           class="w-full mb-6 rounded-lg"
            loading="lazy"
            decoding="async">
       
@@ -714,7 +643,7 @@ footer a:hover {
 </section>
 </main>
 
-<!-- Футер с точно выровненным текстом -->
+<!-- Футер -->
 <footer class="py-10 md:py-12 w-full">
   <div id="footer-contacts" class="container mx-auto px-4 md:px-6 w-full">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 w-full">
@@ -877,9 +806,50 @@ footer a:hover {
   </div>
 </footer>
 
-<!-- Скрипт lazy loading -->
+<!-- Плавающая кнопка "Назад" -->
+<a href="/blog/" id="back-button" class="floating-back-button">
+  <div class="back-arrow"></div>
+</a>
+
+<!-- Скрипты -->
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
+  // Управление мобильным меню
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('block');
+      });
+    }
+
+    // Плавная прокрутка
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        if (this.getAttribute('href') === '#') return;
+        
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+          
+          // Закрыть мобильное меню
+          if (mobileMenu && !mobileMenu.classList.contains('hidden') && window.innerWidth < 768) {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('block');
+          }
+        }
+      });
+    });
+    
+    // Lazy loading
     const lazyLoad = function(entries) {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -899,95 +869,26 @@ footer a:hover {
     document.querySelectorAll("img.lazyload").forEach(img => {
       observer.observe(img);
     });
-  });
-</script>
-
-<!-- Плавающая кнопка "Назад" -->
-<a href="/blog/" id="back-button" class="floating-back-button">
-  <div class="back-arrow"></div>
-</a>
-
-<!-- Скрипт для управления плавающей кнопкой -->
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
+    
+    // Плавающая кнопка "Назад"
     const backButton = document.getElementById('back-button');
-    
-    // Показываем/скрываем кнопку при скролле
-    let isScrolling;
-    window.addEventListener('scroll', function() {
-      backButton.style.opacity = "1";
-      
-      clearTimeout(isScrolling);
-      isScrolling = setTimeout(function() {
-        backButton.style.opacity = "0";
-      }, 2000);
-    });
-    
-    // Обработка нажатия на кнопку "Назад"
-    backButton.addEventListener('click', function(e) {
-      e.preventDefault();
-      window.location.href = '/blog/';
-    });
-  });
-</script>
-
-<!-- Обработка мобильного меню -->
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    
-    mobileMenuButton.addEventListener('click', function() {
-      if (mobileMenu.classList.contains('hidden')) {
-        mobileMenu.classList.remove('hidden');
-        mobileMenu.classList.add('block');
-      } else {
-        mobileMenu.classList.add('hidden');
-        mobileMenu.classList.remove('block');
-      }
-    });
-    
-    // Плавная прокрутка к якорям
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        if (this.getAttribute('href') === '#') return;
+    if (backButton) {
+      let isScrolling;
+      window.addEventListener('scroll', function() {
+        backButton.style.opacity = "1";
         
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 80,
-            behavior: 'smooth'
-          });
-          
-          // Закрыть мобильное меню при клике на ссылку
-          if (!mobileMenu.classList.contains('hidden') && window.innerWidth < 768) {
-            mobileMenu.classList.add('hidden');
-            mobileMenu.classList.remove('block');
-          }
-        }
+        clearTimeout(isScrolling);
+        isScrolling = setTimeout(function() {
+          backButton.style.opacity = "0";
+        }, 2000);
       });
-    });
+      
+      backButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.location.href = '/blog/';
+      });
+    }
   });
 </script>
-
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();
-   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-   ym(102951378, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true
-   });
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/102951378" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
 </body>
 </html>

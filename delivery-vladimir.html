@@ -546,6 +546,16 @@
         @media (min-width: 768px) {
             .delivery-geography {
                 flex-direction: row;
+                height: 600px; /* Фиксированная высота для выравнивания */
+            }
+            
+            .cities-container, 
+            .map-container {
+                height: 100%; /* Дочерние элементы занимают всю высоту родителя */
+            }
+            
+            .cities-container {
+                overflow-y: auto; /* Прокрутка при необходимости */
             }
         }
         
@@ -596,7 +606,6 @@
         
         /* Исправленный блок карты */
         .map-container {
-            flex: 1;
             height: 400px;
             background-color: var(--gray-200);
             border-radius: 0.5rem;
@@ -609,7 +618,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
+            height: 100%; /* Заполнение всего контейнера */
             background-size: cover;
             background-position: center;
             background-image: url('images/map-placeholder.png');

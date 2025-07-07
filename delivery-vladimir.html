@@ -546,16 +546,6 @@
         @media (min-width: 768px) {
             .delivery-geography {
                 flex-direction: row;
-                height: 600px; /* Фиксированная высота для выравнивания */
-            }
-            
-            .cities-container, 
-            .map-container {
-                height: 100%; /* Дочерние элементы занимают всю высоту родителя */
-            }
-            
-            .cities-container {
-                overflow-y: auto; /* Прокрутка при необходимости */
             }
         }
         
@@ -606,6 +596,7 @@
         
         /* Исправленный блок карты */
         .map-container {
+            flex: 1;
             height: 400px;
             background-color: var(--gray-200);
             border-radius: 0.5rem;
@@ -618,7 +609,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%; /* Заполнение всего контейнера */
+            height: 100%;
             background-size: cover;
             background-position: center;
             background-image: url('images/map-placeholder.png');
@@ -1441,25 +1432,25 @@
                         <tr class="highlighted">
                             <td><span class="liter-highlight">1 литр (до 1 кг)</span></td>
                             <td><span class="liter-highlight">300 ₽</span></td>
-                            <td><span class="liter-highlight">Бесплатно*</span></td>
+                            <td><span class="liter-highlight">500 ₽</span></td>
                             <td><span class="liter-highlight">350 ₽</span></td>
                         </tr>
                         <tr>
                             <td>1-3 кг</td>
                             <td>400 ₽</td>
-                            <td>Бесплатно*</td>
+                            <td>500 ₽</td>
                             <td>450 ₽</td>
                         </tr>
                         <tr>
                             <td>3-5 кг</td>
                             <td>500 ₽</td>
-                            <td>Бесплатно*</td>
+                            <td>500 ₽</td>
                             <td>550 ₽</td>
                         </tr>
                         <tr>
                             <td>5-10 кг</td>
                             <td>700 ₽</td>
-                            <td>Бесплатно*</td>
+                            <td>500 ₽</td>
                             <td>750 ₽</td>
                         </tr>
                         <tr>
@@ -1474,7 +1465,7 @@
             
             <div class="free-delivery">
                 <p><strong>Бесплатная доставка</strong> при заказе от 3 литров меда в пределах города Владимир!</p>
-                <p class="mt-2 text-sm">*Бесплатная курьерская доставка действует для жителей города Владимир при заказе от 3 литров</p>
+                <p class="mt-2 text-sm">*Бесплатная доставка до пункта выдачи действует для жителей города Владимир при заказе от 3 литров</p>
             </div>
         </div>
     </section>
@@ -1633,7 +1624,7 @@
 
     <section class="cta-section">
         <div class="container">
-            <h2>Закажите мёд с доставкой во Владимир — почувствуйте вкус Алтая уже сегодня!</h2>
+            <h2>Закажите мёд с доставкой во Владимир — почувствуйте вкус Алтая уже завтра!</h2>
             <p class="text-center">Натуральный алтайский мёд с быстрой доставкой в любую точку Владимира и Владимирской области. Мы гарантируем качество и свежесть каждой баночки.</p>
             
             <div class="cta-buttons">

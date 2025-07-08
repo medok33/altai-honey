@@ -429,6 +429,9 @@
             border-radius: 0.5rem;
             padding: 1.5rem;
             width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Центрируем содержимое */
         }
         
         @media (min-width: 768px) {
@@ -538,19 +541,18 @@
         }
         
         .delivery-geography {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: 1fr;
             gap: 2rem;
         }
         
-        @media (min-width: 768px) {
+        @media (min-width: 992px) {
             .delivery-geography {
-                flex-direction: row;
+                grid-template-columns: 1fr 1fr;
             }
         }
         
         .cities-container {
-            flex: 1;
             background: white;
             padding: 2rem;
             border-radius: 0.5rem;
@@ -570,6 +572,11 @@
             }
         }
         
+        .city-column {
+            display: flex;
+            flex-direction: column;
+        }
+        
         .city-column h4 {
             font-weight: 600;
             margin-bottom: 1.25rem;
@@ -580,12 +587,14 @@
         .city-list {
             list-style: none;
             padding-left: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem; /* Уменьшаем отступы между пунктами */
         }
         
         .city-list li {
             display: flex;
             align-items: center;
-            margin-bottom: 0.75rem;
             color: var(--gray-600);
         }
         
@@ -594,25 +603,116 @@
             margin-right: 0.75rem;
         }
         
-        /* Исправленный блок карты */
-        .map-container {
-            flex: 1;
-            height: 400px;
-            background-color: var(--gray-200);
+        /* Карусель отзывов */
+        .reviews-container {
+            background: white;
+            padding: 2rem;
             border-radius: 0.5rem;
-            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             position: relative;
+            overflow: hidden;
         }
         
-        .map-container .map-bg {
+        .reviews-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: var(--gray-900);
+        }
+        
+        .reviews-carousel {
+            position: relative;
+            min-height: 300px;
+            overflow: hidden;
+        }
+        
+        .review-list {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .review-item {
+            flex: 0 0 100%;
+            background: var(--gray-50);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            position: relative;
+            box-sizing: border-box;
+        }
+        
+        .review-icon {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            background-image: url('images/map-placeholder.png');
+            top: 10px;
+            right: 10px;
+            color: var(--primary);
+            opacity: 0.3;
+            font-size: 2rem;
+        }
+        
+        .review-text {
+            font-style: italic;
+            font-size: 1rem;
+            color: var(--gray-700);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .review-author {
+            font-weight: 600;
+            color: var(--gray-900);
+            font-size: 1rem;
+        }
+        
+        .review-location {
+            color: var(--primary);
+            margin-top: 0.25rem;
+            font-size: 0.9rem;
+        }
+        
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 1.5rem;
+            gap: 15px;
+        }
+        
+        .carousel-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: background 0.3s;
+        }
+        
+        .carousel-btn:hover {
+            background: #e69500;
+        }
+        
+        .carousel-dots {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ddd;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .dot.active {
+            background: var(--primary);
         }
         
         .faq-container {
@@ -1125,72 +1225,6 @@
             text-align: center;
         }
         
-        /* Новый блок отзывов - статичный список */
-        .reviews-container {
-            flex: 1;
-            background: white;
-            padding: 2rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            max-height: 500px;
-            overflow-y: auto;
-        }
-        
-        .reviews-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            text-align: center;
-            color: var(--gray-900);
-            position: sticky;
-            top: 0;
-            background: white;
-            padding-bottom: 1rem;
-            z-index: 10;
-        }
-        
-        .review-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-        
-        .review-item {
-            background: var(--gray-50);
-            padding: 1.5rem;
-            border-radius: 0.5rem;
-            position: relative;
-        }
-        
-        .review-icon {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            color: var(--primary);
-            opacity: 0.3;
-            font-size: 2rem;
-        }
-        
-        .review-text {
-            font-style: italic;
-            font-size: 1rem;
-            color: var(--gray-700);
-            margin-bottom: 1rem;
-            line-height: 1.6;
-        }
-        
-        .review-author {
-            font-weight: 600;
-            color: var(--gray-900);
-            font-size: 1rem;
-        }
-        
-        .review-location {
-            color: var(--primary);
-            margin-top: 0.25rem;
-            font-size: 0.9rem;
-        }
-        
         /* Адаптация для мобильных устройств */
         @media (max-width: 767px) {
             .hero-title {
@@ -1235,7 +1269,6 @@
             
             .reviews-container {
                 padding: 1.5rem;
-                max-height: 400px;
             }
             
             .reviews-title {
@@ -1245,6 +1278,12 @@
             
             .review-text {
                 font-size: 0.9rem;
+            }
+            
+            .carousel-btn {
+                width: 36px;
+                height: 36px;
+                font-size: 1rem;
             }
         }
         
@@ -1268,7 +1307,6 @@
             
             .reviews-container {
                 padding: 1rem;
-                max-height: 350px;
             }
         }
         
@@ -1467,7 +1505,7 @@
                                     <span>Быстрая доставка до пункта выдачи</span>
                                 </li>
                             </ul>
-                            <p class="mt-4">
+                            <p class="mt-4 text-center">
                                 <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing_seller" class="btn btn-outline" target="_blank">Перейти на Авито</a>
                             </p>
                         </div>
@@ -1831,44 +1869,61 @@
                     <p class="text-gray-600">Сроки и стоимость доставки в другие города области могут отличаться. Для уточнения деталей свяжитесь с нашими менеджерами.</p>
                 </div>
                 
-                <!-- Переработанный блок отзывов - статичный список -->
+                <!-- Карусель отзывов -->
                 <div class="reviews-container">
                     <h3 class="reviews-title">Отзывы покупателей из Владимира и области</h3>
-                    <div class="review-list">
-                        <div class="review-item">
-                            <i class="ri-double-quotes-l review-icon"></i>
-                            <p class="review-text">Заказывали мёд с доставкой во Владимир - привезли на следующий день! Качество отличное, вкус натуральный. Особенно понравился гречишный - густой, ароматный, настоящий алтайский мёд!</p>
-                            <div class="review-author">Ирина Петрова</div>
-                            <div class="review-location">Владимир</div>
+                    <div class="reviews-carousel">
+                        <div class="review-list">
+                            <div class="review-item">
+                                <i class="ri-double-quotes-l review-icon"></i>
+                                <p class="review-text">Заказывали мёд с доставкой во Владимир - привезли на следующий день! Качество отличное, вкус натуральный. Особенно понравился гречишный - густой, ароматный, настоящий алтайский мёд!</p>
+                                <div class="review-author">Ирина Петрова</div>
+                                <div class="review-location">Владимир</div>
+                            </div>
+                            
+                            <div class="review-item">
+                                <i class="ri-double-quotes-l review-icon"></i>
+                                <p class="review-text">Живу в Коврове, заказал 5 литров мёда - доставили бесплатно! Упаковка надёжная, ни одна банка не пострадала. Мёд кристально чистый, без примесей. Буду заказывать ещё!</p>
+                                <div class="review-author">Дмитрий Смирнов</div>
+                                <div class="review-location">Ковров</div>
+                            </div>
+                            
+                            <div class="review-item">
+                                <i class="ri-double-quotes-l review-icon"></i>
+                                <p class="review-text">В Муром доставили за 2 дня, как и обещали. Мёд просто восхитительный! Липовый - такой душистый, а таёжный - с настоящим лесным ароматом. Спасибо за качественный продукт!</p>
+                                <div class="review-author">Ольга Иванова</div>
+                                <div class="review-location">Муром</div>
+                            </div>
+                            
+                            <div class="review-item">
+                                <i class="ri-double-quotes-l review-icon"></i>
+                                <p class="review-text">Заказал мёд в Александров, пришёл в идеальном состоянии. Курьер позвонил заранее, приехал вовремя. Мёд настоящий, густой, как в детстве у бабушки. Рекомендую всем жителям области!</p>
+                                <div class="review-author">Андрей Кузнецов</div>
+                                <div class="review-location">Александров</div>
+                            </div>
+                            
+                            <div class="review-item">
+                                <i class="ri-double-quotes-l review-icon"></i>
+                                <p class="review-text">Живу в Гусь-Хрустальном, заказала пробную банку - не пожалела! Мёд натуральный, без сахара и добавок. Теперь беру только здесь. Доставка быстрая, сервис отличный!</p>
+                                <div class="review-author">Екатерина Волкова</div>
+                                <div class="review-location">Гусь-Хрустальный</div>
+                            </div>
                         </div>
-                        
-                        <div class="review-item">
-                            <i class="ri-double-quotes-l review-icon"></i>
-                            <p class="review-text">Живу в Коврове, заказал 5 литров мёда - доставили бесплатно! Упаковка надёжная, ни одна банка не пострадала. Мёд кристально чистый, без примесей. Буду заказывать ещё!</p>
-                            <div class="review-author">Дмитрий Смирнов</div>
-                            <div class="review-location">Ковров</div>
+                    </div>
+                    <div class="carousel-nav">
+                        <button class="carousel-btn carousel-prev">
+                            <i class="ri-arrow-left-s-line"></i>
+                        </button>
+                        <div class="carousel-dots">
+                            <span class="dot active" data-index="0"></span>
+                            <span class="dot" data-index="1"></span>
+                            <span class="dot" data-index="2"></span>
+                            <span class="dot" data-index="3"></span>
+                            <span class="dot" data-index="4"></span>
                         </div>
-                        
-                        <div class="review-item">
-                            <i class="ri-double-quotes-l review-icon"></i>
-                            <p class="review-text">В Муром доставили за 2 дня, как и обещали. Мёд просто восхитительный! Липовый - такой душистый, а таёжный - с настоящим лесным ароматом. Спасибо за качественный продукт!</p>
-                            <div class="review-author">Ольга Иванова</div>
-                            <div class="review-location">Муром</div>
-                        </div>
-                        
-                        <div class="review-item">
-                            <i class="ri-double-quotes-l review-icon"></i>
-                            <p class="review-text">Заказал мёд в Александров, пришёл в идеальном состоянии. Курьер позвонил заранее, приехал вовремя. Мёд настоящий, густой, как в детстве у бабушки. Рекомендую всем жителям области!</p>
-                            <div class="review-author">Андрей Кузнецов</div>
-                            <div class="review-location">Александров</div>
-                        </div>
-                        
-                        <div class="review-item">
-                            <i class="ri-double-quotes-l review-icon"></i>
-                            <p class="review-text">Живу в Гусь-Хрустальном, заказала пробную банку - не пожалела! Мёд натуральный, без сахара и добавок. Теперь беру только здесь. Доставка быстрая, сервис отличный!</p>
-                            <div class="review-author">Екатерина Волкова</div>
-                            <div class="review-location">Гусь-Хрустальный</div>
-                        </div>
+                        <button class="carousel-btn carousel-next">
+                            <i class="ri-arrow-right-s-line"></i>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -2368,6 +2423,83 @@
                     });
                 }, 1000);
             });
+            
+            // Карусель отзывов
+            const reviewList = document.querySelector('.review-list');
+            const reviewItems = document.querySelectorAll('.review-item');
+            const dots = document.querySelectorAll('.dot');
+            const prevBtn = document.querySelector('.carousel-prev');
+            const nextBtn = document.querySelector('.carousel-next');
+            
+            let currentIndex = 0;
+            let autoSlideInterval;
+            
+            function updateCarousel() {
+                const offset = -currentIndex * 100;
+                reviewList.style.transform = `translateX(${offset}%)`;
+                
+                // Обновляем активную точку
+                dots.forEach((dot, index) => {
+                    if (index === currentIndex) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                });
+            }
+            
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % reviewItems.length;
+                updateCarousel();
+            }
+            
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + reviewItems.length) % reviewItems.length;
+                updateCarousel();
+            }
+            
+            function goToSlide(index) {
+                currentIndex = index;
+                updateCarousel();
+            }
+            
+            function startAutoSlide() {
+                autoSlideInterval = setInterval(nextSlide, 5000);
+            }
+            
+            function stopAutoSlide() {
+                clearInterval(autoSlideInterval);
+            }
+            
+            // Инициализация карусели
+            updateCarousel();
+            startAutoSlide();
+            
+            // Обработчики событий
+            nextBtn.addEventListener('click', () => {
+                stopAutoSlide();
+                nextSlide();
+                startAutoSlide();
+            });
+            
+            prevBtn.addEventListener('click', () => {
+                stopAutoSlide();
+                prevSlide();
+                startAutoSlide();
+            });
+            
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    stopAutoSlide();
+                    goToSlide(index);
+                    startAutoSlide();
+                });
+            });
+            
+            // Пауза при наведении
+            const carouselContainer = document.querySelector('.reviews-carousel');
+            carouselContainer.addEventListener('mouseenter', stopAutoSlide);
+            carouselContainer.addEventListener('mouseleave', startAutoSlide);
         });
     </script>
     

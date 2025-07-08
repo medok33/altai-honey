@@ -144,6 +144,7 @@
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
         
+        /* ===== НОВАЯ ШАПКА В СТИЛЕ ГЛАВНОЙ СТРАНИЦЫ ===== */
         header {
             position: sticky;
             top: 0;
@@ -157,10 +158,11 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            padding: 0 1rem;
         }
         
         .logo {
-            font-family: 'Pacific', 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', cursive;
+            font-family: 'Pacifico', 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', cursive;
             font-size: 1.875rem;
             color: var(--primary);
             text-decoration: none;
@@ -227,6 +229,65 @@
             color: var(--primary);
         }
         
+        .nav-btn {
+            background-color: var(--primary);
+            color: white;
+            border-radius: 8px;
+            padding: 0.5rem 1.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        
+        .nav-btn:hover {
+            background-color: rgba(255, 165, 0, 0.9);
+        }
+        
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            z-index: 100;
+            padding: 1rem;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        
+        .mobile-menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        
+        .mobile-menu-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .mobile-menu-link {
+            padding: 0.75rem 0;
+            font-size: 1.125rem;
+            color: var(--gray-700);
+            text-decoration: none;
+            border-bottom: 1px solid var(--gray-100);
+        }
+        
+        .mobile-menu-link.active {
+            color: var(--primary);
+        }
+        /* ===== КОНЕЦ НОВОЙ ШАПКИ ===== */
+
         /* Исправленная герой-секция */
         .hero-section {
             position: relative;
@@ -837,11 +898,11 @@
             text-align: center;
         }
         
+        /* ===== НОВЫЙ ФУТЕР В СТИЛЕ ГЛАВНОЙ СТРАНИЦЫ ===== */
         footer {
-            background-color: var(--gray-900);
+            background-color: #8B4513;
             color: #fff;
-            padding-top: 3rem;
-            padding-bottom: 1.5rem;
+            padding: 2.5rem 0 1.5rem;
         }
         
         .footer-grid {
@@ -853,7 +914,7 @@
         
         @media (min-width: 768px) {
             .footer-grid {
-                grid-template-columns: repeat(4, 1fr);
+                grid-template-columns: repeat(5, 1fr);
             }
         }
         
@@ -863,7 +924,7 @@
         }
         
         .footer-logo {
-            font-family: 'Pacific', 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', cursive;
+            font-family: 'Pacifico', 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', cursive;
             font-size: 1.875rem;
             color: var(--primary);
             margin-bottom: 1rem;
@@ -872,6 +933,7 @@
         .footer-text {
             color: var(--gray-400);
             margin-bottom: 1rem;
+            font-size: 0.875rem;
         }
         
         .footer-social {
@@ -946,6 +1008,7 @@
         .contact-value {
             color: #fff;
             font-weight: 500;
+            font-size: 0.95rem;
         }
         
         .contact-note {
@@ -955,7 +1018,7 @@
         
         .footer-bottom {
             padding-top: 1.5rem;
-            border-top: 1px solid var(--gray-700);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             text-align: center;
         }
         
@@ -1342,50 +1405,51 @@
     <link rel="stylesheet" href="/assets/fonts/remixicon/remixicon.css" media="print" onload="this.media='all'">
 </head>
 <body>
+    <!-- Обновленная шапка в стиле главной страницы -->
     <header>
-        <div class="container">
-            <div class="header-inner">
+        <div class="container header-inner">
+            <a href="https://altaymed.shop/" class="logo">Алтайский мёд</a>
+            
+            <nav class="nav-links">
+                <a href="https://altaymed.shop/" class="nav-link">Главная</a>
+                <a href="https://altaymed.shop/#products" class="nav-link">Каталог</a>
+                <a href="https://altaymed.shop/delivery.html" class="nav-link active">Доставка</a>
+                <a href="https://altaymed.shop/" class="nav-link">О нас</a>
+                <a href="https://altaymed.shop/" class="nav-link">Контакты</a>
+                <a href="#order" class="nav-btn">Заказать</a>
+            </nav>
+            
+            <div class="header-actions">
+                <a href="tel:+79209400222" class="phone-link">
+                    <div class="icon-btn">
+                        <i class="ri-phone-line ri-lg"></i>
+                    </div>
+                    <span>+7 (920) 940-02-22</span>
+                </a>
+                <button class="icon-btn md:hidden" id="mobile-menu-toggle" aria-label="Открыть меню">
+                    <i class="ri-menu-line ri-lg"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div class="mobile-menu" id="mobile-menu">
+            <div class="mobile-menu-header">
                 <a href="https://altaymed.shop/" class="logo">Алтайский мёд</a>
-                
-                <nav class="nav-links">
-                    <a href="https://altaymed.shop/" class="nav-link">Главная</a>
-                    <a href="https://altaymed.shop/#products" class="nav-link">Каталог</a>
-                    <a href="https://altaymed.shop/delivery.html" class="nav-link active">Доставка</a>
-                    <a href="https://altaymed.shop/" class="nav-link">О нас</a>
-                    <a href="https://altaymed.shop/" class="nav-link">Контакты</a>
-                </nav>
-                
-                <div class="header-actions">
-                    <a href="tel:+79209400222" class="phone-link">
-                        <div class="icon-btn">
-                            <i class="ri-phone-line ri-lg"></i>
-                        </div>
-                        <span>+7 (920) 940-02-22</span>
-                    </a>
-                    <button class="icon-btn md:hidden" id="mobile-menu-toggle" aria-label="Открыть меню">
-                        <i class="ri-menu-line ri-lg"></i>
-                    </button>
-                </div>
+                <button id="close-mobile-menu" aria-label="Закрыть меню">
+                    <i class="ri-close-line ri-lg"></i>
+                </button>
+            </div>
+            <div class="mobile-menu-links">
+                <a href="https://altaymed.shop/" class="mobile-menu-link">Главная</a>
+                <a href="https://altaymed.shop/#products" class="mobile-menu-link">Каталог</a>
+                <a href="https://altaymed.shop/delivery.html" class="mobile-menu-link active">Доставка</a>
+                <a href="https://altaymed.shop/" class="mobile-menu-link">О нас</a>
+                <a href="https://altaymed.shop/" class="mobile-menu-link">Контакты</a>
+                <a href="tel:+79209400222" class="mobile-menu-link">+7 (920) 940-02-22</a>
+                <a href="#order" class="mobile-menu-link">Заказать</a>
             </div>
         </div>
     </header>
-
-    <div class="mobile-menu" id="mobile-menu">
-        <div class="mobile-menu-header">
-            <a href="https://altaymed.shop/" class="logo">Алтайский мёд</a>
-            <button id="close-mobile-menu" aria-label="Закрыть меню">
-                <i class="ri-close-line ri-lg"></i>
-            </button>
-        </div>
-        <div class="mobile-menu-links">
-            <a href="https://altaymed.shop/" class="mobile-menu-link">Главная</a>
-            <a href="https://altaymed.shop/#products" class="mobile-menu-link">Каталог</a>
-            <a href="https://altaymed.shop/delivery.html" class="mobile-menu-link active">Доставка</a>
-            <a href="https://altaymed.shop/" class="mobile-menu-link">О нас</a>
-            <a href="https://altaymed.shop/" class="mobile-menu-link">Контакты</a>
-            <a href="tel:+79209400222" class="mobile-menu-link">+7 (920) 940-02-22</a>
-        </div>
-    </div>
 
     <!-- Исправленная герой-секция -->
     <section class="hero-section">
@@ -2091,6 +2155,7 @@
         </div>
     </section>
 
+    <!-- Обновленный футер в стиле главной страницы -->
     <footer>
         <div class="container">
             <div class="footer-grid">
@@ -2116,17 +2181,25 @@
                         <a href="https://altaymed.shop/#products" class="footer-link">Разнотравье</a>
                         <a href="https://altaymed.shop/#products" class="footer-link">Таёжный мёд</a>
                         <a href="https://altaymed.shop/#products" class="footer-link">Гречишный мёд</a>
-                        <a href="https://altaymed.shop/#products" class="footer-link">Горный мёд</a>
                     </div>
                 </div>
                 
                 <div class="footer-column">
-                    <h3 class="footer-title">Отзывы о доставке</h3>
+                    <h3 class="footer-title">Материалы</h3>
                     <div class="footer-links">
-                        <span class="footer-link">Отзывы о доставке во Владимире</span>
-                        <span class="footer-link">Все отзывы о AltayMed</span>
-                        <span class="footer-link">Отзывы о гречишном мёде</span>
-                        <span class="footer-link">Отзывы о таёжном мёде</span>
+                        <a href="https://altaymed.shop/blog" class="footer-link">Блог</a>
+                        <a href="https://altaymed.shop/faq" class="footer-link">FAQ</a>
+                        <a href="https://altaymed.shop/legal.html" class="footer-link">Правовая информация</a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-title">Информация</h3>
+                    <div class="footer-links">
+                        <a href="#benefits" class="footer-link">Преимущества</a>
+                        <a href="#about" class="footer-link">О нас</a>
+                        <a href="#footer-contacts" class="footer-link">Контакты</a>
+                        <a href="https://altaymed.shop/delivery.html" class="footer-link">Доставка и оплата</a>
                     </div>
                 </div>
                 
@@ -2134,34 +2207,21 @@
                     <h3 class="footer-title">Контакты</h3>
                     <div class="footer-contacts">
                         <div class="contact-item">
+                            <i class="ri-map-pin-line ri-lg contact-icon"></i>
+                            <div class="contact-info">
+                                <span class="contact-value">г. Владимир, ул. Большая Московская, 20</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
                             <i class="ri-phone-line ri-lg contact-icon"></i>
                             <div class="contact-info">
                                 <span class="contact-value">+7 (920) 940-02-22</span>
-                                <span class="contact-note">Ежедневно с 9:00 до 21:00</span>
                             </div>
                         </div>
                         <div class="contact-item">
                             <i class="ri-mail-line ri-lg contact-icon"></i>
                             <div class="contact-info">
                                 <span class="contact-value">altaymed.shop@yandex.ru</span>
-                                <span class="contact-note">Для заказов и вопросов</span>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="ri-map-pin-line ri-lg contact-icon"></i>
-                            <div class="contact-info">
-                                <span class="contact-value">г. Владимир, ул. Большая Московская, 20</span>
-                                <span class="contact-note">Пункт выдачи заказов</span>
-                            </div>
-                        </div>
-                        <!-- Добавлена строка про опт -->
-                        <div class="contact-item">
-                            <i class="ri-store-line ri-lg contact-icon"></i>
-                            <div class="contact-info">
-                                <span class="contact-value">мёд оптом для кафе, магазинов и заведений Владимира</span>
-                                <span class="contact-note">
-                                    <a href="mailto:opt@altaymed.shop" style="color: var(--gray-400);">запросите предложение</a>
-                                </span>
                             </div>
                         </div>
                     </div>
@@ -2169,7 +2229,6 @@
             </div>
             
             <div class="footer-bottom">
-                <!-- Обновленная ссылка в копирайте -->
                 <p class="copyright">
                     <a href="https://altaymed.shop/legal.html" style="color: inherit;">
                         © 2025 Алтайский мёд. Все права защищены.
@@ -2181,7 +2240,6 @@
                     <i class="ri-paypal-line payment-icon"></i>
                     <i class="ri-alipay-line payment-icon"></i>
                 </div>
-                <!-- Упоминание про SSL -->
                 <div class="security-note">
                     <i class="ri-shield-check-line"></i>
                     <span>Безопасное соединение (SSL)</span>
@@ -2190,7 +2248,7 @@
         </div>
     </footer>
 
-    <!-- Остальной код (модальные окна, скрипты) остается без изменений -->
+    <!-- Остальной код (модальные окна, скрипты) -->
     <div id="order-modal" class="modal">
         <!-- ... -->
     </div>

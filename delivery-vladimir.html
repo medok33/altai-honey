@@ -160,7 +160,7 @@
         }
         
         .logo {
-            font-family: 'Pacifico', 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', cursive;
+            font-family: 'Pacific', 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', cursive;
             font-size: 1.875rem;
             color: var(--primary);
             text-decoration: none;
@@ -863,7 +863,7 @@
         }
         
         .footer-logo {
-            font-family: 'Pacifico', 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', cursive;
+            font-family: 'Pacific', 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', cursive;
             font-size: 1.875rem;
             color: var(--primary);
             margin-bottom: 1rem;
@@ -2330,92 +2330,184 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Инициализация табов доставки
             const tabButtons = document.querySelectorAll('.delivery-tab');
             const tabContents = document.querySelectorAll('.delivery-content');
             
-            tabButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const tabId = button.getAttribute('data-tab');
-                    
-                    tabButtons.forEach(btn => {
-                        btn.classList.remove('active');
+            if (tabButtons.length && tabContents.length) {
+                tabButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        const tabId = button.getAttribute('data-tab');
+                        
+                        tabButtons.forEach(btn => {
+                            btn.classList.remove('active');
+                        });
+                        
+                        tabContents.forEach(content => {
+                            content.classList.remove('active');
+                        });
+                        
+                        button.classList.add('active');
+                        document.getElementById(`${tabId}-content`)?.classList.add('active');
                     });
-                    
-                    tabContents.forEach(content => {
-                        content.classList.remove('active');
-                    });
-                    
-                    button.classList.add('active');
-                    
-                    document.getElementById(`${tabId}-content`).classList.add('active');
                 });
-            });
+            }
             
+            // Инициализация FAQ
             const faqQuestions = document.querySelectorAll('.faq-question');
-            faqQuestions.forEach(question => {
-                question.addEventListener('click', () => {
-                    const faqItem = question.parentElement;
-                    faqItem.classList.toggle('active');
+            if (faqQuestions.length) {
+                faqQuestions.forEach(question => {
+                    question.addEventListener('click', () => {
+                        const faqItem = question.parentElement;
+                        faqItem.classList.toggle('active');
+                    });
                 });
-            });
+            }
             
+            // Мобильное меню
             const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
             const closeMobileMenu = document.getElementById('close-mobile-menu');
             const mobileMenu = document.getElementById('mobile-menu');
             
-            mobileMenuToggle.addEventListener('click', () => {
-                mobileMenu.classList.add('active');
-            });
+            if (mobileMenuToggle && closeMobileMenu && mobileMenu) {
+                mobileMenuToggle.addEventListener('click', () => {
+                    mobileMenu.classList.add('active');
+                });
+                
+                closeMobileMenu.addEventListener('click', () => {
+                    mobileMenu.classList.remove('active');
+                });
+            }
             
-            closeMobileMenu.addEventListener('click', () => {
-                mobileMenu.classList.remove('active');
-            });
-            
+            // Модальные окна
             const orderModal = document.getElementById('order-modal');
             const successModal = document.getElementById('success-modal');
             const closeModal = document.querySelector('.close-modal');
             const closeSuccessModal = document.getElementById('close-success-modal');
             
-            closeModal.addEventListener('click', () => {
-                orderModal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            });
+            if (closeModal) {
+                closeModal.addEventListener('click', () => {
+                    if (orderModal) orderModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                });
+            }
             
             window.addEventListener('click', (event) => {
-                if (event.target === orderModal) {
+                if (orderModal && event.target === orderModal) {
                     orderModal.style.display = 'none';
                     document.body.style.overflow = 'auto';
                 }
-                if (event.target === successModal) {
+                if (successModal && event.target === successModal) {
                     successModal.style.display = 'none';
                     document.body.style.overflow = 'auto';
                 }
             });
             
-            closeSuccessModal.addEventListener('click', () => {
-                successModal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            });
+            if (closeSuccessModal) {
+                closeSuccessModal.addEventListener('click', () => {
+                    if (successModal) successModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                });
+            }
             
             const orderForm = document.getElementById('order-form');
             if (orderForm) {
                 orderForm.addEventListener('submit', (e) => {
                     e.preventDefault();
-                    orderModal.style.display = 'none';
-                    successModal.style.display = 'flex';
+                    if (orderModal) orderModal.style.display = 'none';
+                    if (successModal) successModal.style.display = 'flex';
                     orderForm.reset();
                 });
             }
             
-            // Загрузка Яндекс.Метрики с задержкой 1 секунда
+            // Карусель отзывов (с защитой от отсутствия элементов)
+            const reviewList = document.querySelector('.review-list');
+            const reviewItems = document.querySelectorAll('.review-item');
+            
+            if (reviewList && reviewItems.length > 0) {
+                const dots = document.querySelectorAll('.dot');
+                const prevBtn = document.querySelector('.carousel-prev');
+                const nextBtn = document.querySelector('.carousel-next');
+                const carouselContainer = document.querySelector('.reviews-carousel');
+                
+                let currentIndex = 0;
+                let autoSlideInterval;
+                
+                function updateCarousel() {
+                    const offset = -currentIndex * 100;
+                    reviewList.style.transform = `translateX(${offset}%)`;
+                    
+                    dots.forEach((dot, index) => {
+                        dot.classList.toggle('active', index === currentIndex);
+                    });
+                }
+                
+                function nextSlide() {
+                    currentIndex = (currentIndex + 1) % reviewItems.length;
+                    updateCarousel();
+                }
+                
+                function prevSlide() {
+                    currentIndex = (currentIndex - 1 + reviewItems.length) % reviewItems.length;
+                    updateCarousel();
+                }
+                
+                function goToSlide(index) {
+                    currentIndex = index;
+                    updateCarousel();
+                }
+                
+                function startAutoSlide() {
+                    autoSlideInterval = setInterval(nextSlide, 5000);
+                }
+                
+                function stopAutoSlide() {
+                    clearInterval(autoSlideInterval);
+                }
+                
+                // Инициализация карусели
+                updateCarousel();
+                startAutoSlide();
+                
+                // Обработчики событий (с проверкой существования элементов)
+                if (nextBtn) {
+                    nextBtn.addEventListener('click', () => {
+                        stopAutoSlide();
+                        nextSlide();
+                        startAutoSlide();
+                    });
+                }
+                
+                if (prevBtn) {
+                    prevBtn.addEventListener('click', () => {
+                        stopAutoSlide();
+                        prevSlide();
+                        startAutoSlide();
+                    });
+                }
+                
+                if (dots.length) {
+                    dots.forEach((dot, index) => {
+                        dot.addEventListener('click', () => {
+                            stopAutoSlide();
+                            goToSlide(index);
+                            startAutoSlide();
+                        });
+                    });
+                }
+                
+                if (carouselContainer) {
+                    carouselContainer.addEventListener('mouseenter', stopAutoSlide);
+                    carouselContainer.addEventListener('mouseleave', startAutoSlide);
+                }
+            }
+            
+            // Яндекс.Метрика
             window.addEventListener('load', function() {
                 setTimeout(function() {
                     (function(m,e,t,r,i,k,a){
                         m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
                         m[i].l=1*new Date();
-                        for(var j=0;j<document.scripts.length;j++){
-                            if(document.scripts[j].src===r){return;}
-                        }
                         k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
                     })
                     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
@@ -2427,83 +2519,6 @@
                     });
                 }, 1000);
             });
-            
-            // Карусель отзывов - исправленная версия
-            const reviewList = document.querySelector('.review-list');
-            const reviewItems = document.querySelectorAll('.review-item');
-            const dots = document.querySelectorAll('.dot');
-            const prevBtn = document.querySelector('.carousel-prev');
-            const nextBtn = document.querySelector('.carousel-next');
-            
-            let currentIndex = 0;
-            let autoSlideInterval;
-            
-            function updateCarousel() {
-                const offset = -currentIndex * 100;
-                reviewList.style.transform = `translateX(${offset}%)`;
-                
-                // Обновляем активную точку
-                dots.forEach((dot, index) => {
-                    if (index === currentIndex) {
-                        dot.classList.add('active');
-                    } else {
-                        dot.classList.remove('active');
-                    }
-                });
-            }
-            
-            function nextSlide() {
-                currentIndex = (currentIndex + 1) % reviewItems.length;
-                updateCarousel();
-            }
-            
-            function prevSlide() {
-                currentIndex = (currentIndex - 1 + reviewItems.length) % reviewItems.length;
-                updateCarousel();
-            }
-            
-            function goToSlide(index) {
-                currentIndex = index;
-                updateCarousel();
-            }
-            
-            function startAutoSlide() {
-                autoSlideInterval = setInterval(nextSlide, 5000);
-            }
-            
-            function stopAutoSlide() {
-                clearInterval(autoSlideInterval);
-            }
-            
-            // Инициализация карусели
-            updateCarousel();
-            startAutoSlide();
-            
-            // Обработчики событий
-            nextBtn.addEventListener('click', () => {
-                stopAutoSlide();
-                nextSlide();
-                startAutoSlide();
-            });
-            
-            prevBtn.addEventListener('click', () => {
-                stopAutoSlide();
-                prevSlide();
-                startAutoSlide();
-            });
-            
-            dots.forEach((dot, index) => {
-                dot.addEventListener('click', () => {
-                    stopAutoSlide();
-                    goToSlide(index);
-                    startAutoSlide();
-                });
-            });
-            
-            // Пауза при наведении
-            const carouselContainer = document.querySelector('.reviews-carousel');
-            carouselContainer.addEventListener('mouseenter', stopAutoSlide);
-            carouselContainer.addEventListener('mouseleave', startAutoSlide);
         });
     </script>
     

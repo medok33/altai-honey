@@ -107,9 +107,7 @@
       display: flex;
       flex-direction: column;
       font-size: 16px;
-    }
-    .texture-bg {
-      background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZmZmZmZmIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNmNWRlYjMiIG9wYWNpdHk9IjAuMSI+PC9yZWN0Pgo8L3N2Zz4=');
+      background-color: white;
     }
     
     /* Навигация */
@@ -345,9 +343,38 @@
     .faq-item {
       border-bottom: 1px solid #e2d8c9;
       padding: 15px 0;
+      cursor: pointer;
     }
     .faq-item:last-child {
       border-bottom: none;
+    }
+    .faq-question {
+      font-weight: 600;
+      font-size: 1.125rem;
+      color: #2d3748;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .faq-question::after {
+      content: "+";
+      font-size: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+    .faq-item.active .faq-question::after {
+      content: "−";
+      transform: rotate(180deg);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      color: #4a5568;
+      line-height: 1.7;
+    }
+    .faq-item.active .faq-answer {
+      max-height: 500px;
+      padding-top: 10px;
     }
     .conclusion-box {
       padding: 25px;
@@ -419,18 +446,21 @@
     }
     
     /* Специфические стили для статьи */
-    .article-content {
+    .article-content-container {
+      background-color: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin: 2rem auto;
       max-width: 800px;
-      margin: 0 auto;
-      padding: 2rem 1rem;
     }
-    
+
     .article-content h2 {
       font-size: 1.75rem;
       font-weight: 700;
       margin-top: 3rem;
       margin-bottom: 1.5rem;
-      color: #2d3748;
+      color: #8B4513;
     }
     
     .article-content h3 {
@@ -438,7 +468,7 @@
       font-weight: 600;
       margin-top: 2.5rem;
       margin-bottom: 1rem;
-      color: #3c4b64;
+      color: #6B8E23;
     }
     
     .article-content p {
@@ -645,207 +675,228 @@
 </section>
 
 <!-- Контент статьи -->
-<article class="article-content">
-  <p class="text-xl font-semibold text-secondary">Алтайский мёд — это больше, чем просто вкусное лакомство. Его называют настоящей кладовой здоровья, ведь только в этом регионе пчёлы собирают нектар с десятков уникальных медоносов. Горный воздух, чистые луга, ручная откачка без нагрева — всё это даёт невероятно богатый состав. Недаром именно алтайский мёд входит в топ поисковых запросов по пользе и лечебным свойствам.</p>
-  
-  <h2>Чем алтайский мёд отличается от обычного</h2>
-  
-  <ul>
-    <li><strong>Максимальная ферментативная активность</strong> (диастазное число выше 57), что подтверждает высокое качество продукта.</li>
-    <li><strong>Богатый состав</strong>: витамины B, C, E, флавоноиды, ферменты, органические кислоты, железо, калий, кальций, магний, цинк.</li>
-    <li><strong>Отсутствие промышленных пасек и обработок</strong> — всё максимально натурально.</li>
-    <li><strong>Нектар собирается с разнотравья, липы, гречихи, диких трав и цветов</strong>, что придаёт уникальные вкусы и ароматы каждому сорту.</li>
-  </ul>
-  
-  <p>Подробнее о том, <a href="/blog/kak-vybrat-nastoyashchiy-myod-letom-2025.html" class="text-primary font-semibold hover:underline">как выбрать настоящий мёд</a>, читайте в нашей статье.</p>
-  
-  <h2>Польза и лечебные свойства алтайского мёда</h2>
-  
-  <h3>Поддержка иммунитета</h3>
-  <p>Алтайский мёд известен высоким содержанием антиоксидантов и природных ферментов. Он помогает организму бороться с вирусами и бактериями, ускоряет восстановление после простуд и укрепляет естественные защитные функции.</p>
-  
-  <h3>Польза для сердца и сосудов</h3>
-  <p>Благодаря магнию, железу и рутину, алтайский мёд поддерживает эластичность сосудов, улучшает кровообращение, способствует нормализации давления и укреплению сердечной мышцы.</p>
-  
-  <h3>Улучшение работы ЖКТ</h3>
-  <p>Органические кислоты и энзимы мягко обволакивают слизистую желудка, помогают при гастритах, нормализуют пищеварение и поддерживают здоровую микрофлору кишечника.</p>
-  
-  <h3>Быстрая энергия и восстановление</h3>
-  <p>Лёгкие сахара и белки быстро усваиваются, давая организму заряд бодрости. Алтайский мёд ценят спортсмены, люди после болезней и те, кто ведёт активный образ жизни.</p>
-  
-  <h3>Для кожи и красоты</h3>
-  <p>Мёд — природный антисептик и регенерант. Используется в домашних масках для лица и волос, помогает заживлять небольшие ранки, делает кожу более мягкой и здоровой.</p>
-  
-  <img src="/images/altay-honey-health-1.jpg" 
-       alt="Алтайский мёд для укрепления иммунитета" 
-       class="article-image"
-       loading="lazy"
-       decoding="async">
-  
-  <h2>Кому особенно полезен алтайский мёд</h2>
-  
-  <div class="health-benefits">
-    <div class="flex items-start mb-3">
-      <i class="ri-check-line text-primary mt-1 mr-2" aria-hidden="true"></i>
-      <div>
-        <strong>Детям (от 2-3 лет)</strong>: укрепляет иммунитет, повышает аппетит, помогает справиться с переутомлением.
-      </div>
+<section class="py-16 bg-[#F5DEB3] bg-opacity-20">
+  <div class="container mx-auto px-4 md:px-6">
+    <div class="max-w-3xl mx-auto article-content-container">
+      <article class="article-content">
+        <p class="text-xl font-semibold text-secondary">Алтайский мёд — это больше, чем просто вкусное лакомство. Его называют настоящей кладовой здоровья, ведь только в этом регионе пчёлы собирают нектар с десятков уникальных медоносов. Горный воздух, чистые луга, ручная откачка без нагрева — всё это даёт невероятно богатый состав. Недаром именно алтайский мёд входит в топ поисковых запросов по пользе и лечебным свойствам.</p>
+        
+        <h2>Чем алтайский мёд отличается от обычного</h2>
+        
+        <ul>
+          <li><strong>Максимальная ферментативная активность</strong> (диастазное число выше 57), что подтверждает высокое качество продукта.</li>
+          <li><strong>Богатый состав</strong>: витамины B, C, E, флавоноиды, ферменты, органические кислоты, железо, калий, кальций, магний, цинк.</li>
+          <li><strong>Отсутствие промышленных пасек и обработок</strong> — всё максимально натурально.</li>
+          <li><strong>Нектар собирается с разнотравья, липы, гречихи, диких трав и цветов</strong>, что придаёт уникальные вкусы и ароматы каждому сорту.</li>
+        </ul>
+        
+        <p>Подробнее о том, <a href="/blog/kak-vybrat-med.html" class="text-primary font-semibold hover:underline">как выбрать настоящий мёд</a>, читайте в нашей статье.</p>
+        
+        <h2>Польза и лечебные свойства алтайского мёда</h2>
+        
+        <h3>Поддержка иммунитета</h3>
+        <p>Алтайский мёд известен высоким содержанием антиоксидантов и природных ферментов. Он помогает организму бороться с вирусами и бактериями, ускоряет восстановление после простуд и укрепляет естественные защитные функции.</p>
+        
+        <h3>Польза для сердца и сосудов</h3>
+        <p>Благодаря магнию, железу и рутину, алтайский мёд поддерживает эластичность сосудов, улучшает кровообращение, способствует нормализации давления и укреплению сердечной мышцы.</p>
+        
+        <h3>Улучшение работы ЖКТ</h3>
+        <p>Органические кислоты и энзимы мягко обволакивают слизистую желудка, помогают при гастритах, нормализуют пищеварение и поддерживают здоровую микрофлору кишечника.</p>
+        
+        <h3>Быстрая энергия и восстановление</h3>
+        <p>Лёгкие сахара и белки быстро усваиваются, давая организму заряд бодрости. Алтайский мёд ценят спортсмены, люди после болезней и те, кто ведёт активный образ жизни.</p>
+        
+        <h3>Для кожи и красоты</h3>
+        <p>Мёд — природный антисептик и регенерант. Используется в домашних масках для лица и волос, помогает заживлять небольшие ранки, делает кожу более мягкой и здоровой.</p>
+        
+        <img src="/images/altay-honey-health-1.jpg" 
+             alt="Алтайский мёд для укрепления иммунитета" 
+             class="article-image"
+             loading="lazy"
+             decoding="async">
+        
+        <h2>Кому особенно полезен алтайский мёд</h2>
+        
+        <div class="health-benefits">
+          <div class="flex items-start mb-3">
+            <i class="ri-check-line text-primary mt-1 mr-2" aria-hidden="true"></i>
+            <div>
+              <strong>Детям (от 2-3 лет)</strong>: укрепляет иммунитет, повышает аппетит, помогает справиться с переутомлением.
+            </div>
+          </div>
+          
+          <div class="flex items-start mb-3">
+            <i class="ri-check-line text-primary mt-1 mr-2" aria-hidden="true"></i>
+            <div>
+              <strong>Взрослым</strong>: для профилактики ОРВИ, поддержки энергии, восстановления после стрессов.
+            </div>
+          </div>
+          
+          <div class="flex items-start mb-3">
+            <i class="ri-check-line text-primary mt-1 mr-2" aria-hidden="true"></i>
+            <div>
+              <strong>Пожилым</strong>: мягко поддерживает сосуды, укрепляет сердце, снижает риск авитаминоза.
+            </div>
+          </div>
+          
+          <div class="flex items-start mb-3">
+            <i class="ri-check-line text-primary mt-1 mr-2" aria-hidden="true"></i>
+            <div>
+              <strong>Спортсменам</strong>: для быстрого восстановления, профилактики судорог, повышения выносливости.
+            </div>
+          </div>
+          
+          <div class="flex items-start">
+            <i class="ri-check-line text-primary mt-1 mr-2" aria-hidden="true"></i>
+            <div>
+              <strong>Людям, заботящимся о здоровье</strong>: для ежедневной поддержки, как альтернатива сахару.
+            </div>
+          </div>
+        </div>
+        
+        <div class="honey-benefit">
+          <h3>Важно!</h3>
+          <p>Алтайский мёд может вызывать аллергию у чувствительных людей — обязательно пробуйте с малых доз, особенно детям.</p>
+        </div>
+        
+        <h2>Как правильно принимать алтайский мёд</h2>
+        
+        <h3>Для иммунитета</h3>
+        <p>1 чайная ложка мёда утром натощак, растворённая в тёплой воде (не горячей!) — поддержит иммунитет, зарядит энергией на весь день.</p>
+        
+        <h3>Для профилактики простуд</h3>
+        <p>Мёд с лимоном и тёплой водой — отличный напиток для всей семьи в период эпидемий.</p>
+        
+        <h3>Для улучшения пищеварения</h3>
+        <p>Добавляйте мёд в овсяную кашу, йогурт или творог.</p>
+        
+        <h3>Для восстановления после нагрузок</h3>
+        <p>Мёд с орехами и сухофруктами — идеальный перекус.</p>
+        
+        <div class="honey-benefit">
+          <h3>Рекомендации по дозировке:</h3>
+          <ul>
+            <li>Взрослым — 1-2 чайные ложки в день</li>
+            <li>Детям — 0,5-1 ч. ложка (только при отсутствии аллергии)</li>
+            <li>Нельзя растворять мёд в кипятке — при температуре выше 40°C полезные ферменты разрушаются</li>
+          </ul>
+        </div>
+        
+        <h2>Три простых домашних рецепта с алтайским мёдом</h2>
+        
+        <div class="recipe-box">
+          <h3 class="text-xl font-semibold mb-3">Иммунный напиток</h3>
+          <ul class="list-disc pl-6">
+            <li>Стакан тёплой воды</li>
+            <li>1 ч. ложка мёда</li>
+            <li>2 дольки лимона</li>
+            <li>По желанию — листик мяты</li>
+          </ul>
+          <p class="mt-3">Отлично бодрит и поддерживает защиту организма.</p>
+        </div>
+        
+        <div class="recipe-box">
+          <h3 class="text-xl font-semibold mb-3">Витаминная смесь</h3>
+          <ul class="list-disc pl-6">
+            <li>2 ст. ложки мёда</li>
+            <li>Горсть грецких орехов</li>
+            <li>2-3 кураги</li>
+          </ul>
+          <p class="mt-3">Всё перемешать. Такой десерт полезен взрослым и детям.</p>
+        </div>
+        
+        <div class="recipe-box">
+          <h3 class="text-xl font-semibold mb-3">Маска для лица</h3>
+          <ul class="list-disc pl-6">
+            <li>1 ч. ложка мёда</li>
+            <li>1 ч. ложка йогурта (или оливкового масла)</li>
+          </ul>
+          <p class="mt-3">Нанести на чистую кожу, держать 10 минут, смыть тёплой водой.</p>
+        </div>
+        
+        <img src="/images/altay-honey-health-2.jpg" 
+             alt="Рецепты с алтайским мёдом для здоровья" 
+             class="article-image"
+             loading="lazy"
+             decoding="async">
+        
+        <h2>Противопоказания</h2>
+        
+        <div class="health-benefits">
+          <div class="flex items-start mb-3">
+            <i class="ri-close-line text-red-500 mt-1 mr-2" aria-hidden="true"></i>
+            <div>
+              <strong>Индивидуальная непереносимость</strong>, аллергия на продукты пчеловодства.
+            </div>
+          </div>
+          
+          <div class="flex items-start mb-3">
+            <i class="ri-close-line text-red-500 mt-1 mr-2" aria-hidden="true"></i>
+            <div>
+              <strong>Детям до 2 лет</strong> — не рекомендуется.
+            </div>
+          </div>
+          
+          <div class="flex items-start">
+            <i class="ri-close-line text-red-500 mt-1 mr-2" aria-hidden="true"></i>
+            <div>
+              <strong>С осторожностью при диабете</strong> (только после консультации с врачом).
+            </div>
+          </div>
+        </div>
+        
+        <div class="honey-benefit">
+          <p>Не злоупотребляйте! Мёд — не лекарство, а природная добавка к питанию.</p>
+        </div>
+        
+        <h2>Частые вопросы</h2>
+        
+        <div class="faq-item">
+          <div class="faq-question">Какой сорт алтайского мёда самый полезный?</div>
+          <div class="faq-answer">
+            <p>Каждый сорт имеет свои уникальные свойства. Гречишный мёд богат железом, липовый — помогает при простудах, а таёжный отличается высоким содержанием антиоксидантов. Выбирайте тот, который вам больше нравится по вкусу.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">Можно ли давать мёд детям до 3 лет?</div>
+          <div class="faq-answer">
+            <p>ВОЗ рекомендует вводить мёд в рацион детей не ранее 1 года, а при наличии склонности к аллергии — после 3 лет. Начинайте с минимальных порций (1/4 ч. ложки) и наблюдайте за реакцией.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">Как хранить алтайский мёд?</div>
+          <div class="faq-answer">
+            <p>Храните в плотно закрытой стеклянной таре при комнатной температуре (18-22°C) в тёмном месте. Избегайте металлической посуды и прямых солнечных лучей. При правильном хранении мёд сохраняет свои свойства годами.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">Правда ли, что мёд теряет свойства при нагревании?</div>
+          <div class="faq-answer">
+            <p>Да, при нагревании выше 40°C разрушаются ферменты и некоторые витамины. Поэтому не добавляйте мёд в горячий чай — лучше употребляйте его вприкуску или растворяйте в тёплой воде.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">Можно ли заказать алтайский мёд через Avito?</div>
+          <div class="faq-answer">
+            <p>Да, вы можете выбрать удобный способ покупки: на сайте altaymed.shop или через наш профиль на Avito — <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing_seller" class="text-primary hover:underline">https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000</a>.</p>
+          </div>
+        </div>
+        
+        <div class="conclusion-box">
+          <h2 class="text-2xl font-bold mb-4">Заключение</h2>
+          <p class="mb-3">Алтайский мёд — это не просто лакомство, а надёжный помощник для вашего здоровья. Он помогает поддерживать иммунитет, даёт энергию, делает привычную еду вкуснее и полезнее.</p>
+          <p class="mb-3">Главное — выбрать качественный, натуральный продукт и употреблять его с умом.</p>
+          <p class="text-lg font-semibold mt-4">Хотите попробовать лучший алтайский мёд?</p>
+          <p class="mt-3">Оформляйте заказ на <a href="/#products" class="font-bold underline">altaymed.shop</a> — с доставкой по Коврову и области, всегда свежий урожай, честные цены и только натуральные продукты!</p>
+        </div>
+      </article>
     </div>
-    
-    <div class="flex items-start mb-3">
-      <i class="ri-check-line text-primary mt-1 mr-2" aria-hidden="true"></i>
-      <div>
-        <strong>Взрослым</strong>: для профилактики ОРВИ, поддержки энергии, восстановления после стрессов.
-      </div>
-    </div>
-    
-    <div class="flex items-start mb-3">
-      <i class="ri-check-line text-primary mt-1 mr-2" aria-hidden="true"></i>
-      <div>
-        <strong>Пожилым</strong>: мягко поддерживает сосуды, укрепляет сердце, снижает риск авитаминоза.
-      </div>
-    </div>
-    
-    <div class="flex items-start mb-3">
-      <i class="ri-check-line text-primary mt-1 mr-2" aria-hidden="true"></i>
-      <div>
-        <strong>Спортсменам</strong>: для быстрого восстановления, профилактики судорог, повышения выносливости.
-      </div>
-    </div>
-    
-    <div class="flex items-start">
-      <i class="ri-check-line text-primary mt-1 mr-2" aria-hidden="true"></i>
-      <div>
-        <strong>Людям, заботящимся о здоровье</strong>: для ежедневной поддержки, как альтернатива сахару.
-      </div>
-    </div>
   </div>
-  
-  <div class="honey-benefit">
-    <h3>Важно!</h3>
-    <p>Алтайский мёд может вызывать аллергию у чувствительных людей — обязательно пробуйте с малых доз, особенно детям.</p>
-  </div>
-  
-  <h2>Как правильно принимать алтайский мёд</h2>
-  
-  <h3>Для иммунитета</h3>
-  <p>1 чайная ложка мёда утром натощак, растворённая в тёплой воде (не горячей!) — поддержит иммунитет, зарядит энергией на весь день.</p>
-  
-  <h3>Для профилактики простуд</h3>
-  <p>Мёд с лимоном и тёплой водой — отличный напиток для всей семьи в период эпидемий.</p>
-  
-  <h3>Для улучшения пищеварения</h3>
-  <p>Добавляйте мёд в овсяную кашу, йогурт или творог.</p>
-  
-  <h3>Для восстановления после нагрузок</h3>
-  <p>Мёд с орехами и сухофруктами — идеальный перекус.</p>
-  
-  <div class="honey-benefit">
-    <h3>Рекомендации по дозировке:</h3>
-    <ul>
-      <li>Взрослым — 1-2 чайные ложки в день</li>
-      <li>Детям — 0,5-1 ч. ложка (только при отсутствии аллергии)</li>
-      <li>Нельзя растворять мёд в кипятке — при температуре выше 40°C полезные ферменты разрушаются</li>
-    </ul>
-  </div>
-  
-  <h2>Три простых домашних рецепта с алтайским мёдом</h2>
-  
-  <div class="recipe-box">
-    <h3 class="text-xl font-semibold mb-3">Иммунный напиток</h3>
-    <ul class="list-disc pl-6">
-      <li>Стакан тёплой воды</li>
-      <li>1 ч. ложка мёда</li>
-      <li>2 дольки лимона</li>
-      <li>По желанию — листик мяты</li>
-    </ul>
-    <p class="mt-3">Отлично бодрит и поддерживает защиту организма.</p>
-  </div>
-  
-  <div class="recipe-box">
-    <h3 class="text-xl font-semibold mb-3">Витаминная смесь</h3>
-    <ul class="list-disc pl-6">
-      <li>2 ст. ложки мёда</li>
-      <li>Горсть грецких орехов</li>
-      <li>2-3 кураги</li>
-    </ul>
-    <p class="mt-3">Всё перемешать. Такой десерт полезен взрослым и детям.</p>
-  </div>
-  
-  <div class="recipe-box">
-    <h3 class="text-xl font-semibold mb-3">Маска для лица</h3>
-    <ul class="list-disc pl-6">
-      <li>1 ч. ложка мёда</li>
-      <li>1 ч. ложка йогурта (или оливкового масла)</li>
-    </ul>
-    <p class="mt-3">Нанести на чистую кожу, держать 10 минут, смыть тёплой водой.</p>
-  </div>
-  
-  <img src="/images/altay-honey-health-2.jpg" 
-       alt="Рецепты с алтайским мёдом для здоровья" 
-       class="article-image"
-       loading="lazy"
-       decoding="async">
-  
-  <h2>Противопоказания</h2>
-  
-  <div class="health-benefits">
-    <div class="flex items-start mb-3">
-      <i class="ri-close-line text-red-500 mt-1 mr-2" aria-hidden="true"></i>
-      <div>
-        <strong>Индивидуальная непереносимость</strong>, аллергия на продукты пчеловодства.
-      </div>
-    </div>
-    
-    <div class="flex items-start mb-3">
-      <i class="ri-close-line text-red-500 mt-1 mr-2" aria-hidden="true"></i>
-      <div>
-        <strong>Детям до 2 лет</strong> — не рекомендуется.
-      </div>
-    </div>
-    
-    <div class="flex items-start">
-      <i class="ri-close-line text-red-500 mt-1 mr-2" aria-hidden="true"></i>
-      <div>
-        <strong>С осторожностью при диабете</strong> (только после консультации с врачом).
-      </div>
-    </div>
-  </div>
-  
-  <div class="honey-benefit">
-    <p>Не злоупотребляйте! Мёд — не лекарство, а природная добавка к питанию.</p>
-  </div>
-  
-  <h2>Частые вопросы</h2>
-  
-  <div class="faq-item">
-    <h3 class="font-semibold text-lg">Какой сорт алтайского мёда самый полезный?</h3>
-    <p class="mt-2">Каждый сорт имеет свои уникальные свойства. Гречишный мёд богат железом, липовый — помогает при простудах, а таёжный отличается высоким содержанием антиоксидантов. Выбирайте тот, который вам больше нравится по вкусу.</p>
-  </div>
-  
-  <div class="faq-item">
-    <h3 class="font-semibold text-lg">Можно ли давать мёд детям до 3 лет?</h3>
-    <p class="mt-2">ВОЗ рекомендует вводить мёд в рацион детей не ранее 1 года, а при наличии склонности к аллергии — после 3 лет. Начинайте с минимальных порций (1/4 ч. ложки) и наблюдайте за реакцией.</p>
-  </div>
-  
-  <div class="faq-item">
-    <h3 class="font-semibold text-lg">Как хранить алтайский мёд?</h3>
-    <p class="mt-2">Храните в плотно закрытой стеклянной таре при комнатной температуре (18-22°C) в тёмном месте. Избегайте металлической посуды и прямых солнечных лучей. При правильном хранении мёд сохраняет свои свойства годами.</p>
-  </div>
-  
-  <div class="faq-item">
-    <h3 class="font-semibold text-lg">Правда ли, что мёд теряет свойства при нагревании?</h3>
-    <p class="mt-2">Да, при нагревании выше 40°C разрушаются ферменты и некоторые витамины. Поэтому не добавляйте мёд в горячий чай — лучше употребляйте его вприкуску или растворяйте в тёплой воде.</p>
-  </div>
-  
-  <div class="conclusion-box">
-    <h2 class="text-2xl font-bold mb-4">Заключение</h2>
-    <p class="mb-3">Алтайский мёд — это не просто лакомство, а надёжный помощник для вашего здоровья. Он помогает поддерживать иммунитет, даёт энергию, делает привычную еду вкуснее и полезнее.</p>
-    <p class="mb-3">Главное — выбрать качественный, натуральный продукт и употреблять его с умом.</p>
-    <p class="text-lg font-semibold mt-4">Хотите попробовать лучший алтайский мёд?</p>
-    <p class="mt-3">Оформляйте заказ на <a href="/#products" class="font-bold underline">altaymed.shop</a> — с доставкой по Коврову и области, всегда свежий урожай, честные цены и только натуральные продукты!</p>
-  </div>
-</article>
+</section>
 </main>
 
 <!-- Футер -->
@@ -1107,6 +1158,15 @@
            accurateTrackBounce:true
       });
     }, 1000); // Задержка 1 секунда
+    
+    // Аккордеон для FAQ
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+      question.addEventListener('click', () => {
+        item.classList.toggle('active');
+      });
+    });
   });
 </script>
 

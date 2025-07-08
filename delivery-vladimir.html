@@ -1125,7 +1125,7 @@
             text-align: center;
         }
         
-        /* Новый блок отзывов */
+        /* ПЕРЕРАБОТАННЫЙ БЛОК ОТЗЫВОВ */
         .reviews-container {
             flex: 1;
             background: white;
@@ -1133,7 +1133,7 @@
             border-radius: 0.5rem;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             position: relative;
-            min-height: 400px;
+            min-height: 300px;
             display: flex;
             flex-direction: column;
         }
@@ -1150,6 +1150,7 @@
             flex: 1;
             position: relative;
             overflow: hidden;
+            padding-bottom: 60px; /* Место для точек управления */
         }
         
         .review-item {
@@ -1166,10 +1167,12 @@
             transition: opacity 0.5s ease;
             padding: 0 1.5rem;
             text-align: center;
+            pointer-events: none;
         }
         
         .review-item.active {
             opacity: 1;
+            pointer-events: auto;
         }
         
         .review-icon {
@@ -1200,17 +1203,21 @@
         }
         
         .carousel-controls {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
             display: flex;
             justify-content: center;
             margin-top: 1.5rem;
         }
         
         .carousel-dot {
-            width: 10px;
-            height: 10px;
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
             background-color: var(--gray-300);
-            margin: 0 0.25rem;
+            margin: 0 0.5rem;
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
@@ -1255,6 +1262,63 @@
         .carousel-arrow i {
             color: var(--gray-700);
             font-size: 1.5rem;
+        }
+        
+        /* Адаптация для мобильных устройств */
+        @media (max-width: 767px) {
+            .reviews-container {
+                padding: 1.5rem;
+            }
+            
+            .reviews-title {
+                font-size: 1.3rem;
+                margin-bottom: 1rem;
+            }
+            
+            .review-icon {
+                font-size: 1.8rem;
+                margin-bottom: 1rem;
+            }
+            
+            .review-text {
+                font-size: 1rem;
+                margin-bottom: 1rem;
+            }
+            
+            .review-author {
+                font-size: 1rem;
+            }
+            
+            .review-location {
+                font-size: 0.9rem;
+            }
+            
+            .carousel-arrow {
+                width: 36px;
+                height: 36px;
+            }
+            
+            .carousel-arrow i {
+                font-size: 1.3rem;
+            }
+            
+            .carousel-dot {
+                width: 10px;
+                height: 10px;
+                margin: 0 0.4rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .review-text {
+                font-size: 0.95rem;
+                padding: 0 0.5rem;
+            }
+            
+            .carousel-arrow {
+                width: 32px;
+                height: 32px;
+            }
         }
     </style>
 
@@ -1659,7 +1723,7 @@
                     <p class="text-gray-600">Сроки и стоимость доставки в другие города области могут отличаться. Для уточнения деталей свяжитесь с нашими менеджерами.</p>
                 </div>
                 
-                <!-- Замена карты-заглушки на блок отзывов -->
+                <!-- Переработанный блок отзывов -->
                 <div class="reviews-container">
                     <h3 class="reviews-title">Отзывы покупателей из Владимира и области</h3>
                     <div class="reviews-carousel">

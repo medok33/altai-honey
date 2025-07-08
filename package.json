@@ -7,7 +7,12 @@
     "build": "npx tailwindcss -i ./input.css -o ./assets/css/tailwind.min.css --minify",
     "test": "npx tailwindcss -i ./input.css -o ./assets/css/tailwind-test.css",
     "predeploy": "npm run build",
-    "build:faq": "npx tailwindcss -i ./src/tailwind-faq.css -o ./css/tailwind-faq.min.css --minify -c ./tailwind-faq.config.js"
+    "build:faq": "npx tailwindcss -i ./src/tailwind-faq.css -o ./css/tailwind-faq.min.css --minify -c ./tailwind-faq.config.js",
+    
+    // Добавленные скрипты для страницы доставки
+    "build:delivery": "npx tailwindcss -i ./src/tailwind-delivery.css -o ./dist/delivery.css -c ./tailwind-delivery.config.js",
+    "build:delivery:min": "npx tailwindcss -i ./src/tailwind-delivery.css -o ./dist/delivery.min.css --minify -c ./tailwind-delivery.config.js",
+    "watch:delivery": "npx tailwindcss -i ./src/tailwind-delivery.css -o ./dist/delivery.css -c ./tailwind-delivery.config.js --watch"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.1",

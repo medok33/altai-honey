@@ -361,15 +361,15 @@
       padding-top: 10px;
     }
     .conclusion-box {
-      background-color: #6B8E23;
-      color: white;
+      background-color: #f9f9f9;
+      color: #1a202c;
       padding: 25px;
       border-radius: 12px;
       margin: 30px 0;
       text-align: center;
     }
     .conclusion-box h2 {
-      color: white;
+      color: #8B4513;
       margin-top: 0;
     }
     .testimonial {
@@ -567,6 +567,25 @@
         grid-template-columns: 1fr;
       }
     }
+    
+    /* Новые стили для рецептов */
+    .recipes-container {
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 25px 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    
+    .recipe-item {
+      padding: 15px 0;
+    }
+    
+    .recipe-item:not(:last-child) {
+      border-bottom: 1px dashed #d1d5db;
+      padding-bottom: 20px;
+      margin-bottom: 15px;
+    }
   </style>
   
   <!-- Структурированные данные Schema.org -->
@@ -648,7 +667,7 @@
   <div class="container mx-auto px-4 md:px-6">
     <div class="max-w-3xl mx-auto article-content-container">
       <article class="article-content">
-        <p class="text-xl font-semibold text-secondary">Алтайский мёд — это больше, чем просто вкусное лакомство. Его называют настоящей кладовой здоровья, ведь только в этом регионе пчёлы собирают нектар с десятков уникальных медоносов. Горный воздух, чистые луга, ручная откачка без нагрева — всё это даёт невероятно богатый состав. Недаром именно алтайский мёд входит в топ поисковых запросов по пользе и лечебным свойствам.</p>
+        <p class="text-gray-700">Алтайский мёд — это больше, чем просто вкусное лакомство. Его называют настоящей кладовой здоровья, ведь только в этом регионе пчёлы собирают нектар с десятков уникальных медоносов. Горный воздух, чистые луга, ручная откачка без нагрева — всё это даёт невероятно богатый состав. Недаром именно алтайский мёд входит в топ поисковых запросов по пользе и лечебным свойствам.</p>
         
         <h2 class="text-2xl font-bold text-secondary mb-4">Чем алтайский мёд отличается от обычного</h2>
         
@@ -753,34 +772,36 @@
         
         <h2 class="text-2xl font-bold text-secondary mb-4">Три простых домашних рецепта с алтайским мёдом</h2>
         
-        <div class="recipe-box">
-          <h3 class="text-xl font-semibold mb-3">Иммунный напиток</h3>
-          <ul class="list-disc pl-6">
-            <li>Стакан тёплой воды</li>
-            <li>1 ч. ложка мёда</li>
-            <li>2 дольки лимона</li>
-            <li>По желанию — листик мяты</li>
-          </ul>
-          <p class="mt-3">Отлично бодрит и поддерживает защиту организма.</p>
-        </div>
-        
-        <div class="recipe-box">
-          <h3 class="text-xl font-semibold mb-3">Витаминная смесь</h3>
-          <ul class="list-disc pl-6">
-            <li>2 ст. ложки мёда</li>
-            <li>Горсть грецких орехов</li>
-            <li>2-3 кураги</li>
-          </ul>
-          <p class="mt-3">Всё перемешать. Такой десерт полезен взрослым и детям.</p>
-        </div>
-        
-        <div class="recipe-box">
-          <h3 class="text-xl font-semibold mb-3">Маска для лица</h3>
-          <ul class="list-disc pl-6">
-            <li>1 ч. ложка мёда</li>
-            <li>1 ч. ложка йогурта (или оливкового масла)</li>
-          </ul>
-          <p class="mt-3">Нанести на чистую кожу, держать 10 минут, смыть тёплой водой.</p>
+        <div class="recipes-container">
+          <div class="recipe-item">
+            <h3 class="text-xl font-semibold mb-3">Иммунный напиток</h3>
+            <ul class="list-disc pl-6">
+              <li>Стакан тёплой воды</li>
+              <li>1 ч. ложка мёда</li>
+              <li>2 дольки лимона</li>
+              <li>По желанию — листик мяты</li>
+            </ul>
+            <p class="mt-3">Отлично бодрит и поддерживает защиту организма.</p>
+          </div>
+          
+          <div class="recipe-item">
+            <h3 class="text-xl font-semibold mb-3">Витаминная смесь</h3>
+            <ul class="list-disc pl-6">
+              <li>2 ст. ложки мёда</li>
+              <li>Горсть грецких орехов</li>
+              <li>2-3 кураги</li>
+            </ul>
+            <p class="mt-3">Всё перемешать. Такой десерт полезен взрослым и детям.</p>
+          </div>
+          
+          <div class="recipe-item">
+            <h3 class="text-xl font-semibold mb-3">Маска для лица</h3>
+            <ul class="list-disc pl-6">
+              <li>1 ч. ложка мёда</li>
+              <li>1 ч. ложка йогурта (или оливкового масла)</li>
+            </ul>
+            <p class="mt-3">Нанести на чистую кожу, держать 10 минут, смыть тёплой водой.</p>
+          </div>
         </div>
         
         <img src="/images/altay-honey-health-2.jpg" 
@@ -864,23 +885,16 @@
         </div>
         
         <div class="faq-item">
-          <div class="faq-question">Где в Коврове можно купить ваш мёд?</div>
-          <div class="faq-answer">
-            <p>Вы можете заказать мёд с доставкой на дом через наш сайт или на странице Avito. Также мы сотрудничаем с местными магазинами здорового питания по адресам: ул. Ленина, 15 и пр. Мира, 8.</p>
-          </div>
-        </div>
-        
-        <div class="faq-item">
           <div class="faq-question">Возможен ли самовывоз в Коврове?</div>
           <div class="faq-answer">
-            <p>Да, самовывоз возможен по адресу: г. Ковров, ул. Промышленная, 22 (склад "Алтайские Дары"). Перед приездом обязательно согласуйте время по телефону +7 (920) 940-02-22.</p>
+            <p>Да, самовывоз возможен по адресу: г. Ковров, ул. Комсомольская 24. Перед приездом обязательно согласуйте время по телефону +7 (920) 940-02-22.</p>
           </div>
         </div>
         
         <div class="conclusion-box">
-          <h2 class="text-2xl font-bold mb-4">В заключение</h2>
-          <p class="mb-4">Алтайский мёд — это не просто лакомство, а надёжный помощник для вашего здоровья. Он помогает поддерживать иммунитет, даёт энергию и делает привычную еду вкуснее и полезнее. Главное — выбрать качественный, натуральный продукт и употреблять его с умом.</p>
-          <p>Хотите попробовать лучший алтайский мёд? Оформляйте заказ на <a href="/#products" class="font-bold underline text-yellow-200 hover:text-white">altaymed.shop</a> — с доставкой по Коврову и области, всегда свежий урожай, честные цены и только натуральные продукты!</p>
+          <h2 class="text-2xl font-bold mb-4 text-secondary">В заключение</h2>
+          <p class="mb-4 text-gray-700">Алтайский мёд — это не просто лакомство, а надёжный помощник для вашего здоровья. Он помогает поддерживать иммунитет, даёт энергию и делает привычную еду вкуснее и полезнее. Главное — выбрать качественный, натуральный продукт и употреблять его с умом.</p>
+          <p class="text-gray-700">Хотите попробовать лучший алтайский мёд? Оформляйте заказ на <a href="/#products" class="font-bold underline text-primary hover:text-secondary">altaymed.shop</a> — с доставкой по Коврову и области, всегда свежий урожай, честные цены и только натуральные продукты!</p>
         </div>
       </article>
     </div>

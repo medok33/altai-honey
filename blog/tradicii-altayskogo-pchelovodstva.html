@@ -33,9 +33,46 @@
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#9f5524">
 
-<!-- Оптимизированные шрифты -->
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Локальные шрифты -->
+<style>
+@font-face {
+  font-family: 'Pacifico';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/Pacifico-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/OpenSans-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/fonts/OpenSans-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url('/fonts/OpenSans-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/OpenSans-Bold.woff2') format('woff2');
+}
+</style>
+
+<!-- Локальные иконки -->
+<link rel="stylesheet" href="/assets/fonts/remixicon/remixicon.css">
 
 <!-- Подключение Tailwind CSS -->
 <link rel="stylesheet" href="/css/style.min.css">
@@ -66,21 +103,20 @@ tailwind.config = {
   }
 }
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
 <style>
-:where([class^="ri-"])::before { content: "\f3c2"; }
+/* Базовые стили */
 body {
   font-family: 'Open Sans', sans-serif;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  font-size: 16px;
 }
 .texture-bg {
   background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZmZmZmZmIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNmNWRlYjMiIG9wYWNpdHk9IjAuMSI+PC9yZWN0Pgo8L3N2Zz4=');
 }
 
+/* Навигация */
 .nav-link {
   color: #1a202c !important;
   transition: color 0.3s;
@@ -94,8 +130,21 @@ body {
 }
 .header-logo {
   color: #6B8E23 !important;
+  font-family: 'Pacifico', cursive;
+}
+.active-nav-link-alt {
+  border: 2px solid #6B8E23 !important;
+  border-radius: 8px !important;
+  padding: 4px 12px !important;
+  color: #6B8E23 !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease;
+}
+.active-nav-link-alt:hover {
+  background: rgba(107, 142, 35, 0.1) !important;
 }
 
+/* Футер */
 footer {
   width: 100% !important;
   box-sizing: border-box !important;
@@ -104,7 +153,6 @@ footer {
   background-color: #8B4513;
   z-index: 1;
 }
-
 footer::before {
   content: "";
   position: absolute;
@@ -123,7 +171,6 @@ footer::before {
   margin-left: -220%;
   margin-top: -220%;
 }
-
 footer .container {
   width: 100% !important;
   max-width: 100% !important;
@@ -132,19 +179,16 @@ footer .container {
   position: relative;
   z-index: 1;
 }
-
 footer .grid {
   width: 100% !important;
   display: grid !important;
   grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
 }
-
 @media (min-width: 768px) {
   footer .grid {
     grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
   }
 }
-
 .footer-column {
   display: flex !important;
   flex-direction: column !important;
@@ -154,7 +198,6 @@ footer .grid {
   margin: 0 !important;
   box-sizing: border-box !important;
 }
-
 .footer-column h4 {
   text-align: left !important;
   width: 100% !important;
@@ -164,7 +207,6 @@ footer .grid {
   font-size: 1.125rem !important;
   line-height: 1.75rem !important;
 }
-
 .footer-column ul {
   display: flex !important;
   flex-direction: column !important;
@@ -174,7 +216,6 @@ footer .grid {
   margin: 0 !important;
   list-style: none !important;
 }
-
 .footer-column li {
   width: 100% !important;
   text-align: left !important;
@@ -183,14 +224,12 @@ footer .grid {
   margin: 0 !important;
   box-sizing: border-box !important;
 }
-
 .footer-column li a {
   display: flex !important;
   align-items: center !important;
   width: 100% !important;
   box-sizing: border-box !important;
 }
-
 .footer-column .bullet {
   display: inline-block !important;
   width: 6px !important;
@@ -200,7 +239,6 @@ footer .grid {
   margin-right: 10px !important;
   flex-shrink: 0 !important;
 }
-
 footer, 
 footer *,
 footer a, 
@@ -214,12 +252,24 @@ footer li {
 footer a:hover {
   color: #d1d5db !important;
 }
-
-.footer-column li a {
+.footer-link-item {
   display: flex;
   align-items: center;
+  padding-top: 0.21rem !important;
+  padding-bottom: 0.21rem !important;
 }
-
+.contact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  flex-shrink: 0;
+  width: 24px;
+}
+.contact-text {
+  flex-grow: 1;
+  line-height: 1.5;
+}
 .social-icon-bw {
   display: flex;
   align-items: center;
@@ -233,13 +283,11 @@ footer a:hover {
   color: #4b5563;
   filter: grayscale(100%);
 }
-
 .social-icon-bw:hover {
   filter: grayscale(0%);
   border-color: #6B8E23;
   color: #6B8E23;
 }
-
 .avito-icon-bw, .yandex-maps-icon {
   display: flex;
   align-items: center;
@@ -249,51 +297,95 @@ footer a:hover {
   position: relative;
   filter: grayscale(100%);
 }
-
 .avito-icon-bw svg, .yandex-maps-icon svg {
   width: 100%;
   height: 100%;
 }
-
 .social-icon-bw:hover .avito-icon-bw,
 .social-icon-bw:hover .yandex-maps-icon {
   filter: grayscale(0%);
 }
 
-.footer-link-item {
-  display: flex;
-  align-items: center;
-  padding-top: 0.21rem !important;
-  padding-bottom: 0.21rem !important;
+/* Элементы статьи */
+.honey-comparison {
+  background-color: #f9f5f0;
+  border-left: 4px solid #6B8E23;
+  padding: 20px;
+  border-radius: 0 8px 8px 0;
+  margin: 25px 0;
 }
-
-.contact-icon {
+.honey-test {
+  background-color: #fff9e6;
+  border: 1px solid #FFA500;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+.honey-test h3 {
+  color: #8B4513;
+  margin-top: 0;
+}
+.recipe-box {
+  background: linear-gradient(to right, #f5deb3, #fff8e1);
+  border: 1px dashed #6B8E23;
+  border-radius: 12px;
+  padding: 20px;
+  position: relative;
+  margin: 30px 0;
+}
+.recipe-box:before {
+  content: "🍯";
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  background: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 12px;
-  flex-shrink: 0;
-  width: 24px;
+  font-size: 18px;
+}
+.faq-item {
+  border-bottom: 1px solid #e2d8c9;
+  padding: 15px 0;
+}
+.faq-item:last-child {
+  border-bottom: none;
+}
+.conclusion-box {
+  background-color: #6B8E23;
+  color: white;
+  padding: 25px;
+  border-radius: 12px;
+  margin: 30px 0;
+  text-align: center;
+}
+.conclusion-box h2 {
+  color: white;
+  margin-top: 0;
+}
+.honey-history {
+  background-color: #f0f7ff;
+  border-left: 4px solid #4a86e8;
+  padding: 20px;
+  border-radius: 0 8px 8px 0;
+  margin: 25px 0;
+}
+.honey-tradition {
+  background-color: #f9f0f5;
+  border: 1px solid #d48fcf;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+.honey-tradition h3 {
+  color: #8e4a86;
+  margin-top: 0;
 }
 
-.contact-text {
-  flex-grow: 1;
-  line-height: 1.5;
-}
-
-.active-nav-link-alt {
-  border: 2px solid #6B8E23 !important;
-  border-radius: 8px !important;
-  padding: 4px 12px !important;
-  color: #6B8E23 !important;
-  font-weight: 600 !important;
-  transition: all 0.3s ease;
-}
-
-.active-nav-link-alt:hover {
-  background: rgba(107, 142, 35, 0.1) !important;
-}
-
+/* Плавающая кнопка */
 .floating-back-button {
   position: fixed;
   bottom: 2rem;
@@ -311,13 +403,11 @@ footer a:hover {
   opacity: 0;
   transform: scale(0.95);
 }
-
 .floating-back-button:hover {
   background: #5a7a1c;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   transform: scale(1.05);
 }
-
 .back-arrow {
   width: 24px;
   height: 24px;
@@ -326,42 +416,51 @@ footer a:hover {
   background-repeat: no-repeat;
   transition: transform 0.3s ease;
 }
-
 .floating-back-button:hover .back-arrow {
   transform: translateX(-4px);
 }
 
-#footer-contacts .footer-column:first-child,
-#footer-contacts .footer-column:first-child * {
-  color: white !important;
-}
-
-.footer-column:first-child {
-  justify-content: flex-start;
-}
-.footer-column:first-child .logo-wrapper {
-  margin-bottom: 0.4rem;
-}
-.footer-column:first-child .description-wrapper {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-.footer-column:first-child .description-wrapper p {
-  margin: 0;
-  font-size: 0.7rem;
-  line-height: 1.25;
-}
-.footer-column:first-child .description-wrapper p:first-child {
-  margin-bottom: 0.3rem;
+/* Улучшения доступности */
+[aria-hidden="true"] {
+  pointer-events: none;
 }
 </style>
+
+<!-- Структурированные данные Schema.org -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://altaymed.shop/blog/tradicii-altayskogo-pchelovodstva.html"
+  },
+  "headline": "Традиции алтайского пчеловодства",
+  "description": "История и секреты алтайских пасечников: многовековые традиции сбора мёда в горах Алтая",
+  "image": "https://altaymed.shop/images/og-preview.jpg",
+  "author": {
+    "@type": "Organization",
+    "name": "Алтайский мёд",
+    "url": "https://altaymed.shop"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Алтайский мёд",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://altaymed.shop/images/logo.png"
+    }
+  },
+  "datePublished": "2025-07-01",
+  "dateModified": "2025-07-01"
+}
+</script>
 </head>
 <body>
 <!-- Навигация -->
 <nav class="bg-white shadow-sm sticky top-0 z-50">
   <div class="container mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
-    <a href="/" class="text-2xl md:text-3xl font-['Pacifico'] header-logo">Алтайский мёд</a>
+    <a href="/" class="text-2xl md:text-3xl header-logo">Алтайский мёд</a>
     
     <div class="hidden md:flex items-center space-x-6 md:space-x-8">
       <a href="/#benefits" class="nav-link">Преимущества</a>
@@ -370,11 +469,11 @@ footer a:hover {
       <a href="/#footer-contacts" class="nav-link">Контакты</a>
       <!-- Активная ссылка на Блог -->
       <a href="/blog/" class="active-nav-link-alt">Блог</a>
-      <a href="/#order" class="nav-btn px-4 md:px-6 py-1 md:py-2 !rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">Заказать</a>
+      <a href="/#order" class="nav-btn px-4 md:px-6 py-1 md:py-2 rounded-lg hover:bg-opacity-90 transition-all whitespace-nowrap">Заказать</a>
     </div>
     
-    <button class="md:hidden w-10 h-10 flex items-center justify-center" id="mobile-menu-button">
-      <i class="ri-menu-line text-gray-900 ri-xl"></i>
+    <button class="md:hidden w-10 h-10 flex items-center justify-center" id="mobile-menu-button" aria-label="Открыть меню">
+      <i class="ri-menu-line text-gray-900 ri-xl" aria-hidden="true"></i>
     </button>
   </div>
   
@@ -387,7 +486,7 @@ footer a:hover {
       <a href="/#footer-contacts" class="nav-link py-2">Контакты</a>
       <!-- Активная ссылка на Блог (мобильная версия) -->
       <a href="/blog/" class="active-nav-link-alt py-2 text-center">Блог</a>
-      <a href="/#order" class="nav-btn py-2 text-center !rounded-button hover:bg-opacity-90 transition-all">Заказать</a>
+      <a href="/#order" class="nav-btn py-2 text-center rounded-lg hover:bg-opacity-90 transition-all">Заказать</a>
     </div>
   </div>
 </nav>
@@ -397,6 +496,7 @@ footer a:hover {
 <section class="min-h-[50vh] flex items-center" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/image-18.jpg'); background-size: cover; background-position: center;">
   <div class="container mx-auto px-4 text-center text-white">
     <h1 class="text-3xl md:text-4xl lg:text-5xl font-['Pacifico'] mb-4">Традиции алтайского пчеловодства: Вкус времени, силы и природы</h1>
+    <p class="text-xl md:text-2xl max-w-2xl mx-auto">История и секреты алтайских пасечников: многовековые традиции сбора мёда в горах Алтая</p>
   </div>
 </section>
 
@@ -406,76 +506,94 @@ footer a:hover {
     <div class="max-w-3xl mx-auto bg-white p-6 md:p-8 rounded-lg shadow-md">
       <p class="mb-4 text-gray-700">Алтай — это не только край гор и озёр, но и родина одного из самых чистых и ценных продуктов в России — мёда. Здесь, вдали от промышленных предприятий и городского шума, сохраняются уникальные традиции пчеловодства, бережно передаваемые из поколения в поколение. Алтайский мёд — это больше, чем лакомство. Это — философия жизни, уважение к природе и стремление к натуральному.</p>
       
-      <img src="/images/placeholder.jpg" 
-           data-src="/images/image-19.jpg" 
+      <img src="/images/image-19.jpg" 
            alt="Традиционные ульи на алтайской пасеке" 
-           width="800"
-           height="600"
-           class="w-full mb-6 rounded lazyload"
+           class="w-full mb-6 rounded-lg"
            loading="lazy"
            decoding="async">
       
       <h2 class="text-2xl font-bold text-secondary mb-4">История алтайского пчеловодства</h2>
       
-      <p class="mb-4 text-gray-700">Первое пчеловодство на Алтае развивалось среди старообрядцев, пришедших в эти земли в XVIII веке. Они селились в глухих таёжных местах и разводили пчёл в дуплянках — выдолбленных вручную колодах. Мед был для них не только пищей, но и лекарством, товаром для обмена и частью духовной практики.</p>
-      
-      <p class="mb-4 text-gray-700">В XIX веке на Алтае началась модернизация пчеловодства. Появились рамочные ульи, медогонки, кооперативные пасеки. Алтайские пчеловоды, такие как Фёдоров и Михаэлис, вели активную просветительскую деятельность, закладывая основы отрасли, которая и сегодня остаётся гордостью региона.</p>
+      <div class="honey-history">
+        <p class="mb-4 text-gray-700">Первое пчеловодство на Алтае развивалось среди старообрядцев, пришедших в эти земли в XVIII веке. Они селились в глухих таёжных местах и разводили пчёл в дуплянках — выдолбленных вручную колодах. Мед был для них не только пищей, но и лекарством, товаром для обмена и частью духовной практики.</p>
+        
+        <p class="mb-4 text-gray-700">В XIX веке на Алтае началась модернизация пчеловодства. Появились рамочные ульи, медогонки, кооперативные пасеки. Алтайские пчеловоды, такие как Фёдоров и Михаэлис, вели активную просветительскую деятельность, закладывая основы отрасли, которая и сегодня остаётся гордостью региона.</p>
+      </div>
       
       <h2 class="text-2xl font-bold text-secondary mb-4">Природа, дающая мёд</h2>
       
-      <p class="mb-4 text-gray-700">Климат и флора Алтая создают идеальные условия для производства уникального по составу мёда. Чистейший воздух, удалённость от аграрной химии и индустриальных зон, обилие дикорастущих медоносов — всё это формирует натуральный продукт исключительного качества.</p>
+      <div class="honey-tradition">
+        <h3 class="text-xl font-bold mb-3">Уникальные условия Алтая</h3>
+        <p class="mb-4 text-gray-700">Климат и флора Алтая создают идеальные условия для производства уникального по составу мёда. Чистейший воздух, удалённость от аграрной химии и индустриальных зон, обилие дикорастущих медоносов — всё это формирует натуральный продукт исключительного качества.</p>
 
-      <p class="mb-4 text-gray-700">На Алтае произрастает более 600 видов медоносных растений: душица, таволга, радиола, кипрей, дягиль, клевер, гречиха и другие. Благодаря такому биоразнообразию мёд получается не только вкусным, но и богатым активными веществами — ферментами, антиоксидантами, микроэлементами.</p>
+        <p class="mb-4 text-gray-700">На Алтае произрастает более 600 видов медоносных растений: душица, таволга, радиола, кипрей, дягиль, клевер, гречиха и другие. Благодаря такому биоразнообразию мёд получается не только вкусным, но и богатым активными веществами — ферментами, антиоксидантами, микроэлементами.</p>
+      </div>
 
       <h2 class="text-2xl font-bold text-secondary mb-4">Разнообразие сортов</h2>
 
-      <p class="mb-4 text-gray-700">Алтайский мёд не ограничивается одним вкусом. Он удивляет своим многообразием:</p>
+      <div class="honey-comparison">
+        <p class="mb-4 text-gray-700">Алтайский мёд не ограничивается одним вкусом. Он удивляет своим многообразием:</p>
 
-      <ul class="mb-6">
-        <li class="mb-2 flex items-start">
-          <i class="ri-check-line text-primary mt-1 mr-2"></i>
-          <span>Горный мёд — собирается на высокогорных лугах, обладает светлым цветом и мягким, утонченным вкусом.</span>
-        </li>
-        <li class="mb-2 flex items-start">
-          <i class="ri-check-line text-primary mt-1 mr-2"></i>
-          <span>Таёжный мёд — насыщенный, тёмный, с выраженными антисептическими свойствами, собран в лесных зонах.</span>
-        </li>
-        <li class="mb-2 flex items-start">
-          <i class="ri-check-line text-primary mt-1 mr-2"></i>
-          <span>Разнотравье — наиболее универсальный сорт с ярким ароматом, собранный на цветущих лугах.</span>
-        </li>
-        <li class="mb-2 flex items-start">
-          <i class="ri-check-line text-primary mt-1 mr-2"></i>
-          <span>Гречишный мёд — тёмного цвета, богат железом, обладает характерным терпким вкусом.</span>
-        </li>
-
-        <p class="mb-4 text-gray-700">Горный и таёжный мёд часто ценятся как лечебные и профилактические продукты. Подробнее о роли мёда в питании, его пользе и ежедневном применении вы можете прочитать в статье «Мёд в здоровом питании».</p>
-
-        <h2 class="text-2xl font-bold text-secondary mb-4">Люди и пчёлы: симбиоз на века</h2>
-
-        <p class="mb-4 text-gray-700">Пчеловоды Алтая не просто производят мёд — они живут этим делом. Многие семьи ведут пасеки уже в третьем или четвёртом поколении. Здесь до сих пор ценятся ручной труд, точность и знание пчелиного ритма. Ульи выставляют ближе к цветущим полям, собирают мёд без нагревания, используют только безопасную тару и минимальную фильтрацию.</p>
-
-        <p class="mb-4 text-gray-700">Такие пасеки чаще всего располагаются вдали от населённых пунктов, в горах и лесах, чтобы сохранить чистоту и защиту от стрессов для пчёл.</p>
-
-         <h2 class="text-2xl font-bold text-secondary mb-4">Алтайский мёд на мировой арене</h2>
+        <div class="flex items-start mb-3">
+          <i class="ri-check-line text-primary mt-1 mr-2" aria-hidden="true"></i>
+          <div>
+            <strong>Горный мёд</strong> — собирается на высокогорных лугах, обладает светлым цветом и мягким, утонченным вкусом.
+          </div>
+        </div>
         
-        <p class="mb-4 text-gray-700">Мёд из Алтая уже давно вышел за пределы региона. Он поставляется по всей России, экспортируется в Европу, Китай, страны Ближнего Востока. Благодаря природной чистоте и доказанной безопасности, он получает высокие оценки на международных выставках.</p>
-
-        <p class="mb-4 text-gray-700">Лабораторные исследования подтверждают: содержание вредных примесей в алтайском мёде значительно ниже допустимых норм, а его ферментативная активность выше средней. Именно это делает его особенно ценным на фоне массовой продукции.</p>
-
-        <h2 class="text-2xl font-bold text-secondary mb-4">AltayMed — современное лицо традиций</h2>
+        <div class="flex items-start mb-3">
+          <i class="ri-check-line text-primary mt-1 mr-2" aria-hidden="true"></i>
+          <div>
+            <strong>Таёжный мёд</strong> — насыщенный, тёмный, с выраженными антисептическими свойствами, собран в лесных зонах.
+          </div>
+        </div>
         
-        <p class="mb-4 text-gray-700">Сайт AltayMed.shop воплощает суть алтайского пчеловодства в современном формате. Здесь собраны проверенные сорта мёда: горный, таёжный, разнотравье, гречишный — каждый из которых прошёл строгий отбор. Доставка по России, аккуратная упаковка, понятный каталог и описание состава делают покупку простой и надёжной.</p>
-
-        <p class="mb-4 text-gray-700">AltayMed — это прямой путь от алтайской пасеки до вашего стола.</p>
-
-         <h2 class="text-2xl font-bold text-secondary mb-4">Заключение</h2>
+        <div class="flex items-start mb-3">
+          <i class="ri-check-line text-primary mt-1 mr-2" aria-hidden="true"></i>
+          <div>
+            <strong>Разнотравье</strong> — наиболее универсальный сорт с ярким ароматом, собранный на цветущих лугах.
+          </div>
+        </div>
         
-        <p class="mb-4 text-gray-700">Алтайское пчеловодство — это не просто отрасль, а культурный феномен. Это знание природы, уважение к пчеле и любовь к земле. Продукт, родившийся в сердце гор и тайги, несёт в себе не только вкус, но и здоровье, энергию и смысл.</p>
+        <div class="flex items-start">
+          <i class="ri-check-line text-primary mt-1 mr-2" aria-hidden="true"></i>
+          <div>
+            <strong>Гречишный мёд</strong> — тёмного цвета, богат железом, обладает характерным терпким вкусом. Узнайте больше о <a href="/#products" class="text-primary font-semibold hover:underline">разнообразии сортов в нашем каталоге</a>.
+          </div>
+        </div>
+      </div>
+      
+      <h2 class="text-2xl font-bold text-secondary mb-4">Люди и пчёлы: симбиоз на века</h2>
+      
+      <img src="/images/placeholder.jpg" 
+           data-src="/images/image-20.jpg" 
+           alt="Алтайский пасечник за работой" 
+           class="w-full mb-6 rounded-lg lazyload"
+           loading="lazy"
+           decoding="async">
+      
+      <p class="mb-4 text-gray-700">Пчеловоды Алтая не просто производят мёд — они живут этим делом. Многие семьи ведут пасеки уже в третьем или четвёртом поколении. Здесь до сих пор ценятся ручной труд, точность и знание пчелиного ритма. Ульи выставляют ближе к цветущим полям, собирают мёд без нагревания, используют только безопасную тару и минимальную фильтрацию.</p>
 
-        <p class="mb-4 text-gray-700">Покупая алтайский мёд, вы становитесь частью этой древней традиции — и привносите в дом нечто настоящее.</p>
+      <p class="mb-6 text-gray-700">Такие пасеки чаще всего располагаются вдали от населённых пунктов, в горах и лесах, чтобы сохранить чистоту и защиту от стрессов для пчёл.</p>
 
-      </ul>
+      <h2 class="text-2xl font-bold text-secondary mb-4">Алтайский мёд на мировой арене</h2>
+      
+      <p class="mb-4 text-gray-700">Мёд из Алтая уже давно вышел за пределы региона. Он поставляется по всей России, экспортируется в Европу, Китай, страны Ближнего Востока. Благодаря природной чистоте и доказанной безопасности, он получает высокие оценки на международных выставках.</p>
+
+      <p class="mb-6 text-gray-700">Лабораторные исследования подтверждают: содержание вредных примесей в алтайском мёде значительно ниже допустимых норм, а его ферментативная активность выше средней. Именно это делает его особенно ценным на фоне массовой продукции.</p>
+
+      <h2 class="text-2xl font-bold text-secondary mb-4">AltayMed — современное лицо традиций</h2>
+      
+      <p class="mb-4 text-gray-700">Сайт AltayMed.shop воплощает суть алтайского пчеловодства в современном формате. Здесь собраны проверенные сорта мёда: горный, таёжный, разнотравье, гречишный — каждый из которых прошёл строгий отбор. Доставка по России, аккуратная упаковка, понятный каталог и описание состава делают покупку простой и надёжной.</p>
+
+      <p class="mb-6 text-gray-700">AltayMed — это прямой путь от алтайской пасеки до вашего стола. Узнайте больше о <a href="/#about" class="text-primary font-semibold hover:underline">нашей истории и ценностях</a>.</p>
+
+      <div class="conclusion-box">
+        <h2 class="text-2xl font-bold mb-4">Заключение</h2>
+        <p class="mb-3">Алтайское пчеловодство — это не просто отрасль, а культурный феномен. Это знание природы, уважение к пчеле и любовь к земле.</p>
+        <p class="mb-3">Продукт, родившийся в сердце гор и тайги, несёт в себе не только вкус, но и здоровье, энергию и смысл.</p>
+        <p class="text-lg font-semibold mt-4">Покупая алтайский мёд, вы становитесь частью этой древней традиции — и привносите в дом нечто настоящее.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -584,7 +702,7 @@ footer a:hover {
           <li>
             <a class="footer-link-item">
               <div class="contact-icon">
-                <i class="ri-map-pin-2-line ri-sm md:ri-base"></i>
+                <i class="ri-map-pin-2-line ri-sm md:ri-base" aria-hidden="true"></i>
               </div>
               <span class="contact-text">Владимирская обл. Город Ковров</span>
             </a>
@@ -592,7 +710,7 @@ footer a:hover {
           <li>
             <a href="tel:+79209400222" class="footer-link-item">
               <div class="contact-icon">
-                <i class="ri-phone-line ri-sm md:ri-base"></i>
+                <i class="ri-phone-line ri-sm md:ri-base" aria-hidden="true"></i>
               </div>
               <span class="contact-text">+7 (920) 940-02-22</span>
             </a>
@@ -600,7 +718,7 @@ footer a:hover {
           <li>
             <a href="mailto:9209400222@mail.ru" class="footer-link-item">
               <div class="contact-icon">
-                <i class="ri-mail-line ri-sm md:ri-base"></i>
+                <i class="ri-mail-line ri-sm md:ri-base" aria-hidden="true"></i>
               </div>
               <span class="contact-text">9209400222@mail.ru</span>
             </a>
@@ -611,16 +729,16 @@ footer a:hover {
         <div class="mt-4 md:mt-6">
           <p class="text-base md:text-lg font-bold mb-2 md:mb-3">Следите за нами</p>
           <div class="flex space-x-2 md:space-x-3">
-            <a href="https://vk.com/honeybuckwheat" target="_blank" class="social-icon-bw">
-              <i class="ri-vk-line ri-lg"></i>
+            <a href="https://vk.com/honeybuckwheat" target="_blank" class="social-icon-bw" aria-label="Наша страница ВКонтакте">
+              <i class="ri-vk-line ri-lg" aria-hidden="true"></i>
             </a>
-            <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" class="social-icon-bw">
-              <i class="ri-telegram-line ri-lg"></i>
+            <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" class="social-icon-bw" aria-label="Наш Telegram канал">
+              <i class="ri-telegram-line ri-lg" aria-hidden="true"></i>
             </a>
             <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing" 
-               target="_blank" class="social-icon-bw">
+               target="_blank" class="social-icon-bw" aria-label="Наше объявление на Авито">
               <div class="avito-icon-bw">
-                <svg viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg">
+                <svg viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                   <path fill="#04e061" d="M61.924 172.07c26.468 0 47.924-21.456 47.924-47.924S88.392 76.222 61.924 76.222 14 97.678 14 124.146s21.456 47.925 47.924 47.925z" transform="translate(7.024 7.024) scale(.92683)"/>
                   <path fill="#ff4053" d="M149.044 166.007c15.992 0 28.956-12.963 28.956-28.955 0-15.992-12.964-28.955-28.956-28.955-15.99 0-28.954 12.963-28.954 28.955 0 15.992 12.963 28.955 28.954 28.955z" transform="translate(7.024 7.024) scale(.92683)"/>
                   <path fill="#965eeb" d="M71.086 65.979c9.898 0 17.922-8.024 17.922-17.921 0-9.898-8.024-17.922-17.922-17.922-9.898 0-17.921 8.024-17.921 17.922 0 9.897 8.023 17.921 17.921 17.921z" transform="translate(7.024 7.024) scale(.92683)"/>
@@ -629,9 +747,9 @@ footer a:hover {
               </div>
             </a>
             <!-- Иконка Яндекс Карт - обновленная версия -->
-            <a href="https://yandex.ru/maps/" target="_blank" class="social-icon-bw">
+            <a href="https://yandex.ru/maps/" target="_blank" class="social-icon-bw" aria-label="Мы на Яндекс Картах">
               <div class="yandex-maps-icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                   <path d="M12 2C8.13 2 5 5.13 5 9C5 13.17 9.42 18.92 11.24 21.11C11.64 21.59 12.37 21.59 12.77 21.11C14.58 18.92 19 13.17 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" 
                         fill="currentColor"/>
                 </svg>
@@ -645,13 +763,49 @@ footer a:hover {
 </footer>
 
 <!-- Плавающая кнопка "Назад" -->
-<a href="#" id="back-button" class="floating-back-button">
-  <div class="back-arrow"></div>
+<a href="/blog/" id="back-button" class="floating-back-button" aria-label="Вернуться в блог">
+  <div class="back-arrow" aria-hidden="true"></div>
 </a>
 
-<!-- Скрипт lazy loading -->
+<!-- Скрипты -->
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
+  // Управление мобильным меню
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('block');
+      });
+    }
+
+    // Плавная прокрутка
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        if (this.getAttribute('href') === '#') return;
+        
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+          
+          // Закрыть мобильное меню
+          if (mobileMenu && !mobileMenu.classList.contains('hidden') && window.innerWidth < 768) {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('block');
+          }
+        }
+      });
+    });
+    
+    // Lazy loading
     const lazyLoad = function(entries) {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -671,98 +825,43 @@ footer a:hover {
     document.querySelectorAll("img.lazyload").forEach(img => {
       observer.observe(img);
     });
-  });
-</script>
-
-<!-- Скрипт для управления плавающей кнопкой -->
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
+    
+    // Плавающая кнопка "Назад"
     const backButton = document.getElementById('back-button');
-    
-    // Показываем/скрываем кнопку при скролле
-    let isScrolling;
-    window.addEventListener('scroll', function() {
-      backButton.style.opacity = "1";
-      
-      clearTimeout(isScrolling);
-      isScrolling = setTimeout(function() {
-        backButton.style.opacity = "0";
-      }, 2000);
-    });
-    
-    // Обработка нажатия на кнопку "Назад"
-    backButton.addEventListener('click', function(e) {
-      e.preventDefault();
-      
-      // Проверяем историю переходов
-      if (document.referrer && document.referrer.includes(window.location.host)) {
-        // Если есть предыдущая страница на нашем сайте
-        window.history.back();
-      } else {
-        // Если нет истории или пришел с другого сайта
-        window.location.href = '/';
-      }
-    });
-  });
-</script>
-
-<!-- Обработка мобильного меню -->
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    
-    mobileMenuButton.addEventListener('click', function() {
-      if (mobileMenu.classList.contains('hidden')) {
-        mobileMenu.classList.remove('hidden');
-        mobileMenu.classList.add('block');
-      } else {
-        mobileMenu.classList.add('hidden');
-        mobileMenu.classList.remove('block');
-      }
-    });
-    
-    // Плавная прокрутка к якорям
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        if (this.getAttribute('href') === '#') return;
+    if (backButton) {
+      let isScrolling;
+      window.addEventListener('scroll', function() {
+        backButton.style.opacity = "1";
         
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 80,
-            behavior: 'smooth'
-          });
-          
-          // Закрыть мобильное меню при клике на ссылку
-          if (!mobileMenu.classList.contains('hidden') && window.innerWidth < 768) {
-            mobileMenu.classList.add('hidden');
-            mobileMenu.classList.remove('block');
-          }
-        }
+        clearTimeout(isScrolling);
+        isScrolling = setTimeout(function() {
+          backButton.style.opacity = "0";
+        }, 2000);
       });
-    });
+      
+      backButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.location.href = '/blog/';
+      });
+    }
+    
+    // Загрузка Яндекс.Метрики с задержкой
+    setTimeout(function() {
+      (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      m[i].l=1*new Date();
+      k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+      ym(102951378, "init", {
+           clickmap:true,
+           trackLinks:true,
+           accurateTrackBounce:true
+      });
+    }, 1000); // Задержка 1 секунда
   });
 </script>
 
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();
-   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-   ym(102951378, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true
-   });
-</script>
+<!-- Noscript для Яндекс.Метрики -->
 <noscript><div><img src="https://mc.yandex.ru/watch/102951378" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
 </body>
 </html>

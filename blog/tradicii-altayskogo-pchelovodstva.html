@@ -657,6 +657,71 @@ footer a:hover {
         <p class="mb-0 text-gray-700">AltayMed — это прямой путь от алтайской пасеки до вашего стола. Узнайте больше о <a href="/#about" class="text-primary font-semibold hover:underline">нашей истории и ценностях</a>.</p>
       </div>
 
+      <!-- Добавленный раздел FAQ -->
+      <h2 class="text-2xl font-bold text-secondary mb-4">Часто задаваемые вопросы</h2>
+      
+      <div class="faq-container">
+        <div class="faq-item">
+          <button class="faq-question">
+            Чем отличается алтайский мёд от других?
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p class="mt-2 text-gray-700">Алтайский мёд отличается уникальным сочетанием горных и таёжных медоносов, экологической чистотой региона и многовековыми традициями пчеловодства. Он содержит больше ферментов и антиоксидантов благодаря разнообразию дикорастущих растений и особому микроклимату Алтая.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question">
+            Какие сорта мёда производят на Алтае?
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p class="mt-2 text-gray-700">Основные сорта: горный (с высокогорных лугов), таёжный (из лесных медоносов), разнотравье (луговое), гречишный. Каждый сорт имеет уникальные вкусовые и целебные свойства. Посмотреть все сорта можно в нашем <a href="/#products" class="text-primary font-semibold hover:underline">каталоге</a>.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question">
+            Почему алтайский мёд считается экологически чистым?
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p class="mt-2 text-gray-700">Алтай - один из самых чистых регионов России, где нет крупных промышленных предприятий. Пасеки расположены в труднодоступных горных и лесных районах, удалённых от городов и дорог. Это гарантирует отсутствие вредных примесей в мёде.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question">
+            Как традиции пчеловодства влияют на качество мёда?
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p class="mt-2 text-gray-700">Многовековые традиции включают: ручной сбор без использования нагрева, минимальную фильтрацию, использование только деревянной тары, уважительное отношение к пчёлам. Эти методы позволяют сохранить все полезные свойства мёда.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question">
+            Можно ли посетить ваши пасеки на Алтае?
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p class="mt-2 text-gray-700">Да, мы организуем экскурсии на пасеки в летний сезон. Вы сможете познакомиться с процессом сбора мёда, попробовать свежий продукт прямо из сот и узнать секреты алтайского пчеловодства. Подробности уточняйте по телефону +7 (920) 940-02-22.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question">
+            Где купить настоящий алтайский мёд?
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p class="mt-2 text-gray-700">Вы можете заказать мёд прямо на нашем сайте с доставкой по всей России. Также мы продаём продукцию через наш профиль на <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing" target="_blank" class="text-primary font-semibold hover:underline">Avito</a>.</p>
+          </div>
+        </div>
+      </div>
+      
       <div class="conclusion-box">
         <h2 class="text-2xl font-bold mb-4">Заключение</h2>
         <p class="mb-3">Алтайское пчеловодство — это не просто отрасль, а культурный феномен. Это знание природы, уважение к пчеле и любовь к земле.</p>
@@ -914,6 +979,33 @@ footer a:hover {
         window.location.href = '/blog/';
       });
     }
+    
+    // Управление аккордеоном FAQ
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(question => {
+      question.addEventListener('click', function() {
+        const answer = this.nextElementSibling;
+        const icon = this.querySelector('.icon');
+        
+        // Переключение состояния
+        const isOpen = answer.classList.contains('open');
+        
+        // Закрыть все открытые ответы
+        document.querySelectorAll('.faq-answer.open').forEach(openAnswer => {
+          openAnswer.classList.remove('open');
+          openAnswer.previousElementSibling.querySelector('.icon').textContent = '+';
+        });
+        
+        // Открыть/закрыть текущий ответ
+        if (!isOpen) {
+          answer.classList.add('open');
+          icon.textContent = '–';
+        } else {
+          answer.classList.remove('open');
+          icon.textContent = '+';
+        }
+      });
+    });
     
     // Загрузка Яндекс.Метрики с задержкой
     setTimeout(function() {

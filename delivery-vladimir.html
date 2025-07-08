@@ -1229,12 +1229,14 @@
         .carousel-arrows {
             position: absolute;
             top: 50%;
-            width: 100%;
+            left: 0;
+            right: 0;
             display: flex;
             justify-content: space-between;
             transform: translateY(-50%);
             padding: 0 1rem;
             pointer-events: none;
+            z-index: 10;
         }
         
         .carousel-arrow {
@@ -1248,7 +1250,7 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             cursor: pointer;
             pointer-events: auto;
-            transition: background-color 0.3s;
+            transition: all 0.3s;
         }
         
         .carousel-arrow:hover {
@@ -1281,8 +1283,11 @@
             }
             
             .review-text {
-                font-size: 1rem;
+                font-size: 0.9rem;
                 margin-bottom: 1rem;
+                max-height: 150px;
+                overflow-y: auto;
+                padding: 0 0.5rem;
             }
             
             .review-author {
@@ -1352,8 +1357,8 @@
         
         @media (max-width: 480px) {
             .review-text {
-                font-size: 0.95rem;
-                padding: 0 0.5rem;
+                font-size: 0.85rem;
+                max-height: 120px;
             }
             
             .carousel-arrow {
@@ -1515,12 +1520,73 @@
             
             <div class="delivery-methods">
                 <div class="delivery-tabs">
-                    <button class="delivery-tab active" data-tab="sdek">СДЭК</button>
-                    <button class="delivery-tab" data-tab="courier">Курьерская доставка</button>
+                    <button class="delivery-tab active" data-tab="avito">Авито</button>
+                    <button class="delivery-tab" data-tab="sdek">СДЭК</button>
                     <button class="delivery-tab" data-tab="post">Почта России</button>
+                    <button class="delivery-tab" data-tab="courier">Курьерская доставка</button>
+                    <button class="delivery-tab" data-tab="ozon">Ozon</button>
                 </div>
                 
-                <div class="delivery-content active" id="sdek-content">
+                <div class="delivery-content active" id="avito-content">
+                    <div class="delivery-info-wrapper">
+                        <div class="delivery-details">
+                            <h3 class="text-xl font-semibold mb-4">Доставка через Авито</h3>
+                            <p class="text-gray-600 mb-4">Вы можете приобрести наш алтайский мед через платформу Авито. Мы предлагаем удобный самовывоз из пунктов выдачи заказов (ПВЗ) по Владимиру.</p>
+                            
+                            <h4 class="font-medium text-gray-800 mb-3">Пункты выдачи Авито во Владимире:</h4>
+                            <ul class="delivery-points">
+                                <li>
+                                    <i class="ri-map-pin-line"></i>
+                                    <span>ул. Большая Московская, 11 (ТЦ "Гагаринский")</span>
+                                </li>
+                                <li>
+                                    <i class="ri-map-pin-line"></i>
+                                    <span>пр-т Ленина, 46 (ТЦ "Русь")</span>
+                                </li>
+                                <li>
+                                    <i class="ri-map-pin-line"></i>
+                                    <span>ул. Горького, 87 (ТЦ "Крейсер")</span>
+                                </li>
+                            </ul>
+                            
+                            <div class="delivery-meta">
+                                <i class="ri-time-line"></i>
+                                <span>Срок доставки: 1-2 рабочих дня</span>
+                            </div>
+                            <div class="delivery-meta">
+                                <i class="ri-money-dollar-circle-line"></i>
+                                <span>Стоимость: бесплатно при заказе от 1000 ₽</span>
+                            </div>
+                        </div>
+                        
+                        <div class="delivery-advantages">
+                            <h4 class="font-medium text-gray-800 mb-3">Преимущества покупки на Авито:</h4>
+                            <ul>
+                                <li class="advantage-item">
+                                    <i class="ri-check-line"></i>
+                                    <span>Удобная платформа с защитой покупателя</span>
+                                </li>
+                                <li class="advantage-item">
+                                    <i class="ri-check-line"></i>
+                                    <span>Возможность оплаты при получении</span>
+                                </li>
+                                <li class="advantage-item">
+                                    <i class="ri-check-line"></i>
+                                    <span>Отзывы покупателей на платформе</span>
+                                </li>
+                                <li class="advantage-item">
+                                    <i class="ri-check-line"></i>
+                                    <span>Быстрая доставка до пункта выдачи</span>
+                                </li>
+                            </ul>
+                            <p class="mt-4">
+                                <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing_seller" class="btn btn-outline" target="_blank">Перейти на Авито</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="delivery-content" id="sdek-content">
                     <div class="delivery-info-wrapper">
                         <div class="delivery-details">
                             <h3 class="text-xl font-semibold mb-4">Доставка СДЭК во Владимир</h3>
@@ -1570,6 +1636,62 @@
                                 <li class="advantage-item">
                                     <i class="ri-check-line"></i>
                                     <span>Оплата при получении</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="delivery-content" id="post-content">
+                    <div class="delivery-info-wrapper">
+                        <div class="delivery-details">
+                            <h3 class="text-xl font-semibold mb-4">Доставка Почтой России</h3>
+                            <p class="text-gray-600 mb-4">Доставка осуществляется до отделений Почты России во Владимире. Срок доставки - 3-5 рабочих дней после отправки заказа.</p>
+                            
+                            <h4 class="font-medium text-gray-800 mb-3">Основные отделения во Владимире:</h4>
+                            <ul class="delivery-points">
+                                <li>
+                                    <i class="ri-map-pin-line"></i>
+                                    <span>Отделение №1: ул. Большая Московская, 20</span>
+                                </li>
+                                <li>
+                                    <i class="ri-map-pin-line"></i>
+                                    <span>Отделение №2: пр-т Строителей, 15</span>
+                                </li>
+                                <li>
+                                    <i class="ri-map-pin-line"></i>
+                                    <span>Отделение №3: ул. Мира, 36</span>
+                                </li>
+                            </ul>
+                            
+                            <div class="delivery-meta">
+                                <i class="ri-time-line"></i>
+                                <span>Срок доставки: 3-5 рабочих дней</span>
+                            </div>
+                            <div class="delivery-meta">
+                                <i class="ri-money-dollar-circle-line"></i>
+                                <span>Стоимость: от 350 ₽ (зависит от веса заказа)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="delivery-advantages">
+                            <h4 class="font-medium text-gray-800 mb-3">Преимущества Почты России:</h4>
+                            <ul>
+                                <li class="advantage-item">
+                                    <i class="ri-check-line"></i>
+                                    <span>Широкая сеть отделений во Владимире</span>
+                                </li>
+                                <li class="advantage-item">
+                                    <i class="ri-check-line"></i>
+                                    <span>Возможность отслеживания отправления</span>
+                                </li>
+                                <li class="advantage-item">
+                                    <i class="ri-check-line"></i>
+                                    <span>Оплата при получении</span>
+                                </li>
+                                <li class="advantage-item">
+                                    <i class="ri-check-line"></i>
+                                    <span>Доставка в отдаленные районы города</span>
                                 </li>
                             </ul>
                         </div>
@@ -1636,58 +1758,61 @@
                     </div>
                 </div>
                 
-                <div class="delivery-content" id="post-content">
+                <div class="delivery-content" id="ozon-content">
                     <div class="delivery-info-wrapper">
                         <div class="delivery-details">
-                            <h3 class="text-xl font-semibold mb-4">Доставка Почтой России</h3>
-                            <p class="text-gray-600 mb-4">Доставка осуществляется до отделений Почты России во Владимире. Срок доставки - 3-5 рабочих дней после отправки заказа.</p>
+                            <h3 class="text-xl font-semibold mb-4">Доставка через Ozon</h3>
+                            <p class="text-gray-600 mb-4">Заказывайте наш алтайский мед на маркетплейсе Ozon с доставкой до пунктов выдачи заказов (ПВЗ) по Владимиру.</p>
                             
-                            <h4 class="font-medium text-gray-800 mb-3">Основные отделения во Владимире:</h4>
+                            <h4 class="font-medium text-gray-800 mb-3">Пункты выдачи Ozon во Владимире:</h4>
                             <ul class="delivery-points">
                                 <li>
                                     <i class="ri-map-pin-line"></i>
-                                    <span>Отделение №1: ул. Большая Московская, 20</span>
+                                    <span>ул. Мира, 15 (ТЦ "Апельсин")</span>
                                 </li>
                                 <li>
                                     <i class="ri-map-pin-line"></i>
-                                    <span>Отделение №2: пр-т Строителей, 15</span>
+                                    <span>пр-т Ленина, 55 (ТЦ "Столица")</span>
                                 </li>
                                 <li>
                                     <i class="ri-map-pin-line"></i>
-                                    <span>Отделение №3: ул. Мира, 36</span>
+                                    <span>ул. Пушкина, 22 (ТЦ "Орион")</span>
                                 </li>
                             </ul>
                             
                             <div class="delivery-meta">
                                 <i class="ri-time-line"></i>
-                                <span>Срок доставки: 3-5 рабочих дней</span>
+                                <span>Срок доставки: 1-3 рабочих дня</span>
                             </div>
                             <div class="delivery-meta">
                                 <i class="ri-money-dollar-circle-line"></i>
-                                <span>Стоимость: от 350 ₽ (зависит от веса заказа)</span>
+                                <span>Стоимость: от 250 ₽ (зависит от веса заказа)</span>
                             </div>
                         </div>
                         
                         <div class="delivery-advantages">
-                            <h4 class="font-medium text-gray-800 mb-3">Преимущества Почты России:</h4>
+                            <h4 class="font-medium text-gray-800 mb-3">Преимущества покупки на Ozon:</h4>
                             <ul>
                                 <li class="advantage-item">
                                     <i class="ri-check-line"></i>
-                                    <span>Широкая сеть отделений во Владимире</span>
+                                    <span>Надежная платформа с гарантией качества</span>
                                 </li>
                                 <li class="advantage-item">
                                     <i class="ri-check-line"></i>
-                                    <span>Возможность отслеживания отправления</span>
+                                    <span>Оплата онлайн или при получении</span>
                                 </li>
                                 <li class="advantage-item">
                                     <i class="ri-check-line"></i>
-                                    <span>Оплата при получении</span>
+                                    <span>Удобное приложение для заказов</span>
                                 </li>
                                 <li class="advantage-item">
                                     <i class="ri-check-line"></i>
-                                    <span>Доставка в отдаленные районы города</span>
+                                    <span>Бонусы и скидки для постоянных покупателей</span>
                                 </li>
                             </ul>
+                            <p class="mt-4">
+                                <a href="https://www.ozon.ru/seller/altaymed-123456/products/" class="btn btn-outline" target="_blank">Перейти на Ozon</a>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -1704,38 +1829,50 @@
                     <thead>
                         <tr>
                             <th>Вес заказа</th>
-                            <th>СДЭК (пункт выдачи)</th>
-                            <th>Курьерская доставка</th>
+                            <th>Авито</th>
+                            <th>СДЭК</th>
                             <th>Почта России</th>
+                            <th>Курьер</th>
+                            <th>Ozon</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr class="highlighted">
                             <td><span class="liter-highlight">1 литр (до 1 кг)</span></td>
+                            <td><span class="liter-highlight">250 ₽</span></td>
                             <td><span class="liter-highlight">300 ₽</span></td>
-                            <td><span class="liter-highlight">500 ₽</span></td>
                             <td><span class="liter-highlight">350 ₽</span></td>
+                            <td><span class="liter-highlight">500 ₽</span></td>
+                            <td><span class="liter-highlight">280 ₽</span></td>
                         </tr>
                         <tr>
                             <td>1-3 кг</td>
+                            <td>350 ₽</td>
                             <td>400 ₽</td>
-                            <td>500 ₽</td>
                             <td>450 ₽</td>
+                            <td>500 ₽</td>
+                            <td>370 ₽</td>
                         </tr>
                         <tr>
                             <td>3-5 кг</td>
-                            <td>500 ₽</td>
+                            <td>450 ₽</td>
                             <td>500 ₽</td>
                             <td>550 ₽</td>
+                            <td>500 ₽</td>
+                            <td>480 ₽</td>
                         </tr>
                         <tr>
                             <td>5-10 кг</td>
+                            <td>650 ₽</td>
                             <td>700 ₽</td>
-                            <td>500 ₽</td>
                             <td>750 ₽</td>
+                            <td>500 ₽</td>
+                            <td>680 ₽</td>
                         </tr>
                         <tr>
                             <td>Более 10 кг</td>
+                            <td>Индивидуальный расчет</td>
+                            <td>Индивидуальный расчет</td>
                             <td>Индивидуальный расчет</td>
                             <td>Индивидуальный расчет</td>
                             <td>Индивидуальный расчет</td>

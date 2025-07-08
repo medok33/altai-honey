@@ -6,152 +6,150 @@
     <title>Доставка алтайского мёда во Владимир | Заказать мёд с доставкой | AltayMed</title>
     <meta name="description" content="Закажите натуральный алтайский мёд с доставкой по Владимиру и области. Свежий гречишный, липовый, таёжный мёд — бесплатно доставим от 3 литров. Оплата после получения.">
     
+    <!-- Favicon -->
     <link rel="icon" href="images/favicon.ico" sizes="any">
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
     
+    <!-- Open Graph -->
     <meta property="og:title" content="Доставка алтайского мёда во Владимир">
     <meta property="og:description" content="Закажите натуральный алтайский мёд с доставкой по Владимиру и области. Свежий гречишный, липовый, таёжный мёд — бесплатно доставим от 3 литров.">
     <meta property="og:image" content="images/og-preview.webp">
     <meta property="og:url" content="https://altaymed.shop/delivery-vladimir.html">
     <meta property="og:type" content="website">
 
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Доставка алтайского мёда во Владимир">
     <meta name="twitter:description" content="Закажите натуральный алтайский мёд с доставкой по Владимиру и области. Гречишный, липовый, таёжный мёд — бесплатно от 3 литров.">
     <meta name="twitter:image" content="images/twitter-preview.webp">
     
-    <!-- Подключение Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: "#FFA500",
-                        secondary: "#8B4513",
-                        gray: {
-                            50: "#F9FAFB",
-                            100: "#F3F4F6",
-                            200: "#E5E7EB",
-                            300: "#D1D5DB",
-                            400: "#9CA3AF",
-                            500: "#6B7280",
-                            600: "#4B5563",
-                            700: "#374151",
-                            800: "#1F2937",
-                            900: "#111827",
-                        }
-                    },
-                    fontFamily: {
-                        sans: ["Open Sans", "sans-serif"],
-                        pacifico: ["Pacifico", "cursive"]
-                    },
-                    borderRadius: {
-                        button: "0.5rem",
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- Tailwind CSS -->
+    <link href="/assets/css/tailwind.min.css" rel="stylesheet">
     
-    <!-- Подключение иконок -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+    <!-- Remix Icons -->
+    <link rel="stylesheet" href="/assets/fonts/remixicon/remixicon.css">
     
     <style>
-        .delivery-content { display: none; }
-        .delivery-content.active { display: block; }
-        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
-        .faq-item.active .faq-answer { max-height: 1000px; }
-        .review-list { display: flex; transition: transform 0.5s ease; }
-        .review-item { flex: 0 0 100%; }
+        /* Дополнительные кастомные стили (если нужны) */
+        .font-pacifico {
+            font-family: 'Pacifico', cursive;
+        }
+        
+        .texture-bg {
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCI+PHBhdGggZD0iTTAgMGg1MHY1MEgweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0yNSA0YTUgNSAwIDAwLTUgNSA1IDUgMCAwMDUgNSA1IDUgMCAwMDUtNSA1IDUgMCAwMC01LTV6IiBmaWxsPSJyZ2JhKDI1NSwgMjU1LCAyNTUsIDAuMSkiLz48L3N2Zz4=');
+        }
+        
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            z-index: 0;
+        }
+        
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4));
+            z-index: 1;
+        }
+        
+        .critical-content {
+            position: relative;
+            z-index: 10;
+        }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-700 font-sans">
-    <!-- Шапка сайта (взята из index.html) -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
+<body class="bg-gray-50 text-gray-700">
+    <!-- Шапка из главной страницы -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
         <div class="container mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
-            <a href="https://altaymed.shop/" class="text-2xl md:text-3xl font-pacifico text-primary">Алтайский мёд</a>
+            <a href="https://altaymed.shop/" class="text-2xl md:text-3xl font-pacifico header-logo">Алтайский мёд</a>
             
             <div class="hidden md:flex items-center space-x-6 md:space-x-8">
-                <a href="https://altaymed.shop/" class="text-gray-700 hover:text-primary transition-colors font-medium">Главная</a>
-                <a href="https://altaymed.shop/#products" class="text-gray-700 hover:text-primary transition-colors font-medium">Каталог</a>
-                <a href="https://altaymed.shop/delivery.html" class="text-primary font-medium">Доставка</a>
-                <a href="https://altaymed.shop/" class="text-gray-700 hover:text-primary transition-colors font-medium">О нас</a>
-                <a href="https://altaymed.shop/" class="text-gray-700 hover:text-primary transition-colors font-medium">Контакты</a>
-                <a href="#order" class="px-4 md:px-6 py-1 md:py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">Заказать</a>
+                <a href="https://altaymed.shop/" class="nav-link">Главная</a>
+                <a href="https://altaymed.shop/#products" class="nav-link">Каталог</a>
+                <a href="https://altaymed.shop/delivery.html" class="nav-link font-bold text-orange-500">Доставка</a>
+                <a href="https://altaymed.shop/" class="nav-link">О нас</a>
+                <a href="https://altaymed.shop/" class="nav-link">Контакты</a>
+                <a href="#order" class="px-4 md:px-6 py-1 md:py-2 bg-gradient-to-r from-orange-500 to-[#8ea745] text-white rounded-full hover:opacity-90 transition-all whitespace-nowrap">Заказать</a>
             </div>
             
-            <div class="flex items-center space-x-4">
-                <a href="tel:+79209400222" class="hidden md:flex items-center text-gray-700 hover:text-primary transition-colors">
-                    <div class="w-10 h-10 flex items-center justify-center">
-                        <i class="ri-phone-line ri-lg"></i>
-                    </div>
-                    <span>+7 (920) 940-02-22</span>
-                </a>
-                <button class="md:hidden w-10 h-10 flex items-center justify-center" id="mobile-menu-toggle">
-                    <i class="ri-menu-line text-2xl text-gray-800"></i>
-                </button>
-            </div>
+            <button class="md:hidden w-10 h-10 flex items-center justify-center" id="mobile-menu-toggle">
+                <i class="ri-menu-line text-2xl text-gray-800" aria-hidden="true"></i>
+            </button>
         </div>
         
         <div class="md:hidden hidden bg-white shadow-md px-4 py-3" id="mobile-menu">
             <div class="flex flex-col space-y-4">
-                <a href="https://altaymed.shop/" class="py-2 text-gray-700 hover:text-primary transition-colors">Главная</a>
-                <a href="https://altaymed.shop/#products" class="py-2 text-gray-700 hover:text-primary transition-colors">Каталог</a>
-                <a href="https://altaymed.shop/delivery.html" class="py-2 text-primary">Доставка</a>
-                <a href="https://altaymed.shop/" class="py-2 text-gray-700 hover:text-primary transition-colors">О нас</a>
-                <a href="https://altaymed.shop/" class="py-2 text-gray-700 hover:text-primary transition-colors">Контакты</a>
-                <a href="tel:+79209400222" class="py-2 text-gray-700 hover:text-primary transition-colors">+7 (920) 940-02-22</a>
-                <a href="#order" class="py-2 bg-primary text-white text-center rounded-button hover:bg-opacity-90 transition-all">Заказать</a>
+                <a href="https://altaymed.shop/" class="py-2">Главная</a>
+                <a href="https://altaymed.shop/#products" class="py-2">Каталог</a>
+                <a href="https://altaymed.shop/delivery.html" class="py-2 font-bold text-orange-500">Доставка</a>
+                <a href="https://altaymed.shop/" class="py-2">О нас</a>
+                <a href="https://altaymed.shop/" class="py-2">Контакты</a>
+                <a href="#order" class="py-2 bg-gradient-to-r from-orange-500 to-[#8ea745] text-white text-center rounded-full hover:opacity-90 transition-all">Заказать</a>
             </div>
         </div>
-    </header>
+    </nav>
 
     <!-- Герой-секция -->
-    <section class="relative min-h-[60vh] md:min-h-[80vh] overflow-hidden">
+    <section class="hero-section relative min-h-[60vh] flex items-center overflow-hidden">
         <img 
             src="images/hero-bg.jpg" 
             alt="Натуральный гречишный, липовый, таёжный алтайский мёд с доставкой во Владимир" 
-            class="absolute top-0 left-0 w-full h-full object-cover object-center"
+            class="hero-image"
             fetchpriority="high">
-        <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-15"></div>
-        <div class="container relative z-10 py-16 md:py-24 flex items-center">
-            <div class="max-w-3xl text-white">
-                <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Доставка алтайского мёда во Владимир</h1>
-                <p class="text-xl md:text-2xl mb-8">Закажите настоящий алтайский мёд онлайн с быстрой доставкой по Владимиру</p>
-                <a href="/#products" class="inline-block px-8 py-3 bg-primary text-white font-medium rounded-button shadow-lg hover:bg-opacity-90 transition-all">Заказать мёд онлайн</a>
+        <div class="hero-overlay"></div>
+        
+        <div class="container mx-auto px-4 md:px-6 py-16 w-full critical-content">
+            <div class="max-w-2xl text-white">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6">Доставка алтайского мёда во Владимир</h1>
+                <p class="text-lg md:text-xl mb-6 md:mb-8 max-w-lg">Закажите настоящий алтайский мёд онлайн с быстрой доставкой по Владимиру</p>
+                
+                <div class="flex flex-wrap gap-3 md:gap-4">
+                    <a href="#products" class="px-6 py-2 md:px-8 md:py-3 bg-gradient-to-r from-orange-500 to-[#8ea745] text-white rounded-full shadow-lg hover:opacity-90 transition-all whitespace-nowrap text-base md:text-lg font-medium">
+                        Заказать мёд онлайн
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Преимущества -->
+    <!-- Преимущества доставки -->
     <section class="py-16 bg-white">
-        <div class="container">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Преимущества доставки мёда во Владимир</h2>
+        <div class="container mx-auto px-4 md:px-6">
+            <h2 class="text-3xl md:text-4xl font-pacifico text-center text-[#8B4513] mb-12 md:mb-16">Преимущества доставки мёда во Владимир</h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                    <div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4 text-primary">
-                        <i class="ri-truck-line ri-2x"></i>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                    <div class="w-16 h-16 flex items-center justify-center bg-orange-100 rounded-full mb-4">
+                        <i class="ri-truck-line text-orange-500 text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">Быстрая доставка</h3>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Быстрая доставка</h3>
                     <p class="text-gray-600">Доставляем мёд во Владимир всего за 1-2 дня. Ваш заказ будет у вас максимально быстро!</p>
                 </div>
                 
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                    <div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4 text-primary">
-                        <i class="ri-leaf-line ri-2x"></i>
+                <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                    <div class="w-16 h-16 flex items-center justify-center bg-orange-100 rounded-full mb-4">
+                        <i class="ri-leaf-line text-orange-500 text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">100% натуральный продукт</h3>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">100% натуральный продукт</h3>
                     <p class="text-gray-600">Мёд собран на экологически чистых пасеках Алтая и доставляется во Владимир без добавок и консервантов.</p>
                 </div>
                 
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                    <div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4 text-primary">
-                        <i class="ri-shield-check-line ri-2x"></i>
+                <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                    <div class="w-16 h-16 flex items-center justify-center bg-orange-100 rounded-full mb-4">
+                        <i class="ri-shield-check-line text-orange-500 text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">Гарантия свежести</h3>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Гарантия свежести</h3>
                     <p class="text-gray-600">Мы гарантируем свежесть мёда при доставке во Владимир. Специальная упаковка сохраняет все полезные свойства.</p>
                 </div>
             </div>
@@ -160,317 +158,311 @@
 
     <!-- Способы доставки -->
     <section class="py-16 bg-gray-50">
-        <div class="container">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Способы доставки алтайского мёда во Владимир</h2>
+        <div class="container mx-auto px-4 md:px-6">
+            <h2 class="text-3xl md:text-4xl font-pacifico text-center text-[#8B4513] mb-12 md:mb-16">Способы доставки алтайского мёда во Владимир</h2>
             
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                <div class="flex overflow-x-auto border-b border-gray-200">
-                    <button class="delivery-tab px-6 py-4 font-medium text-gray-500 hover:text-gray-700 whitespace-nowrap active" data-tab="avito">Авито</button>
-                    <button class="delivery-tab px-6 py-4 font-medium text-gray-500 hover:text-gray-700 whitespace-nowrap" data-tab="sdek">СДЭК</button>
-                    <button class="delivery-tab px-6 py-4 font-medium text-gray-500 hover:text-gray-700 whitespace-nowrap" data-tab="post">Почта России</button>
-                    <button class="delivery-tab px-6 py-4 font-medium text-gray-500 hover:text-gray-700 whitespace-nowrap" data-tab="courier">Курьерская доставка</button>
-                    <button class="delivery-tab px-6 py-4 font-medium text-gray-500 hover:text-gray-700 whitespace-nowrap" data-tab="ozon">Ozon</button>
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="flex overflow-x-auto border-b border-gray-200 bg-white">
+                    <button class="delivery-tab px-4 py-3 font-medium text-gray-500 whitespace-nowrap border-b-2 border-transparent hover:text-gray-700" data-tab="avito">Авито</button>
+                    <button class="delivery-tab px-4 py-3 font-medium text-gray-500 whitespace-nowrap border-b-2 border-transparent hover:text-gray-700" data-tab="sdek">СДЭК</button>
+                    <button class="delivery-tab px-4 py-3 font-medium text-gray-500 whitespace-nowrap border-b-2 border-transparent hover:text-gray-700" data-tab="post">Почта России</button>
+                    <button class="delivery-tab px-4 py-3 font-medium text-gray-500 whitespace-nowrap border-b-2 border-transparent hover:text-gray-700" data-tab="courier">Курьерская доставка</button>
+                    <button class="delivery-tab px-4 py-3 font-medium text-gray-500 whitespace-nowrap border-b-2 border-transparent hover:text-gray-700" data-tab="ozon">Ozon</button>
                 </div>
                 
-                <div class="delivery-content active p-8" id="avito-content">
-                    <div class="flex flex-col md:flex-row gap-8">
+                <div class="delivery-content p-6" id="avito-content">
+                    <div class="flex flex-col md:flex-row gap-6">
                         <div class="md:w-2/3">
-                            <h3 class="text-2xl font-semibold mb-4">Доставка через Авито</h3>
-                            <p class="text-gray-600 mb-6">Вы можете приобрести наш алтайский мед через платформу Авито. Мы предлагаем удобный самовывоз из пунктов выдачи заказов (ПВЗ) по Владимиру.</p>
+                            <h3 class="text-xl font-bold mb-4">Доставка через Авито</h3>
+                            <p class="text-gray-600 mb-4">Вы можете приобрести наш алтайский мед через платформу Авито. Мы предлагаем удобный самовывоз из пунктов выдачи заказов (ПВЗ) по Владимиру.</p>
                             
-                            <h4 class="font-semibold text-gray-800 mb-4">Пункты выдачи Авито во Владимире:</h4>
-                            <ul class="space-y-3 mb-6">
+                            <h4 class="font-medium text-gray-800 mb-3">Пункты выдачи Авито во Владимире:</h4>
+                            <ul class="space-y-2 mb-4">
                                 <li class="flex items-start">
-                                    <i class="ri-map-pin-line text-primary mt-1 mr-3"></i>
+                                    <i class="ri-map-pin-line text-orange-500 mt-1 mr-2"></i>
                                     <span>ул. Большая Московская, 11 (ТЦ "Гагаринский")</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="ri-map-pin-line text-primary mt-1 mr-3"></i>
+                                    <i class="ri-map-pin-line text-orange-500 mt-1 mr-2"></i>
                                     <span>пр-т Ленина, 46 (ТЦ "Русь")</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="ri-map-pin-line text-primary mt-1 mr-3"></i>
+                                    <i class="ri-map-pin-line text-orange-500 mt-1 mr-2"></i>
                                     <span>ул. Горького, 87 (ТЦ "Крейсер")</span>
                                 </li>
                             </ul>
                             
                             <div class="flex items-center text-gray-600 mb-2">
-                                <i class="ri-time-line text-primary mr-3"></i>
+                                <i class="ri-time-line text-orange-500 mr-2"></i>
                                 <span>Срок доставки: 1-2 рабочих дня</span>
                             </div>
                             <div class="flex items-center text-gray-600">
-                                <i class="ri-money-dollar-circle-line text-primary mr-3"></i>
+                                <i class="ri-money-dollar-circle-line text-orange-500 mr-2"></i>
                                 <span>Стоимость: бесплатно при заказе от 1000 ₽</span>
                             </div>
                         </div>
                         
-                        <div class="md:w-1/3 bg-primary bg-opacity-5 p-6 rounded-lg">
-                            <h4 class="font-semibold text-gray-800 mb-4">Преимущества покупки на Авито:</h4>
-                            <ul class="space-y-3">
+                        <div class="md:w-1/3 bg-orange-50 p-6 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-3">Преимущества покупки на Авито:</h4>
+                            <ul class="space-y-2 mb-4">
                                 <li class="flex items-start">
-                                    <i class="ri-check-line text-primary mt-1 mr-3"></i>
+                                    <i class="ri-check-line text-orange-500 mt-1 mr-2"></i>
                                     <span>Удобная платформа с защитой покупателя</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="ri-check-line text-primary mt-1 mr-3"></i>
+                                    <i class="ri-check-line text-orange-500 mt-1 mr-2"></i>
                                     <span>Возможность оплаты при получении</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="ri-check-line text-primary mt-1 mr-3"></i>
+                                    <i class="ri-check-line text-orange-500 mt-1 mr-2"></i>
                                     <span>Отзывы покупателей на платформе</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="ri-check-line text-primary mt-1 mr-3"></i>
+                                    <i class="ri-check-line text-orange-500 mt-1 mr-2"></i>
                                     <span>Быстрая доставка до пункта выдачи</span>
                                 </li>
                             </ul>
-                            <div class="mt-6 text-center">
-                                <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing_seller" class="inline-block px-6 py-2 border border-primary text-primary bg-white rounded-button hover:bg-gray-50 transition-colors" target="_blank">Перейти на Авито</a>
-                            </div>
+                            <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing_seller" 
+                               class="inline-block px-4 py-2 border border-orange-500 text-orange-500 rounded-full hover:bg-orange-50 transition-colors" 
+                               target="_blank">
+                                Перейти на Авито
+                            </a>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Остальные вкладки доставки -->
-                <div class="delivery-content p-8" id="sdek-content">...</div>
-                <div class="delivery-content p-8" id="post-content">...</div>
-                <div class="delivery-content p-8" id="courier-content">...</div>
-                <div class="delivery-content p-8" id="ozon-content">...</div>
+                <!-- Остальные вкладки доставки (аналогично) -->
             </div>
         </div>
     </section>
 
     <!-- Тарифы -->
     <section class="py-16 bg-white">
-        <div class="container">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Тарифы на доставку мёда во Владимир</h2>
+        <div class="container mx-auto px-4 md:px-6">
+            <h2 class="text-3xl md:text-4xl font-pacifico text-center text-[#8B4513] mb-12 md:mb-16">Тарифы на доставку мёда во Владимир</h2>
             
             <div class="overflow-x-auto">
-                <table class="w-full bg-white rounded-lg shadow overflow-hidden min-w-[600px]">
-                    <thead>
-                        <tr class="bg-gray-50">
-                            <th class="px-6 py-4 text-left text-sm text-gray-500 uppercase">Вес заказа</th>
-                            <th class="px-6 py-4 text-left text-sm text-gray-500 uppercase">Авито</th>
-                            <th class="px-6 py-4 text-left text-sm text-gray-500 uppercase">СДЭК</th>
-                            <th class="px-6 py-4 text-left text-sm text-gray-500 uppercase">Почта России</th>
-                            <th class="px-6 py-4 text-left text-sm text-gray-500 uppercase">Курьер</th>
-                            <th class="px-6 py-4 text-left text-sm text-gray-500 uppercase">Ozon</th>
+                <table class="min-w-full bg-white rounded-lg overflow-hidden">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Вес заказа</th>
+                            <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Авито</th>
+                            <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">СДЭК</th>
+                            <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Почта России</th>
+                            <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Курьер</th>
+                            <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Ozon</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr class="bg-primary bg-opacity-10 font-semibold">
-                            <td class="px-6 py-4 text-primary">1 литр (до 1 кг)</td>
-                            <td class="px-6 py-4 text-primary">125 ₽</td>
-                            <td class="px-6 py-4 text-primary">150 ₽</td>
-                            <td class="px-6 py-4 text-primary">175 ₽</td>
-                            <td class="px-6 py-4 text-primary">250 ₽</td>
-                            <td class="px-6 py-4 text-primary">140 ₽</td>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr class="bg-orange-50 font-semibold">
+                            <td class="px-4 py-3 whitespace-nowrap"><span class="text-orange-500">1 литр (до 1 кг)</span></td>
+                            <td class="px-4 py-3 whitespace-nowrap"><span class="text-orange-500">125 ₽</span></td>
+                            <td class="px-4 py-3 whitespace-nowrap"><span class="text-orange-500">150 ₽</span></td>
+                            <td class="px-4 py-3 whitespace-nowrap"><span class="text-orange-500">175 ₽</span></td>
+                            <td class="px-4 py-3 whitespace-nowrap"><span class="text-orange-500">250 ₽</span></td>
+                            <td class="px-4 py-3 whitespace-nowrap"><span class="text-orange-500">140 ₽</span></td>
                         </tr>
                         <!-- Остальные строки таблицы -->
                     </tbody>
                 </table>
             </div>
             
-            <div class="bg-primary bg-opacity-10 p-6 rounded-lg text-center mt-8">
-                <p class="font-semibold">Бесплатная доставка при заказе от 3 литров меда в пределах города Владимир!</p>
+            <div class="bg-orange-50 p-4 rounded-lg text-center mt-8">
+                <p class="font-bold">Бесплатная доставка при заказе от 3 литров меда в пределах города Владимир!</p>
                 <p class="mt-2 text-sm text-gray-600">*Бесплатная доставка до пункта выдачи действует для жителей города Владимир при заказе от 3 литров</p>
             </div>
         </div>
     </section>
 
-    <!-- География доставки и отзывы -->
+    <!-- География доставки -->
     <section class="py-16 bg-gray-50">
-        <div class="container">
+        <div class="container mx-auto px-4 md:px-6">
+            <h2 class="text-3xl md:text-4xl font-pacifico text-center text-[#8B4513] mb-12 md:mb-16">География доставки</h2>
+            
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <!-- География доставки -->
-                <div class="bg-white p-8 rounded-lg shadow-lg">
-                    <h3 class="text-2xl font-semibold mb-6">Доставка по Владимирской области</h3>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold mb-4">Доставка по Владимирской области</h3>
                     <p class="text-gray-600 mb-6">Помимо Владимира, мы осуществляем доставку мёда и в другие города Владимирской области:</p>
                     
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <h4 class="font-semibold text-gray-800 mb-4">Крупные города:</h4>
-                            <ul class="space-y-3">
+                            <ul class="space-y-2">
                                 <li class="flex items-center">
-                                    <i class="ri-map-pin-line text-primary mr-3"></i>
+                                    <i class="ri-map-pin-line text-orange-500 mr-2"></i>
                                     <span>Ковров</span>
                                 </li>
-                                <!-- Другие города -->
+                                <!-- Остальные города -->
                             </ul>
                         </div>
                         <div>
                             <h4 class="font-semibold text-gray-800 mb-4">Другие населенные пункты:</h4>
-                            <ul class="space-y-3">
+                            <ul class="space-y-2">
                                 <li class="flex items-center">
-                                    <i class="ri-map-pin-line text-primary mr-3"></i>
+                                    <i class="ri-map-pin-line text-orange-500 mr-2"></i>
                                     <span>Вязники</span>
                                 </li>
-                                <!-- Другие города -->
+                                <!-- Остальные города -->
                             </ul>
                         </div>
                     </div>
+                    
+                    <p class="text-gray-600 mt-6">Сроки и стоимость доставки в другие города области могут отличаться. Для уточнения деталей свяжитесь с нашими менеджерами.</p>
                 </div>
                 
-                <!-- Отзывы -->
-                <div class="bg-white p-8 rounded-lg shadow-lg">
-                    <h3 class="text-2xl font-semibold mb-6">Отзывы покупателей из Владимира и области</h3>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold mb-4 text-center">Отзывы покупателей из Владимира и области</h3>
                     <div class="reviews-carousel relative min-h-[300px] overflow-hidden">
-                        <div class="review-list">
-                            <div class="review-item bg-gray-50 p-6 rounded-lg relative">
-                                <i class="ri-double-quotes-l text-primary text-4xl absolute top-4 right-4 opacity-30"></i>
-                                <p class="italic text-gray-700 mb-4">Заказывали мёд с доставкой во Владимир - привезли на следующий день! Качество отличное, вкус натуральный. Особенно понравился гречишный - густой, ароматный, настоящий алтайский мёд!</p>
+                        <div class="review-list flex transition-transform duration-500">
+                            <div class="review-item w-full bg-gray-50 p-4 rounded-lg relative flex-shrink-0">
+                                <i class="ri-double-quotes-l text-orange-300 text-4xl absolute top-3 right-3"></i>
+                                <p class="text-gray-700 italic mb-4">Заказывали мёд с доставкой во Владимир - привезли на следующий день! Качество отличное, вкус натуральный. Особенно понравился гречишный - густой, ароматный, настоящий алтайский мёд!</p>
                                 <div class="font-semibold text-gray-900">Ирина Петрова</div>
-                                <div class="text-primary mt-1">Владимир</div>
+                                <div class="text-orange-500">Владимир</div>
                             </div>
-                            <!-- Другие отзывы -->
+                            <!-- Остальные отзывы -->
                         </div>
                     </div>
-                    <div class="flex justify-center items-center mt-6 space-x-4">
-                        <button class="carousel-prev w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center hover:bg-opacity-90 transition-colors">
-                            <i class="ri-arrow-left-s-line"></i>
-                        </button>
-                        <div class="flex space-x-2">
-                            <span class="dot w-3 h-3 bg-gray-300 rounded-full cursor-pointer active"></span>
-                            <!-- Другие точки -->
+                    <div class="flex justify-center mt-6">
+                        <div class="flex items-center space-x-4">
+                            <button class="carousel-btn w-10 h-10 bg-orange-500 text-white rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors">
+                                <i class="ri-arrow-left-s-line"></i>
+                            </button>
+                            <div class="flex space-x-2">
+                                <span class="dot w-3 h-3 bg-orange-500 rounded-full"></span>
+                                <!-- Остальные точки -->
+                            </div>
+                            <button class="carousel-btn w-10 h-10 bg-orange-500 text-white rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors">
+                                <i class="ri-arrow-right-s-line"></i>
+                            </button>
                         </div>
-                        <button class="carousel-next w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center hover:bg-opacity-90 transition-colors">
-                            <i class="ri-arrow-right-s-line"></i>
-                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="py-16 bg-white">
-        <div class="container max-w-3xl">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Часто задаваемые вопросы о доставке</h2>
-            
-            <div class="space-y-4">
-                <div class="faq-item bg-gray-50 rounded-lg overflow-hidden shadow">
-                    <div class="faq-question flex justify-between items-center p-5 cursor-pointer">
-                        <span class="font-medium">Как заказать алтайский мёд онлайн с доставкой во Владимир?</span>
-                        <i class="ri-add-line text-primary"></i>
+    <!-- Форма заказа -->
+    <section id="order" class="py-16 bg-orange-50">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="max-w-4xl mx-auto bg-gradient-to-br from-orange-500 to-[#8ea745] rounded-lg shadow-xl overflow-hidden">
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                    <div class="p-6 md:p-10 text-white">
+                        <h2 class="text-2xl md:text-3xl font-pacifico mb-4 md:mb-6">Заказать мёд</h2>
+                        <p class="mb-6 md:mb-8">Заполните форму, и мы свяжемся с вами для уточнения деталей заказа и доставки.</p>
+                        
+                        <div class="mb-4 md:mb-6">
+                            <div class="flex items-center space-x-3 mb-2">
+                                <div class="w-8 h-8 flex items-center justify-center bg-white bg-opacity-20 rounded-full">
+                                    <i class="ri-truck-line text-white"></i>
+                                </div>
+                                <span class="font-medium">Доставка по всей России</span>
+                            </div>
+                            
+                            <div class="flex items-center space-x-3 mb-2">
+                                <div class="w-8 h-8 flex items-center justify-center bg-white bg-opacity-20 rounded-full">
+                                    <i class="ri-shield-check-line text-white"></i>
+                                </div>
+                                <span class="font-medium">Безопасная оплата</span>
+                            </div>
+                            
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 flex items-center justify-center bg-white bg-opacity-20 rounded-full">
+                                    <i class="ri-medal-line text-white"></i>
+                                </div>
+                                <span class="font-medium">Гарантия качества</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="faq-answer px-5">
-                        <p class="pb-5 text-gray-600">Заказать алтайский мёд с доставкой во Владимир очень просто: выберите сорта мёда в каталоге, добавьте в корзину, укажите адрес во Владимире и выберите способ доставки.</p>
+                    
+                    <div class="bg-white p-6 md:p-8 lg:p-10">
+                        <form id="order-form">
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-700 mb-2">Ваше имя</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="Иван Петров">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="phone" class="block text-gray-700 mb-2">Телефон</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="+7 (999) 123-45-67">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="message" class="block text-gray-700 mb-2">Комментарий к заказу</label>
+                                <textarea id="message" rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="Укажите интересующие вас сорта мёда и объём"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-orange-500 text-white py-3 rounded-full hover:bg-orange-600 transition-colors font-medium">
+                                Отправить заявку
+                            </button>
+                        </form>
                     </div>
                 </div>
-                <!-- Другие вопросы -->
             </div>
         </div>
     </section>
 
-    <!-- CTA -->
-    <section class="py-16 bg-primary bg-opacity-10">
-        <div class="container text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">Закажите мёд с доставкой во Владимир — почувствуйте вкус Алтая уже завтра!</h2>
-            <p class="text-xl mb-8 max-w-3xl mx-auto">Натуральный алтайский мёд с быстрой доставкой в любую точку Владимира и Владимирской области. Мы гарантируем качество и свежесть каждой баночки.</p>
-            
-            <div class="flex flex-col sm:flex-row justify-center gap-4 mb-10">
-                <a href="/#products" class="px-8 py-3 bg-primary text-white font-medium rounded-button shadow-lg hover:bg-opacity-90 transition-all">Заказать мёд онлайн</a>
-                <a href="/#products" class="px-8 py-3 border border-primary text-primary bg-white font-medium rounded-button hover:bg-gray-50 transition-colors">Каталог продукции</a>
-            </div>
-            
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-                <div class="bg-white p-5 rounded-lg shadow">
-                    <div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4 mx-auto text-primary">
-                        <i class="ri-truck-line ri-lg"></i>
+    <!-- Футер из главной страницы -->
+    <footer class="py-10 md:py-12 w-full bg-[#8B4513] text-white">
+        <div class="container mx-auto px-4 md:px-6 w-full">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 w-full">
+                <div class="footer-column">
+                    <div class="logo-wrapper">
+                        <a href="/" class="text-2xl md:text-3xl font-pacifico mb-3 md:mb-4 block">Алтайский мёд</a>
                     </div>
-                    <h3 class="font-medium text-gray-900 mb-1">Быстрая доставка</h3>
-                    <p class="text-sm text-gray-600">1-2 дня до Владимира</p>
-                </div>
-                <!-- Другие фичи -->
-            </div>
-        </div>
-    </section>
-
-    <!-- SEO блок -->
-    <section class="py-16 bg-white">
-        <div class="container max-w-3xl">
-            <h2 class="text-3xl font-bold text-center mb-8">Натуральный алтайский мёд с доставкой во Владимир и область</h2>
-            <div class="prose prose-lg">
-                <p>Ищете, где купить настоящий алтайский мёд во Владимире? Наш интернет-магазин предлагает свежий и натуральный мёд с пасек Алтая. Мы осуществляем быструю <strong>доставку мёда во Владимир</strong> и по всей Владимирской области: Ковров, Муром, Александров, Гусь-Хрустальный и другие города. У нас вы найдете лучшие сорта: гречишный, липовый, таёжный и разнотравье.</p>
-                <!-- Другие параграфы -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Футер сайта (взята из index.html) -->
-    <footer class="py-12 bg-gray-900 text-white">
-        <div class="container">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-                <div>
-                    <a href="/" class="text-2xl md:text-3xl font-pacifico text-primary mb-4 block">Алтайский мёд</a>
-                    <p class="text-gray-400 mb-4">Натуральные продукты пчеловодства с Алтайских гор.</p>
-                    <div class="flex space-x-3">
-                        <a href="https://vk.com/honeybuckwheat" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors">
-                            <i class="ri-vk-line"></i>
-                        </a>
-                        <a href="https://t.me/HONEYBUCKWHEAT" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors">
-                            <i class="ri-telegram-line"></i>
-                        </a>
-                        <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors">
-                            <i class="ri-shopping-bag-line"></i>
-                        </a>
+                    <div class="description-wrapper">
+                        <p class="text-xs">Натуральные продукты пчеловодства с Алтайских гор.</p>
+                        <p class="text-xs">© 2025 Алтайский мёд. Все права защищены.</p>
                     </div>
                 </div>
                 
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Каталог</h4>
+                <div class="footer-column">
+                    <h4 class="text-base md:text-lg font-bold">Каталог</h4>
+                    <ul>
+                        <li>
+                            <a href="#product-1" class="hover:text-gray-300 transition-colors flex items-center py-1">
+                                <span class="bullet mr-2"></span>
+                                <span class="text-sm md:text-base">Разнотравье</span>
+                            </a>
+                        </li>
+                        <!-- Остальные пункты -->
+                    </ul>
+                </div>
+                
+                <!-- Остальные колонки футера -->
+                
+                <div class="footer-column">
+                    <h4 class="text-base md:text-lg font-bold">Контакты</h4>
                     <ul class="space-y-2">
-                        <li><a href="#product-1" class="text-gray-400 hover:text-primary transition-colors">Разнотравье</a></li>
-                        <!-- Другие продукты -->
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Информация</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#benefits" class="text-gray-400 hover:text-primary transition-colors">Преимущества</a></li>
-                        <!-- Другие ссылки -->
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Контакты</h4>
-                    <ul class="space-y-4">
-                        <li class="flex items-start">
-                            <i class="ri-map-pin-line text-primary mt-1 mr-3"></i>
-                            <span>г. Владимир, ул. Большая Московская, 20</span>
+                        <li>
+                            <div class="flex items-start">
+                                <i class="ri-map-pin-line text-white mt-1 mr-2"></i>
+                                <span>Владимирская обл., г.Ковров</span>
+                            </div>
                         </li>
-                        <li class="flex items-start">
-                            <i class="ri-phone-line text-primary mt-1 mr-3"></i>
-                            <a href="tel:+79209400222" class="hover:text-primary transition-colors">+7 (920) 940-02-22</a>
+                        <li>
+                            <a href="tel:+79209400222" class="flex items-start">
+                                <i class="ri-phone-line text-white mt-1 mr-2"></i>
+                                <span>+7 (920) 940-02-22</span>
+                            </a>
                         </li>
-                        <li class="flex items-start">
-                            <i class="ri-mail-line text-primary mt-1 mr-3"></i>
-                            <a href="mailto:altaymed.shop@yandex.ru" class="hover:text-primary transition-colors">altaymed.shop@yandex.ru</a>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="ri-store-line text-primary mt-1 mr-3"></i>
-                            <span class="text-gray-400">мёд оптом для кафе, магазинов и заведений Владимира</span>
+                        <li>
+                            <a href="mailto:altaymed.shop@yandex.ru" class="flex items-start">
+                                <i class="ri-mail-line text-white mt-1 mr-2"></i>
+                                <span>altaymed.shop@yandex.ru</span>
+                            </a>
                         </li>
                     </ul>
-                </div>
-            </div>
-            
-            <div class="pt-8 border-t border-gray-700 text-center">
-                <p class="text-gray-400 mb-4">
-                    <a href="https://altaymed.shop/legal.html" class="hover:text-primary transition-colors">
-                        © 2025 Алтайский мёд. Все права защищены.
-                    </a>
-                </p>
-                <div class="flex justify-center space-x-4 mb-4">
-                    <i class="ri-visa-line text-2xl text-gray-400"></i>
-                    <i class="ri-mastercard-line text-2xl text-gray-400"></i>
-                    <i class="ri-paypal-line text-2xl text-gray-400"></i>
-                    <i class="ri-alipay-line text-2xl text-gray-400"></i>
-                </div>
-                <div class="flex items-center justify-center text-gray-400 text-sm">
-                    <i class="ri-shield-check-line mr-2"></i>
-                    <span>Безопасное соединение (SSL)</span>
+                    
+                    <div class="mt-6">
+                        <p class="font-bold mb-3">Следите за нами</p>
+                        <div class="flex space-x-3">
+                            <a href="https://vk.com/honeybuckwheat" target="_blank" rel="noopener" class="w-10 h-10 bg-[#8B4513] hover:bg-[#6b3410] rounded-full flex items-center justify-center">
+                                <i class="ri-vk-line"></i>
+                            </a>
+                            <!-- Остальные соцсети -->
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -487,22 +479,18 @@
                 button.addEventListener('click', () => {
                     const tabId = button.getAttribute('data-tab');
                     
-                    tabButtons.forEach(btn => btn.classList.remove('active', 'text-primary', 'border-b-2', 'border-primary'));
-                    tabContents.forEach(content => content.classList.remove('active'));
+                    tabButtons.forEach(btn => btn.classList.remove('border-orange-500', 'text-orange-500'));
+                    tabContents.forEach(content => content.classList.add('hidden'));
                     
-                    button.classList.add('active', 'text-primary', 'border-b-2', 'border-primary');
-                    document.getElementById(`${tabId}-content`).classList.add('active');
+                    button.classList.add('border-b-2', 'border-orange-500', 'text-orange-500');
+                    document.getElementById(`${tabId}-content`)?.classList.remove('hidden');
                 });
             });
             
-            // Инициализация FAQ
-            const faqQuestions = document.querySelectorAll('.faq-question');
-            faqQuestions.forEach(question => {
-                question.addEventListener('click', () => {
-                    const faqItem = question.parentElement;
-                    faqItem.classList.toggle('active');
-                });
-            });
+            // Активируем первую вкладку
+            if (tabButtons.length > 0) {
+                tabButtons[0].click();
+            }
             
             // Мобильное меню
             const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
@@ -510,40 +498,6 @@
             
             mobileMenuToggle.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');
-            });
-            
-            // Карусель отзывов
-            const reviewList = document.querySelector('.review-list');
-            const reviewItems = document.querySelectorAll('.review-item');
-            const dots = document.querySelectorAll('.dot');
-            const prevBtn = document.querySelector('.carousel-prev');
-            const nextBtn = document.querySelector('.carousel-next');
-            
-            let currentIndex = 0;
-            
-            function updateCarousel() {
-                reviewList.style.transform = `translateX(-${currentIndex * 100}%)`;
-                
-                dots.forEach((dot, index) => {
-                    dot.classList.toggle('active', index === currentIndex);
-                });
-            }
-            
-            prevBtn.addEventListener('click', () => {
-                currentIndex = (currentIndex - 1 + reviewItems.length) % reviewItems.length;
-                updateCarousel();
-            });
-            
-            nextBtn.addEventListener('click', () => {
-                currentIndex = (currentIndex + 1) % reviewItems.length;
-                updateCarousel();
-            });
-            
-            dots.forEach((dot, index) => {
-                dot.addEventListener('click', () => {
-                    currentIndex = index;
-                    updateCarousel();
-                });
             });
         });
     </script>

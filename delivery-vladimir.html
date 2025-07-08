@@ -22,39 +22,236 @@
     <meta name="twitter:image" content="images/twitter-preview.webp">
     
     <style>
-        /* Подключение шрифтов локально с font-display: swap */
-        @font-face {
-            font-family: 'Open Sans';
-            font-style: normal;
-            font-weight: 400;
-            src: url('/fonts/OpenSans-Regular.woff2') format('woff2');
-            font-display: swap;
+        /* СТИЛИ ШАПКИ И ФУТЕРА ИЗ INDEX.HTML */
+        nav {
+            background-color: white;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 50;
         }
         
-        @font-face {
-            font-family: 'Open Sans';
-            font-style: normal;
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0.75rem 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .header-logo {
+            font-family: 'Pacifico', cursive;
+            font-size: 1.875rem;
+            color: #FFA500;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: none;
+        }
+        
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+                align-items: center;
+                gap: 2rem;
+            }
+        }
+        
+        .nav-link {
+            color: #374151;
+            text-decoration: none;
             font-weight: 600;
-            src: url('/fonts/OpenSans-SemiBold.woff2') format('woff2');
-            font-display: swap;
+            transition: color 0.3s;
         }
         
-        @font-face {
-            font-family: 'Open Sans';
-            font-style: normal;
-            font-weight: 700;
-            src: url('/fonts/OpenSans-Bold.woff2') format('woff2');
-            font-display: swap;
+        .nav-link:hover, .nav-link.active {
+            color: #FFA500;
         }
         
-        @font-face {
-            font-family: 'Pacifico';
-            font-style: normal;
-            font-weight: 400;
-            src: url('/fonts/Pacifico-Regular.woff2') format('woff2');
-            font-display: swap;
+        .nav-btn {
+            background-color: #FFA500;
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
         }
-
+        
+        .nav-btn:hover {
+            background-color: #e69500;
+        }
+        
+        .mobile-menu-btn {
+            display: block;
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #374151;
+        }
+        
+        @media (min-width: 768px) {
+            .mobile-menu-btn {
+                display: none;
+            }
+        }
+        
+        #mobile-menu {
+            display: none;
+            background-color: white;
+            padding: 1rem;
+        }
+        
+        #mobile-menu.active {
+            display: block;
+        }
+        
+        .mobile-nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .mobile-nav-link {
+            padding: 0.75rem 0;
+            font-size: 1.125rem;
+            color: #374151;
+            text-decoration: none;
+            border-bottom: 1px solid #F3F4F6;
+        }
+        
+        footer {
+            background-color: #8B4513;
+            color: white;
+            padding: 3rem 0 1.5rem;
+            width: 100%;
+        }
+        
+        .footer-grid {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        @media (min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+        
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .footer-logo {
+            font-family: 'Pacifico', cursive;
+            font-size: 1.875rem;
+            color: #FFA500;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-text {
+            color: #E5E7EB;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+        }
+        
+        .footer-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        
+        .footer-link {
+            color: #E5E7EB;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-link:hover {
+            color: #FFA500;
+        }
+        
+        .footer-link .bullet {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background-color: #FFA500;
+            border-radius: 50%;
+            margin-right: 0.75rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-icon {
+            color: #FFA500;
+            margin-right: 0.75rem;
+            margin-top: 0.25rem;
+        }
+        
+        .contact-text {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+        
+        .social-link {
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+        
+        .social-link:hover {
+            background-color: rgba(255, 165, 0, 0.3);
+        }
+        
+        .footer-bottom {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1.5rem 1rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+        
+        .copyright {
+            color: #E5E7EB;
+            font-size: 0.875rem;
+        }
+        
+        /* Остальные стили для страницы доставки */
         :root {
             --primary: #FFA500;
             --secondary: #8B4513;
@@ -144,150 +341,6 @@
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
         
-        /* ===== НОВАЯ ШАПКА В СТИЛЕ ГЛАВНОЙ СТРАНИЦЫ ===== */
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 50;
-            background-color: #fff;
-            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            padding: 0.75rem 0;
-        }
-        
-        .header-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 1rem;
-        }
-        
-        .logo {
-            font-family: 'Pacifico', 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', cursive;
-            font-size: 1.875rem;
-            color: var(--primary);
-            text-decoration: none;
-        }
-        
-        .nav-links {
-            display: none;
-        }
-        
-        @media (min-width: 768px) {
-            .nav-links {
-                display: flex;
-                align-items: center;
-                gap: 2rem;
-            }
-        }
-        
-        .nav-link {
-            color: var(--gray-700);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-        
-        .nav-link:hover, .nav-link.active {
-            color: var(--primary);
-        }
-        
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        
-        .icon-btn {
-            width: 2.5rem;
-            height: 2.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gray-700);
-            transition: color 0.3s;
-        }
-        
-        .icon-btn:hover {
-            color: var(--primary);
-        }
-        
-        .phone-link {
-            display: none;
-            align-items: center;
-            color: var(--gray-700);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        @media (min-width: 768px) {
-            .phone-link {
-                display: flex;
-            }
-        }
-        
-        .phone-link:hover {
-            color: var(--primary);
-        }
-        
-        .nav-btn {
-            background-color: var(--primary);
-            color: white;
-            border-radius: 8px;
-            padding: 0.5rem 1.5rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: background-color 0.3s;
-        }
-        
-        .nav-btn:hover {
-            background-color: rgba(255, 165, 0, 0.9);
-        }
-        
-        .mobile-menu {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: white;
-            z-index: 100;
-            padding: 1rem;
-            transform: translateX(-100%);
-            transition: transform 0.3s ease;
-        }
-        
-        .mobile-menu.active {
-            transform: translateX(0);
-        }
-        
-        .mobile-menu-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--gray-200);
-        }
-        
-        .mobile-menu-links {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-        
-        .mobile-menu-link {
-            padding: 0.75rem 0;
-            font-size: 1.125rem;
-            color: var(--gray-700);
-            text-decoration: none;
-            border-bottom: 1px solid var(--gray-100);
-        }
-        
-        .mobile-menu-link.active {
-            color: var(--primary);
-        }
-        /* ===== КОНЕЦ НОВОЙ ШАПКИ ===== */
-
         /* Исправленная герой-секция */
         .hero-section {
             position: relative;
@@ -898,481 +951,6 @@
             text-align: center;
         }
         
-        /* ===== НОВЫЙ ФУТЕР В СТИЛЕ ГЛАВНОЙ СТРАНИЦЫ ===== */
-        footer {
-            background-color: #8B4513;
-            color: #fff;
-            padding: 2.5rem 0 1.5rem;
-        }
-        
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-        
-        @media (min-width: 768px) {
-            .footer-grid {
-                grid-template-columns: repeat(5, 1fr);
-            }
-        }
-        
-        .footer-column {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .footer-logo {
-            font-family: 'Pacifico', 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', cursive;
-            font-size: 1.875rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-        
-        .footer-text {
-            color: var(--gray-400);
-            margin-bottom: 1rem;
-            font-size: 0.875rem;
-        }
-        
-        .footer-social {
-            display: flex;
-            gap: 0.75rem;
-            margin-top: 1rem;
-        }
-        
-        .social-link {
-            width: 2.5rem;
-            height: 2.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: var(--gray-800);
-            color: #fff;
-            border-radius: 50%;
-            transition: background-color 0.3s;
-        }
-        
-        .social-link:hover {
-            background-color: rgba(255, 165, 0, 0.2);
-        }
-        
-        .footer-title {
-            font-size: 1.125rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: #fff;
-        }
-        
-        .footer-links {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-        
-        .footer-link {
-            color: var(--gray-400);
-            text-decoration: none;
-            transition: color 0.3s;
-            font-size: 0.95rem;
-        }
-        
-        .footer-link:hover {
-            color: var(--primary);
-        }
-        
-        .footer-contacts {
-            display: flex;
-            flex-direction: column;
-            gap: 1.25rem;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.75rem;
-        }
-        
-        .contact-icon {
-            color: var(--primary);
-            margin-top: 0.25rem;
-            flex-shrink: 0;
-        }
-        
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .contact-value {
-            color: #fff;
-            font-weight: 500;
-            font-size: 0.95rem;
-        }
-        
-        .contact-note {
-            color: var(--gray-400);
-            font-size: 0.875rem;
-        }
-        
-        .footer-bottom {
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            text-align: center;
-        }
-        
-        .copyright {
-            color: var(--gray-400);
-            font-size: 0.875rem;
-            margin-bottom: 1rem;
-        }
-        
-        .payment-methods {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-        
-        .payment-icon {
-            color: var(--gray-400);
-            font-size: 1.5rem;
-        }
-        
-        .text-center {
-            text-align: center;
-        }
-        
-        .text-xl {
-            font-size: 1.25rem;
-        }
-        
-        .font-semibold {
-            font-weight: 600;
-        }
-        
-        .mb-4 {
-            margin-bottom: 1rem;
-        }
-        
-        .mb-6 {
-            margin-bottom: 1.5rem;
-        }
-        
-        .space-y-2 > * + * {
-            margin-top: 0.5rem;
-        }
-        
-        .space-y-3 > * + * {
-            margin-top: 0.75rem;
-        }
-        
-        .list-disc {
-            list-style-type: disc;
-        }
-        
-        .pl-5 {
-            padding-left: 1.25rem;
-        }
-        
-        .mt-2 {
-            margin-top: 0.5rem;
-        }
-        
-        .mobile-menu {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: white;
-            z-index: 100;
-            padding: 1rem;
-            transform: translateX(-100%);
-            transition: transform 0.3s ease;
-        }
-        
-        .mobile-menu.active {
-            transform: translateX(0);
-        }
-        
-        .mobile-menu-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--gray-200);
-        }
-        
-        .mobile-menu-links {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-        
-        .mobile-menu-link {
-            padding: 0.75rem 0;
-            font-size: 1.125rem;
-            color: var(--gray-700);
-            text-decoration: none;
-            border-bottom: 1px solid var(--gray-100);
-        }
-        
-        .mobile-menu-link.active {
-            color: var(--primary);
-        }
-        
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .modal-content {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            max-width: 500px;
-            width: 90%;
-            animation: modalAppear 0.3s ease-out;
-        }
-        @keyframes modalAppear {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .close-modal {
-            position: absolute;
-            top: 16px;
-            right: 16px;
-            font-size: 24px;
-            cursor: pointer;
-            color: #6b7280;
-            transition: color 0.2s;
-        }
-        .close-modal:hover {
-            color: #374151;
-        }
-        
-        .success-modal-content {
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            max-width: 450px;
-            width: 90%;
-            padding: 40px 30px;
-            text-align: center;
-            animation: modalAppear 0.4s ease-out;
-        }
-        .success-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 20px;
-            background-color: #6B8E23;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: pulse 1.5s infinite;
-        }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-        .success-icon i {
-            font-size: 40px;
-            color: white;
-        }
-        .success-title {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: #2d3748;
-        }
-        .success-text {
-            font-size: 18px;
-            color: #4a5568;
-            margin-bottom: 25px;
-            line-height: 1.5;
-        }
-        .success-btn {
-            background: #6B8E23;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            padding: 12px 30px;
-            font-size: 18px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-        .success-btn:hover {
-            background: #5a7a1d;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        
-        .contact-icon i {
-            vertical-align: middle;
-            line-height: 1;
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: var(--gray-700);
-        }
-        
-        .form-input {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid var(--gray-300);
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-        
-        .form-input:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(255, 165, 0, 0.2);
-        }
-        
-        .form-textarea {
-            min-height: 100px;
-            resize: vertical;
-        }
-        
-        .submit-btn {
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            padding: 0.75rem 1.5rem;
-            font-size: 1rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            width: 100%;
-        }
-        
-        .submit-btn:hover {
-            background-color: #e69500;
-        }
-        
-        .modal-header {
-            background: linear-gradient(to right, #FFA500, #8B4513);
-            padding: 1.5rem;
-            border-radius: 12px 12px 0 0;
-            color: white;
-        }
-        
-        .modal-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            text-align: center;
-        }
-        
-        /* Адаптация для мобильных устройств */
-        @media (max-width: 767px) {
-            .hero-title {
-                font-size: 1.8rem;
-            }
-            
-            .hero-text {
-                font-size: 1.1rem;
-            }
-            
-            .delivery-tab {
-                padding: 1rem;
-                font-size: 0.9rem;
-            }
-            
-            .benefit-title {
-                font-size: 1.1rem;
-            }
-            
-            .benefit-text {
-                font-size: 0.95rem;
-            }
-            
-            .mobile-menu-link {
-                padding: 0.75rem 0;
-                font-size: 1rem;
-            }
-            
-            .btn {
-                font-size: 1rem;
-                padding: 0.75rem 1.5rem;
-                white-space: normal;
-            }
-            
-            .feature-title {
-                font-size: 1rem;
-            }
-            
-            .feature-text {
-                font-size: 0.85rem;
-            }
-            
-            .reviews-container {
-                padding: 1.5rem;
-            }
-            
-            .reviews-title {
-                font-size: 1.3rem;
-                margin-bottom: 1rem;
-            }
-            
-            .review-text {
-                font-size: 0.9rem;
-            }
-            
-            .carousel-btn {
-                width: 36px;
-                height: 36px;
-                font-size: 1rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .hero-title {
-                font-size: 1.5rem;
-            }
-            
-            .hero-text {
-                font-size: 1rem;
-            }
-            
-            .section {
-                padding: 3rem 0;
-            }
-            
-            h2 {
-                font-size: 1.5rem;
-                margin-bottom: 2rem;
-            }
-            
-            .reviews-container {
-                padding: 1rem;
-            }
-        }
-        
         /* Новый SEO-блок */
         .seo-section {
             background-color: white;
@@ -1405,51 +983,36 @@
     <link rel="stylesheet" href="/assets/fonts/remixicon/remixicon.css" media="print" onload="this.media='all'">
 </head>
 <body>
-    <!-- Обновленная шапка в стиле главной страницы -->
-    <header>
-        <div class="container header-inner">
-            <a href="https://altaymed.shop/" class="logo">Алтайский мёд</a>
+    <!-- ШАПКА ИЗ INDEX.HTML -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="nav-container">
+            <a href="https://altaymed.shop/" class="header-logo">Алтайский мёд</a>
             
-            <nav class="nav-links">
+            <div class="nav-links">
                 <a href="https://altaymed.shop/" class="nav-link">Главная</a>
                 <a href="https://altaymed.shop/#products" class="nav-link">Каталог</a>
                 <a href="https://altaymed.shop/delivery.html" class="nav-link active">Доставка</a>
-                <a href="https://altaymed.shop/" class="nav-link">О нас</a>
-                <a href="https://altaymed.shop/" class="nav-link">Контакты</a>
-                <a href="#order" class="nav-btn">Заказать</a>
-            </nav>
-            
-            <div class="header-actions">
-                <a href="tel:+79209400222" class="phone-link">
-                    <div class="icon-btn">
-                        <i class="ri-phone-line ri-lg"></i>
-                    </div>
-                    <span>+7 (920) 940-02-22</span>
-                </a>
-                <button class="icon-btn md:hidden" id="mobile-menu-toggle" aria-label="Открыть меню">
-                    <i class="ri-menu-line ri-lg"></i>
-                </button>
+                <a href="https://altaymed.shop/#about" class="nav-link">О нас</a>
+                <a href="https://altaymed.shop/#footer-contacts" class="nav-link">Контакты</a>
+                <a href="https://altaymed.shop/#order" class="nav-btn">Заказать</a>
             </div>
+            
+            <button class="mobile-menu-btn" id="mobile-menu-toggle">
+                <i class="ri-menu-line ri-lg"></i>
+            </button>
         </div>
         
-        <div class="mobile-menu" id="mobile-menu">
-            <div class="mobile-menu-header">
-                <a href="https://altaymed.shop/" class="logo">Алтайский мёд</a>
-                <button id="close-mobile-menu" aria-label="Закрыть меню">
-                    <i class="ri-close-line ri-lg"></i>
-                </button>
-            </div>
-            <div class="mobile-menu-links">
-                <a href="https://altaymed.shop/" class="mobile-menu-link">Главная</a>
-                <a href="https://altaymed.shop/#products" class="mobile-menu-link">Каталог</a>
-                <a href="https://altaymed.shop/delivery.html" class="mobile-menu-link active">Доставка</a>
-                <a href="https://altaymed.shop/" class="mobile-menu-link">О нас</a>
-                <a href="https://altaymed.shop/" class="mobile-menu-link">Контакты</a>
-                <a href="tel:+79209400222" class="mobile-menu-link">+7 (920) 940-02-22</a>
-                <a href="#order" class="mobile-menu-link">Заказать</a>
+        <div class="hidden bg-white shadow-md px-4 py-3" id="mobile-menu">
+            <div class="mobile-nav-links">
+                <a href="https://altaymed.shop/" class="mobile-nav-link">Главная</a>
+                <a href="https://altaymed.shop/#products" class="mobile-nav-link">Каталог</a>
+                <a href="https://altaymed.shop/delivery.html" class="mobile-nav-link active">Доставка</a>
+                <a href="https://altaymed.shop/#about" class="mobile-nav-link">О нас</a>
+                <a href="https://altaymed.shop/#footer-contacts" class="mobile-nav-link">Контакты</a>
+                <a href="https://altaymed.shop/#order" class="mobile-nav-link nav-btn">Заказать</a>
             </div>
         </div>
-    </header>
+    </nav>
 
     <!-- Исправленная герой-секция -->
     <section class="hero-section">
@@ -2155,101 +1718,152 @@
         </div>
     </section>
 
-    <!-- Обновленный футер в стиле главной страницы -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
+    <!-- ФУТЕР ИЗ INDEX.HTML -->
+    <footer class="py-10 md:py-12 w-full bg-[#8B4513]">
+        <div id="footer-contacts" class="container mx-auto px-4 md:px-6 w-full">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 w-full">
                 <div class="footer-column">
-                    <div class="footer-logo">Алтайский мёд</div>
-                    <p class="footer-text">Натуральные продукты пчеловодства с Алтайских гор.</p>
-                    <div class="footer-social">
-                        <a href="https://vk.com/honeybuckwheat" class="social-link">
-                            <i class="ri-vk-line"></i>
-                        </a>
-                        <a href="https://t.me/HONEYBUCKWHEAT" class="social-link">
-                            <i class="ri-telegram-line"></i>
-                        </a>
-                        <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing" class="social-link">
-                            <i class="ri-shopping-bag-line"></i>
-                        </a>
+                    <div class="logo-wrapper">
+                        <a href="/" class="text-2xl md:text-3xl font-pacifico mb-3 md:mb-4 block">Алтайский мёд</a>
+                    </div>
+                    <div class="description-wrapper">
+                        <p class="text-xs">Натуральные продукты пчеловодства с Алтайских гор.</p>
+                        <p class="text-xs">© 2025 Алтайский мёд. Все права защищены.</p>
                     </div>
                 </div>
                 
                 <div class="footer-column">
-                    <h3 class="footer-title">Каталог</h3>
-                    <div class="footer-links">
-                        <a href="https://altaymed.shop/#products" class="footer-link">Разнотравье</a>
-                        <a href="https://altaymed.shop/#products" class="footer-link">Таёжный мёд</a>
-                        <a href="https://altaymed.shop/#products" class="footer-link">Гречишный мёд</a>
-                    </div>
+                    <h4 class="text-base md:text-lg font-bold">Каталог</h4>
+                    <ul>
+                        <li>
+                            <a href="#product-1" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+                                <span class="bullet mr-2"></span>
+                                <span class="text-sm md:text-base">Разнотравье</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#product-2" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+                                <span class="bullet mr-2"></span>
+                                <span class="text-sm md:text-base">Таёжный мёд</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#product-3" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+                                <span class="bullet mr-2"></span>
+                                <span class="text-sm md:text-base">Гречишный мёд</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
                 
                 <div class="footer-column">
-                    <h3 class="footer-title">Материалы</h3>
-                    <div class="footer-links">
-                        <a href="https://altaymed.shop/blog" class="footer-link">Блог</a>
-                        <a href="https://altaymed.shop/faq" class="footer-link">FAQ</a>
-                        <a href="https://altaymed.shop/legal.html" class="footer-link">Правовая информация</a>
-                    </div>
+                    <h4 class="text-base md:text-lg font-bold">Материалы</h4>
+                    <ul>
+                        <li>
+                            <a href="/blog/" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+                                <span class="bullet mr-2"></span>
+                                <span class="text-sm md:text-base">Блог</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/faq/" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+                                <span class="bullet mr-2"></span>
+                                <span class="text-sm md:text-base">FAQ</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/legal.html" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+                                <span class="bullet mr-2"></span>
+                                <span class="text-sm md:text-base">Правовая информация</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
                 
                 <div class="footer-column">
-                    <h3 class="footer-title">Информация</h3>
-                    <div class="footer-links">
-                        <a href="#benefits" class="footer-link">Преимущества</a>
-                        <a href="#about" class="footer-link">О нас</a>
-                        <a href="#footer-contacts" class="footer-link">Контакты</a>
-                        <a href="https://altaymed.shop/delivery.html" class="footer-link">Доставка и оплата</a>
-                    </div>
+                    <h4 class="text-base md:text-lg font-bold">Информация</h4>
+                    <ul>
+                        <li>
+                            <a href="#benefits" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+                                <span class="bullet mr-2"></span>
+                                <span class="text-sm md:text-base">Преимущества</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#about" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+                                <span class="bullet mr-2"></span>
+                                <span class="text-sm md:text-base">О нас</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#footer-contacts" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+                                <span class="bullet mr-2"></span>
+                                <span class="text-sm md:text-base">Контакты</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/delivery.html" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+                                <span class="bullet mr-2"></span>
+                                <span class="text-sm md:text-base">Доставка и оплата</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
                 
                 <div class="footer-column">
-                    <h3 class="footer-title">Контакты</h3>
-                    <div class="footer-contacts">
-                        <div class="contact-item">
-                            <i class="ri-map-pin-line ri-lg contact-icon"></i>
-                            <div class="contact-info">
-                                <span class="contact-value">г. Владимир, ул. Большая Московская, 20</span>
-                            </div>
+                    <h4 class="text-base md:text-lg font-bold">Контакты</h4>
+                    <ul>
+                        <li>
+                            <a class="footer-link-item">
+                                <div class="contact-icon">
+                                    <i class="ri-map-pin-line text-white" aria-hidden="true"></i>
+                                </div>
+                                <span class="contact-text">Владимирская обл., г.Ковров</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="tel:+79209400222" class="footer-link-item">
+                                <div class="contact-icon">
+                                    <i class="ri-phone-line text-white" aria-hidden="true"></i>
+                                </div>
+                                <span class="contact-text">+7 (920) 940-02-22</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:altaymed.shop@yandex.ru" class="footer-link-item">
+                                <div class="contact-icon">
+                                    <i class="ri-mail-line text-white" aria-hidden="true"></i>
+                                </div>
+                                <span class="contact-text">altaymed.shop@yandex.ru</span>
+                            </a>
+                        </li>
+                    </ul>
+                    
+                    <div class="mt-4 md:mt-6">
+                        <p class="text-base md:text-lg font-bold mb-2 md:mb-3">Следите за нами</p>
+                        <div class="flex space-x-2 md:space-x-3">
+                            <a href="https://vk.com/honeybuckwheat" target="_blank" rel="noopener" class="social-icon-bw vk">
+                                <i class="ri-vk-line" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" rel="noopener" class="social-icon-bw telegram">
+                                <i class="ri-telegram-line" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing" 
+                               target="_blank" rel="noopener" class="social-icon-bw">
+                                <i class="ri-shopping-bag-line" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://yandex.ru/maps/" target="_blank" rel="noopener" class="social-icon-bw yandex">
+                                <i class="ri-map-2-line" aria-hidden="true"></i>
+                            </a>
                         </div>
-                        <div class="contact-item">
-                            <i class="ri-phone-line ri-lg contact-icon"></i>
-                            <div class="contact-info">
-                                <span class="contact-value">+7 (920) 940-02-22</span>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="ri-mail-line ri-lg contact-icon"></i>
-                            <div class="contact-info">
-                                <span class="contact-value">altaymed.shop@yandex.ru</span>
-                            </div>
-                        </div>
                     </div>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p class="copyright">
-                    <a href="https://altaymed.shop/legal.html" style="color: inherit;">
-                        © 2025 Алтайский мёд. Все права защищены.
-                    </a>
-                </p>
-                <div class="payment-methods">
-                    <i class="ri-visa-line payment-icon"></i>
-                    <i class="ri-mastercard-line payment-icon"></i>
-                    <i class="ri-paypal-line payment-icon"></i>
-                    <i class="ri-alipay-line payment-icon"></i>
-                </div>
-                <div class="security-note">
-                    <i class="ri-shield-check-line"></i>
-                    <span>Безопасное соединение (SSL)</span>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Остальной код (модальные окна, скрипты) -->
-    <div id="order-modal" class="modal">
+    <!-- Модальные окна -->
+    <div id="buy-modal" class="modal">
         <!-- ... -->
     </div>
 
@@ -2424,141 +2038,27 @@
             
             // Мобильное меню
             const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-            const closeMobileMenu = document.getElementById('close-mobile-menu');
             const mobileMenu = document.getElementById('mobile-menu');
             
-            if (mobileMenuToggle && closeMobileMenu && mobileMenu) {
+            if (mobileMenuToggle && mobileMenu) {
                 mobileMenuToggle.addEventListener('click', () => {
-                    mobileMenu.classList.add('active');
-                });
-                
-                closeMobileMenu.addEventListener('click', () => {
-                    mobileMenu.classList.remove('active');
+                    mobileMenu.classList.toggle('hidden');
                 });
             }
             
-            // Модальные окна
-            const orderModal = document.getElementById('order-modal');
-            const successModal = document.getElementById('success-modal');
-            const closeModal = document.querySelector('.close-modal');
-            const closeSuccessModal = document.getElementById('close-success-modal');
-            
-            if (closeModal) {
-                closeModal.addEventListener('click', () => {
-                    if (orderModal) orderModal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                });
-            }
-            
-            window.addEventListener('click', (event) => {
-                if (orderModal && event.target === orderModal) {
-                    orderModal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                }
-                if (successModal && event.target === successModal) {
-                    successModal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                }
-            });
-            
-            if (closeSuccessModal) {
-                closeSuccessModal.addEventListener('click', () => {
-                    if (successModal) successModal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                });
-            }
-            
-            const orderForm = document.getElementById('order-form');
-            if (orderForm) {
-                orderForm.addEventListener('submit', (e) => {
+            // Плавная прокрутка
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
                     e.preventDefault();
-                    if (orderModal) orderModal.style.display = 'none';
-                    if (successModal) successModal.style.display = 'flex';
-                    orderForm.reset();
-                });
-            }
-            
-            // Карусель отзывов (с защитой от отсутствия элементов)
-            const reviewList = document.querySelector('.review-list');
-            const reviewItems = document.querySelectorAll('.review-item');
-            
-            if (reviewList && reviewItems.length > 0) {
-                const dots = document.querySelectorAll('.dot');
-                const prevBtn = document.querySelector('.carousel-prev');
-                const nextBtn = document.querySelector('.carousel-next');
-                const carouselContainer = document.querySelector('.reviews-carousel');
-                
-                let currentIndex = 0;
-                let autoSlideInterval;
-                
-                function updateCarousel() {
-                    const offset = -currentIndex * 100;
-                    reviewList.style.transform = `translateX(${offset}%)`;
-                    
-                    dots.forEach((dot, index) => {
-                        dot.classList.toggle('active', index === currentIndex);
-                    });
-                }
-                
-                function nextSlide() {
-                    currentIndex = (currentIndex + 1) % reviewItems.length;
-                    updateCarousel();
-                }
-                
-                function prevSlide() {
-                    currentIndex = (currentIndex - 1 + reviewItems.length) % reviewItems.length;
-                    updateCarousel();
-                }
-                
-                function goToSlide(index) {
-                    currentIndex = index;
-                    updateCarousel();
-                }
-                
-                function startAutoSlide() {
-                    autoSlideInterval = setInterval(nextSlide, 5000);
-                }
-                
-                function stopAutoSlide() {
-                    clearInterval(autoSlideInterval);
-                }
-                
-                // Инициализация карусели
-                updateCarousel();
-                startAutoSlide();
-                
-                // Обработчики событий (с проверкой существования элементов)
-                if (nextBtn) {
-                    nextBtn.addEventListener('click', () => {
-                        stopAutoSlide();
-                        nextSlide();
-                        startAutoSlide();
-                    });
-                }
-                
-                if (prevBtn) {
-                    prevBtn.addEventListener('click', () => {
-                        stopAutoSlide();
-                        prevSlide();
-                        startAutoSlide();
-                    });
-                }
-                
-                if (dots.length) {
-                    dots.forEach((dot, index) => {
-                        dot.addEventListener('click', () => {
-                            stopAutoSlide();
-                            goToSlide(index);
-                            startAutoSlide();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
                         });
-                    });
-                }
-                
-                if (carouselContainer) {
-                    carouselContainer.addEventListener('mouseenter', stopAutoSlide);
-                    carouselContainer.addEventListener('mouseleave', startAutoSlide);
-                }
-            }
+                    }
+                });
+            });
             
             // Яндекс.Метрика
             window.addEventListener('load', function() {

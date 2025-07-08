@@ -4,17 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Мёд в здоровом питании | Алтайский мёд - Полезные советы</title>
-<meta name="description" content="Узнайте, как правильно использовать мёд в ежедневном рационе. Рецепты и советы по включению натурального мёда в здоровое питание.">
-  <link rel="canonical" href="https://altaymed.shop/blog/med-v-zdorovom-pitanii.html">
-
-<!-- Мета-теги верификации -->
-<meta name="yandex-verification" content="9c5350476939e370" />
-<meta name="google-site-verification" content="JsJoSVyM5o4vxTSdN88FHLrAwPaoQ0nEjpJkiub50AE">
+<meta name="description" content="Узнайте, как правильно использовать мёд в ежедневном рационе. Польза мёда для здоровья, рецепты и советы по включению натурального мёда в здоровое питание.">
+<link rel="canonical" href="https://altaymed.shop/blog/med-v-zdorovom-pitanii.html">
 
 <!-- Open Graph -->
 <meta property="og:title" content="Мёд в здоровом питании | Алтайский мёд">
-<meta property="og:description" content="Как правильно использовать мёд в ежедневном рационе">
-<meta property="og:image" content="https://altaymed.shop/images/og-preview.jpg">
+<meta property="og:description" content="Как правильно использовать мёд в ежедневном рационе для здоровья">
+<meta property="og:image" content="https://altaymed.shop/images/og-preview-healthy.jpg">
 <meta property="og:url" content="https://altaymed.shop/blog/med-v-zdorovom-pitanii.html">
 <meta property="og:type" content="article">
 
@@ -22,7 +18,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Мёд в здоровом питании">
 <meta name="twitter:description" content="Рецепты и советы по включению натурального мёда в здоровое питание">
-<meta name="twitter:image" content="https://altaymed.shop/images/twitter-preview.jpg">
+<meta name="twitter:image" content="https://altaymed.shop/images/twitter-preview-healthy.jpg">
 
 <!-- Favicon -->
 <link rel="icon" href="/images/favicon.ico" sizes="any">
@@ -33,9 +29,46 @@
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#9f5524">
 
-<!-- Оптимизированные шрифты -->
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Локальные шрифты -->
+<style>
+@font-face {
+  font-family: 'Pacifico';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/Pacifico-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/OpenSans-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/fonts/OpenSans-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url('/fonts/OpenSans-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/OpenSans-Bold.woff2') format('woff2');
+}
+</style>
+
+<!-- Локальные иконки -->
+<link rel="stylesheet" href="/assets/fonts/remixicon/remixicon.css">
 
 <!-- Подключение Tailwind CSS -->
 <link rel="stylesheet" href="/css/style.min.css">
@@ -66,21 +99,20 @@ tailwind.config = {
   }
 }
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
 <style>
-:where([class^="ri-"])::before { content: "\f3c2"; }
+/* Базовые стили */
 body {
   font-family: 'Open Sans', sans-serif;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  font-size: 16px;
 }
 .texture-bg {
   background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZmZmZmZmIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNmNWRlYjMiIG9wYWNpdHk9IjAuMSI+PC9yZWN0Pgo8L3N2Zz4=');
 }
 
+/* Навигация */
 .nav-link {
   color: #1a202c !important;
   transition: color 0.3s;
@@ -94,8 +126,21 @@ body {
 }
 .header-logo {
   color: #6B8E23 !important;
+  font-family: 'Pacifico', cursive;
+}
+.active-nav-link-alt {
+  border: 2px solid #6B8E23 !important;
+  border-radius: 8px !important;
+  padding: 4px 12px !important;
+  color: #6B8E23 !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease;
+}
+.active-nav-link-alt:hover {
+  background: rgba(107, 142, 35, 0.1) !important;
 }
 
+/* Футер */
 footer {
   width: 100% !important;
   box-sizing: border-box !important;
@@ -104,8 +149,6 @@ footer {
   background-color: #8B4513;
   z-index: 1;
 }
-
-/* ИСПРАВЛЕННЫЙ УЗОР ВАФЕЛЬНОЙ СЕТКИ */
 footer::before {
   content: "";
   position: absolute;
@@ -124,7 +167,6 @@ footer::before {
   margin-left: -220%;
   margin-top: -220%;
 }
-
 footer .container {
   width: 100% !important;
   max-width: 100% !important;
@@ -133,19 +175,16 @@ footer .container {
   position: relative;
   z-index: 1;
 }
-
 footer .grid {
   width: 100% !important;
   display: grid !important;
   grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
 }
-
 @media (min-width: 768px) {
   footer .grid {
     grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
   }
 }
-
 .footer-column {
   display: flex !important;
   flex-direction: column !important;
@@ -155,18 +194,15 @@ footer .grid {
   margin: 0 !important;
   box-sizing: border-box !important;
 }
-
-/* Уменьшенные отступы для заголовков на 20% */
 .footer-column h4 {
   text-align: left !important;
   width: 100% !important;
   padding: 0 !important;
-  margin: 0 0 0.64rem 0 !important; /* Уменьшено на 20% */
+  margin: 0 0 0.64rem 0 !important;
   font-weight: bold !important;
   font-size: 1.125rem !important;
   line-height: 1.75rem !important;
 }
-
 .footer-column ul {
   display: flex !important;
   flex-direction: column !important;
@@ -176,7 +212,6 @@ footer .grid {
   margin: 0 !important;
   list-style: none !important;
 }
-
 .footer-column li {
   width: 100% !important;
   text-align: left !important;
@@ -185,14 +220,12 @@ footer .grid {
   margin: 0 !important;
   box-sizing: border-box !important;
 }
-
 .footer-column li a {
   display: flex !important;
   align-items: center !important;
   width: 100% !important;
   box-sizing: border-box !important;
 }
-
 .footer-column .bullet {
   display: inline-block !important;
   width: 6px !important;
@@ -202,7 +235,6 @@ footer .grid {
   margin-right: 10px !important;
   flex-shrink: 0 !important;
 }
-
 footer, 
 footer *,
 footer a, 
@@ -216,12 +248,24 @@ footer li {
 footer a:hover {
   color: #d1d5db !important;
 }
-
-.footer-column li a {
+.footer-link-item {
   display: flex;
   align-items: center;
+  padding-top: 0.21rem !important;
+  padding-bottom: 0.21rem !important;
 }
-
+.contact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  flex-shrink: 0;
+  width: 24px;
+}
+.contact-text {
+  flex-grow: 1;
+  line-height: 1.5;
+}
 .social-icon-bw {
   display: flex;
   align-items: center;
@@ -235,13 +279,11 @@ footer a:hover {
   color: #4b5563;
   filter: grayscale(100%);
 }
-
 .social-icon-bw:hover {
   filter: grayscale(0%);
   border-color: #6B8E23;
   color: #6B8E23;
 }
-
 .avito-icon-bw, .yandex-maps-icon {
   display: flex;
   align-items: center;
@@ -251,60 +293,50 @@ footer a:hover {
   position: relative;
   filter: grayscale(100%);
 }
-
 .avito-icon-bw svg, .yandex-maps-icon svg {
   width: 100%;
   height: 100%;
 }
-
 .social-icon-bw:hover .avito-icon-bw,
 .social-icon-bw:hover .yandex-maps-icon {
   filter: grayscale(0%);
 }
 
-/* Дополнительно уменьшенные отступы между пунктами на 25% */
-.footer-link-item {
-  display: flex;
-  align-items: center;
-  padding-top: 0.21rem !important; /* Уменьшено на 25% */
-  padding-bottom: 0.21rem !important; /* Уменьшено на 25% */
+/* Элементы статьи */
+.honey-benefits {
+  background-color: #f9f5f0;
+  border-left: 4px solid #6B8E23;
+  padding: 20px;
+  border-radius: 0 8px 8px 0;
+  margin: 25px 0;
+}
+.honey-tip {
+  background-color: #fff9e6;
+  border: 1px solid #FFA500;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+.honey-tip h3 {
+  color: #8B4513;
+  margin-top: 0;
+}
+.conclusion-box {
+  background-color: #fff;
+  color: #333;
+  padding: 25px;
+  border-radius: 12px;
+  margin: 30px 0;
+  text-align: center;
+  border: 1px solid #e2e8f0;
+}
+.conclusion-box h2 {
+  color: #6B8E23;
+  margin-top: 0;
+  margin-bottom: 15px;
 }
 
-.contact-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 12px;
-  flex-shrink: 0;
-  width: 24px;
-}
-
-.contact-text {
-  flex-grow: 1;
-  line-height: 1.5;
-}
-
-.blog-post-card {
-  transition: all 0.3s ease;
-}
-.blog-post-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-}
-
-.active-nav-link-alt {
-  border: 2px solid #6B8E23 !important;
-  border-radius: 8px !important;
-  padding: 4px 12px !important;
-  color: #6B8E23 !important;
-  font-weight: 600 !important;
-  transition: all 0.3s ease;
-}
-
-.active-nav-link-alt:hover {
-  background: rgba(107, 142, 35, 0.1) !important;
-}
-
+/* Плавающая кнопка */
 .floating-back-button {
   position: fixed;
   bottom: 2rem;
@@ -322,13 +354,11 @@ footer a:hover {
   opacity: 0;
   transform: scale(0.95);
 }
-
 .floating-back-button:hover {
   background: #5a7a1c;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   transform: scale(1.05);
 }
-
 .back-arrow {
   width: 24px;
   height: 24px;
@@ -337,44 +367,193 @@ footer a:hover {
   background-repeat: no-repeat;
   transition: transform 0.3s ease;
 }
-
 .floating-back-button:hover .back-arrow {
   transform: translateX(-4px);
 }
 
-/* БЕЛЫЙ ЦВЕТ ТЕКСТА В ПЕРВОМ БЛОКЕ ФУТЕРА */
-#footer-contacts .footer-column:first-child,
-#footer-contacts .footer-column:first-child * {
-  color: white !important;
+/* Улучшения доступности */
+[aria-hidden="true"] {
+  pointer-events: none;
 }
 
-/* УТОЧНЕННЫЕ СТИЛИ ДЛЯ ПЕРВОГО БЛОКА ФУТЕРА */
-.footer-column:first-child {
-  justify-content: flex-start;
+/* Стили для аккордеона FAQ */
+.faq-item {
+  border-bottom: 1px solid #e2d8c9;
+  padding: 15px 0;
 }
-.footer-column:first-child .logo-wrapper {
-  margin-bottom: 0.4rem; /* Увеличено на 20% */
+.faq-item:last-child {
+  border-bottom: none;
 }
-.footer-column:first-child .description-wrapper {
+.faq-question {
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  transition: color 0.3s;
 }
-.footer-column:first-child .description-wrapper p {
-  margin: 0;
-  font-size: 0.7rem; /* Уменьшено на 20% (относительно 0.875rem) */
-  line-height: 1.25;
+.faq-question:hover {
+  color: #6B8E23;
 }
-.footer-column:first-child .description-wrapper p:first-child {
-  margin-bottom: 0.3rem; /* Увеличено на 20% */
+.faq-question .icon {
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  font-size: 1.2rem;
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  color: #4a5568;
+  line-height: 1.6;
+}
+.faq-answer.open {
+  max-height: 500px;
+  padding-bottom: 15px;
+}
+
+/* Дополнительные стили для FAQ */
+.faq-container {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  margin: 30px 0;
+}
+.faq-item {
+  padding: 0;
+}
+.faq-question {
+  padding: 16px 20px;
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+.faq-answer {
+  padding: 0 20px;
+}
+.faq-answer.open {
+  padding: 0 20px 20px;
+}
+
+/* Стиль для рецепта */
+.recipe-block {
+  margin: 30px 0;
+}
+.recipe-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #8B4513;
+  margin-bottom: 15px;
+}
+.recipe-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+.recipe-image {
+  margin-top: 15px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Новые стили */
+.benefit-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+.benefit-card:hover {
+  transform: translateY(-5px);
+}
+.benefit-icon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f7e9;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+.benefit-icon i {
+  font-size: 24px;
+  color: #6B8E23;
+}
+.recipe-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+@media (min-width: 768px) {
+  .recipe-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.recipe-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+.recipe-card:hover {
+  transform: translateY(-5px);
+}
+.recipe-card h3 {
+  color: #8B4513;
+  font-size: 1.25rem;
+  margin-top: 0;
 }
 </style>
+
+<!-- Структурированные данные Schema.org -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://altaymed.shop/blog/med-v-zdorovom-pitanii.html"
+  },
+  "headline": "Мёд в здоровом питании: как, сколько и почему он действительно полезен",
+  "description": "Польза мёда для здоровья, рецепты и советы по включению натурального мёда в здоровое питание",
+  "image": "https://altaymed.shop/images/social-preview-healthy.jpg",
+  "author": {
+    "@type": "Organization",
+    "name": "Алтайский мёд",
+    "url": "https://altaymed.shop"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Алтайский мёд",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://altaymed.shop/images/logo.png"
+    }
+  },
+  "datePublished": "2025-07-08",
+  "dateModified": "2025-07-08"
+}
+</script>
 </head>
 <body>
 <!-- Навигация -->
 <nav class="bg-white shadow-sm sticky top-0 z-50">
   <div class="container mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
-    <a href="/" class="text-2xl md:text-3xl font-['Pacifico'] header-logo">Алтайский мёд</a>
+    <a href="/" class="text-2xl md:text-3xl header-logo">Алтайский мёд</a>
     
     <div class="hidden md:flex items-center space-x-6 md:space-x-8">
       <a href="/#benefits" class="nav-link">Преимущества</a>
@@ -383,11 +562,11 @@ footer a:hover {
       <a href="/#footer-contacts" class="nav-link">Контакты</a>
       <!-- Активная ссылка на Блог -->
       <a href="/blog/" class="active-nav-link-alt">Блог</a>
-      <a href="/#order" class="nav-btn px-4 md:px-6 py-1 md:py-2 !rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">Заказать</a>
+      <a href="/#order" class="nav-btn px-4 md:px-6 py-1 md:py-2 rounded-lg hover:bg-opacity-90 transition-all whitespace-nowrap">Заказать</a>
     </div>
     
-    <button class="md:hidden w-10 h-10 flex items-center justify-center" id="mobile-menu-button">
-      <i class="ri-menu-line text-gray-900 ri-xl"></i>
+    <button class="md:hidden w-10 h-10 flex items-center justify-center" id="mobile-menu-button" aria-label="Открыть меню">
+      <i class="ri-menu-line text-gray-900 ri-xl" aria-hidden="true"></i>
     </button>
   </div>
   
@@ -400,16 +579,17 @@ footer a:hover {
       <a href="/#footer-contacts" class="nav-link py-2">Контакты</a>
       <!-- Активная ссылка на Блог (мобильная версия) -->
       <a href="/blog/" class="active-nav-link-alt py-2 text-center">Блог</a>
-      <a href="/#order" class="nav-btn py-2 text-center !rounded-button hover:bg-opacity-90 transition-all">Заказать</a>
+      <a href="/#order" class="nav-btn py-2 text-center rounded-lg hover:bg-opacity-90 transition-all">Заказать</a>
     </div>
   </div>
 </nav>
 
 <main>
 <!-- Шапка статьи -->
-<section class="min-h-[50vh] flex items-center" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/image-16.jpg'); background-size: cover; background-position: center;">
+<section class="min-h-[50vh] flex items-center" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/healthy-honey-header.jpg'); background-size: cover; background-position: center;">
   <div class="container mx-auto px-4 text-center text-white">
     <h1 class="text-3xl md:text-4xl lg:text-5xl font-['Pacifico'] mb-4">Мёд в здоровом питании</h1>
+    <p class="text-xl md:text-2xl max-w-2xl mx-auto">Как, сколько и почему он действительно полезен</p>
   </div>
 </section>
 
@@ -417,62 +597,305 @@ footer a:hover {
 <section class="py-16 bg-[#F5DEB3] bg-opacity-20 texture-bg">
   <div class="container mx-auto px-4 md:px-6">
     <div class="max-w-3xl mx-auto bg-white p-6 md:p-8 rounded-lg shadow-md">
-      <p class="mb-4 text-gray-700">Натуральный мёд — это не только вкусное лакомство, но и ценный продукт для здорового питания. В этой статье мы расскажем, как правильно включить алтайский мёд в ваш ежедневный рацион.</p>
+      <p class="mb-4 text-gray-700">Когда речь заходит о здоровом питании, мёд — один из первых натуральных продуктов, который вспоминают врачи, диетологи и просто заботливые родители. Мёд — это не просто замена сахару, а настоящий источник здоровья.</p>
       
-      <img src="/images/placeholder.jpg" 
-           data-src="/images/image-17.jpg" 
-           alt="Мёд в здоровом питании - полезные рецепты" 
-           width="800"
-           height="533"
-           class="w-full mb-6 rounded lazyload"
+      <img src="/images/healthy-honey-1.jpg" 
+           alt="Натуральный мёд как часть здорового питания - полезные свойства" 
+           class="w-full mb-6 rounded-lg"
            loading="lazy"
            decoding="async">
       
-      <h2 class="text-2xl font-bold text-secondary mb-4">Польза мёда для организма</h2>
+      <h2 class="text-2xl font-bold text-secondary mb-4">Почему мёд ценят в ЗОЖ и ПП</h2>
+      
+      <p class="mb-4 text-gray-700">Мёд активно используют в рационе взрослых, детей, спортсменов и всех, кто выбирает натуральные продукты, потому что он:</p>
       
       <ul class="mb-6">
         <li class="mb-2 flex items-start">
           <i class="ri-check-line text-primary mt-1 mr-2"></i>
-          <span>Источник природных антиоксидантов</span>
+          <span>Содержит натуральные ферменты, витамины группы B, C, E</span>
         </li>
         <li class="mb-2 flex items-start">
           <i class="ri-check-line text-primary mt-1 mr-2"></i>
-          <span>Укрепляет иммунную систему</span>
+          <span>Богат минералами (калий, магний, железо, цинк)</span>
         </li>
-        <li class="mb-2 flex items-start">
+        <li class="flex items-start">
           <i class="ri-check-line text-primary mt-1 mr-2"></i>
-          <span>Улучшает пищеварение</span>
-        </li>
-        <li class="mb-2 flex items-start">
-          <i class="ri-check-line text-primary mt-1 mr-2"></i>
-          <span>Натуральный источник энергии</span>
+          <span>Содержит антиоксиданты и натуральные органические кислоты</span>
         </li>
       </ul>
       
-      <h2 class="text-2xl font-bold text-secondary mb-4">Как использовать мёд в ежедневном рационе</h2>
+      <h2 class="text-2xl font-bold text-secondary mb-4">Мёд — лучше, чем сахар</h2>
       
-      <p class="mb-4 text-gray-700">Вот несколько простых способов добавить мёд в ваше питание:</p>
+      <p class="mb-4 text-gray-700">Почему диетологи советуют заменить сахар на мёд?</p>
       
-      <div class="mb-6">
-        <h3 class="text-xl font-bold text-gray-800 mb-3">1. Заменитель сахара</h3>
-        <p class="mb-4 text-gray-700">Используйте мёд вместо сахара в чае, кофе, кашах и выпечке. Начните с 1-2 чайных ложек в день.</p>
+      <div class="honey-benefits">
+        <div class="flex items-start mb-3">
+          <i class="ri-check-line text-primary mt-1 mr-2"></i>
+          <div>
+            В мёде присутствуют не только глюкоза и фруктоза, но и полезные вещества, которые поддерживают иммунитет и обмен веществ.
+          </div>
+        </div>
+        
+        <div class="flex items-start mb-3">
+          <i class="ri-check-line text-primary mt-1 mr-2"></i>
+          <div>
+            Мёд легче усваивается организмом, не вызывает резких скачков сахара в крови, если употреблять его в умеренных количествах.
+          </div>
+        </div>
+        
+        <div class="flex items-start mb-3">
+          <i class="ri-check-line text-primary mt-1 mr-2"></i>
+          <div>
+            Кроме сладости, он даёт организму энергию и ощущение сытости.
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="ri-check-line text-primary mt-1 mr-2"></i>
+          <div>
+            Мёд отлично подходит для правильного питания, особенно если хочется снизить количество рафинированного сахара в рационе, не жертвуя вкусом.
+          </div>
+        </div>
       </div>
       
-      <div class="mb-6">
-        <h3 class="text-xl font-bold text-gray-800 mb-3">2. Полезные завтраки</h3>
-        <p class="mb-4 text-gray-700">Добавляйте мёд в овсянку, гречневую кашу или творог. Отлично сочетается с орехами и фруктами.</p>
+      <h2 class="text-2xl font-bold text-secondary mb-4">Польза мёда для организма</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="ri-shield-check-line"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 mb-3">Укрепляет иммунитет</h3>
+          <p class="text-gray-700">Благодаря ферментам и антиоксидантам помогает противостоять простудам и вирусам.</p>
+        </div>
+        
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="ri-stomach-line"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 mb-3">Поддерживает пищеварение</h3>
+          <p class="text-gray-700">Стимулирует выработку желудочного сока, способствует мягкому очищению организма.</p>
+        </div>
+        
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="ri-flashlight-line"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 mb-3">Улучшает обмен веществ</h3>
+          <p class="text-gray-700">Ускоряет метаболизм, поддерживает работу печени и кишечника.</p>
+        </div>
+        
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="ri-user-heart-line"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 mb-3">Подходит для всех</h3>
+          <p class="text-gray-700">При условии отсутствия аллергии полезен детям, взрослым и спортсменам.</p>
+        </div>
       </div>
       
-      <div class="mb-6">
-        <h3 class="text-xl font-bold text-gray-800 mb-3">3. Здоровые перекусы</h3>
-        <p class="mb-4 text-gray-700">Приготовьте энергетические батончики с мёдом, овсянкой и сухофруктами или делайте смузи с добавлением ложки мёда.</p>
+      <h2 class="text-2xl font-bold text-secondary mb-4">Можно ли мёд на диете и ПП?</h2>
+      
+      <p class="mb-4 text-gray-700">Да! Мёд входит во многие схемы правильного питания (ПП) как натуральная альтернатива сахару.</p>
+      
+      <div class="honey-tip">
+        <h3 class="text-xl font-bold mb-3">Рекомендуемые дозы</h3>
+        <ul class="list-disc pl-6">
+          <li class="mb-2">Для взрослого — 1–2 чайные ложки в день, лучше всего в первой половине дня</li>
+          <li>Для детей — 0,5–1 чайная ложка (только с 2–3 лет, после консультации с врачом)</li>
+        </ul>
+      </div>
+      
+      <div class="honey-tip">
+        <h3 class="text-xl font-bold mb-3">Важное правило</h3>
+        <p>Не растворяйте мёд в кипятке — при температуре выше 40°C теряются полезные ферменты. Мёд лучше употреблять отдельно или добавлять в тёплые напитки, кашу, йогурт, творог.</p>
+      </div>
+      
+      <img src="/images/healthy-honey-2.jpg" 
+           alt="Мёд как замена сахару в правильном питании - полезные свойства" 
+           class="w-full mb-6 rounded-lg"
+           loading="lazy"
+           decoding="async">
+      
+      <h2 class="text-2xl font-bold text-secondary mb-4">Как мёд помогает худеть</h2>
+      
+      <ul class="mb-6">
+        <li class="mb-2 flex items-start">
+          <i class="ri-check-line text-primary mt-1 mr-2"></i>
+          <span>Снижает тягу к сладкому, помогает избавиться от привычки есть конфеты и выпечку</span>
+        </li>
+        <li class="mb-2 flex items-start">
+          <i class="ri-check-line text-primary mt-1 mr-2"></i>
+          <span>Ускоряет обмен веществ, поддерживает работу кишечника</span>
+        </li>
+        <li class="flex items-start">
+          <i class="ri-check-line text-primary mt-1 mr-2"></i>
+          <span>Добавляя мёд в ПП-рецепты (напитки, запеканки, десерты), вы получаете и вкус, и пользу</span>
+        </li>
+      </ul>
+      
+      <p class="mb-6 text-gray-700">Мёд отлично сочетается с лимоном, орехами, творогом, натуральным йогуртом.</p>
+      
+      <h2 class="text-2xl font-bold text-secondary mb-4">Мёд для детей, взрослых и спортсменов</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="ri-user-smile-line"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 mb-3">Для детей</h3>
+          <p class="text-gray-700">Помогает укрепить иммунитет, поддерживает рост и развитие, улучшает аппетит.</p>
+        </div>
+        
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="ri-user-line"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 mb-3">Для взрослых</h3>
+          <p class="text-gray-700">Источник энергии, профилактика простуд, поддержка нервной системы в периоды стресса.</p>
+        </div>
+        
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="ri-run-line"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 mb-3">Для спортсменов</h3>
+          <p class="text-gray-700">Натуральный "энергетик" для быстрого восстановления после тренировок.</p>
+        </div>
+      </div>
+      
+      <h2 class="text-2xl font-bold text-secondary mb-4">Как выбрать мёд для здорового питания</h2>
+      
+      <p class="mb-4 text-gray-700">Чтобы получить максимальную пользу от мёда, важно выбрать качественный натуральный продукт:</p>
+      
+      <ul class="mb-6">
+        <li class="mb-2 flex items-start">
+          <i class="ri-check-line text-primary mt-1 mr-2"></i>
+          <span>Ищите натуральный мёд с пасеки — без сахара, добавок и сиропа</span>
+        </li>
+        <li class="mb-2 flex items-start">
+          <i class="ri-check-line text-primary mt-1 mr-2"></i>
+          <span>Обращайте внимание на цвет и запах — качественный мёд пахнет цветами, тянется струйкой, не слишком жидкий</span>
+        </li>
+        <li class="flex items-start">
+          <i class="ri-check-line text-primary mt-1 mr-2"></i>
+          <span>Покупайте у проверенных поставщиков — так вы получите чистый продукт без риска для здоровья</span>
+        </li>
+      </ul>
+      
+      <p class="mb-6 text-gray-700">Подробнее о выборе качественного мёда вы можете прочитать в нашей статье <a href="/blog/kak-vybrat-nastoyashchiy-myod-letom-2025.html" class="text-primary font-semibold hover:underline">"Как выбрать настоящий мёд летом 2025"</a>.</p>
+      
+      <h2 class="text-2xl font-bold text-secondary mb-4">Противопоказания и ограничения</h2>
+      
+      <div class="honey-tip">
+        <ul class="list-disc pl-6">
+          <li class="mb-2">Индивидуальная непереносимость, аллергия на продукты пчеловодства</li>
+          <li class="mb-2">С осторожностью — людям с диабетом (после консультации с врачом)</li>
+          <li class="mb-2">Детям до 2 лет — не рекомендуется</li>
+          <li>Не злоупотребляйте: в большом количестве даже натуральный мёд может стать причиной набора веса и проблем с зубами</li>
+        </ul>
+      </div>
+      
+      <h2 class="text-2xl font-bold text-secondary mb-4">3 быстрых рецепта с мёдом для ЗОЖ</h2>
+      
+      <div class="recipe-grid mb-6">
+        <div class="recipe-card">
+          <h3 class="text-xl font-bold mb-3">Напиток для иммунитета</h3>
+          <ul class="list-disc pl-6 mb-3">
+            <li>Стакан тёплой воды</li>
+            <li>Ложка мёда</li>
+            <li>Сок лимона</li>
+            <li>Несколько листиков мяты</li>
+          </ul>
+          <p>Смешайте все ингредиенты и наслаждайтесь полезным напитком!</p>
+        </div>
+        
+        <div class="recipe-card">
+          <h3 class="text-xl font-bold mb-3">ПП-десерт</h3>
+          <ul class="list-disc pl-6 mb-3">
+            <li>Творог (150-200 г)</li>
+            <li>Ложка мёда</li>
+            <li>Ягоды или орехи по вкусу</li>
+          </ul>
+          <p>Смешайте творог с мёдом, добавьте ягоды или орехи. Отличный перекус или завтрак!</p>
+        </div>
+        
+        <div class="recipe-card">
+          <h3 class="text-xl font-bold mb-3">ПП-смузи</h3>
+          <ul class="list-disc pl-6 mb-3">
+            <li>1 банан</li>
+            <li>150 мл натурального йогурта</li>
+            <li>Ложка мёда</li>
+            <li>Щепотка корицы</li>
+          </ul>
+          <p>Взбейте все ингредиенты в блендере до однородной массы.</p>
+        </div>
+      </div>
+      
+      <img src="/images/healthy-honey-3.jpg" 
+           alt="Рецепты здорового питания с мёдом - напитки и десерты" 
+           class="w-full mb-6 rounded-lg"
+           loading="lazy"
+           decoding="async">
+      
+      <h2 class="text-2xl font-bold text-secondary mb-4">FAQ</h2>
+      
+      <div class="faq-container">
+        <div class="faq-item">
+          <button class="faq-question">
+            Можно ли мёд на правильном питании?
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p class="mt-2 text-gray-700">Да, если употреблять его в меру и при отсутствии противопоказаний.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question">
+            Сколько мёда можно в день?
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p class="mt-2 text-gray-700">Взрослым — 1–2 ч. ложки, детям — 0,5–1 ч. ложка.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question">
+            Мёд — это сахар?
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p class="mt-2 text-gray-700">Мёд содержит натуральные сахара, но, в отличие от обычного сахара, даёт организму витамины, ферменты и минералы.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question">
+            Как выбрать мёд для ПП?
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p class="mt-2 text-gray-700">Ищите только натуральный продукт без добавок и сиропа, желательно у прямых поставщиков. <a href="/blog/kak-vybrat-nastoyashchiy-myod-letom-2025.html" class="text-primary font-semibold hover:underline">Читать подробнее о выборе мёда</a>.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="conclusion-box">
+        <h2 class="text-2xl font-bold mb-4">Итоги</h2>
+        <p class="mb-3">Мёд — это вкусное, полезное и универсальное дополнение к здоровому питанию.</p>
+        <p>Правильно выбранный натуральный мёд помогает поддерживать иммунитет, даёт энергию и позволяет получать удовольствие от еды без вреда для фигуры.</p>
+        <p class="mt-4">Добавьте мёд в свой рацион — и вы почувствуете разницу!</p>
+        <p class="mt-4 font-semibold">Попробовать натуральный алтайский мёд можно на <a href="https://altaymed.shop" class="text-primary hover:underline">altaymed.shop</a> или <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing" target="_blank" class="text-primary hover:underline">заказать через Avito</a> с доставкой по Коврову и России.</p>
+        <p class="mt-2">Узнайте о <a href="/delivery.html" class="text-primary font-semibold hover:underline">условиях доставки</a>.</p>
       </div>
     </div>
   </div>
 </section>
 </main>
 
-<!-- Футер с точно выровненным текстом -->
+<!-- Футер -->
 <footer class="py-10 md:py-12 w-full">
   <div id="footer-contacts" class="container mx-auto px-4 md:px-6 w-full">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 w-full">
@@ -484,6 +907,7 @@ footer a:hover {
         <div class="description-wrapper">
           <p class="text-xs">Натуральные продукты пчеловодства с Алтайских гор.</p>
           <p class="text-xs">© 2025 Алтайский мёд. Все права защищены.</p>
+          <p class="text-xs mt-2">Безопасные платежи по протоколу HTTPS.</p>
         </div>
       </div>
       
@@ -575,7 +999,7 @@ footer a:hover {
           <li>
             <a class="footer-link-item">
               <div class="contact-icon">
-                <i class="ri-map-pin-2-line ri-sm md:ri-base"></i>
+                <i class="ri-map-pin-2-line ri-sm md:ri-base" aria-hidden="true"></i>
               </div>
               <span class="contact-text">Владимирская обл. Город Ковров</span>
             </a>
@@ -583,7 +1007,7 @@ footer a:hover {
           <li>
             <a href="tel:+79209400222" class="footer-link-item">
               <div class="contact-icon">
-                <i class="ri-phone-line ri-sm md:ri-base"></i>
+                <i class="ri-phone-line ri-sm md:ri-base" aria-hidden="true"></i>
               </div>
               <span class="contact-text">+7 (920) 940-02-22</span>
             </a>
@@ -591,7 +1015,7 @@ footer a:hover {
           <li>
             <a href="mailto:9209400222@mail.ru" class="footer-link-item">
               <div class="contact-icon">
-                <i class="ri-mail-line ri-sm md:ri-base"></i>
+                <i class="ri-mail-line ri-sm md:ri-base" aria-hidden="true"></i>
               </div>
               <span class="contact-text">9209400222@mail.ru</span>
             </a>
@@ -602,16 +1026,16 @@ footer a:hover {
         <div class="mt-4 md:mt-6">
           <p class="text-base md:text-lg font-bold mb-2 md:mb-3">Следите за нами</p>
           <div class="flex space-x-2 md:space-x-3">
-            <a href="https://vk.com/honeybuckwheat" target="_blank" class="social-icon-bw">
-              <i class="ri-vk-line ri-lg"></i>
+            <a href="https://vk.com/honeybuckwheat" target="_blank" class="social-icon-bw" aria-label="Наша страница ВКонтакте">
+              <i class="ri-vk-line ri-lg" aria-hidden="true"></i>
             </a>
-            <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" class="social-icon-bw">
-              <i class="ri-telegram-line ri-lg"></i>
+            <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" class="social-icon-bw" aria-label="Наш Telegram канал">
+              <i class="ri-telegram-line ri-lg" aria-hidden="true"></i>
             </a>
             <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing" 
-               target="_blank" class="social-icon-bw">
+               target="_blank" class="social-icon-bw" aria-label="Наше объявление на Авито">
               <div class="avito-icon-bw">
-                <svg viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg">
+                <svg viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                   <path fill="#04e061" d="M61.924 172.07c26.468 0 47.924-21.456 47.924-47.924S88.392 76.222 61.924 76.222 14 97.678 14 124.146s21.456 47.925 47.924 47.925z" transform="translate(7.024 7.024) scale(.92683)"/>
                   <path fill="#ff4053" d="M149.044 166.007c15.992 0 28.956-12.963 28.956-28.955 0-15.992-12.964-28.955-28.956-28.955-15.99 0-28.954 12.963-28.954 28.955 0 15.992 12.963 28.955 28.954 28.955z" transform="translate(7.024 7.024) scale(.92683)"/>
                   <path fill="#965eeb" d="M71.086 65.979c9.898 0 17.922-8.024 17.922-17.921 0-9.898-8.024-17.922-17.922-17.922-9.898 0-17.921 8.024-17.921 17.922 0 9.897 8.023 17.921 17.921 17.921z" transform="translate(7.024 7.024) scale(.92683)"/>
@@ -620,9 +1044,9 @@ footer a:hover {
               </div>
             </a>
             <!-- Иконка Яндекс Карт - обновленная версия -->
-            <a href="https://yandex.ru/maps/" target="_blank" class="social-icon-bw">
+            <a href="https://yandex.ru/maps/" target="_blank" class="social-icon-bw" aria-label="Мы на Яндекс Картах">
               <div class="yandex-maps-icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                   <path d="M12 2C8.13 2 5 5.13 5 9C5 13.17 9.42 18.92 11.24 21.11C11.64 21.59 12.37 21.59 12.77 21.11C14.58 18.92 19 13.17 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" 
                         fill="currentColor"/>
                 </svg>
@@ -635,85 +1059,26 @@ footer a:hover {
   </div>
 </footer>
 
-<!-- Скрипт lazy loading -->
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const lazyLoad = function(entries) {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const img = entry.target;
-          img.src = img.dataset.src;
-          img.classList.remove("lazyload");
-          observer.unobserve(img);
-        }
-      });
-    };
-    
-    const observer = new IntersectionObserver(lazyLoad, {
-      rootMargin: "0px 0px 200px 0px",
-      threshold: 0.01
-    });
-    
-    document.querySelectorAll("img.lazyload").forEach(img => {
-      observer.observe(img);
-    });
-  });
-</script>
-
 <!-- Плавающая кнопка "Назад" -->
-<a href="#" id="back-button" class="floating-back-button">
-  <div class="back-arrow"></div>
+<a href="/blog/" id="back-button" class="floating-back-button" aria-label="Вернуться в блог">
+  <div class="back-arrow" aria-hidden="true"></div>
 </a>
 
-<!-- Скрипт для управления плавающей кнопкой -->
+<!-- Скрипты -->
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const backButton = document.getElementById('back-button');
-    
-    // Показываем/скрываем кнопку при скролле
-    let isScrolling;
-    window.addEventListener('scroll', function() {
-      backButton.style.opacity = "1";
-      
-      clearTimeout(isScrolling);
-      isScrolling = setTimeout(function() {
-        backButton.style.opacity = "0";
-      }, 2000);
-    });
-    
-    // Обработка нажатия на кнопку "Назад"
-    backButton.addEventListener('click', function(e) {
-      e.preventDefault();
-      
-      // Проверяем историю переходов
-      if (document.referrer && document.referrer.includes(window.location.host)) {
-        // Если есть предыдущая страница на нашем сайте
-        window.history.back();
-      } else {
-        // Если нет истории или пришел с другого сайта
-        window.location.href = '/';
-      }
-    });
-  });
-</script>
-
-<!-- Обработка мобильного меню -->
-<script>
+  // Управление мобильным меню
   document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
     
-    mobileMenuButton.addEventListener('click', function() {
-      if (mobileMenu.classList.contains('hidden')) {
-        mobileMenu.classList.remove('hidden');
-        mobileMenu.classList.add('block');
-      } else {
-        mobileMenu.classList.add('hidden');
-        mobileMenu.classList.remove('block');
-      }
-    });
-    
-    // Плавная прокрутка к якорям
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('block');
+      });
+    }
+
+    // Плавная прокрутка
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         if (this.getAttribute('href') === '#') return;
@@ -728,32 +1093,78 @@ footer a:hover {
             behavior: 'smooth'
           });
           
-          // Закрыть мобильное меню при клике на ссылку
-          if (!mobileMenu.classList.contains('hidden') && window.innerWidth < 768) {
+          // Закрыть мобильное меню
+          if (mobileMenu && !mobileMenu.classList.contains('hidden') && window.innerWidth < 768) {
             mobileMenu.classList.add('hidden');
             mobileMenu.classList.remove('block');
           }
         }
       });
     });
+    
+    // Плавающая кнопка "Назад"
+    const backButton = document.getElementById('back-button');
+    if (backButton) {
+      let isScrolling;
+      window.addEventListener('scroll', function() {
+        backButton.style.opacity = "1";
+        
+        clearTimeout(isScrolling);
+        isScrolling = setTimeout(function() {
+          backButton.style.opacity = "0";
+        }, 2000);
+      });
+      
+      backButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.location.href = '/blog/';
+      });
+    }
+    
+    // Управление аккордеоном FAQ
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(question => {
+      question.addEventListener('click', function() {
+        const answer = this.nextElementSibling;
+        const icon = this.querySelector('.icon');
+        
+        // Переключение состояния
+        const isOpen = answer.classList.contains('open');
+        
+        // Закрыть все открытые ответы
+        document.querySelectorAll('.faq-answer.open').forEach(openAnswer => {
+          openAnswer.classList.remove('open');
+          openAnswer.previousElementSibling.querySelector('.icon').textContent = '+';
+        });
+        
+        // Открыть/закрыть текущий ответ
+        if (!isOpen) {
+          answer.classList.add('open');
+          icon.textContent = '–';
+        } else {
+          answer.classList.remove('open');
+          icon.textContent = '+';
+        }
+      });
+    });
+    
+    // Загрузка Яндекс.Метрики с задержкой
+    setTimeout(function() {
+      (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      m[i].l=1*new Date();
+      k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+      ym(102951378, "init", {
+           clickmap:true,
+           trackLinks:true,
+           accurateTrackBounce:true
+      });
+    }, 1000); // Задержка 1 секунда
   });
 </script>
 
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();
-   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-   ym(102951378, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true
-   });
-</script>
+<!-- Noscript для Яндекс.Метрики -->
 <noscript><div><img src="https://mc.yandex.ru/watch/102951378" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
 </body>
 </html>

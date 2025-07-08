@@ -1,0 +1,166 @@
+/* src/tailwind-delivery.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* ========= ШАПКА (HEADER) ========= */
+  .header {
+    @apply sticky top-0 z-50 bg-white shadow-sm;
+  }
+  
+  .header-container {
+    @apply container mx-auto px-4 md:px-6 py-3 flex items-center justify-between;
+  }
+  
+  .logo {
+    @apply font-pacifico text-2xl md:text-3xl text-primary;
+  }
+  
+  .nav-links {
+    @apply hidden md:flex items-center space-x-6 md:space-x-8;
+  }
+  
+  .nav-link {
+    @apply text-gray-700 hover:text-primary transition-colors font-medium;
+  }
+  
+  .nav-link.active {
+    @apply text-primary;
+  }
+  
+  .nav-btn {
+    @apply px-4 md:px-6 py-1 md:py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap;
+  }
+  
+  .mobile-menu-btn {
+    @apply md:hidden w-10 h-10 flex items-center justify-center text-2xl text-gray-800;
+  }
+  
+  .mobile-menu {
+    @apply fixed top-0 left-0 w-full h-full bg-white shadow-md px-4 py-3 flex flex-col space-y-4 transform -translate-x-full transition-transform;
+  }
+  
+  .mobile-menu.active {
+    @apply transform translate-x-0;
+  }
+
+  /* ========= ФУТЕР (FOOTER) ========= */
+  .footer {
+    @apply bg-secondary py-10 md:py-12 w-full;
+  }
+  
+  .footer-container {
+    @apply container mx-auto px-4 md:px-6;
+  }
+  
+  .footer-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8;
+  }
+  
+  .footer-logo {
+    @apply font-pacifico text-2xl md:text-3xl text-white mb-3 md:mb-4 block;
+  }
+  
+  .footer-text {
+    @apply text-xs text-gray-200;
+  }
+  
+  .footer-title {
+    @apply text-base md:text-lg font-bold text-white mb-3;
+  }
+  
+  .footer-links {
+    @apply flex flex-col space-y-2;
+  }
+  
+  .footer-link {
+    @apply text-sm md:text-base text-gray-200 hover:text-gray-300 transition-colors;
+  }
+  
+  .footer-link-item {
+    @apply flex items-center;
+  }
+  
+  .bullet {
+    @apply w-2 h-2 bg-primary rounded-full mr-2;
+  }
+  
+  .contact-item {
+    @apply flex items-start mb-3;
+  }
+  
+  .contact-icon {
+    @apply text-white mr-3 mt-1;
+  }
+  
+  .contact-text {
+    @apply text-white;
+  }
+  
+  .social-container {
+    @apply mt-4 md:mt-6;
+  }
+  
+  .social-title {
+    @apply font-bold mb-2 md:mb-3 text-white;
+  }
+  
+  .social-icons {
+    @apply flex space-x-2 md:space-x-3;
+  }
+  
+  .social-icon-bw {
+    @apply w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-primary transition-colors;
+  }
+  
+  .footer-bottom {
+    @apply mt-8 pt-8 border-t border-gray-700;
+  }
+  
+  .copyright {
+    @apply text-xs text-gray-400;
+  }
+}
+
+/* ========= БАЗОВЫЕ СТИЛИ ========= */
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 
+                 Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  :root {
+    --primary: #FFA500;
+    --secondary: #8B4513;
+    --gray-50: #F9FAFB;
+    --gray-100: #F3F4F6;
+    --gray-200: #E5E7EB;
+    --gray-300: #D1D5DB;
+    --gray-400: #9CA3AF;
+    --gray-500: #6B7280;
+    --gray-600: #4B5563;
+    --gray-700: #374151;
+    --gray-800: #1F2937;
+    --gray-900: #111827;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 1280px;
+    padding: 0 1rem;
+    margin: 0 auto;
+  }
+}

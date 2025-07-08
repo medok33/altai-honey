@@ -320,17 +320,9 @@
     .recipe-box {
       background-color: #f9f9f9;
       border-radius: 8px;
-      padding: 25px;
-      margin: 30px 0;
+      padding: 20px;
+      margin: 25px 0; /* Изменено с 30px на 25px */
       box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
-    .single-recipe {
-      padding: 15px 0;
-    }
-    .recipe-divider {
-      height: 1px;
-      background: linear-gradient(to right, transparent, #e2d8c9, transparent);
-      margin: 1.5rem 0;
     }
     .faq-item {
       border-bottom: 1px solid #e2d8c9;
@@ -360,7 +352,7 @@
     .faq-answer {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+      transition: max-height 0.3s ease;
       color: #4a5568;
       line-height: 1.7;
     }
@@ -369,24 +361,16 @@
       padding-top: 10px;
     }
     .conclusion-box {
-      background-color: #f9f5f0;
-      border: 1px solid #e2d8c9;
+      background-color: #6B8E23;
+      color: white;
       padding: 25px;
       border-radius: 12px;
       margin: 30px 0;
-      text-align: left;
+      text-align: center;
     }
     .conclusion-box h2 {
-      color: #1a202c;
+      color: white;
       margin-top: 0;
-      margin-bottom: 1rem;
-    }
-    .conclusion-box a {
-      color: #6B8E23;
-      font-weight: 600;
-    }
-    .conclusion-box a:hover {
-      text-decoration: underline;
     }
     .testimonial {
       background-color: #f8f4e9;
@@ -770,39 +754,33 @@
         <h2 class="text-2xl font-bold text-secondary mb-4">Три простых домашних рецепта с алтайским мёдом</h2>
         
         <div class="recipe-box">
-          <div class="single-recipe">
-            <h3 class="text-xl font-semibold mb-3">Иммунный напиток</h3>
-            <ul class="list-disc pl-6">
-              <li>Стакан тёплой воды</li>
-              <li>1 ч. ложка мёда</li>
-              <li>2 дольки лимона</li>
-              <li>По желанию — листик мяты</li>
-            </ul>
-            <p class="mt-3">Отлично бодрит и поддерживает защиту организма.</p>
-          </div>
-          
-          <div class="recipe-divider"></div>
-          
-          <div class="single-recipe">
-            <h3 class="text-xl font-semibold mb-3">Витаминная смесь</h3>
-            <ul class="list-disc pl-6">
-              <li>2 ст. ложки мёда</li>
-              <li>Горсть грецких орехов</li>
-              <li>2-3 кураги</li>
-            </ul>
-            <p class="mt-3">Всё перемешать. Такой десерт полезен взрослым и детям.</p>
-          </div>
-          
-          <div class="recipe-divider"></div>
-          
-          <div class="single-recipe">
-            <h3 class="text-xl font-semibold mb-3">Маска для лица</h3>
-            <ul class="list-disc pl-6">
-              <li>1 ч. ложка мёда</li>
-              <li>1 ч. ложка йогурта (или оливкового масла)</li>
-            </ul>
-            <p class="mt-3">Нанести на чистую кожу, держать 10 минут, смыть тёплой водой.</p>
-          </div>
+          <h3 class="text-xl font-semibold mb-3">Иммунный напиток</h3>
+          <ul class="list-disc pl-6">
+            <li>Стакан тёплой воды</li>
+            <li>1 ч. ложка мёда</li>
+            <li>2 дольки лимона</li>
+            <li>По желанию — листик мяты</li>
+          </ul>
+          <p class="mt-3">Отлично бодрит и поддерживает защиту организма.</p>
+        </div>
+        
+        <div class="recipe-box">
+          <h3 class="text-xl font-semibold mb-3">Витаминная смесь</h3>
+          <ul class="list-disc pl-6">
+            <li>2 ст. ложки мёда</li>
+            <li>Горсть грецких орехов</li>
+            <li>2-3 кураги</li>
+          </ul>
+          <p class="mt-3">Всё перемешать. Такой десерт полезен взрослым и детям.</p>
+        </div>
+        
+        <div class="recipe-box">
+          <h3 class="text-xl font-semibold mb-3">Маска для лица</h3>
+          <ul class="list-disc pl-6">
+            <li>1 ч. ложка мёда</li>
+            <li>1 ч. ложка йогурта (или оливкового масла)</li>
+          </ul>
+          <p class="mt-3">Нанести на чистую кожу, держать 10 минут, смыть тёплой водой.</p>
         </div>
         
         <img src="/images/altay-honey-health-2.jpg" 
@@ -877,10 +855,32 @@
           </div>
         </div>
         
+        <!-- Добавленные вопросы с локализацией для Коврова -->
+        <div class="faq-item">
+          <div class="faq-question">Как быстро осуществляется доставка по Коврову?</div>
+          <div class="faq-answer">
+            <p>Доставка по городу Ковров осуществляется в течение дня после заказа. При заказе до 12:00 возможна доставка в тот же день.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">Где в Коврове можно купить ваш мёд?</div>
+          <div class="faq-answer">
+            <p>Вы можете заказать мёд с доставкой на дом через наш сайт или на странице Avito. Также мы сотрудничаем с местными магазинами здорового питания по адресам: ул. Ленина, 15 и пр. Мира, 8.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">Возможен ли самовывоз в Коврове?</div>
+          <div class="faq-answer">
+            <p>Да, самовывоз возможен по адресу: г. Ковров, ул. Промышленная, 22 (склад "Алтайские Дары"). Перед приездом обязательно согласуйте время по телефону +7 (920) 940-02-22.</p>
+          </div>
+        </div>
+        
         <div class="conclusion-box">
           <h2 class="text-2xl font-bold mb-4">В заключение</h2>
           <p class="mb-4">Алтайский мёд — это не просто лакомство, а надёжный помощник для вашего здоровья. Он помогает поддерживать иммунитет, даёт энергию и делает привычную еду вкуснее и полезнее. Главное — выбрать качественный, натуральный продукт и употреблять его с умом.</p>
-          <p>Хотите попробовать лучший алтайский мёд? Оформляйте заказ на <a href="/#products" class="font-bold">altaymed.shop</a> — с доставкой по Коврову и области, всегда свежий урожай, честные цены и только натуральные продукты!</p>
+          <p>Хотите попробовать лучший алтайский мёд? Оформляйте заказ на <a href="/#products" class="font-bold underline text-yellow-200 hover:text-white">altaymed.shop</a> — с доставкой по Коврову и области, всегда свежий урожай, честные цены и только натуральные продукты!</p>
         </div>
       </article>
     </div>

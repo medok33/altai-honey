@@ -3,23 +3,425 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Лечебные свойства алтайского мёда | Алтайский мёд</title>
-  <meta name="description" content="Как алтайский мёд помогает при различных заболеваниях. Исследования и народные рецепты для укрепления здоровья.">
+  <title>Лечебные свойства алтайского мёда | Польза для здоровья | Алтайский мёд</title>
+  <meta name="description" content="Чем полезен алтайский мёд: иммунитет, сердце, ЖКТ, энергия. Кому особенно полезен, как правильно принимать. Народные рецепты и отзывы.">
   
   <!-- Open Graph -->
-  <meta property="og:title" content="Лечебные свойства алтайского мёда | Алтайский мёд">
-  <meta property="og:description" content="Целебная сила алтайского мёда при различных заболеваниях">
+  <meta property="og:title" content="Лечебные свойства алтайского мёда | Польза для здоровья | Алтайский мёд">
+  <meta property="og:description" content="Как алтайский мёд помогает при различных заболеваниях. Исследования и народные рецепты для укрепления здоровья.">
   <meta property="og:image" content="https://altaymed.shop/images/image-12.jpg">
   <meta property="og:url" content="https://altaymed.shop/blog/lechebnye-svoistva-altayskogo-meda.html">
   <meta property="og:type" content="article">
   
-  <!-- Подключение стилей -->
-  <link rel="stylesheet" href="/assets/css/tailwind.min.css">
-  <link rel="stylesheet" href="/fonts/fonts.css">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Лечебные свойства алтайского мёда">
+  <meta name="twitter:description" content="Целебная сила алтайского мёда при различных заболеваниях">
+  <meta name="twitter:image" content="https://altaymed.shop/images/image-12.jpg">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/images/favicon.ico" sizes="any">
+  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  
+  <!-- Web Manifest -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#9f5524">
+  
+  <!-- Локальные шрифты -->
+  <style>
+    @font-face {
+      font-family: 'Pacifico';
+      font-style: normal;
+      font-weight: 400;
+      src: url('/fonts/Pacifico-Regular.woff2') format('woff2');
+    }
+    
+    @font-face {
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: 400;
+      src: url('/fonts/OpenSans-Regular.woff2') format('woff2');
+    }
+    
+    @font-face {
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: 500;
+      src: url('/fonts/OpenSans-Medium.woff2') format('woff2');
+    }
+    
+    @font-face {
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: 600;
+      src: url('/fonts/OpenSans-SemiBold.woff2') format('woff2');
+    }
+    
+    @font-face {
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: 700;
+      src: url('/fonts/OpenSans-Bold.woff2') format('woff2');
+    }
+  </style>
+  
+  <!-- Локальные иконки -->
   <link rel="stylesheet" href="/assets/fonts/remixicon/remixicon.css">
   
+  <!-- Подключение Tailwind CSS -->
+  <link rel="stylesheet" href="/css/style.min.css">
+  
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#6B8E23',
+            secondary: '#8B4513',
+            orange: '#FFA500'
+          },
+          borderRadius: {
+            'none': '0px',
+            'sm': '4px',
+            DEFAULT: '8px',
+            'md': '12px',
+            'lg': '16px',
+            'xl': '20px',
+            '2xl': '24px',
+            '3xl': '32px',
+            'full': '9999px',
+            'button': '8px'
+          }
+        }
+      }
+    }
+  </script>
+  
   <style>
-    /* Стили статьи (аналогичные предыдущей) */
+    /* Базовые стили */
+    body {
+      font-family: 'Open Sans', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      font-size: 16px;
+    }
+    .texture-bg {
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZmZmZmZmIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNmNWRlYjMiIG9wYWNpdHk9IjAuMSI+PC9yZWN0Pgo8L3N2Zz4=');
+    }
+    
+    /* Навигация */
+    .nav-link {
+      color: #1a202c !important;
+      transition: color 0.3s;
+    }
+    .nav-link:hover {
+      color: #6B8E23 !important;
+    }
+    .nav-btn {
+      background: #6B8E23 !important;
+      color: white !important;
+    }
+    .header-logo {
+      color: #6B8E23 !important;
+      font-family: 'Pacifico', cursive;
+    }
+    .active-nav-link-alt {
+      border: 2px solid #6B8E23 !important;
+      border-radius: 8px !important;
+      padding: 4px 12px !important;
+      color: #6B8E23 !important;
+      font-weight: 600 !important;
+      transition: all 0.3s ease;
+    }
+    .active-nav-link-alt:hover {
+      background: rgba(107, 142, 35, 0.1) !important;
+    }
+    
+    /* Футер */
+    footer {
+      width: 100% !important;
+      box-sizing: border-box !important;
+      position: relative;
+      overflow: hidden;
+      background-color: #8B4513;
+      z-index: 1;
+    }
+    footer::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 600%;
+      height: 600%;
+      background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+      background-size: 108px 108px;
+      transform: rotate(30deg);
+      transform-origin: 0 0;
+      opacity: 0.6;
+      z-index: 0;
+      margin-left: -220%;
+      margin-top: -220%;
+    }
+    footer .container {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding-right: 1.5rem !important;
+      padding-left: 1.5rem !important;
+      position: relative;
+      z-index: 1;
+    }
+    footer .grid {
+      width: 100% !important;
+      display: grid !important;
+      grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+    }
+    @media (min-width: 768px) {
+      footer .grid {
+        grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+      }
+    }
+    .footer-column {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      width: 100% !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      box-sizing: border-box !important;
+    }
+    .footer-column h4 {
+      text-align: left !important;
+      width: 100% !important;
+      padding: 0 !important;
+      margin: 0 0 0.64rem 0 !important;
+      font-weight: bold !important;
+      font-size: 1.125rem !important;
+      line-height: 1.75rem !important;
+    }
+    .footer-column ul {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      width: 100% !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      list-style: none !important;
+    }
+    .footer-column li {
+      width: 100% !important;
+      text-align: left !important;
+      list-style-type: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      box-sizing: border-box !important;
+    }
+    .footer-column li a {
+      display: flex !important;
+      align-items: center !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .footer-column .bullet {
+      display: inline-block !important;
+      width: 6px !important;
+      height: 6px !important;
+      background-color: white !important;
+      border-radius: 50% !important;
+      margin-right: 10px !important;
+      flex-shrink: 0 !important;
+    }
+    footer, 
+    footer *,
+    footer a, 
+    footer p, 
+    footer span, 
+    footer h4, 
+    footer li {
+      color: white !important;
+      box-sizing: border-box !important;
+    }
+    footer a:hover {
+      color: #d1d5db !important;
+    }
+    .footer-link-item {
+      display: flex;
+      align-items: center;
+      padding-top: 0.21rem !important;
+      padding-bottom: 0.21rem !important;
+    }
+    .contact-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 12px;
+      flex-shrink: 0;
+      width: 24px;
+    }
+    .contact-text {
+      flex-grow: 1;
+      line-height: 1.5;
+    }
+    .social-icon-bw {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: transparent;
+      transition: all 0.3s;
+      border: 1px solid #4b5563;
+      color: #4b5563;
+      filter: grayscale(100%);
+    }
+    .social-icon-bw:hover {
+      filter: grayscale(0%);
+      border-color: #6B8E23;
+      color: #6B8E23;
+    }
+    .avito-icon-bw, .yandex-maps-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      position: relative;
+      filter: grayscale(100%);
+    }
+    .avito-icon-bw svg, .yandex-maps-icon svg {
+      width: 100%;
+      height: 100%;
+    }
+    .social-icon-bw:hover .avito-icon-bw,
+    .social-icon-bw:hover .yandex-maps-icon {
+      filter: grayscale(0%);
+    }
+    
+    /* Элементы статьи */
+    .health-benefits {
+      background-color: #f9f5f0;
+      border-left: 4px solid #6B8E23;
+      padding: 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 25px 0;
+    }
+    .honey-benefit {
+      background-color: #fff9e6;
+      border: 1px solid #FFA500;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+    .honey-benefit h3 {
+      color: #8B4513;
+      margin-top: 0;
+    }
+    .recipe-box {
+      background: linear-gradient(to right, #f5deb3, #fff8e1);
+      border: 1px dashed #6B8E23;
+      border-radius: 12px;
+      padding: 20px;
+      position: relative;
+      margin: 30px 0;
+    }
+    .recipe-box:before {
+      content: "🍯";
+      position: absolute;
+      top: -15px;
+      left: 20px;
+      background: white;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+    .faq-item {
+      border-bottom: 1px solid #e2d8c9;
+      padding: 15px 0;
+    }
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+    .conclusion-box {
+      background-color: #6B8E23;
+      color: white;
+      padding: 25px;
+      border-radius: 12px;
+      margin: 30px 0;
+      text-align: center;
+    }
+    .conclusion-box h2 {
+      color: white;
+      margin-top: 0;
+    }
+    .testimonial {
+      background-color: #f8f4e9;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      position: relative;
+      border-left: 4px solid #6B8E23;
+    }
+    .testimonial:before {
+      content: """;
+      position: absolute;
+      top: -10px;
+      left: 10px;
+      font-size: 4rem;
+      color: rgba(107, 142, 35, 0.2);
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+    
+    /* Плавающая кнопка */
+    .floating-back-button {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 50;
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 50%;
+      background: #6B8E23;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    .floating-back-button:hover {
+      background: #5a7a1c;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      transform: scale(1.05);
+    }
+    .back-arrow {
+      width: 24px;
+      height: 24px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23ffffff' d='M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z'/%3E%3C/svg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+      transition: transform 0.3s ease;
+    }
+    .floating-back-button:hover .back-arrow {
+      transform: translateX(-4px);
+    }
+    
+    /* Улучшения доступности */
+    [aria-hidden="true"] {
+      pointer-events: none;
+    }
+    
+    /* Специфические стили для статьи */
     .article-content {
       max-width: 800px;
       margin: 0 auto;
@@ -27,36 +429,50 @@
     }
     
     .article-content h2 {
-      font-size: 1.5rem;
+      font-size: 1.75rem;
       font-weight: 700;
-      margin-top: 2rem;
-      margin-bottom: 1rem;
+      margin-top: 3rem;
+      margin-bottom: 1.5rem;
       color: #2d3748;
     }
     
-    .article-content p {
+    .article-content h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: 2.5rem;
       margin-bottom: 1rem;
-      line-height: 1.6;
+      color: #3c4b64;
+    }
+    
+    .article-content p {
+      margin-bottom: 1.25rem;
+      line-height: 1.7;
       color: #4a5568;
     }
     
     .article-content ul {
       list-style-type: disc;
       padding-left: 1.5rem;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      color: #4a5568;
+    }
+    
+    .article-content li {
+      margin-bottom: 0.5rem;
     }
     
     .article-image {
       width: 100%;
-      max-height: 400px;
+      max-height: 450px;
       object-fit: cover;
       border-radius: 8px;
-      margin: 2rem 0;
+      margin: 2.5rem 0;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
     
     .article-header {
       position: relative;
-      min-height: 400px;
+      min-height: 450px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -96,7 +512,7 @@
       font-size: 0.75rem;
     }
     
-    .health-benefits {
+    .benefit-list {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 1.5rem;
@@ -108,6 +524,11 @@
       border-radius: 8px;
       padding: 1.5rem;
       box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+    
+    .benefit-card:hover {
+      transform: translateY(-5px);
     }
     
     .benefit-icon {
@@ -120,87 +541,618 @@
       .article-header h1 {
         font-size: 2rem;
       }
+      
+      .article-content h2 {
+        font-size: 1.5rem;
+      }
+      
+      .article-content h3 {
+        font-size: 1.25rem;
+      }
+      
+      .benefit-list {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
+  
+  <!-- Структурированные данные Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://altaymed.shop/blog/lechebnye-svoistva-altayskogo-meda.html"
+    },
+    "headline": "Лечебные свойства алтайского мёда",
+    "description": "Целебная сила алтайского мёда при различных заболеваниях",
+    "image": "https://altaymed.shop/images/image-12.jpg",
+    "author": {
+      "@type": "Organization",
+      "name": "Алтайский мёд",
+      "url": "https://altaymed.shop"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Алтайский мёд",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://altaymed.shop/images/logo.png"
+      }
+    },
+    "datePublished": "2025-07-15",
+    "dateModified": "2025-07-15"
+  }
+  </script>
 </head>
 <body>
-  <!-- Навигация -->
-  <nav class="bg-white shadow-sm sticky top-0 z-50">
-    <!-- ... -->
-  </nav>
+<!-- Навигация -->
+<nav class="bg-white shadow-sm sticky top-0 z-50">
+  <div class="container mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
+    <a href="/" class="text-2xl md:text-3xl header-logo">Алтайский мёд</a>
+    
+    <div class="hidden md:flex items-center space-x-6 md:space-x-8">
+      <a href="/#benefits" class="nav-link">Преимущества</a>
+      <a href="/#products" class="nav-link">Каталог</a>
+      <a href="/#about" class="nav-link">О нас</a>
+      <a href="/#footer-contacts" class="nav-link">Контакты</a>
+      <!-- Активная ссылка на Блог -->
+      <a href="/blog/" class="active-nav-link-alt">Блог</a>
+      <a href="/#order" class="nav-btn px-4 md:px-6 py-1 md:py-2 rounded-lg hover:bg-opacity-90 transition-all whitespace-nowrap">Заказать</a>
+    </div>
+    
+    <button class="md:hidden w-10 h-10 flex items-center justify-center" id="mobile-menu-button" aria-label="Открыть меню">
+      <i class="ri-menu-line text-gray-900 ri-xl" aria-hidden="true"></i>
+    </button>
+  </div>
+  
+  <!-- Мобильное меню -->
+  <div class="md:hidden hidden bg-white shadow-md px-4 py-3" id="mobile-menu">
+    <div class="flex flex-col space-y-4">
+      <a href="/#benefits" class="nav-link py-2">Преимущества</a>
+      <a href="/#products" class="nav-link py-2">Каталог</a>
+      <a href="/#about" class="nav-link py-2">О нас</a>
+      <a href="/#footer-contacts" class="nav-link py-2">Контакты</a>
+      <!-- Активная ссылка на Блог (мобильная версия) -->
+      <a href="/blog/" class="active-nav-link-alt py-2 text-center">Блог</a>
+      <a href="/#order" class="nav-btn py-2 text-center rounded-lg hover:bg-opacity-90 transition-all">Заказать</a>
+    </div>
+  </div>
+</nav>
 
-  <main>
-    <!-- Шапка статьи -->
-    <section class="article-header">
-      <img 
-        src="/images/image-12.jpg" 
-        alt="Лечебные свойства алтайского мёда" 
-        class="absolute w-full h-full object-cover"
-        loading="eager"
-        decoding="async"
-      >
-      <div class="absolute inset-0 bg-black bg-opacity-40"></div>
-      <div class="relative z-10">
-        <h1>Лечебные свойства алтайского мёда</h1>
-        <div class="article-meta">
-          <span>Алтайский пчеловод</span>
-          <span>•</span>
-          <span>15 июля 2025</span>
+<main>
+<!-- Шапка статьи -->
+<section class="article-header">
+  <img 
+    src="/images/image-12.jpg" 
+    alt="Лечебные свойства алтайского мёда" 
+    class="absolute w-full h-full object-cover"
+    loading="eager"
+    decoding="async"
+  >
+  <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+  <div class="relative z-10">
+    <h1>Лечебные свойства алтайского мёда</h1>
+    <div class="article-meta">
+      <span>Алтайский пчеловод</span>
+      <span>•</span>
+      <span>15 июля 2025</span>
+    </div>
+    <div class="article-tags">
+      <span class="article-tag">здоровье</span>
+      <span class="article-tag">народная медицина</span>
+      <span class="article-tag">полезные свойства</span>
+    </div>
+  </div>
+</section>
+
+<!-- Контент статьи -->
+<article class="article-content">
+  <p class="text-xl font-semibold text-secondary">Алтайский мёд — это больше, чем просто вкусное лакомство. Его называют настоящей кладовой здоровья, ведь только в этом регионе пчёлы собирают нектар с десятков уникальных медоносов. Горный воздух, чистые луга, ручная откачка без нагрева — всё это даёт невероятно богатый состав. Недаром именно алтайский мёд входит в топ поисковых запросов по пользе и лечебным свойствам.</p>
+  
+  <h2>Чем алтайский мёд отличается от обычного</h2>
+  
+  <ul>
+    <li><strong>Максимальная ферментативная активность</strong> (диастазное число выше 57), что подтверждает высокое качество продукта.</li>
+    <li><strong>Богатый состав</strong>: витамины B, C, E, флавоноиды, ферменты, органические кислоты, железо, калий, кальций, магний, цинк.</li>
+    <li><strong>Отсутствие промышленных пасек и обработок</strong> — всё максимально натурально.</li>
+    <li><strong>Нектар собирается с разнотравья, липы, гречихи, диких трав и цветов</strong>, что придаёт уникальные вкусы и ароматы каждому сорту.</li>
+  </ul>
+  
+  <p>Подробнее о том, <a href="/blog/kak-vybrat-nastoyashchiy-myod-letom-2025.html" class="text-primary font-semibold hover:underline">как выбрать настоящий мёд</a>, читайте в нашей статье.</p>
+  
+  <h2>Польза и лечебные свойства алтайского мёда</h2>
+  
+  <div class="benefit-list">
+    <div class="benefit-card">
+      <div class="benefit-icon">
+        <i class="ri-shield-check-line"></i>
+      </div>
+      <h3>Поддержка иммунитета</h3>
+      <p>Алтайский мёд известен высоким содержанием антиоксидантов и природных ферментов. Он помогает организму бороться с вирусами и бактериями, ускоряет восстановление после простуд и укрепляет естественные защитные функции.</p>
+    </div>
+    
+    <div class="benefit-card">
+      <div class="benefit-icon">
+        <i class="ri-heart-pulse-line"></i>
+      </div>
+      <h3>Польза для сердца и сосудов</h3>
+      <p>Благодаря магнию, железу и рутину, алтайский мёд поддерживает эластичность сосудов, улучшает кровообращение, способствует нормализации давления и укреплению сердечной мышцы.</p>
+    </div>
+    
+    <div class="benefit-card">
+      <div class="benefit-icon">
+        <i class="ri-stethoscope-line"></i>
+      </div>
+      <h3>Улучшение работы ЖКТ</h3>
+      <p>Органические кислоты и энзимы мягко обволакивают слизистую желудка, помогают при гастритах, нормализуют пищеварение и поддерживают здоровую микрофлору кишечника.</p>
+    </div>
+    
+    <div class="benefit-card">
+      <div class="benefit-icon">
+        <i class="ri-run-line"></i>
+      </div>
+      <h3>Быстрая энергия и восстановление</h3>
+      <p>Лёгкие сахара и белки быстро усваиваются, давая организму заряд бодрости. Алтайский мёд ценят спортсмены, люди после болезней и те, кто ведёт активный образ жизни.</p>
+    </div>
+    
+    <div class="benefit-card">
+      <div class="benefit-icon">
+        <i class="ri-user-smile-line"></i>
+      </div>
+      <h3>Для кожи и красоты</h3>
+      <p>Мёд — природный антисептик и регенерант. Используется в домашних масках для лица и волос, помогает заживлять небольшие ранки, делает кожу более мягкой и здоровой.</p>
+    </div>
+  </div>
+  
+  <img src="/images/altay-honey-health-1.jpg" 
+       alt="Алтайский мёд для укрепления иммунитета" 
+       class="article-image"
+       loading="lazy"
+       decoding="async">
+  
+  <h2>Кому особенно полезен алтайский мёд</h2>
+  
+  <div class="health-benefits">
+    <div class="flex items-start mb-3">
+      <i class="ri-check-line text-primary mt-1 mr-2" aria-hidden="true"></i>
+      <div>
+        <strong>Детям (от 2-3 лет)</strong>: укрепляет иммунитет, повышает аппетит, помогает справиться с переутомлением.
+      </div>
+    </div>
+    
+    <div class="flex items-start mb-3">
+      <i class="ri-check-line text-primary mt-1 mr-2" aria-hidden="true"></i>
+      <div>
+        <strong>Взрослым</strong>: для профилактики ОРВИ, поддержки энергии, восстановления после стрессов.
+      </div>
+    </div>
+    
+    <div class="flex items-start mb-3">
+      <i class="ri-check-line text-primary mt-1 mr-2" aria-hidden="true"></i>
+      <div>
+        <strong>Пожилым</strong>: мягко поддерживает сосуды, укрепляет сердце, снижает риск авитаминоза.
+      </div>
+    </div>
+    
+    <div class="flex items-start mb-3">
+      <i class="ri-check-line text-primary mt-1 mr-2" aria-hidden="true"></i>
+      <div>
+        <strong>Спортсменам</strong>: для быстрого восстановления, профилактики судорог, повышения выносливости.
+      </div>
+    </div>
+    
+    <div class="flex items-start">
+      <i class="ri-check-line text-primary mt-1 mr-2" aria-hidden="true"></i>
+      <div>
+        <strong>Людям, заботящимся о здоровье</strong>: для ежедневной поддержки, как альтернатива сахару.
+      </div>
+    </div>
+  </div>
+  
+  <div class="honey-benefit">
+    <h3>Важно!</h3>
+    <p>Алтайский мёд может вызывать аллергию у чувствительных людей — обязательно пробуйте с малых доз, особенно детям.</p>
+  </div>
+  
+  <h2>Как правильно принимать алтайский мёд</h2>
+  
+  <div class="benefit-list">
+    <div class="benefit-card">
+      <div class="benefit-icon">
+        <i class="ri-shield-star-line"></i>
+      </div>
+      <h3>Для иммунитета</h3>
+      <p>1 чайная ложка мёда утром натощак, растворённая в тёплой воде (не горячей!) — поддержит иммунитет, зарядит энергией на весь день.</p>
+    </div>
+    
+    <div class="benefit-card">
+      <div class="benefit-icon">
+        <i class="ri-thermometer-line"></i>
+      </div>
+      <h3>Для профилактики простуд</h3>
+      <p>Мёд с лимоном и тёплой водой — отличный напиток для всей семьи в период эпидемий.</p>
+    </div>
+    
+    <div class="benefit-card">
+      <div class="benefit-icon">
+        <i class="ri-restaurant-line"></i>
+      </div>
+      <h3>Для улучшения пищеварения</h3>
+      <p>Добавляйте мёд в овсяную кашу, йогурт или творог.</p>
+    </div>
+    
+    <div class="benefit-card">
+      <div class="benefit-icon">
+        <i class="ri-heart-line"></i>
+      </div>
+      <h3>Для восстановления после нагрузок</h3>
+      <p>Мёд с орехами и сухофруктами — идеальный перекус.</p>
+    </div>
+  </div>
+  
+  <div class="honey-benefit">
+    <h3>Рекомендации по дозировке:</h3>
+    <ul>
+      <li>Взрослым — 1-2 чайные ложки в день</li>
+      <li>Детям — 0,5-1 ч. ложка (только при отсутствии аллергии)</li>
+      <li>Нельзя растворять мёд в кипятке — при температуре выше 40°C полезные ферменты разрушаются</li>
+    </ul>
+  </div>
+  
+  <h2>Три простых домашних рецепта с алтайским мёдом</h2>
+  
+  <div class="recipe-box">
+    <h3 class="text-xl font-semibold mb-3">Иммунный напиток</h3>
+    <ul class="list-disc pl-6">
+      <li>Стакан тёплой воды</li>
+      <li>1 ч. ложка мёда</li>
+      <li>2 дольки лимона</li>
+      <li>По желанию — листик мяты</li>
+    </ul>
+    <p class="mt-3">Отлично бодрит и поддерживает защиту организма.</p>
+  </div>
+  
+  <div class="recipe-box">
+    <h3 class="text-xl font-semibold mb-3">Витаминная смесь</h3>
+    <ul class="list-disc pl-6">
+      <li>2 ст. ложки мёда</li>
+      <li>Горсть грецких орехов</li>
+      <li>2-3 кураги</li>
+    </ul>
+    <p class="mt-3">Всё перемешать. Такой десерт полезен взрослым и детям.</p>
+  </div>
+  
+  <div class="recipe-box">
+    <h3 class="text-xl font-semibold mb-3">Маска для лица</h3>
+    <ul class="list-disc pl-6">
+      <li>1 ч. ложка мёда</li>
+      <li>1 ч. ложка йогурта (или оливкового масла)</li>
+    </ul>
+    <p class="mt-3">Нанести на чистую кожу, держать 10 минут, смыть тёплой водой.</p>
+  </div>
+  
+  <img src="/images/altay-honey-health-2.jpg" 
+       alt="Рецепты с алтайским мёдом для здоровья" 
+       class="article-image"
+       loading="lazy"
+       decoding="async">
+  
+  <h2>Противопоказания</h2>
+  
+  <div class="health-benefits">
+    <div class="flex items-start mb-3">
+      <i class="ri-close-line text-red-500 mt-1 mr-2" aria-hidden="true"></i>
+      <div>
+        <strong>Индивидуальная непереносимость</strong>, аллергия на продукты пчеловодства.
+      </div>
+    </div>
+    
+    <div class="flex items-start mb-3">
+      <i class="ri-close-line text-red-500 mt-1 mr-2" aria-hidden="true"></i>
+      <div>
+        <strong>Детям до 2 лет</strong> — не рекомендуется.
+      </div>
+    </div>
+    
+    <div class="flex items-start">
+      <i class="ri-close-line text-red-500 mt-1 mr-2" aria-hidden="true"></i>
+      <div>
+        <strong>С осторожностью при диабете</strong> (только после консультации с врачом).
+      </div>
+    </div>
+  </div>
+  
+  <div class="honey-benefit">
+    <p>Не злоупотребляйте! Мёд — не лекарство, а природная добавка к питанию.</p>
+  </div>
+  
+  <h2>Отзывы покупателей</h2>
+  
+  <div class="testimonial">
+    <p>«Алтайский мёд выручил нас всей семьёй: простуды прошли стороной, а вкус просто незабываемый!»</p>
+    <p class="mt-3 text-right font-semibold">— Ирина, Ковров</p>
+  </div>
+  
+  <div class="testimonial">
+    <p>«Добавляю ложку мёда утром в кашу и чувствую бодрость до самого вечера. Спасибо за натуральный продукт!»</p>
+    <p class="mt-3 text-right font-semibold">— Павел, Владимирская область</p>
+  </div>
+  
+  <div class="conclusion-box">
+    <h2 class="text-2xl font-bold mb-4">Заключение</h2>
+    <p class="mb-3">Алтайский мёд — это не просто лакомство, а надёжный помощник для вашего здоровья. Он помогает поддерживать иммунитет, даёт энергию, делает привычную еду вкуснее и полезнее.</p>
+    <p class="mb-3">Главное — выбрать качественный, натуральный продукт и употреблять его с умом.</p>
+    <p class="text-lg font-semibold mt-4">Хотите попробовать лучший алтайский мёд?</p>
+    <p class="mt-3">Оформляйте заказ на <a href="/#products" class="font-bold underline">altaymed.shop</a> — с доставкой по Коврову и области, всегда свежий урожай, честные цены и только натуральные продукты!</p>
+  </div>
+</article>
+</main>
+
+<!-- Футер -->
+<footer class="py-10 md:py-12 w-full">
+  <div id="footer-contacts" class="container mx-auto px-4 md:px-6 w-full">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 w-full">
+      <!-- Лого и описание -->
+      <div class="footer-column">
+        <div class="logo-wrapper">
+          <a href="/" class="text-2xl md:text-3xl font-['Pacifico'] mb-3 md:mb-4 block">Алтайский мёд</a>
         </div>
-        <div class="article-tags">
-          <span class="article-tag">здоровье</span>
-          <span class="article-tag">народная медицина</span>
-          <span class="article-tag">полезные свойства</span>
+        <div class="description-wrapper">
+          <p class="text-xs">Натуральные продукты пчеловодства с Алтайских гор.</p>
+          <p class="text-xs">© 2025 Алтайский мёд. Все права защищены.</p>
         </div>
       </div>
-    </section>
-
-    <!-- Контент статьи -->
-    <article class="article-content">
-      <p>Содержание статьи будет добавлено позже. Здесь будет подробный разговор о целебных свойствах алтайского мёда.</p>
       
-      <div class="health-benefits">
-        <div class="benefit-card">
-          <div class="benefit-icon">
-            <i class="ri-heart-pulse-line"></i>
-          </div>
-          <h3>Для сердечно-сосудистой системы</h3>
-          <p>Польза мёда для сердца и сосудов...</p>
-        </div>
-        
-        <div class="benefit-card">
-          <div class="benefit-icon">
-            <i class="ri-lungs-line"></i>
-          </div>
-          <h3>При заболеваниях дыхательных путей</h3>
-          <p>Как мёд помогает при кашле и простуде...</p>
-        </div>
-        
-        <div class="benefit-card">
-          <div class="benefit-icon">
-            <i class="ri-stethoscope-line"></i>
-          </div>
-          <h3>Для пищеварения</h3>
-          <p>Улучшение работы ЖКТ с помощью мёда...</p>
-        </div>
+      <!-- Каталог -->
+      <div class="footer-column">
+        <h4 class="text-base md:text-lg font-bold">Каталог</h4>
+        <ul>
+          <li>
+            <a href="/#product-1" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+              <span class="bullet mr-2"></span>
+              <span class="text-sm md:text-base">Разнотравье</span>
+            </a>
+          </li>
+          <li>
+            <a href="/#product-2" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+              <span class="bullet mr-2"></span>
+              <span class="text-sm md:text-base">Таёжный мёд</span>
+            </a>
+          </li>
+          <li>
+            <a href="/#product-3" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+              <span class="bullet mr-2"></span>
+              <span class="text-sm md:text-base">Гречишный мёд</span>
+            </a>
+          </li>
+        </ul>
       </div>
       
-      <h2>Научные исследования</h2>
-      <p>Данные клинических исследований о пользе мёда...</p>
+      <!-- Материалы -->
+      <div class="footer-column">
+        <h4 class="text-base md:text-lg font-bold">Материалы</h4>
+        <ul>
+          <li>
+            <a href="/blog/" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+              <span class="bullet mr-2"></span>
+              <span class="text-sm md:text-base">Блог</span>
+            </a>
+          </li>
+          <li>
+            <a href="/faq/" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+              <span class="bullet mr-2"></span>
+              <span class="text-sm md:text-base">FAQ</span>
+            </a>
+          </li>
+          <li>
+            <a href="/legal.html" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+              <span class="bullet mr-2"></span>
+              <span class="text-sm md:text-base">Правовая информация</span>
+            </a>
+          </li>
+        </ul>
+      </div>
       
-      <h2>Народные рецепты</h2>
-      <p>Проверенные временем рецепты для здоровья...</p>
-    </article>
-  </main>
+      <!-- Информация -->
+      <div class="footer-column">
+        <h4 class="text-base md:text-lg font-bold">Информация</h4>
+        <ul>
+          <li>
+            <a href="/#benefits" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+              <span class="bullet mr-2"></span>
+              <span class="text-sm md:text-base">Преимущества</span>
+            </a>
+          </li>
+          <li>
+            <a href="/#about" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+              <span class="bullet mr-2"></span>
+              <span class="text-sm md:text-base">О нас</span>
+            </a>
+          </li>
+          <li>
+            <a href="/#footer-contacts" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+              <span class="bullet mr-2"></span>
+              <span class="text-sm md:text-base">Контакты</span>
+            </a>
+          </li>
+          <li>
+            <a href="/delivery.html" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+              <span class="bullet mr-2"></span>
+              <span class="text-sm md:text-base">Доставка и оплата</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- Контакты -->
+      <div class="footer-column">
+        <h4 class="text-base md:text-lg font-bold">Контакты</h4>
+        <ul>
+          <li>
+            <a class="footer-link-item">
+              <div class="contact-icon">
+                <i class="ri-map-pin-2-line ri-sm md:ri-base" aria-hidden="true"></i>
+              </div>
+              <span class="contact-text">Владимирская обл. Город Ковров</span>
+            </a>
+          </li>
+          <li>
+            <a href="tel:+79209400222" class="footer-link-item">
+              <div class="contact-icon">
+                <i class="ri-phone-line ri-sm md:ri-base" aria-hidden="true"></i>
+              </div>
+              <span class="contact-text">+7 (920) 940-02-22</span>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:9209400222@mail.ru" class="footer-link-item">
+              <div class="contact-icon">
+                <i class="ri-mail-line ri-sm md:ri-base" aria-hidden="true"></i>
+              </div>
+              <span class="contact-text">9209400222@mail.ru</span>
+            </a>
+          </li>
+        </ul>
+        
+        <!-- Социальные сети -->
+        <div class="mt-4 md:mt-6">
+          <p class="text-base md:text-lg font-bold mb-2 md:mb-3">Следите за нами</p>
+          <div class="flex space-x-2 md:space-x-3">
+            <a href="https://vk.com/honeybuckwheat" target="_blank" class="social-icon-bw" aria-label="Наша страница ВКонтакте">
+              <i class="ri-vk-line ri-lg" aria-hidden="true"></i>
+            </a>
+            <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" class="social-icon-bw" aria-label="Наш Telegram канал">
+              <i class="ri-telegram-line ri-lg" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing" 
+               target="_blank" class="social-icon-bw" aria-label="Наше объявление на Авито">
+              <div class="avito-icon-bw">
+                <svg viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path fill="#04e061" d="M61.924 172.07c26.468 0 47.924-21.456 47.924-47.924S88.392 76.222 61.924 76.222 14 97.678 14 124.146s21.456 47.925 47.924 47.925z" transform="translate(7.024 7.024) scale(.92683)"/>
+                  <path fill="#ff4053" d="M149.044 166.007c15.992 0 28.956-12.963 28.956-28.955 0-15.992-12.964-28.955-28.956-28.955-15.99 0-28.954 12.963-28.954 28.955 0 15.992 12.963 28.955 28.954 28.955z" transform="translate(7.024 7.024) scale(.92683)"/>
+                  <path fill="#965eeb" d="M71.086 65.979c9.898 0 17.922-8.024 17.922-17.921 0-9.898-8.024-17.922-17.922-17.922-9.898 0-17.921 8.024-17.921 17.922 0 9.897 8.023 17.921 17.921 17.921z" transform="translate(7.024 7.024) scale(.92683)"/>
+                  <path fill="#0af" d="M137.789 97.856c21.519 0 38.964-17.444 38.964-38.963 0-21.52-17.445-38.964-38.964-38.964-21.52 0-38.964 17.445-38.964 38.964s17.445 38.963 38.964 38.963z" transform="translate(7.024 7.024) scale(.92683)"/>
+                </svg>
+              </div>
+            </a>
+            <!-- Иконка Яндекс Карт - обновленная версия -->
+            <a href="https://yandex.ru/maps/" target="_blank" class="social-icon-bw" aria-label="Мы на Яндекс Картах">
+              <div class="yandex-maps-icon">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M12 2C8.13 2 5 5.13 5 9C5 13.17 9.42 18.92 11.24 21.11C11.64 21.59 12.37 21.59 12.77 21.11C14.58 18.92 19 13.17 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" 
+                        fill="currentColor"/>
+                </svg>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
 
-  <!-- Футер -->
-  <footer class="py-10 md:py-12 w-full">
-    <!-- ... -->
-  </footer>
+<!-- Плавающая кнопка "Назад" -->
+<a href="/blog/" id="back-button" class="floating-back-button" aria-label="Вернуться в блог">
+  <div class="back-arrow" aria-hidden="true"></div>
+</a>
 
-  <!-- Скрипты -->
-  <script>
-    // ... (аналогично index.html)
-  </script>
+<!-- Скрипты -->
+<script>
+  // Управление мобильным меню
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('block');
+      });
+    }
+
+    // Плавная прокрутка
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        if (this.getAttribute('href') === '#') return;
+        
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+          
+          // Закрыть мобильное меню
+          if (mobileMenu && !mobileMenu.classList.contains('hidden') && window.innerWidth < 768) {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('block');
+          }
+        }
+      });
+    });
+    
+    // Lazy loading
+    const lazyLoad = function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.src = img.dataset.src;
+          img.classList.remove("lazyload");
+          observer.unobserve(img);
+        }
+      });
+    };
+    
+    const observer = new IntersectionObserver(lazyLoad, {
+      rootMargin: "0px 0px 200px 0px",
+      threshold: 0.01
+    });
+    
+    document.querySelectorAll("img.lazyload").forEach(img => {
+      observer.observe(img);
+    });
+    
+    // Плавающая кнопка "Назад"
+    const backButton = document.getElementById('back-button');
+    if (backButton) {
+      let isScrolling;
+      window.addEventListener('scroll', function() {
+        backButton.style.opacity = "1";
+        
+        clearTimeout(isScrolling);
+        isScrolling = setTimeout(function() {
+          backButton.style.opacity = "0";
+        }, 2000);
+      });
+      
+      backButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.location.href = '/blog/';
+      });
+    }
+    
+    // Загрузка Яндекс.Метрики с задержкой
+    setTimeout(function() {
+      (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      m[i].l=1*new Date();
+      k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+      ym(102951378, "init", {
+           clickmap:true,
+           trackLinks:true,
+           accurateTrackBounce:true
+      });
+    }, 1000); // Задержка 1 секунда
+  });
+</script>
+
+<!-- Noscript для Яндекс.Метрики -->
+<noscript><div><img src="https://mc.yandex.ru/watch/102951378" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 </body>
 </html>

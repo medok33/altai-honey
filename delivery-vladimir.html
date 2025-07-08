@@ -3,106 +3,817 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Доставка алтайского мёда во Владимир | Заказать мёд с доставкой | AltayMed</title>
-    <meta name="description" content="Закажите натуральный алтайский мёд с доставкой по Владимиру и области. Свежий гречишный, липовый, таёжный мёд — бесплатно доставим от 3 литров. Оплата после получения.">
-    
-    <link rel="icon" href="images/favicon.ico" sizes="any">
-    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-    
-    <meta property="og:title" content="Доставка алтайского мёда во Владимир">
-    <meta property="og:description" content="Закажите натуральный алтайский мёд с доставкой по Владимиру и области. Свежий гречишный, липовый, таёжный мёд — бесплатно доставим от 3 литров.">
-    <meta property="og:image" content="images/og-preview.webp">
-    <meta property="og:url" content="https://altaymed.shop/delivery-vladimir.html">
-    <meta property="og:type" content="website">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Доставка алтайского мёда во Владимир">
-    <meta name="twitter:description" content="Закажите натуральный алтайский мёд с доставкой по Владимиру и области. Гречишный, липовый, таёжный мёд — бесплатно от 3 литров.">
-    <meta name="twitter:image" content="images/twitter-preview.webp">
-    
-    <!-- Подключение стилей -->
-    <link rel="stylesheet" href="delivery.min.css">
-    
-    <!-- Подключение иконок -->
-    <link rel="stylesheet" href="/assets/fonts/remixicon/remixicon.css" media="print" onload="this.media='all'">
+    <title>Доставка меда | AltayMed</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        /* ОСНОВНЫЕ СТИЛИ СТРАНИЦЫ */
+        :root {
+            --primary-color: #d97706;
+            --secondary-color: #b45309;
+            --dark-color: #1e293b;
+            --light-color: #f8fafc;
+            --gray-color: #94a3b8;
+            --background-color: #fffbeb;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--background-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 60px 0;
+        }
+        
+        h1, h2, h3 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--primary-color);
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            transition: color 0.3s;
+        }
+        
+        a:hover {
+            color: var(--primary-color);
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2:after {
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+        }
+        
+        .delivery-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+        
+        .step-card {
+            flex: 1;
+            min-width: 250px;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .step-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 2rem;
+        }
+        
+        .step-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .delivery-map {
+            height: 400px;
+            background: #e2e8f0;
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 40px 0;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+        
+        .faq-question {
+            background: white;
+            padding: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-question:after {
+            content: '+';
+            font-size: 1.5rem;
+        }
+        
+        .faq-answer {
+            background: #f8fafc;
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s, padding 0.3s;
+        }
+        
+        .faq-item.active .faq-question:after {
+            content: '-';
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 500px;
+        }
+        
+        .delivery-notice {
+            background: #fffbeb;
+            border-left: 4px solid var(--primary-color);
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        /* СТИЛИ ДЛЯ ШАПКИ (КАК НА ГЛАВНОЙ) */
+        .header-main {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-link {
+            font-weight: 600;
+            font-size: 1.1rem;
+            position: relative;
+            padding: 5px 0;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover:after,
+        .nav-link.active:after {
+            width: 100%;
+        }
+        
+        .nav-link.active {
+            color: var(--primary-color);
+        }
+        
+        .header-actions {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .icon-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--background-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+        }
+        
+        .icon-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            z-index: 2000;
+            transform: translateX(-100%);
+            transition: transform 0.4s;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        
+        .mobile-menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .mobile-menu-links {
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            overflow-y: auto;
+            flex: 1;
+        }
+        
+        .mobile-menu-link {
+            padding: 15px 0;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-bottom: 1px solid #f1f5f9;
+            display: flex;
+            align-items: center;
+        }
+        
+        .mobile-menu-link i {
+            margin-right: 10px;
+            width: 30px;
+            text-align: center;
+        }
+        
+        .mobile-menu-link.active {
+            color: var(--primary-color);
+        }
+        
+        @media (max-width: 992px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .header-actions {
+                display: flex;
+            }
+        }
+        
+        @media (min-width: 993px) {
+            .mobile-menu-toggle {
+                display: none;
+            }
+        }
+        
+        /* СТИЛИ ДЛЯ ФУТЕРА (КАК НА ГЛАВНОЙ) */
+        .footer-main {
+            background: var(--dark-color);
+            color: white;
+            padding: 60px 0 30px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        /* УЗОР ФУТЕРА */
+        .footer-main::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 600%;
+            height: 600%;
+            background-image: 
+                linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px), 
+                linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px);
+            background-size: 108px 108px;
+            transform: rotate(30deg);
+            transform-origin: 0 0;
+            opacity: 0.6;
+            z-index: 0;
+            margin-left: -220%;
+            margin-top: -220%;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .footer-text {
+            color: #cbd5e1;
+            margin-bottom: 20px;
+            max-width: 300px;
+        }
+        
+        .footer-title {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--primary-color);
+        }
+        
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .footer-link {
+            color: #cbd5e1;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-link:hover {
+            color: white;
+        }
+        
+        .footer-link i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            color: white;
+            font-size: 1.2rem;
+            /* Убираем подчеркивание */
+            text-decoration: none !important;
+        }
+        
+        .social-link:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        .contact-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+        
+        .contact-icon {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-top: 5px;
+            flex-shrink: 0;
+            /* Убираем подчеркивание */
+            text-decoration: none !important;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .contact-value {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .contact-note {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 60px;
+            padding-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .copyright {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+        
+        .payment-methods {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .payment-icon {
+            font-size: 1.8rem;
+            color: #cbd5e1;
+            /* Убираем подчеркивание */
+            text-decoration: none !important;
+        }
+        
+        .security-note {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+        
+        .security-note i {
+            color: var(--primary-color);
+        }
+        
+        /* УБИРАЕМ ПОДЧЕРКИВАНИЕ ВО ВСЕХ СЛУЧАЯХ */
+        .social-link, .icon-btn, .payment-icon, .contact-icon {
+            text-decoration: none !important;
+        }
+    </style>
 </head>
 <body>
-    <header class="site-header">
+    <!-- ШАПКА КАК НА ГЛАВНОЙ СТРАНИЦЕ -->
+    <header class="header-main">
         <div class="container">
             <div class="header-inner">
-                <a href="https://altaymed.shop/" class="logo">Алтайский мёд</a>
+                <a href="https://altaymed.shop/" class="logo">
+                    <i class="ri-home-heart-fill"></i>
+                    Алтайский мёд
+                </a>
                 
                 <nav class="nav-links">
                     <a href="https://altaymed.shop/" class="nav-link">Главная</a>
                     <a href="https://altaymed.shop/#products" class="nav-link">Каталог</a>
                     <a href="https://altaymed.shop/delivery.html" class="nav-link active">Доставка</a>
-                    <a href="https://altaymed.shop/" class="nav-link">О нас</a>
-                    <a href="https://altaymed.shop/" class="nav-link">Контакты</a>
+                    <a href="https://altaymed.shop/about" class="nav-link">О нас</a>
+                    <a href="https://altaymed.shop/contacts" class="nav-link">Контакты</a>
+                    <a href="#order" class="btn">Заказать</a>
                 </nav>
                 
                 <div class="header-actions">
-                    <a href="tel:+79209400222" class="phone-link">
-                        <div class="icon-btn">
-                            <i class="ri-phone-line ri-lg"></i>
-                        </div>
-                        <span>+7 (920) 940-02-22</span>
-                    </a>
-                    <button class="icon-btn md:hidden" id="mobile-menu-toggle" aria-label="Открыть меню">
-                        <i class="ri-menu-line ri-lg"></i>
+                    <!-- Номера телефона в шапке нет (как на главной) -->
+                    <button class="icon-btn mobile-menu-toggle" id="mobile-menu-toggle">
+                        <i class="ri-menu-line"></i>
                     </button>
                 </div>
             </div>
         </div>
     </header>
 
+    <!-- Мобильное меню -->
     <div class="mobile-menu" id="mobile-menu">
         <div class="mobile-menu-header">
             <a href="https://altaymed.shop/" class="logo">Алтайский мёд</a>
-            <button id="close-mobile-menu" aria-label="Закрыть меню">
-                <i class="ri-close-line ri-lg"></i>
+            <button id="close-mobile-menu">
+                <i class="ri-close-line"></i>
             </button>
         </div>
         <div class="mobile-menu-links">
-            <a href="https://altaymed.shop/" class="mobile-menu-link">Главная</a>
-            <a href="https://altaymed.shop/#products" class="mobile-menu-link">Каталог</a>
-            <a href="https://altaymed.shop/delivery.html" class="mobile-menu-link active">Доставка</a>
-            <a href="https://altaymed.shop/" class="mobile-menu-link">О нас</a>
-            <a href="https://altaymed.shop/" class="mobile-menu-link">Контакты</a>
-            <a href="tel:+79209400222" class="mobile-menu-link">+7 (920) 940-02-22</a>
+            <a href="https://altaymed.shop/" class="mobile-menu-link">
+                <i class="ri-home-line"></i>Главная
+            </a>
+            <a href="https://altaymed.shop/#products" class="mobile-menu-link">
+                <i class="ri-shopping-basket-line"></i>Каталог
+            </a>
+            <a href="https://altaymed.shop/delivery.html" class="mobile-menu-link active">
+                <i class="ri-truck-line"></i>Доставка
+            </a>
+            <a href="https://altaymed.shop/about" class="mobile-menu-link">
+                <i class="ri-information-line"></i>О нас
+            </a>
+            <a href="https://altaymed.shop/contacts" class="mobile-menu-link">
+                <i class="ri-contacts-book-line"></i>Контакты
+            </a>
+            <a href="#order" class="mobile-menu-link">
+                <i class="ri-shopping-cart-line"></i>Заказать
+            </a>
+            <!-- Номер только в мобильном меню -->
+            <a href="tel:+79209400222" class="mobile-menu-link">
+                <i class="ri-phone-line"></i>+7 (920) 940-02-22
+            </a>
         </div>
     </div>
 
-    <!-- Герой-секция -->
-    <section class="hero-section">
-        <div class="hero-bg-container">
-            <img 
-                src="images/hero-bg.jpg" 
-                alt="Натуральный гречишный, липовый, таёжный алтайский мёд с доставкой во Владимир" 
-                class="hero-bg-image"
-                fetchpriority="high"
-            >
-            <div class="hero-overlay"></div>
-        </div>
+    <!-- Основное содержимое страницы доставки -->
+    <section class="delivery-hero">
         <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">Доставка алтайского мёда во Владимир</h1>
-                <p class="hero-text">Закажите настоящий алтайский мёд онлайн с быстрой доставкой по Владимиру</p>
-                <a href="/#products" class="btn btn-primary" aria-label="Заказать мёд онлайн во Владимире">Заказать мёд онлайн</a>
+            <div class="section-title">
+                <h1>Доставка натурального алтайского мёда</h1>
+                <p>Быстрая и надежная доставка по Владимирской области и всей России</p>
+            </div>
+            
+            <div class="delivery-steps">
+                <div class="step-card">
+                    <div class="step-icon">
+                        <i class="ri-shopping-cart-line"></i>
+                    </div>
+                    <h3>Оформление заказа</h3>
+                    <p>Выберите понравившиеся сорта меда в нашем каталоге и оформите заказ через корзину</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-icon">
+                        <i class="ri-customer-service-line"></i>
+                    </div>
+                    <h3>Подтверждение</h3>
+                    <p>Наш менеджер свяжется с вами для уточнения деталей заказа и способа доставки</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-icon">
+                        <i class="ri-truck-line"></i>
+                    </div>
+                    <h3>Доставка</h3>
+                    <p>Мы оперативно упакуем ваш заказ и отправим его выбранным способом доставки</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-icon">
+                        <i class="ri-gift-line"></i>
+                    </div>
+                    <h3>Получение</h3>
+                    <p>Вы получаете свежий алтайский мед и оплачиваете заказ при получении</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="delivery-info">
+        <div class="container">
+            <h2>Способы доставки</h2>
+            
+            <div class="delivery-options">
+                <h3>Курьерская доставка по Коврову</h3>
+                <p>Бесплатная доставка при заказе от 2000 рублей. Доставляем в день заказа или на следующий день.</p>
+                <p>Время доставки: с 10:00 до 20:00 ежедневно.</p>
+                
+                <h3>Самовывоз в Коврове</h3>
+                <p>Забрать заказ можно по адресу: г. Ковров, ул. Магистральная, 15 (офис 24).</p>
+                <p>Часы работы: Пн-Пт с 10:00 до 18:00, Сб с 11:00 до 16:00.</p>
+                
+                <h3>Доставка по России</h3>
+                <p>Отправляем заказы по всей России транспортными компаниями:</p>
+                <ul>
+                    <li>СДЭК - от 350 рублей</li>
+                    <li>Почта России - от 300 рублей</li>
+                    <li>Boxberry - от 380 рублей</li>
+                </ul>
+                <p>Срок доставки: 2-7 дней в зависимости от региона.</p>
+                
+                <div class="delivery-notice">
+                    <p><strong>Важно!</strong> Мы тщательно упаковываем банки с медом в специальную защитную упаковку, чтобы они доехали до вас в целости и сохранности.</p>
+                </div>
+            </div>
+            
+            <div class="delivery-map">
+                <!-- Здесь будет карта -->
+                <div style="width:100%;height:100%;background:#e2e8f0;display:flex;align-items:center;justify-content:center;color:#64748b;font-weight:bold;">
+                    Карта зоны доставки по Коврову
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="delivery-faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Частые вопросы о доставке</h2>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Как быстро доставляются заказы по Коврову?</div>
+                    <div class="faq-answer">
+                        <p>Мы доставляем заказы по Коврову в день заказа, если он оформлен до 14:00, или на следующий день. Время доставки согласовывается с менеджером.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Можно ли оплатить заказ при получении?</div>
+                    <div class="faq-answer">
+                        <p>Да, вы можете оплатить заказ наличными или картой при получении. Для юридических лиц доступна оплата по безналичному расчету.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Как упаковывается мед для отправки по России?</div>
+                    <div class="faq-answer">
+                        <p>Каждая банка упаковывается в пузырчатую пленку, затем весь заказ помещается в прочную картонную коробку с дополнительными вкладышами для защиты от ударов.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Есть ли бесплатная доставка?</div>
+                    <div class="faq-answer">
+                        <p>Бесплатная доставка доступна при заказе от 2000 рублей по Коврову. Для заказов в другие регионы бесплатная доставка действует при сумме заказа от 5000 рублей.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Можно ли заказать доставку в выходные дни?</div>
+                    <div class="faq-answer">
+                        <p>Да, мы доставляем заказы по Коврову и в выходные дни. Для других регионов сроки доставки зависят от графика работы транспортной компании.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="delivery-order" id="order">
+        <div class="container">
+            <div class="section-title">
+                <h2>Заказать доставку меда</h2>
+                <p>Оставьте заявку и мы свяжемся с вами для уточнения деталей</p>
+            </div>
+            
+            <div style="max-width:600px;margin:0 auto;background:white;padding:30px;border-radius:15px;box-shadow:0 5px 15px rgba(0,0,0,0.05);">
+                <form id="delivery-form">
+                    <div style="margin-bottom:20px;">
+                        <label style="display:block;margin-bottom:8px;font-weight:600;">Ваше имя</label>
+                        <input type="text" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:8px;font-size:1rem;">
+                    </div>
+                    
+                    <div style="margin-bottom:20px;">
+                        <label style="display:block;margin-bottom:8px;font-weight:600;">Телефон</label>
+                        <input type="tel" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:8px;font-size:1rem;">
+                    </div>
+                    
+                    <div style="margin-bottom:20px;">
+                        <label style="display:block;margin-bottom:8px;font-weight:600;">Адрес доставки</label>
+                        <textarea style="width:100%;padding:12px;border:1px solid #ddd;border-radius:8px;font-size:1rem;height:100px;"></textarea>
+                    </div>
+                    
+                    <div style="margin-bottom:20px;">
+                        <label style="display:block;margin-bottom:8px;font-weight:600;">Комментарий к заказу</label>
+                        <textarea style="width:100%;padding:12px;border:1px solid #ddd;border-radius:8px;font-size:1rem;height:100px;"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn" style="width:100%;">Заказать доставку</button>
+                </form>
             </div>
         </div>
     </section>
 
-    <!-- Остальное содержимое страницы без изменений -->
-    <!-- ... -->
-
-    <!-- Футер как на главной странице -->
-    <footer class="site-footer">
+    <!-- ФУТЕР КАК НА ГЛАВНОЙ СТРАНИЦЕ -->
+    <footer class="footer-main">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-column">
                     <div class="footer-logo">Алтайский мёд</div>
-                    <p class="footer-text">Натуральные продукты пчеловодства с Алтайских гор.</p>
+                    <p class="footer-text">Натуральные продукты пчеловодства с Алтайских гор. Свежий мед с доставкой по всей России.</p>
                     <div class="footer-social">
                         <a href="https://vk.com/honeybuckwheat" class="social-link">
                             <i class="ri-vk-line"></i>
@@ -119,7 +830,7 @@
                 <div class="footer-column">
                     <h3 class="footer-title">Каталог</h3>
                     <div class="footer-links">
-                        <a href="https://altaymed.shop/#products" class="footer-link">Разнотравье</a>
+                        <a href="https://altaymed.shop/#products" class="footer-link">Мёд разнотравье</a>
                         <a href="https://altaymed.shop/#products" class="footer-link">Таёжный мёд</a>
                         <a href="https://altaymed.shop/#products" class="footer-link">Гречишный мёд</a>
                         <a href="https://altaymed.shop/#products" class="footer-link">Горный мёд</a>
@@ -127,12 +838,12 @@
                 </div>
                 
                 <div class="footer-column">
-                    <h3 class="footer-title">Отзывы о доставке</h3>
+                    <h3 class="footer-title">Покупателям</h3>
                     <div class="footer-links">
-                        <span class="footer-link">Отзывы о доставке во Владимире</span>
-                        <span class="footer-link">Все отзывы о AltayMed</span>
-                        <span class="footer-link">Отзывы о гречишном мёде</span>
-                        <span class="footer-link">Отзывы о таёжном мёде</span>
+                        <a href="https://altaymed.shop/delivery.html" class="footer-link">Доставка и оплата</a>
+                        <a href="https://altaymed.shop/guarantee" class="footer-link">Гарантия качества</a>
+                        <a href="https://altaymed.shop/faq" class="footer-link">Частые вопросы</a>
+                        <a href="https://altaymed.shop/reviews" class="footer-link">Отзывы покупателей</a>
                     </div>
                 </div>
                 
@@ -140,33 +851,33 @@
                     <h3 class="footer-title">Контакты</h3>
                     <div class="footer-contacts">
                         <div class="contact-item">
-                            <i class="ri-phone-line ri-lg contact-icon"></i>
+                            <i class="ri-phone-line contact-icon"></i>
                             <div class="contact-info">
                                 <span class="contact-value">+7 (920) 940-02-22</span>
                                 <span class="contact-note">Ежедневно с 9:00 до 21:00</span>
                             </div>
                         </div>
                         <div class="contact-item">
-                            <i class="ri-mail-line ri-lg contact-icon"></i>
+                            <i class="ri-mail-line contact-icon"></i>
                             <div class="contact-info">
                                 <span class="contact-value">altaymed.shop@yandex.ru</span>
                                 <span class="contact-note">Для заказов и вопросов</span>
                             </div>
                         </div>
                         <div class="contact-item">
-                            <i class="ri-map-pin-line ri-lg contact-icon"></i>
+                            <i class="ri-map-pin-line contact-icon"></i>
                             <div class="contact-info">
-                                <span class="contact-value">г. Владимир, ул. Большая Московская, 20</span>
-                                <span class="contact-note">Пункт выдачи заказов</span>
+                                <!-- ИСПРАВЛЕННЫЙ АДРЕС (КОВРОВ вместо Владимира) -->
+                                <span class="contact-value">Владимирская обл., г. Ковров</span>
+                                <span class="contact-note">Место нахождения офиса</span>
                             </div>
                         </div>
-                        <!-- Оптовая продажа -->
                         <div class="contact-item">
-                            <i class="ri-store-line ri-lg contact-icon"></i>
+                            <i class="ri-store-line contact-icon"></i>
                             <div class="contact-info">
-                                <span class="contact-value">мёд оптом для кафе, магазинов и заведений Владимира</span>
+                                <span class="contact-value">мёд оптом для кафе и магазинов</span>
                                 <span class="contact-note">
-                                    <a href="mailto:opt@altaymed.shop" style="color: #9CA3AF;">запросите предложение</a>
+                                    <a href="mailto:opt@altaymed.shop" class="footer-link">запросите предложение</a>
                                 </span>
                             </div>
                         </div>
@@ -176,7 +887,7 @@
             
             <div class="footer-bottom">
                 <p class="copyright">
-                    <a href="https://altaymed.shop/legal.html" style="color: inherit;">
+                    <a href="https://altaymed.shop/legal.html" class="footer-link">
                         © 2025 Алтайский мёд. Все права защищены.
                     </a>
                 </p>
@@ -186,7 +897,6 @@
                     <i class="ri-paypal-line payment-icon"></i>
                     <i class="ri-alipay-line payment-icon"></i>
                 </div>
-                <!-- SSL -->
                 <div class="security-note">
                     <i class="ri-shield-check-line"></i>
                     <span>Безопасное соединение (SSL)</span>
@@ -195,10 +905,48 @@
         </div>
     </footer>
 
-    <!-- Остальной код (модальные окна, скрипты) -->
     <script>
-        // Скрипты из оригинального файла
-        // ...
+        // Мобильное меню
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const closeMobileMenu = document.getElementById('close-mobile-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        closeMobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+        
+        // FAQ аккордеон
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+        
+        // Плавная прокрутка
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
     </script>
 </body>
 </html>

@@ -2,43 +2,36 @@
 module.exports = {
   content: [
     './delivery-vladimir.html',
-    // Добавьте другие файлы, если нужно
   ],
   safelist: [
-    // Классы шапки
+    // Шапка
     'bg-white', 'shadow-sm', 'sticky', 'top-0', 'z-50', 'container', 'mx-auto',
-    'px-4', 'md:px-6', 'py-3', 'flex', 'items-center', 'justify-between',
-    'text-2xl', 'md:text-3xl', 'font-pacifico', 'hidden', 'md:flex', 'items-center',
+    'px-4', 'md:px-6', 'py-3', 'justify-between',
+    'text-2xl', 'md:text-3xl', 'font-pacifico', 'hidden', 'md:flex',
     'space-x-6', 'md:space-x-8', 'nav-link', 'nav-btn', 'px-4', 'md:px-6', 'py-1',
     'md:py-2', 'rounded-button', 'hover:bg-opacity-90', 'transition-all', 'whitespace-nowrap',
-    'md:hidden', 'w-10', 'h-10', 'flex', 'items-center', 'justify-center', 'text-2xl',
-    'text-gray-800', 'bg-white', 'shadow-md', 'px-4', 'py-3', 'flex', 'flex-col', 'space-y-4',
+    'md:hidden', 'w-10', 'h-10', 'justify-center', 'text-2xl', 'text-gray-800',
+    'shadow-md', 'py-3', 'flex-col', 'space-y-4',
     
-    // Классы футера
-    'bg-[#8B4513]', 'py-10', 'md:py-12', 'w-full', 'container', 'mx-auto', 'px-4', 'md:px-6',
-    'w-full', 'grid', 'grid-cols-1', 'md:grid-cols-2', 'lg:grid-cols-5', 'gap-6', 'md:gap-8',
-    'w-full', 'text-2xl', 'md:text-3xl', 'font-pacifico', 'mb-3', 'md:mb-4', 'block', 'text-xs',
-    'text-base', 'md:text-lg', 'font-bold', 'hover:text-gray-300', 'transition-colors', 'flex',
-    'items-center', 'footer-link-item', 'bullet', 'mr-2', 'text-sm', 'md:text-base', 'contact-icon',
+    // Футер
+    'bg-secondary', 'py-10', 'md:py-12', 'container', 'mx-auto', 'px-4', 'md:px-6',
+    'grid', 'grid-cols-1', 'md:grid-cols-2', 'lg:grid-cols-5', 'gap-6', 'md:gap-8',
+    'font-pacifico', 'mb-3', 'md:mb-4', 'block', 'text-xs',
+    'text-base', 'md:text-lg', 'font-bold', 'hover:text-gray-300', 'transition-colors',
+    'footer-link-item', 'bullet', 'mr-2', 'text-sm', 'md:text-base', 'contact-icon',
     'ri-map-pin-line', 'text-white', 'contact-text', 'mt-4', 'md:mt-6', 'font-bold', 'mb-2', 'md:mb-3',
-    'flex', 'space-x-2', 'md:space-x-3', 'social-icon-bw', 'vk', 'telegram', 'yandex', 'ri-vk-line',
+    'space-x-2', 'md:space-x-3', 'social-icon-bw', 'ri-vk-line',
     'ri-telegram-line', 'ri-shopping-bag-line', 'ri-map-2-line',
     
-    // Общие классы
-    'flex', 'hidden', 'md:flex', 'items-center', 'justify-between', 'gap-1rem',
-    'text-white', 'text-primary', 'text-gray-400', 'text-gray-700', 'bg-white',
-    'bg-gray-900', 'bg-gray-800', 'bg-opacity-20', 'rounded-full', 'transition-colors',
-    'hover:text-primary', 'hover:bg-opacity-30', 'w-2\.5rem', 'h-2\.5rem', 'text-center',
-    
     // Динамические классы
-    { pattern: /ri-.*/ }, // Все классы иконок Remix
-    { pattern: /(mt|mb|mr|ml|py|px|gap)-.*/ }, // Все отступы
-    { pattern: /text-(xs|sm|base|lg|xl)/ }, // Размеры текста
-    { pattern: /bg-(gray|primary|secondary)-.*/ }, // Цвета фона
-    { pattern: /border-(gray|primary|secondary)-.*/ }, // Цвета границ
-    'active', // Для активных элементов меню
-    'mobile-menu', // Для мобильного меню
-    'carousel-dot-active', // Для активной точки карусели
+    { pattern: /ri-.*/ },
+    { pattern: /(m|p|mt|mb|mr|ml|mx|my|pt|pb|pr|pl|px|py|gap)-\d+/ },
+    { pattern: /text-(xs|sm|base|lg|xl|2xl|3xl|4xl|5xl|6xl)/ },
+    { pattern: /bg-(gray|primary|secondary|white|black|transparent|current)/ },
+    { pattern: /border-(gray|primary|secondary)-/ },
+    { pattern: /grid-cols-\d+/ },
+    'active',
+    'mobile-menu'
   ],
   theme: {
     extend: {
@@ -70,7 +63,6 @@ module.exports = {
     preflight: true,
     float: false,
     clear: false,
-    // Отключаем неиспользуемые компоненты для уменьшения размера CSS
     animation: false,
     backdropBlur: false,
     backdropBrightness: false,

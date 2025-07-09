@@ -929,14 +929,14 @@
             position: relative;
             z-index: 1;
         }
-        .footer-grid {
+        footer .grid {
             width: 100%;
             display: grid;
             grid-template-columns: repeat(1, minmax(0, 1fr));
             gap: 2rem;
         }
         @media (min-width: 768px) {
-            .footer-grid {
+            footer .grid {
                 grid-template-columns: repeat(5, minmax(0, 1fr));
                 gap: 1.5rem;
             }
@@ -2190,18 +2190,18 @@
         </div>
     </section>
 
-    <!-- Футер -->
+    <!-- Исправленный футер -->
     <footer class="py-10 md:py-12 w-full">
       <div id="footer-contacts" class="container mx-auto px-4 md:px-6 w-full">
-        <div class="footer-grid">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 w-full">
           <!-- Лого и описание -->
           <div class="footer-column">
             <div class="logo-wrapper">
-              <a href="/" class="text-2xl md:text-3xl font-pacifico mb-3 md:mb-4 block">Алтайский мёд</a>
+              <a href="/" class="text-2xl md:text-3xl font-['Pacifico'] mb-3 md:mb-4 block">Алтайский мёд</a>
             </div>
             <div class="description-wrapper">
-              <p class="text-sm">Натуральные продукты пчеловодства с Алтайских гор.</p>
-              <p class="text-xs mt-2">© 2025 Алтайский мёд. Все права защищены.</p>
+              <p class="text-xs">Натуральные продукты пчеловодства с Алтайских гор.</p>
+              <p class="text-xs">© 2025 Алтайский мёд. Все права защищены.</p>
             </div>
           </div>
           
@@ -2319,7 +2319,7 @@
             <!-- Социальные сети -->
             <div class="mt-4 md:mt-6">
               <p class="text-base md:text-lg font-bold mb-2 md:mb-3">Следите за нами</p>
-              <div class="flex space-x-3">
+              <div class="flex space-x-2 md:space-x-3">
                 <a href="https://vk.com/honeybuckwheat" target="_blank" class="social-icon-bw" aria-label="Наша страница ВКонтакте">
                   <i class="ri-vk-line ri-lg" aria-hidden="true"></i>
                 </a>

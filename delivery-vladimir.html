@@ -894,6 +894,118 @@
             text-align: center;
         }
         
+        /* Новый SEO-блок */
+        .seo-section {
+            background-color: white;
+            padding: 3rem 0;
+        }
+        
+        .seo-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .seo-content p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+            color: var(--gray-700);
+        }
+        
+        .security-note {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 10px;
+            color: var(--gray-400);
+            font-size: 14px;
+        }
+
+        /* Адаптация для мобильных устройств */
+        @media (max-width: 767px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero-text {
+                font-size: 1.1rem;
+            }
+            
+            .delivery-tab {
+                padding: 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .benefit-title {
+                font-size: 1.1rem;
+            }
+            
+            .benefit-text {
+                font-size: 0.95rem;
+            }
+            
+            .mobile-menu-link {
+                padding: 0.75rem 0;
+                font-size: 1rem;
+            }
+            
+            .btn {
+                font-size: 1rem;
+                padding: 0.75rem 1.5rem;
+                white-space: normal;
+            }
+            
+            .feature-title {
+                font-size: 1rem;
+            }
+            
+            .feature-text {
+                font-size: 0.85rem;
+            }
+            
+            .reviews-container {
+                padding: 1.5rem;
+            }
+            
+            .reviews-title {
+                font-size: 1.3rem;
+                margin-bottom: 1rem;
+            }
+            
+            .review-text {
+                font-size: 0.9rem;
+            }
+            
+            .carousel-btn {
+                width: 36px;
+                height: 36px;
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.5rem;
+            }
+            
+            .hero-text {
+                font-size: 1rem;
+            }
+            
+            .section {
+                padding: 3rem 0;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+                margin-bottom: 2rem;
+            }
+            
+            .reviews-container {
+                padding: 1rem;
+            }
+        }
+        
         /* Футер */
         footer {
             width: 100%;
@@ -1339,66 +1451,6 @@
         
         /* Адаптация для мобильных устройств */
         @media (max-width: 767px) {
-            .hero-title {
-                font-size: 1.8rem;
-            }
-            
-            .hero-text {
-                font-size: 1.1rem;
-            }
-            
-            .delivery-tab {
-                padding: 1rem;
-                font-size: 0.9rem;
-            }
-            
-            .benefit-title {
-                font-size: 1.1rem;
-            }
-            
-            .benefit-text {
-                font-size: 0.95rem;
-            }
-            
-            .mobile-menu-link {
-                padding: 0.75rem 0;
-                font-size: 1rem;
-            }
-            
-            .btn {
-                font-size: 1rem;
-                padding: 0.75rem 1.5rem;
-                white-space: normal;
-            }
-            
-            .feature-title {
-                font-size: 1rem;
-            }
-            
-            .feature-text {
-                font-size: 0.85rem;
-            }
-            
-            .reviews-container {
-                padding: 1.5rem;
-            }
-            
-            .reviews-title {
-                font-size: 1.3rem;
-                margin-bottom: 1rem;
-            }
-            
-            .review-text {
-                font-size: 0.9rem;
-            }
-            
-            .carousel-btn {
-                width: 36px;
-                height: 36px;
-                font-size: 1rem;
-            }
-
-            /* Адаптация футера */
             .footer-grid {
                 grid-template-columns: 1fr;
             }
@@ -1408,69 +1460,6 @@
             .footer-column:last-child {
                 margin-bottom: 0;
             }
-        }
-        
-        @media (max-width: 480px) {
-            .hero-title {
-                font-size: 1.5rem;
-            }
-            
-            .hero-text {
-                font-size: 1rem;
-            }
-            
-            .section {
-                padding: 3rem 0;
-            }
-            
-            h2 {
-                font-size: 1.5rem;
-                margin-bottom: 2rem;
-            }
-            
-            .reviews-container {
-                padding: 1rem;
-            }
-        }
-        
-        /* Новый SEO-блок */
-        .seo-section {
-            background-color: white;
-            padding: 3rem 0;
-        }
-        
-        .seo-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .seo-content p {
-            margin-bottom: 1rem;
-            line-height: 1.7;
-            color: var(--gray-700);
-        }
-        
-        .security-note {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            margin-top: 10px;
-            color: var(--gray-400);
-            font-size: 14px;
-        }
-
-        /* Исправления для футера */
-        .footer-social-icons {
-            display: flex;
-            gap: 12px;
-            margin-top: 0.5rem;
-        }
-        
-        .footer-social-title {
-            font-size: 1.125rem;
-            font-weight: 700;
-            margin-bottom: 0.75rem;
         }
     </style>
 
@@ -2223,8 +2212,10 @@
                 <!-- Лого и описание -->
                 <div class="footer-column">
                     <a href="/" class="header-logo">Алтайский мёд</a>
-                    <p class="footer-description">Натуральные продукты пчеловодства с Алтайских гор.</p>
-                    <p class="footer-copyright">© 2025 Алтайский мёд. Все права защищены.</p>
+                    <div class="description-wrapper">
+                        <p>Натуральные продукты пчеловодства с Алтайских гор.</p>
+                        <p>© 2025 Алтайский мёд. Все права защищены.</p>
+                    </div>
                 </div>
                 
                 <!-- Каталог -->
@@ -2316,7 +2307,7 @@
                             <div class="contact-icon">
                                 <i class="ri-map-pin-2-line"></i>
                             </div>
-                            <span class="contact-text">Владимирская обл. Город Ковров</span>
+                            <span class="contact-text">Владимирская обл. Город Владимир</span>
                         </li>
                         <li class="footer-link-item">
                             <a href="tel:+79209400222" class="footer-link">
@@ -2369,150 +2360,8 @@
                     </div>
                 </div>
             </div>
-            
-            <div class="footer-bottom">
-                <div class="copyright">© 2025 Алтайский мёд. Все права защищены.</div>
-            </div>
         </div>
     </footer>
-
-    <div id="order-modal" class="modal">
-        <!-- ... -->
-    </div>
-
-    <div id="success-modal" class="modal">
-        <!-- ... -->
-    </div>
-
-    <!-- Микроразметка Schema.org - улучшенная версия -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "Доставка алтайского мёда во Владимир",
-      "description": "Закажите натуральный алтайский мёд с доставкой по Владимиру и области. Свежий гречишный, липовый, таёжный мёд — бесплатно доставим от 3 литров. Оплата после получения.",
-      "breadcrumb": {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Главная",
-            "item": "https://altaymed.shop/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Доставка во Владимир",
-            "item": "https://altaymed.shop/delivery-vladimir.html"
-          }
-        ]
-      },
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Как заказать алтайский мёд онлайн с доставкой во Владимир?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Заказать алтайский мёд с доставкой во Владимир очень просто: выберите сорта мёда в каталоге, добавьте в корзину, укажите адрес во Владимире и выберите способ доставки."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Как долго доставляется мёд во Владимир?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Доставка мёда во Владимир занимает 1-2 рабочих дня. Курьерская доставка по городу - до 1 дня."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Как происходит оплата заказа?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Оплата банковской картой онлайн, наличными или картой при получении, банковским переводом для юридических лиц."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Как упаковывается мёд для доставки во Владимир?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Каждая банка упаковывается в пузырчатую пленку в картонной коробке с наполнителем для защиты при транспортировке."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Можно ли отследить статус доставки?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Да, при отправке вы получите трек-номер для отслеживания на сайте транспортной компании."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Что делать при повреждении товара?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Зафиксируйте повреждения (фото), свяжитесь с нами - мы заменим товар или вернем средства."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Можно ли заказать алтайский мёд через Avito?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Да, вы можете заказать через наш профиль на Avito."
-          }
-        }
-      ]
-    }
-    </script>
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Алтайский мёд",
-      "url": "https://altaymed.shop/",
-      "logo": "https://altaymed.shop/images/logo.png",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+79209400222",
-        "contactType": "Customer service",
-        "areaServed": "RU",
-        "availableLanguage": "Russian"
-      },
-      "sameAs": [
-        "https://vk.com/honeybuckwheat",
-        "https://t.me/HONEYBUCKWHEAT"
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Ковров",
-        "addressRegion": "Владимирская область",
-        "postalCode": "601900",
-        "streetAddress": "Владимирская область, г. Ковров"
-      },
-      "makesOffer": {
-        "@type": "Offer",
-        "priceSpecification": {
-          "@type": "UnitPriceSpecification",
-          "priceCurrency": "RUB",
-          "price": "990"
-        },
-        "itemOffered": {
-          "@type": "Product",
-          "name": "Алтайский мёд",
-          "description": "Натуральный гречишный, липовый и таёжный мёд с Алтая",
-          "brand": {
-            "@type": "Brand",
-            "name": "Алтайский мёд"
-          }
-        }
-      }
-    }
-    </script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -2557,27 +2406,6 @@
             if (mobileMenuToggle && mobileMenu) {
                 mobileMenuToggle.addEventListener('click', () => {
                     mobileMenu.classList.toggle('hidden');
-                });
-            }
-            
-            window.addEventListener('click', (event) => {
-                if (orderModal && event.target === orderModal) {
-                    orderModal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                }
-                if (successModal && event.target === successModal) {
-                    successModal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                }
-            });
-            
-            const orderForm = document.getElementById('order-form');
-            if (orderForm) {
-                orderForm.addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    if (orderModal) orderModal.style.display = 'none';
-                    if (successModal) successModal.style.display = 'flex';
-                    orderForm.reset();
                 });
             }
             

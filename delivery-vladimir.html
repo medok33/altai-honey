@@ -902,7 +902,7 @@
           overflow: hidden;
           background-color: #8B4513;
           z-index: 1;
-          padding: 3rem 0 1rem;
+          padding: 3rem 0;
         }
         footer::before {
           content: "";
@@ -2201,40 +2201,40 @@
     </section>
 
     <!-- Футер -->
-    <footer>
-      <div id="footer-contacts" class="container">
-        <div class="grid">
+    <footer class="py-10 md:py-12 w-full">
+      <div id="footer-contacts" class="container mx-auto px-4 md:px-6 w-full">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 w-full">
           <!-- Лого и описание -->
           <div class="footer-column">
             <div class="logo-wrapper">
-              <a href="/" class="text-2xl md:text-3xl font-pacifico header-logo">Алтайский мёд</a>
+              <a href="/" class="text-2xl md:text-3xl font-['Pacifico'] mb-3 md:mb-4 block">Алтайский мёд</a>
             </div>
             <div class="description-wrapper">
-              <p class="text-sm mt-2">Натуральные продукты пчеловодства с Алтайских гор.</p>
+              <p class="text-xs">Натуральные продукты пчеловодства с Алтайских гор.</p>
               <p class="text-xs mt-2">© 2025 Алтайский мёд. Все права защищены.</p>
             </div>
           </div>
           
           <!-- Каталог -->
           <div class="footer-column">
-            <h4>Каталог</h4>
+            <h4 class="text-base md:text-lg font-bold">Каталог</h4>
             <ul>
               <li>
-                <a href="/#product-1" class="footer-link-item">
-                  <span class="bullet"></span>
-                  <span>Разнотравье</span>
+                <a href="/#product-1" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+                  <span class="bullet mr-2"></span>
+                  <span class="text-sm md:text-base">Разнотравье</span>
                 </a>
               </li>
               <li>
-                <a href="/#product-2" class="footer-link-item">
-                  <span class="bullet"></span>
-                  <span>Таёжный мёд</span>
+                <a href="/#product-2" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+                  <span class="bullet mr-2"></span>
+                  <span class="text-sm md:text-base">Таёжный мёд</span>
                 </a>
               </li>
               <li>
-                <a href="/#product-3" class="footer-link-item">
-                  <span class="bullet"></span>
-                  <span>Гречишный мёд</span>
+                <a href="/#product-3" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+                  <span class="bullet mr-2"></span>
+                  <span class="text-sm md:text-base">Гречишный мёд</span>
                 </a>
               </li>
             </ul>
@@ -2242,24 +2242,24 @@
           
           <!-- Материалы -->
           <div class="footer-column">
-            <h4>Материалы</h4>
+            <h4 class="text-base md:text-lg font-bold">Материалы</h4>
             <ul>
               <li>
-                <a href="/blog/" class="footer-link-item">
-                  <span class="bullet"></span>
-                  <span>Блог</span>
+                <a href="/blog/" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+                  <span class="bullet mr-2"></span>
+                  <span class="text-sm md:text-base">Блог</span>
                 </a>
               </li>
               <li>
-                <a href="/faq/" class="footer-link-item">
-                  <span class="bullet"></span>
-                  <span>FAQ</span>
+                <a href="/faq/" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+                  <span class="bullet mr-2"></span>
+                  <span class="text-sm md:text-base">FAQ</span>
                 </a>
               </li>
               <li>
-                <a href="/legal.html" class="footer-link-item">
-                  <span class="bullet"></span>
-                  <span>Правовая информация</span>
+                <a href="/legal.html" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+                  <span class="bullet mr-2"></span>
+                  <span class="text-sm md:text-base">Правовая информация</span>
                 </a>
               </li>
             </ul>
@@ -2267,30 +2267,30 @@
           
           <!-- Информация -->
           <div class="footer-column">
-            <h4>Информация</h4>
+            <h4 class="text-base md:text-lg font-bold">Информация</h4>
             <ul>
               <li>
-                <a href="/#benefits" class="footer-link-item">
-                  <span class="bullet"></span>
-                  <span>Преимущества</span>
+                <a href="/#benefits" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+                  <span class="bullet mr-2"></span>
+                  <span class="text-sm md:text-base">Преимущества</span>
                 </a>
               </li>
               <li>
-                <a href="/#about" class="footer-link-item">
-                  <span class="bullet"></span>
-                  <span>О нас</span>
+                <a href="/#about" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+                  <span class="bullet mr-2"></span>
+                  <span class="text-sm md:text-base">О нас</span>
                 </a>
               </li>
               <li>
-                <a href="/#footer-contacts" class="footer-link-item">
-                  <span class="bullet"></span>
-                  <span>Контакты</span>
+                <a href="/#footer-contacts" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+                  <span class="bullet mr-2"></span>
+                  <span class="text-sm md:text-base">Контакты</span>
                 </a>
               </li>
               <li>
-                <a href="/delivery.html" class="footer-link-item">
-                  <span class="bullet"></span>
-                  <span>Доставка и оплата</span>
+                <a href="/delivery.html" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+                  <span class="bullet mr-2"></span>
+                  <span class="text-sm md:text-base">Доставка и оплата</span>
                 </a>
               </li>
             </ul>
@@ -2298,12 +2298,12 @@
           
           <!-- Контакты -->
           <div class="footer-column">
-            <h4>Контакты</h4>
+            <h4 class="text-base md:text-lg font-bold">Контакты</h4>
             <ul>
               <li>
                 <a class="footer-link-item">
                   <div class="contact-icon">
-                    <i class="ri-map-pin-2-line" aria-hidden="true"></i>
+                    <i class="ri-map-pin-2-line ri-sm md:ri-base" aria-hidden="true"></i>
                   </div>
                   <span class="contact-text">Владимирская обл. Город Ковров</span>
                 </a>
@@ -2311,7 +2311,7 @@
               <li>
                 <a href="tel:+79209400222" class="footer-link-item">
                   <div class="contact-icon">
-                    <i class="ri-phone-line" aria-hidden="true"></i>
+                    <i class="ri-phone-line ri-sm md:ri-base" aria-hidden="true"></i>
                   </div>
                   <span class="contact-text">+7 (920) 940-02-22</span>
                 </a>
@@ -2319,7 +2319,7 @@
               <li>
                 <a href="mailto:9209400222@mail.ru" class="footer-link-item">
                   <div class="contact-icon">
-                    <i class="ri-mail-line" aria-hidden="true"></i>
+                    <i class="ri-mail-line ri-sm md:ri-base" aria-hidden="true"></i>
                   </div>
                   <span class="contact-text">9209400222@mail.ru</span>
                 </a>
@@ -2327,9 +2327,9 @@
             </ul>
             
             <!-- Социальные сети -->
-            <div class="mt-4">
-              <p class="text-base font-bold mb-3">Следите за нами</p>
-              <div class="flex space-x-3">
+            <div class="mt-4 md:mt-6">
+              <p class="text-base md:text-lg font-bold mb-2 md:mb-3">Следите за нами</p>
+              <div class="flex space-x-2 md:space-x-3">
                 <a href="https://vk.com/honeybuckwheat" target="_blank" class="social-icon-bw" aria-label="Наша страница ВКонтакте">
                   <i class="ri-vk-line ri-lg" aria-hidden="true"></i>
                 </a>
@@ -2362,18 +2362,7 @@
         </div>
         
         <div class="footer-bottom">
-          <div class="copyright">© 2025 Алтайский мёд. Все права защищены.</div>
-          <div class="payment-methods">
-            <a href="#" class="payment-icon" aria-label="Оплата картой Visa">
-              <i class="ri-visa-line" aria-hidden="true"></i>
-            </a>
-            <a href="#" class="payment-icon" aria-label="Оплата картой MasterCard">
-              <i class="ri-mastercard-line" aria-hidden="true"></i>
-            </a>
-            <a href="#" class="payment-icon" aria-label="Оплата через Мир">
-              <i class="ri-bank-card-line" aria-hidden="true"></i>
-            </a>
-          </div>
+            <div class="copyright">© 2025 Алтайский мёд. Все права защищены.</div>
         </div>
       </div>
     </footer>

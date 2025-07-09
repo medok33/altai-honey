@@ -929,14 +929,14 @@
             position: relative;
             z-index: 1;
         }
-        footer .grid {
+        .footer-grid {
             width: 100%;
             display: grid;
             grid-template-columns: repeat(1, minmax(0, 1fr));
             gap: 2rem;
         }
         @media (min-width: 768px) {
-            footer .grid {
+            .footer-grid {
                 grid-template-columns: repeat(5, minmax(0, 1fr));
                 gap: 1.5rem;
             }
@@ -2193,7 +2193,7 @@
     <!-- Футер -->
     <footer class="py-10 md:py-12 w-full">
       <div id="footer-contacts" class="container mx-auto px-4 md:px-6 w-full">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 w-full">
+        <div class="footer-grid">
           <!-- Лого и описание -->
           <div class="footer-column">
             <div class="logo-wrapper">

@@ -894,9 +894,37 @@
             text-align: center;
         }
         
+        /* Новый SEO-блок */
+        .seo-section {
+            background-color: white;
+            padding: 3rem 0;
+        }
+        
+        .seo-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .seo-content p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+            color: var(--gray-700);
+        }
+        
+        .security-note {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 10px;
+            color: var(--gray-400);
+            font-size: 14px;
+        }
+        
         /* Футер */
         footer {
-            width: 100%;
+            width: 100% !important;
+            box-sizing: border-box !important;
             position: relative;
             overflow: hidden;
             background-color: #8B4513;
@@ -922,7 +950,7 @@
             margin-top: -220%;
         }
         footer .container {
-            width: 100%;
+            width: 100% !important;
             max-width: 1280px;
             padding: 0 1rem;
             margin: 0 auto;
@@ -930,7 +958,7 @@
             z-index: 1;
         }
         footer .grid {
-            width: 100%;
+            width: 100% !important;
             display: grid;
             grid-template-columns: repeat(1, minmax(0, 1fr));
             gap: 2rem;
@@ -948,6 +976,7 @@
             width: 100%;
             padding: 0;
             margin: 0;
+            box-sizing: border-box;
         }
         .footer-column h4 {
             text-align: left;
@@ -975,11 +1004,13 @@
             list-style-type: none;
             padding: 0;
             margin: 0;
+            box-sizing: border-box;
         }
         .footer-column li a {
             display: flex;
             align-items: center;
             width: 100%;
+            box-sizing: border-box;
             text-decoration: none;
             font-size: 0.95rem;
         }
@@ -999,17 +1030,23 @@
         footer span, 
         footer h4, 
         footer li {
-            color: white;
-            text-decoration: none;
+            color: white !important;
+            box-sizing: border-box !important;
+            text-decoration: none !important;
+        }
+        footer a {
+            text-decoration: none !important;
+            transition: color 0.2s;
         }
         footer a:hover {
-            color: #d1d5db;
+            color: #d1d5db !important;
         }
         .footer-link-item {
             display: flex;
             align-items: center;
-            padding-top: 0.21rem;
-            padding-bottom: 0.21rem;
+            padding-top: 0.21rem !important;
+            padding-bottom: 0.21rem !important;
+            text-decoration: none !important;
         }
         .contact-icon {
             display: flex;
@@ -1053,398 +1090,6 @@
         .avito-icon-bw svg, .yandex-maps-icon svg {
             width: 100%;
             height: 100%;
-        }
-        
-        .footer-bottom {
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            text-align: center;
-            position: relative;
-            z-index: 1;
-            margin-top: 2rem;
-        }
-        
-        .copyright {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.875rem;
-            margin-bottom: 1rem;
-        }
-        
-        .payment-methods {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-        
-        .payment-icon {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 1.5rem;
-            text-decoration: none;
-        }
-        
-        .text-center {
-            text-align: center;
-        }
-        
-        .text-xl {
-            font-size: 1.25rem;
-        }
-        
-        .font-semibold {
-            font-weight: 600;
-        }
-        
-        .mb-4 {
-            margin-bottom: 1rem;
-        }
-        
-        .mb-6 {
-            margin-bottom: 1.5rem;
-        }
-        
-        .space-y-2 > * + * {
-            margin-top: 0.5rem;
-        }
-        
-        .space-y-3 > * + * {
-            margin-top: 0.75rem;
-        }
-        
-        .list-disc {
-            list-style-type: disc;
-        }
-        
-        .pl-5 {
-            padding-left: 1.25rem;
-        }
-        
-        .mt-2 {
-            margin-top: 0.5rem;
-        }
-        
-        .mobile-menu {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: white;
-            z-index: 100;
-            padding: 1rem;
-            transform: translateX(-100%);
-            transition: transform 0.3s ease;
-        }
-        
-        .mobile-menu.active {
-            transform: translateX(0);
-        }
-        
-        .mobile-menu-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--gray-200);
-        }
-        
-        .mobile-menu-links {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-        
-        .mobile-menu-link {
-            padding: 0.75rem 0;
-            font-size: 1.125rem;
-            color: var(--gray-700);
-            text-decoration: none;
-            border-bottom: 1px solid var(--gray-100);
-        }
-        
-        .mobile-menu-link.active {
-            color: var(--primary);
-        }
-        
-        .mobile-menu-link:hover {
-            color: var(--primary);
-        }
-        
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .modal-content {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            max-width: 500px;
-            width: 90%;
-            animation: modalAppear 0.3s ease-out;
-        }
-        @keyframes modalAppear {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .close-modal {
-            position: absolute;
-            top: 16px;
-            right: 16px;
-            font-size: 24px;
-            cursor: pointer;
-            color: #6b7280;
-            transition: color 0.2s;
-        }
-        .close-modal:hover {
-            color: #374151;
-        }
-        
-        .success-modal-content {
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            max-width: 450px;
-            width: 90%;
-            padding: 40px 30px;
-            text-align: center;
-            animation: modalAppear 0.4s ease-out;
-        }
-        .success-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 20px;
-            background-color: #6B8E23;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: pulse 1.5s infinite;
-        }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-        .success-icon i {
-            font-size: 40px;
-            color: white;
-        }
-        .success-title {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: #2d3748;
-        }
-        .success-text {
-            font-size: 18px;
-            color: #4a5568;
-            margin-bottom: 25px;
-            line-height: 1.5;
-        }
-        .success-btn {
-            background: #6B8E23;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            padding: 12px 30px;
-            font-size: 18px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-        .success-btn:hover {
-            background: #5a7a1d;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        
-        .contact-icon i {
-            vertical-align: middle;
-            line-height: 1;
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: var(--gray-700);
-        }
-        
-        .form-input {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid var(--gray-300);
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-        
-        .form-input:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(107, 142, 35, 0.2);
-        }
-        
-        .form-textarea {
-            min-height: 100px;
-            resize: vertical;
-        }
-        
-        .submit-btn {
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            padding: 0.75rem 1.5rem;
-            font-size: 1rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            width: 100%;
-        }
-        
-        .submit-btn:hover {
-            background-color: #5a7a1c;
-        }
-        
-        .modal-header {
-            background: linear-gradient(to right, #6B8E23, #8B4513);
-            padding: 1.5rem;
-            border-radius: 12px 12px 0 0;
-            color: white;
-        }
-        
-        .modal-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            text-align: center;
-        }
-        
-        /* Адаптация для мобильных устройств */
-        @media (max-width: 767px) {
-            .hero-title {
-                font-size: 1.8rem;
-            }
-            
-            .hero-text {
-                font-size: 1.1rem;
-            }
-            
-            .delivery-tab {
-                padding: 1rem;
-                font-size: 0.9rem;
-            }
-            
-            .benefit-title {
-                font-size: 1.1rem;
-            }
-            
-            .benefit-text {
-                font-size: 0.95rem;
-            }
-            
-            .mobile-menu-link {
-                padding: 0.75rem 0;
-                font-size: 1rem;
-            }
-            
-            .btn {
-                font-size: 1rem;
-                padding: 0.75rem 1.5rem;
-                white-space: normal;
-            }
-            
-            .feature-title {
-                font-size: 1rem;
-            }
-            
-            .feature-text {
-                font-size: 0.85rem;
-            }
-            
-            .reviews-container {
-                padding: 1.5rem;
-            }
-            
-            .reviews-title {
-                font-size: 1.3rem;
-                margin-bottom: 1rem;
-            }
-            
-            .review-text {
-                font-size: 0.9rem;
-            }
-            
-            .carousel-btn {
-                width: 36px;
-                height: 36px;
-                font-size: 1rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .hero-title {
-                font-size: 1.5rem;
-            }
-            
-            .hero-text {
-                font-size: 1rem;
-            }
-            
-            .section {
-                padding: 3rem 0;
-            }
-            
-            h2 {
-                font-size: 1.5rem;
-                margin-bottom: 2rem;
-            }
-            
-            .reviews-container {
-                padding: 1rem;
-            }
-        }
-        
-        /* Новый SEO-блок */
-        .seo-section {
-            background-color: white;
-            padding: 3rem 0;
-        }
-        
-        .seo-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .seo-content p {
-            margin-bottom: 1rem;
-            line-height: 1.7;
-            color: var(--gray-700);
-        }
-        
-        .security-note {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            margin-top: 10px;
-            color: var(--gray-400);
-            font-size: 14px;
         }
     </style>
 
@@ -2190,7 +1835,7 @@
         </div>
     </section>
 
-    <!-- Исправленный футер -->
+    <!-- Футер -->
     <footer class="py-10 md:py-12 w-full">
       <div id="footer-contacts" class="container mx-auto px-4 md:px-6 w-full">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 w-full">
@@ -2201,7 +1846,7 @@
             </div>
             <div class="description-wrapper">
               <p class="text-xs">Натуральные продукты пчеловодства с Алтайских гор.</p>
-              <p class="text-xs">© 2025 Алтайский мёд. Все права защищены.</p>
+              <p class="text-xs mt-2">© 2025 Алтайский мёд. Все права защищены.</p>
             </div>
           </div>
           
@@ -2349,10 +1994,6 @@
               </div>
             </div>
           </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <div class="copyright">© 2025 Алтайский мёд. Все права защищены.</div>
         </div>
       </div>
     </footer>

@@ -896,105 +896,101 @@
         
         /* Футер */
         footer {
-          width: 100% !important;
-          box-sizing: border-box !important;
-          position: relative;
-          overflow: hidden;
-          background-color: #8B4513;
-          z-index: 1;
-          padding: 3rem 0;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            background-color: #8B4513;
+            z-index: 1;
+            padding: 3rem 0;
         }
         footer::before {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 600%;
-          height: 600%;
-          background-image: 
-            linear-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
-          background-size: 108px 108px;
-          transform: rotate(30deg);
-          transform-origin: 0 0;
-          opacity: 0.6;
-          z-index: 0;
-          margin-left: -220%;
-          margin-top: -220%;
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 600%;
+            height: 600%;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+            background-size: 108px 108px;
+            transform: rotate(30deg);
+            transform-origin: 0 0;
+            opacity: 0.6;
+            z-index: 0;
+            margin-left: -220%;
+            margin-top: -220%;
         }
         footer .container {
-          width: 100% !important;
-          max-width: 1280px;
-          padding: 0 1rem;
-          margin: 0 auto;
-          position: relative;
-          z-index: 1;
+            width: 100%;
+            max-width: 1280px;
+            padding: 0 1rem;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
         footer .grid {
-          width: 100% !important;
-          display: grid !important;
-          grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
-          gap: 2rem;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            gap: 2rem;
         }
         @media (min-width: 768px) {
-          footer .grid {
-            grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
-            gap: 1.5rem;
-          }
+            footer .grid {
+                grid-template-columns: repeat(5, minmax(0, 1fr));
+                gap: 1.5rem;
+            }
         }
         .footer-column {
-          display: flex !important;
-          flex-direction: column !important;
-          align-items: flex-start !important;
-          width: 100% !important;
-          padding: 0 !important;
-          margin: 0 !important;
-          box-sizing: border-box !important;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+            padding: 0;
+            margin: 0;
         }
         .footer-column h4 {
-          text-align: left !important;
-          width: 100% !important;
-          padding: 0 !important;
-          margin: 0 0 1rem 0 !important;
-          font-weight: 700 !important;
-          font-size: 1.125rem !important;
-          line-height: 1.4 !important;
-          color: white;
+            text-align: left;
+            width: 100%;
+            padding: 0;
+            margin: 0 0 1rem 0;
+            font-weight: 700;
+            font-size: 1.125rem;
+            line-height: 1.4;
+            color: white;
         }
         .footer-column ul {
-          display: flex !important;
-          flex-direction: column !important;
-          align-items: flex-start !important;
-          width: 100% !important;
-          padding: 0 !important;
-          margin: 0 !important;
-          list-style: none !important;
-          gap: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            gap: 0.5rem;
         }
         .footer-column li {
-          width: 100% !important;
-          text-align: left !important;
-          list-style-type: none !important;
-          padding: 0 !important;
-          margin: 0 !important;
-          box-sizing: border-box !important;
+            width: 100%;
+            text-align: left;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
         }
         .footer-column li a {
-          display: flex !important;
-          align-items: center !important;
-          width: 100% !important;
-          box-sizing: border-box !important;
-          text-decoration: none !important;
-          font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            text-decoration: none;
+            font-size: 0.95rem;
         }
         .footer-column .bullet {
-          display: inline-block !important;
-          width: 6px !important;
-          height: 6px !important;
-          background-color: white !important;
-          border-radius: 50% !important;
-          margin-right: 10px !important;
-          flex-shrink: 0 !important;
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background-color: white;
+            border-radius: 50%;
+            margin-right: 10px;
+            flex-shrink: 0;
         }
         footer, 
         footer *,
@@ -1003,66 +999,60 @@
         footer span, 
         footer h4, 
         footer li {
-          color: white !important;
-          box-sizing: border-box !important;
-          text-decoration: none !important;
-        }
-        footer a {
-          text-decoration: none !important;
-          transition: color 0.2s;
+            color: white;
+            text-decoration: none;
         }
         footer a:hover {
-          color: #d1d5db !important;
+            color: #d1d5db;
         }
         .footer-link-item {
-          display: flex;
-          align-items: center;
-          padding-top: 0.21rem !important;
-          padding-bottom: 0.21rem !important;
-          text-decoration: none !important;
+            display: flex;
+            align-items: center;
+            padding-top: 0.21rem;
+            padding-bottom: 0.21rem;
         }
         .contact-icon {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          margin-right: 12px;
-          flex-shrink: 0;
-          width: 24px;
-          font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            flex-shrink: 0;
+            width: 24px;
+            font-size: 1.1rem;
         }
         .contact-text {
-          flex-grow: 1;
-          line-height: 1.5;
-          font-size: 0.95rem;
+            flex-grow: 1;
+            line-height: 1.5;
+            font-size: 0.95rem;
         }
         .social-icon-bw {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-          background: transparent;
-          transition: all 0.3s;
-          border: 1px solid rgba(255, 255, 255, 0.3);
-          color: rgba(255, 255, 255, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: transparent;
+            transition: all 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: rgba(255, 255, 255, 0.7);
         }
         .social-icon-bw:hover {
-          background: rgba(255, 255, 255, 0.1);
-          border-color: #6B8E23;
-          color: white;
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #6B8E23;
+            color: white;
         }
         .avito-icon-bw, .yandex-maps-icon {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 24px;
-          height: 24px;
-          position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            position: relative;
         }
         .avito-icon-bw svg, .yandex-maps-icon svg {
-          width: 100%;
-          height: 100%;
+            width: 100%;
+            height: 100%;
         }
         
         .footer-bottom {
@@ -1090,7 +1080,7 @@
         .payment-icon {
             color: rgba(255, 255, 255, 0.7);
             font-size: 1.5rem;
-            text-decoration: none !important;
+            text-decoration: none;
         }
         
         .text-center {
@@ -2200,18 +2190,18 @@
         </div>
     </section>
 
-    <!-- Футер -->
+    <!-- Исправленный футер -->
     <footer class="py-10 md:py-12 w-full">
       <div id="footer-contacts" class="container mx-auto px-4 md:px-6 w-full">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 w-full">
           <!-- Лого и описание -->
           <div class="footer-column">
             <div class="logo-wrapper">
-              <a href="/" class="text-2xl md:text-3xl font-['Pacifico'] mb-3 md:mb-4 block">Алтайский мёд</a>
+              <a href="/" class="text-2xl md:text-3xl font-pacifico mb-3 md:mb-4 block">Алтайский мёд</a>
             </div>
             <div class="description-wrapper">
               <p class="text-xs">Натуральные продукты пчеловодства с Алтайских гор.</p>
-              <p class="text-xs mt-2">© 2025 Алтайский мёд. Все права защищены.</p>
+              <p class="text-xs">© 2025 Алтайский мёд. Все права защищены.</p>
             </div>
           </div>
           
@@ -2543,29 +2533,11 @@
             
             // Мобильное меню
             const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-            const closeMobileMenu = document.getElementById('close-mobile-menu');
             const mobileMenu = document.getElementById('mobile-menu');
             
-            if (mobileMenuToggle && closeMobileMenu && mobileMenu) {
+            if (mobileMenuToggle && mobileMenu) {
                 mobileMenuToggle.addEventListener('click', () => {
-                    mobileMenu.classList.add('active');
-                });
-                
-                closeMobileMenu.addEventListener('click', () => {
-                    mobileMenu.classList.remove('active');
-                });
-            }
-            
-            // Модальные окна
-            const orderModal = document.getElementById('order-modal');
-            const successModal = document.getElementById('success-modal');
-            const closeModal = document.querySelector('.close-modal');
-            const closeSuccessModal = document.getElementById('close-success-modal');
-            
-            if (closeModal) {
-                closeModal.addEventListener('click', () => {
-                    if (orderModal) orderModal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
+                    mobileMenu.classList.toggle('hidden');
                 });
             }
             
@@ -2579,13 +2551,6 @@
                     document.body.style.overflow = 'auto';
                 }
             });
-            
-            if (closeSuccessModal) {
-                closeSuccessModal.addEventListener('click', () => {
-                    if (successModal) successModal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                });
-            }
             
             const orderForm = document.getElementById('order-form');
             if (orderForm) {

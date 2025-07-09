@@ -894,118 +894,6 @@
             text-align: center;
         }
         
-        /* Новый SEO-блок */
-        .seo-section {
-            background-color: white;
-            padding: 3rem 0;
-        }
-        
-        .seo-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .seo-content p {
-            margin-bottom: 1rem;
-            line-height: 1.7;
-            color: var(--gray-700);
-        }
-        
-        .security-note {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            margin-top: 10px;
-            color: var(--gray-400);
-            font-size: 14px;
-        }
-
-        /* Адаптация для мобильных устройств */
-        @media (max-width: 767px) {
-            .hero-title {
-                font-size: 1.8rem;
-            }
-            
-            .hero-text {
-                font-size: 1.1rem;
-            }
-            
-            .delivery-tab {
-                padding: 1rem;
-                font-size: 0.9rem;
-            }
-            
-            .benefit-title {
-                font-size: 1.1rem;
-            }
-            
-            .benefit-text {
-                font-size: 0.95rem;
-            }
-            
-            .mobile-menu-link {
-                padding: 0.75rem 0;
-                font-size: 1rem;
-            }
-            
-            .btn {
-                font-size: 1rem;
-                padding: 0.75rem 1.5rem;
-                white-space: normal;
-            }
-            
-            .feature-title {
-                font-size: 1rem;
-            }
-            
-            .feature-text {
-                font-size: 0.85rem;
-            }
-            
-            .reviews-container {
-                padding: 1.5rem;
-            }
-            
-            .reviews-title {
-                font-size: 1.3rem;
-                margin-bottom: 1rem;
-            }
-            
-            .review-text {
-                font-size: 0.9rem;
-            }
-            
-            .carousel-btn {
-                width: 36px;
-                height: 36px;
-                font-size: 1rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .hero-title {
-                font-size: 1.5rem;
-            }
-            
-            .hero-text {
-                font-size: 1rem;
-            }
-            
-            .section {
-                padding: 3rem 0;
-            }
-            
-            h2 {
-                font-size: 1.5rem;
-                margin-bottom: 2rem;
-            }
-            
-            .reviews-container {
-                padding: 1rem;
-            }
-        }
-        
         /* Футер */
         footer {
             width: 100%;
@@ -1451,6 +1339,66 @@
         
         /* Адаптация для мобильных устройств */
         @media (max-width: 767px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero-text {
+                font-size: 1.1rem;
+            }
+            
+            .delivery-tab {
+                padding: 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .benefit-title {
+                font-size: 1.1rem;
+            }
+            
+            .benefit-text {
+                font-size: 0.95rem;
+            }
+            
+            .mobile-menu-link {
+                padding: 0.75rem 0;
+                font-size: 1rem;
+            }
+            
+            .btn {
+                font-size: 1rem;
+                padding: 0.75rem 1.5rem;
+                white-space: normal;
+            }
+            
+            .feature-title {
+                font-size: 1rem;
+            }
+            
+            .feature-text {
+                font-size: 0.85rem;
+            }
+            
+            .reviews-container {
+                padding: 1.5rem;
+            }
+            
+            .reviews-title {
+                font-size: 1.3rem;
+                margin-bottom: 1rem;
+            }
+            
+            .review-text {
+                font-size: 0.9rem;
+            }
+            
+            .carousel-btn {
+                width: 36px;
+                height: 36px;
+                font-size: 1rem;
+            }
+
+            /* Адаптация футера */
             .footer-grid {
                 grid-template-columns: 1fr;
             }
@@ -1460,6 +1408,82 @@
             .footer-column:last-child {
                 margin-bottom: 0;
             }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.5rem;
+            }
+            
+            .hero-text {
+                font-size: 1rem;
+            }
+            
+            .section {
+                padding: 3rem 0;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+                margin-bottom: 2rem;
+            }
+            
+            .reviews-container {
+                padding: 1rem;
+            }
+        }
+        
+        /* Новый SEO-блок */
+        .seo-section {
+            background-color: white;
+            padding: 3rem 0;
+        }
+        
+        .seo-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .seo-content p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+            color: var(--gray-700);
+        }
+        
+        .security-note {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 10px;
+            color: var(--gray-400);
+            font-size: 14px;
+        }
+
+        /* Исправления для футера */
+        .footer-social-icons {
+            display: flex;
+            gap: 12px;
+            margin-top: 1rem;
+        }
+        
+        .footer-social-title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Увеличиваем размер текста в футере */
+        .footer-description {
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .footer-copyright {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 0.5rem;
         }
     </style>
 
@@ -2212,10 +2236,8 @@
                 <!-- Лого и описание -->
                 <div class="footer-column">
                     <a href="/" class="header-logo">Алтайский мёд</a>
-                    <div class="description-wrapper">
-                        <p style="font-size: 0.95rem; margin-bottom: 0.5rem;">Натуральные продукты пчеловодства с Алтайских гор.</p>
-                        <p style="font-size: 0.85rem;">© 2025 Алтайский мёд. Все права защищены.</p>
-                    </div>
+                    <p class="footer-description">Натуральные продукты пчеловодства с Алтайских гор.</p>
+                    <p class="footer-copyright">© 2025 Алтайский мёд. Все права защищены.</p>
                 </div>
                 
                 <!-- Каталог -->
@@ -2307,7 +2329,7 @@
                             <div class="contact-icon">
                                 <i class="ri-map-pin-2-line"></i>
                             </div>
-                            <span class="contact-text">Владимирская обл. Город Владимир</span>
+                            <span class="contact-text">Владимирская обл. Город Ковров</span>
                         </li>
                         <li class="footer-link-item">
                             <a href="tel:+79209400222" class="footer-link">
@@ -2328,8 +2350,8 @@
                     </ul>
                     
                     <!-- Социальные сети -->
-                    <div class="footer-social">
-                        <p class="footer-social-title" style="margin-top: 1.5rem; margin-bottom: 0.75rem;">Следите за нами</p>
+                    <div class="mt-4">
+                        <h4>Следите за нами</h4>
                         <div class="footer-social-icons">
                             <a href="https://vk.com/honeybuckwheat" target="_blank" class="social-icon-bw" aria-label="Наша страница ВКонтакте">
                                 <i class="ri-vk-line"></i>
@@ -2359,6 +2381,10 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">© 2025 Алтайский мёд. Все права защищены.</div>
             </div>
         </div>
     </footer>

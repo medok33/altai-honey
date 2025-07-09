@@ -902,6 +902,7 @@
           overflow: hidden;
           background-color: #8B4513;
           z-index: 1;
+          padding: 3rem 0 1rem;
         }
         footer::before {
           content: "";
@@ -923,9 +924,9 @@
         }
         footer .container {
           width: 100% !important;
-          max-width: 100% !important;
-          padding-right: 1.5rem !important;
-          padding-left: 1.5rem !important;
+          max-width: 1280px;
+          padding: 0 1rem;
+          margin: 0 auto;
           position: relative;
           z-index: 1;
         }
@@ -933,10 +934,12 @@
           width: 100% !important;
           display: grid !important;
           grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+          gap: 2rem;
         }
         @media (min-width: 768px) {
           footer .grid {
             grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+            gap: 1.5rem;
           }
         }
         .footer-column {
@@ -952,10 +955,11 @@
           text-align: left !important;
           width: 100% !important;
           padding: 0 !important;
-          margin: 0 0 0.64rem 0 !important;
-          font-weight: bold !important;
+          margin: 0 0 1rem 0 !important;
+          font-weight: 700 !important;
           font-size: 1.125rem !important;
-          line-height: 1.75rem !important;
+          line-height: 1.4 !important;
+          color: white;
         }
         .footer-column ul {
           display: flex !important;
@@ -965,6 +969,7 @@
           padding: 0 !important;
           margin: 0 !important;
           list-style: none !important;
+          gap: 0.5rem;
         }
         .footer-column li {
           width: 100% !important;
@@ -980,6 +985,7 @@
           width: 100% !important;
           box-sizing: border-box !important;
           text-decoration: none !important;
+          font-size: 0.95rem;
         }
         .footer-column .bullet {
           display: inline-block !important;
@@ -1003,6 +1009,7 @@
         }
         footer a {
           text-decoration: none !important;
+          transition: color 0.2s;
         }
         footer a:hover {
           color: #d1d5db !important;
@@ -1021,11 +1028,12 @@
           margin-right: 12px;
           flex-shrink: 0;
           width: 24px;
+          font-size: 1.1rem;
         }
         .contact-text {
           flex-grow: 1;
           line-height: 1.5;
-          font-size: 0.875rem;
+          font-size: 0.95rem;
         }
         .social-icon-bw {
           display: flex;
@@ -1036,14 +1044,13 @@
           border-radius: 50%;
           background: transparent;
           transition: all 0.3s;
-          border: 1px solid #4b5563;
-          color: #4b5563;
-          filter: grayscale(100%);
+          border: 1px solid rgba(255, 255, 255, 0.3);
+          color: rgba(255, 255, 255, 0.7);
         }
         .social-icon-bw:hover {
-          filter: grayscale(0%);
+          background: rgba(255, 255, 255, 0.1);
           border-color: #6B8E23;
-          color: #6B8E23;
+          color: white;
         }
         .avito-icon-bw, .yandex-maps-icon {
           display: flex;
@@ -1052,15 +1059,10 @@
           width: 24px;
           height: 24px;
           position: relative;
-          filter: grayscale(100%);
         }
         .avito-icon-bw svg, .yandex-maps-icon svg {
           width: 100%;
           height: 100%;
-        }
-        .social-icon-bw:hover .avito-icon-bw,
-        .social-icon-bw:hover .yandex-maps-icon {
-          filter: grayscale(0%);
         }
         
         .footer-bottom {
@@ -1069,10 +1071,11 @@
             text-align: center;
             position: relative;
             z-index: 1;
+            margin-top: 2rem;
         }
         
         .copyright {
-            color: #cbd5e1;
+            color: rgba(255, 255, 255, 0.7);
             font-size: 0.875rem;
             margin-bottom: 1rem;
         }
@@ -1085,7 +1088,7 @@
         }
         
         .payment-icon {
-            color: #cbd5e1;
+            color: rgba(255, 255, 255, 0.7);
             font-size: 1.5rem;
             text-decoration: none !important;
         }
@@ -2198,40 +2201,40 @@
     </section>
 
     <!-- Футер -->
-    <footer class="py-10 md:py-12 w-full">
-      <div id="footer-contacts" class="container mx-auto px-4 md:px-6 w-full">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 w-full">
+    <footer>
+      <div id="footer-contacts" class="container">
+        <div class="grid">
           <!-- Лого и описание -->
           <div class="footer-column">
             <div class="logo-wrapper">
-              <a href="/" class="text-2xl md:text-3xl font-['Pacifico'] mb-3 md:mb-4 block">Алтайский мёд</a>
+              <a href="/" class="text-2xl md:text-3xl font-pacifico header-logo">Алтайский мёд</a>
             </div>
             <div class="description-wrapper">
-              <p class="text-xs">Натуральные продукты пчеловодства с Алтайских гор.</p>
-              <p class="text-xs">© 2025 Алтайский мёд. Все права защищены.</p>
+              <p class="text-sm mt-2">Натуральные продукты пчеловодства с Алтайских гор.</p>
+              <p class="text-xs mt-2">© 2025 Алтайский мёд. Все права защищены.</p>
             </div>
           </div>
           
           <!-- Каталог -->
           <div class="footer-column">
-            <h4 class="text-base md:text-lg font-bold">Каталог</h4>
+            <h4>Каталог</h4>
             <ul>
               <li>
-                <a href="/#product-1" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-                  <span class="bullet mr-2"></span>
-                  <span class="text-sm md:text-base">Разнотравье</span>
+                <a href="/#product-1" class="footer-link-item">
+                  <span class="bullet"></span>
+                  <span>Разнотравье</span>
                 </a>
               </li>
               <li>
-                <a href="/#product-2" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-                  <span class="bullet mr-2"></span>
-                  <span class="text-sm md:text-base">Таёжный мёд</span>
+                <a href="/#product-2" class="footer-link-item">
+                  <span class="bullet"></span>
+                  <span>Таёжный мёд</span>
                 </a>
               </li>
               <li>
-                <a href="/#product-3" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-                  <span class="bullet mr-2"></span>
-                  <span class="text-sm md:text-base">Гречишный мёд</span>
+                <a href="/#product-3" class="footer-link-item">
+                  <span class="bullet"></span>
+                  <span>Гречишный мёд</span>
                 </a>
               </li>
             </ul>
@@ -2239,24 +2242,24 @@
           
           <!-- Материалы -->
           <div class="footer-column">
-            <h4 class="text-base md:text-lg font-bold">Материалы</h4>
+            <h4>Материалы</h4>
             <ul>
               <li>
-                <a href="/blog/" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-                  <span class="bullet mr-2"></span>
-                  <span class="text-sm md:text-base">Блог</span>
+                <a href="/blog/" class="footer-link-item">
+                  <span class="bullet"></span>
+                  <span>Блог</span>
                 </a>
               </li>
               <li>
-                <a href="/faq/" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-                  <span class="bullet mr-2"></span>
-                  <span class="text-sm md:text-base">FAQ</span>
+                <a href="/faq/" class="footer-link-item">
+                  <span class="bullet"></span>
+                  <span>FAQ</span>
                 </a>
               </li>
               <li>
-                <a href="/legal.html" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-                  <span class="bullet mr-2"></span>
-                  <span class="text-sm md:text-base">Правовая информация</span>
+                <a href="/legal.html" class="footer-link-item">
+                  <span class="bullet"></span>
+                  <span>Правовая информация</span>
                 </a>
               </li>
             </ul>
@@ -2264,30 +2267,30 @@
           
           <!-- Информация -->
           <div class="footer-column">
-            <h4 class="text-base md:text-lg font-bold">Информация</h4>
+            <h4>Информация</h4>
             <ul>
               <li>
-                <a href="/#benefits" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-                  <span class="bullet mr-2"></span>
-                  <span class="text-sm md:text-base">Преимущества</span>
+                <a href="/#benefits" class="footer-link-item">
+                  <span class="bullet"></span>
+                  <span>Преимущества</span>
                 </a>
               </li>
               <li>
-                <a href="/#about" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-                  <span class="bullet mr-2"></span>
-                  <span class="text-sm md:text-base">О нас</span>
+                <a href="/#about" class="footer-link-item">
+                  <span class="bullet"></span>
+                  <span>О нас</span>
                 </a>
               </li>
               <li>
-                <a href="/#footer-contacts" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-                  <span class="bullet mr-2"></span>
-                  <span class="text-sm md:text-base">Контакты</span>
+                <a href="/#footer-contacts" class="footer-link-item">
+                  <span class="bullet"></span>
+                  <span>Контакты</span>
                 </a>
               </li>
               <li>
-                <a href="/delivery.html" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-                  <span class="bullet mr-2"></span>
-                  <span class="text-sm md:text-base">Доставка и оплата</span>
+                <a href="/delivery.html" class="footer-link-item">
+                  <span class="bullet"></span>
+                  <span>Доставка и оплата</span>
                 </a>
               </li>
             </ul>
@@ -2295,12 +2298,12 @@
           
           <!-- Контакты -->
           <div class="footer-column">
-            <h4 class="text-base md:text-lg font-bold">Контакты</h4>
+            <h4>Контакты</h4>
             <ul>
               <li>
                 <a class="footer-link-item">
                   <div class="contact-icon">
-                    <i class="ri-map-pin-2-line ri-sm md:ri-base" aria-hidden="true"></i>
+                    <i class="ri-map-pin-2-line" aria-hidden="true"></i>
                   </div>
                   <span class="contact-text">Владимирская обл. Город Ковров</span>
                 </a>
@@ -2308,7 +2311,7 @@
               <li>
                 <a href="tel:+79209400222" class="footer-link-item">
                   <div class="contact-icon">
-                    <i class="ri-phone-line ri-sm md:ri-base" aria-hidden="true"></i>
+                    <i class="ri-phone-line" aria-hidden="true"></i>
                   </div>
                   <span class="contact-text">+7 (920) 940-02-22</span>
                 </a>
@@ -2316,7 +2319,7 @@
               <li>
                 <a href="mailto:9209400222@mail.ru" class="footer-link-item">
                   <div class="contact-icon">
-                    <i class="ri-mail-line ri-sm md:ri-base" aria-hidden="true"></i>
+                    <i class="ri-mail-line" aria-hidden="true"></i>
                   </div>
                   <span class="contact-text">9209400222@mail.ru</span>
                 </a>
@@ -2324,9 +2327,9 @@
             </ul>
             
             <!-- Социальные сети -->
-            <div class="mt-4 md:mt-6">
-              <p class="text-base md:text-lg font-bold mb-2 md:mb-3">Следите за нами</p>
-              <div class="flex space-x-2 md:space-x-3">
+            <div class="mt-4">
+              <p class="text-base font-bold mb-3">Следите за нами</p>
+              <div class="flex space-x-3">
                 <a href="https://vk.com/honeybuckwheat" target="_blank" class="social-icon-bw" aria-label="Наша страница ВКонтакте">
                   <i class="ri-vk-line ri-lg" aria-hidden="true"></i>
                 </a>
@@ -2355,6 +2358,21 @@
                 </a>
               </div>
             </div>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          <div class="copyright">© 2025 Алтайский мёд. Все права защищены.</div>
+          <div class="payment-methods">
+            <a href="#" class="payment-icon" aria-label="Оплата картой Visa">
+              <i class="ri-visa-line" aria-hidden="true"></i>
+            </a>
+            <a href="#" class="payment-icon" aria-label="Оплата картой MasterCard">
+              <i class="ri-mastercard-line" aria-hidden="true"></i>
+            </a>
+            <a href="#" class="payment-icon" aria-label="Оплата через Мир">
+              <i class="ri-bank-card-line" aria-hidden="true"></i>
+            </a>
           </div>
         </div>
       </div>
@@ -2696,7 +2714,7 @@
         <div>
             <img src="https://mc.yandex.ru/watch/102951378" 
                  style="position:absolute; left:-9999px;" 
-                 alt="Счетчик Яндекс.Метрики" />
+                 alt="" />
         </div>
     </noscript>
 </body>

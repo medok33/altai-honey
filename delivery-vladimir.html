@@ -920,11 +920,10 @@
             color: var(--gray-400);
             font-size: 14px;
         }
-        
-        /* Футер */
+
+        /* ОБНОВЛЕННЫЙ ФУТЕР */
         footer {
-            width: 100% !important;
-            box-sizing: border-box !important;
+            width: 100%;
             position: relative;
             overflow: hidden;
             background-color: #8B4513;
@@ -950,22 +949,21 @@
             margin-top: -220%;
         }
         footer .container {
-            width: 100% !important;
+            width: 100%;
             max-width: 1280px;
             padding: 0 1rem;
             margin: 0 auto;
             position: relative;
             z-index: 1;
         }
-        footer .grid {
-            width: 100% !important;
+        footer .footer-grid {
             display: grid;
-            grid-template-columns: repeat(1, minmax(0, 1fr));
+            grid-template-columns: 1fr;
             gap: 2rem;
         }
         @media (min-width: 768px) {
-            footer .grid {
-                grid-template-columns: repeat(5, minmax(0, 1fr));
+            footer .footer-grid {
+                grid-template-columns: repeat(5, 1fr);
                 gap: 1.5rem;
             }
         }
@@ -976,7 +974,6 @@
             width: 100%;
             padding: 0;
             margin: 0;
-            box-sizing: border-box;
         }
         .footer-column h4 {
             text-align: left;
@@ -1004,13 +1001,11 @@
             list-style-type: none;
             padding: 0;
             margin: 0;
-            box-sizing: border-box;
         }
         .footer-column li a {
             display: flex;
             align-items: center;
             width: 100%;
-            box-sizing: border-box;
             text-decoration: none;
             font-size: 0.95rem;
         }
@@ -1030,23 +1025,17 @@
         footer span, 
         footer h4, 
         footer li {
-            color: white !important;
-            box-sizing: border-box !important;
-            text-decoration: none !important;
-        }
-        footer a {
-            text-decoration: none !important;
-            transition: color 0.2s;
+            color: white;
+            text-decoration: none;
         }
         footer a:hover {
-            color: #d1d5db !important;
+            color: #d1d5db;
         }
         .footer-link-item {
             display: flex;
             align-items: center;
-            padding-top: 0.21rem !important;
-            padding-bottom: 0.21rem !important;
-            text-decoration: none !important;
+            padding-top: 0.21rem;
+            padding-bottom: 0.21rem;
         }
         .contact-icon {
             display: flex;
@@ -1090,6 +1079,371 @@
         .avito-icon-bw svg, .yandex-maps-icon svg {
             width: 100%;
             height: 100%;
+        }
+        
+        .footer-bottom {
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            margin-top: 2rem;
+        }
+        
+        .copyright {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        .payment-methods {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .payment-icon {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .text-xl {
+            font-size: 1.25rem;
+        }
+        
+        .font-semibold {
+            font-weight: 600;
+        }
+        
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
+        
+        .mb-6 {
+            margin-bottom: 1.5rem;
+        }
+        
+        .space-y-2 > * + * {
+            margin-top: 0.5rem;
+        }
+        
+        .space-y-3 > * + * {
+            margin-top: 0.75rem;
+        }
+        
+        .list-disc {
+            list-style-type: disc;
+        }
+        
+        .pl-5 {
+            padding-left: 1.25rem;
+        }
+        
+        .mt-2 {
+            margin-top: 0.5rem;
+        }
+        
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            z-index: 100;
+            padding: 1rem;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        
+        .mobile-menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        
+        .mobile-menu-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .mobile-menu-link {
+            padding: 0.75rem 0;
+            font-size: 1.125rem;
+            color: var(--gray-700);
+            text-decoration: none;
+            border-bottom: 1px solid var(--gray-100);
+        }
+        
+        .mobile-menu-link.active {
+            color: var(--primary);
+        }
+        
+        .mobile-menu-link:hover {
+            color: var(--primary);
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            max-width: 500px;
+            width: 90%;
+            animation: modalAppear 0.3s ease-out;
+        }
+        @keyframes modalAppear {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .close-modal {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #6b7280;
+            transition: color 0.2s;
+        }
+        .close-modal:hover {
+            color: #374151;
+        }
+        
+        .success-modal-content {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            max-width: 450px;
+            width: 90%;
+            padding: 40px 30px;
+            text-align: center;
+            animation: modalAppear 0.4s ease-out;
+        }
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background-color: #6B8E23;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .success-icon i {
+            font-size: 40px;
+            color: white;
+        }
+        .success-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #2d3748;
+        }
+        .success-text {
+            font-size: 18px;
+            color: #4a5568;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+        .success-btn {
+            background: #6B8E23;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 30px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        .success-btn:hover {
+            background: #5a7a1d;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .contact-icon i {
+            vertical-align: middle;
+            line-height: 1;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--gray-700);
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--gray-300);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(107, 142, 35, 0.2);
+        }
+        
+        .form-textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+        
+        .submit-btn:hover {
+            background-color: #5a7a1c;
+        }
+        
+        .modal-header {
+            background: linear-gradient(to right, #6B8E23, #8B4513);
+            padding: 1.5rem;
+            border-radius: 12px 12px 0 0;
+            color: white;
+        }
+        
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        /* Адаптация для мобильных устройств */
+        @media (max-width: 767px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero-text {
+                font-size: 1.1rem;
+            }
+            
+            .delivery-tab {
+                padding: 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .benefit-title {
+                font-size: 1.1rem;
+            }
+            
+            .benefit-text {
+                font-size: 0.95rem;
+            }
+            
+            .mobile-menu-link {
+                padding: 0.75rem 0;
+                font-size: 1rem;
+            }
+            
+            .btn {
+                font-size: 1rem;
+                padding: 0.75rem 1.5rem;
+                white-space: normal;
+            }
+            
+            .feature-title {
+                font-size: 1rem;
+            }
+            
+            .feature-text {
+                font-size: 0.85rem;
+            }
+            
+            .reviews-container {
+                padding: 1.5rem;
+            }
+            
+            .reviews-title {
+                font-size: 1.3rem;
+                margin-bottom: 1rem;
+            }
+            
+            .review-text {
+                font-size: 0.9rem;
+            }
+            
+            .carousel-btn {
+                width: 36px;
+                height: 36px;
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.5rem;
+            }
+            
+            .hero-text {
+                font-size: 1rem;
+            }
+            
+            .section {
+                padding: 3rem 0;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+                margin-bottom: 2rem;
+            }
+            
+            .reviews-container {
+                padding: 1rem;
+            }
         }
     </style>
 
@@ -1835,41 +2189,41 @@
         </div>
     </section>
 
-    <!-- Футер -->
-    <footer class="py-10 md:py-12 w-full">
-      <div id="footer-contacts" class="container mx-auto px-4 md:px-6 w-full">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 w-full">
+    <!-- ОБНОВЛЕННЫЙ ФУТЕР -->
+    <footer>
+      <div id="footer-contacts" class="container">
+        <div class="footer-grid">
           <!-- Лого и описание -->
           <div class="footer-column">
             <div class="logo-wrapper">
-              <a href="/" class="text-2xl md:text-3xl font-pacifico mb-3 md:mb-4 block">Алтайский мёд</a>
+              <a href="/" class="header-logo">Алтайский мёд</a>
             </div>
             <div class="description-wrapper">
-              <p class="text-xs">Натуральные продукты пчеловодства с Алтайских гор.</p>
-              <p class="text-xs mt-2">© 2025 Алтайский мёд. Все права защищены.</p>
+              <p>Натуральные продукты пчеловодства с Алтайских гор.</p>
+              <p class="copyright">© 2025 Алтайский мёд. Все права защищены.</p>
             </div>
           </div>
           
           <!-- Каталог -->
           <div class="footer-column">
-            <h4 class="text-base md:text-lg font-bold">Каталог</h4>
+            <h4>Каталог</h4>
             <ul>
               <li>
-                <a href="/#product-1" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-                  <span class="bullet mr-2"></span>
-                  <span class="text-sm md:text-base">Разнотравье</span>
+                <a href="/#product-1" class="footer-link-item">
+                  <span class="bullet"></span>
+                  <span>Разнотравье</span>
                 </a>
               </li>
               <li>
-                <a href="/#product-2" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-                  <span class="bullet mr-2"></span>
-                  <span class="text-sm md:text-base">Таёжный мёд</span>
+                <a href="/#product-2" class="footer-link-item">
+                  <span class="bullet"></span>
+                  <span>Таёжный мёд</span>
                 </a>
               </li>
               <li>
-                <a href="/#product-3" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-                  <span class="bullet mr-2"></span>
-                  <span class="text-sm md:text-base">Гречишный мёд</span>
+                <a href="/#product-3" class="footer-link-item">
+                  <span class="bullet"></span>
+                  <span>Гречишный мёд</span>
                 </a>
               </li>
             </ul>
@@ -1877,24 +2231,24 @@
           
           <!-- Материалы -->
           <div class="footer-column">
-            <h4 class="text-base md:text-lg font-bold">Материалы</h4>
+            <h4>Материалы</h4>
             <ul>
               <li>
-                <a href="/blog/" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-                  <span class="bullet mr-2"></span>
-                  <span class="text-sm md:text-base">Блог</span>
+                <a href="/blog/" class="footer-link-item">
+                  <span class="bullet"></span>
+                  <span>Блог</span>
                 </a>
               </li>
               <li>
-                <a href="/faq/" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-                  <span class="bullet mr-2"></span>
-                  <span class="text-sm md:text-base">FAQ</span>
+                <a href="/faq/" class="footer-link-item">
+                  <span class="bullet"></span>
+                  <span>FAQ</span>
                 </a>
               </li>
               <li>
-                <a href="/legal.html" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-                  <span class="bullet mr-2"></span>
-                  <span class="text-sm md:text-base">Правовая информация</span>
+                <a href="/legal.html" class="footer-link-item">
+                  <span class="bullet"></span>
+                  <span>Правовая информация</span>
                 </a>
               </li>
             </ul>
@@ -1902,30 +2256,30 @@
           
           <!-- Информация -->
           <div class="footer-column">
-            <h4 class="text-base md:text-lg font-bold">Информация</h4>
+            <h4>Информация</h4>
             <ul>
               <li>
-                <a href="/#benefits" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-                  <span class="bullet mr-2"></span>
-                  <span class="text-sm md:text-base">Преимущества</span>
+                <a href="/#benefits" class="footer-link-item">
+                  <span class="bullet"></span>
+                  <span>Преимущества</span>
                 </a>
               </li>
               <li>
-                <a href="/#about" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-                  <span class="bullet mr-2"></span>
-                  <span class="text-sm md:text-base">О нас</span>
+                <a href="/#about" class="footer-link-item">
+                  <span class="bullet"></span>
+                  <span>О нас</span>
                 </a>
               </li>
               <li>
-                <a href="/#footer-contacts" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-                  <span class="bullet mr-2"></span>
-                  <span class="text-sm md:text-base">Контакты</span>
+                <a href="/#footer-contacts" class="footer-link-item">
+                  <span class="bullet"></span>
+                  <span>Контакты</span>
                 </a>
               </li>
               <li>
-                <a href="/delivery.html" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-                  <span class="bullet mr-2"></span>
-                  <span class="text-sm md:text-base">Доставка и оплата</span>
+                <a href="/delivery.html" class="footer-link-item">
+                  <span class="bullet"></span>
+                  <span>Доставка и оплата</span>
                 </a>
               </li>
             </ul>
@@ -1933,20 +2287,20 @@
           
           <!-- Контакты -->
           <div class="footer-column">
-            <h4 class="text-base md:text-lg font-bold">Контакты</h4>
+            <h4>Контакты</h4>
             <ul>
               <li>
-                <a class="footer-link-item">
+                <div class="footer-link-item">
                   <div class="contact-icon">
-                    <i class="ri-map-pin-2-line ri-sm md:ri-base" aria-hidden="true"></i>
+                    <i class="ri-map-pin-2-line" aria-hidden="true"></i>
                   </div>
                   <span class="contact-text">Владимирская обл. Город Ковров</span>
-                </a>
+                </div>
               </li>
               <li>
                 <a href="tel:+79209400222" class="footer-link-item">
                   <div class="contact-icon">
-                    <i class="ri-phone-line ri-sm md:ri-base" aria-hidden="true"></i>
+                    <i class="ri-phone-line" aria-hidden="true"></i>
                   </div>
                   <span class="contact-text">+7 (920) 940-02-22</span>
                 </a>
@@ -1954,7 +2308,7 @@
               <li>
                 <a href="mailto:9209400222@mail.ru" class="footer-link-item">
                   <div class="contact-icon">
-                    <i class="ri-mail-line ri-sm md:ri-base" aria-hidden="true"></i>
+                    <i class="ri-mail-line" aria-hidden="true"></i>
                   </div>
                   <span class="contact-text">9209400222@mail.ru</span>
                 </a>
@@ -1962,14 +2316,14 @@
             </ul>
             
             <!-- Социальные сети -->
-            <div class="mt-4 md:mt-6">
-              <p class="text-base md:text-lg font-bold mb-2 md:mb-3">Следите за нами</p>
-              <div class="flex space-x-2 md:space-x-3">
+            <div class="social-wrapper">
+              <p>Следите за нами</p>
+              <div class="social-icons">
                 <a href="https://vk.com/honeybuckwheat" target="_blank" class="social-icon-bw" aria-label="Наша страница ВКонтакте">
-                  <i class="ri-vk-line ri-lg" aria-hidden="true"></i>
+                  <i class="ri-vk-line" aria-hidden="true"></i>
                 </a>
                 <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" class="social-icon-bw" aria-label="Наш Telegram канал">
-                  <i class="ri-telegram-line ri-lg" aria-hidden="true"></i>
+                  <i class="ri-telegram-line" aria-hidden="true"></i>
                 </a>
                 <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing" 
                    target="_blank" class="social-icon-bw" aria-label="Наше объявление на Авито">
@@ -1982,7 +2336,6 @@
                     </svg>
                   </div>
                 </a>
-                <!-- Иконка Яндекс Карт - обновленная версия -->
                 <a href="https://yandex.ru/maps/" target="_blank" class="social-icon-bw" aria-label="Мы на Яндекс Картах">
                   <div class="yandex-maps-icon">
                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -1994,6 +2347,10 @@
               </div>
             </div>
           </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="copyright">© 2025 Алтайский мёд. Все права защищены.</div>
         </div>
       </div>
     </footer>
@@ -2172,34 +2529,13 @@
                 });
             }
             
-            // Мобильное меню
+            // Исправленное мобильное меню
             const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
             const mobileMenu = document.getElementById('mobile-menu');
             
             if (mobileMenuToggle && mobileMenu) {
                 mobileMenuToggle.addEventListener('click', () => {
                     mobileMenu.classList.toggle('hidden');
-                });
-            }
-            
-            window.addEventListener('click', (event) => {
-                if (orderModal && event.target === orderModal) {
-                    orderModal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                }
-                if (successModal && event.target === successModal) {
-                    successModal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                }
-            });
-            
-            const orderForm = document.getElementById('order-form');
-            if (orderForm) {
-                orderForm.addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    if (orderModal) orderModal.style.display = 'none';
-                    if (successModal) successModal.style.display = 'flex';
-                    orderForm.reset();
                 });
             }
             

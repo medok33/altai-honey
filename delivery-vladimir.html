@@ -168,7 +168,7 @@
         
         .header-logo {
             font-family: 'Pacifico', 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', cursive;
-            font-size: 1.875rem;
+            font-size: 2.0625rem; /* Увеличен на 10% */
             color: var(--primary);
             text-decoration: none;
         }
@@ -1129,10 +1129,12 @@
             padding: 1rem;
             transform: translateX(-100%);
             transition: transform 0.3s ease;
+            display: none; /* По умолчанию скрыто */
         }
         
         .mobile-menu.active {
             transform: translateX(0);
+            display: block;
         }
         
         .mobile-menu-header {
@@ -1304,14 +1306,14 @@
 
         /* Увеличиваем размер текста в футере */
         .footer-description {
-            font-size: 0.95rem;
+            font-size: 0.76rem; /* Уменьшен на 20% */
             margin-top: 0.5rem;
-            color: rgba(255, 255, 255, 0.8);
+            color: white; /* Белый цвет */
         }
         
         .footer-copyright {
-            font-size: 0.875rem;
-            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.7rem; /* Уменьшен на 20% */
+            color: white; /* Белый цвет */
             margin-top: 0.5rem;
         }
     </style>
@@ -1323,7 +1325,7 @@
     <!-- Шапка как на главной странице -->
     <nav class="bg-white shadow-sm sticky top-0 z-50">
         <div class="container mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
-            <a href="https://altaymed.shop/" class="text-2xl md:text-3xl font-pacifico header-logo">Алтайский мёд</a>
+            <a href="https://altaymed.shop/" class="text-[1.65rem] md:text-[2.0625rem] font-pacifico header-logo">Алтайский мёд</a>
             
             <div class="hidden md:flex items-center space-x-6 md:space-x-8">
                 <a href="https://altaymed.shop/#benefits" class="nav-link">Преимущества</a>
@@ -1340,7 +1342,7 @@
             </button>
         </div>
         
-        <div class="md:hidden hidden bg-white shadow-md px-4 py-3" id="mobile-menu">
+        <div class="mobile-menu" id="mobile-menu">
             <div class="flex flex-col space-y-4">
                 <a href="https://altaymed.shop/#benefits" class="nav-link py-2">Преимущества</a>
                 <a href="https://altaymed.shop/#products" class="nav-link py-2">Каталог</a>
@@ -2169,17 +2171,17 @@
                             </a>
                         </li>
                         <li class="footer-link-item">
-                            <a href="mailto:9209400222@mail.ru" class="footer-link">
+                            <a href="mailto:altaymed.shop@yandex.ru" class="footer-link">
                                 <div class="contact-icon">
                                     <i class="ri-mail-line"></i>
                                 </div>
-                                <span class="contact-text">9209400222@mail.ru</span>
+                                <span class="contact-text">altaymed.shop@yandex.ru</span>
                             </a>
                         </li>
                     </ul>
                     
                     <!-- Социальные сети -->
-                    <div class="mt-4">
+                    <div class="mt-8"> <!-- Увеличили отступ сверху -->
                         <h4>Следите за нами</h4>
                         <div class="footer-social-icons">
                             <a href="https://vk.com/honeybuckwheat" target="_blank" class="social-icon-bw" aria-label="Наша страница ВКонтакте">
@@ -2260,7 +2262,7 @@
             
             if (mobileMenuToggle && mobileMenu) {
                 mobileMenuToggle.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('hidden');
+                    mobileMenu.classList.toggle('active');
                 });
             }
             

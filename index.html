@@ -503,24 +503,32 @@
         
         <div class="bg-white p-6 md:p-8 lg:p-10">
           <form id="order-form">
+            <!-- CSRF Token -->
+            <input type="hidden" name="csrf_token" id="csrf_token" value="">
+            
+            <!-- Honeypot для ботов -->
+            <div style="position: absolute; left: -5000px;" aria-hidden="true">
+              <input type="text" name="bot_check" tabindex="-1" autocomplete="off">
+            </div>
+            
             <div class="mb-3 md:mb-4">
               <label for="name" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Ваше имя</label>
-              <input type="text" id="name" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="Иван Петров">
+              <input type="text" id="name" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="Иван Петров" maxlength="100">
             </div>
             
             <div class="mb-3 md:mb-4">
               <label for="phone" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Телефон</label>
-              <input type="tel" id="phone" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="+7 (999) 123-45-67">
+              <input type="tel" id="phone" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="+7 (999) 123-45-67" maxlength="20">
             </div>
             
             <div class="mb-3 md:mb-4">
               <label for="email" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Email</label>
-              <input type="email" id="email" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="example@mail.ru">
+              <input type="email" id="email" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="example@mail.ru" maxlength="100">
             </div>
             
             <div class="mb-4 md:mb-6">
               <label for="message" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Комментарий к заказу</label>
-              <textarea id="message" rows="3" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="Укажите интересующие вас сорта мёда и объём"></textarea>
+              <textarea id="message" rows="3" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="Укажите интересующие вас сорта мёда и объём" maxlength="500"></textarea>
             </div>
             
             <button type="submit" class="w-full bg-orange text-white py-2 md:py-3 !rounded-button hover:bg-opacity-90 transition-all font-medium text-sm md:text-base">Отправить заявку</button>
@@ -738,6 +746,14 @@
     </div>
     <div class="p-4 md:p-6">
       <form id="quick-order-form">
+        <!-- CSRF Token -->
+        <input type="hidden" name="csrf_token" id="quick-csrf_token" value="">
+        
+        <!-- Honeypot для ботов -->
+        <div style="position: absolute; left: -5000px;" aria-hidden="true">
+          <input type="text" name="bot_check" tabindex="-1" autocomplete="off">
+        </div>
+        
         <div class="mb-3 md:mb-4">
           <label for="quick-product" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Товар</label>
           <input type="text" id="quick-product" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded bg-gray-50 cursor-not-allowed text-sm md:text-base" readonly>
@@ -758,12 +774,12 @@
         
         <div class="mb-3 md:mb-4">
           <label for="delivery-address" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Адрес доставки</label>
-          <textarea id="delivery-address" rows="2" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="Укажите полный адрес доставки"></textarea>
+          <textarea id="delivery-address" rows="2" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="Укажите полный адрес доставки" maxlength="200"></textarea>
         </div>
         
         <div class="mb-3 md:mb-4">
           <label for="quick-phone" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Контактный телефон</label>
-          <input type="tel" id="quick-phone" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="+7 (999) 123-45-67">
+          <input type="tel" id="quick-phone" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="+7 (999) 123-45-67" maxlength="20">
         </div>
         
         <button type="submit" class="w-full bg-orange text-white py-2 md:py-3 !rounded-button hover:bg-opacity-90 transition-all font-medium text-sm md:text-base">
@@ -804,6 +820,54 @@
 </div>
 
 <script>
+// ================== СИСТЕМА БЕЗОПАСНОСТИ ================== //
+// Генерация CSRF токена
+function generateCSRFToken() {
+  return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+}
+
+// Улучшенная функция санитизации
+function sanitize(input) {
+  if (typeof input !== 'string') return '';
+  return input
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#x27;')
+    .replace(/\//g, '&#x2F;')
+    .substring(0, 200); // Ограничение длины
+}
+
+// Проверка валидности телефона
+function isValidPhone(phone) {
+  const phonePattern = /^\+7\s?\(\d{3}\)\s?\d{3}-\d{2}-\d{2}$/;
+  return phonePattern.test(phone);
+}
+
+// Проверка частоты отправки форм
+function checkRateLimit() {
+  const now = Date.now();
+  const submissions = JSON.parse(localStorage.getItem('form_submissions') || '[]');
+  
+  // Удаляем записи старше 1 минуты
+  const recentSubmissions = submissions.filter(time => now - time < 60000);
+  
+  if (recentSubmissions.length >= 3) {
+    return false;
+  }
+  
+  recentSubmissions.push(now);
+  localStorage.setItem('form_submissions', JSON.stringify(recentSubmissions));
+  return true;
+}
+
+// Проверка honeypot поля
+function checkHoneypot(form) {
+  const honeypot = form.querySelector('input[name="bot_check"]');
+  return honeypot && honeypot.value !== '';
+}
+
+// ================== ОСНОВНОЙ КОД ================== //
 // Функция для санитизации ввода
 function sanitize(input) {
   return input.replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -841,6 +905,12 @@ window.addEventListener('load', function() {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
+  // Инициализация CSRF токенов
+  const csrfToken = generateCSRFToken();
+  document.getElementById('csrf_token').value = csrfToken;
+  document.getElementById('quick-csrf_token').value = csrfToken;
+  localStorage.setItem('csrf_token', csrfToken);
+  
   const mobileMenuButton = document.querySelector('.md\\:hidden');
   const mobileMenu = document.getElementById('mobile-menu');
   
@@ -880,7 +950,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Получаем формы
   const orderForm = document.querySelector('#order form');
-  const contactForm = document.querySelector('#contacts form');
+  const quickOrderForm = document.querySelector('#quick-order-form');
 
   // Функция для отправки сообщения в Telegram
   function sendToTelegram(message) {
@@ -920,17 +990,45 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Обработчик формы заказа
+  // Обработчик формы заказа с защитой
   if (orderForm) {
     orderForm.addEventListener('submit', async function(e) {
       e.preventDefault();
+      
+      // Проверка honeypot
+      if (checkHoneypot(this)) {
+        console.log('Bot detected via honeypot');
+        return;
+      }
+      
+      // Проверка частоты запросов
+      if (!checkRateLimit()) {
+        alert('Слишком много запросов. Пожалуйста, попробуйте через минуту.');
+        return;
+      }
+      
+      // Проверка CSRF токена
+      const storedToken = localStorage.getItem('csrf_token');
+      const formToken = document.getElementById('csrf_token').value;
+      if (storedToken !== formToken) {
+        console.error('CSRF token mismatch');
+        toggleModal('error-modal', true);
+        return;
+      }
+      
       const name = sanitize(document.getElementById('name').value);
       const phone = sanitize(document.getElementById('phone').value);
       const email = sanitize(document.getElementById('email').value);
       const message = sanitize(document.getElementById('message').value);
       
-      if (!name || !phone) {
-        alert('Пожалуйста, заполните имя и телефон');
+      // Валидация телефона
+      if (!isValidPhone(phone)) {
+        alert('Пожалуйста, введите телефон в формате +7 (XXX) XXX-XX-XX');
+        return;
+      }
+      
+      if (!name || name.length < 2) {
+        alert('Пожалуйста, введите корректное имя');
         return;
       }
       
@@ -965,8 +1063,6 @@ document.addEventListener('DOMContentLoaded', function() {
   const modal = document.getElementById('buy-modal');
   const closeModal = document.querySelector('.close-modal');
   const closeErrorModal = document.querySelector('.close-error-modal');
-  const quickOrderForm = document.getElementById('quick-order-form');
-  const quickProductInput = document.getElementById('quick-product');
   const pricePerLiter = document.getElementById('price-per-liter');
   const totalPrice = document.getElementById('total-price');
   const quantityInput = document.getElementById('quantity');
@@ -987,7 +1083,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const price = parseInt(this.getAttribute('data-price'));
       currentPrice = price;
       
-      quickProductInput.value = product;
+      document.getElementById('quick-product').value = product;
       toggleModal('buy-modal', true);
       
       // Обновляем стоимость
@@ -1020,14 +1116,42 @@ document.addEventListener('DOMContentLoaded', function() {
   // Обновление стоимости при изменении количества
   quantityInput.addEventListener('input', updateTotalPrice);
   
-  // Обработка быстрого заказа
+  // Обработка быстрого заказа с защитой
   if (quickOrderForm) {
     quickOrderForm.addEventListener('submit', async function(e) {
       e.preventDefault();
-      const product = quickProductInput.value;
+      
+      // Проверка honeypot
+      if (checkHoneypot(this)) {
+        console.log('Bot detected via honeypot');
+        return;
+      }
+      
+      // Проверка частоты запросов
+      if (!checkRateLimit()) {
+        alert('Слишком много запросов. Пожалуйста, попробуйте через минуту.');
+        return;
+      }
+      
+      // Проверка CSRF токена
+      const storedToken = localStorage.getItem('csrf_token');
+      const formToken = document.getElementById('quick-csrf_token').value;
+      if (storedToken !== formToken) {
+        console.error('CSRF token mismatch');
+        toggleModal('error-modal', true);
+        return;
+      }
+      
+      const product = document.getElementById('quick-product').value;
       const quantity = document.getElementById('quantity').value;
       const address = sanitize(document.getElementById('delivery-address').value);
       const phone = sanitize(document.getElementById('quick-phone').value);
+      
+      // Валидация телефона
+      if (!isValidPhone(phone)) {
+        alert('Пожалуйста, введите телефон в формате +7 (XXX) XXX-XX-XX');
+        return;
+      }
       
       if (!product || !quantity || !address || !phone) {
         alert('Пожалуйста, заполните все поля');

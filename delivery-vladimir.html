@@ -6,16 +6,6 @@
     <title>Алтайский мёд с доставкой во Владимир — бесплатно от 3 л | AltayMed</title>
     <meta name="description" content="Закажите натуральный алтайский мёд с доставкой по Владимиру и области. Свежий гречишный, липовый, таёжный мёд — бесплатно доставим от 3 литров. Оплата после получения.">
     
-    <!-- Каноническая ссылка -->
-    <link rel="canonical" href="https://altaymed.shop/delivery-vladimir.html">
-    
-    <!-- Hreflang для региональных страниц -->
-    <link rel="alternate" hreflang="ru-ru" href="https://altaymed.shop/delivery.html" />
-    <link rel="alternate" hreflang="ru-vla" href="https://altaymed.shop/delivery-vladimir.html" />
-    <link rel="alternate" hreflang="ru-kov" href="https://altaymed.shop/delivery-kovrov.html" />
-    <link rel="alternate" hreflang="ru-mow" href="https://altaymed.shop/delivery-moscow.html" />
-    <link rel="alternate" hreflang="x-default" href="https://altaymed.shop/delivery.html" />
-    
     <link rel="icon" href="images/favicon.ico" sizes="any">
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
@@ -30,6 +20,14 @@
     <meta name="twitter:title" content="Доставка алтайского мёда во Владимир">
     <meta name="twitter:description" content="Закажите натуральный алтайский мёд с доставкой по Владимиру и области. Гречишный, липовый, таёжный мёд — бесплатно от 3 литров.">
     <meta name="twitter:image" content="images/twitter-preview.webp">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://altaymed.shop/delivery-vladimir.html">
+    
+    <!-- hreflang для региональных страниц -->
+    <link rel="alternate" hreflang="ru" href="https://altaymed.shop/delivery-vladimir.html" />
+    <link rel="alternate" hreflang="ru-RU" href="https://altaymed.shop/delivery-vladimir.html" />
+    <link rel="alternate" hreflang="x-default" href="https://altaymed.shop/delivery-vladimir.html" />
     
     <style>
         /* Подключение шрифтов локально с font-display: swap */
@@ -168,7 +166,7 @@
             position: sticky;
             top: 0;
             z-index: 50;
-            padding: 0.75rem 0;
+            padding: 0.5rem 0; /* Уменьшено на 10% */
         }
         
         .flex {
@@ -1075,7 +1073,7 @@
             height: 100%;
             background-color: white;
             z-index: 100;
-            padding: 1rem;
+            padding: 0.8rem; /* Уменьшено на 10% */
             transform: translateX(-100%);
             transition: transform 0.3s ease;
             display: none; /* По умолчанию скрыто */
@@ -1310,6 +1308,9 @@
             overflow: hidden;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
             margin: 30px 0;
+            max-width: 768px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .faq-item {
@@ -1331,6 +1332,7 @@
             font-size: 1.05rem;
             text-align: left;
             transition: background-color 0.3s;
+            color: var(--gray-800); /* Черный цвет для вопросов */
         }
         
         .faq-question:hover {
@@ -1362,12 +1364,6 @@
         .faq-item.active .faq-answer {
             max-height: 1000px;
             padding: 0 20px 20px;
-        }
-        
-        /* Ограничение ширины FAQ */
-        .faq-wrapper {
-            max-width: 768px;
-            margin: 0 auto;
         }
     </style>
 
@@ -1421,6 +1417,7 @@
             <img 
                 src="images/hero-bg.jpg" 
                 alt="Натуральный гречишный, липовый, таёжный алтайский мёд с доставкой во Владимир" 
+                title="Алтайский мед с доставкой по Владимиру"
                 class="hero-bg-image"
                 fetchpriority="high"
             >
@@ -1509,7 +1506,7 @@
                             </div>
                             <div class="delivery-meta">
                                 <i class="ri-money-dollar-circle-line"></i>
-                                <span>Стоимость: бесплатно при заказе от 1000 ₽</span>
+                                <span>Стоимость: от 125 ₽ (зависит от веса заказа)</span>
                             </div>
                         </div>
                         
@@ -1684,7 +1681,7 @@
                             </div>
                             <div class="delivery-meta">
                                 <i class="ri-money-dollar-circle-line"></i>
-                                <span>Стоимость: бесплатно для жителей города Владимир</span>
+                                <span>Стоимость: от 150 ₽ (зависит от веса заказа)</span>
                             </div>
                         </div>
                         
@@ -1740,7 +1737,7 @@
                             </div>
                             <div class="delivery-meta">
                                 <i class="ri-money-dollar-circle-line"></i>
-                                <span>Стоимость: от 125 ₽ (зависит от веса заказа)</span>
+                                <span>Стоимость: от 140 ₽ (зависит от веса заказа)</span>
                             </div>
                         </div>
                         
@@ -1764,7 +1761,6 @@
                                     <span>Бонусы и скидки для постоянных покупателей</span>
                                 </li>
                             </ul>
-                            <!-- Кнопка удалена по требованию -->
                         </div>
                     </div>
                 </div>
@@ -1790,7 +1786,7 @@
                     </thead>
                     <tbody>
                         <tr class="highlighted">
-                            <td><span class="liter-highlight">1 литр (до 1 кг)</span></td>
+                            <td><span class="liter-highlight">1 литр (~ 1.4 кг)</span></td>
                             <td><span class="liter-highlight">125 ₽</span></td>
                             <td><span class="liter-highlight">150 ₽</span></td>
                             <td><span class="liter-highlight">175 ₽</span></td>
@@ -1807,27 +1803,27 @@
                         </tr>
                         <tr>
                             <td>3-5 кг</td>
-                            <td><s class="strike-temporary" style="text-decoration-thickness:1.5px; text-decoration-color:#b5b5b5;">225 ₽</s></td>
-                            <td><s class="strike-temporary" style="text-decoration-thickness:1.5px; text-decoration-color:#b5b5b5;">250 ₽</s></td>
-                            <td><s class="strike-temporary" style="text-decoration-thickness:1.5px; text-decoration-color:#b5b5b5;">275 ₽</s></td>
-                            <td><s class="strike-temporary" style="text-decoration-thickness:1.5px; text-decoration-color:#b5b5b5;">250 ₽</s></td>
-                            <td><s class="strike-temporary" style="text-decoration-thickness:1.5px; text-decoration-color:#b5b5b5;">240 ₽</s></td>
+                            <td><s class="strike-temporary" style="text-decoration-thickness:1px; text-decoration-color:#d1d5db;">225 ₽</s></td>
+                            <td><s class="strike-temporary" style="text-decoration-thickness:1px; text-decoration-color:#d1d5db;">250 ₽</s></td>
+                            <td><s class="strike-temporary" style="text-decoration-thickness:1px; text-decoration-color:#d1d5db;">275 ₽</s></td>
+                            <td><s class="strike-temporary" style="text-decoration-thickness:1px; text-decoration-color:#d1d5db;">250 ₽</s></td>
+                            <td><s class="strike-temporary" style="text-decoration-thickness:1px; text-decoration-color:#d1d5db;">240 ₽</s></td>
                         </tr>
                         <tr>
                             <td>5-10 кг</td>
-                            <td><s class="strike-temporary" style="text-decoration-thickness:1.5px; text-decoration-color:#b5b5b5;">325 ₽</s></td>
-                            <td><s class="strike-temporary" style="text-decoration-thickness:1.5px; text-decoration-color:#b5b5b5;">350 ₽</s></td>
-                            <td><s class="strike-temporary" style="text-decoration-thickness:1.5px; text-decoration-color:#b5b5b5;">375 ₽</s></td>
-                            <td><s class="strike-temporary" style="text-decoration-thickness:1.5px; text-decoration-color:#b5b5b5;">250 ₽</s></td>
-                            <td><s class="strike-temporary" style="text-decoration-thickness:1.5px; text-decoration-color:#b5b5b5;">340 ₽</s></td>
+                            <td><s class="strike-temporary" style="text-decoration-thickness:1px; text-decoration-color:#d1d5db;">325 ₽</s></td>
+                            <td><s class="strike-temporary" style="text-decoration-thickness:1px; text-decoration-color:#d1d5db;">350 ₽</s></td>
+                            <td><s class="strike-temporary" style="text-decoration-thickness:1px; text-decoration-color:#d1d5db;">375 ₽</s></td>
+                            <td><s class="strike-temporary" style="text-decoration-thickness:1px; text-decoration-color:#d1d5db;">250 ₽</s></td>
+                            <td><s class="strike-temporary" style="text-decoration-thickness:1px; text-decoration-color:#d1d5db;">340 ₽</s></td>
                         </tr>
                         <tr>
                             <td>Более 10 кг</td>
-                            <td>Индивидуальный расчет</td>
-                            <td>Индивидуальный расчет</td>
-                            <td>Индивидуальный расчет</td>
-                            <td>Индивидуальный расчет</td>
-                            <td>Индивидуальный расчет</td>
+                            <td><s class="strike-temporary" style="text-decoration-thickness:1px; text-decoration-color:#d1d5db;">Индивидуальный расчет</s></td>
+                            <td><s class="strike-temporary" style="text-decoration-thickness:1px; text-decoration-color:#d1d5db;">Индивидуальный расчет</s></td>
+                            <td><s class="strike-temporary" style="text-decoration-thickness:1px; text-decoration-color:#d1d5db;">Индивидуальный расчет</s></td>
+                            <td><s class="strike-temporary" style="text-decoration-thickness:1px; text-decoration-color:#d1d5db;">Индивидуальный расчет</s></td>
+                            <td><s class="strike-temporary" style="text-decoration-thickness:1px; text-decoration-color:#d1d5db;">Индивидуальный расчет</s></td>
                         </tr>
                     </tbody>
                 </table>
@@ -1835,7 +1831,7 @@
             
             <div class="free-delivery">
                 <p><strong>Бесплатная доставка</strong> при заказе от 3 литров меда в пределах города Владимир!</p>
-                <p class="mt-2 text-sm">*Бесплатная доставка до пункта выдачи действует для жителей города Владимир при заказе от 3 литров</p>
+                <p class="mt-2 text-sm">*Бесплатная доставка до пункта выдачи для жителей города Владимир при заказе от 3 литров. Период акции: до 1 сентября 2025 года.</p>
             </div>
         </div>
     </section>
@@ -1966,96 +1962,94 @@
         <div class="container">
             <h2>Часто задаваемые вопросы о доставке</h2>
             
-            <div class="faq-wrapper">
-                <div class="faq-container">
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span>Как заказать алтайский мёд онлайн с доставкой во Владимир?</span>
-                            <i class="ri-add-line text-primary"></i>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Заказать алтайский мёд с доставкой во Владимир очень просто:</p>
-                            <ol class="list-decimal pl-5 mt-2 space-y-1">
-                                <li class="mb-2">Выберите интересующие вас сорта мёда в нашем <a href="/#products" class="text-primary underline">каталоге</a></li>
-                                <li class="mb-2">Добавьте товары в корзину и перейдите к оформлению заказа</li>
-                                <li class="mb-2">Укажите ваш адрес во Владимире и выберите удобный способ доставки</li>
-                                <li class="mb-2">Оплатите заказ онлайн или выберите оплату при получении</li>
-                                <li>Отслеживайте статус заказа и ожидайте доставки</li>
-                            </ol>
-                            <p class="mt-2">Если у вас возникнут вопросы, наши менеджеры всегда готовы помочь по телефону <a href="tel:+79209400222" class="text-primary">+7 (920) 940-02-22</a>.</p>
-                        </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Как заказать алтайский мёд онлайн с доставкой во Владимир?</span>
+                        <i class="ri-add-line text-primary"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Заказать алтайский мёд с доставкой во Владимир очень просто:</p>
+                        <ol class="list-decimal pl-5 mt-2 space-y-1">
+                            <li class="mb-2">Выберите интересующие вас сорта мёда в нашем <a href="/#products" class="text-primary underline">каталоге</a></li>
+                            <li class="mb-2">Добавьте товары в корзину и перейдите к оформлению заказа</li>
+                            <li class="mb-2">Укажите ваш адрес во Владимире и выберите удобный способ доставки</li>
+                            <li class="mb-2">Оплатите заказ онлайн или выберите оплату при получении</li>
+                            <li>Отслеживайте статус заказа и ожидайте доставки</li>
+                        </ol>
+                        <p class="mt-2">Если у вас возникнут вопросы, наши менеджеры всегда готовы помочь по телефону <a href="tel:+79209400222" class="text-primary">+7 (920) 940-02-22</a>.</p>
                     </div>
-                    
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span>Как долго доставляется мёд во Владимир?</span>
-                            <i class="ri-add-line text-primary"></i>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Доставка мёда во Владимир занимает от 1 до 2 рабочих дней с момента отправки заказа. При выборе курьерской доставки в пределах города срок может сократиться до 1 дня. Точный срок доставки зависит от выбранного способа доставки и адреса получения.</p>
-                        </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Как долго доставляется мёд во Владимир?</span>
+                        <i class="ri-add-line text-primary"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Доставка мёда во Владимир занимает от 1 до 2 рабочих дней с момента отправки заказа. При выборе курьерской доставки в пределах города срок может сократиться до 1 дня. Точный срок доставки зависит от выбранного способа доставки и адреса получения.</p>
                     </div>
-                    
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span>Как происходит оплата заказа?</span>
-                            <i class="ri-add-line text-primary"></i>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Вы можете оплатить заказ несколькими способами:</p>
-                            <ul class="list-disc pl-5 mt-2 space-y-1">
-                                <li class="mb-2">Онлайн-оплата банковской картой на сайте</li>
-                                <li class="mb-2">Оплата при получении наличными или картой (для курьерской доставки и в пунктах выдачи СДЭК во Владимире)</li>
-                                <li>Банковский перевод (для юридических лиц)</li>
-                            </ul>
-                        </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Как происходит оплата заказа?</span>
+                        <i class="ri-add-line text-primary"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Вы можете оплатить заказ несколькими способами:</p>
+                        <ul class="list-disc pl-5 mt-2 space-y-1">
+                            <li class="mb-2">Онлайн-оплата банковской картой на сайте</li>
+                            <li class="mb-2">Оплата при получении наличными или картой (для курьерской доставки и в пунктах выдачи СДЭК во Владимире)</li>
+                            <li>Банковский перевод (для юридических лиц)</li>
+                        </ul>
                     </div>
-                    
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span>Как упаковывается мёд для доставки во Владимир?</span>
-                            <i class="ri-add-line text-primary"></i>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Мы используем специальную упаковку, которая надежно защищает мёд при транспортировке. Каждая банка мёда упаковывается в пузырчатую пленку и размещается в картонной коробке с наполнителем, чтобы исключить повреждения при доставке во Владимир. Такая упаковка сохраняет все полезные свойства мёда и защищает от внешних воздействий.</p>
-                        </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Как упаковывается мёд для доставки во Владимир?</span>
+                        <i class="ri-add-line text-primary"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Мы используем специальную упаковку, которая надежно защищает мёд при транспортировке. Каждая банка мёда упаковывается в пузырчатую пленку и размещается в картонной коробке с наполнителем, чтобы исключить повреждения при доставке во Владимир. Такая упаковка сохраняет все полезные свойства мёда и защищает от внешних воздействий.</p>
                     </div>
-                    
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span>Можно ли отследить статус доставки?</span>
-                            <i class="ri-add-line text-primary"></i>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Да, при отправке заказа вы получите трек-номер, по которому можно отслеживать статус доставки на сайте транспортной компании. Также наши менеджеры могут предоставить информацию о местонахождении вашего заказа по телефону.</p>
-                        </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Можно ли отследить статус доставки?</span>
+                        <i class="ri-add-line text-primary"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Да, при отправке заказа вы получите трек-номер, по которому можно отслеживать статус доставки на сайте транспортной компании. Также наши менеджеры могут предоставить информацию о местонахождении вашего заказа по телефону.</p>
                     </div>
-                    
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span>Что делать, если мёд пришел с повреждениями?</span>
-                            <i class="ri-add-line text-primary"></i>
-                        </button>
-                        <div class="faq-answer">
-                            <p>В случае повреждения товара при доставке во Владимир, необходимо:</p>
-                            <ol class="list-decimal pl-5 mt-2 space-y-1">
-                                <li class="mb-2">Зафиксировать повреждения (сделать фото)</li>
-                                <li class="mb-2">Связаться с нами по телефону или электронной почте</li>
-                                <li>Мы оперативно решим вопрос с заменой товара или возвратом средств</li>
-                            </ol>
-                            <p class="mt-2">Мы гарантируем качество нашей продукции и берем на себя ответственность за сохранность при доставке.</p>
-                        </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Что делать, если мёд пришел с повреждениями?</span>
+                        <i class="ri-add-line text-primary"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>В случае повреждения товара при доставке во Владимир, необходимо:</p>
+                        <ol class="list-decimal pl-5 mt-2 space-y-1">
+                            <li class="mb-2">Зафиксировать повреждения (сделать фото)</li>
+                            <li class="mb-2">Связаться с нами по телефону или электронной почте</li>
+                            <li>Мы оперативно решим вопрос с заменой товара или возвратом средств</li>
+                        </ol>
+                        <p class="mt-2">Мы гарантируем качество нашей продукции и берем на себя ответственность за сохранность при доставке.</p>
                     </div>
-                    
-                    <!-- Новый вопрос про Avito -->
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span>Можно ли заказать алтайский мёд через Avito?</span>
-                            <i class="ri-add-line text-primary"></i>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Да, вы можете выбрать удобный способ покупки: на сайте altaymed.shop или через наш профиль на <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing_seller" class="text-primary underline" target="_blank" rel="nofollow">Avito</a>.</p>
-                        </div>
+                </div>
+                
+                <!-- Новый вопрос про Avito -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Можно ли заказать алтайский мёд через Avito?</span>
+                        <i class="ri-add-line text-primary"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Да, вы можете выбрать удобный способ покупки: на сайте altaymed.shop или через наш профиль на <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing_seller" class="text-primary underline" target="_blank" rel="nofollow">Avito</a>.</p>
                     </div>
                 </div>
             </div>
@@ -2113,10 +2107,10 @@
         <div class="container">
             <div class="seo-content">
                 <h2 class="text-center mb-6">Натуральный алтайский мёд с доставкой во Владимир и область</h2>
-                <p>Ищете, где купить настоящий алтайский мёд во Владимире? Наш интернет-магазин предлагает свежий и натуральный мёд с пасек Алтая. Мы осуществляем быструю <strong>доставку мёда во Владимир</strong> и по всей Владимирской области: Ковров, Муром, Александров, Гусь-Хрустальный и другие города. У нас вы найдете лучшие сорта: <a href="/blog/sorta-meda.html" class="text-primary underline">гречишный</a>, <a href="/blog/sorta-meda.html" class="text-primary underline">липовый</a>, <a href="/blog/sorta-meda.html" class="text-primary underline">таёжный</a> и разнотравье.</p>
+                <p>Ищете, где купить настоящий алтайский мёд во Владимире? Наш интернет-магазин предлагает свежий и натуральный мёд с пасек Алтая. Мы осуществляем быструю <strong>доставку мёда во Владимир</strong> и по всей Владимирской области: Ковров, Муром, Александров, Гусь-Хрустальный и другие города. У нас вы найдете лучшие сорта: гречишный, липовый, таёжный и разнотравье.</p>
                 <p>Заказать <strong>алтайский мёд в Коврове</strong>, Муроме, Александрове или любом другом городе Владимирской области стало проще. Для жителей Владимира действует бесплатная доставка при заказе от 3 литров. Также мы доставляем мёд в Ковров, Муром, Александров и другие населенные пункты области.</p>
-                <p>Покупая алтайский мёд в нашем магазине, вы получаете 100% <a href="/blog/kak-vybrat-med.html" class="text-primary underline">натуральный</a> продукт, собранный в экологически чистых районах Алтая. Мы гарантируем качество и свежесть каждой баночки при правильном <a href="/blog/kak-hranit-med.html" class="text-primary underline">хранении</a>. Если вы ищете, <strong>где купить липовый мёд во Владимирской области</strong>, обратитесь к нам - у нас всегда в наличии свежие натуральные сорта.</p>
-                <p>Все заказы оформляются через защищенное соединение (HTTPS), что гарантирует безопасность ваших данных. Оплата при получении наличными или картой. Закажите алтайский мёд с доставкой во Владимир и насладитесь его неповторимым вкусом и ароматом!</p>
+                <p>Покупая алтайский мёд в нашем магазине, вы получаете 100% натуральный продукт, собранный в экологически чистых районах Алтая. Мы гарантируем качество и свежесть каждой баночки. Если вы ищете, <strong>где купить липовый мёд во Владимирской области</strong>, обратитесь к нам - у нас всегда в наличии свежие натуральные сорта.</p>
+                <p>Все заказы оформляются через защищенное соединение (HTTPS), что гарантирует безопасность ваших данных. Оплата при получении наличными или картой. Закажите <a href="/#product-3" class="text-primary underline">гречишный мёд</a> с доставкой во Владимир и насладитесь его неповторимым вкусом и ароматом!</p>
             </div>
         </div>
     </section>
@@ -2274,144 +2268,6 @@
         </div>
     </footer>
 
-    <!-- JSON-LD микроразметка -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "Как заказать алтайский мёд онлайн с доставкой во Владимир?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Заказать алтайский мёд с доставкой во Владимир очень просто: Выберите интересующие вас сорта мёда в нашем каталоге, добавьте товары в корзину и перейдите к оформлению заказа, укажите ваш адрес во Владимире и выберите удобный способ доставки, оплатите заказ онлайн или выберите оплату при получении, отслеживайте статус заказа и ожидайте доставки. Если у вас возникнут вопросы, наши менеджеры всегда готовы помочь по телефону +7 (920) 940-02-22."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Как долго доставляется мёд во Владимир?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Доставка мёда во Владимир занимает от 1 до 2 рабочих дней с момента отправки заказа. При выборе курьерской доставки в пределах города срок может сократиться до 1 дня. Точный срок доставки зависит от выбранного способа доставки и адреса получения."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Как происходит оплата заказа?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Вы можете оплатить заказ несколькими способами: Онлайн-оплата банковской картой на сайте, оплата при получении наличными или картой (для курьерской доставки и в пунктах выдачи СДЭК во Владимире), банковский перевод (для юридических лиц)."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Как упаковывается мёд для доставки во Владимир?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Мы используем специальную упаковку, которая надежно защищает мёд при транспортировке. Каждая банка мёда упаковывается в пузырчатую пленку и размещается в картонной коробке с наполнителем, чтобы исключить повреждения при доставке во Владимир. Такая упаковка сохраняет все полезные свойства мёда и защищает от внешних воздействий."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Можно ли отследить статус доставки?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Да, при отправке заказа вы получите трек-номер, по которому можно отслеживать статус доставки на сайте транспортной компании. Также наши менеджеры могут предоставить информацию о местонахождении вашего заказа по телефону."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Что делать, если мёд пришел с повреждениями?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "В случае повреждения товара при доставке во Владимир, необходимо: Зафиксировать повреждения (сделать фото), связаться с нами по телефону или электронной почте. Мы оперативно решим вопрос с заменой товара или возвратом средств. Мы гарантируем качество нашей продукции и берем на себя ответственность за сохранность при доставке."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Можно ли заказать алтайский мёд через Avito?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Да, вы можете выбрать удобный способ покупки: на сайте altaymed.shop или через наш профиль на Avito."
-                }
-            }
-        ]
-    }
-    </script>
-
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Product",
-        "name": "Алтайский мёд",
-        "description": "Натуральный алтайский мёд, собранный в экологически чистых районах Алтая",
-        "brand": {
-            "@type": "Brand",
-            "name": "AltayMed"
-        },
-        "offers": {
-            "@type": "Offer",
-            "priceCurrency": "RUB",
-            "price": "1100",
-            "availability": "https://schema.org/InStock",
-            "shippingDetails": {
-                "@type": "OfferShippingDetails",
-                "shippingRate": {
-                    "@type": "MonetaryAmount",
-                    "value": "0",
-                    "currency": "RUB"
-                },
-                "shippingDestination": {
-                    "@type": "DefinedRegion",
-                    "addressCountry": "RU",
-                    "addressRegion": "Владимирская область"
-                }
-            }
-        }
-    }
-    </script>
-
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Алтайский мёд",
-        "image": "https://altaymed.shop/images/og-preview.webp",
-        "telephone": "+79209400222",
-        "email": "Altaymed.shop@yandex.ru",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Владимирская область, город Ковров",
-            "addressLocality": "Ковров",
-            "addressRegion": "Владимирская область",
-            "postalCode": "601900",
-            "addressCountry": "RU"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": "56.3572",
-            "longitude": "41.3192"
-        },
-        "url": "https://altaymed.shop",
-        "priceRange": "1000-5000 ₽",
-        "openingHoursSpecification": {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": [
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday",
-                "Saturday",
-                "Sunday"
-            ],
-            "opens": "09:00",
-            "closes": "21:00"
-        }
-    }
-    </script>
-
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Инициализация табов доставки
@@ -2557,15 +2413,18 @@
                 });
             }
             
-            // Убираем зачеркивание после 1 сентября 2025
+            // Удаление зачеркивания после 1 сентября 2025 года
+            const today = new Date();
             const targetDate = new Date('2025-09-01');
-            const currentDate = new Date();
             
-            if (currentDate >= targetDate) {
+            if (today >= targetDate) {
                 const strikeElements = document.querySelectorAll('.strike-temporary');
-                strikeElements.forEach(el => {
-                    const parent = el.parentNode;
-                    parent.replaceChild(document.createTextNode(el.textContent), parent);
+                strikeElements.forEach(element => {
+                    const parent = element.parentNode;
+                    while (element.firstChild) {
+                        parent.insertBefore(element.firstChild, element);
+                    }
+                    parent.removeChild(element);
                 });
             }
             
@@ -2596,5 +2455,149 @@
                  alt="" />
         </div>
     </noscript>
+    
+    <!-- JSON-LD микроразметка -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Как заказать алтайский мёд онлайн с доставкой во Владимир?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Заказать алтайский мёд с доставкой во Владимир очень просто: 1) Выберите интересующие вас сорта мёда в нашем каталоге; 2) Добавьте товары в корзину и перейдите к оформлению заказа; 3) Укажите ваш адрес во Владимире и выберите удобный способ доставки; 4) Оплатите заказ онлайн или выберите оплату при получении; 5) Отслеживайте статус заказа и ожидайте доставки."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Как долго доставляется мёд во Владимир?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Доставка мёда во Владимир занимает от 1 до 2 рабочих дней с момента отправки заказа. При выборе курьерской доставки в пределах города срок может сократиться до 1 дня."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Как происходит оплата заказа?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Вы можете оплатить заказ несколькими способами: онлайн-оплата банковской картой на сайте, оплата при получении наличными или картой (для курьерской доставки и в пунктах выдачи СДЭК во Владимире), банковский перевод (для юридических лиц)."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Как упаковывается мёд для доставки во Владимир?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Мы используем специальную упаковку: каждая банка мёда упаковывается в пузырчатую пленку и размещается в картонной коробке с наполнителем, чтобы исключить повреждения при доставке во Владимир."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Можно ли отследить статус доставки?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Да, при отправке заказа вы получите трек-номер, по которому можно отслеживать статус доставки на сайте транспортной компании."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Что делать, если мёд пришел с повреждениями?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "В случае повреждения товара при доставке во Владимир, необходимо: 1) Зафиксировать повреждения (сделать фото); 2) Связаться с нами по телефону или электронной почте; Мы оперативно решим вопрос с заменой товара или возвратом средств."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Можно ли заказать алтайский мёд через Avito?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Да, вы можете выбрать удобный способ покупки: на сайте altaymed.shop или через наш профиль на Avito."
+                }
+            }
+        ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Натуральный алтайский мёд",
+        "description": "100% натуральный мёд с пасек Алтая: гречишный, липовый, таёжный и разнотравье.",
+        "brand": {
+            "@type": "Brand",
+            "name": "AltayMed"
+        },
+        "offers": {
+            "@type": "Offer",
+            "priceCurrency": "RUB",
+            "price": "790",
+            "availability": "https://schema.org/InStock",
+            "itemCondition": "https://schema.org/NewCondition",
+            "shippingDetails": {
+                "@type": "OfferShippingDetails",
+                "shippingRate": {
+                    "@type": "MonetaryAmount",
+                    "value": "0",
+                    "currency": "RUB"
+                },
+                "shippingDestination": {
+                    "@type": "DefinedRegion",
+                    "addressCountry": "RU",
+                    "addressRegion": "Владимирская область"
+                },
+                "deliveryTime": {
+                    "@type": "ShippingDeliveryTime",
+                    "handlingTime": {
+                        "@type": "QuantitativeValue",
+                        "minValue": "1",
+                        "maxValue": "1",
+                        "unitCode": "DAY"
+                    },
+                    "transitTime": {
+                        "@type": "QuantitativeValue",
+                        "minValue": "1",
+                        "maxValue": "2",
+                        "unitCode": "DAY"
+                    }
+                }
+            }
+        }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "AltayMed",
+        "image": "https://altaymed.shop/images/logo.png",
+        "telephone": "+79209400222",
+        "email": "Altaymed.shop@yandex.ru",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Владимирская область, г. Ковров",
+            "addressCountry": "RU"
+        },
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday"
+            ],
+            "opens": "09:00",
+            "closes": "21:00"
+        }
+    }
+    </script>
 </body>
 </html>

@@ -93,8 +93,15 @@
         /* Новый класс для широких контейнеров */
         .container-wide {
             max-width: 100% !important;
-            padding-left: 1.5rem;
-            padding-right: 1.5rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        
+        @media (min-width: 768px) {
+            .container-wide {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
         }
         
         section {
@@ -175,7 +182,7 @@
         
         .header-logo {
             font-family: 'Pacifico', 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', cursive;
-            font-size: 2.0625rem; /* Увеличен на 10% */
+            font-size: 24px; /* Исправлено: 24px вместо 2.0625rem */
             color: var(--primary);
             text-decoration: none;
         }
@@ -904,11 +911,21 @@
             padding: 3rem 0;
         }
         
+        footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%236b8e23' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.1;
+            z-index: -1;
+        }
+        
         footer .container-wide {
             width: 100%;
             max-width: 100%;
-            padding: 0 1.5rem;
-            margin: 0 auto;
             position: relative;
             z-index: 1;
         }
@@ -931,6 +948,9 @@
             width: 100%;
             padding: 0;
             margin: 0;
+        }
+        .footer-column:first-child {
+            margin-top: -10%;
         }
         .footer-column h4 {
             text-align: left;
@@ -1226,6 +1246,9 @@
             .footer-column {
                 margin-bottom: 1.5rem;
             }
+            .footer-column:first-child {
+                margin-top: 0;
+            }
             .footer-column:last-child {
                 margin-bottom: 0;
             }
@@ -1333,6 +1356,13 @@
             border: none;
             padding: 8px;
         }
+        
+        /* Убираем круг у кнопки закрытия мобильного меню */
+        #mobile-menu-close {
+            background: none;
+            border: none;
+            padding: 0;
+        }
     </style>
 
     <!-- Локальное подключение иконок -->
@@ -1342,7 +1372,7 @@
     <!-- Шапка как на главной странице -->
     <nav class="bg-white shadow-sm sticky top-0 z-50">
         <div class="container mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
-            <a href="https://altaymed.shop/" class="text-[1.65rem] md:text-[2.0625rem] font-pacifico header-logo">Алтайский мёд</a>
+            <a href="https://altaymed.shop/" class="header-logo">Алтайский мёд</a>
             
             <div class="hidden md:flex items-center space-x-6 md:space-x-8">
                 <a href="https://altaymed.shop/#benefits" class="nav-link">Преимущества</a>
@@ -2180,38 +2210,6 @@
                 
                 <!-- Контакты -->
                 <div class="footer-column">
-                    <!-- Социальные сети - перемещены выше -->
-                    <div class="footer-social-wrapper">
-                        <h4>Следите за нами</h4>
-                        <div class="footer-social-icons">
-                            <a href="https://vk.com/honeybuckwheat" target="_blank" class="social-icon-bw" aria-label="Наша страница ВКонтакте">
-                                <i class="ri-vk-line"></i>
-                            </a>
-                            <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" class="social-icon-bw" aria-label="Наш Telegram канал">
-                                <i class="ri-telegram-line"></i>
-                            </a>
-                            <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing" 
-                               target="_blank" class="social-icon-bw" aria-label="Наше объявление на Авито">
-                                <div class="avito-icon-bw">
-                                    <svg viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                        <path fill="#04e061" d="M61.924 172.07c26.468 0 47.924-47.924S88.392 76.222 61.924 76.222 14 97.678 14 124.146s21.456 47.925 47.924 47.925z" transform="translate(7.024 7.024) scale(.92683)"/>
-                                        <path fill="#ff4053" d="M149.044 166.007c15.992 0 28.956-12.963 28.956-28.955 0-15.992-12.964-28.955-28.956-28.955-15.99 0-28.954 12.963-28.954 28.955 0 15.992 12.963 28.955 28.954 28.955z" transform="translate(7.024 7.024) scale(.92683)"/>
-                                        <path fill="#965eeb" d="M71.086 65.979c9.898 0 17.922-8.024 17.922-17.921 0-9.898-8.024-17.922-17.922-17.922-9.898 0-17.921 8.024-17.921 17.922 0 9.897 8.023 17.921 17.921 17.921z" transform="translate(7.024 7.024) scale(.92683)"/>
-                                        <path fill="#0af" d="M137.789 97.856c21.519 0 38.964-17.444 38.964-38.963 0-21.52-17.445-38.964-38.964-38.964-21.52 0-38.964 17.445-38.964 38.964s17.445 38.963 38.964 38.963z" transform="translate(7.024 7.024) scale(.92683)"/>
-                                    </svg>
-                                </div>
-                            </a>
-                            <a href="https://yandex.ru/maps/" target="_blank" class="social-icon-bw" aria-label="Мы на Яндекс Картах">
-                                <div class="yandex-maps-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                        <path d="M12 2C8.13 2 5 5.13 5 9C5 13.17 9.42 18.92 11.24 21.11C11.64 21.59 12.37 21.59 12.77 21.11C14.58 18.92 19 13.17 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" 
-                                              fill="currentColor"/>
-                                    </svg>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    
                     <h4>Контакты</h4>
                     <ul>
                         <li class="footer-link-item">
@@ -2237,6 +2235,34 @@
                             </a>
                         </li>
                     </ul>
+                    
+                    <div class="footer-social-wrapper">
+                        <h4>Следите за нами</h4>
+                        <div class="footer-social-icons">
+                            <a href="https://vk.com/honeybuckwheat" target="_blank" class="social-icon-bw" aria-label="Наша страница ВКонтакте">
+                                <i class="ri-vk-line"></i>
+                            </a>
+                            <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" class="social-icon-bw" aria-label="Наш Telegram канал">
+                                <i class="ri-telegram-line"></i>
+                            </a>
+                            <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing" 
+                               target="_blank" class="social-icon-bw" aria-label="Наше объявление на Авито">
+                                <div class="avito-icon-bw">
+                                    <svg viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                        <path fill="#04e061" d='M61.924 172.07c26.468 0 47.924-47.924S88.392 76.222 61.924 76.222 14 97.678 14 124.146s21.456 47.925 47.924 47.925z' transform='translate(7.024 7.024) scale(.92683)'/%3E%3Cpath fill='%23ff4053' d='M149.044 166.007c15.992 0 28.956-12.963 28.956-28.955 0-15.992-12.964-28.955-28.956-28.955-15.99 0-28.954 12.963-28.954 28.955 0 15.992 12.963 28.955 28.954 28.955z' transform='translate(7.024 7.024) scale(.92683)'/%3E%3Cpath fill='%23965eeb' d='M71.086 65.979c9.898 0 17.922-8.024 17.922-17.921 0-9.898-8.024-17.922-17.922-17.922-9.898 0-17.921 8.024-17.921 17.922 0 9.897 8.023 17.921 17.921 17.921z' transform='translate(7.024 7.024) scale(.92683)'/%3E%3Cpath fill='%230af' d='M137.789 97.856c21.519 0 38.964-17.444 38.964-38.963 0-21.52-17.445-38.964-38.964-38.964-21.52 0-38.964 17.445-38.964 38.964s17.445 38.963 38.964 38.963z' transform='translate(7.024 7.024) scale(.92683)'/%3E%3C/svg%3E
+                                    </svg>
+                                </div>
+                            </a>
+                            <a href="https://yandex.ru/maps/" target="_blank" class="social-icon-bw" aria-label="Мы на Яндекс Картах">
+                                <div class="yandex-maps-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                        <path d="M12 2C8.13 2 5 5.13 5 9C5 13.17 9.42 18.92 11.24 21.11C11.64 21.59 12.37 21.59 12.77 21.11C14.58 18.92 19 13.17 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" 
+                                              fill="currentColor"/>
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

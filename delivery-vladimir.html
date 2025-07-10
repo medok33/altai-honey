@@ -1321,7 +1321,6 @@
             font-size: 1.05rem;
             text-align: left;
             transition: background-color 0.3s;
-            color: var(--gray-900); /* Исправлено: черный цвет текста */
         }
         
         .faq-question:hover {
@@ -1353,24 +1352,6 @@
         .faq-item.active .faq-answer {
             max-height: 1000px;
             padding: 0 20px 20px;
-        }
-        
-        /* Стили для перечеркнутых цен */
-        .strikethrough {
-            position: relative;
-            display: inline-block;
-        }
-        
-        .strikethrough::after {
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background: #e53e3e;
-            transform: translateY(-50%);
-            opacity: 0.8;
         }
     </style>
 
@@ -1687,7 +1668,7 @@
                             </div>
                             <div class="delivery-meta">
                                 <i class="ri-money-dollar-circle-line"></i>
-                                <span>Стоимость: бесплатно для жителей города Владимир*</span>
+                                <span>Стоимость: бесплатно для жителей города Владимир</span>
                             </div>
                         </div>
                         
@@ -1743,7 +1724,7 @@
                             </div>
                             <div class="delivery-meta">
                                 <i class="ri-money-dollar-circle-line"></i>
-                                <span>Стоимость: от 99 ₽ (зависит от веса заказа)</span>
+                                <span>Стоимость: от 125 ₽ (зависит от веса заказа)</span>
                             </div>
                         </div>
                         
@@ -1793,7 +1774,7 @@
                     </thead>
                     <tbody>
                         <tr class="highlighted">
-                            <td><span class="liter-highlight">1 литр (~ 1.4 кг)</span></td>
+                            <td><span class="liter-highlight">1 литр (до 1 кг)</span></td>
                             <td><span class="liter-highlight">125 ₽</span></td>
                             <td><span class="liter-highlight">150 ₽</span></td>
                             <td><span class="liter-highlight">175 ₽</span></td>
@@ -1810,27 +1791,27 @@
                         </tr>
                         <tr>
                             <td>3-5 кг</td>
-                            <td class="strikethrough">225 ₽</td>
-                            <td class="strikethrough">250 ₽</td>
-                            <td class="strikethrough">275 ₽</td>
-                            <td class="strikethrough">250 ₽</td>
-                            <td class="strikethrough">240 ₽</td>
+                            <td>225 ₽</td>
+                            <td>250 ₽</td>
+                            <td>275 ₽</td>
+                            <td>250 ₽</td>
+                            <td>240 ₽</td>
                         </tr>
                         <tr>
                             <td>5-10 кг</td>
-                            <td class="strikethrough">325 ₽</td>
-                            <td class="strikethrough">350 ₽</td>
-                            <td class="strikethrough">375 ₽</td>
-                            <td class="strikethrough">250 ₽</td>
-                            <td class="strikethrough">340 ₽</td>
+                            <td>325 ₽</td>
+                            <td>350 ₽</td>
+                            <td>375 ₽</td>
+                            <td>250 ₽</td>
+                            <td>340 ₽</td>
                         </tr>
                         <tr>
                             <td>Более 10 кг</td>
-                            <td class="strikethrough">Индивидуальный расчет</td>
-                            <td class="strikethrough">Индивидуальный расчет</td>
-                            <td class="strikethrough">Индивидуальный расчет</td>
-                            <td class="strikethrough">Индивидуальный расчет</td>
-                            <td class="strikethrough">Индивидуальный расчет</td>
+                            <td>Индивидуальный расчет</td>
+                            <td>Индивидуальный расчет</td>
+                            <td>Индивидуальный расчет</td>
+                            <td>Индивидуальный расчет</td>
+                            <td>Индивидуальный расчет</td>
                         </tr>
                     </tbody>
                 </table>
@@ -1838,7 +1819,7 @@
             
             <div class="free-delivery">
                 <p><strong>Бесплатная доставка</strong> при заказе от 3 литров меда в пределах города Владимир!</p>
-                <p class="mt-2 text-sm">*Акция на Бесплатную доставку до пункта выдачи действует для жителей города Владимир при заказе от 3 литров действует до 10.09.2025г</p>
+                <p class="mt-2 text-sm">*Бесплатная доставка до пункта выдачи действует для жителей города Владимир при заказе от 3 литров</p>
             </div>
         </div>
     </section>

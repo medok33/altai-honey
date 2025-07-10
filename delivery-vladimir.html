@@ -90,6 +90,13 @@
             margin: 0 auto;
         }
         
+        /* Новый класс для широких контейнеров */
+        .container-wide {
+            max-width: 100% !important;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+        
         section {
             padding: 4rem 0;
         }
@@ -914,10 +921,10 @@
             margin-left: -220%;
             margin-top: -220%;
         }
-        footer .container {
+        footer .container-wide {
             width: 100%;
-            max-width: 1280px;
-            padding: 0 1rem;
+            max-width: 100%;
+            padding: 0 1.5rem;
             margin: 0 auto;
             position: relative;
             z-index: 1;
@@ -1316,6 +1323,21 @@
             color: white; /* Белый цвет */
             margin-top: 0.5rem;
         }
+        
+        /* Дополнения для футера */
+        .footer-logo-wrapper {
+            margin-bottom: 1.5rem; /* Смещение лого на 10% выше */
+        }
+        
+        .footer-social-wrapper {
+            margin-top: 15%; /* Смещение соцсетей на 15% ниже */
+        }
+        
+        .https-info {
+            font-size: 0.76rem;
+            color: white;
+            margin-top: 0.5rem;
+        }
     </style>
 
     <!-- Локальное подключение иконок -->
@@ -1324,7 +1346,7 @@
 <body>
     <!-- Шапка как на главной странице -->
     <nav class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="container mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
+        <div class="container-wide mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
             <a href="https://altaymed.shop/" class="text-[1.65rem] md:text-[2.0625rem] font-pacifico header-logo">Алтайский мёд</a>
             
             <div class="hidden md:flex items-center space-x-6 md:space-x-8">
@@ -1343,7 +1365,13 @@
         </div>
         
         <div class="mobile-menu" id="mobile-menu">
-            <div class="flex flex-col space-y-4">
+            <div class="mobile-menu-header">
+                <a href="/" class="header-logo">Алтайский мёд</a>
+                <button id="mobile-menu-close" class="w-10 h-10 flex items-center justify-center">
+                    <i class="ri-close-line text-2xl text-gray-800" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="mobile-menu-links">
                 <a href="https://altaymed.shop/#benefits" class="nav-link py-2">Преимущества</a>
                 <a href="https://altaymed.shop/#products" class="nav-link py-2">Каталог</a>
                 <a href="https://altaymed.shop/delivery.html" class="nav-link py-2 active">Доставка</a>
@@ -2062,12 +2090,15 @@
 
     <!-- Футер -->
     <footer>
-        <div id="footer-contacts" class="container">
+        <div id="footer-contacts" class="container-wide">
             <div class="footer-grid">
                 <!-- Лого и описание -->
                 <div class="footer-column">
-                    <a href="/" class="header-logo">Алтайский мёд</a>
+                    <div class="footer-logo-wrapper">
+                        <a href="/" class="header-logo">Алтайский мёд</a>
+                    </div>
                     <p class="footer-description">Натуральные продукты пчеловодства с Алтайских гор.</p>
+                    <p class="https-info">HTTPS (HyperText Transfer Protocol Secure)</p>
                     <p class="footer-copyright">© 2025 Алтайский мёд. Все права защищены.</p>
                 </div>
                 
@@ -2181,7 +2212,7 @@
                     </ul>
                     
                     <!-- Социальные сети -->
-                    <div class="mt-8"> <!-- Увеличили отступ сверху -->
+                    <div class="footer-social-wrapper">
                         <h4>Следите за нами</h4>
                         <div class="footer-social-icons">
                             <a href="https://vk.com/honeybuckwheat" target="_blank" class="social-icon-bw" aria-label="Наша страница ВКонтакте">
@@ -2258,11 +2289,18 @@
             
             // Мобильное меню
             const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenuClose = document.getElementById('mobile-menu-close');
             const mobileMenu = document.getElementById('mobile-menu');
             
             if (mobileMenuToggle && mobileMenu) {
                 mobileMenuToggle.addEventListener('click', () => {
                     mobileMenu.classList.toggle('active');
+                });
+            }
+            
+            if (mobileMenuClose && mobileMenu) {
+                mobileMenuClose.addEventListener('click', () => {
+                    mobileMenu.classList.remove('active');
                 });
             }
             

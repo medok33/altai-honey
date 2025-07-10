@@ -47,6 +47,29 @@
   }
   
   /* …остальной inline-CSS… */
+  
+  /* Стили для ошибок */
+  .error-message {
+    display: none;
+    color: #e53e3e;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    animation: fadeIn 0.3s ease;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .input-error {
+    border-color: #e53e3e !important;
+    box-shadow: 0 0 0 2px rgba(229, 62, 62, 0.2);
+  }
+  
+  .error-visible {
+    display: block;
+  }
 </style>
 
 <!-- Предзагрузка критических ресурсов -->
@@ -514,21 +537,25 @@
             <div class="mb-3 md:mb-4">
               <label for="name" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Ваше имя</label>
               <input type="text" id="name" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="Иван Петров" maxlength="100">
+              <div class="error-message" id="name-error"></div>
             </div>
             
             <div class="mb-3 md:mb-4">
               <label for="phone" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Телефон</label>
-              <input type="tel" id="phone" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="+7 (999) 123-45-67" maxlength="20">
+              <input type="tel" id="phone" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="+7 (999) 123-45-67" maxlength="18">
+              <div class="error-message" id="phone-error"></div>
             </div>
             
             <div class="mb-3 md:mb-4">
               <label for="email" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Email</label>
               <input type="email" id="email" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="example@mail.ru" maxlength="100">
+              <div class="error-message" id="email-error"></div>
             </div>
             
             <div class="mb-4 md:mb-6">
               <label for="message" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Комментарий к заказу</label>
               <textarea id="message" rows="3" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="Укажите интересующие вас сорта мёда и объём" maxlength="500"></textarea>
+              <div class="error-message" id="message-error"></div>
             </div>
             
             <button type="submit" class="w-full bg-orange text-white py-2 md:py-3 !rounded-button hover:bg-opacity-90 transition-all font-medium text-sm md:text-base">Отправить заявку</button>
@@ -762,6 +789,7 @@
         <div class="mb-3 md:mb-4">
           <label for="quantity" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Количество (литров)</label>
           <input type="number" id="quantity" min="1" value="1" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base">
+          <div class="error-message" id="quantity-error"></div>
         </div>
         
         <div class="mb-3 md:mb-4">
@@ -775,11 +803,13 @@
         <div class="mb-3 md:mb-4">
           <label for="delivery-address" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Адрес доставки</label>
           <textarea id="delivery-address" rows="2" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="Укажите полный адрес доставки" maxlength="200"></textarea>
+          <div class="error-message" id="address-error"></div>
         </div>
         
         <div class="mb-3 md:mb-4">
           <label for="quick-phone" class="block text-gray-700 mb-1 md:mb-2 text-sm md:text-base">Контактный телефон</label>
-          <input type="tel" id="quick-phone" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="+7 (999) 123-45-67" maxlength="20">
+          <input type="tel" id="quick-phone" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base" placeholder="+7 (999) 123-45-67" maxlength="18">
+          <div class="error-message" id="quick-phone-error"></div>
         </div>
         
         <button type="submit" class="w-full bg-orange text-white py-2 md:py-3 !rounded-button hover:bg-opacity-90 transition-all font-medium text-sm md:text-base">
@@ -838,10 +868,18 @@ function sanitize(input) {
     .substring(0, 200); // Ограничение длины
 }
 
-// Проверка валидности телефона
+// Проверка валидности телефона с поддержкой нескольких форматов
 function isValidPhone(phone) {
-  const phonePattern = /^\+7\s?\(\d{3}\)\s?\d{3}-\d{2}-\d{2}$/;
-  return phonePattern.test(phone);
+  // Удаляем все нецифровые символы, кроме плюса
+  const cleaned = phone.replace(/[^\d+]/g, '');
+  
+  // Проверяем различные форматы
+  return (
+    /^\+7\d{10}$/.test(cleaned) ||     // +7XXXXXXXXXX
+    /^\+8\d{10}$/.test(cleaned) ||      // +8XXXXXXXXXX
+    /^7\d{10}$/.test(cleaned) ||        // 7XXXXXXXXXX
+    /^8\d{10}$/.test(cleaned)           // 8XXXXXXXXXX
+  );
 }
 
 // Проверка частоты отправки форм
@@ -868,11 +906,6 @@ function checkHoneypot(form) {
 }
 
 // ================== ОСНОВНОЙ КОД ================== //
-// Функция для санитизации ввода
-function sanitize(input) {
-  return input.replace(/</g, '&lt;').replace(/>/g, '&gt;');
-}
-
 // Унифицированное управление модальными окнами
 function toggleModal(modalId, show) {
   const modal = document.getElementById(modalId);
@@ -904,6 +937,79 @@ window.addEventListener('load', function() {
   setTimeout(loadAnalytics, 1000);
 });
 
+// Функция для создания маски телефона
+function createPhoneMask(input) {
+  input.addEventListener('input', function(e) {
+    let value = input.value.replace(/\D/g, '');
+    let formattedValue = '';
+    
+    // Автоматически добавляем +7 ( при начале ввода
+    if (value.length === 0) {
+      input.value = '';
+      return;
+    }
+    
+    if (value.startsWith('7') || value.startsWith('8')) {
+      value = value.replace(/^[78]/, '7');
+    }
+    
+    if (!value.startsWith('7') && !value.startsWith('+')) {
+      value = '7' + value;
+    }
+    
+    // Форматируем номер
+    formattedValue = '+7 (';
+    
+    if (value.length > 1) {
+      formattedValue += value.substring(1, 4);
+    }
+    
+    if (value.length >= 5) {
+      formattedValue += ') ' + value.substring(4, 7);
+    }
+    
+    if (value.length >= 8) {
+      formattedValue += '-' + value.substring(7, 9);
+    }
+    
+    if (value.length >= 10) {
+      formattedValue += '-' + value.substring(9, 11);
+    }
+    
+    input.value = formattedValue;
+  });
+}
+
+// Показать сообщение об ошибке
+function showError(elementId, message) {
+  const errorElement = document.getElementById(elementId);
+  if (errorElement) {
+    errorElement.textContent = message;
+    errorElement.classList.add('error-visible');
+    
+    // Добавляем класс ошибки к полю ввода
+    const inputElement = errorElement.previousElementSibling;
+    if (inputElement) {
+      inputElement.classList.add('input-error');
+    }
+  }
+}
+
+// Скрыть сообщение об ошибке
+function hideError(elementId) {
+  const errorElement = document.getElementById(elementId);
+  if (errorElement) {
+    errorElement.textContent = '';
+    errorElement.classList.remove('error-visible');
+    
+    // Убираем класс ошибки с поля ввода
+    const inputElement = errorElement.previousElementSibling;
+    if (inputElement) {
+      inputElement.classList.remove('input-error');
+    }
+  }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
   // Инициализация CSRF токенов
   const csrfToken = generateCSRFToken();
@@ -911,6 +1017,13 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('quick-csrf_token').value = csrfToken;
   localStorage.setItem('csrf_token', csrfToken);
   
+  // Инициализация масок телефона
+  const phoneInput = document.getElementById('phone');
+  const quickPhoneInput = document.getElementById('quick-phone');
+  
+  if (phoneInput) createPhoneMask(phoneInput);
+  if (quickPhoneInput) createPhoneMask(quickPhoneInput);
+
   const mobileMenuButton = document.querySelector('.md\\:hidden');
   const mobileMenu = document.getElementById('mobile-menu');
   
@@ -995,6 +1108,12 @@ document.addEventListener('DOMContentLoaded', function() {
     orderForm.addEventListener('submit', async function(e) {
       e.preventDefault();
       
+      // Скрываем все предыдущие ошибки
+      hideError('name-error');
+      hideError('phone-error');
+      hideError('email-error');
+      hideError('message-error');
+      
       // Проверка honeypot
       if (checkHoneypot(this)) {
         console.log('Bot detected via honeypot');
@@ -1003,7 +1122,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // Проверка частоты запросов
       if (!checkRateLimit()) {
-        alert('Слишком много запросов. Пожалуйста, попробуйте через минуту.');
+        showError('phone-error', 'Слишком много запросов. Пожалуйста, попробуйте через минуту.');
         return;
       }
       
@@ -1021,16 +1140,25 @@ document.addEventListener('DOMContentLoaded', function() {
       const email = sanitize(document.getElementById('email').value);
       const message = sanitize(document.getElementById('message').value);
       
-      // Валидация телефона
-      if (!isValidPhone(phone)) {
-        alert('Пожалуйста, введите телефон в формате +7 (XXX) XXX-XX-XX');
-        return;
-      }
+      // Валидация полей
+      let hasError = false;
       
       if (!name || name.length < 2) {
-        alert('Пожалуйста, введите корректное имя');
-        return;
+        showError('name-error', 'Пожалуйста, введите корректное имя');
+        hasError = true;
       }
+      
+      if (!isValidPhone(phone)) {
+        showError('phone-error', 'Пожалуйста, введите корректный номер телефона');
+        hasError = true;
+      }
+      
+      if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        showError('email-error', 'Пожалуйста, введите корректный email');
+        hasError = true;
+      }
+      
+      if (hasError) return;
       
       // Форматируем сообщение для Telegram
       const telegramMessage = `
@@ -1121,6 +1249,11 @@ document.addEventListener('DOMContentLoaded', function() {
     quickOrderForm.addEventListener('submit', async function(e) {
       e.preventDefault();
       
+      // Скрываем предыдущие ошибки
+      hideError('quantity-error');
+      hideError('address-error');
+      hideError('quick-phone-error');
+      
       // Проверка honeypot
       if (checkHoneypot(this)) {
         console.log('Bot detected via honeypot');
@@ -1129,7 +1262,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // Проверка частоты запросов
       if (!checkRateLimit()) {
-        alert('Слишком много запросов. Пожалуйста, попробуйте через минуту.');
+        showError('quick-phone-error', 'Слишком много запросов. Пожалуйста, попробуйте через минуту.');
         return;
       }
       
@@ -1147,16 +1280,25 @@ document.addEventListener('DOMContentLoaded', function() {
       const address = sanitize(document.getElementById('delivery-address').value);
       const phone = sanitize(document.getElementById('quick-phone').value);
       
-      // Валидация телефона
-      if (!isValidPhone(phone)) {
-        alert('Пожалуйста, введите телефон в формате +7 (XXX) XXX-XX-XX');
-        return;
+      // Валидация полей
+      let hasError = false;
+      
+      if (!quantity || quantity < 1) {
+        showError('quantity-error', 'Пожалуйста, введите корректное количество');
+        hasError = true;
       }
       
-      if (!product || !quantity || !address || !phone) {
-        alert('Пожалуйста, заполните все поля');
-        return;
+      if (!isValidPhone(phone)) {
+        showError('quick-phone-error', 'Пожалуйста, введите корректный номер телефона');
+        hasError = true;
       }
+      
+      if (!address || address.length < 10) {
+        showError('address-error', 'Пожалуйста, укажите полный адрес доставки');
+        hasError = true;
+      }
+      
+      if (hasError) return;
       
       // Форматируем сообщение для Telegram
       const telegramMessage = `

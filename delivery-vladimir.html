@@ -775,56 +775,6 @@
             background: var(--primary);
         }
         
-        .faq-container {
-            max-width: 48rem;
-            margin: 0 auto;
-        }
-        
-        .faq-item {
-            margin-bottom: 1rem;
-            background-color: var(--gray-50);
-            border-radius: 0.5rem;
-            overflow: hidden;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-        }
-        
-        .faq-question {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 1.5rem;
-            background-color: var(--gray-50);
-            cursor: pointer;
-            font-weight: 500;
-        }
-        
-        .faq-question span {
-            color: var(--gray-900);
-            font-size: 1.05rem;
-            flex: 1;
-        }
-        
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-            padding: 0 1.5rem;
-            color: var(--gray-600);
-        }
-        
-        .faq-item.active .faq-answer {
-            max-height: 1000px;
-            padding: 0 1.5rem 1.5rem;
-        }
-        
-        .faq-item.active .faq-question i {
-            transform: rotate(45deg);
-        }
-        
-        .faq-question i {
-            transition: transform 0.3s;
-        }
-        
         .cta-section {
             background-color: rgba(107, 142, 35, 0.1);
             text-align: center;
@@ -1012,7 +962,7 @@
         footer span, 
         footer h4, 
         footer li {
-            color: white;
+            color: white !important;
             text-decoration: none;
         }
         .footer-link-item {
@@ -1296,8 +1246,8 @@
         /* Исправления для футера */
         .footer-social-icons {
             display: flex;
-            gap: 12px;
-            margin-top: 1rem;
+            gap: 15px; /* Увеличено на 5% */
+            margin-top: 1.5rem; /* Смещено на 10% ниже */
         }
         
         .footer-social-title {
@@ -1324,10 +1274,6 @@
             margin-bottom: 1.5rem; /* Смещение лого на 10% выше */
         }
         
-        .footer-social-wrapper {
-            margin-top: 10%; /* Смещение соцсетей на 10% ниже */
-        }
-        
         .https-info {
             font-size: 0.76rem;
             color: white;
@@ -1346,6 +1292,66 @@
             background: none;
             border: none;
             padding: 0;
+        }
+        
+        /* Стили для нового FAQ аккордеона */
+        .faq-container {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin: 30px 0;
+        }
+        
+        .faq-item {
+            padding: 0;
+        }
+        
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 16px 20px;
+            background-color: #f9f9f9;
+            border: none;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 1.05rem;
+            text-align: left;
+            transition: background-color 0.3s;
+        }
+        
+        .faq-question:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .faq-question:focus {
+            outline: none;
+        }
+        
+        .faq-question i {
+            color: var(--primary);
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(45deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            background-color: white;
+            color: var(--gray-600);
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 1000px;
+            padding: 0 20px 20px;
         }
     </style>
 
@@ -1946,17 +1952,17 @@
             
             <div class="faq-container">
                 <div class="faq-item">
-                    <div class="faq-question">
+                    <button class="faq-question">
                         <span>Как заказать алтайский мёд онлайн с доставкой во Владимир?</span>
                         <i class="ri-add-line text-primary"></i>
-                    </div>
+                    </button>
                     <div class="faq-answer">
                         <p>Заказать алтайский мёд с доставкой во Владимир очень просто:</p>
                         <ol class="list-decimal pl-5 mt-2 space-y-1">
-                            <li>Выберите интересующие вас сорта мёда в нашем <a href="/#products" class="text-primary underline">каталоге</a></li>
-                            <li>Добавьте товары в корзину и перейдите к оформлению заказа</li>
-                            <li>Укажите ваш адрес во Владимире и выберите удобный способ доставки</li>
-                            <li>Оплатите заказ онлайн или выберите оплату при получении</li>
+                            <li class="mb-2">Выберите интересующие вас сорта мёда в нашем <a href="/#products" class="text-primary underline">каталоге</a></li>
+                            <li class="mb-2">Добавьте товары в корзину и перейдите к оформлению заказа</li>
+                            <li class="mb-2">Укажите ваш адрес во Владимире и выберите удобный способ доставки</li>
+                            <li class="mb-2">Оплатите заказ онлайн или выберите оплату при получении</li>
                             <li>Отслеживайте статус заказа и ожидайте доставки</li>
                         </ol>
                         <p class="mt-2">Если у вас возникнут вопросы, наши менеджеры всегда готовы помочь по телефону <a href="tel:+79209400222" class="text-primary">+7 (920) 940-02-22</a>.</p>
@@ -1964,60 +1970,60 @@
                 </div>
                 
                 <div class="faq-item">
-                    <div class="faq-question">
+                    <button class="faq-question">
                         <span>Как долго доставляется мёд во Владимир?</span>
                         <i class="ri-add-line text-primary"></i>
-                    </div>
+                    </button>
                     <div class="faq-answer">
                         <p>Доставка мёда во Владимир занимает от 1 до 2 рабочих дней с момента отправки заказа. При выборе курьерской доставки в пределах города срок может сократиться до 1 дня. Точный срок доставки зависит от выбранного способа доставки и адреса получения.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
-                    <div class="faq-question">
+                    <button class="faq-question">
                         <span>Как происходит оплата заказа?</span>
                         <i class="ri-add-line text-primary"></i>
-                    </div>
+                    </button>
                     <div class="faq-answer">
                         <p>Вы можете оплатить заказ несколькими способами:</p>
                         <ul class="list-disc pl-5 mt-2 space-y-1">
-                            <li>Онлайн-оплата банковской картой на сайте</li>
-                            <li>Оплата при получении наличными или картой (для курьерской доставки и в пунктах выдачи СДЭК во Владимире)</li>
+                            <li class="mb-2">Онлайн-оплата банковской картой на сайте</li>
+                            <li class="mb-2">Оплата при получении наличными или картой (для курьерской доставки и в пунктах выдачи СДЭК во Владимире)</li>
                             <li>Банковский перевод (для юридических лиц)</li>
                         </ul>
                     </div>
                 </div>
                 
                 <div class="faq-item">
-                    <div class="faq-question">
+                    <button class="faq-question">
                         <span>Как упаковывается мёд для доставки во Владимир?</span>
                         <i class="ri-add-line text-primary"></i>
-                    </div>
+                    </button>
                     <div class="faq-answer">
                         <p>Мы используем специальную упаковку, которая надежно защищает мёд при транспортировке. Каждая банка мёда упаковывается в пузырчатую пленку и размещается в картонной коробке с наполнителем, чтобы исключить повреждения при доставке во Владимир. Такая упаковка сохраняет все полезные свойства мёда и защищает от внешних воздействий.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
-                    <div class="faq-question">
+                    <button class="faq-question">
                         <span>Можно ли отследить статус доставки?</span>
                         <i class="ri-add-line text-primary"></i>
-                    </div>
+                    </button>
                     <div class="faq-answer">
                         <p>Да, при отправке заказа вы получите трек-номер, по которому можно отслеживать статус доставки на сайте транспортной компании. Также наши менеджеры могут предоставить информацию о местонахождении вашего заказа по телефону.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
-                    <div class="faq-question">
+                    <button class="faq-question">
                         <span>Что делать, если мёд пришел с повреждениями?</span>
                         <i class="ri-add-line text-primary"></i>
-                    </div>
+                    </button>
                     <div class="faq-answer">
                         <p>В случае повреждения товара при доставке во Владимир, необходимо:</p>
                         <ol class="list-decimal pl-5 mt-2 space-y-1">
-                            <li>Зафиксировать повреждения (сделать фото)</li>
-                            <li>Связаться с нами по телефону или электронной почте</li>
+                            <li class="mb-2">Зафиксировать повреждения (сделать фото)</li>
+                            <li class="mb-2">Связаться с нами по телефону или электронной почте</li>
                             <li>Мы оперативно решим вопрос с заменой товара или возвратом средств</li>
                         </ol>
                         <p class="mt-2">Мы гарантируем качество нашей продукции и берем на себя ответственность за сохранность при доставке.</p>
@@ -2026,12 +2032,12 @@
                 
                 <!-- Новый вопрос про Avito -->
                 <div class="faq-item">
-                    <div class="faq-question">
+                    <button class="faq-question">
                         <span>Можно ли заказать алтайский мёд через Avito?</span>
                         <i class="ri-add-line text-primary"></i>
-                    </div>
+                    </button>
                     <div class="faq-answer">
-                        <p>Да, вы можете выбрать удобный способ покупки: на сайте altaymed.shop или через наш профиль на Avito — <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing_seller" class="text-primary underline" target="_blank">ссылка на наш профиль</a>.</p>
+                        <p>Да, вы можете выбрать удобный способ покупки: на сайте altaymed.shop или через наш профиль на <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing_seller" class="text-primary underline" target="_blank">Avito</a>.</p>
                     </div>
                 </div>
             </div>
@@ -2158,6 +2164,12 @@
                                 <span>Правовая информация</span>
                             </a>
                         </li>
+                        <li>
+                            <span class="footer-link-item">
+                                <span class="bullet"></span>
+                                <span>Мёд оптом для кафе, магазинов и заведений</span>
+                            </span>
+                        </li>
                     </ul>
                 </div>
                 
@@ -2211,36 +2223,33 @@
                             </a>
                         </li>
                         <li class="footer-link-item">
-                            <a href="mailto:9209400222@mail.ru" class="footer-link">
+                            <a href="mailto:Altaymed.shop@yandex.ru" class="footer-link">
                                 <div class="contact-icon">
                                     <i class="ri-mail-line"></i>
                                 </div>
-                                <span class="contact-text">9209400222@mail.ru</span>
+                                <span class="contact-text">Altaymed.shop@yandex.ru</span>
                             </a>
                         </li>
                     </ul>
                     
                     <!-- Социальные сети -->
-                    <div class="mt-4 md:mt-6">
-                        <p class="text-base md:text-lg font-bold mb-2 md:mb-3">Следите за нами</p>
-                        <div class="flex space-x-2 md:space-x-3">
-                            <a href="https://vk.com/honeybuckwheat" target="_blank" rel="noopener" class="social-icon-bw" aria-label="Наша страница ВКонтакте">
-                                <i class="ri-vk-line ri-lg"></i>
-                            </a>
-                            <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" rel="noopener" class="social-icon-bw" aria-label="Наш Telegram канал">
-                                <i class="ri-telegram-line ri-lg"></i>
-                            </a>
-                            <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing" 
-                               target="_blank" rel="noopener" class="social-icon-bw" aria-label="Наше объявление на Авито">
-                                <i class="ri-shopping-bag-line ri-lg"></i>
-                            </a>
-                            <a href="https://dzen.ru/altaymed" target="_blank" rel="noopener" class="social-icon-bw" aria-label="Наш канал на Яндекс Дзен">
-                                <i class="ri-article-line ri-lg"></i>
-                            </a>
-                            <a href="https://yandex.ru/maps/" target="_blank" rel="noopener" class="social-icon-bw" aria-label="Мы на Яндекс Картах">
-                                <i class="ri-map-pin-line ri-lg"></i>
-                            </a>
-                        </div>
+                    <div class="footer-social-icons">
+                        <a href="https://vk.com/honeybuckwheat" target="_blank" rel="noopener" class="social-icon-bw" aria-label="Наша страница ВКонтакте">
+                            <i class="ri-vk-line ri-lg"></i>
+                        </a>
+                        <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" rel="noopener" class="social-icon-bw" aria-label="Наш Telegram канал">
+                            <i class="ri-telegram-line ri-lg"></i>
+                        </a>
+                        <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing" 
+                           target="_blank" rel="noopener" class="social-icon-bw" aria-label="Наше объявление на Авито">
+                            <i class="ri-shopping-bag-line ri-lg"></i>
+                        </a>
+                        <a href="https://dzen.ru/altaymed" target="_blank" rel="noopener" class="social-icon-bw" aria-label="Наш канал на Яндекс Дзен">
+                            <i class="ri-article-line ri-lg"></i>
+                        </a>
+                        <a href="https://yandex.ru/maps/" target="_blank" rel="noopener" class="social-icon-bw" aria-label="Мы на Яндекс Картах">
+                            <i class="ri-map-pin-line ri-lg"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -2268,17 +2277,6 @@
                         
                         button.classList.add('active');
                         document.getElementById(`${tabId}-content`)?.classList.add('active');
-                    });
-                });
-            }
-            
-            // Инициализация FAQ
-            const faqQuestions = document.querySelectorAll('.faq-question');
-            if (faqQuestions.length) {
-                faqQuestions.forEach(question => {
-                    question.addEventListener('click', () => {
-                        const faqItem = question.parentElement;
-                        faqItem.classList.toggle('active');
                     });
                 });
             }
@@ -2380,6 +2378,27 @@
                     carouselContainer.addEventListener('mouseenter', stopAutoSlide);
                     carouselContainer.addEventListener('mouseleave', startAutoSlide);
                 }
+            }
+            
+            // Инициализация FAQ аккордеона
+            const faqItems = document.querySelectorAll('.faq-item');
+            if (faqItems.length) {
+                faqItems.forEach(item => {
+                    const question = item.querySelector('.faq-question');
+                    question.addEventListener('click', () => {
+                        const isOpen = item.classList.contains('active');
+                        
+                        // Закрыть все
+                        faqItems.forEach(el => {
+                            el.classList.remove('active');
+                        });
+                        
+                        // Открыть текущий, если был закрыт
+                        if (!isOpen) {
+                            item.classList.add('active');
+                        }
+                    });
+                });
             }
             
             // Яндекс.Метрика

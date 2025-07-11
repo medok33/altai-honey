@@ -364,7 +364,7 @@
     }
     .regions-container {
       margin-top: 16px;
-      margin-bottom: 24px;
+      margin-bottom: 8px;
       position: relative;
     }
     .regions-header {
@@ -529,20 +529,19 @@
     
     /* Анимация появления городов */
     @keyframes fadeIn {
-      from {
+      0% {
         opacity: 0;
-        transform: translateY(10px);
+        transform: translateY(10px) scale(0.95);
       }
-      to {
+      100% {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
       }
     }
     
     .hidden-cities-grid .region-tag {
-      animation: fadeIn 0.4s ease forwards;
-      animation-delay: calc(0.05s * var(--i));
       opacity: 0;
+      animation: fadeIn 0.4s ease forwards;
     }
   </style>
 
@@ -731,13 +730,13 @@
               </div>
             </div>
             
-            <div class="mt-8">
+            <div>
               <picture>
                 <source srcset="/images/delivery-map.webp" type="image/webp">
                 <img src="/images/delivery-map.jpg" 
                      alt="Карта зон доставки алтайского мёда по России - Ковров, Владимирская область, Центральная Россия, Урал, Сибирь, Дальний Восток"
                      width="800" height="450"
-                     class="w-full h-auto rounded-lg shadow-md mt-4"
+                     class="w-full h-auto rounded-lg shadow-md"
                      loading="lazy"
                      aria-describedby="map-description">
               </picture>
@@ -1138,7 +1137,6 @@
           // Добавляем скрытые города
           hiddenCities.forEach((city, index) => {
             const el = createCityElement(city);
-            el.style.setProperty('--i', index);
             hiddenCitiesContainer.appendChild(el);
           });
         }
@@ -1152,16 +1150,14 @@
         // Анимируем появление городов
         if (hiddenCitiesContainer.classList.contains('visible')) {
           const cityTags = hiddenCitiesContainer.querySelectorAll('.region-tag');
-          cityTags.forEach(tag => {
-            tag.style.opacity = '0';
+          cityTags.forEach((tag, index) => {
+            // Сбросить предыдущие анимации
+            tag.style.animation = 'none';
+            // Перезапустить анимацию с задержкой
+            setTimeout(() => {
+              tag.style.animation = `fadeIn 0.4s ease forwards ${index * 50}ms`;
+            }, 10);
           });
-          
-          // Запускаем анимацию с небольшой задержкой
-          setTimeout(() => {
-            cityTags.forEach(tag => {
-              tag.style.opacity = '1';
-            });
-          }, 50);
         }
       });
       

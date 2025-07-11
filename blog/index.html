@@ -43,22 +43,7 @@
   .nav-link:hover{color:var(--primary);}
   .nav-btn{background:var(--primary);color:white;border-radius:8px!important;padding:0.5rem 1.5rem!important;display:inline-flex;align-items:center;justify-content:center;text-align:center;font-weight:600;}
   .header-logo{color:var(--primary);}
-  footer{width:100%;position:relative;overflow:hidden;background-color:var(--secondary);z-index:1;}
-  footer::before{content:"";position:absolute;top:0;left:0;width:600%;height:600%;background-image:linear-gradient(rgba(255,255,255,0.15)1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.15)1px,transparent 1px);background-size:108px 108px;transform:rotate(30deg);transform-origin:0 0;opacity:0.6;z-index:0;margin-left:-220%;margin-top:-220%;}
-  footer .container{position:relative;z-index:1;}
-  .footer-column{display:flex;flex-direction:column;align-items:flex-start;}
-  .footer-column h4{text-align:left;margin:0 0 0.64rem 0;font-weight:bold;font-size:1.125rem;line-height:1.75rem;}
-  .footer-column ul{display:flex;flex-direction:column;align-items:flex-start;list-style:none;padding:0;margin:0;}
-  .footer-column li{width:100%;text-align:left;list-style-type:none;}
-  .footer-column li a{display:flex;align-items:center;width:100%;}
-  .footer-column .bullet{display:inline-block;width:6px;height:6px;background-color:white;border-radius:50%;margin-right:10px;flex-shrink:0;}
-  footer,footer*,footer a,footer p,footer span,footer h4,footer li{color:white;}
-  footer a:hover{color:#d1d5db;}
-  .social-icon-bw{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:transparent;transition:all 0.3s;border:1px solid #4b5563;color:#4b5563;filter:grayscale(100%);}
-  .social-icon-bw:hover{filter:grayscale(0%);border-color:var(--primary);color:var(--primary);}
-  .footer-link-item{display:flex;align-items:center;padding-top:0.21rem;padding-bottom:0.21rem;}
-  .contact-icon{display:flex;align-items:center;justify-content:center;margin-right:12px;flex-shrink:0;width:24px;}
-  .contact-text{flex-grow:1;line-height:1.5;}
+  
   .blog-post-card{transition:all 0.3s ease;}
   .blog-post-card:hover{transform:translateY(-8px);box-shadow:0 20px 25px -5px rgba(0,0,0,0.1),0 10px 10px -5px rgba(0,0,0,0.04);}
   .active-nav-link-alt{border:2px solid var(--primary);border-radius:8px;padding:4px 12px;color:var(--primary);font-weight:600;transition:all 0.3s ease;}
@@ -172,6 +157,242 @@
   @media (prefers-reduced-motion:reduce){*{animation-duration:0.01ms!important;transition-duration:0.01ms!important;}
   .blog-post-card:hover,.floating-back-button:hover{transform:none!important;box-shadow:none!important;}
   .section-animate{opacity:1!important;transform:none!important;transition:none!important;}}
+  
+  /* УНИВЕРСАЛЬНЫЕ СТИЛИ ФУТЕРА (начало) */
+  .universal-footer {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: #8B4513;
+    z-index: 1;
+    padding: 3rem 0;
+    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  }
+  
+  .universal-footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 600%;
+    height: 600%;
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+    background-size: 108px 108px;
+    transform: rotate(30deg);
+    transform-origin: 0 0;
+    opacity: 0.6;
+    z-index: 0;
+    margin-left: -220%;
+    margin-top: -220%;
+  }
+  
+  .footer-container {
+    width: 100%;
+    max-width: 1280px;
+    padding: 0 1.5rem;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .footer-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  @media (min-width: 768px) {
+    .footer-grid {
+      grid-template-columns: repeat(5, 1fr);
+      gap: 2rem;
+    }
+  }
+  
+  .footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-column:first-child {
+    margin-top: -5%;
+  }
+  
+  .footer-column h4 {
+    text-align: left;
+    width: 100%;
+    padding: 0;
+    margin: 0 0 1rem 0;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.4;
+    color: white;
+  }
+  
+  .footer-column ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    gap: 0.5rem;
+  }
+  
+  .footer-column li {
+    width: 100%;
+    text-align: left;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-column li a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    text-decoration: none;
+    font-size: 0.875rem;
+    color: white;
+    transition: color 0.3s;
+  }
+  
+  .footer-column li a:hover {
+    color: #d1d5db;
+  }
+  
+  .footer-bullet {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background-color: white;
+    border-radius: 50%;
+    margin-right: 10px;
+    flex-shrink: 0;
+  }
+  
+  .universal-footer, 
+  .universal-footer *,
+  .universal-footer a, 
+  .universal-footer p, 
+  .universal-footer span, 
+  .universal-footer h4, 
+  .universal-footer li {
+    color: white !important;
+    text-decoration: none;
+  }
+  
+  .footer-link-item {
+    display: flex;
+    align-items: center;
+    padding-top: 0.21rem;
+    padding-bottom: 0.21rem;
+  }
+  
+  .footer-contact-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    flex-shrink: 0;
+    width: 24px;
+    font-size: 1.1rem;
+  }
+  
+  .footer-contact-text {
+    flex-grow: 1;
+    line-height: 1.5;
+    font-size: 0.875rem;
+  }
+  
+  .footer-social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: transparent;
+    transition: all 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .footer-social-icon:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #6B8E23;
+    color: white;
+  }
+  
+  .footer-social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 1.5rem;
+  }
+  
+  .footer-logo {
+    font-family: 'Pacifico', 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', cursive;
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 1.4rem;
+  }
+  
+  .footer-description {
+    font-size: 0.76rem;
+    margin-top: 0.5rem;
+    color: white;
+  }
+  
+  .footer-https {
+    font-size: 0.76rem;
+    color: white;
+    margin-top: 0.5rem;
+  }
+  
+  .footer-copyright {
+    font-size: 0.7rem;
+    color: white;
+    margin-top: 0.5rem;
+  }
+  
+  /* Адаптация для мобильных */
+  @media (max-width: 767px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+    .footer-column {
+      margin-bottom: 1.5rem;
+    }
+    .footer-column:first-child {
+      margin-top: 0;
+    }
+    .footer-column:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .footer-logo {
+      font-size: 1.875rem;
+    }
+    .footer-column h4 {
+      font-size: 1.125rem;
+    }
+    .footer-column li a, 
+    .footer-contact-text {
+      font-size: 1rem;
+    }
+  }
+  /* УНИВЕРСАЛЬНЫЕ СТИЛИ ФУТЕРА (конец) */
 </style>
 </head>
 <body>
@@ -309,7 +530,7 @@
         <div class="blog-image-container article-image-darken">
           <img 
             src="/images/image-12.jpg" 
-            alt="Лечебные свойства алтайского мёда - как мёд помогает при различных заболеваниях" 
+            alt="Лечебные свойства алтайского мёд - как мёд помогает при различных заболеваниях" 
             class="blog-image"
             loading="lazy"
             decoding="async"
@@ -403,142 +624,160 @@
   </div>
 </section>
 </main>
-<footer class="py-10 md:py-12 w-full">
-  <div id="footer-contacts" class="container mx-auto px-4 md:px-6 w-full">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 w-full">
+
+<!-- Универсальный футер -->
+<footer class="universal-footer">
+  <div id="footer-contacts" class="footer-container">
+    <div class="footer-grid">
+      <!-- Лого и описание -->
       <div class="footer-column">
-        <div class="logo-wrapper">
-          <a href="/" class="text-2xl md:text-3xl font-pacifico mb-3 md:mb-4 block">Алтайский мёд</a>
+        <a href="/" class="footer-logo">Алтайский мёд</a>
+        <div class="footer-text-content">
+          <p class="footer-description">Натуральные продукты пчеловодства с Алтайских гор.</p>
+          <p class="footer-https">Сайт защищён — работает по протоколу HTTPS</p>
+          <p class="footer-copyright">© 2025 Алтайский мёд. Все права защищены.</p>
         </div>
-        <div class="description-wrapper">
-          <p class="text-xs">Натуральные продукты пчеловодства с Алтайских гор.</p>
-          <p class="text-xs">© 2025 Алтайский мёд. Все права защищены.</p>
-        </div>
       </div>
+      
+      <!-- Каталог -->
       <div class="footer-column">
-        <h4 class="text-base md:text-lg font-bold">Каталог</h4>
+        <h4>Каталог</h4>
         <ul>
           <li>
-            <a href="/#product-1" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">Разнотравье</span>
+            <a href="/#product-1" class="footer-link-item">
+              <span class="footer-bullet"></span>
+              <span>Разнотравье</span>
             </a>
           </li>
           <li>
-            <a href="/#product-2" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">Таёжный мёд</span>
+            <a href="/#product-2" class="footer-link-item">
+              <span class="footer-bullet"></span>
+              <span>Таёжный мёд</span>
             </a>
           </li>
           <li>
-            <a href="/#product-3" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">Гречишный мёд</span>
+            <a href="/#product-3" class="footer-link-item">
+              <span class="footer-bullet"></span>
+              <span>Гречишный мёд</span>
             </a>
           </li>
         </ul>
       </div>
+      
+      <!-- Материалы -->
       <div class="footer-column">
-        <h4 class="text-base md:text-lg font-bold">Материалы</h4>
+        <h4>Материалы</h4>
         <ul>
           <li>
-            <a href="/blog/" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">Блог</span>
+            <a href="/blog/" class="footer-link-item">
+              <span class="footer-bullet"></span>
+              <span>Блог</span>
             </a>
           </li>
           <li>
-            <a href="/faq/" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">FAQ</span>
+            <a href="/faq/" class="footer-link-item">
+              <span class="footer-bullet"></span>
+              <span>FAQ</span>
             </a>
           </li>
           <li>
-            <a href="/legal.html" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">Правовая информация</span>
+            <a href="/legal.html" class="footer-link-item">
+              <span class="footer-bullet"></span>
+              <span>Правовая информация</span>
+            </a>
+          </li>
+          <li>
+            <span class="footer-link-item">
+              <span class="footer-bullet"></span>
+              <span>Мёд оптом для кафе, магазинов и заведений</span>
+            </span>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- Информация -->
+      <div class="footer-column">
+        <h4>Информация</h4>
+        <ul>
+          <li>
+            <a href="/#benefits" class="footer-link-item">
+              <span class="footer-bullet"></span>
+              <span>Преимущества</span>
+            </a>
+          </li>
+          <li>
+            <a href="/#about" class="footer-link-item">
+              <span class="footer-bullet"></span>
+              <span>О нас</span>
+            </a>
+          </li>
+          <li>
+            <a href="#footer-contacts" class="footer-link-item">
+              <span class="footer-bullet"></span>
+              <span>Контакты</span>
+            </a>
+          </li>
+          <li>
+            <a href="/delivery.html" class="footer-link-item">
+              <span class="footer-bullet"></span>
+              <span>Доставка и оплата</span>
             </a>
           </li>
         </ul>
       </div>
+      
+      <!-- Контакты -->
       <div class="footer-column">
-        <h4 class="text-base md:text-lg font-bold">Информация</h4>
+        <h4>Контакты</h4>
         <ul>
-          <li>
-            <a href="/#benefits" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">Преимущества</span>
-            </a>
+          <li class="footer-link-item">
+            <div class="footer-contact-icon">
+              <i class="ri-map-pin-2-line"></i>
+            </div>
+            <span class="footer-contact-text">Владимирская обл. Город Ковров</span>
           </li>
-          <li>
-            <a href="/#about" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">О нас</span>
-            </a>
-          </li>
-          <li>
-            <a href="/#footer-contacts" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">Контакты</span>
-            </a>
-          </li>
-          <li>
-            <a href="/delivery.html" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">Доставка и оплата</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <h4 class="text-base md:text-lg font-bold">Контакты</h4>
-        <ul>
-          <li>
-            <a class="footer-link-item">
-              <div class="contact-icon">
-                <i class="ri-map-pin-2-line ri-sm md:ri-base"></i>
+          <li class="footer-link-item">
+            <a href="tel:+79209400222" class="footer-link">
+              <div class="footer-contact-icon">
+                <i class="ri-phone-line"></i>
               </div>
-              <span class="contact-text">Владимирская обл. Город Ковров</span>
+              <span class="footer-contact-text">+7 (920) 940-02-22</span>
             </a>
           </li>
-          <li>
-            <a href="tel:+79209400222" class="footer-link-item">
-              <div class="contact-icon">
-                <i class="ri-phone-line ri-sm md:ri-base"></i>
+          <li class="footer-link-item">
+            <a href="mailto:Altaymed.shop@yandex.ru" class="footer-link">
+              <div class="footer-contact-icon">
+                <i class="ri-mail-line"></i>
               </div>
-              <span class="contact-text">+7 (920) 940-02-22</span>
-            </a>
-          </li>
-          <li>
-            <a href="mailto:9209400222@mail.ru" class="footer-link-item">
-              <div class="contact-icon">
-                <i class="ri-mail-line ri-sm md:ri-base"></i>
-              </div>
-              <span class="contact-text">9209400222@mail.ru</span>
+              <span class="footer-contact-text">Altaymed.shop@yandex.ru</span>
             </a>
           </li>
         </ul>
-        <div class="mt-4 md:mt-6">
-          <p class="text-base md:text-lg font-bold mb-2 md:mb-3">Следите за нами</p>
-          <div class="flex space-x-2 md:space-x-3">
-            <a href="https://vk.com/honeybuckwheat" target="_blank" rel="noopener" class="social-icon-bw" aria-label="Наша страница ВКонтакте">
-              <i class="ri-vk-line ri-lg"></i>
-            </a>
-            <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" rel="noopener" class="social-icon-bw" aria-label="Наш Telegram канал">
-              <i class="ri-telegram-line ri-lg"></i>
-            </a>
-            <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing" target="_blank" rel="noopener" class="social-icon-bw" aria-label="Наше объявление на Авито">
-              <i class="ri-shopping-bag-line ri-lg"></i>
-            </a>
-            <a href="https://yandex.ru/maps/" target="_blank" rel="noopener" class="social-icon-bw" aria-label="Наше местоположение на Яндекс Картах">
-              <i class="ri-map-2-line ri-lg"></i>
-            </a>
-          </div>
+        
+        <!-- Социальные сети -->
+        <div class="footer-social-icons">
+          <a href="https://vk.com/honeybuckwheat" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="Наша страница ВКонтакте">
+            <i class="ri-vk-line ri-lg"></i>
+          </a>
+          <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="Наш Telegram канал">
+            <i class="ri-telegram-line ri-lg"></i>
+          </a>
+          <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing" 
+             target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="Наше объявление на Авито">
+            <i class="ri-shopping-bag-line ri-lg"></i>
+          </a>
+          <a href="https://dzen.ru/altaymed" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="Наш канал на Яндекс Дзен">
+            <i class="ri-article-line ri-lg"></i>
+          </a>
+          <a href="https://yandex.ru/maps/" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="Мы на Яндекс Картах">
+            <i class="ri-map-pin-line ri-lg"></i>
+          </a>
         </div>
       </div>
     </div>
   </div>
 </footer>
+
 <a href="#" id="back-button" class="floating-back-button" aria-label="Вернуться назад">
   <div class="back-arrow"></div>
 </a>

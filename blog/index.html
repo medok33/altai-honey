@@ -405,135 +405,152 @@
 </main>
 <footer class="py-10 md:py-12 w-full">
   <div id="footer-contacts" class="container mx-auto px-4 md:px-6 w-full">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 w-full">
+    <div class="footer-grid">
+      <!-- Лого и описание -->
       <div class="footer-column">
-        <div class="logo-wrapper">
-          <a href="/" class="text-2xl md:text-3xl font-pacifico mb-3 md:mb-4 block">Алтайский мёд</a>
+        <div class="footer-logo-wrapper">
+          <a href="/" class="header-logo text-white">Алтайский мёд</a>
         </div>
-        <div class="description-wrapper">
-          <p class="text-xs">Натуральные продукты пчеловодства с Алтайских гор.</p>
-          <p class="text-xs">© 2025 Алтайский мёд. Все права защищены.</p>
+        <div class="footer-text-content">
+          <p class="footer-description">Натуральные продукты пчеловодства с Алтайских гор.</p>
+          <p class="https-info">Сайт защищён — работает по протоколу HTTPS</p>
+          <p class="footer-copyright">© 2025 Алтайский мёд. Все права защищены.</p>
         </div>
       </div>
+      
+      <!-- Каталог -->
       <div class="footer-column">
-        <h4 class="text-base md:text-lg font-bold">Каталог</h4>
+        <h4>Каталог</h4>
         <ul>
           <li>
-            <a href="/#product-1" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">Разнотравье</span>
+            <a href="/#product-1" class="footer-link-item">
+              <span class="bullet"></span>
+              <span>Разнотравье</span>
             </a>
           </li>
           <li>
-            <a href="/#product-2" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">Таёжный мёд</span>
+            <a href="/#product-2" class="footer-link-item">
+              <span class="bullet"></span>
+              <span>Таёжный мёд</span>
             </a>
           </li>
           <li>
-            <a href="/#product-3" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">Гречишный мёд</span>
+            <a href="/#product-3" class="footer-link-item">
+              <span class="bullet"></span>
+              <span>Гречишный мёд</span>
             </a>
           </li>
         </ul>
       </div>
+      
+      <!-- Материалы -->
       <div class="footer-column">
-        <h4 class="text-base md:text-lg font-bold">Материалы</h4>
+        <h4>Материалы</h4>
         <ul>
           <li>
-            <a href="/blog/" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">Блог</span>
+            <a href="/blog/" class="footer-link-item">
+              <span class="bullet"></span>
+              <span>Блог</span>
             </a>
           </li>
           <li>
-            <a href="/faq/" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">FAQ</span>
+            <a href="/faq/" class="footer-link-item">
+              <span class="bullet"></span>
+              <span>FAQ</span>
             </a>
           </li>
           <li>
-            <a href="/legal.html" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">Правовая информация</span>
+            <a href="/legal.html" class="footer-link-item">
+              <span class="bullet"></span>
+              <span>Правовая информация</span>
+            </a>
+          </li>
+          <li>
+            <span class="footer-link-item">
+              <span class="bullet"></span>
+              <span>Мёд оптом для кафе, магазинов и заведений</span>
+            </span>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- Информация -->
+      <div class="footer-column">
+        <h4>Информация</h4>
+        <ul>
+          <li>
+            <a href="/#benefits" class="footer-link-item">
+              <span class="bullet"></span>
+              <span>Преимущества</span>
+            </a>
+          </li>
+          <li>
+            <a href="/#about" class="footer-link-item">
+              <span class="bullet"></span>
+              <span>О нас</span>
+            </a>
+          </li>
+          <li>
+            <a href="#footer-contacts" class="footer-link-item">
+              <span class="bullet"></span>
+              <span>Контакты</span>
+            </a>
+          </li>
+          <li>
+            <a href="/delivery.html" class="footer-link-item">
+              <span class="bullet"></span>
+              <span>Доставка и оплата</span>
             </a>
           </li>
         </ul>
       </div>
+      
+      <!-- Контакты -->
       <div class="footer-column">
-        <h4 class="text-base md:text-lg font-bold">Информация</h4>
+        <h4>Контакты</h4>
         <ul>
-          <li>
-            <a href="/#benefits" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">Преимущества</span>
-            </a>
+          <li class="footer-link-item">
+            <div class="contact-icon">
+              <i class="ri-map-pin-2-line"></i>
+            </div>
+            <span class="contact-text">Владимирская обл. Город Ковров</span>
           </li>
-          <li>
-            <a href="/#about" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">О нас</span>
-            </a>
-          </li>
-          <li>
-            <a href="/#footer-contacts" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">Контакты</span>
-            </a>
-          </li>
-          <li>
-            <a href="/delivery.html" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
-              <span class="bullet mr-2"></span>
-              <span class="text-sm md:text-base">Доставка и оплата</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <h4 class="text-base md:text-lg font-bold">Контакты</h4>
-        <ul>
-          <li>
-            <a class="footer-link-item">
+          <li class="footer-link-item">
+            <a href="tel:+79209400222" class="footer-link">
               <div class="contact-icon">
-                <i class="ri-map-pin-2-line ri-sm md:ri-base"></i>
-              </div>
-              <span class="contact-text">Владимирская обл. Город Ковров</span>
-            </a>
-          </li>
-          <li>
-            <a href="tel:+79209400222" class="footer-link-item">
-              <div class="contact-icon">
-                <i class="ri-phone-line ri-sm md:ri-base"></i>
+                <i class="ri-phone-line"></i>
               </div>
               <span class="contact-text">+7 (920) 940-02-22</span>
             </a>
           </li>
-          <li>
-            <a href="mailto:9209400222@mail.ru" class="footer-link-item">
+          <li class="footer-link-item">
+            <a href="mailto:Altaymed.shop@yandex.ru" class="footer-link">
               <div class="contact-icon">
-                <i class="ri-mail-line ri-sm md:ri-base"></i>
+                <i class="ri-mail-line"></i>
               </div>
-              <span class="contact-text">9209400222@mail.ru</span>
+              <span class="contact-text">Altaymed.shop@yandex.ru</span>
             </a>
           </li>
         </ul>
-        <div class="mt-4 md:mt-6">
-          <p class="text-base md:text-lg font-bold mb-2 md:mb-3">Следите за нами</p>
-          <div class="flex space-x-2 md:space-x-3">
-            <a href="https://vk.com/honeybuckwheat" target="_blank" rel="noopener" class="social-icon-bw" aria-label="Наша страница ВКонтакте">
-              <i class="ri-vk-line ri-lg"></i>
-            </a>
-            <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" rel="noopener" class="social-icon-bw" aria-label="Наш Telegram канал">
-              <i class="ri-telegram-line ri-lg"></i>
-            </a>
-            <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing" target="_blank" rel="noopener" class="social-icon-bw" aria-label="Наше объявление на Авито">
-              <i class="ri-shopping-bag-line ri-lg"></i>
-            </a>
-            <a href="https://yandex.ru/maps/" target="_blank" rel="noopener" class="social-icon-bw" aria-label="Наше местоположение на Яндекс Картах">
-              <i class="ri-map-2-line ri-lg"></i>
-            </a>
-          </div>
+        
+        <!-- Социальные сети -->
+        <div class="footer-social-icons">
+          <a href="https://vk.com/honeybuckwheat" target="_blank" rel="noopener noreferrer" class="social-icon-bw" aria-label="Наша страница ВКонтакте">
+            <i class="ri-vk-line ri-lg"></i>
+          </a>
+          <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" rel="noopener noreferrer" class="social-icon-bw" aria-label="Наш Telegram канал">
+            <i class="ri-telegram-line ri-lg"></i>
+          </a>
+          <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing" 
+             target="_blank" rel="noopener noreferrer" class="social-icon-bw" aria-label="Наше объявление на Авито">
+            <i class="ri-shopping-bag-line ri-lg"></i>
+          </a>
+          <a href="https://dzen.ru/altaymed" target="_blank" rel="noopener noreferrer" class="social-icon-bw" aria-label="Наш канал на Яндекс Дзен">
+            <i class="ri-article-line ri-lg"></i>
+          </a>
+          <a href="https://yandex.ru/maps/" target="_blank" rel="noopener noreferrer" class="social-icon-bw" aria-label="Мы на Яндекс Картах">
+            <i class="ri-map-pin-line ri-lg"></i>
+          </a>
         </div>
       </div>
     </div>

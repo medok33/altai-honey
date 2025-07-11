@@ -569,22 +569,21 @@
             margin-top: 0.25rem;
         }
         
+        /* ИСПРАВЛЕНИЕ: Убраны оба скроллбара */
         .responsive-table {
             width: 100%;
-            overflow-x: auto;
-            overflow-y: hidden; /* Убрать вертикальный скролл */
-            -webkit-overflow-scrolling: touch;
+            overflow: hidden; /* Убраны горизонтальный и вертикальный скроллбары */
             margin-bottom: 2rem;
         }
         
         .tariffs-table {
             width: 100%;
+            min-width: 100%; /* Гарантирует, что таблица влезает по ширине */
             border-collapse: collapse;
             background: #fff;
             border-radius: 0.5rem;
             overflow: hidden;
             box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-            min-width: 600px;
         }
         
         .tariffs-table th {

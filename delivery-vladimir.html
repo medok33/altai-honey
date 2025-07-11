@@ -31,6 +31,12 @@
     <meta name="twitter:description" content="Закажите натуральный алтайский мёд с доставкой по Владимиру и области. Гречишный, липовый, таёжный мёд — бесплатно от 3 литров.">
     <meta name="twitter:image" content="images/twitter-preview.webp">
     
+    <!-- Preload критически важных шрифтов -->
+    <link rel="preload" href="/fonts/OpenSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/OpenSans-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/OpenSans-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/Pacifico-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    
     <style>
         /* Подключение шрифтов локально с font-display: swap */
         @font-face {
@@ -161,14 +167,14 @@
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
         
-        /* Шапка как на главной странице */
+        /* Шапка с уменьшенной высотой */
         nav.bg-white {
             background-color: #fff;
             box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
             position: sticky;
             top: 0;
             z-index: 50;
-            padding: 0.45rem 0; /* Уменьшено на 10% */
+            padding: 0.4rem 0; /* Уменьшено на 10% */
         }
         
         .flex {
@@ -247,7 +253,7 @@
             
             /* Уменьшаем высоту шапки на мобильных */
             nav.bg-white {
-                padding: 0.36rem 0; /* Дополнительное уменьшение для мобильных */
+                padding: 0.32rem 0; /* Уменьшено на 10% */
             }
         }
         
@@ -564,15 +570,13 @@
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
             margin-bottom: 2rem;
+            
+            /* Скрытие скроллбара для всех браузеров */
+            scrollbar-width: none; /* Firefox */
         }
         
         .responsive-table::-webkit-scrollbar {
-            display: none;
-        }
-        
-        .responsive-table {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
+            display: none; /* Chrome, Safari, Opera */
         }
         
         .tariffs-table {
@@ -873,7 +877,7 @@
             text-align: center;
         }
         
-        /* Футер */
+        /* Футер с поднятым текстом */
         footer {
             width: 100%;
             position: relative;
@@ -1406,7 +1410,7 @@
     <link rel="stylesheet" href="/assets/fonts/remixicon/remixicon.css" media="print" onload="this.media='all'">
 </head>
 <body>
-    <!-- Шапка как на главной странице -->
+    <!-- Шапка с уменьшенной высотой и измененной ссылкой -->
     <nav class="bg-white shadow-sm sticky top-0 z-50">
         <div class="container mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
             <a href="https://altaymed.shop/" class="header-logo">Алтайский мёд</a>
@@ -1415,7 +1419,8 @@
                 <a href="https://altaymed.shop/#benefits" class="nav-link">Преимущества</a>
                 <a href="https://altaymed.shop/#products" class="nav-link">Каталог</a>
                 <a href="https://altaymed.shop/delivery.html" class="nav-link active">Доставка</a>
-                <a href="https://altaymed.shop/about" class="nav-link">О нас</a>
+                <!-- Измененная ссылка "О нас" на главную страницу -->
+                <a href="https://altaymed.shop/" class="nav-link">О нас</a>
                 <a href="https://altaymed.shop/blog" class="nav-link">Блог</a>
                 <a href="#footer-contacts" class="nav-link">Контакты</a>
                 <a href="/#products" class="nav-btn px-4 md:px-6 py-1 md:py-2 !rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">Заказать</a>
@@ -1437,7 +1442,8 @@
                 <a href="https://altaymed.shop/#benefits" class="nav-link py-2">Преимущества</a>
                 <a href="https://altaymed.shop/#products" class="nav-link py-2">Каталог</a>
                 <a href="https://altaymed.shop/delivery.html" class="nav-link py-2 active">Доставка</a>
-                <a href="https://altaymed.shop/about" class="nav-link py-2">О нас</a>
+                <!-- Измененная ссылка "О нас" на главную страницу -->
+                <a href="https://altaymed.shop/" class="nav-link py-2">О нас</a>
                 <a href="https://altaymed.shop/blog" class="nav-link py-2">Блог</a>
                 <a href="#footer-contacts" class="nav-link py-2">Контакты</a>
                 <a href="tel:+79209400222" class="nav-link py-2">+7 (920) 940-02-22</a>
@@ -2145,13 +2151,13 @@
                 <h2 class="text-center mb-6">Натуральный алтайский мёд с доставкой во Владимир и область</h2>
                 <p>Ищете, где купить настоящий алтайский мёд во Владимире? Наш интернет-магазин предлагает свежий и натуральный мёд с пасек Алтая. Мы осуществляем быструю <strong>доставку мёда во Владимир</strong> и по всей Владимирской области: Ковров, Муром, Александров, Гусь-Хрустальный и другие города. У нас вы найдете лучшие сорта: <a href="/blog/kak-vybrat-med.html" class="text-primary underline">гречишный</a>, <a href="/blog/kak-hranit-med.html" class="text-primary underline">липовый</a>, <a href="/blog/lechebnye-svoistva-altayskogo-meda.html" class="text-primary underline">таёжный</a> и разнотравье.</p>
                 <p>Заказать <strong>алтайский мёд в Коврове</strong>, Муроме, Александрове или любом другом городе Владимирской области стало проще. Для жителей Владимира действует бесплатная доставка при заказе от 3 литров. Также мы доставляем мёд в Ковров, Муром, Александров и другие населенные пункты области.</p>
-                <p>Покупая алтайский мёд в нашем магазине, вы получаете 100% <a href="/blog/kak-vybrat-med.html" class="text-primary underline">натуральный</a> продукт, собранный в экологически чистых районах Алтая. Мы гарантируем качество и свежесть каждой баночки при правильном <a href="/blog/kak-hranit-med.html" class="text-primary underline">хранении</a>. Если вы ищете, <strong>где купить липовый мёд во Владимирской области</strong>, обратитесь к нам - у нас всегда в наличии свежие натуральные сорта.</p>
+                <p>Покупая алтайский мёд в нашем магазине, вы получаете 100% <a href="/blog/kak-vybrat-med.html" class="text-primary underline">наaturalный</a> продукт, собранный в экологически чистых районах Алтая. Мы гарантируем качество и свежесть каждой баночки при правильном <a href="/blog/kak-hranit-med.html" class="text-primary underline">хранении</a>. Если вы ищете, <strong>где купить липовый мёд во Владимирской области</strong>, обратитесь к нам - у нас всегда в наличии свежие натуральные сорта.</p>
                 <p>Все заказы оформляются через защищенное соединение (HTTPS), что гарантирует безопасность ваших данных. Оплата при получении наличными или картой. Закажите алтайский мёд с доставкой во Владимир и насладитесь его неповторимым вкусом и ароматом!</p>
             </div>
         </div>
     </section>
 
-    <!-- Футер -->
+    <!-- Футер с поднятым текстом -->
     <footer>
         <div id="footer-contacts" class="container-wide">
             <div class="footer-grid">

@@ -20,12 +20,6 @@
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
     
-    <!-- Preload для шрифтов -->
-    <link rel="preload" href="/fonts/OpenSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/fonts/OpenSans-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/fonts/OpenSans-Bold.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/fonts/Pacifico-Regular.woff2" as="font" type="font/woff2" crossorigin>
-    
     <meta property="og:title" content="Доставка алтайского мёда во Владимир">
     <meta property="og:description" content="Закажите натуральный алтайский мёд с доставкой по Владимиру и области. Свежий гречишный, липовый, таёжный мёд — бесплатно доставим от 3 литров.">
     <meta property="og:image" content="images/og-preview.webp">
@@ -167,7 +161,7 @@
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
         
-        /* Шапка как на главной странице - уменьшена высота */
+        /* Шапка как на главной странице */
         nav.bg-white {
             background-color: #fff;
             box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -251,7 +245,7 @@
                 display: block;
             }
             
-            /* Уменьшаем высоту шапки на мобильных - дополнительно уменьшено */
+            /* Уменьшаем высоту шапки на мобильных */
             nav.bg-white {
                 padding: 0.36rem 0; /* Дополнительное уменьшение для мобильных */
             }
@@ -565,19 +559,25 @@
             margin-top: 0.25rem;
         }
         
-        /* Убрали скроллбар таблицы */
-        .tariffs-container {
+        .responsive-table {
+            width: 100%;
             overflow-x: auto;
-            scrollbar-width: none; /* Firefox */
+            -webkit-overflow-scrolling: touch;
+            margin-bottom: 2rem;
         }
-        .tariffs-container::-webkit-scrollbar {
-            display: none; /* Chrome, Safari, Edge */
+        
+        .responsive-table::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .responsive-table {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
         
         .tariffs-table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 2rem;
             background: #fff;
             border-radius: 0.5rem;
             overflow: hidden;
@@ -1297,7 +1297,7 @@
         
         /* Дополнения для футера */
         .footer-logo-wrapper {
-            margin-bottom: 1.35rem; /* Уменьшено на 10% */
+            margin-bottom: 1.4rem; /* Уменьшен на 5% */
         }
         
         .https-info {
@@ -1807,7 +1807,7 @@
         <div class="container">
             <h2>Тарифы на доставку мёда во Владимир</h2>
             
-            <div class="tariffs-container">
+            <div class="responsive-table">
                 <table class="tariffs-table">
                     <thead>
                         <tr>

@@ -168,7 +168,7 @@
             position: sticky;
             top: 0;
             z-index: 50;
-            padding: 0.5rem 0; /* Уменьшено на 15% */
+            padding: 0.45rem 0; /* Уменьшено на 10% */
         }
         
         .flex {
@@ -247,7 +247,7 @@
             
             /* Уменьшаем высоту шапки на мобильных */
             nav.bg-white {
-                padding: 0.4rem 0; /* Дополнительное уменьшение для мобильных */
+                padding: 0.36rem 0; /* Дополнительное уменьшение для мобильных */
             }
         }
         
@@ -559,14 +559,25 @@
             margin-top: 0.25rem;
         }
         
-        .tariffs-container {
+        .responsive-table {
+            width: 100%;
             overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin-bottom: 2rem;
+        }
+        
+        .responsive-table::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .responsive-table {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
         
         .tariffs-table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 2rem;
             background: #fff;
             border-radius: 0.5rem;
             overflow: hidden;
@@ -1286,7 +1297,7 @@
         
         /* Дополнения для футера */
         .footer-logo-wrapper {
-            margin-bottom: 1.5rem; /* Смещение лого на 10% выше */
+            margin-bottom: 1.4rem; /* Уменьшен на 5% */
         }
         
         .https-info {
@@ -1796,7 +1807,7 @@
         <div class="container">
             <h2>Тарифы на доставку мёда во Владимир</h2>
             
-            <div class="tariffs-container">
+            <div class="responsive-table">
                 <table class="tariffs-table">
                     <thead>
                         <tr>

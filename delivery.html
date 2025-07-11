@@ -375,51 +375,51 @@
     }
     .regions-row {
       display: flex;
-      flex-wrap: nowrap;
+      flex-wrap: wrap;
       overflow: hidden;
     }
-    .triangle-toggle {
-      position: absolute;
-      right: 0;
-      top: 0;
-      height: 100%;
-      display: flex;
+    .more-regions-toggle {
+      display: inline-flex;
       align-items: center;
-      padding-left: 10px;
-      background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 50%);
+      padding: 8px 16px;
+      border: 1px solid #6B8E23;
+      border-radius: 24px;
+      color: #6B8E23;
+      font-weight: 500;
+      font-size: 0.9rem;
+      margin-top: 8px;
       cursor: pointer;
-      opacity: 0;
-      transition: opacity 0.3s;
+      transition: all 0.3s ease;
+      background: white;
     }
-    .triangle-toggle.visible {
-      opacity: 1;
-    }
-    .triangle {
-      width: 0;
-      height: 0;
-      border-left: 6px solid transparent;
-      border-right: 6px solid transparent;
-      border-top: 8px solid #6B8E23;
-      transition: all 0.3s;
-      margin-right: 8px;
-    }
-    .triangle-toggle:hover .triangle {
-      border-top-color: #5a7a1c;
-      transform: translateY(2px);
+    .more-regions-toggle:hover {
+      background-color: #f8f9fa;
+      transform: translateY(-1px);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
     #hidden-regions {
       display: none;
-      padding-top: 8px;
+      padding-top: 12px;
+      animation: fadeIn 0.4s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     .hidden-regions-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
       gap: 10px;
     }
     .hidden-regions-grid .region-tag {
       margin: 0;
       width: 100%;
       text-align: center;
+      opacity: 0;
+      animation: fadeInTag 0.4s forwards;
+    }
+    @keyframes fadeInTag {
+      to { opacity: 1; }
     }
 
     .section-animate {
@@ -642,34 +642,12 @@
             
             <div class="regions-container">
               <h4 class="regions-header">Регионы доставки:</h4>
-              <div class="relative">
-                <div class="regions-row" id="regions-row">
-                  <div class="region-tag">Москва</div>
-                  <div class="region-tag">Санкт-Петербург</div>
-                  <div class="region-tag">Казань</div>
-                  <div class="region-tag">Новосибирск</div>
-                  <a href="/delivery-kovrov.html" class="region-tag region-link">Ковров</a>
-                  <a href="/delivery-vladimir.html" class="region-tag region-link">Владимир</a>
-                  <div class="region-tag">Нижний Новгород</div>
-                  <div class="region-tag">Екатеринбург</div>
-                  <div class="region-tag">Краснодар</div>
-                  <div class="region-tag">Ростов-на-Дону</div>
-                </div>
-                <div class="triangle-toggle" id="triangle-toggle">
-                  <div class="triangle"></div>
-                </div>
+              <div class="regions-row" id="regions-row"></div>
+              <div id="more-regions-toggle" class="more-regions-toggle">
+                Остальные города (<span id="hidden-count">0</span>)
               </div>
-            </div>
-            
-            <div id="hidden-regions" class="hidden mt-4">
-              <div class="hidden-regions-grid">
-                <div class="region-tag">Новосибирск</div>
-                <a href="/delivery-kovrov.html" class="region-tag region-link">Ковров</a>
-                <a href="/delivery-vladimir.html" class="region-tag region-link">Владимир</a>
-                <div class="region-tag">Нижний Новгород</div>
-                <div class="region-tag">Екатеринбург</div>
-                <div class="region-tag">Краснодар</div>
-                <div class="region-tag">Ростов-на-Дону</div>
+              <div id="hidden-regions" class="hidden-regions">
+                <div class="hidden-regions-grid" id="hidden-regions-grid"></div>
               </div>
             </div>
             
@@ -978,30 +956,146 @@
         }
       });
       
+      // Города для доставки
+      const cities = [
+        { name: "Москва", link: null },
+        { name: "Санкт-Петербург", link: null },
+        { name: "Казань", link: null },
+        { name: "Нижний Новгород", link: null },
+        { name: "Самара", link: null },
+        { name: "Саратов", link: null },
+        { name: "Волгоград", link: null },
+        { name: "Воронеж", link: null },
+        { name: "Ростов-на-Дону", link: null },
+        { name: "Краснодар", link: null },
+        { name: "Ульяновск", link: null },
+        { name: "Пенза", link: null },
+        { name: "Липецк", link: null },
+        { name: "Тула", link: null },
+        { name: "Рязань", link: null },
+        { name: "Калуга", link: null },
+        { name: "Ярославль", link: null },
+        { name: "Тверь", link: null },
+        { name: "Смоленск", link: null },
+        { name: "Владимир", link: "/delivery-vladimir.html" },
+        { name: "Ковров", link: "/delivery-kovrov.html" },
+        { name: "Орёл", link: null },
+        { name: "Кострома", link: null },
+        { name: "Тамбов", link: null },
+        { name: "Челябинск", link: null },
+        { name: "Пермь", link: null },
+        { name: "Уфа", link: null },
+        { name: "Ставрополь", link: null },
+        { name: "Астрахань", link: null },
+        { name: "Калининград", link: null }
+      ];
+      
+      // Элементы DOM
       const regionsRow = document.getElementById('regions-row');
-      const triangleToggle = document.getElementById('triangle-toggle');
+      const hiddenRegionsGrid = document.getElementById('hidden-regions-grid');
+      const moreRegionsToggle = document.getElementById('more-regions-toggle');
       const hiddenRegions = document.getElementById('hidden-regions');
-      function checkOverflow() {
-        if (regionsRow.scrollWidth > regionsRow.clientWidth) {
-          triangleToggle.classList.add('visible');
-          triangleToggle.setAttribute('aria-label', 'Показать все регионы доставки');
+      const hiddenCountSpan = document.getElementById('hidden-count');
+      
+      // Кэш для ширины элементов
+      const regionWidthCache = new Map();
+      
+      // Генерация элементов городов
+      function createCityElement(city, index) {
+        const element = document.createElement(city.link ? 'a' : 'div');
+        element.className = 'region-tag';
+        element.textContent = city.name;
+        
+        if (city.link) {
+          element.href = city.link;
+          element.classList.add('region-link');
+        }
+        
+        // Для анимации в скрытом блоке
+        element.style.setProperty('--index', index);
+        element.style.animationDelay = `calc(0.05s * ${index})`;
+        
+        return element;
+      }
+      
+      // Создаем все города
+      cities.forEach(city => {
+        const element = createCityElement(city);
+        regionsRow.appendChild(element);
+      });
+      
+      // Функция для расчета видимых городов
+      function updateVisibleCities() {
+        // Очищаем контейнеры
+        regionsRow.innerHTML = '';
+        hiddenRegionsGrid.innerHTML = '';
+        regionWidthCache.clear();
+        
+        const containerWidth = regionsRow.offsetWidth;
+        let totalWidth = 0;
+        let visibleCount = 0;
+        const hiddenCities = [];
+        
+        // Перебираем города для определения видимых
+        cities.forEach((city, index) => {
+          const element = createCityElement(city, index);
+          
+          // Получаем ширину элемента из кэша или измеряем
+          let elementWidth;
+          if (regionWidthCache.has(city.name)) {
+            elementWidth = regionWidthCache.get(city.name);
+          } else {
+            regionsRow.appendChild(element);
+            elementWidth = element.offsetWidth + 8; // + margin-right
+            regionWidthCache.set(city.name, elementWidth);
+            regionsRow.removeChild(element);
+          }
+          
+          // Проверяем, помещается ли город
+          if (totalWidth + elementWidth <= containerWidth || visibleCount === 0) {
+            regionsRow.appendChild(element);
+            totalWidth += elementWidth;
+            visibleCount++;
+          } else {
+            hiddenCities.push({city, index});
+          }
+        });
+        
+        // Обновляем счетчик и состояние кнопки
+        const hiddenCount = hiddenCities.length;
+        hiddenCountSpan.textContent = hiddenCount;
+        
+        if (hiddenCount > 0) {
+          moreRegionsToggle.style.display = 'inline-flex';
+          
+          // Добавляем скрытые города
+          hiddenCities.forEach((item, idx) => {
+            const element = createCityElement(item.city, idx);
+            hiddenRegionsGrid.appendChild(element);
+          });
         } else {
-          triangleToggle.classList.remove('visible');
+          moreRegionsToggle.style.display = 'none';
         }
       }
-      triangleToggle.addEventListener('click', function() {
+      
+      // Обработчик для кнопки "Остальные города"
+      moreRegionsToggle.addEventListener('click', function() {
         if (hiddenRegions.style.display === 'block') {
           hiddenRegions.style.display = 'none';
-          triangleToggle.querySelector('.triangle').style.transform = 'rotate(0deg)';
-          triangleToggle.setAttribute('aria-label', 'Показать все регионы доставки');
         } else {
           hiddenRegions.style.display = 'block';
-          triangleToggle.querySelector('.triangle').style.transform = 'rotate(180deg)';
-          triangleToggle.setAttribute('aria-label', 'Скрыть регионы доставки');
         }
       });
-      checkOverflow();
-      window.addEventListener('resize', checkOverflow);
+      
+      // Инициализация при загрузке
+      updateVisibleCities();
+      
+      // Обработчик изменения размера окна
+      let resizeTimeout;
+      window.addEventListener('resize', function() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(updateVisibleCities, 150);
+      });
       
       const animateSections = document.querySelectorAll('.section-animate');
       const sectionObserver = new IntersectionObserver((entries) => {

@@ -3,8 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Доставка алтайского мёда в Ковров | Заказать мёд с доставкой | AltayMed</title>
+    <title>Алтайский мёд с доставкой в Ковров — бесплатно от 3 л | AltayMed</title>
     <meta name="description" content="Закажите натуральный алтайский мёд с доставкой по Коврову и области. Свежий гречишный, липовый, таёжный мёд — бесплатно доставим от 3 литров. Оплата после получения.">
+    
+    <!-- Гео-метатеги -->
+    <meta name="geo.region" content="RU-VLA">
+    <meta name="geo.placename" content="Ковров">
+    
+    <!-- Каноническая ссылка -->
+    <link rel="canonical" href="https://altaymed.shop/delivery-kovrov.html">
+    
+    <!-- Hreflang для региональных страниц -->
+    <link rel="alternate" hreflang="ru-ru" href="https://altaymed.shop/delivery.html" />
+    <link rel="alternate" hreflang="ru-vla" href="https://altaymed.shop/delivery-vladimir.html" />
+    <link rel="alternate" hreflang="ru-kov" href="https://altaymed.shop/delivery-kovrov.html" />
+    <link rel="alternate" hreflang="ru-mow" href="https://altaymed.shop/delivery-moscow.html" />
+    <link rel="alternate" hreflang="x-default" href="https://altaymed.shop/delivery.html" />
     
     <link rel="icon" href="images/favicon.ico" sizes="any">
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
@@ -20,6 +34,12 @@
     <meta name="twitter:title" content="Доставка алтайского мёда в Ковров">
     <meta name="twitter:description" content="Закажите натуральный алтайский мёд с доставкой по Коврову и области. Гречишный, липовый, таёжный мёд — бесплатно от 3 литров.">
     <meta name="twitter:image" content="images/twitter-preview.webp">
+    
+    <!-- Preload критически важных шрифтов -->
+    <link rel="preload" href="/fonts/OpenSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/OpenSans-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/OpenSans-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/Pacifico-Regular.woff2" as="font" type="font/woff2" crossorigin>
     
     <style>
         /* Подключение шрифтов локально с font-display: swap */
@@ -90,6 +110,13 @@
             margin: 0 auto;
         }
         
+        /* Новый класс для широких контейнеров */
+        .container-wide {
+            max-width: 100% !important;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+        
         section {
             padding: 4rem 0;
         }
@@ -144,38 +171,54 @@
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
         
-        header {
+        /* Шапка с уменьшенной высотой */
+        nav.bg-white {
+            background-color: #fff;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
             position: sticky;
             top: 0;
             z-index: 50;
-            background-color: #fff;
-            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            padding: 0.75rem 0;
+            padding: 0.4rem 0; /* Уменьшено на 10% */
         }
         
-        .header-inner {
+        .flex {
             display: flex;
+        }
+        
+        .items-center {
             align-items: center;
+        }
+        
+        .justify-between {
             justify-content: space-between;
         }
         
-        .logo {
+        .header-logo {
             font-family: 'Pacifico', 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', cursive;
-            font-size: 1.875rem;
-            color: var(--primary);
-            text-decoration: none;
+            font-size: 1.5rem; /* Исправлено: адаптивный размер */
+            color: var(--primary); /* Оранжевый цвет */
+            text-decoration: none; /* Убрано подчеркивание */
         }
         
-        .nav-links {
+        .hidden {
             display: none;
         }
         
         @media (min-width: 768px) {
-            .nav-links {
+            .md\:flex {
                 display: flex;
-                align-items: center;
-                gap: 2rem;
             }
+            .header-logo {
+                font-size: 1.875rem; /* 30px на десктопе */
+            }
+        }
+        
+        .space-x-6 > * + * {
+            margin-left: 1.5rem;
+        }
+        
+        .space-x-8 > * + * {
+            margin-left: 2rem;
         }
         
         .nav-link {
@@ -189,42 +232,84 @@
             color: var(--primary);
         }
         
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        
-        .icon-btn {
-            width: 2.5rem;
-            height: 2.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gray-700);
-            transition: color 0.3s;
-        }
-        
-        .icon-btn:hover {
-            color: var(--primary);
-        }
-        
-        .phone-link {
-            display: none;
-            align-items: center;
-            color: var(--gray-700);
+        .nav-btn {
+            background-color: var(--primary);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
             text-decoration: none;
-            transition: color 0.3s;
         }
         
-        @media (min-width: 768px) {
-            .phone-link {
-                display: flex;
+        .nav-btn:hover {
+            background-color: rgba(255, 165, 0, 0.9);
+        }
+        
+        .md\:hidden {
+            display: none;
+        }
+        
+        @media (max-width: 767px) {
+            .md\:hidden {
+                display: block;
+            }
+            
+            /* Уменьшаем высоту шапки на мобильных */
+            nav.bg-white {
+                padding: 0.32rem 0; /* Уменьшено на 10% */
             }
         }
         
-        .phone-link:hover {
-            color: var(--primary);
+        .w-10 {
+            width: 2.5rem;
+        }
+        
+        .h-10 {
+            height: 2.5rem;
+        }
+        
+        .text-2xl {
+            font-size: 1.5rem;
+        }
+        
+        .text-gray-800 {
+            color: var(--gray-800);
+        }
+        
+        .bg-white {
+            background-color: #fff;
+        }
+        
+        .shadow-md {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        .px-4 {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        
+        .py-3 {
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+        }
+        
+        .flex-col {
+            flex-direction: column;
+        }
+        
+        .space-y-4 > * + * {
+            margin-top: 1rem;
+        }
+        
+        .py-2 {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+        
+        .text-center {
+            text-align: center;
         }
         
         /* Исправленная герой-секция */
@@ -429,6 +514,9 @@
             border-radius: 0.5rem;
             padding: 1.5rem;
             width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Центрируем содержимое */
         }
         
         @media (min-width: 768px) {
@@ -481,19 +569,30 @@
             margin-top: 0.25rem;
         }
         
-        .tariffs-container {
-            overflow-x: auto;
+        /* ИСПРАВЛЕНИЕ: Убраны оба скроллбара */
+        .responsive-table {
+            width: 100%;
+            overflow: hidden; /* Убраны горизонтальный и вертикальный скроллбары */
+            margin-bottom: 2rem;
+        }
+        
+        /* Мобильная прокрутка таблицы */
+        @media (max-width: 767px) {
+            .responsive-table {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                overflow-y: hidden;
+            }
         }
         
         .tariffs-table {
             width: 100%;
+            min-width: 100%; /* Гарантирует, что таблица влезает по ширине */
             border-collapse: collapse;
-            margin-bottom: 2rem;
             background: #fff;
             border-radius: 0.5rem;
             overflow: hidden;
             box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-            min-width: 600px;
         }
         
         .tariffs-table th {
@@ -533,24 +632,31 @@
             font-weight: 500;
         }
         
+        /* Новый стиль для нулевой цены */
+        .new-price {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.05em;
+            margin-left: 8px;
+        }
+        
         .map-section {
             background-color: var(--gray-50);
         }
         
         .delivery-geography {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: 1fr;
             gap: 2rem;
         }
         
-        @media (min-width: 768px) {
+        @media (min-width: 992px) {
             .delivery-geography {
-                flex-direction: row;
+                grid-template-columns: 1fr 1fr;
             }
         }
         
         .cities-container {
-            flex: 1;
             background: white;
             padding: 2rem;
             border-radius: 0.5rem;
@@ -570,6 +676,11 @@
             }
         }
         
+        .city-column {
+            display: flex;
+            flex-direction: column;
+        }
+        
         .city-column h4 {
             font-weight: 600;
             margin-bottom: 1.25rem;
@@ -580,12 +691,14 @@
         .city-list {
             list-style: none;
             padding-left: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem; /* Уменьшаем отступы между пунктами */
         }
         
         .city-list li {
             display: flex;
             align-items: center;
-            margin-bottom: 0.75rem;
             color: var(--gray-600);
         }
         
@@ -594,75 +707,116 @@
             margin-right: 0.75rem;
         }
         
-        /* Исправленный блок карты */
-        .map-container {
-            flex: 1;
-            height: 400px;
-            background-color: var(--gray-200);
+        /* Карусель отзывов */
+        .reviews-container {
+            background: white;
+            padding: 2rem;
             border-radius: 0.5rem;
-            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             position: relative;
-        }
-        
-        .map-container .map-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            background-image: url('images/map-placeholder.png');
-        }
-        
-        .faq-container {
-            max-width: 48rem;
-            margin: 0 auto;
-        }
-        
-        .faq-item {
-            margin-bottom: 1rem;
-            background-color: var(--gray-50);
-            border-radius: 0.5rem;
             overflow: hidden;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
         
-        .faq-question {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 1.5rem;
-            background-color: var(--gray-50);
-            cursor: pointer;
-            font-weight: 500;
-        }
-        
-        .faq-question span {
+        .reviews-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-align: center;
             color: var(--gray-900);
-            font-size: 1.05rem;
-            flex: 1;
         }
         
-        .faq-answer {
-            max-height: 0;
+        .reviews-carousel {
+            position: relative;
+            min-height: 300px;
             overflow: hidden;
-            transition: max-height 0.3s ease;
-            padding: 0 1.5rem;
-            color: var(--gray-600);
         }
         
-        .faq-item.active .faq-answer {
-            max-height: 1000px;
-            padding: 0 1.5rem 1.5rem;
+        .review-list {
+            display: flex;
+            transition: transform 0.5s ease;
         }
         
-        .faq-item.active .faq-question i {
-            transform: rotate(45deg);
+        .review-item {
+            flex: 0 0 100%;
+            background: var(--gray-50);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            position: relative;
+            box-sizing: border-box;
         }
         
-        .faq-question i {
-            transition: transform 0.3s;
+        .review-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: var(--primary);
+            opacity: 0.3;
+            font-size: 2rem;
+        }
+        
+        .review-text {
+            font-style: italic;
+            font-size: 1rem;
+            color: var(--gray-700);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .review-author {
+            font-weight: 600;
+            color: var(--gray-900);
+            font-size: 1rem;
+        }
+        
+        .review-location {
+            color: var(--primary);
+            margin-top: 0.25rem;
+            font-size: 0.9rem;
+        }
+        
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 1.5rem;
+            gap: 15px;
+        }
+        
+        .carousel-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: background 0.3s;
+        }
+        
+        .carousel-btn:hover {
+            background: #e69500;
+        }
+        
+        .carousel-dots {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ddd;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .dot.active {
+            background: var(--primary);
         }
         
         .cta-section {
@@ -737,145 +891,175 @@
             text-align: center;
         }
         
+        /* Футер с поднятым текстом */
         footer {
-            background-color: var(--gray-900);
-            color: #fff;
-            padding-top: 3rem;
-            padding-bottom: 1.5rem;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            background-color: #8B4513;
+            z-index: 1;
+            padding: 3rem 0;
         }
         
+        footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 600%;
+            height: 600%;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+            background-size: 108px 108px;
+            transform: rotate(30deg);
+            transform-origin: 0 0;
+            opacity: 0.6;
+            z-index: 0;
+            margin-left: -220%;
+            margin-top: -220%;
+        }
+        
+        footer .container-wide {
+            width: 100%;
+            max-width: 100%;
+            padding: 0 1.5rem;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
         .footer-grid {
+            width: 100%;
             display: grid;
             grid-template-columns: 1fr;
             gap: 2rem;
-            margin-bottom: 2rem;
         }
-        
         @media (min-width: 768px) {
             .footer-grid {
-                grid-template-columns: repeat(4, 1fr);
+                grid-template-columns: repeat(5, 1fr);
+                gap: 2rem; /* Увеличено до gap-8 (32px) */
             }
         }
-        
         .footer-column {
             display: flex;
             flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+            padding: 0;
+            margin: 0;
         }
-        
-        .footer-logo {
-            font-family: 'Pacifico', 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', cursive;
-            font-size: 1.875rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
+        .footer-column:first-child {
+            margin-top: -5%; /* Подняли на 5% вверх */
         }
-        
-        .footer-text {
-            color: var(--gray-400);
-            margin-bottom: 1rem;
+        .footer-column h4 {
+            text-align: left;
+            width: 100%;
+            padding: 0;
+            margin: 0 0 1rem 0;
+            font-weight: 700;
+            font-size: 1rem; /* Адаптивный размер */
+            line-height: 1.4;
+            color: white;
         }
-        
-        .footer-social {
+        .footer-column ul {
             display: flex;
-            gap: 0.75rem;
-            margin-top: 1rem;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            gap: 0.5rem;
         }
-        
-        .social-link {
-            width: 2.5rem;
-            height: 2.5rem;
+        .footer-column li {
+            width: 100%;
+            text-align: left;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .footer-column li a {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            text-decoration: none;
+            font-size: 0.875rem; /* Адаптивный размер */
+            color: white;
+            transition: color 0.3s;
+        }
+        .footer-column li a:hover {
+            color: #d1d5db;
+        }
+        .footer-column .bullet {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background-color: white;
+            border-radius: 50%;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+        footer, 
+        footer *,
+        footer a, 
+        footer p, 
+        footer span, 
+        footer h4, 
+        footer li {
+            color: white !important;
+            text-decoration: none;
+        }
+        .footer-link-item {
+            display: flex;
+            align-items: center;
+            padding-top: 0.21rem;
+            padding-bottom: 0.21rem;
+        }
+        .contact-icon {
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: var(--gray-800);
-            color: #fff;
-            border-radius: 50%;
-            transition: background-color 0.3s;
-        }
-        
-        .social-link:hover {
-            background-color: rgba(255, 165, 0, 0.2);
-        }
-        
-        .footer-title {
-            font-size: 1.125rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: #fff;
-        }
-        
-        .footer-links {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-        
-        .footer-link {
-            color: var(--gray-400);
-            text-decoration: none;
-            transition: color 0.3s;
-            font-size: 0.95rem;
-        }
-        
-        .footer-link:hover {
-            color: var(--primary);
-        }
-        
-        .footer-contacts {
-            display: flex;
-            flex-direction: column;
-            gap: 1.25rem;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.75rem;
-        }
-        
-        .contact-icon {
-            color: var(--primary);
-            margin-top: 0.25rem;
+            margin-right: 12px;
             flex-shrink: 0;
+            width: 24px;
+            font-size: 1.1rem;
         }
-        
-        .contact-info {
+        .contact-text {
+            flex-grow: 1;
+            line-height: 1.5;
+            font-size: 0.875rem; /* Адаптивный размер */
+        }
+        .social-icon-bw {
             display: flex;
-            flex-direction: column;
-        }
-        
-        .contact-value {
-            color: #fff;
-            font-weight: 500;
-        }
-        
-        .contact-note {
-            color: var(--gray-400);
-            font-size: 0.875rem;
-        }
-        
-        .footer-bottom {
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--gray-700);
-            text-align: center;
-        }
-        
-        .copyright {
-            color: var(--gray-400);
-            font-size: 0.875rem;
-            margin-bottom: 1rem;
-        }
-        
-        .payment-methods {
-            display: flex;
+            align-items: center;
             justify-content: center;
-            gap: 1rem;
-            margin-top: 1rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: transparent;
+            transition: all 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .social-icon-bw:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #FFA500;
+            color: white;
+        }
+        .avito-icon-bw, .yandex-maps-icon, .yandex-dzen-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            position: relative;
+        }
+        .avito-icon-bw svg, .yandex-maps-icon svg, .yandex-dzen-icon svg {
+            width: 100%;
+            height: 100%;
         }
         
-        .payment-icon {
-            color: var(--gray-400);
-            font-size: 1.5rem;
-        }
+        /* Удален блок с копирайтом и линией */
         
         .text-center {
             text-align: center;
@@ -928,10 +1112,12 @@
             padding: 1rem;
             transform: translateX(-100%);
             transition: transform 0.3s ease;
+            display: none; /* По умолчанию скрыто */
         }
         
         .mobile-menu.active {
             transform: translateX(0);
+            display: block;
         }
         
         .mobile-menu-header {
@@ -961,168 +1147,281 @@
             color: var(--primary);
         }
         
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
+        .mobile-menu-link:hover {
+            color: var(--primary);
         }
         
-        .modal-content {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            max-width: 500px;
-            width: 90%;
-            animation: modalAppear 0.3s ease-out;
-        }
-        @keyframes modalAppear {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .close-modal {
-            position: absolute;
-            top: 16px;
-            right: 16px;
-            font-size: 24px;
-            cursor: pointer;
-            color: #6b7280;
-            transition: color 0.2s;
-        }
-        .close-modal:hover {
-            color: #374151;
-        }
-        
-        .success-modal-content {
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            max-width: 450px;
-            width: 90%;
-            padding: 40px 30px;
-            text-align: center;
-            animation: modalAppear 0.4s ease-out;
-        }
-        .success-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 20px;
-            background-color: #6B8E23;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: pulse 1.5s infinite;
-        }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-        .success-icon i {
-            font-size: 40px;
-            color: white;
-        }
-        .success-title {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: #2d3748;
-        }
-        .success-text {
-            font-size: 18px;
-            color: #4a5568;
-            margin-bottom: 25px;
-            line-height: 1.5;
-        }
-        .success-btn {
-            background: #6B8E23;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            padding: 12px 30px;
-            font-size: 18px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-        .success-btn:hover {
-            background: #5a7a1d;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        /* Адаптация для мобильных устройств */
+        @media (max-width: 767px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero-text {
+                font-size: 1.1rem;
+            }
+            
+            .delivery-tab {
+                padding: 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .benefit-title {
+                font-size: 1.1rem;
+            }
+            
+            .benefit-text {
+                font-size: 0.95rem;
+            }
+            
+            .mobile-menu-link {
+                padding: 0.75rem 0;
+                font-size: 1rem;
+            }
+            
+            .btn {
+                font-size: 1rem;
+                padding: 0.75rem 1.5rem;
+                white-space: normal;
+            }
+            
+            .feature-title {
+                font-size: 1rem;
+            }
+            
+            .feature-text {
+                font-size: 0.85rem;
+            }
+            
+            .reviews-container {
+                padding: 1.5rem;
+            }
+            
+            .reviews-title {
+                font-size: 1.3rem;
+                margin-bottom: 1rem;
+            }
+            
+            .review-text {
+                font-size: 0.9rem;
+            }
+            
+            .carousel-btn {
+                width: 36px;
+                height: 36px;
+                font-size: 1rem;
+            }
+
+            /* Адаптация футера */
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-column {
+                margin-bottom: 1.5rem;
+            }
+            .footer-column:first-child {
+                margin-top: 0;
+            }
+            .footer-column:last-child {
+                margin-bottom: 0;
+            }
         }
         
-        .contact-icon i {
-            vertical-align: middle;
-            line-height: 1;
+        @media (min-width: 768px) {
+            .footer-column h4 {
+                font-size: 1.125rem; /* 18px на десктопе */
+            }
+            .footer-column li a, 
+            .contact-text {
+                font-size: 1rem; /* 16px на десктопе */
+            }
         }
         
-        .form-group {
-            margin-bottom: 1.5rem;
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.5rem;
+            }
+            
+            .hero-text {
+                font-size: 1rem;
+            }
+            
+            .section {
+                padding: 3rem 0;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+                margin-bottom: 2rem;
+            }
+            
+            .reviews-container {
+                padding: 1rem;
+            }
         }
         
-        .form-label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
+        /* Новый SEO-блок */
+        .seo-section {
+            background-color: white;
+            padding: 3rem 0;
+        }
+        
+        .seo-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .seo-content p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
             color: var(--gray-700);
         }
         
-        .form-input {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid var(--gray-300);
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: border-color 0.3s;
+        .security-note {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 10px;
+            color: var(--gray-400);
+            font-size: 14px;
+        }
+
+        /* Исправления для футера */
+        .footer-social-icons {
+            display: flex;
+            gap: 15px; /* Увеличено на 5% */
+            margin-top: 1.5rem; /* Смещено на 10% ниже */
         }
         
-        .form-input:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(255, 165, 0, 0.2);
+        .footer-social-title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Увеличиваем размер текста в футере */
+        .footer-description {
+            font-size: 0.76rem; /* Уменьшен на 20% */
+            margin-top: 0.5rem;
+            color: white; /* Белый цвет */
         }
         
-        .form-textarea {
-            min-height: 100px;
-            resize: vertical;
+        .footer-copyright {
+            font-size: 0.7rem; /* Уменьшен на 20% */
+            color: white; /* Белый цвет */
+            margin-top: 0.5rem;
         }
         
-        .submit-btn {
-            background-color: var(--primary);
+        /* Дополнения для футера */
+        .footer-logo-wrapper {
+            margin-bottom: 1.4rem; /* Уменьшен на 5% */
+        }
+        
+        .https-info {
+            font-size: 0.76rem;
             color: white;
+            margin-top: 0.5rem;
+        }
+
+        /* Убираем круг у бургер-меню */
+        #mobile-menu-toggle {
+            background: none;
             border: none;
-            border-radius: 8px;
-            padding: 0.75rem 1.5rem;
-            font-size: 1rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: background-color 0.3s;
+            padding: 8px;
+        }
+        
+        /* Убираем круг у кнопки закрытия мобильного меню */
+        #mobile-menu-close {
+            background: none;
+            border: none;
+            padding: 0;
+        }
+        
+        /* Стили для нового FAQ аккордеона */
+        .faq-container {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin: 30px 0;
+        }
+        
+        .faq-item {
+            padding: 0;
+        }
+        
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             width: 100%;
+            padding: 16px 20px;
+            background-color: #f9f9f9;
+            border: none;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 1.05rem;
+            text-align: left;
+            transition: background-color 0.3s;
+            color: var(--gray-900); /* Цвет текста черный */
         }
         
-        .submit-btn:hover {
-            background-color: #e69500;
+        .faq-question:hover {
+            background-color: #f0f0f0;
         }
         
-        .modal-header {
-            background: linear-gradient(to right, #FFA500, #8B4513);
-            padding: 1.5rem;
-            border-radius: 12px 12px 0 0;
-            color: white;
+        .faq-question:focus {
+            outline: none;
         }
         
-        .modal-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            text-align: center;
+        .faq-question i {
+            color: var(--primary);
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(45deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            background-color: white;
+            color: var(--gray-600);
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 1000px;
+            padding: 0 20px 20px;
+        }
+        
+        /* Ограничение ширины FAQ */
+        .faq-wrapper {
+            max-width: 768px;
+            margin: 0 auto;
+        }
+        
+        /* На мобильных цвет текста вопросов - черный */
+        @media (max-width: 767px) {
+            .faq-question {
+                color: var(--gray-900) !important;
+            }
+        }
+        
+        /* Дополнительные стили для перечеркивания */
+        .strike-temporary {
+            text-decoration: line-through;
+            text-decoration-thickness: 2px;
+            text-decoration-color: red;
+        }
+        
+        /* Поднятие текста в футере */
+        .footer-text-content {
+            margin-top: -5%;
         }
     </style>
 
@@ -1130,59 +1429,57 @@
     <link rel="stylesheet" href="/assets/fonts/remixicon/remixicon.css" media="print" onload="this.media='all'">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="header-inner">
-                <a href="https://altaymed.shop/" class="logo">Алтайский мёд</a>
-                
-                <nav class="nav-links">
-                    <a href="https://altaymed.shop/" class="nav-link">Главная</a>
-                    <a href="https://altaymed.shop/#products" class="nav-link">Каталог</a>
-                    <a href="https://altaymed.shop/delivery.html" class="nav-link active">Доставка</a>
-                    <a href="https://altaymed.shop/" class="nav-link">О нас</a>
-                    <a href="https://altaymed.shop/" class="nav-link">Контакты</a>
-                </nav>
-                
-                <div class="header-actions">
-                    <a href="tel:+79209400222" class="phone-link">
-                        <div class="icon-btn">
-                            <i class="ri-phone-line ri-lg"></i>
-                        </div>
-                        <span>+7 (920) 940-02-22</span>
-                    </a>
-                    <button class="icon-btn md:hidden" id="mobile-menu-toggle" aria-label="Открыть меню">
-                        <i class="ri-menu-line ri-lg"></i>
-                    </button>
-                </div>
+    <!-- Шапка с уменьшенной высотой и измененной ссылкой -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
+            <a href="https://altaymed.shop/" class="header-logo">Алтайский мёд</a>
+            
+            <div class="hidden md:flex items-center space-x-6 md:space-x-8">
+                <a href="https://altaymed.shop/#benefits" class="nav-link">Преимущества</a>
+                <a href="https://altaymed.shop/#products" class="nav-link">Каталог</a>
+                <a href="https://altaymed.shop/delivery.html" class="nav-link active">Доставка</a>
+                <!-- Измененная ссылка "О нас" на главную страницу -->
+                <a href="https://altaymed.shop/" class="nav-link">О нас</a>
+                <a href="https://altaymed.shop/blog" class="nav-link">Блог</a>
+                <a href="#footer-contacts" class="nav-link">Контакты</a>
+                <a href="/#products" class="nav-btn px-4 md:px-6 py-1 md:py-2 !rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">Заказать</a>
             </div>
-        </div>
-    </header>
-
-    <div class="mobile-menu" id="mobile-menu">
-        <div class="mobile-menu-header">
-            <a href="https://altaymed.shop/" class="logo">Алтайский мёд</a>
-            <button id="close-mobile-menu" aria-label="Закрыть меню">
-                <i class="ri-close-line ri-lg"></i>
+            
+            <button class="md:hidden flex items-center justify-center p-2" id="mobile-menu-toggle" aria-label="Открыть меню">
+                <i class="ri-menu-line text-2xl text-gray-800" aria-hidden="true"></i>
             </button>
         </div>
-        <div class="mobile-menu-links">
-            <a href="https://altaymed.shop/" class="mobile-menu-link">Главная</a>
-            <a href="https://altaymed.shop/#products" class="mobile-menu-link">Каталог</a>
-            <a href="https://altaymed.shop/delivery.html" class="mobile-menu-link active">Доставка</a>
-            <a href="https://altaymed.shop/" class="mobile-menu-link">О нас</a>
-            <a href="https://altaymed.shop/" class="mobile-menu-link">Контакты</a>
-            <a href="tel:+79209400222" class="mobile-menu-link">+7 (920) 940-02-22</a>
+        
+        <div class="mobile-menu" id="mobile-menu">
+            <div class="mobile-menu-header">
+                <a href="/" class="header-logo">Алтайский мёд</a>
+                <button id="mobile-menu-close" class="w-10 h-10 flex items-center justify-center" aria-label="Закрыть меню">
+                    <i class="ri-close-line text-2xl text-gray-800" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="mobile-menu-links">
+                <a href="https://altaymed.shop/#benefits" class="nav-link py-2">Преимущества</a>
+                <a href="https://altaymed.shop/#products" class="nav-link py-2">Каталог</a>
+                <a href="https://altaymed.shop/delivery.html" class="nav-link py-2 active">Доставка</a>
+                <!-- Измененная ссылка "О нас" на главную страницу -->
+                <a href="https://altaymed.shop/" class="nav-link py-2">О нас</a>
+                <a href="https://altaymed.shop/blog" class="nav-link py-2">Блог</a>
+                <a href="#footer-contacts" class="nav-link py-2">Контакты</a>
+                <a href="tel:+79209400222" class="nav-link py-2">+7 (920) 940-02-22</a>
+                <a href="/#products" class="nav-btn py-2 text-center !rounded-button hover:bg-opacity-90 transition-all">Заказать</a>
+            </div>
         </div>
-    </div>
+    </nav>
 
     <!-- Исправленная герой-секция -->
     <section class="hero-section">
         <div class="hero-bg-container">
             <img 
-                src="images/hero-bg.jpg" 
-                alt="Натуральный гречишный, липовый, таёжный алтайский мёд с доставкой в Ковров" 
+                src="images/hero-bg.webp" 
+                alt="Доставка алтайского мёда в Ковров и область" 
                 class="hero-bg-image"
                 fetchpriority="high"
+                loading="eager"
             >
             <!-- Добавлено затемнение -->
             <div class="hero-overlay"></div>
@@ -1191,7 +1488,7 @@
             <div class="hero-content">
                 <h1 class="hero-title">Доставка алтайского мёда в Ковров</h1>
                 <p class="hero-text">Закажите настоящий алтайский мёд онлайн с быстрой доставкой по Коврову</p>
-                <a href="/#products" class="btn btn-primary" aria-label="Заказать мёд онлайн">Заказать мёд онлайн</a>
+                <a href="/#products" class="btn btn-primary" aria-label="Заказать мёд онлайн в Коврове">Заказать мёд онлайн</a>
             </div>
         </div>
     </section>
@@ -1234,12 +1531,73 @@
             
             <div class="delivery-methods">
                 <div class="delivery-tabs">
-                    <button class="delivery-tab active" data-tab="sdek">СДЭК</button>
-                    <button class="delivery-tab" data-tab="courier">Курьерская доставка</button>
+                    <button class="delivery-tab active" data-tab="avito">Авито</button>
+                    <button class="delivery-tab" data-tab="sdek">СДЭК</button>
                     <button class="delivery-tab" data-tab="post">Почта России</button>
+                    <button class="delivery-tab" data-tab="courier">Курьерская доставка</button>
+                    <button class="delivery-tab" data-tab="ozon">Ozon</button>
                 </div>
                 
-                <div class="delivery-content active" id="sdek-content">
+                <div class="delivery-content active" id="avito-content">
+                    <div class="delivery-info-wrapper">
+                        <div class="delivery-details">
+                            <h3 class="text-xl font-semibold mb-4">Доставка через Авито</h3>
+                            <p class="text-gray-600 mb-4">Вы можете приобрести наш алтайский мед через платформу Авито. Мы предлагаем удобный самовывоз из пунктов выдачи заказов (ПВЗ) по Коврову.</p>
+                            
+                            <h4 class="font-medium text-gray-800 mb-3">Пункты выдачи Авито в Коврове:</h4>
+                            <ul class="delivery-points">
+                                <li>
+                                    <i class="ri-map-pin-line"></i>
+                                    <span>ул. Грибоедова, 15 (ТЦ "Треугольник")</span>
+                                </li>
+                                <li>
+                                    <i class="ri-map-pin-line"></i>
+                                    <span>пр-т Ленина, 35 (ТЦ "Ковров Молл")</span>
+                                </li>
+                                <li>
+                                    <i class="ri-map-pin-line"></i>
+                                    <span>ул. Строителей, 28 (ТЦ "Русь")</span>
+                                </li>
+                            </ul>
+                            
+                            <div class="delivery-meta">
+                                <i class="ri-time-line"></i>
+                                <span>Срок доставки: 1-2 рабочих дня</span>
+                            </div>
+                            <div class="delivery-meta">
+                                <i class="ri-money-dollar-circle-line"></i>
+                                <span>Стоимость: от 125 ₽ (зависит от веса заказа)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="delivery-advantages">
+                            <h4 class="font-medium text-gray-800 mb-3">Преимущества покупки на Авито:</h4>
+                            <ul>
+                                <li class="advantage-item">
+                                    <i class="ri-check-line"></i>
+                                    <span>Удобная платформа с защитой покупателя</span>
+                                </li>
+                                <li class="advantage-item">
+                                    <i class="ri-check-line"></i>
+                                    <span>Возможность оплаты при получении</span>
+                                </li>
+                                <li class="advantage-item">
+                                    <i class="ri-check-line"></i>
+                                    <span>Отзывы покупателей на платформе</span>
+                                </li>
+                                <li class="advantage-item">
+                                    <i class="ri-check-line"></i>
+                                    <span>Быстрая доставка до пункта выдачи</span>
+                                </li>
+                            </ul>
+                            <p class="mt-4 text-center">
+                                <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing" class="btn btn-outline" target="_blank" rel="noopener noreferrer nofollow">Перейти на Авито</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="delivery-content" id="sdek-content">
                     <div class="delivery-info-wrapper">
                         <div class="delivery-details">
                             <h3 class="text-xl font-semibold mb-4">Доставка СДЭК в Ковров</h3>
@@ -1267,7 +1625,7 @@
                             </div>
                             <div class="delivery-meta">
                                 <i class="ri-money-dollar-circle-line"></i>
-                                <span>Стоимость: от 300 ₽ (зависит от веса заказа)</span>
+                                <span>Стоимость: от 150 ₽ (зависит от веса заказа)</span>
                             </div>
                         </div>
                         
@@ -1289,6 +1647,62 @@
                                 <li class="advantage-item">
                                     <i class="ri-check-line"></i>
                                     <span>Оплата при получении</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="delivery-content" id="post-content">
+                    <div class="delivery-info-wrapper">
+                        <div class="delivery-details">
+                            <h3 class="text-xl font-semibold mb-4">Доставка Почтой России</h3>
+                            <p class="text-gray-600 mb-4">Доставка осуществляется до отделений Почты России в Коврове. Срок доставки - 3-5 рабочих дней после отправки заказа.</p>
+                            
+                            <h4 class="font-medium text-gray-800 mb-3">Основные отделения в Коврове:</h4>
+                            <ul class="delivery-points">
+                                <li>
+                                    <i class="ri-map-pin-line"></i>
+                                    <span>Отделение №1: ул. Первомайская, 25</span>
+                                </li>
+                                <li>
+                                    <i class="ri-map-pin-line"></i>
+                                    <span>Отделение №2: пр-т Ленина, 47</span>
+                                </li>
+                                <li>
+                                    <i class="ri-map-pin-line"></i>
+                                    <span>Отделение №3: ул. Дегтярева, 12</span>
+                                </li>
+                            </ul>
+                            
+                            <div class="delivery-meta">
+                                <i class="ri-time-line"></i>
+                                <span>Срок доставки: 3-5 рабочих дней</span>
+                            </div>
+                            <div class="delivery-meta">
+                                <i class="ri-money-dollar-circle-line"></i>
+                                <span>Стоимость: от 175 ₽ (зависит от веса заказа)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="delivery-advantages">
+                            <h4 class="font-medium text-gray-800 mb-3">Преимущества Почты России:</h4>
+                            <ul>
+                                <li class="advantage-item">
+                                    <i class="ri-check-line"></i>
+                                    <span>Широкая сеть отделений в Коврове</span>
+                                </li>
+                                <li class="advantage-item">
+                                    <i class="ri-check-line"></i>
+                                    <span>Возможность отслеживания отправления</span>
+                                </li>
+                                <li class="advantage-item">
+                                    <i class="ri-check-line"></i>
+                                    <span>Оплата при получении</span>
+                                </li>
+                                <li class="advantage-item">
+                                    <i class="ri-check-line"></i>
+                                    <span>Доставка в отдаленные районы города</span>
                                 </li>
                             </ul>
                         </div>
@@ -1327,7 +1741,7 @@
                             </div>
                             <div class="delivery-meta">
                                 <i class="ri-money-dollar-circle-line"></i>
-                                <span>Стоимость: бесплатно для жителей города Ковров</span>
+                                <span>Стоимость: от 150 ₽ (зависит от веса заказа)</span>
                             </div>
                         </div>
                         
@@ -1355,58 +1769,59 @@
                     </div>
                 </div>
                 
-                <div class="delivery-content" id="post-content">
+                <div class="delivery-content" id="ozon-content">
                     <div class="delivery-info-wrapper">
                         <div class="delivery-details">
-                            <h3 class="text-xl font-semibold mb-4">Доставка Почтой России</h3>
-                            <p class="text-gray-600 mb-4">Доставка осуществляется до отделений Почты России в Коврове. Срок доставки - 3-5 рабочих дней после отправки заказа.</p>
+                            <h3 class="text-xl font-semibold mb-4">Доставка через Ozon</h3>
+                            <p class="text-gray-600 mb-4">Заказывайте наш алтайский мед Ozon доставкой до пунктов выдачи заказов (ПВЗ) по Коврову.</p>
                             
-                            <h4 class="font-medium text-gray-800 mb-3">Основные отделения в Коврове:</h4>
+                            <h4 class="font-medium text-gray-800 mb-3">Пункты выдачи Ozon в Коврове:</h4>
                             <ul class="delivery-points">
                                 <li>
                                     <i class="ri-map-pin-line"></i>
-                                    <span>Отделение №1: ул. Первомайская, 25</span>
+                                    <span>ул. Грибоедова, 15 (ТЦ "Треугольник")</span>
                                 </li>
                                 <li>
                                     <i class="ri-map-pin-line"></i>
-                                    <span>Отделение №2: пр-т Ленина, 47</span>
+                                    <span>пр-т Ленина, 35 (ТЦ "Ковров Молл")</span>
                                 </li>
                                 <li>
                                     <i class="ri-map-pin-line"></i>
-                                    <span>Отделение №3: ул. Дегтярева, 12</span>
+                                    <span>ул. Строителей, 28 (ТЦ "Русь")</span>
                                 </li>
                             </ul>
                             
                             <div class="delivery-meta">
                                 <i class="ri-time-line"></i>
-                                <span>Срок доставки: 3-5 рабочих дней</span>
+                                <span>Срок доставки: 1-3 рабочих дня</span>
                             </div>
                             <div class="delivery-meta">
                                 <i class="ri-money-dollar-circle-line"></i>
-                                <span>Стоимость: от 350 ₽ (зависит от веса заказа)</span>
+                                <span>Стоимость: от 140 ₽ (зависит от веса заказа)</span>
                             </div>
                         </div>
                         
                         <div class="delivery-advantages">
-                            <h4 class="font-medium text-gray-800 mb-3">Преимущества Почты России:</h4>
+                            <h4 class="font-medium text-gray-800 mb-3">Преимущества покупки на Ozon:</h4>
                             <ul>
                                 <li class="advantage-item">
                                     <i class="ri-check-line"></i>
-                                    <span>Широкая сеть отделений в Коврове</span>
+                                    <span>Надежная платформа с гарантией качества</span>
                                 </li>
                                 <li class="advantage-item">
                                     <i class="ri-check-line"></i>
-                                    <span>Возможность отслеживания отправления</span>
+                                    <span>Оплата онлайн или при получении</span>
                                 </li>
                                 <li class="advantage-item">
                                     <i class="ri-check-line"></i>
-                                    <span>Оплата при получении</span>
+                                    <span>Удобное приложение для заказов</span>
                                 </li>
                                 <li class="advantage-item">
                                     <i class="ri-check-line"></i>
-                                    <span>Доставка в отдаленные районы города</span>
+                                    <span>Бонусы и скидки для постоянных покупателей</span>
                                 </li>
                             </ul>
+                            <!-- Кнопка удалена по требованию -->
                         </div>
                     </div>
                 </div>
@@ -1418,43 +1833,55 @@
         <div class="container">
             <h2>Тарифы на доставку мёда в Ковров</h2>
             
-            <div class="tariffs-container">
+            <div class="responsive-table">
                 <table class="tariffs-table">
                     <thead>
                         <tr>
                             <th>Вес заказа</th>
-                            <th>СДЭК (пункт выдачи)</th>
-                            <th>Курьерская доставка</th>
+                            <th>Авито</th>
+                            <th>СДЭК</th>
                             <th>Почта России</th>
+                            <th>Курьер</th>
+                            <th>Ozon</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr class="highlighted">
-                            <td><span class="liter-highlight">1 литр (до 1 кг)</span></td>
-                            <td><span class="liter-highlight">300 ₽</span></td>
-                            <td><span class="liter-highlight">Бесплатно*</span></td>
-                            <td><span class="liter-highlight">350 ₽</span></td>
+                            <td><span class="liter-highlight">1 литр (~ 1.4 кг)</span></td>
+                            <td><span class="liter-highlight">125 ₽</span></td>
+                            <td><span class="liter-highlight">150 ₽</span></td>
+                            <td><span class="liter-highlight">175 ₽</span></td>
+                            <td><span class="liter-highlight">250 ₽</span></td>
+                            <td><span class="liter-highlight">140 ₽</span></td>
                         </tr>
                         <tr>
                             <td>1-3 кг</td>
-                            <td>400 ₽</td>
-                            <td>Бесплатно*</td>
-                            <td>450 ₽</td>
+                            <td>175 ₽</td>
+                            <td>200 ₽</td>
+                            <td>225 ₽</td>
+                            <td>250 ₽</td>
+                            <td>185 ₽</td>
                         </tr>
                         <tr>
                             <td>3-5 кг</td>
-                            <td>500 ₽</td>
-                            <td>Бесплатно*</td>
-                            <td>550 ₽</td>
+                            <td><s class="strike-temporary">225 ₽</s> <span class="new-price">0 ₽</span></td>
+                            <td><s class="strike-temporary">250 ₽</s> <span class="new-price">0 ₽</span></td>
+                            <td><s class="strike-temporary">275 ₽</s> <span class="new-price">0 ₽</span></td>
+                            <td><s class="strike-temporary">250 ₽</s> <span class="new-price">0 ₽</span></td>
+                            <td><s class="strike-temporary">240 ₽</s> <span class="new-price">0 ₽</span></td>
                         </tr>
                         <tr>
                             <td>5-10 кг</td>
-                            <td>700 ₽</td>
-                            <td>Бесплатно*</td>
-                            <td>750 ₽</td>
+                            <td><s class="strike-temporary">325 ₽</s> <span class="new-price">0 ₽</span></td>
+                            <td><s class="strike-temporary">350 ₽</s> <span class="new-price">0 ₽</span></td>
+                            <td><s class="strike-temporary">375 ₽</s> <span class="new-price">0 ₽</span></td>
+                            <td><s class="strike-temporary">250 ₽</s> <span class="new-price">0 ₽</span></td>
+                            <td><s class="strike-temporary">340 ₽</s> <span class="new-price">0 ₽</span></td>
                         </tr>
                         <tr>
                             <td>Более 10 кг</td>
+                            <td>Индивидуальный расчет</td>
+                            <td>Индивидуальный расчет</td>
                             <td>Индивидуальный расчет</td>
                             <td>Индивидуальный расчет</td>
                             <td>Индивидуальный расчет</td>
@@ -1465,7 +1892,7 @@
             
             <div class="free-delivery">
                 <p><strong>Бесплатная доставка</strong> при заказе от 3 литров меда в пределах города Ковров!</p>
-                <p class="mt-2 text-sm">*Бесплатная курьерская доставка действует для жителей города Ковров при заказе от 3 литров</p>
+                <p class="mt-2 text-sm">*Бесплатная доставка до пункта выдачи для жителей города Ковров при заказе от 3 литров. Период акции: до 1 сентября 2025 года.</p>
             </div>
         </div>
     </section>
@@ -1499,6 +1926,10 @@
                                     <i class="ri-map-pin-line"></i>
                                     <span>Гусь-Хрустальный</span>
                                 </li>
+                                <li>
+                                    <i class="ri-map-pin-line"></i>
+                                    <span>Москва</span>
+                                </li>
                             </ul>
                         </div>
                         <div class="city-column">
@@ -1527,9 +1958,62 @@
                     <p class="text-gray-600">Сроки и стоимость доставки в другие города области могут отличаться. Для уточнения деталей свяжитесь с нашими менеджерами.</p>
                 </div>
                 
-                <!-- Исправленный блок карты -->
-                <div class="map-container">
-                    <div class="map-bg"></div>
+                <!-- Карусель отзывов -->
+                <div class="reviews-container">
+                    <h3 class="reviews-title">Отзывы покупателей из Коврова и области</h3>
+                    <div class="reviews-carousel">
+                        <div class="review-list">
+                            <div class="review-item">
+                                <i class="ri-double-quotes-l review-icon"></i>
+                                <p class="review-text">Заказывали мёд с доставкой в Ковров - привезли на следующий день! Качество отличное, вкус натуральный. Особенно понравился гречишный - густой, ароматный, настоящий алтайский мёд!</p>
+                                <div class="review-author">Ирина Петрова</div>
+                                <div class="review-location">Ковров</div>
+                            </div>
+                            
+                            <div class="review-item">
+                                <i class="ri-double-quotes-l review-icon"></i>
+                                <p class="review-text">Живу в районе Шестерка, заказал 5 литров мёда - доставили бесплатно! Упаковка надёжная, ни одна банка не пострадала. Мёд кристально чистый, без примесей. Буду заказывать ещё!</p>
+                                <div class="review-author">Дмитрий Смирнов</div>
+                                <div class="review-location">Ковров</div>
+                            </div>
+                            
+                            <div class="review-item">
+                                <i class="ri-double-quotes-l review-icon"></i>
+                                <p class="review-text">Во Владимир доставили за 2 дня, как и обещали. Мёд просто восхитительный! Липовый - такой душистый, а таёжный - с настоящим лесным ароматом. Спасибо за качественный продукт!</p>
+                                <div class="review-author">Ольга Иванова</div>
+                                <div class="review-location">Владимир</div>
+                            </div>
+                            
+                            <div class="review-item">
+                                <i class="ri-double-quotes-l review-icon"></i>
+                                <p class="review-text">Заказал мёд в Муром, пришёл в идеальном состоянии. Курьер позвонил заранее, приехал вовремя. Мёд настоящий, густой, как в детстве у бабушки. Рекомендую всем жителям области!</p>
+                                <div class="review-author">Андрей Кузнецов</div>
+                                <div class="review-location">Муром</div>
+                            </div>
+                            
+                            <div class="review-item">
+                                <i class="ri-double-quotes-l review-icon"></i>
+                                <p class="review-text">Живу в Гусь-Хрустальном, заказала пробную банку - не пожалела! Мёд натуральный, без сахара и добавок. Теперь беру только здесь. Доставка быстрая, сервис отличный!</p>
+                                <div class="review-author">Екатерина Волкова</div>
+                                <div class="review-location">Гусь-Хрустальный</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-nav">
+                        <button class="carousel-btn carousel-prev" aria-label="Предыдущий отзыв">
+                            <i class="ri-arrow-left-s-line"></i>
+                        </button>
+                        <div class="carousel-dots">
+                            <span class="dot active" data-index="0" aria-label="Отзыв 1"></span>
+                            <span class="dot" data-index="1" aria-label="Отзыв 2"></span>
+                            <span class="dot" data-index="2" aria-label="Отзыв 3"></span>
+                            <span class="dot" data-index="3" aria-label="Отзыв 4"></span>
+                            <span class="dot" data-index="4" aria-label="Отзыв 5"></span>
+                        </div>
+                        <button class="carousel-btn carousel-next" aria-label="Следующий отзыв">
+                            <i class="ri-arrow-right-s-line"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1539,83 +2023,95 @@
         <div class="container">
             <h2>Часто задаваемые вопросы о доставке</h2>
             
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Как заказать алтайский мёд онлайн с доставкой в Ковров?</span>
-                        <i class="ri-add-line text-primary"></i>
+            <div class="faq-wrapper">
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Как заказать алтайский мёд онлайн с доставкой в Ковров?</span>
+                            <i class="ri-add-line text-primary"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Заказать алтайский мёд с доставкой в Ковров очень просто:</p>
+                            <ol class="list-decimal pl-5 mt-2 space-y-1">
+                                <li class="mb-2">Выберите интересующие вас сорта мёда в нашем <a href="/#products" class="text-primary underline">каталоге</a></li>
+                                <li class="mb-2">Укажите ваш адрес в Коврове и выберите удобный способ доставки</li>
+                                <li class="mb-2">Оплатите заказ онлайн или выберите оплату при получении</li>
+                                <li>Отслеживайте статус заказа и ожидайте доставки</li>
+                            </ol>
+                            <p class="mt-2">Если у вас возникнут вопросы, наши менеджеры всегда готовы помочь по телефону <a href="tel:+79209400222" class="text-primary">+7 (920) 940-02-22</a>.</p>
+                        </div>
                     </div>
-                    <div class="faq-answer">
-                        <p>Заказать алтайский мёд с доставкой в Ковров очень просто:</p>
-                        <ol class="list-decimal pl-5 mt-2 space-y-1">
-                            <li>Выберите интересующие вас сорта мёда в нашем <a href="/#products" class="text-primary underline">каталоге</a></li>
-                            <li>Добавьте товары в корзину и перейдите к оформлению заказа</li>
-                            <li>Укажите ваш адрес в Коврове и выберите удобный способ доставки</li>
-                            <li>Оплатите заказ онлайн или выберите оплату при получении</li>
-                            <li>Отслеживайте статус заказа и ожидайте доставки</li>
-                        </ol>
-                        <p class="mt-2">Если у вас возникнут вопросы, наши менеджеры всегда готовы помочь по телефону <a href="tel:+79209400222" class="text-primary">+7 (920) 940-02-22</a>.</p>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Как долго доставляется мёд в Ковров?</span>
+                            <i class="ri-add-line text-primary"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Доставка мёда в Ковров занимает от 1 до 2 рабочих дней с момента отправки заказа. При выборе курьерской доставки в пределах города срок может сократиться до 1 дня. Точный срок доставки зависит от выбранного способа доставки и адреса получения.</p>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Как долго доставляется мёд в Ковров?</span>
-                        <i class="ri-add-line text-primary"></i>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Как происходит оплата заказа?</span>
+                            <i class="ri-add-line text-primary"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Вы можете оплатить заказ несколькими способами:</p>
+                            <ul class="list-disc pl-5 mt-2 space-y-1">
+                                <li class="mb-2">Онлайн-оплата банковской картой по СБП</li>
+                                <li class="mb-2">Оплата при получении наличными или картой (для курьерской доставки и в пунктах выдачи СДЭК в Коврове)</li>
+                                <li>Банковский перевод</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="faq-answer">
-                        <p>Доставка мёда в Ковров занимает от 1 до 2 рабочих дней с момента отправки заказа. При выборе курьерской доставки в пределах города срок может сократиться до 1 дня. Точный срок доставки зависит от выбранного способа доставки и адреса получения.</p>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Как упаковывается мёд для доставки в Ковров?</span>
+                            <i class="ri-add-line text-primary"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Мы используем специальную упаковку, которая надежно защищает мёд при транспортировке. Каждая банка мёда упаковывается в пузырчатую пленку и размещается в картонной коробке с наполнителем, чтобы исключить повреждения при доставке в Ковров. Такая упаковка сохраняет все полезные свойства мёда и защищает от внешних воздействий.</p>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Как происходит оплата заказа?</span>
-                        <i class="ri-add-line text-primary"></i>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Можно ли отследить статус доставки?</span>
+                            <i class="ri-add-line text-primary"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Да, при отправке заказа вы получите трек-номер, по которому можно отслеживать статус доставки на сайте транспортной компании. Также наши менеджеры могут предоставить информацию о местонахождении вашего заказа по телефону.</p>
+                        </div>
                     </div>
-                    <div class="faq-answer">
-                        <p>Вы можете оплатить заказ несколькими способами:</p>
-                        <ul class="list-disc pl-5 mt-2 space-y-1">
-                            <li>Онлайн-оплата банковской картой на сайте</li>
-                            <li>Оплата при получении наличными или картой (для курьерской доставки и в пунктах выдачи СДЭК в Коврове)</li>
-                            <li>Банковский перевод (для юридических лиц)</li>
-                        </ul>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Что делать, если мёд пришел с повреждениями?</span>
+                            <i class="ri-add-line text-primary"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>В случае повреждения товара при доставке в Ковров, необходимо:</p>
+                            <ol class="list-decimal pl-5 mt-2 space-y-1">
+                                <li class="mb-2">Зафиксировать повреждения (сделать фото)</li>
+                                <li class="mb-2">Связаться с нами по телефону или электронной почте</li>
+                                <li>Мы оперативно решим вопрос с заменой товара или возвратом средств</li>
+                            </ol>
+                            <p class="mt-2">Мы гарантируем качество нашей продукции и берем на себя ответственность за сохранность при доставке.</p>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Как упаковывается мёд для доставки в Ковров?</span>
-                        <i class="ri-add-line text-primary"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Мы используем специальную упаковку, которая надежно защищает мёд при транспортировке. Каждая банка мёда упаковывается в пузырчатую пленку и размещается в картонной коробке с наполнителем, чтобы исключить повреждения при доставке в Ковров. Такая упаковка сохраняет все полезные свойства мёда и защищает от внешних воздействий.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Можно ли отследить статус доставки?</span>
-                        <i class="ri-add-line text-primary"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Да, при отправке заказа вы получите трек-номер, по которому можно отслеживать статус доставки на сайте транспортной компании. Также наши менеджеры могут предоставить информацию о местонахождении вашего заказа по телефону.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Что делать, если мёд пришел с повреждениями?</span>
-                        <i class="ri-add-line text-primary"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>В случае повреждения товара при доставке в Ковров, необходимо:</p>
-                        <ol class="list-decimal pl-5 mt-2 space-y-1">
-                            <li>Зафиксировать повреждения (сделать фото)</li>
-                            <li>Связаться с нами по телефону или электронной почте</li>
-                            <li>Мы оперативно решим вопрос с заменой товара или возвратом средств</li>
-                        </ol>
-                        <p class="mt-2">Мы гарантируем качество нашей продукции и берем на себя ответственность за сохранность при доставке.</p>
+                    
+                    <!-- Новый вопрос про Avito -->
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Можно ли заказать алтайский мёд через Avito?</span>
+                            <i class="ri-add-line text-primary"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Да, вы можете выбрать удобный способ покупки: на сайте altaymed.shop или через наш профиль на <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing_seller" class="text-primary underline" target="_blank" rel="noopener noreferrer nofollow">Avito</a>.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1624,11 +2120,11 @@
 
     <section class="cta-section">
         <div class="container">
-            <h2>Закажите мёд с доставкой в Ковров — почувствуйте вкус Алтая уже сегодня!</h2>
+            <h2>Закажите мёд с доставкой в Ковров — почувствуйте вкус Алтая уже завтра!</h2>
             <p class="text-center">Натуральный алтайский мёд с быстрой доставкой в любую точку Коврова и Владимирской области. Мы гарантируем качество и свежесть каждой баночки.</p>
             
             <div class="cta-buttons">
-                <a href="/#products" class="btn btn-primary" aria-label="Заказать мёд онлайн">Заказать мёд онлайн</a>
+                <a href="/#products" class="btn btn-primary" aria-label="Заказать мёд онлайн в Коврове">Заказать мёд онлайн</a>
                 <a href="/#products" class="btn btn-outline">Каталог продукции</a>
             </div>
             
@@ -1668,365 +2164,533 @@
         </div>
     </section>
 
-    <footer>
+    <!-- Новый SEO-блок -->
+    <section class="seo-section">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-column">
-                    <div class="footer-logo">Алтайский мёд</div>
-                    <p class="footer-text">Натуральные продукты пчеловодства с Алтайских гор.</p>
-                    <div class="footer-social">
-                        <a href="https://vk.com/honeybuckwheat" class="social-link">
-                            <i class="ri-vk-line"></i>
-                        </a>
-                        <a href="https://t.me/HONEYBUCKWHEAT" class="social-link">
-                            <i class="ri-telegram-line"></i>
-                        </a>
-                        <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing" class="social-link">
-                            <i class="ri-shopping-bag-line"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="footer-column">
-                    <h3 class="footer-title">Каталог</h3>
-                    <div class="footer-links">
-                        <a href="https://altaymed.shop/#products" class="footer-link">Разнотравье</a>
-                        <a href="https://altaymed.shop/#products" class="footer-link">Таёжный мёд</a>
-                        <a href="https://altaymed.shop/#products" class="footer-link">Гречишный мёд</a>
-                        <a href="https://altaymed.shop/#products" class="footer-link">Горный мёд</a>
-                    </div>
-                </div>
-                
-                <div class="footer-column">
-                    <h3 class="footer-title">Отзывы о доставке</h3>
-                    <div class="footer-links">
-                        <span class="footer-link">Отзывы о доставке в Коврове</span>
-                        <span class="footer-link">Все отзывы о AltayMed</span>
-                        <span class="footer-link">Отзывы о гречишном мёде</span>
-                        <span class="footer-link">Отзывы о таёжном мёде</span>
-                    </div>
-                </div>
-                
-                <div class="footer-column">
-                    <h3 class="footer-title">Контакты</h3>
-                    <div class="footer-contacts">
-                        <div class="contact-item">
-                            <i class="ri-phone-line ri-lg contact-icon"></i>
-                            <div class="contact-info">
-                                <span class="contact-value">+7 (920) 940-02-22</span>
-                                <span class="contact-note">Ежедневно с 9:00 до 21:00</span>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="ri-mail-line ri-lg contact-icon"></i>
-                            <div class="contact-info">
-                                <span class="contact-value">altaymed.shop@yandex.ru</span>
-                                <span class="contact-note">Для заказов и вопросов</span>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="ri-map-pin-line ri-lg contact-icon"></i>
-                            <div class="contact-info">
-                                <span class="contact-value">г. Ковров, ул. Первомайская, 25</span>
-                                <span class="contact-note">Пункт выдачи заказов</span>
-                            </div>
-                        </div>
-                        <!-- Добавлена строка про опт -->
-                        <div class="contact-item">
-                            <i class="ri-store-line ri-lg contact-icon"></i>
-                            <div class="contact-info">
-                                <span class="contact-value">мёд оптом для кафе, магазинов и заведений Коврова</span>
-                                <span class="contact-note">
-                                    <a href="mailto:opt@altaymed.shop" style="color: var(--gray-400);">запросите предложение</a>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="seo-content">
+                <h2 class="text-center mb-6">Натуральный алтайский мёд с доставкой в Ковров и область</h2>
+                <p>Ищете, где купить настоящий алтайский мёд в Коврове? Наш интернет-магазин предлагает свежий и натуральный мёд с пасек Алтая. Мы осуществляем быструю <strong>доставку мёда в Ковров</strong> и по всей Владимирской области: Владимир, Муром, Александров, Гусь-Хрустальный и другие города. У нас вы найдете лучшие сорта: <a href="/blog/kak-vybrat-med.html" class="text-primary underline">гречишный</a>, <a href="/blog/kak-hranit-med.html" class="text-primary underline">липовый</a>, <a href="/blog/lechebnye-svoistva-altayskogo-meda.html" class="text-primary underline">таёжный</a> и разнотравье.</p>
+                <p>Заказать <strong>алтайский мёд во Владимире</strong>, Муроме, Александрове или любом другом городе Владимирской области стало проще. Для жителей Коврова действует бесплатная доставка при заказе от 3 литров. Также мы доставляем мёд во Владимир, Муром, Александров и другие населенные пункты области.</p>
+                <p>Покупая алтайский мёд в нашем магазине, вы получаете 100% <a href="/blog/kak-vybrat-med.html" class="text-primary underline">наaturalный</a> продукт, собранный в экологически чистых районах Алтая. Мы гарантируем качество и свежесть каждой баночки при правильном <a href="/blog/kak-hranit-med.html" class="text-primary underline">хранении</a>. Если вы ищете, <strong>где купить липовый мёд во Владимирской области</strong>, обратитесь к нам - у нас всегда в наличии свежие натуральные сорта.</p>
+                <p>Все заказы оформляются через защищенное соединение (HTTPS), что гарантирует безопасность ваших данных. Оплата при получении наличными или картой. Закажите алтайский мёд с доставкой в Ковров и насладитесь его неповторимым вкусом и ароматом!</p>
             </div>
-            
-            <div class="footer-bottom">
-                <!-- Обновленная ссылка в копирайте -->
-                <p class="copyright">
-                    <a href="https://altaymed.shop/legal.html" style="color: inherit;">
-                        © 2025 Алтайский мёд. Все права защищены.
-                    </a>
-                </p>
-                <div class="payment-methods">
-                    <i class="ri-visa-line payment-icon"></i>
-                    <i class="ri-mastercard-line payment-icon"></i>
-                    <i class="ri-paypal-line payment-icon"></i>
-                    <i class="ri-alipay-line payment-icon"></i>
+        </div>
+    </section>
+
+    <!-- Футер с поднятым текстом -->
+    <footer>
+        <div id="footer-contacts" class="container-wide">
+            <div class="footer-grid">
+                <!-- Лого и описание -->
+                <div class="footer-column">
+                    <div class="footer-logo-wrapper">
+                        <a href="/" class="header-logo text-white">Алтайский мёд</a>
+                    </div>
+                    <div class="footer-text-content">
+                        <p class="footer-description">Натуральные продукты пчеловодства с Алтайских гор.</p>
+                        <p class="https-info">Сайт защищён — работает по протоколу HTTPS</p>
+                        <p class="footer-copyright">© 2025 Алтайский мёд. Все права защищены.</p>
+                    </div>
+                </div>
+                
+                <!-- Каталог -->
+                <div class="footer-column">
+                    <h4>Каталог</h4>
+                    <ul>
+                        <li>
+                            <a href="/#product-1" class="footer-link-item">
+                                <span class="bullet"></span>
+                                <span>Разнотравье</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/#product-2" class="footer-link-item">
+                                <span class="bullet"></span>
+                                <span>Таёжный мёд</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/#product-3" class="footer-link-item">
+                                <span class="bullet"></span>
+                                <span>Гречишный мёд</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Материалы -->
+                <div class="footer-column">
+                    <h4>Материалы</h4>
+                    <ul>
+                        <li>
+                            <a href="/blog/" class="footer-link-item">
+                                <span class="bullet"></span>
+                                <span>Блог</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/faq/" class="footer-link-item">
+                                <span class="bullet"></span>
+                                <span>FAQ</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/legal.html" class="footer-link-item">
+                                <span class="bullet"></span>
+                                <span>Правовая информация</span>
+                            </a>
+                        </li>
+                        <li>
+                            <span class="footer-link-item">
+                                <span class="bullet"></span>
+                                <span>Мёд оптом для кафе, магазинов и заведений</span>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Информация -->
+                <div class="footer-column">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li>
+                            <a href="/#benefits" class="footer-link-item">
+                                <span class="bullet"></span>
+                                <span>Преимущества</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/#about" class="footer-link-item">
+                                <span class="bullet"></span>
+                                <span>О нас</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#footer-contacts" class="footer-link-item">
+                                <span class="bullet"></span>
+                                <span>Контакты</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/delivery.html" class="footer-link-item">
+                                <span class="bullet"></span>
+                                <span>Доставка и оплата</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Контакты -->
+                <div class="footer-column">
+                    <h4>Контакты</h4>
+                    <ul>
+                        <li class="footer-link-item">
+                            <div class="contact-icon">
+                                <i class="ri-map-pin-2-line"></i>
+                            </div>
+                            <span class="contact-text">Владимирская обл. Город Ковров</span>
+                        </li>
+                        <li class="footer-link-item">
+                            <a href="tel:+79209400222" class="footer-link">
+                                <div class="contact-icon">
+                                    <i class="ri-phone-line"></i>
+                                </div>
+                                <span class="contact-text">+7 (920) 940-02-22</span>
+                            </a>
+                        </li>
+                        <li class="footer-link-item">
+                            <a href="mailto:Altaymed.shop@yandex.ru" class="footer-link">
+                                <div class="contact-icon">
+                                    <i class="ri-mail-line"></i>
+                                </div>
+                                <span class="contact-text">Altaymed.shop@yandex.ru</span>
+                            </a>
+                        </li>
+                    </ul>
+                    
+                    <!-- Социальные сети -->
+                    <div class="footer-social-icons">
+                        <a href="https://vk.com/honeybuckwheat" target="_blank" rel="noopener noreferrer" class="social-icon-bw" aria-label="Наша страница ВКонтакте">
+                            <i class="ri-vk-line ri-lg"></i>
+                        </a>
+                        <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" rel="noopener noreferrer" class="social-icon-bw" aria-label="Наш Telegram канал">
+                            <i class="ri-telegram-line ri-lg"></i>
+                        </a>
+                        <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing" 
+                           target="_blank" rel="noopener noreferrer" class="social-icon-bw" aria-label="Наше объявление на Авито">
+                            <i class="ri-shopping-bag-line ri-lg"></i>
+                        </a>
+                        <a href="https://dzen.ru/altaymed" target="_blank" rel="noopener noreferrer" class="social-icon-bw" aria-label="Наш канал на Яндекс Дзен">
+                            <i class="ri-article-line ri-lg"></i>
+                        </a>
+                        <a href="https://yandex.ru/maps/" target="_blank" rel="noopener noreferrer" class="social-icon-bw" aria-label="Мы на Яндекс Картах">
+                            <i class="ri-map-pin-line ri-lg"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
 
-    <div id="order-modal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title">Оформление заказа</h3>
-                <span class="close-modal"><i class="ri-close-line"></i></span>
-            </div>
-            <div class="p-6">
-                <form id="order-form">
-                    <div class="form-group">
-                        <label for="name" class="form-label">Ваше имя</label>
-                        <input type="text" id="name" class="form-input" placeholder="Иван Петров" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="phone" class="form-label">Телефон</label>
-                        <input type="tel" id="phone" class="form-input" placeholder="+7 (999) 123-45-67" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" id="email" class="form-input" placeholder="example@mail.ru">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message" class="form-label">Комментарий к заказу</label>
-                        <textarea id="message" class="form-input form-textarea" placeholder="Укажите интересующие вас сорта мёда и объём"></textarea>
-                    </div>
-                    
-                    <button type="submit" class="submit-btn">Отправить заявку</button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <div id="success-modal" class="modal">
-        <div class="success-modal-content">
-            <div class="success-icon">
-                <i class="ri-checkbox-circle-line"></i>
-            </div>
-            <h3 class="success-title">Заказ оформлен!</h3>
-            <p class="success-text">Спасибо за ваш заказ! Мы свяжемся с вами в течение 10 минут для подтверждения деталей.</p>
-            <button class="success-btn" id="close-success-modal">Отлично</button>
-        </div>
-    </div>
-
-    <!-- Микроразметка Schema.org - улучшенная версия -->
+    <!-- JSON-LD микроразметка -->
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "Доставка алтайского мёда в Ковров",
-      "description": "Закажите натуральный алтайский мёд с доставкой по Коврову и области. Свежий гречишный, липовый, таёжный мёд — бесплатно доставим от 3 литров. Оплата после получения.",
-      "breadcrumb": {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Главная",
-            "item": "https://altaymed.shop/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Доставка в Ковров",
-            "item": "https://altaymed.shop/delivery-kovrov.html"
-          }
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Как заказать алтайский мёд онлайн с доставкой в Ковров?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Заказать алтайский мёд с доставкой в Ковров очень просто: Выберите интересующие вас сорта мёда в нашем каталоге, укажите ваш адрес в Коврове и выберите удобный способ доставки, оплатите заказ онлайн или выберите оплату при получении, отслеживайте статус заказа и ожидайте доставки. Если у вас возникнут вопросы, наши менеджеры всегда готовы помочь по телефону +7 (920) 940-02-22."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Как долго доставляется мёд в Ковров?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Доставка мёда в Ковров занимает от 1 до 2 рабочих дней с момента отправки заказа. При выборе курьерской доставки в пределах города срок может сократиться до 1 дня. Точный срок доставки зависит от выбранного способа доставки и адреса получения."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Как происходит оплата заказа?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Вы можете оплатить заказ несколькими способами: Онлайн-оплата банковской картой по СБП, оплата при получении наличными или картой (для курьерской доставки и в пунктах выдачи СДЭК в Коврове), банковский перевод."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Как упаковывается мёд для доставки в Ковров?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Мы используем специальную упаковку, которая надежно защищает мёд при транспортировке. Каждая банка мёда упаковывается в пузырчатую пленку и размещается в картонной коробке с наполнителем, чтобы исключить повреждения при доставке в Ковров. Такая упаковка сохраняет все полезные свойства мёда и защищает от внешних воздействий."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Можно ли отследить статус доставки?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Да, при отправке заказа вы получите трек-номер, по которому можно отслеживать статус доставки на сайте транспортной компании. Также наши менеджеры могут предоставить информацию о местонахождении вашего заказа по телефону."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Что делать, если мёд пришел с повреждениями?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "В случае повреждения товара при доставке в Ковров, необходимо: Зафиксировать повреждения (сделать фото), связаться с нами по телефону или электронной почте. Мы оперативно решим вопрос с заменой товара или возвратом средств. Мы гарантируем качество нашей продукции и берем на себя ответственность за сохранность при доставке."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Можно ли заказать алтайский мёд через Avito?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Да, вы можете выбрать удобный способ покупки: на сайте altaymed.shop или через наш профиль на Avito."
+                }
+            }
         ]
-      },
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Как заказать алтайский мёд онлайн с доставкой в Ковров?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Заказать алтайский мёд с доставкой в Ковров очень просто: выберите сорта мёда в каталоге, добавьте в корзину, укажите адрес в Коврове и выберите способ доставки."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Как долго доставляется мёд в Ковров?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Доставка мёда в Ковров занимает 1-2 рабочих дня. Курьерская доставка по городу - до 1 дня."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Как происходит оплата заказа?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Оплата банковской картой онлайн, наличными или картой при получении, банковским переводом для юридических лиц."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Как упаковывается мёд для доставки в Ковров?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Каждая банка упаковывается в пузырчатую пленку в картонной коробке с наполнителем для защиты при транспортировке."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Можно ли отследить статус доставки?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Да, при отправке вы получите трек-номер для отслеживания на сайте транспортной компании."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Что делать при повреждении товара?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Зафиксируйте повреждения (фото), свяжитесь с нами - мы заменим товар или вернем средства."
-          }
-        }
-      ]
     }
     </script>
 
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Алтайский мёд",
-      "url": "https://altaymed.shop/",
-      "logo": "https://altaymed.shop/images/logo.png",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+79209400222",
-        "contactType": "Customer service",
-        "areaServed": "RU",
-        "availableLanguage": "Russian"
-      },
-      "sameAs": [
-        "https://vk.com/honeybuckwheat",
-        "https://t.me/HONEYBUCKWHEAT"
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Ковров",
-        "postalCode": "601900",
-        "streetAddress": "ул. Первомайская, 25"
-      },
-      "makesOffer": {
-        "@type": "Offer",
-        "priceSpecification": {
-          "@type": "UnitPriceSpecification",
-          "priceCurrency": "RUB",
-          "price": "990"
-        },
-        "itemOffered": {
-          "@type": "Product",
-          "name": "Алтайский мёд",
-          "description": "Натуральный гречишный, липовый и таёжный мёд с Алтая",
-          "brand": {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Алтайский мёд",
+        "description": "Натуральный алтайский мёд, собранный в экологически чистых районах Алтая",
+        "brand": {
             "@type": "Brand",
-            "name": "Алтайский мёд"
-          }
-        }
-      }
+            "name": "AltayMed"
+        },
+        "offers": {
+            "@type": "Offer",
+            "priceCurrency": "RUB",
+            "price": "1100",
+            "availability": "https://schema.org/InStock",
+            "shippingDetails": {
+                "@type": "OfferShippingDetails",
+                "shippingRate": {
+                    "@type": "MonetaryAmount",
+                    "value": "0",
+                    "currency": "RUB"
+                },
+                "shippingDestination": {
+                    "@type": "DefinedRegion",
+                    "addressCountry": "RU",
+                    "addressRegion": "Владимирская область"
+                }
+            }
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "47"
+        },
+        "review": [
+            {
+                "@type": "Review",
+                "author": "Ирина Петрова",
+                "datePublished": "2025-06-15",
+                "reviewBody": "Заказывали мёд с доставкой в Ковров - привезли на следующий день! Качество отличное, вкус натуральный. Особенно понравился гречишный - густой, ароматный, настоящий алтайский мёд!",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5"
+                }
+            },
+            {
+                "@type": "Review",
+                "author": "Дмитрий Смирнов",
+                "datePublished": "2025-05-22",
+                "reviewBody": "Живу в районе Шестерка, заказал 5 литров мёда - доставили бесплатно! Упаковка надёжная, ни одна банка не пострадала. Мёд кристально чистый, без примесей. Буду заказывать ещё!",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5"
+                }
+            },
+            {
+                "@type": "Review",
+                "author": "Ольга Иванова",
+                "datePublished": "2025-07-01",
+                "reviewBody": "Во Владимир доставили за 2 дня, как и обещали. Мёд просто восхитительный! Липовый - такой душистый, а таёжный - с настоящим лесным ароматом. Спасибо за качественный продукт!",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5"
+                }
+            }
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Алтайский мёд",
+        "image": "https://altaymed.shop/images/og-preview.webp",
+        "telephone": "+79209400222",
+        "email": "Altaymed.shop@yandex.ru",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Владимирская область, город Ковров",
+            "addressLocality": "Ковров",
+            "addressRegion": "Владимирская область",
+            "postalCode": "601900",
+            "addressCountry": "RU"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "56.3572",
+            "longitude": "41.3192"
+        },
+        "url": "https://altaymed.shop",
+        "priceRange": "1000-5000 ₽",
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday"
+            ],
+            "opens": "09:00",
+            "closes": "21:00"
+        },
+        "sameAs": [
+            "https://vk.com/honeybuckwheat",
+            "https://t.me/HONEYBUCKWHEAT",
+            "https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000",
+            "https://dzen.ru/altaymed",
+            "https://yandex.ru/maps/"
+        ]
     }
     </script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Инициализация табов доставки
             const tabButtons = document.querySelectorAll('.delivery-tab');
             const tabContents = document.querySelectorAll('.delivery-content');
             
-            tabButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const tabId = button.getAttribute('data-tab');
-                    
-                    tabButtons.forEach(btn => {
-                        btn.classList.remove('active');
+            if (tabButtons.length && tabContents.length) {
+                tabButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        const tabId = button.getAttribute('data-tab');
+                        
+                        tabButtons.forEach(btn => {
+                            btn.classList.remove('active');
+                        });
+                        
+                        tabContents.forEach(content => {
+                            content.classList.remove('active');
+                        });
+                        
+                        button.classList.add('active');
+                        document.getElementById(`${tabId}-content`)?.classList.add('active');
                     });
-                    
-                    tabContents.forEach(content => {
-                        content.classList.remove('active');
-                    });
-                    
-                    button.classList.add('active');
-                    
-                    document.getElementById(`${tabId}-content`).classList.add('active');
-                });
-            });
-            
-            const faqQuestions = document.querySelectorAll('.faq-question');
-            faqQuestions.forEach(question => {
-                question.addEventListener('click', () => {
-                    const faqItem = question.parentElement;
-                    faqItem.classList.toggle('active');
-                });
-            });
-            
-            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-            const closeMobileMenu = document.getElementById('close-mobile-menu');
-            const mobileMenu = document.getElementById('mobile-menu');
-            
-            mobileMenuToggle.addEventListener('click', () => {
-                mobileMenu.classList.add('active');
-            });
-            
-            closeMobileMenu.addEventListener('click', () => {
-                mobileMenu.classList.remove('active');
-            });
-            
-            const orderModal = document.getElementById('order-modal');
-            const successModal = document.getElementById('success-modal');
-            const closeModal = document.querySelector('.close-modal');
-            const closeSuccessModal = document.getElementById('close-success-modal');
-            
-            closeModal.addEventListener('click', () => {
-                orderModal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            });
-            
-            window.addEventListener('click', (event) => {
-                if (event.target === orderModal) {
-                    orderModal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                }
-                if (event.target === successModal) {
-                    successModal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                }
-            });
-            
-            closeSuccessModal.addEventListener('click', () => {
-                successModal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            });
-            
-            const orderForm = document.getElementById('order-form');
-            if (orderForm) {
-                orderForm.addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    orderModal.style.display = 'none';
-                    successModal.style.display = 'flex';
-                    orderForm.reset();
                 });
             }
-        });
-        
-        // Загрузка Яндекс.Метрики с задержкой 1 секунда
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                (function(m,e,t,r,i,k,a){
-                    m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-                    m[i].l=1*new Date();
-                    for(var j=0;j<document.scripts.length;j++){
-                        if(document.scripts[j].src===r){return;}
-                    }
-                    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-                })
-                (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-                ym(102951378, "init", {
-                    clickmap:true,
-                    trackLinks:true,
-                    accurateTrackBounce:true
+            
+            // Мобильное меню
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenuClose = document.getElementById('mobile-menu-close');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuToggle && mobileMenu) {
+                mobileMenuToggle.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('active');
                 });
-            }, 1000);
+            }
+            
+            if (mobileMenuClose && mobileMenu) {
+                mobileMenuClose.addEventListener('click', () => {
+                    mobileMenu.classList.remove('active');
+                });
+            }
+            
+            // Карусель отзывов (с защитой от отсутствия элементов)
+            const reviewList = document.querySelector('.review-list');
+            const reviewItems = document.querySelectorAll('.review-item');
+            
+            if (reviewList && reviewItems.length > 0) {
+                const dots = document.querySelectorAll('.dot');
+                const prevBtn = document.querySelector('.carousel-prev');
+                const nextBtn = document.querySelector('.carousel-next');
+                const carouselContainer = document.querySelector('.reviews-carousel');
+                
+                let currentIndex = 0;
+                let autoSlideInterval;
+                
+                function updateCarousel() {
+                    const offset = -currentIndex * 100;
+                    reviewList.style.transform = `translateX(${offset}%)`;
+                    
+                    dots.forEach((dot, index) => {
+                        dot.classList.toggle('active', index === currentIndex);
+                    });
+                }
+                
+                function nextSlide() {
+                    currentIndex = (currentIndex + 1) % reviewItems.length;
+                    updateCarousel();
+                }
+                
+                function prevSlide() {
+                    currentIndex = (currentIndex - 1 + reviewItems.length) % reviewItems.length;
+                    updateCarousel();
+                }
+                
+                function goToSlide(index) {
+                    currentIndex = index;
+                    updateCarousel();
+                }
+                
+                function startAutoSlide() {
+                    autoSlideInterval = setInterval(nextSlide, 5000);
+                }
+                
+                function stopAutoSlide() {
+                    clearInterval(autoSlideInterval);
+                }
+                
+                // Инициализация карусели
+                updateCarousel();
+                startAutoSlide();
+                
+                // Обработчики событий (с проверкой существования элементов)
+                if (nextBtn) {
+                    nextBtn.addEventListener('click', () => {
+                        stopAutoSlide();
+                        nextSlide();
+                        startAutoSlide();
+                    });
+                }
+                
+                if (prevBtn) {
+                    prevBtn.addEventListener('click', () => {
+                        stopAutoSlide();
+                        prevSlide();
+                        startAutoSlide();
+                    });
+                }
+                
+                if (dots.length) {
+                    dots.forEach((dot, index) => {
+                        dot.addEventListener('click', () => {
+                            stopAutoSlide();
+                            goToSlide(index);
+                            startAutoSlide();
+                        });
+                    });
+                }
+                
+                if (carouselContainer) {
+                    carouselContainer.addEventListener('mouseenter', stopAutoSlide);
+                    carouselContainer.addEventListener('mouseleave', startAutoSlide);
+                }
+            }
+            
+            // Инициализация FAQ аккордеона
+            const faqItems = document.querySelectorAll('.faq-item');
+            if (faqItems.length) {
+                faqItems.forEach(item => {
+                    const question = item.querySelector('.faq-question');
+                    question.addEventListener('click', () => {
+                        const isOpen = item.classList.contains('active');
+                        
+                        // Закрыть все
+                        faqItems.forEach(el => {
+                            el.classList.remove('active');
+                        });
+                        
+                        // Открыть текущий, если был закрыт
+                        if (!isOpen) {
+                            item.classList.add('active');
+                            question.setAttribute('aria-expanded', 'true');
+                        } else {
+                            question.setAttribute('aria-expanded', 'false');
+                        }
+                    });
+                });
+            }
+            
+            // Убираем зачеркивание после 1 сентября 2025
+            const targetDate = new Date('2025-09-01');
+            const currentDate = new Date();
+            
+            if (currentDate >= targetDate) {
+                const strikeElements = document.querySelectorAll('.strike-temporary');
+                strikeElements.forEach(el => {
+                    const parent = el.parentNode;
+                    parent.replaceChild(document.createTextNode(el.textContent), parent);
+                });
+            }
+            
+            // Яндекс.Метрика
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    (function(m,e,t,r,i,k,a){
+                        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+                        m[i].l=1*new Date();
+                        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+                    })
+                    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+                    ym(102951378, "init", {
+                        clickmap:true,
+                        trackLinks:true,
+                        accurateTrackBounce:true
+                    });
+                }, 1000);
+            });
         });
     </script>
     
@@ -2034,7 +2698,7 @@
         <div>
             <img src="https://mc.yandex.ru/watch/102951378" 
                  style="position:absolute; left:-9999px;" 
-                 alt="Счетчик Яндекс.Метрики" />
+                 alt="" />
         </div>
     </noscript>
 </body>

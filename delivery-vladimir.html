@@ -6,6 +6,10 @@
     <title>Алтайский мёд с доставкой во Владимир — бесплатно от 3 л | AltayMed</title>
     <meta name="description" content="Закажите натуральный алтайский мёд с доставкой по Владимиру и области. Свежий гречишный, липовый, таёжный мёд — бесплатно доставим от 3 литров. Оплата после получения.">
     
+    <!-- Гео-метатеги -->
+    <meta name="geo.region" content="RU-VLA">
+    <meta name="geo.placename" content="Владимир">
+    
     <!-- Каноническая ссылка -->
     <link rel="canonical" href="https://altaymed.shop/delivery-vladimir.html">
     
@@ -568,15 +572,9 @@
         .responsive-table {
             width: 100%;
             overflow-x: auto;
+            overflow-y: hidden; /* Убрать вертикальный скролл */
             -webkit-overflow-scrolling: touch;
             margin-bottom: 2rem;
-            
-            /* Скрытие скроллбара для всех браузеров */
-            scrollbar-width: none; /* Firefox */
-        }
-        
-        .responsive-table::-webkit-scrollbar {
-            display: none; /* Chrome, Safari, Opera */
         }
         
         .tariffs-table {
@@ -1426,7 +1424,7 @@
                 <a href="/#products" class="nav-btn px-4 md:px-6 py-1 md:py-2 !rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">Заказать</a>
             </div>
             
-            <button class="md:hidden flex items-center justify-center p-2" id="mobile-menu-toggle">
+            <button class="md:hidden flex items-center justify-center p-2" id="mobile-menu-toggle" aria-label="Открыть меню">
                 <i class="ri-menu-line text-2xl text-gray-800" aria-hidden="true"></i>
             </button>
         </div>
@@ -1434,7 +1432,7 @@
         <div class="mobile-menu" id="mobile-menu">
             <div class="mobile-menu-header">
                 <a href="/" class="header-logo">Алтайский мёд</a>
-                <button id="mobile-menu-close" class="w-10 h-10 flex items-center justify-center">
+                <button id="mobile-menu-close" class="w-10 h-10 flex items-center justify-center" aria-label="Закрыть меню">
                     <i class="ri-close-line text-2xl text-gray-800" aria-hidden="true"></i>
                 </button>
             </div>
@@ -1456,10 +1454,11 @@
     <section class="hero-section">
         <div class="hero-bg-container">
             <img 
-                src="images/hero-bg.jpg" 
-                alt="Натуральный гречишный, липовый, таёжный алтайский мёд с доставкой во Владимир" 
+                src="images/hero-bg.webp" 
+                alt="Доставка алтайского мёда во Владимир и область" 
                 class="hero-bg-image"
                 fetchpriority="high"
+                loading="eager"
             >
             <!-- Добавлено затемнение -->
             <div class="hero-overlay"></div>
@@ -1571,7 +1570,7 @@
                                 </li>
                             </ul>
                             <p class="mt-4 text-center">
-                                <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing" class="btn btn-outline" target="_blank" rel="nofollow">Перейти на Авито</a>
+                                <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing" class="btn btn-outline" target="_blank" rel="noopener noreferrer nofollow">Перейти на Авито</a>
                             </p>
                         </div>
                     </div>
@@ -1980,17 +1979,17 @@
                         </div>
                     </div>
                     <div class="carousel-nav">
-                        <button class="carousel-btn carousel-prev">
+                        <button class="carousel-btn carousel-prev" aria-label="Предыдущий отзыв">
                             <i class="ri-arrow-left-s-line"></i>
                         </button>
                         <div class="carousel-dots">
-                            <span class="dot active" data-index="0"></span>
-                            <span class="dot" data-index="1"></span>
-                            <span class="dot" data-index="2"></span>
-                            <span class="dot" data-index="3"></span>
-                            <span class="dot" data-index="4"></span>
+                            <span class="dot active" data-index="0" aria-label="Отзыв 1"></span>
+                            <span class="dot" data-index="1" aria-label="Отзыв 2"></span>
+                            <span class="dot" data-index="2" aria-label="Отзыв 3"></span>
+                            <span class="dot" data-index="3" aria-label="Отзыв 4"></span>
+                            <span class="dot" data-index="4" aria-label="Отзыв 5"></span>
                         </div>
-                        <button class="carousel-btn carousel-next">
+                        <button class="carousel-btn carousel-next" aria-label="Следующий отзыв">
                             <i class="ri-arrow-right-s-line"></i>
                         </button>
                     </div>
@@ -2006,7 +2005,7 @@
             <div class="faq-wrapper">
                 <div class="faq-container">
                     <div class="faq-item">
-                        <button class="faq-question">
+                        <button class="faq-question" aria-expanded="false">
                             <span>Как заказать алтайский мёд онлайн с доставкой во Владимир?</span>
                             <i class="ri-add-line text-primary"></i>
                         </button>
@@ -2023,7 +2022,7 @@
                     </div>
                     
                     <div class="faq-item">
-                        <button class="faq-question">
+                        <button class="faq-question" aria-expanded="false">
                             <span>Как долго доставляется мёд во Владимир?</span>
                             <i class="ri-add-line text-primary"></i>
                         </button>
@@ -2033,7 +2032,7 @@
                     </div>
                     
                     <div class="faq-item">
-                        <button class="faq-question">
+                        <button class="faq-question" aria-expanded="false">
                             <span>Как происходит оплата заказа?</span>
                             <i class="ri-add-line text-primary"></i>
                         </button>
@@ -2048,7 +2047,7 @@
                     </div>
                     
                     <div class="faq-item">
-                        <button class="faq-question">
+                        <button class="faq-question" aria-expanded="false">
                             <span>Как упаковывается мёд для доставки во Владимир?</span>
                             <i class="ri-add-line text-primary"></i>
                         </button>
@@ -2058,7 +2057,7 @@
                     </div>
                     
                     <div class="faq-item">
-                        <button class="faq-question">
+                        <button class="faq-question" aria-expanded="false">
                             <span>Можно ли отследить статус доставки?</span>
                             <i class="ri-add-line text-primary"></i>
                         </button>
@@ -2068,7 +2067,7 @@
                     </div>
                     
                     <div class="faq-item">
-                        <button class="faq-question">
+                        <button class="faq-question" aria-expanded="false">
                             <span>Что делать, если мёд пришел с повреждениями?</span>
                             <i class="ri-add-line text-primary"></i>
                         </button>
@@ -2085,12 +2084,12 @@
                     
                     <!-- Новый вопрос про Avito -->
                     <div class="faq-item">
-                        <button class="faq-question">
+                        <button class="faq-question" aria-expanded="false">
                             <span>Можно ли заказать алтайский мёд через Avito?</span>
                             <i class="ri-add-line text-primary"></i>
                         </button>
                         <div class="faq-answer">
-                            <p>Да, вы можете выбрать удобный способ покупки: на сайте altaymed.shop или через наш профиль на <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing_seller" class="text-primary underline" target="_blank" rel="nofollow">Avito</a>.</p>
+                            <p>Да, вы можете выбрать удобный способ покупки: на сайте altaymed.shop или через наш профиль на <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing_seller" class="text-primary underline" target="_blank" rel="noopener noreferrer nofollow">Avito</a>.</p>
                         </div>
                     </div>
                 </div>
@@ -2288,20 +2287,20 @@
                     
                     <!-- Социальные сети -->
                     <div class="footer-social-icons">
-                        <a href="https://vk.com/honeybuckwheat" target="_blank" rel="noopener" class="social-icon-bw" aria-label="Наша страница ВКонтакте">
+                        <a href="https://vk.com/honeybuckwheat" target="_blank" rel="noopener noreferrer" class="social-icon-bw" aria-label="Наша страница ВКонтакте">
                             <i class="ri-vk-line ri-lg"></i>
                         </a>
-                        <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" rel="noopener" class="social-icon-bw" aria-label="Наш Telegram канал">
+                        <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" rel="noopener noreferrer" class="social-icon-bw" aria-label="Наш Telegram канал">
                             <i class="ri-telegram-line ri-lg"></i>
                         </a>
                         <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing" 
-                           target="_blank" rel="noopener" class="social-icon-bw" aria-label="Наше объявление на Авито">
+                           target="_blank" rel="noopener noreferrer" class="social-icon-bw" aria-label="Наше объявление на Авито">
                             <i class="ri-shopping-bag-line ri-lg"></i>
                         </a>
-                        <a href="https://dzen.ru/altaymed" target="_blank" rel="noopener" class="social-icon-bw" aria-label="Наш канал на Яндекс Дзен">
+                        <a href="https://dzen.ru/altaymed" target="_blank" rel="noopener noreferrer" class="social-icon-bw" aria-label="Наш канал на Яндекс Дзен">
                             <i class="ri-article-line ri-lg"></i>
                         </a>
-                        <a href="https://yandex.ru/maps/" target="_blank" rel="noopener" class="social-icon-bw" aria-label="Мы на Яндекс Картах">
+                        <a href="https://yandex.ru/maps/" target="_blank" rel="noopener noreferrer" class="social-icon-bw" aria-label="Мы на Яндекс Картах">
                             <i class="ri-map-pin-line ri-lg"></i>
                         </a>
                     </div>
@@ -2404,7 +2403,44 @@
                     "addressRegion": "Владимирская область"
                 }
             }
-        }
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "47"
+        },
+        "review": [
+            {
+                "@type": "Review",
+                "author": "Ирина Петрова",
+                "datePublished": "2025-06-15",
+                "reviewBody": "Заказывали мёд с доставкой во Владимир - привезли на следующий день! Качество отличное, вкус натуральный. Особенно понравился гречишный - густой, ароматный, настоящий алтайский мёд!",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5"
+                }
+            },
+            {
+                "@type": "Review",
+                "author": "Дмитрий Смирнов",
+                "datePublished": "2025-05-22",
+                "reviewBody": "Живу в Коврове, заказал 5 литров мёда - доставили бесплатно! Упаковка надёжная, ни одна банка не пострадала. Мёд кристально чистый, без примесей. Буду заказывать ещё!",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5"
+                }
+            },
+            {
+                "@type": "Review",
+                "author": "Ольга Иванова",
+                "datePublished": "2025-07-01",
+                "reviewBody": "В Муром доставили за 2 дня, как и обещали. Мёд просто восхитительный! Липовый - такой душистый, а таёжный - с настоящим лесным ароматом. Спасибо за качественный продукт!",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5"
+                }
+            }
+        ]
     }
     </script>
 
@@ -2444,7 +2480,14 @@
             ],
             "opens": "09:00",
             "closes": "21:00"
-        }
+        },
+        "sameAs": [
+            "https://vk.com/honeybuckwheat",
+            "https://t.me/HONEYBUCKWHEAT",
+            "https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000",
+            "https://dzen.ru/altaymed",
+            "https://yandex.ru/maps/"
+        ]
     }
     </script>
 
@@ -2588,6 +2631,9 @@
                         // Открыть текущий, если был закрыт
                         if (!isOpen) {
                             item.classList.add('active');
+                            question.setAttribute('aria-expanded', 'true');
+                        } else {
+                            question.setAttribute('aria-expanded', 'false');
                         }
                     });
                 });

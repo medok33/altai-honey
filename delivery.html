@@ -364,13 +364,13 @@
     }
     .regions-container {
       margin-top: 16px;
-      margin-bottom: 8px;
+      margin-bottom: 0;
       position: relative;
     }
     .regions-header {
       font-size: 1.25rem;
       font-weight: 600;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
       color: #333;
     }
     .regions-row {
@@ -475,39 +475,43 @@
       display: flex;
       flex-wrap: nowrap;
       gap: 8px;
-      margin-bottom: 8px;
+      margin-bottom: 0;
       overflow-x: hidden;
     }
     .show-more-btn {
       display: flex;
       align-items: center;
-      padding: 8px 16px;
-      background-color: transparent;
-      color: #6B8E23;
-      border: 2px solid #6B8E23;
-      border-radius: 24px;
+      padding: 12px 24px;
+      background: linear-gradient(135deg, #6B8E23 0%, #5a7a1c 100%);
+      color: white;
+      border: none;
+      border-radius: 28px;
       cursor: pointer;
-      font-weight: 500;
+      font-weight: 600;
       transition: all 0.3s;
       font-family: 'Open Sans', sans-serif;
-      margin-top: 8px;
+      margin-top: 12px;
       outline: none;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 1;
     }
     .show-more-btn:hover {
-      background-color: rgba(107, 142, 35, 0.1);
+      transform: translateY(-2px);
+      box-shadow: 0 7px 14px rgba(0, 0, 0, 0.15);
+      background: linear-gradient(135deg, #5a7a1c 0%, #4a6a12 100%);
     }
-    .show-more-btn .arrow-down {
-      display: inline-block;
-      margin-left: 8px;
-      width: 0;
-      height: 0;
-      border-left: 5px solid transparent;
-      border-right: 5px solid transparent;
-      border-top: 8px solid #6B8E23;
-      transition: transform 0.3s;
+    .show-more-btn:active {
+      transform: translateY(1px);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
-    .show-more-btn.expanded .arrow-down {
+    .show-more-btn.expanded .ri-arrow-down-s-line {
       transform: rotate(180deg);
+    }
+    .show-more-btn .ri-arrow-down-s-line {
+      transition: transform 0.3s ease;
+      margin-left: 8px;
+      font-size: 1.2rem;
     }
     .hidden-cities-grid {
       display: grid;
@@ -722,7 +726,7 @@
                 </div>
                 <button id="show-more-btn" class="show-more-btn" style="display: none;">
                   Остальные города (<span id="hidden-count">0</span>)
-                  <span class="arrow-down"></span>
+                  <i class="ri-arrow-down-s-line"></i>
                 </button>
               </div>
               <div id="hidden-cities" class="hidden-cities-grid">
@@ -730,7 +734,7 @@
               </div>
             </div>
             
-            <div>
+            <div class="mt-0">
               <picture>
                 <source srcset="/images/delivery-map.webp" type="image/webp">
                 <img src="/images/delivery-map.jpg" 
@@ -1155,7 +1159,7 @@
             tag.style.animation = 'none';
             // Перезапустить анимацию с задержкой
             setTimeout(() => {
-              tag.style.animation = `fadeIn 0.4s ease forwards ${index * 50}ms`;
+              tag.style.animation = `fadeIn 0.4s ease forwards ${index * 80}ms`;
             }, 10);
           });
         }

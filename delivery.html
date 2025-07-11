@@ -475,16 +475,16 @@
       padding: 0 15px;
     }
 
-    /* Обновлённые стили для кнопки "Остальные города" */
+    /* ОБНОВЛЕННЫЕ СТИЛИ ДЛЯ КНОПКИ "ОСТАЛЬНЫЕ ГОРОДА" */
     .show-more-btn {
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 8px 16px;
-      background: white;
-      color: #6B8E23;
-      border: 1px solid #6B8E23;
-      border-radius: 20px;
+      padding: 10px 22px; /* Увеличенный размер на 15% */
+      background: #f8f9fa; /* Серый фон */
+      color: #333; /* Черный текст */
+      border: 1px solid #dee2e6;
+      border-radius: 28px; /* Увеличено на 15% */
       cursor: pointer;
       font-weight: 600;
       transition: all 0.3s;
@@ -495,9 +495,10 @@
       position: relative;
       z-index: 1;
       max-width: max-content;
+      font-size: 1.05rem; /* Увеличенный шрифт */
     }
     .show-more-btn:hover {
-      background: rgba(107, 142, 35, 0.05);
+      background: #e9ecef;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
     .show-more-btn.expanded .ri-arrow-down-s-line {
@@ -513,13 +514,18 @@
       grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
       gap: 10px;
       margin-top: 10px;
-      opacity: 0;
-      transform: translateY(10px);
-      transition: opacity 0.4s ease, transform 0.4s ease;
+      padding: 15px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease, margin 0.4s ease;
     }
     .hidden-cities-grid.visible {
-      opacity: 1;
-      transform: translateY(0);
+      max-height: 500px;
+      padding: 15px;
+      margin-top: 10px;
     }
     .regions-row-container {
       position: relative;
@@ -542,6 +548,15 @@
     .hidden-cities-grid .region-tag {
       opacity: 0;
       animation: fadeIn 0.4s ease forwards;
+    }
+
+    /* Стили для видимой строки городов */
+    .visible-cities-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 10px;
     }
   </style>
 
@@ -806,18 +821,16 @@
           </div>
         </div>
 
-        <!-- Вынесенный блок регионов доставки -->
+        <!-- Измененный блок регионов доставки -->
         <div class="regions-container">
           <h4 class="regions-header">Регионы доставки:</h4>
-          <div class="regions-row-container">
-            <div class="regions-row" id="visible-cities">
-              <!-- Видимые города будут вставлены сюда -->
-            </div>
-            <button id="show-more-btn" class="show-more-btn" style="display: none;">
-              Остальные города (<span id="hidden-count">0</span>)
-              <i class="ri-arrow-down-s-line"></i>
-            </button>
+          <div class="visible-cities-row" id="visible-cities">
+            <!-- Видимые города будут вставлены сюда -->
           </div>
+          <button id="show-more-btn" class="show-more-btn" style="display: none;">
+            Остальные города (<span id="hidden-count">0</span>)
+            <i class="ri-arrow-down-s-line"></i>
+          </button>
           <div id="hidden-cities" class="hidden-cities-grid">
             <!-- Скрытые города будут вставлены сюда -->
           </div>

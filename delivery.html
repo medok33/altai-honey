@@ -482,17 +482,19 @@
       display: flex;
       align-items: center;
       padding: 8px 16px;
-      background-color: #6B8E23;
-      color: white;
-      border: none;
-      border-radius: 8px;
+      background-color: transparent;
+      color: #6B8E23;
+      border: 2px solid #6B8E23;
+      border-radius: 24px;
       cursor: pointer;
       font-weight: 500;
       transition: all 0.3s;
       font-family: 'Open Sans', sans-serif;
+      margin-top: 8px;
+      outline: none;
     }
     .show-more-btn:hover {
-      background-color: #5a7a1c;
+      background-color: rgba(107, 142, 35, 0.1);
     }
     .show-more-btn .arrow-down {
       display: inline-block;
@@ -501,7 +503,7 @@
       height: 0;
       border-left: 5px solid transparent;
       border-right: 5px solid transparent;
-      border-top: 8px solid white;
+      border-top: 8px solid #6B8E23;
       transition: transform 0.3s;
     }
     .show-more-btn.expanded .arrow-down {
@@ -512,15 +514,35 @@
       grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
       gap: 10px;
       margin-top: 10px;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
     }
-    .hidden-cities-grid .region-tag {
-      margin: 0;
-      text-align: center;
-      width: 100%;
+    .hidden-cities-grid.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
     .regions-row-container {
       position: relative;
       min-height: 40px;
+    }
+    
+    /* Анимация появления городов */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .hidden-cities-grid .region-tag {
+      animation: fadeIn 0.4s ease forwards;
+      animation-delay: calc(0.05s * var(--i));
+      opacity: 0;
     }
   </style>
 
@@ -704,7 +726,7 @@
                   <span class="arrow-down"></span>
                 </button>
               </div>
-              <div id="hidden-cities" class="hidden-cities-grid hidden">
+              <div id="hidden-cities" class="hidden-cities-grid">
                 <!-- Скрытые города будут вставлены сюда -->
               </div>
             </div>
@@ -1075,7 +1097,7 @@
         hiddenCitiesContainer.innerHTML = '';
         showMoreBtn.style.display = 'none';
         showMoreBtn.classList.remove('expanded');
-        hiddenCitiesContainer.classList.add('hidden');
+        hiddenCitiesContainer.classList.remove('visible');
         
         // Если нет городов, выходим
         if (cities.length === 0) return;
@@ -1114,8 +1136,9 @@
           hiddenCountSpan.textContent = hiddenCities.length;
           
           // Добавляем скрытые города
-          hiddenCities.forEach(city => {
+          hiddenCities.forEach((city, index) => {
             const el = createCityElement(city);
+            el.style.setProperty('--i', index);
             hiddenCitiesContainer.appendChild(el);
           });
         }
@@ -1124,7 +1147,22 @@
       // Обработчик для кнопки "Остальные города"
       showMoreBtn.addEventListener('click', function() {
         this.classList.toggle('expanded');
-        hiddenCitiesContainer.classList.toggle('hidden');
+        hiddenCitiesContainer.classList.toggle('visible');
+        
+        // Анимируем появление городов
+        if (hiddenCitiesContainer.classList.contains('visible')) {
+          const cityTags = hiddenCitiesContainer.querySelectorAll('.region-tag');
+          cityTags.forEach(tag => {
+            tag.style.opacity = '0';
+          });
+          
+          // Запускаем анимацию с небольшой задержкой
+          setTimeout(() => {
+            cityTags.forEach(tag => {
+              tag.style.opacity = '1';
+            });
+          }, 50);
+        }
       });
       
       // Вызываем при загрузке

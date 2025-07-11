@@ -473,9 +473,10 @@
     /* Стили для блока "Регионы доставки" */
     .regions-row-flex {
       display: flex;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       gap: 8px;
       margin-bottom: 8px;
+      overflow-x: hidden;
     }
     .show-more-btn {
       display: flex;
@@ -1073,69 +1074,51 @@
         visibleCitiesContainer.innerHTML = '';
         hiddenCitiesContainer.innerHTML = '';
         showMoreBtn.style.display = 'none';
+        showMoreBtn.classList.remove('expanded');
+        hiddenCitiesContainer.classList.add('hidden');
+        
+        // Если нет городов, выходим
+        if (cities.length === 0) return;
+        
+        // Получаем ширину контейнера
+        const containerWidth = visibleCitiesContainer.parentElement.offsetWidth;
         
         // Создаем элементы для всех городов
         const allCityElements = cities.map(createCityElement);
         
-        // Клонируем элементы для измерения
-        const cloneContainer = document.createElement('div');
-        cloneContainer.style.position = 'absolute';
-        cloneContainer.style.top = '-9999px';
-        cloneContainer.style.left = '-9999px';
-        cloneContainer.style.visibility = 'hidden';
-        cloneContainer.style.whiteSpace = 'nowrap';
+        // Добавляем города по одному, пока помещается
+        let lastFittingIndex = -1;
         
-        allCityElements.forEach(el => {
-          const clone = el.cloneNode(true);
-          cloneContainer.appendChild(clone);
-        });
-        
-        document.body.appendChild(cloneContainer);
-        
-        // Определяем, сколько городов помещается
-        const containerWidth = visibleCitiesContainer.parentElement.offsetWidth;
-        let visibleCount = 0;
-        let accumulatedWidth = 0;
-        
-        // Всегда показываем первые 4 города (если они есть)
-        const priorityCities = cities.slice(0, 4);
-        const otherCities = cities.slice(4);
-        
-        // Добавляем приоритетные города
-        for (const city of priorityCities) {
-          const element = createCityElement(city);
-          visibleCitiesContainer.appendChild(element);
-          visibleCount++;
-        }
-        
-        // Добавляем остальные города, пока есть место
-        for (const city of otherCities) {
-          const element = createCityElement(city);
-          visibleCitiesContainer.appendChild(element);
+        for (let i = 0; i < allCityElements.length; i++) {
+          visibleCitiesContainer.appendChild(allCityElements[i]);
           
-          // Проверяем, не выходит ли за пределы
+          // Проверяем, не превышает ли общая ширина доступную
           if (visibleCitiesContainer.scrollWidth > containerWidth) {
-            visibleCitiesContainer.removeChild(element);
+            // Удаляем последний добавленный элемент
+            visibleCitiesContainer.removeChild(allCityElements[i]);
+            lastFittingIndex = i - 1;
             break;
           }
-          
-          visibleCount++;
         }
         
-        // Оставшиеся города добавляем в скрытый блок
-        const hiddenCities = cities.slice(visibleCount);
+        // Если все города поместились
+        if (lastFittingIndex === -1) {
+          lastFittingIndex = allCityElements.length - 1;
+        }
+        
+        // Определяем скрытые города
+        const hiddenCities = cities.slice(lastFittingIndex + 1);
+        
         if (hiddenCities.length > 0) {
-          hiddenCountSpan.textContent = hiddenCities.length;
           showMoreBtn.style.display = 'flex';
+          hiddenCountSpan.textContent = hiddenCities.length;
           
+          // Добавляем скрытые города
           hiddenCities.forEach(city => {
-            const element = createCityElement(city);
-            hiddenCitiesContainer.appendChild(element);
+            const el = createCityElement(city);
+            hiddenCitiesContainer.appendChild(el);
           });
         }
-        
-        // Удаляем временный контейнер
-        document.body.removeChild(cloneContainer);
       }
       
       // Обработчик для кнопки "Остальные города"
@@ -1144,7 +1127,7 @@
         hiddenCitiesContainer.classList.toggle('hidden');
       });
       
-      // Обновляем при загрузке и изменении размера окна
+      // Вызываем при загрузке
       updateVisibleCities();
       
       let resizeTimer;
@@ -1152,9 +1135,6 @@
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(function() {
           updateVisibleCities();
-          // Сбрасываем состояние кнопки при ресайзе
-          showMoreBtn.classList.remove('expanded');
-          hiddenCitiesContainer.classList.add('hidden');
         }, 250);
       });
     });

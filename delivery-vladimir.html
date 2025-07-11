@@ -576,6 +576,15 @@
             margin-bottom: 2rem;
         }
         
+        /* Мобильная прокрутка таблицы */
+        @media (max-width: 767px) {
+            .responsive-table {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                overflow-y: hidden;
+            }
+        }
+        
         .tariffs-table {
             width: 100%;
             min-width: 100%; /* Гарантирует, что таблица влезает по ширине */
@@ -621,6 +630,14 @@
             border-radius: 0.5rem;
             text-align: center;
             font-weight: 500;
+        }
+        
+        /* Новый стиль для нулевой цены */
+        .new-price {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.05em;
+            margin-left: 8px;
         }
         
         .map-section {
@@ -1401,6 +1418,11 @@
             text-decoration-thickness: 2px;
             text-decoration-color: red;
         }
+        
+        /* Поднятие текста в футере */
+        .footer-text-content {
+            margin-top: -5%;
+        }
     </style>
 
     <!-- Локальное подключение иконок -->
@@ -1842,19 +1864,19 @@
                         </tr>
                         <tr>
                             <td>3-5 кг</td>
-                            <td><s class="strike-temporary">225 ₽</s></td>
-                            <td><s class="strike-temporary">250 ₽</s></td>
-                            <td><s class="strike-temporary">275 ₽</s></td>
-                            <td><s class="strike-temporary">250 ₽</s></td>
-                            <td><s class="strike-temporary">240 ₽</s></td>
+                            <td><s class="strike-temporary">225 ₽</s> <span class="new-price">0 ₽</span></td>
+                            <td><s class="strike-temporary">250 ₽</s> <span class="new-price">0 ₽</span></td>
+                            <td><s class="strike-temporary">275 ₽</s> <span class="new-price">0 ₽</span></td>
+                            <td><s class="strike-temporary">250 ₽</s> <span class="new-price">0 ₽</span></td>
+                            <td><s class="strike-temporary">240 ₽</s> <span class="new-price">0 ₽</span></td>
                         </tr>
                         <tr>
                             <td>5-10 кг</td>
-                            <td><s class="strike-temporary">325 ₽</s></td>
-                            <td><s class="strike-temporary">350 ₽</s></td>
-                            <td><s class="strike-temporary">375 ₽</s></td>
-                            <td><s class="strike-temporary">250 ₽</s></td>
-                            <td><s class="strike-temporary">340 ₽</s></td>
+                            <td><s class="strike-temporary">325 ₽</s> <span class="new-price">0 ₽</span></td>
+                            <td><s class="strike-temporary">350 ₽</s> <span class="new-price">0 ₽</span></td>
+                            <td><s class="strike-temporary">375 ₽</s> <span class="new-price">0 ₽</span></td>
+                            <td><s class="strike-temporary">250 ₽</s> <span class="new-price">0 ₽</span></td>
+                            <td><s class="strike-temporary">340 ₽</s> <span class="new-price">0 ₽</span></td>
                         </tr>
                         <tr>
                             <td>Более 10 кг</td>
@@ -2164,9 +2186,11 @@
                     <div class="footer-logo-wrapper">
                         <a href="/" class="header-logo text-white">Алтайский мёд</a>
                     </div>
-                    <p class="footer-description">Натуральные продукты пчеловодства с Алтайских гор.</p>
-                    <p class="https-info">Сайт защищён — работает по протоколу HTTPS</p>
-                    <p class="footer-copyright">© 2025 Алтайский мёд. Все права защищены.</p>
+                    <div class="footer-text-content">
+                        <p class="footer-description">Натуральные продукты пчеловодства с Алтайских гор.</p>
+                        <p class="https-info">Сайт защищён — работает по протоколу HTTPS</p>
+                        <p class="footer-copyright">© 2025 Алтайский мёд. Все права защищены.</p>
+                    </div>
                 </div>
                 
                 <!-- Каталог -->

@@ -178,7 +178,7 @@
             position: sticky;
             top: 0;
             z-index: 50;
-            padding: 0.4rem 0; /* Уменьшено на 10% */
+            padding: 0 !important; /* Уменьшено до нуля */
         }
         
         .flex {
@@ -253,11 +253,6 @@
         @media (max-width: 767px) {
             .md\:hidden {
                 display: block;
-            }
-            
-            /* Уменьшаем высоту шапки на мобильных */
-            nav.bg-white {
-                padding: 0.32rem 0; /* Уменьшено на 10% */
             }
         }
         
@@ -554,19 +549,6 @@
         .delivery-meta i {
             color: var(--primary);
             margin-right: 0.75rem;
-        }
-        
-        .advantage-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 0.75rem;
-            color: var(--gray-600);
-        }
-        
-        .advantage-item i {
-            color: var(--primary);
-            margin-right: 0.75rem;
-            margin-top: 0.25rem;
         }
         
         /* ИСПРАВЛЕНИЕ: Убраны оба скроллбара */

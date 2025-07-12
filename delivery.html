@@ -236,14 +236,40 @@
       padding: 0 15px;
     }
 
-    /* Стили для SVG-иконок оплаты */
+    /* Стили для SVG-иконок оплаты - УВЕЛИЧЕННЫЕ РАЗМЕРЫ И АНИМАЦИИ */
     .payment-icon {
-      width: 96px;
-      height: 96px;
+      width: 160px;
+      height: 160px;
       margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: center;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transform: scale(1);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+      padding: 20px;
+      opacity: 0;
+      animation: paymentIconAppear 0.6s forwards;
+      animation-delay: calc(0.1s * var(--i));
+    }
+    
+    @keyframes paymentIconAppear {
+      0% { 
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+      }
+      100% { 
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+    
+    .payment-icon:hover {
+      transform: scale(1.08) translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+      z-index: 10;
     }
     
     .payment-icon svg {
@@ -251,12 +277,34 @@
       height: 100%;
       max-width: 100%;
       max-height: 100%;
+      transition: transform 0.3s ease;
+    }
+    
+    .payment-icon:hover svg {
+      transform: scale(1.1);
+    }
+    
+    .payment-title {
+      margin-top: 18px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #333;
+      transition: color 0.3s;
+    }
+    
+    .payment-method:hover .payment-title {
+      color: #6B8E23;
     }
     
     @media (max-width: 768px) {
       .payment-icon {
-        width: 64px;
-        height: 64px;
+        width: 120px;
+        height: 120px;
+        padding: 15px;
+      }
+      .payment-title {
+        font-size: 1rem;
+        margin-top: 14px;
       }
     }
 
@@ -810,10 +858,10 @@
               <li><strong>Наличными:</strong> при курьерской доставке по Коврову или самовывозе</li>
             </ul>
             
-            <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6" id="payment-methods-grid">
               <!-- Оплата банковской картой -->
-              <div class="text-center">
-                <div class="payment-icon">
+              <div class="text-center payment-method">
+                <div class="payment-icon" style="--i: 0">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" preserveAspectRatio="xMidYMid meet">
                     <g transform="translate(0,200) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
                       <path d="M1655 1816 c-27 -7 -227 -57 -444 -110 -216 -53 -409 -104 -428 -113 -44 -21 -79 -66 -93 -125 -11 -43 -8 -63 55 -320 37 -150 76 -289 86 -310 16 -30 65 -78 82 -78 2 0 6 42 9 93 8 148 61 242 170 303 l53 29 448 3 c365 2 447 5 447 16 0 43 -124 515 -142 542 -49 72 -138 97 -243 70z m183 -367 c13 -56 20 -105 15 -109 -9 -8 -173 -50 -196 -50 -12 0 -58 159 -57 201 0 11 24 21 83 36 137 35 128 39 155 -78z"/>
@@ -821,13 +869,13 @@
                     </g>
                   </svg>
                 </div>
-                <p class="mt-2 font-medium">Оплата банковской картой</p>
+                <p class="payment-title">Оплата банковской картой</p>
                 <div class="sr-only">Безопасная онлайн оплата картой Visa, Mastercard, МИР</div>
               </div>
               
               <!-- Оплата наличными -->
-              <div class="text-center">
-                <div class="payment-icon">
+              <div class="text-center payment-method">
+                <div class="payment-icon" style="--i: 1">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" preserveAspectRatio="xMidYMid meet">
                     <g transform="translate(0,200) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
                       <path d="M1531 1568 c-229 -273 -243 -292 -225 -305 10 -8 52 -32 92 -55 87 -48 115 -85 108 -142 -5 -47 -47 -93 -91 -102 -20 -3 -62 5 -125 25 -52 17 -96 29 -97 27 -2 -2 72 -67 164 -145 l168 -141 22 23 c12 12 161 188 331 391 l309 369 -36 31 c-37 33 -335 282 -361 303 -13 10 -55 -36 -259 -279z m200 -129 c100 -51 125 -191 48 -268 -82 -83 -226 -54 -279 54 -24 50 -26 105 -4 150 41 88 138 114 235 64z"/>
@@ -839,20 +887,20 @@
                     </g>
                   </svg>
                 </div>
-                <p class="mt-2 font-medium">Оплата наличными</p>
+                <p class="payment-title">Оплата наличными</p>
                 <div class="sr-only">Оплата наличными курьеру при доставке или самовывозе</div>
               </div>
               
               <!-- Оплата наложенным платежом -->
-              <div class="text-center">
-                <div class="payment-icon">
+              <div class="text-center payment-method">
+                <div class="payment-icon" style="--i: 2">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" preserveAspectRatio="xMidYMid meet">
                     <g transform="translate(0,200) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
                       <path d="M1433 1913 c-95 -112 -260 -318 -272 -340 -8 -17 -9 -28 -1 -43 9 -17 21 -20 86 -20 l75 0 -3 -52 -3 -51 -295 -79 c-219 -59 -299 -85 -312 -100 -17 -18 -18 -53 -18 -408 0 -355 1 -390 18 -409 9 -11 192 -104 405 -206 l388 -186 122 57 c286 134 672 325 679 337 4 7 8 191 8 409 0 347 -2 399 -16 412 -8 9 -17 16 -19 16 -5 0 -469 125 -543 146 l-53 15 3 47 3 47 70 3 c74 3 95 13 95 44 0 10 -73 109 -161 218 -124 154 -167 200 -184 200 -16 0 -39 -19 -72 -57z m177 -193 l93 -115 -44 -5 c-24 -3 -50 -9 -56 -13 -10 -6 -13 -49 -13 -158 l0 -149 -85 0 -85 0 0 138 c0 164 -6 179 -75 184 l-44 3 101 123 c55 68 104 120 108 115 4 -4 49 -60 100 -123z m-290 -454 c0 -149 -9 -182 -55 -203 -41 -19 -937 -17 -974 2 -43 23 -51 54 -51 201 l0 135 540 0 540 0 0 -135z"/>
                     </g>
                   </svg>
                 </div>
-                <p class="mt-2 font-medium">Оплата наложенным платежом</p>
+                <p class="payment-title">Оплата наложенным платежом</p>
                 <div class="sr-only">Оплата при получении на почте или в пункте выдачи</div>
               </div>
             </div>

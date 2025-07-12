@@ -599,6 +599,12 @@
       font-weight: 700;
       margin-bottom: 0.75rem;
     }
+
+    /* Уменьшение высоты шапки */
+    .nav-container {
+      padding-top: 0.64rem !important; /* Уменьшено на 15% */
+      padding-bottom: 0.64rem !important; /* Уменьшено на 15% */
+    }
   </style>
 
   <script src="https://cdn.tailwindcss.com/3.4.16"></script>
@@ -698,7 +704,7 @@
   </script>
 
   <nav class="bg-white shadow-sm sticky top-0 z-50">
-    <div class="container mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
+    <div class="container mx-auto px-4 md:px-6 py-3 flex items-center justify-between nav-container">
       <a href="/" class="text-2xl md:text-3xl header-logo">Алтайский мёд</a>
       
       <div class="hidden md:flex items-center space-x-6 md:space-x-8">
@@ -887,13 +893,13 @@
       <div class="footer-grid">
         <!-- Лого и описание -->
         <div class="footer-column">
-          <div class="footer-logo-wrapper">
-            <a href="/" class="header-logo text-white">Алтайский мёд</a>
+          <div class="logo-wrapper">
+            <a href="/" class="text-2xl md:text-3xl font-['Pacifico'] mb-3 md:mb-4 block">Алтайский мёд</a>
           </div>
-          <div class="footer-text-content">
-            <p class="footer-description">Натуральные продукты пчеловодства с Алтайских гор.</p>
-            <p class="https-info">Сайт защищён — работает по протоколу HTTPS</p>
-            <p class="footer-copyright">© 2025 Алтайский мёд. Все права защищены.</p>
+          <div class="description-wrapper">
+            <p class="text-xs">Натуральные продукты пчеловодства с Алтайских гор.</p>
+            <p class="text-xs">Сайт защищён — работает по протоколу HTTPS</p>
+            <p class="text-xs">© 2025 Алтайский мёд. Все права защищены.</p>
           </div>
         </div>
         

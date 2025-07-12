@@ -329,7 +329,7 @@
     color: white;
   }
   
-  .avito-icon-bw, .yandex-maps-icon, .yandex-dzen-icon, .social-icon-wrapper {
+  .avito-icon-bw, .yandex-maps-icon, .yandex-dzen-icon {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -338,14 +338,14 @@
     position: relative;
   }
   
-  .avito-icon-bw svg, .yandex-maps-icon svg, .yandex-dzen-icon svg, .social-icon-wrapper svg {
+  .avito-icon-bw svg, .yandex-maps-icon svg, .yandex-dzen-icon svg {
     width: 100%;
     height: 100%;
   }
   
   .footer-logo-wrapper {
     margin-bottom: 1.4rem;
-    margin-top: -8px; /* Логотип выше на 8px (было -3px) */
+    margin-top: -8px;
   }
   
   .https-info {
@@ -369,7 +369,7 @@
   .footer-social-icons {
     display: flex;
     gap: 15px;
-    margin-top: 0.7rem; /* Иконки опущены на 0.7rem (было -1rem) */
+    margin-top: 0.7rem;
   }
   
   .footer-social-title {
@@ -380,16 +380,29 @@
     width: 100%;
   }
   
-  /* Новые стили для текстового контента */
   .footer-text-content {
-    margin-top: -15px; /* Текст поднят выше на 15px (было -1px) */
+    margin-top: -15px;
   }
   
-  /* Стили для логотипа в футере */
   .footer-logo {
     font-family: 'Pacifico', cursive;
     font-size: 1.5rem;
     color: white;
+  }
+  
+  /* Новые стили для иконок соцсетей */
+  .social-icon-bw > i {
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+  }
+  
+  .social-icon-bw svg {
+    width: 25px;
+    height: 25px;
   }
   
   @media (min-width: 768px) {
@@ -421,11 +434,6 @@
   }
 
   /* Стили для кастомных SVG иконок */
-  .social-icon-bw svg {
-    width: 25px;
-    height: 25px;
-  }
-
   .social-icon-bw svg path {
     fill: currentColor;
     stroke: currentColor;
@@ -434,16 +442,6 @@
   /* Стиль для иконки Авито - белый контур */
   .avito-icon-bw svg {
     filter: brightness(0) invert(1);
-  }
-  
-  /* Стили для иконок Remix в социальных сетях */
-  .social-icon-bw .remix-icon {
-    font-size: 25px;
-    width: 25px;
-    height: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 </style>
 </head>
@@ -810,24 +808,16 @@
         <!-- Социальные сети -->
         <div class="footer-social-icons">
           <a href="https://vk.com/honeybuckwheat" target="_blank" rel="noopener noreferrer" class="social-icon-bw" aria-label="Наша страница ВКонтакте">
-            <div class="social-icon-wrapper">
-              <svg width="25" height="25" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M15.073 2H8.938C3.332 2 2 3.333 2 8.927v6.136C2 20.667 3.323 22 8.927 22h6.136C20.667 22 22 20.677 22 15.073V8.938C22 3.332 20.677 2 15.073 2zm3.073 14.27h-1.459c-.552 0-.718-.447-1.708-1.437-.864-.833-1.229-.937-1.448-.937-.302 0-.385.083-.385.5v1.312c0 .354-.115.563-1.042.563-1.52 0-3.062-.531-4.208-1.438-2.875-2.333-2.656-5.531-1.896-6.77.51-.833 1.333-.76 1.333-.76l3.771.01c.125.177.177.385.177.656 0 .25.01.552.01.927 0 .26-.063.49-.323.49-.438 0-1.26-.177-1.948-.177-1.438 0-2.281.906-2.281 2.604 0 1.666 1.146 2.562 2.291 2.562.927 0 1.354-.198 2.073-.615.302-.188.656-.146.854.104.562.708 1.468 1.562 1.468 1.562.427.427.729.615 1.229.615h.354v-2.896c0-.51.313-.552.417-.552.125 0 .396.031.917.26.76.333 1.354 1.104 1.354 1.104.24.375.427.552.844.552z"/>
-              </svg>
-            </div>
+            <i class="ri-vk-line"></i>
           </a>
           <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" rel="noopener noreferrer" class="social-icon-bw" aria-label="Наш Telegram канал">
-            <div class="social-icon-wrapper">
-              <svg width="25" height="25" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm4.078 6.947c.043.003.093.019.13.055.037.036.05.087.04.136l-1.176 5.531c-.013.06-.05.105-.105.13-.027.012-.057.018-.087.018-.031 0-.06-.006-.087-.018l-2.426-1.5-1.211 1.208c-.06.06-.138.09-.216.09-.078 0-.156-.03-.216-.09l-.426-.426c-.06-.06-.09-.138-.09-.216 0-.078.03-.156.09-.216l1.211-1.208-2.426-1.5c-.06-.037-.097-.097-.097-.165 0-.068.037-.128.097-.165.06-.037.128-.037.188 0l5.531 3.424 1.176-5.531c.01-.05.06-.09.115-.09z"/>
-              </svg>
-            </div>
+            <i class="ri-telegram-line"></i>
           </a>
           <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing" 
              target="_blank" rel="noopener noreferrer" class="social-icon-bw" aria-label="Наше объявление на Авито">
             <div class="avito-icon-bw">
-              <svg width="25" height="25" viewBox="0 0 160 149">
-                <g style="stroke-width:13;stroke-dasharray:none" transform="translate(-15.999621,-21.494796)">
+              <svg width="25" height="25" viewBox="0 0 160 149" preserveAspectRatio="xMidYMid meet">
+                <g style="stroke-width:13;stroke-dasharray:none" transform="translate(-16,-21.5)">
                   <path fill="#04e061" d="m 61.924,172.07 c 26.468,0 47.924,-47.924 47.924,-47.924 0,-26.468 -21.456,-47.924 -47.924,-47.924 C 35.456,76.222 14,97.678 14,124.146 c 0,26.468 21.456,47.925 47.924,47.925 z" style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:13;stroke-dasharray:none;stroke-opacity:1" transform="matrix(0.92683,0,0,0.92683,7.024,7.024)"/>
                   <path fill="#ff4053" d="m 149.044,166.007 c 15.992,0 28.956,-12.963 28.956,-28.955 0,-15.992 -12.964,-28.955 -28.956,-28.955 -15.99,0 -28.954,12.963 -28.954,28.955 0,15.992 12.963,28.955 28.954,28.955 z" style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:13;stroke-dasharray:none;stroke-opacity:1" transform="matrix(0.92683,0,0,0.92683,7.024,7.024)"/>
                   <path fill="#965eeb" d="m 71.086,65.979 c 9.898,0 17.922,-8.024 17.922,-17.921 0,-9.898 -8.024,-17.922 -17.922,-17.922 -9.898,0 -17.921,8.024 -17.921,17.922 0,9.897 8.023,17.921 17.921,17.921 z" style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:13;stroke-dasharray:none;stroke-opacity:1" transform="matrix(0.92683,0,0,0.92683,7.024,7.024)"/>
@@ -837,23 +827,17 @@
             </div>
           </a>
           <a href="https://dzen.ru/altaymed" target="_blank" rel="noopener noreferrer" class="social-icon-bw" aria-label="Наш канал на Яндекс Дзен">
-            <div class="yandex-dzen-icon">
-              <svg width="25" height="25" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">
-                <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)" fill="currentColor" stroke="none">
-                  <path d="M2310 5113 c-833 -85 -1562 -559 -1979 -1286 -189 -328 -309 -731 -328 -1094 l-6 -123 34 0 c121 1 626 22 734 30 509 42 835 129 1075 288 395 261 571 645 635 1379 12 134 35 651 35 786 l0 27 -82 -2 c-46 0 -99 -3 -118 -5z"/>
-                  <path d="M2660 5069 c0 -117 21 -601 30 -719 52 -637 183 -1005 451 -1271 298 -295 743 -425 1549 -454 85 -3 218 -8 294 -11 l139 -6 -6 124 c-36 681 -384 1362 -922 1803 -417 341 -921 546 -1432 581 l-103 7 0 -54z"/>
-                  <path d="M4 2361 c57 -835 546 -1604 1289 -2030 329 -189 731 -309 1095 -328 l124 -6 -6 139 c-3 76 -8 211 -11 299 -21 579 -94 959 -241 1245 -68 132 -128 212 -243 323 -183 176 -395 282 -701 351 -267 59 -548 85 -1094 102 l-219 6 7 -101z"/>
-                  <path d="M4756 2449 c-875 -32 -1305 -153 -1610 -456 -180 -178 -289 -376 -361 -658 -72 -281 -101 -558 -120 -1149 l-7 -189 102 7 c833 57 1603 546 2029 1289 183 318 302 707 327 1065 l7 102 -79 -2 c-43 0 -173 -5 -288 -9z"/>
-                </g>
-              </svg>
-            </div>
+            <svg width="25" height="25" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">
+              <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
+                <path d="M2310 5113 c-833 -85 -1562 -559 -1979 -1286 -189 -328 -309 -731 -328 -1094 l-6 -123 34 0 c121 1 626 22 734 30 509 42 835 129 1075 288 395 261 571 645 635 1379 12 134 35 651 35 786 l0 27 -82 -2 c-46 0 -99 -3 -118 -5z"/>
+                <path d="M2660 5069 c0 -117 21 -601 30 -719 52 -637 183 -1005 451 -1271 298 -295 743 -425 1549 -454 85 -3 218 -8 294 -11 l139 -6 -6 124 c-36 681 -384 1362 -922 1803 -417 341 -921 546 -1432 581 l-103 7 0 -54z"/>
+                <path d="M4 2361 c57 -835 546 -1604 1289 -2030 329 -189 731 -309 1095 -328 l124 -6 -6 139 c-3 76 -8 211 -11 299 -21 579 -94 959 -241 1245 -68 132 -128 212 -243 323 -183 176 -395 282 -701 351 -267 59 -548 85 -1094 102 l-219 6 7 -101z"/>
+                <path d="M4756 2449 c-875 -32 -1305 -153 -1610 -456 -180 -178 -289 -376 -361 -658 -72 -281 -101 -558 -120 -1149 l-7 -189 102 7 c833 57 1603 546 2029 1289 183 318 302 707 327 1065 l7 102 -79 -2 c-43 0 -173 -5 -288 -9z"/>
+              </g>
+            </svg>
           </a>
           <a href="https://yandex.ru/maps/" target="_blank" rel="noopener noreferrer" class="social-icon-bw" aria-label="Мы на Яндекс Картах">
-            <div class="social-icon-wrapper">
-              <svg width="25" height="25" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/>
-              </svg>
-            </div>
+            <i class="ri-map-pin-line"></i>
           </a>
         </div>
       </div>

@@ -618,7 +618,7 @@
 </section>
 </main>
 
-<!-- Футер (обновлённый для Коврова) -->
+<!-- Футер (обновлённый) -->
 <footer class="py-10 md:py-12 w-full bg-[#8B4513]">
   <div id="footer-contacts" class="container-wide">
     <div class="footer-grid">
@@ -1293,42 +1293,42 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
       }
       
-      // Проверка CSRF токена
-      const storedToken = localStorage.getItem('csrf_token');
-      const formToken = document.getElementById('quick-csrf_token').value;
-      if (storedToken !== formToken) {
-        console.error('CSRF token mismatch');
-        toggleModal('error-modal', true);
-        return;
-      }
-      
-      const product = document.getElementById('quick-product').value;
-      const quantity = document.getElementById('quantity').value;
-      const address = sanitize(document.getElementById('delivery-address').value);
-      const phone = sanitize(document.getElementById('quick-phone').value);
-      
-      // Валидация полей
-      let hasError = false;
-      
-      if (!quantity || quantity < 1) {
-        showError('quantity-error', 'Пожалуйста, введите корректное количество');
-        hasError = true;
-      }
-      
-      if (!isValidPhone(phone)) {
-        showError('quick-phone-error', 'Пожалуйста, введите корректный номер телефона');
-        hasError = true;
-      }
-      
-      if (!address || address.length < 10) {
-        showError('address-error', 'Пожалуйста, укажите полный адрес доставки');
-        hasError = true;
-      }
-      
-      if (hasError) return;
-      
-      // Форматируем сообщение для Telegram
-      const telegramMessage = `
+  // Проверка CSRF токена
+  const storedToken = localStorage.getItem('csrf_token');
+  const formToken = document.getElementById('quick-csrf_token').value;
+  if (storedToken !== formToken) {
+    console.error('CSRF token mismatch');
+    toggleModal('error-modal', true);
+    return;
+  }
+  
+  const product = document.getElementById('quick-product').value;
+  const quantity = document.getElementById('quantity').value;
+  const address = sanitize(document.getElementById('delivery-address').value);
+  const phone = sanitize(document.getElementById('quick-phone').value);
+  
+  // Валидация полей
+  let hasError = false;
+  
+  if (!quantity || quantity < 1) {
+    showError('quantity-error', 'Пожалуйста, введите корректное количество');
+    hasError = true;
+  }
+  
+  if (!isValidPhone(phone)) {
+    showError('quick-phone-error', 'Пожалуйста, введите корректный номер телефона');
+    hasError = true;
+  }
+  
+  if (!address || address.length < 10) {
+    showError('address-error', 'Пожалуйста, укажите полный адрес доставки');
+    hasError = true;
+  }
+  
+  if (hasError) return;
+  
+  // Форматируем сообщение для Telegram
+  const telegramMessage = `
 <b>🛒 БЫСТРЫЙ ЗАКАЗ ТОВАРА</b>
 <b>Товар:</b> ${product}
 <b>Количество:</b> ${quantity} литров
@@ -1336,27 +1336,27 @@ document.addEventListener('DOMContentLoaded', function() {
 <b>Адрес доставки:</b> ${address}
 <b>Телефон:</b> ${phone}
       `;
+  
+  try {
+    const success = await sendToTelegram(telegramMessage);
+    
+    if (success) {
+      // Закрываем модальное окно заказа
+      toggleModal('buy-modal', false);
       
-      try {
-        const success = await sendToTelegram(telegramMessage);
-        
-        if (success) {
-          // Закрываем модальное окно заказа
-          toggleModal('buy-modal', false);
-          
-          // Показываем модальное окно успеха
-          toggleModal('success-modal', true);
-          
-          // Сбрасываем форму
-          quickOrderForm.reset();
-        } else {
-          toggleModal('error-modal', true);
-        }
-      } catch (error) {
-        console.error('Ошибка:', error);
-        toggleModal('error-modal', true);
-      }
-    });
+      // Показываем модальное окно успеха
+      toggleModal('success-modal', true);
+      
+      // Сбрасываем форму
+      quickOrderForm.reset();
+    } else {
+      toggleModal('error-modal', true);
+    }
+  } catch (error) {
+    console.error('Ошибка:', error);
+    toggleModal('error-modal', true);
+  }
+});
   }
   
   // Закрытие модального окна успеха

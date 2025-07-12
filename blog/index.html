@@ -219,7 +219,7 @@
   }
   
   .footer-column:first-child {
-    margin-top: -5%;
+    margin-top: 0;
   }
   
   .footer-column h4 {
@@ -377,15 +377,30 @@
     margin-bottom: 0.75rem;
   }
   
+  /* Новые стили для текстового контента */
+  .footer-text-content {
+    margin-top: -5%;
+  }
+  
+  /* Стили для логотипа в футере */
+  .footer-logo {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.5rem;
+    color: white;
+  }
+  
+  @media (min-width: 768px) {
+    .footer-logo {
+      font-size: 1.875rem;
+    }
+  }
+  
   @media (max-width: 767px) {
     .footer-grid {
       grid-template-columns: 1fr;
     }
     .footer-column {
       margin-bottom: 1.5rem;
-    }
-    .footer-column:first-child {
-      margin-top: 0;
     }
     .footer-column:last-child {
       margin-bottom: 0;
@@ -546,7 +561,7 @@
           >
         </div>
         <div class="p-6">
-          <h2 class="text-xl md:text-2xl font-bold mb-2" itemprop="headline">Лечебные свойства алтайского мёда</h2>
+          <h2 class="text-xl md:text-2xl font-bold mb-2" itemprop="headline">Лечебные свойства алтайского мёд</h2>
           <p class="text-gray-600 mb-4" itemprop="description">Как алтайский мёд помогает при различных заболеваниях. Исследования и народные рецепты для укрепления здоровья.</p>
           <a href="/blog/lechebnye-svoistva-altayskogo-meda.html" class="text-primary font-medium hover:underline" itemprop="url">Читать статью</a>
           <meta itemprop="datePublished" content="2025-07-15">
@@ -639,7 +654,7 @@
       <!-- Лого и описание -->
       <div class="footer-column">
         <div class="footer-logo-wrapper">
-          <a href="/" class="header-logo text-white">Алтайский мёд</a>
+          <a href="/" class="font-pacifico text-2xl md:text-3xl text-white">Алтайский мёд</a>
         </div>
         <div class="footer-text-content">
           <p class="footer-description">Натуральные продукты пчеловодства с Алтайских гор.</p>

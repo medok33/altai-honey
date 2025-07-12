@@ -259,14 +259,14 @@
       }
     }
 
-    /* НОВЫЕ СТИЛИ ФУТЕРА ИЗ delivery-moscow.html */
+    /* ФУТЕР С КОМПАКТНЫМИ РАЗМЕРАМИ */
     footer {
       width: 100%;
       position: relative;
       overflow: hidden;
       background-color: #8B4513;
       z-index: 1;
-      padding: 3rem 0;
+      padding: 2rem 0; /* Уменьшено с 3rem */
     }
     
     footer::before {
@@ -300,12 +300,12 @@
       width: 100%;
       display: grid;
       grid-template-columns: 1fr;
-      gap: 2rem;
+      gap: 1.5rem; /* Уменьшено с 2rem */
     }
     @media (min-width: 768px) {
       .footer-grid {
         grid-template-columns: repeat(5, 1fr);
-        gap: 2rem; /* Увеличено до gap-8 (32px) */
+        gap: 1.5rem; /* Уменьшено с 2rem */
       }
     }
     .footer-column {
@@ -317,15 +317,15 @@
       margin: 0;
     }
     .footer-column:first-child {
-      margin-top: -5%; /* Подняли на 5% вверх */
+      margin-top: -2%; /* Скорректировано с -5% */
     }
     .footer-column h4 {
       text-align: left;
       width: 100%;
       padding: 0;
-      margin: 0 0 1rem 0;
+      margin: 0 0 0.75rem 0; /* Уменьшено снизу */
       font-weight: 700;
-      font-size: 1rem; /* Адаптивный размер */
+      font-size: 1rem;
       line-height: 1.4;
       color: white;
     }
@@ -351,7 +351,7 @@
       align-items: center;
       width: 100%;
       text-decoration: none;
-      font-size: 0.875rem; /* Адаптивный размер */
+      font-size: 0.875rem;
       color: white;
       transition: color 0.3s;
     }
@@ -395,7 +395,7 @@
     .contact-text {
       flex-grow: 1;
       line-height: 1.5;
-      font-size: 0.875rem; /* Адаптивный размер */
+      font-size: 0.875rem;
     }
     .social-icon-bw {
       display: flex;
@@ -426,8 +426,6 @@
       width: 100%;
       height: 100%;
     }
-    
-    /* Удален блок с копирайтом и линией */
     
     .text-center {
       text-align: center;
@@ -480,7 +478,7 @@
       padding: 1rem;
       transform: translateX(-100%);
       transition: transform 0.3s ease;
-      display: none; /* По умолчанию скрыто */
+      display: none;
     }
     
     .mobile-menu.active {
@@ -537,15 +535,14 @@
     
     @media (min-width: 768px) {
       .footer-column h4 {
-        font-size: 1.125rem; /* 18px на десктопе */
+        font-size: 1.125rem;
       }
       .footer-column li a, 
       .contact-text {
-        font-size: 1rem; /* 16px на десктопе */
+        font-size: 1rem;
       }
     }
     
-    /* Новые стили для иконок соцсетей */
     .social-icon-bw svg {
       width: 24px;
       height: 24px;
@@ -556,29 +553,27 @@
       stroke: currentColor;
     }
 
-    /* Стиль для иконки Авито - белый контур */
     .avito-icon-bw svg {
       filter: brightness(0) invert(1);
     }
 
-    /* Поднятие текста в футере */
     .footer-text-content {
       margin-top: -5%;
     }
 
     .footer-logo-wrapper {
-      margin-bottom: 1.4rem; /* Уменьшен на 5% */
+      margin-bottom: 1.4rem;
     }
 
     .footer-description {
-      font-size: 0.76rem; /* Уменьшен на 20% */
+      font-size: 0.76rem;
       margin-top: 0.5rem;
-      color: white; /* Белый цвет */
+      color: white;
     }
     
     .footer-copyright {
-      font-size: 0.7rem; /* Уменьшен на 20% */
-      color: white; /* Белый цвет */
+      font-size: 0.7rem;
+      color: white;
       margin-top: 0.5rem;
     }
 
@@ -590,8 +585,8 @@
 
     .footer-social-icons {
       display: flex;
-      gap: 15px; /* Увеличено на 5% */
-      margin-top: 1.5rem; /* Смещено на 10% ниже */
+      gap: 15px;
+      margin-top: 1rem; /* Уменьшено с 1.5rem */
     }
     
     .footer-social-title {
@@ -600,10 +595,21 @@
       margin-bottom: 0.75rem;
     }
 
-    /* Уменьшение высоты шапки */
+    /* ШАПКА С УМЕНЬШЕННОЙ ВЫСОТОЙ */
     .nav-container {
-      padding-top: 0.64rem !important; /* Уменьшено на 15% */
-      padding-bottom: 0.64rem !important; /* Уменьшено на 15% */
+      padding-top: 0.5rem !important; /* Уменьшено с 0.64rem */
+      padding-bottom: 0.5rem !important; /* Уменьшено с 0.64rem */
+    }
+    
+    /* Уменьшение логотипа */
+    .header-logo {
+      font-size: 1.75rem; /* Уменьшено для мобилок */
+    }
+    
+    @media (min-width: 768px) {
+      .header-logo {
+        font-size: 2rem; /* Уменьшено для десктопа */
+      }
     }
   </style>
 
@@ -704,8 +710,8 @@
   </script>
 
   <nav class="bg-white shadow-sm sticky top-0 z-50">
-    <div class="container mx-auto px-4 md:px-6 py-3 flex items-center justify-between nav-container">
-      <a href="/" class="text-2xl md:text-3xl header-logo">Алтайский мёд</a>
+    <div class="container mx-auto px-4 md:px-6 py-2 flex items-center justify-between nav-container">
+      <a href="/" class="header-logo">Алтайский мёд</a>
       
       <div class="hidden md:flex items-center space-x-6 md:space-x-8">
         <a href="/#benefits" class="nav-link">Преимущества</a>
@@ -714,7 +720,7 @@
         <a href="/#footer-contacts" class="nav-link">Контакты</a>
         <a href="/blog/" class="nav-link">Блог</a>
         <a href="/delivery.html" class="active-nav-link-alt">Доставка</a>
-        <a href="/#order" class="nav-btn px-4 md:px-6 py-1 md:py-2 !rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">Заказать</a>
+        <a href="/#order" class="nav-btn px-4 md:px-6 py-1 !rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">Заказать</a>
       </div>
       
       <button class="md:hidden w-10 h-10 flex items-center justify-center" 
@@ -848,7 +854,7 @@
                 <div class="payment-icon">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" preserveAspectRatio="xMidYMid meet">
                     <g transform="translate(0,200) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
-                      <path d="M1433 1913 c-95 -112 -260 -318 -272 -340 -8 -17 -9 -28 -1 -43 9 -17 21 -20 86 -20 l75 0 -3 -52 -3 -51 -295 -79 c-219 -59 -299 -85 -312 -100 -17 -18 -18 -53 -18 -408 0 -355 1 -390 18 -409 9 -11 192 -104 405 -206 l388 -186 122 57 c286 134 672 325 679 337 4 7 8 191 8 409 0 347 -2 399 -16 412 -8 9 -17 16 -19 16 -5 0 -469 125 -543 146 l-53 15 3 47 3 47 70 3 c74 3 95 13 95 44 0 10 -73 109 -161 218 -124 154 -167 200 -184 200 -16 0 -39 -19 -72 -57z m177 -193 l93 -115 -44 -5 c-24 -3 -50 -9 -56 -13 -10 -6 -13 -49 -13 -158 l0 -149 -85 0 -85 0 0 138 c0 164 -6 179 -75 184 l-44 3 101 123 c55 68 104 120 108 115 4 -4 49 -60 100 -123z m-290 -454 c0 -73 8 -76 184 -76 105 0 156 4 164 12 7 7 12 34 12 60 0 26 3 48 8 48 13 0 403 -108 408 -113 3 -2 -130 -55 -294 -116 l-299 -111 -301 112 c-166 62 -300 113 -298 115 3 3 397 112 409 112 4 1 7 -19 7 -43z m-187 -258 l327 -121 0 -369 c0 -314 -2 -369 -14 -366 -8 2 -159 72 -335 157 l-321 154 0 334 c0 183 3 333 8 333 4 0 154 -55 335 -122z m1087 -208 l0 -330 -117 -59 c-160 -80 -540 -261 -547 -261 -3 0 -6 166 -6 369 l0 370 58 21 c31 12 174 66 317 120 143 54 268 98 278 99 16 1 17 -21 17 -329z"/>
+                      <path d="M1433 1913 c-95 -112 -260 -318 -272 -340 -8 -17 -9 -28 -1 -43 9 -17 21 -20 86 -20 l75 0 -3 -52 -3 -51 -295 -79 c-219 -59 -299 -85 -312 -100 -17 -18 -18 -53 -18 -408 0 -355 1 -390 18 -409 9 -11 192 -104 405 -206 l388 -186 122 57 c286 134 672 325 679 337 4 7 8 191 8 409 0 347 -2 399 -16 412 -8 9 -17 16 -19 16 -5 0 -469 125 -543 146 l-53 15 3 47 3 47 70 3 c74 3 95 13 95 44 0 10 -73 109 -161 218 -124 154 -167 200 -184 200 -16 0 -39 -19 -72 -57z m177 -193 l93 -115 -44 -5 c-24 -3 -50 -9 -56 -13 -10 -6 -13 -49 -13 -158 l0 -149 -85 0 -85 0 0 138 c0 164 -6 179 -75 184 l-44 3 101 123 c55 68 104 120 108 115 4 -4 49 -60 100 -123z m-290 -454 c0 -149 -9 -182 -55 -203 -41 -19 -937 -17 -974 2 -43 23 -51 54 -51 201 l0 135 540 0 540 0 0 -135z"/>
                     </g>
                   </svg>
                 </div>
@@ -887,7 +893,7 @@
     </section>
   </main>
 
-  <!-- ОБНОВЛЕННЫЙ ФУТЕР ИЗ delivery-moscow.html С ГОРОДОМ КОВРОВ -->
+  <!-- ФУТЕР С УМЕНЬШЕННЫМИ ОТСТУПАМИ -->
   <footer>
     <div id="footer-contacts" class="container-wide">
       <div class="footer-grid">

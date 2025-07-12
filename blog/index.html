@@ -43,22 +43,6 @@
   .nav-link:hover{color:var(--primary);}
   .nav-btn{background:var(--primary);color:white;border-radius:8px!important;padding:0.5rem 1.5rem!important;display:inline-flex;align-items:center;justify-content:center;text-align:center;font-weight:600;}
   .header-logo{color:var(--primary);}
-  footer{width:100%;position:relative;overflow:hidden;background-color:var(--secondary);z-index:1;}
-  footer::before{content:"";position:absolute;top:0;left:0;width:600%;height:600%;background-image:linear-gradient(rgba(255,255,255,0.15)1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.15)1px,transparent 1px);background-size:108px 108px;transform:rotate(30deg);transform-origin:0 0;opacity:0.6;z-index:0;margin-left:-220%;margin-top:-220%;}
-  footer .container{position:relative;z-index:1;}
-  .footer-column{display:flex;flex-direction:column;align-items:flex-start;}
-  .footer-column h4{text-align:left;margin:0 0 0.64rem 0;font-weight:bold;font-size:1.125rem;line-height:1.75rem;}
-  .footer-column ul{display:flex;flex-direction:column;align-items:flex-start;list-style:none;padding:0;margin:0;}
-  .footer-column li{width:100%;text-align:left;list-style-type:none;}
-  .footer-column li a{display:flex;align-items:center;width:100%;}
-  .footer-column .bullet{display:inline-block;width:6px;height:6px;background-color:white;border-radius:50%;margin-right:10px;flex-shrink:0;}
-  footer,footer*,footer a,footer p,footer span,footer h4,footer li{color:white;}
-  footer a:hover{color:#d1d5db;}
-  .social-icon-bw{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:transparent;transition:all 0.3s;border:1px solid #4b5563;color:#4b5563;filter:grayscale(100%);}
-  .social-icon-bw:hover{filter:grayscale(0%);border-color:var(--primary);color:var(--primary);}
-  .footer-link-item{display:flex;align-items:center;padding-top:0.21rem;padding-bottom:0.21rem;}
-  .contact-icon{display:flex;align-items:center;justify-content:center;margin-right:12px;flex-shrink:0;width:24px;}
-  .contact-text{flex-grow:1;line-height:1.5;}
   .blog-post-card{transition:all 0.3s ease;}
   .blog-post-card:hover{transform:translateY(-8px);box-shadow:0 20px 25px -5px rgba(0,0,0,0.1),0 10px 10px -5px rgba(0,0,0,0.04);}
   .active-nav-link-alt{border:2px solid var(--primary);border-radius:8px;padding:4px 12px;color:var(--primary);font-weight:600;transition:all 0.3s ease;}
@@ -172,6 +156,251 @@
   @media (prefers-reduced-motion:reduce){*{animation-duration:0.01ms!important;transition-duration:0.01ms!important;}
   .blog-post-card:hover,.floating-back-button:hover{transform:none!important;box-shadow:none!important;}
   .section-animate{opacity:1!important;transform:none!important;transition:none!important;}}
+
+  /* Обновленные стили футера */
+  footer {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--secondary);
+    z-index: 1;
+    padding: 3rem 0;
+  }
+  
+  footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 600%;
+    height: 600%;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+    background-size: 108px 108px;
+    transform: rotate(30deg);
+    transform-origin: 0 0;
+    opacity: 0.6;
+    z-index: 0;
+    margin-left: -220%;
+    margin-top: -220%;
+  }
+  
+  footer .container-wide {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 1.5rem;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .footer-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  @media (min-width: 768px) {
+    .footer-grid {
+      grid-template-columns: repeat(5, 1fr);
+      gap: 2rem;
+    }
+  }
+  
+  .footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-column:first-child {
+    margin-top: -5%;
+  }
+  
+  .footer-column h4 {
+    text-align: left;
+    width: 100%;
+    padding: 0;
+    margin: 0 0 1rem 0;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.4;
+    color: white;
+  }
+  
+  .footer-column ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    gap: 0.5rem;
+  }
+  
+  .footer-column li {
+    width: 100%;
+    text-align: left;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-column li a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    text-decoration: none;
+    font-size: 0.875rem;
+    color: white;
+    transition: color 0.3s;
+  }
+  
+  .footer-column li a:hover {
+    color: #d1d5db;
+  }
+  
+  .footer-column .bullet {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background-color: white;
+    border-radius: 50%;
+    margin-right: 10px;
+    flex-shrink: 0;
+  }
+  
+  footer, 
+  footer *,
+  footer a, 
+  footer p, 
+  footer span, 
+  footer h4, 
+  footer li {
+    color: white !important;
+    text-decoration: none;
+  }
+  
+  .footer-link-item {
+    display: flex;
+    align-items: center;
+    padding-top: 0.21rem;
+    padding-bottom: 0.21rem;
+  }
+  
+  .contact-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    flex-shrink: 0;
+    width: 24px;
+    font-size: 1.1rem;
+  }
+  
+  .contact-text {
+    flex-grow: 1;
+    line-height: 1.5;
+    font-size: 0.875rem;
+  }
+  
+  .social-icon-bw {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: transparent;
+    transition: all 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .social-icon-bw:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--primary);
+    color: white;
+  }
+  
+  .avito-icon-bw, .yandex-maps-icon, .yandex-dzen-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    position: relative;
+  }
+  
+  .avito-icon-bw svg, .yandex-maps-icon svg, .yandex-dzen-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .footer-logo-wrapper {
+    margin-bottom: 1.4rem;
+  }
+  
+  .https-info {
+    font-size: 0.76rem;
+    color: white;
+    margin-top: 0.5rem;
+  }
+  
+  .footer-description {
+    font-size: 0.76rem;
+    margin-top: 0.5rem;
+    color: white;
+  }
+  
+  .footer-copyright {
+    font-size: 0.7rem;
+    color: white;
+    margin-top: 0.5rem;
+  }
+  
+  .footer-social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 1.5rem;
+  }
+  
+  .footer-social-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+  
+  @media (max-width: 767px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+    .footer-column {
+      margin-bottom: 1.5rem;
+    }
+    .footer-column:first-child {
+      margin-top: 0;
+    }
+    .footer-column:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .footer-column h4 {
+      font-size: 1.125rem;
+    }
+    .footer-column li a, 
+    .contact-text {
+      font-size: 1rem;
+    }
+  }
 </style>
 </head>
 <body>
@@ -403,8 +632,9 @@
   </div>
 </section>
 </main>
-<footer class="py-10 md:py-12 w-full">
-  <div id="footer-contacts" class="container mx-auto px-4 md:px-6 w-full">
+<!-- Обновленный футер -->
+<footer>
+  <div id="footer-contacts" class="container-wide">
     <div class="footer-grid">
       <!-- Лого и описание -->
       <div class="footer-column">
@@ -1069,7 +1299,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // Проверка CSRF токена
       const storedToken = localStorage.getItem('csrf_token');
-      const formToken = document.getElementById('quick-csrf_token').value;
+  const formToken = document.getElementById('quick-csrf_token').value;
       if (storedToken !== formToken) {
         console.error('CSRF token mismatch');
         toggleModal('error-modal', true);

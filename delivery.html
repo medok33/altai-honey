@@ -37,8 +37,14 @@
 
   <link rel="stylesheet" href="/css/style.min.css">
   <link rel="stylesheet" href="/assets/fonts/remixicon/remixicon.css">
-
+  
   <style>
+    /* Сброс паддингов для навигации */
+    nav {
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+    }
+    
     @font-face {
       font-family: 'Pacifico';
       font-style: normal;
@@ -96,15 +102,8 @@
       background: #6B8E23 !important;
       color: white !important;
       border-radius: 8px !important;
-      padding: 0.4rem 1.2rem !important;
-      font-size: 0.9rem;
     }
-    .header-logo {
-      color: #6B8E23 !important;
-      font-family: 'Pacifico', cursive;
-      font-size: 1.6rem;
-    }
-
+    
     .region-tag {
       display: inline-block;
       background-color: #f5f5f5;
@@ -543,9 +542,6 @@
       .contact-text {
         font-size: 0.95rem;
       }
-      .header-logo {
-        font-size: 1.8rem;
-      }
     }
     
     .social-icon-bw svg {
@@ -601,23 +597,6 @@
       font-size: 1.1rem;
       font-weight: 700;
       margin-bottom: 0.65rem;
-    }
-
-    /* ШАПКА С УМЕНЬШЕННОЙ ВЫСОТОЙ */
-    .nav-container {
-      padding-top: 0.5rem !important;
-      padding-bottom: 0.5rem !important;
-    }
-    
-    .nav-link {
-      font-size: 0.95rem;
-      padding: 0.25rem 0.5rem;
-    }
-    
-    @media (min-width: 768px) {
-      .nav-link {
-        padding: 0.3rem 0.6rem;
-      }
     }
   </style>
 
@@ -717,18 +696,25 @@
   }
   </script>
 
+  <!-- Обновленная шапка -->
   <nav class="bg-white shadow-sm sticky top-0 z-50">
-    <div class="container mx-auto px-4 md:px-6 py-2 flex items-center justify-between nav-container">
-      <a href="/" class="header-logo">Алтайский мёд</a>
+    <div class="container mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
+      <a href="/" 
+         class="text-2xl md:text-3xl font-['Pacifico'] header-logo">
+        Алтайский мёд
+      </a>
       
-      <div class="hidden md:flex items-center space-x-4 md:space-x-6">
+      <div class="hidden md:flex items-center space-x-6 md:space-x-8">
         <a href="/#benefits" class="nav-link">Преимущества</a>
         <a href="/#products" class="nav-link">Каталог</a>
         <a href="/#about" class="nav-link">О нас</a>
         <a href="/#footer-contacts" class="nav-link">Контакты</a>
         <a href="/blog/" class="nav-link">Блог</a>
         <a href="/delivery.html" class="active-nav-link-alt">Доставка</a>
-        <a href="/#order" class="nav-btn hover:bg-opacity-90 transition-all whitespace-nowrap">Заказать</a>
+        <a href="/#order" 
+           class="nav-btn px-4 md:px-6 py-1 md:py-2 hover:bg-opacity-90 transition-all whitespace-nowrap">
+          Заказать
+        </a>
       </div>
       
       <button class="md:hidden w-8 h-8 flex items-center justify-center" 
@@ -739,14 +725,14 @@
     </div>
     
     <div class="md:hidden hidden bg-white shadow-md px-4 py-3" id="mobile-menu">
-      <div class="flex flex-col space-y-3">
-        <a href="/#benefits" class="nav-link py-1.5">Преимущества</a>
-        <a href="/#products" class="nav-link py-1.5">Каталог</a>
-        <a href="/#about" class="nav-link py-1.5">О нас</a>
-        <a href="/#footer-contacts" class="nav-link py-1.5">Контакты</a>
-        <a href="/blog/" class="nav-link py-1.5">Блог</a>
-        <a href="/delivery.html" class="active-nav-link-alt py-1.5 text-center">Доставка</a>
-        <a href="/#order" class="nav-btn py-1.5 text-center hover:bg-opacity-90 transition-all">Заказать</a>
+      <div class="flex flex-col space-y-4">
+        <a href="/#benefits" class="nav-link py-2">Преимущества</a>
+        <a href="/#products" class="nav-link py-2">Каталог</a>
+        <a href="/#about" class="nav-link py-2">О нас</a>
+        <a href="/#footer-contacts" class="nav-link py-2">Контакты</a>
+        <a href="/blog/" class="nav-link py-2">Блог</a>
+        <a href="/delivery.html" class="active-nav-link-alt py-2 text-center">Доставка</a>
+        <a href="/#order" class="nav-btn py-2 text-center hover:bg-opacity-90 transition-all">Заказать</a>
       </div>
     </div>
   </nav>

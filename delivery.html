@@ -96,8 +96,8 @@
       background: #6B8E23 !important;
       color: white !important;
       border-radius: 8px !important;
-      padding: 0.4rem 1.2rem !important;
-      font-size: 0.9rem;
+      padding: 0.2rem 1rem !important;
+      font-size: 0.85rem;
     }
     .header-logo {
       color: #6B8E23 !important;
@@ -206,7 +206,7 @@
     
     .hero-container {
       position: relative;
-      min-height: 50vh;
+      min-height: 40vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -533,6 +533,9 @@
       .footer-column:last-child {
         margin-bottom: 0;
       }
+      .header-logo {
+        font-size: 1.3rem;
+      }
     }
     
     @media (min-width: 768px) {
@@ -605,19 +608,32 @@
 
     /* ШАПКА С УМЕНЬШЕННОЙ ВЫСОТОЙ */
     .nav-container {
-      padding-top: 0.5rem !important;
-      padding-bottom: 0.5rem !important;
+      padding-top: 0.25rem !important;
+      padding-bottom: 0.25rem !important;
     }
     
     .nav-link {
-      font-size: 0.95rem;
-      padding: 0.25rem 0.5rem;
+      font-size: 0.9rem;
+      padding: 0.15rem 0.4rem;
     }
     
     @media (min-width: 768px) {
       .nav-link {
-        padding: 0.3rem 0.6rem;
+        padding: 0.2rem 0.5rem;
       }
+    }
+    
+    /* Кнопка меню на мобильных */
+    #mobile-menu-button {
+      height: 1.75rem;
+      width: 1.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    #mobile-menu-button i {
+      font-size: 1.2rem;
     }
   </style>
 

@@ -88,36 +88,36 @@
     <priority>0.7</priority>
   </url>
   <!-- Добавить региональные страницы -->
-<url>
-  <loc>https://altaymed.shop/delivery-kovrov.html</loc>
-  <lastmod>2025-07-06</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.6</priority>
-</url>
-<url>
-  <loc>https://altaymed.shop/delivery-vladimir.html</loc>
-  <lastmod>2025-07-06</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.6</priority>
-</url>
-    <url>
-  <loc>https://https://altaymed.shop/delivery-moscow.html</loc>
-  <lastmod>2025-07-12</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.7</priority>
-</url>
+  <url>
+    <loc>https://altaymed.shop/delivery-kovrov.html</loc>
+    <lastmod>2025-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://altaymed.shop/delivery-vladimir.html</loc>
+    <lastmod>2025-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://altaymed.shop/delivery-moscow.html</loc>
+    <lastmod>2025-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 
-<!-- Добавить новые статьи блога -->
-<url>
-  <loc>https://altaymed.shop/blog/kak-hranit-med.html</loc>
-  <lastmod>2025-07-06</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.7</priority>
-</url>
-<url>
-  <loc>https://altaymed.shop/blog/lechebnye-svoistva-altayskogo-meda.html</loc>
-  <lastmod>2025-07-06</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.7</priority>
-</url>
+  <!-- Добавить новые статьи блога -->
+  <url>
+    <loc>https://altaymed.shop/blog/kak-hranit-med.html</loc>
+    <lastmod>2025-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://altaymed.shop/blog/lechebnye-svoistva-altayskogo-meda.html</loc>
+    <lastmod>2025-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

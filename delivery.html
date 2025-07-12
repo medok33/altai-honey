@@ -228,22 +228,17 @@
       border-color: #6B8E23;
       color: #6B8E23;
     }
-    .avito-icon-bw, .yandex-maps-icon {
+    .icon-inner {
       display: flex;
       align-items: center;
       justify-content: center;
       width: 24px;
       height: 24px;
       position: relative;
-      filter: grayscale(100%);
     }
-    .avito-icon-bw svg, .yandex-maps-icon svg {
+    .icon-inner svg {
       width: 100%;
       height: 100%;
-    }
-    .social-icon-bw:hover .avito-icon-bw,
-    .social-icon-bw:hover .yandex-maps-icon {
-      filter: grayscale(0%);
     }
     .footer-link-item {
       display: flex;
@@ -470,17 +465,28 @@
       padding: 0 15px;
     }
 
-    /* Измененные стили для SVG-иконок оплаты */
+    /* Стили для SVG-иконок оплаты */
     .payment-icon {
-      width: 96px; /* Увеличен размер на 50% */
-      height: 96px; /* Увеличен размер на 50% */
+      width: 96px;
+      height: 96px;
       margin: 0 auto;
-      display: block;
-      transition: transform 0.3s ease; /* Добавлена анимация */
-      transform-origin: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    .payment-icon:hover {
-      transform: scale(1.05); /* Анимация при наведении */
+    
+    .payment-icon svg {
+      width: 100%;
+      height: 100%;
+      max-width: 100%;
+      max-height: 100%;
+    }
+    
+    @media (max-width: 768px) {
+      .payment-icon {
+        width: 64px;
+        height: 64px;
+      }
     }
   </style>
 
@@ -691,23 +697,21 @@
               <!-- Оплата банковской картой -->
               <div class="text-center">
                 <div class="payment-icon">
-                  <!-- Иконка наложенного платежа -->
-                  <svg xmlns="http://www.w3.org/2000/svg" version="1.0" viewBox="0 0 300 200" preserveAspectRatio="xMidYMid meet">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" preserveAspectRatio="xMidYMid meet">
                     <g transform="translate(0,200) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
                       <path d="M1655 1816 c-27 -7 -227 -57 -444 -110 -216 -53 -409 -104 -428 -113 -44 -21 -79 -66 -93 -125 -11 -43 -8 -63 55 -320 37 -150 76 -289 86 -310 16 -30 65 -78 82 -78 2 0 6 42 9 93 8 148 61 242 170 303 l53 29 448 3 c365 2 447 5 447 16 0 43 -124 515 -142 542 -49 72 -138 97 -243 70z m183 -367 c13 -56 20 -105 15 -109 -9 -8 -173 -50 -196 -50 -12 0 -58 159 -57 201 0 11 24 21 83 36 137 35 128 39 155 -78z"/>
                       <path d="M1165 1046 c-41 -18 -92 -77 -104 -123 -15 -53 -14 -551 1 -610 16 -66 71 -118 140 -133 37 -8 191 -10 518 -8 l465 3 45 25 c29 17 53 41 70 70 l25 45 0 295 c0 162 -3 307 -8 322 -10 38 -65 98 -104 114 -47 20 -1003 20 -1048 0z m1035 -111 c15 -16 24 -41 28 -75 l5 -50 -542 0 -541 0 0 44 c0 33 7 52 26 75 l26 31 487 0 488 0 23 -25z m30 -450 c0 -149 -9 -182 -55 -203 -41 -19 -937 -17 -974 2 -43 23 -51 54 -51 201 l0 135 540 0 540 0 0 -135z"/>
                     </g>
                   </svg>
                 </div>
-                <p class="mt-2 font-medium">Оплата наложенным платежом</p>
-                <div class="sr-only">Оплата при получении на почте или в пункте выдачи</div>
+                <p class="mt-2 font-medium">Оплата банковской картой</p>
+                <div class="sr-only">Безопасная онлайн оплата картой Visa, Mastercard, МИР</div>
               </div>
               
               <!-- Оплата наличными -->
               <div class="text-center">
                 <div class="payment-icon">
-                  <!-- Иконка банковской карты -->
-                  <svg xmlns="http://www.w3.org/2000/svg" version="1.0" viewBox="0 0 300 200" preserveAspectRatio="xMidYMid meet">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" preserveAspectRatio="xMidYMid meet">
                     <g transform="translate(0,200) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
                       <path d="M1531 1568 c-229 -273 -243 -292 -225 -305 10 -8 52 -32 92 -55 87 -48 115 -85 108 -142 -5 -47 -47 -93 -91 -102 -20 -3 -62 5 -125 25 -52 17 -96 29 -97 27 -2 -2 72 -67 164 -145 l168 -141 22 23 c12 12 161 188 331 391 l309 369 -36 31 c-37 33 -335 282 -361 303 -13 10 -55 -36 -259 -279z m200 -129 c100 -51 125 -191 48 -268 -82 -83 -226 -54 -279 54 -24 50 -26 105 -4 150 41 88 138 114 235 64z"/>
                       <path d="M1596 1393 c-4 -5 -18 -8 -29 -8 -20 0 -22 -4 -19 -50 6 -78 43 -104 102 -70 32 18 40 18 40 1 0 -8 -11 -23 -25 -33 -23 -16 -24 -20 -11 -38 12 -17 17 -18 39 -6 14 7 30 11 35 7 14 -9 35 21 26 36 -5 7 -7 23 -5 36 1 13 -5 34 -13 48 -19 28 -53 31 -97 8 -40 -20 -51 -8 -18 20 20 17 24 27 17 39 -9 18 -29 22 -42 10z"/>
@@ -718,22 +722,21 @@
                     </g>
                   </svg>
                 </div>
-                <p class="mt-2 font-medium">Оплата банковской картой</p>
-                <div class="sr-only">Безопасная онлайн оплата картой Visa, Mastercard, МИР</div>
+                <p class="mt-2 font-medium">Оплата наличными</p>
+                <div class="sr-only">Оплата наличными курьеру при доставке или самовывозе</div>
               </div>
               
               <!-- Оплата наложенным платежом -->
               <div class="text-center">
                 <div class="payment-icon">
-                  <!-- Иконка наличных -->
-                  <svg xmlns="http://www.w3.org/2000/svg" version="1.0" viewBox="0 0 300 200" preserveAspectRatio="xMidYMid meet">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" preserveAspectRatio="xMidYMid meet">
                     <g transform="translate(0,200) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
                       <path d="M1433 1913 c-95 -112 -260 -318 -272 -340 -8 -17 -9 -28 -1 -43 9 -17 21 -20 86 -20 l75 0 -3 -52 -3 -51 -295 -79 c-219 -59 -299 -85 -312 -100 -17 -18 -18 -53 -18 -408 0 -355 1 -390 18 -409 9 -11 192 -104 405 -206 l388 -186 122 57 c286 134 672 325 679 337 4 7 8 191 8 409 0 347 -2 399 -16 412 -8 9 -17 16 -19 16 -5 0 -469 125 -543 146 l-53 15 3 47 3 47 70 3 c74 3 95 13 95 44 0 10 -73 109 -161 218 -124 154 -167 200 -184 200 -16 0 -39 -19 -72 -57z m177 -193 l93 -115 -44 -5 c-24 -3 -50 -9 -56 -13 -10 -6 -13 -49 -13 -158 l0 -149 -85 0 -85 0 0 138 c0 164 -6 179 -75 184 l-44 3 101 123 c55 68 104 120 108 115 4 -4 49 -60 100 -123z m-290 -454 c0 -73 8 -76 184 -76 105 0 156 4 164 12 7 7 12 34 12 60 0 26 3 48 8 48 13 0 403 -108 408 -113 3 -2 -130 -55 -294 -116 l-299 -111 -301 112 c-166 62 -300 113 -298 115 3 3 397 112 409 112 4 1 7 -19 7 -43z m-187 -258 l327 -121 0 -369 c0 -314 -2 -369 -14 -366 -8 2 -159 72 -335 157 l-321 154 0 334 c0 183 3 333 8 333 4 0 154 -55 335 -122z m1087 -208 l0 -330 -117 -59 c-160 -80 -540 -261 -547 -261 -3 0 -6 166 -6 369 l0 370 58 21 c31 12 174 66 317 120 143 54 268 98 278 99 16 1 17 -21 17 -329z"/>
                     </g>
                   </svg>
                 </div>
-                <p class="mt-2 font-medium">Оплата наличными</p>
-                <div class="sr-only">Оплата наличными курьеру при доставке или самовывозе</div>
+                <p class="mt-2 font-medium">Оплата наложенным платежом</p>
+                <div class="sr-only">Оплата при получении на почте или в пункте выдачи</div>
               </div>
             </div>
             
@@ -878,11 +881,11 @@
               </a>
             </li>
             <li>
-              <a href="mailto:9209400222@mail.ru" class="footer-link-item">
+              <a href="mailto:altaymed.shop@yandex.ru" class="footer-link-item">
                 <div class="contact-icon">
                   <i class="ri-mail-line ri-sm md:ri-base" aria-hidden="true"></i>
                 </div>
-                <span class="contact-text">9209400222@mail.ru</span>
+                <span class="contact-text">altaymed.shop@yandex.ru</span>
               </a>
             </li>
           </ul>
@@ -898,7 +901,7 @@
               </a>
               <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing" 
                  target="_blank" class="social-icon-bw" aria-label="Наше объявление на Авито">
-                <div class="avito-icon-bw" aria-hidden="true">
+                <div class="icon-inner">
                   <svg viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg">
                     <path fill="#04e061" d="M61.924 172.07c26.468 0 47.924-21.456 47.924-47.924S88.392 76.222 61.924 76.222 14 97.678 14 124.146s21.456 47.925 47.924 47.925z" transform="translate(7.024 7.024) scale(.92683)"/>
                     <path fill="#ff4053" d="M149.044 166.007c15.992 0 28.956-12.963 28.956-28.955 0-15.992-12.964-28.955-28.956-28.955-15.99 0-28.954 12.963-28.954 28.955 0 15.992 12.963 28.955 28.954 28.955z" transform="translate(7.024 7.024) scale(.92683)"/>
@@ -908,10 +911,22 @@
                 </div>
               </a>
               <a href="https://yandex.ru/maps/" target="_blank" class="social-icon-bw" aria-label="Наше местоположение на Яндекс Картах">
-                <div class="yandex-maps-icon" aria-hidden="true">
+                <div class="icon-inner">
                   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 2C8.13 2 5 5.13 5 9C5 13.17 9.42 18.92 11.24 21.11C11.64 21.59 12.37 21.59 12.77 21.11C14.58 18.92 19 13.17 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" 
                           fill="currentColor"/>
+                  </svg>
+                </div>
+              </a>
+              <a href="https://dzen.ru/altaymed" target="_blank" class="social-icon-bw" aria-label="Наш канал в Яндекс Дзен">
+                <div class="icon-inner">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">
+                    <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)" fill="currentColor" stroke="none">
+                      <path d="M2310 5113 c-833 -85 -1562 -559 -1979 -1286 -189 -328 -309 -731 -328 -1094 l-6 -123 34 0 c121 1 626 22 734 30 509 42 835 129 1075 288 395 261 571 645 635 1379 12 134 35 651 35 786 l0 27 -82 -2 c-46 0 -99 -3 -118 -5z"/>
+                      <path d="M2660 5069 c0 -117 21 -601 30 -719 52 -637 183 -1005 451 -1271 298 -295 743 -425 1549 -454 85 -3 218 -8 294 -11 l139 -6 -6 124 c-36 681 -384 1362 -922 1803 -417 341 -921 546 -1432 581 l-103 7 0 -54z"/>
+                      <path d="M4 2361 c57 -835 546 -1604 1289 -2030 329 -189 731 -309 1095 -328 l124 -6 -6 139 c-3 76 -8 211 -11 299 -21 579 -94 959 -241 1245 -68 132 -128 212 -243 323 -183 176 -395 282 -701 351 -267 59 -548 85 -1094 102 l-219 6 7 -101z"/>
+                      <path d="M4756 2449 c-875 -32 -1305 -153 -1610 -456 -180 -178 -289 -376 -361 -658 -72 -281 -101 -558 -120 -1149 l-7 -189 102 7 c833 57 1603 546 2029 1289 183 318 302 707 327 1065 l7 102 -79 -2 c-43 0 -173 -5 -288 -9z"/>
+                    </g>
                   </svg>
                 </div>
               </a>

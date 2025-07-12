@@ -368,14 +368,14 @@
   .footer-social-icons {
     display: flex;
     gap: 15px;
-    margin-top: 1rem; /* Увеличили отступ до 1rem */
+    margin-top: 0.5rem; /* Уменьшенный отступ между надписью и иконками */
   }
   
   .footer-social-title {
     font-size: 1.125rem;
     font-weight: 700;
-    margin-top: 1rem;
-    margin-bottom: 1rem; /* Увеличили отступ до 1rem */
+    margin-top: 1rem; /* Отступ после последнего контакта */
+    margin-bottom: 0.5rem; /* Отступ перед иконками */
     width: 100%;
   }
   
@@ -797,10 +797,10 @@
         </ul>
         
         <!-- Добавлена надпись "Следите за нами" -->
-        <h4 class="footer-social-title">Следите за нами</h4>
+        <h4 class="footer-social-title" style="margin-top: 1rem;">Следите за нами</h4>
         
         <!-- Социальные сети -->
-        <div class="footer-social-icons">
+        <div class="footer-social-icons" style="margin-top: 0.5rem;">
           <a href="https://vk.com/honeybuckwheat" target="_blank" rel="noopener noreferrer" class="social-icon-bw" aria-label="Наша страница ВКонтакте">
             <i class="ri-vk-line ri-lg"></i>
           </a>
@@ -811,11 +811,11 @@
              target="_blank" rel="noopener noreferrer" class="social-icon-bw" aria-label="Наше объявление на Авито">
             <div class="avito-icon-bw">
               <svg width="24" height="24" viewBox="0 0 160.00012 149.00977">
-                <g style="stroke-width:2;stroke-dasharray:none" transform="translate(-15.999621,-21.494796)">
-                  <path fill="#04e061" d="m 61.924,172.07 c 26.468,0 47.924,-21.456 47.924,-47.924 0,-26.468 -21.456,-47.924 -47.924,-47.924 C 35.456,76.222 14,97.678 14,124.146 c 0,26.468 21.456,47.925 47.924,47.925 z" style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2;stroke-dasharray:none;stroke-opacity:1" transform="matrix(0.92683,0,0,0.92683,7.024,7.024)"/>
-                  <path fill="#ff4053" d="m 149.044,166.007 c 15.992,0 28.956,-12.963 28.956,-28.955 0,-15.992 -12.964,-28.955 -28.956,-28.955 -15.99,0 -28.954,12.963 -28.954,28.955 0,15.992 12.963,28.955 28.954,28.955 z" style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2;stroke-dasharray:none;stroke-opacity:1" transform="matrix(0.92683,0,0,0.92683,7.024,7.024)"/>
-                  <path fill="#965eeb" d="m 71.086,65.979 c 9.898,0 17.922,-8.024 17.922,-17.921 0,-9.898 -8.024,-17.922 -17.922,-17.922 -9.898,0 -17.921,8.024 -17.921,17.922 0,9.897 8.023,17.921 17.921,17.921 z" style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2;stroke-dasharray:none;stroke-opacity:1" transform="matrix(0.92683,0,0,0.92683,7.024,7.024)"/>
-                  <path fill="#0af" d="m 137.789,97.856 c 21.519,0 38.964,-17.444 38.964,-38.963 0,-21.52 -17.445,-38.964 -38.964,-38.964 -21.52,0 -38.964,17.445 -38.964,38.964 0,21.519 17.445,38.963 38.964,38.963 z" style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2;stroke-dasharray:none;stroke-opacity:1" transform="matrix(0.92683,0,0,0.92683,7.024,7.024)"/>
+                <g style="stroke-width:16;stroke-dasharray:none" transform="translate(-15.999621,-21.494796)">
+                  <path fill="#04e061" d="m 61.924,172.07 c 26.468,0 47.924,-21.456 47.924,-47.924 0,-26.468 -21.456,-47.924 -47.924,-47.924 C 35.456,76.222 14,97.678 14,124.146 c 0,26.468 21.456,47.925 47.924,47.925 z" style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:16;stroke-dasharray:none;stroke-opacity:1" transform="matrix(0.92683,0,0,0.92683,7.024,7.024)"/>
+                  <path fill="#ff4053" d="m 149.044,166.007 c 15.992,0 28.956,-12.963 28.956,-28.955 0,-15.992 -12.964,-28.955 -28.956,-28.955 -15.99,0 -28.954,12.963 -28.954,28.955 0,15.992 12.963,28.955 28.954,28.955 z" style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:16;stroke-dasharray:none;stroke-opacity:1" transform="matrix(0.92683,0,0,0.92683,7.024,7.024)"/>
+                  <path fill="#965eeb" d="m 71.086,65.979 c 9.898,0 17.922,-8.024 17.922,-17.921 0,-9.898 -8.024,-17.922 -17.922,-17.922 -9.898,0 -17.921,8.024 -17.921,17.922 0,9.897 8.023,17.921 17.921,17.921 z" style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:16;stroke-dasharray:none;stroke-opacity:1" transform="matrix(0.92683,0,0,0.92683,7.024,7.024)"/>
+                  <path fill="#0af" d="m 137.789,97.856 c 21.519,0 38.964,-17.444 38.964,-38.963 0,-21.52 -17.445,-38.964 -38.964,-38.964 -21.52,0 -38.964,17.445 -38.964,38.964 0,21.519 17.445,38.963 38.964,38.963 z" style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:16;stroke-dasharray:none;stroke-opacity:1" transform="matrix(0.92683,0,0,0.92683,7.024,7.024)"/>
                 </g>
               </svg>
             </div>

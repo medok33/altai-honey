@@ -229,7 +229,7 @@
     border-radius: 50%;
     background: transparent;
     transition: all 0.3s;
-    border: 1px solid white; /* Толщина уменьшена, цвет изменен на белый */
+    border: 1px solid white;
     color: rgba(255, 255, 255, 0.7);
   }
   
@@ -267,6 +267,7 @@
   
   .footer-logo-wrapper {
     margin-bottom: 1.4rem;
+    transform: translateY(-3%);
   }
   
   .https-info {
@@ -283,6 +284,7 @@
   .social-icon-bw svg path {
     fill: currentColor;
     stroke: currentColor;
+    stroke-width: 1;
   }
 
   .avito-icon-bw svg {
@@ -331,6 +333,17 @@
   /* Подъем текста в первом разделе футера */
   .footer-text-content {
     margin-top: -3%;
+    transform: translateY(-4%);
+  }
+  
+  /* Уменьшение толщины линий иконок */
+  .social-icon-bw i {
+    font-weight: 300;
+  }
+  
+  /* Белая окантовка иконок */
+  .social-icon-bw {
+    border-color: white !important;
   }
 </style>
 
@@ -439,9 +452,9 @@
     <a href="#" class="text-2xl md:text-3xl font-pacifico header-logo">Алтайский мёд</a>
     
     <div class="hidden md:flex items-center space-x-6 md:space-x-8">
-      <a href="#benefits" class="nav-link">Преимущества</a>
       <a href="#products" class="nav-link">Каталог</a>
       <a href="#about" class="nav-link">О нас</a>
+      <a href="/delivery.html" class="nav-link">Доставка</a>
       <a href="https://altaymed.shop/blog" class="nav-link">Блог</a>
       <a href="#footer-contacts" class="nav-link">Контакты</a>
       <a href="#order" class="nav-btn px-4 md:px-6 py-1 md:py-2 !rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">Заказать</a>
@@ -454,9 +467,9 @@
   
   <div class="md:hidden hidden bg-white shadow-md px-4 py-3" id="mobile-menu">
     <div class="flex flex-col space-y-4">
-      <a href="#benefits" class="nav-link py-2">Преимущества</a>
       <a href="#products" class="nav-link py-2">Каталог</a>
       <a href="#about" class="nav-link py-2">О нас</a>
+      <a href="/delivery.html" class="nav-link py-2">Доставка</a>
       <a href="https://altaymed.shop/blog" class="nav-link py-2">Блог</a>
       <a href="#footer-contacts" class="nav-link py-2">Контакты</a>
       <a href="#order" class="nav-btn py-2 text-center !rounded-button hover:bg-opacity-90 transition-all">Заказать</a>

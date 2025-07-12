@@ -96,15 +96,243 @@
       background: #6B8E23 !important;
       color: white !important;
       border-radius: 8px !important;
-      padding: 0.4rem 1.2rem !important;
-      font-size: 0.9rem;
+      padding: 0.5rem 1.5rem !important;
     }
     .header-logo {
       color: #6B8E23 !important;
       font-family: 'Pacifico', cursive;
-      font-size: 1.6rem;
     }
 
+    footer {
+      width: 100% !important;
+      box-sizing: border-box !important;
+      position: relative;
+      overflow: hidden;
+      background-color: #8B4513;
+      z-index: 1;
+    }
+    footer::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 600%;
+      height: 600%;
+      background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+      background-size: 108px 108px;
+      transform: rotate(30deg);
+      transform-origin: 0 0;
+      opacity: 0.6;
+      z-index: 0;
+      margin-left: -220%;
+      margin-top: -220%;
+    }
+    footer .container {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding-right: 1.5rem !important;
+      padding-left: 1.5rem !important;
+      position: relative;
+      z-index: 1;
+    }
+    footer .grid {
+      width: 100% !important;
+      display: grid !important;
+      grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+    }
+    @media (min-width: 768px) {
+      footer .grid {
+        grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+      }
+    }
+    .footer-column {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      width: 100% !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      box-sizing: border-box !important;
+    }
+    .footer-column h4 {
+      text-align: left !important;
+      width: 100% !important;
+      padding: 0 !important;
+      margin: 0 0 0.64rem 0 !important;
+      font-weight: bold !important;
+      font-size: 1.125rem !important;
+      line-height: 1.75rem !important;
+    }
+    .footer-column ul {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      width: 100% !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      list-style: none !important;
+    }
+    .footer-column li {
+      width: 100% !important;
+      text-align: left !important;
+      list-style-type: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      box-sizing: border-box !important;
+    }
+    .footer-column li a {
+      display: flex !important;
+      align-items: center !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .footer-column .bullet {
+      display: inline-block !important;
+      width: 6px !important;
+      height: 6px !important;
+      background-color: white !important;
+      border-radius: 50% !important;
+      margin-right: 10px !important;
+      flex-shrink: 0 !important;
+    }
+    footer, 
+    footer *,
+    footer a, 
+    footer p, 
+    footer span, 
+    footer h4, 
+    footer li {
+      color: white !important;
+      box-sizing: border-box !important;
+    }
+    footer a:hover {
+      color: #d1d5db !important;
+    }
+    .social-icon-bw {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: transparent;
+      transition: all 0.3s;
+      border: 1px solid #4b5563;
+      color: #4b5563;
+      filter: grayscale(100%);
+    }
+    .social-icon-bw:hover {
+      filter: grayscale(0%);
+      border-color: #6B8E23;
+      color: #6B8E23;
+    }
+    .icon-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      position: relative;
+    }
+    .icon-inner svg {
+      width: 100%;
+      height: 100%;
+    }
+    .footer-link-item {
+      display: flex;
+      align-items: center;
+      padding-top: 0.21rem !important;
+      padding-bottom: 0.21rem !important;
+    }
+    .contact-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 12px;
+      flex-shrink: 0;
+      width: 24px;
+    }
+    .contact-text {
+      flex-grow: 1;
+      line-height: 1.5;
+    }
+    .blog-post-card {
+      transition: all 0.3s ease;
+    }
+    .blog-post-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    .active-nav-link-alt {
+      border: 2px solid #6B8E23 !important;
+      border-radius: 8px !important;
+      padding: 4px 12px !important;
+      color: #6B8E23 !important;
+      font-weight: 600 !important;
+      transition: all 0.3s ease;
+    }
+    .active-nav-link-alt:hover {
+      background: rgba(107, 142, 35, 0.1) !important;
+    }
+    .floating-back-button {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 50;
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 50%;
+      background: #6B8E23;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    .floating-back-button:hover {
+      background: #5a7a1c;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      transform: scale(1.05);
+    }
+    .back-arrow {
+      width: 24px;
+      height: 24px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23ffffff' d='M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z'/%3E%3C/svg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+      transition: transform 0.3s ease;
+    }
+    .floating-back-button:hover .back-arrow {
+      transform: translateX(-4px);
+    }
+    #footer-contacts .footer-column:first-child,
+    #footer-contacts .footer-column:first-child * {
+      color: white !important;
+    }
+    .footer-column:first-child {
+      justify-content: flex-start;
+    }
+    .footer-column:first-child .logo-wrapper {
+      margin-bottom: 0.4rem;
+    }
+    .footer-column:first-child .description-wrapper {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .footer-column:first-child .description-wrapper p {
+      margin: 0;
+      font-size: 0.7rem;
+      line-height: 1.25;
+    }
+    .footer-column:first-child .description-wrapper p:first-child {
+      margin-bottom: 0.3rem;
+    }
+    
     .region-tag {
       display: inline-block;
       background-color: #f5f5f5;
@@ -260,365 +488,6 @@
         height: 64px;
       }
     }
-
-    /* ФУТЕР С КОМПАКТНЫМИ РАЗМЕРАМИ */
-    footer {
-      width: 100%;
-      position: relative;
-      overflow: hidden;
-      background-color: #8B4513;
-      z-index: 1;
-      padding: 1.6rem 0;
-    }
-    
-    footer::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 600%;
-      height: 600%;
-      background-image: 
-        linear-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
-      background-size: 108px 108px;
-      transform: rotate(30deg);
-      transform-origin: 0 0;
-      opacity: 0.6;
-      z-index: 0;
-      margin-left: -220%;
-      margin-top: -220%;
-    }
-    
-    footer .container-wide {
-      width: 100%;
-      max-width: 100%;
-      padding: 0 1.5rem;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-    .footer-grid {
-      width: 100%;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.3rem;
-    }
-    @media (min-width: 768px) {
-      .footer-grid {
-        grid-template-columns: repeat(5, 1fr);
-        gap: 1.3rem;
-      }
-    }
-    .footer-column {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      width: 100%;
-      padding: 0;
-      margin: 0;
-    }
-    .footer-column:first-child {
-      margin-top: 0;
-    }
-    .footer-column h4 {
-      text-align: left;
-      width: 100%;
-      padding: 0;
-      margin: 0 0 0.65rem 0;
-      font-weight: 700;
-      font-size: 1rem;
-      line-height: 1.4;
-      color: white;
-    }
-    .footer-column ul {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      width: 100%;
-      padding: 0;
-      margin: 0;
-      list-style: none;
-      gap: 0.4rem;
-    }
-    .footer-column li {
-      width: 100%;
-      text-align: left;
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-    }
-    .footer-column li a {
-      display: flex;
-      align-items: center;
-      width: 100%;
-      text-decoration: none;
-      font-size: 0.875rem;
-      color: white;
-      transition: color 0.3s;
-    }
-    .footer-column li a:hover {
-      color: #d1d5db;
-    }
-    .footer-column .bullet {
-      display: inline-block;
-      width: 5px;
-      height: 5px;
-      background-color: white;
-      border-radius: 50%;
-      margin-right: 8px;
-      flex-shrink: 0;
-    }
-    footer, 
-    footer *,
-    footer a, 
-    footer p, 
-    footer span, 
-    footer h4, 
-    footer li {
-      color: white !important;
-      text-decoration: none;
-    }
-    .footer-link-item {
-      display: flex;
-      align-items: center;
-      padding-top: 0.18rem;
-      padding-bottom: 0.18rem;
-    }
-    .contact-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-right: 10px;
-      flex-shrink: 0;
-      width: 22px;
-      font-size: 1rem;
-    }
-    .contact-text {
-      flex-grow: 1;
-      line-height: 1.4;
-      font-size: 0.875rem;
-    }
-    .social-icon-bw {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: transparent;
-      transition: all 0.3s;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      color: rgba(255, 255, 255, 0.7);
-    }
-    .social-icon-bw:hover {
-      background: rgba(255, 255, 255, 0.1);
-      border-color: #6B8E23;
-      color: white;
-    }
-    .avito-icon-bw, .yandex-maps-icon, .yandex-dzen-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 22px;
-      height: 22px;
-      position: relative;
-    }
-    .avito-icon-bw svg, .yandex-maps-icon svg, .yandex-dzen-icon svg {
-      width: 100%;
-      height: 100%;
-    }
-    
-    .text-center {
-      text-align: center;
-    }
-    
-    .text-xl {
-      font-size: 1.25rem;
-    }
-    
-    .font-semibold {
-      font-weight: 600;
-    }
-    
-    .mb-4 {
-      margin-bottom: 1rem;
-    }
-    
-    .mb-6 {
-      margin-bottom: 1.5rem;
-    }
-    
-    .space-y-2 > * + * {
-      margin-top: 0.5rem;
-    }
-    
-    .space-y-3 > * + * {
-      margin-top: 0.75rem;
-    }
-    
-    .list-disc {
-      list-style-type: disc;
-    }
-    
-    .pl-5 {
-      padding-left: 1.25rem;
-    }
-    
-    .mt-2 {
-      margin-top: 0.5rem;
-    }
-    
-    .mobile-menu {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: white;
-      z-index: 100;
-      padding: 1rem;
-      transform: translateX(-100%);
-      transition: transform 0.3s ease;
-      display: none;
-    }
-    
-    .mobile-menu.active {
-      transform: translateX(0);
-      display: block;
-    }
-    
-    .mobile-menu-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid #e5e7eb;
-    }
-    
-    .mobile-menu-links {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-    
-    .mobile-menu-link {
-      padding: 0.75rem 0;
-      font-size: 1.125rem;
-      color: #374151;
-      text-decoration: none;
-      border-bottom: 1px solid #f3f4f6;
-    }
-    
-    .mobile-menu-link.active {
-      color: #6B8E23;
-    }
-    
-    .mobile-menu-link:hover {
-      color: #6B8E23;
-    }
-    
-    /* Адаптация для мобильных устройств */
-    @media (max-width: 767px) {
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-      .footer-column {
-        margin-bottom: 1.3rem;
-      }
-      .footer-column:first-child {
-        margin-top: 0;
-      }
-      .footer-column:last-child {
-        margin-bottom: 0;
-      }
-    }
-    
-    @media (min-width: 768px) {
-      .footer-column h4 {
-        font-size: 1.1rem;
-      }
-      .footer-column li a, 
-      .contact-text {
-        font-size: 0.95rem;
-      }
-      .header-logo {
-        font-size: 1.8rem;
-      }
-    }
-    
-    .social-icon-bw svg {
-      width: 20px;
-      height: 20px;
-    }
-
-    .social-icon-bw svg path {
-      fill: currentColor;
-      stroke: currentColor;
-    }
-
-    .avito-icon-bw svg {
-      filter: brightness(0) invert(1);
-    }
-
-    .footer-text-content {
-      margin-top: -5%;
-    }
-
-    .footer-logo-wrapper {
-      margin-bottom: 1.2rem;
-    }
-
-    .footer-description {
-      font-size: 0.76rem;
-      margin-top: 0.4rem;
-      color: white;
-      line-height: 1.4;
-    }
-    
-    .footer-copyright {
-      font-size: 0.7rem;
-      color: white;
-      margin-top: 0.4rem;
-      line-height: 1.4;
-    }
-
-    .https-info {
-      font-size: 0.76rem;
-      color: white;
-      margin-top: 0.4rem;
-      line-height: 1.4;
-    }
-
-    .footer-social-icons {
-      display: flex;
-      gap: 12px;
-      margin-top: 0.8rem;
-    }
-    
-    .footer-social-title {
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-bottom: 0.65rem;
-    }
-
-    /* ШАПКА С УМЕНЬШЕННОЙ ВЫСОТОЙ */
-    .nav-container {
-      padding-top: 0.5rem !important;
-      padding-bottom: 0.5rem !important;
-    }
-    
-    .nav-link {
-      font-size: 0.95rem;
-      padding: 0.25rem 0.5rem;
-    }
-    
-    @media (min-width: 768px) {
-      .nav-link {
-        padding: 0.3rem 0.6rem;
-      }
-    }
   </style>
 
   <script src="https://cdn.tailwindcss.com/3.4.16"></script>
@@ -718,20 +587,20 @@
   </script>
 
   <nav class="bg-white shadow-sm sticky top-0 z-50">
-    <div class="container mx-auto px-4 md:px-6 py-2 flex items-center justify-between nav-container">
-      <a href="/" class="header-logo">Алтайский мёд</a>
+    <div class="container mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
+      <a href="/" class="text-2xl md:text-3xl header-logo">Алтайский мёд</a>
       
-      <div class="hidden md:flex items-center space-x-4 md:space-x-6">
+      <div class="hidden md:flex items-center space-x-6 md:space-x-8">
         <a href="/#benefits" class="nav-link">Преимущества</a>
         <a href="/#products" class="nav-link">Каталог</a>
         <a href="/#about" class="nav-link">О нас</a>
         <a href="/#footer-contacts" class="nav-link">Контакты</a>
         <a href="/blog/" class="nav-link">Блог</a>
         <a href="/delivery.html" class="active-nav-link-alt">Доставка</a>
-        <a href="/#order" class="nav-btn hover:bg-opacity-90 transition-all whitespace-nowrap">Заказать</a>
+        <a href="/#order" class="nav-btn px-4 md:px-6 py-1 md:py-2 !rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">Заказать</a>
       </div>
       
-      <button class="md:hidden w-8 h-8 flex items-center justify-center" 
+      <button class="md:hidden w-10 h-10 flex items-center justify-center" 
               id="mobile-menu-button"
               aria-label="Открыть меню">
         <i class="ri-menu-line text-gray-900 ri-xl"></i>
@@ -739,14 +608,14 @@
     </div>
     
     <div class="md:hidden hidden bg-white shadow-md px-4 py-3" id="mobile-menu">
-      <div class="flex flex-col space-y-3">
-        <a href="/#benefits" class="nav-link py-1.5">Преимущества</a>
-        <a href="/#products" class="nav-link py-1.5">Каталог</a>
-        <a href="/#about" class="nav-link py-1.5">О нас</a>
-        <a href="/#footer-contacts" class="nav-link py-1.5">Контакты</a>
-        <a href="/blog/" class="nav-link py-1.5">Блог</a>
-        <a href="/delivery.html" class="active-nav-link-alt py-1.5 text-center">Доставка</a>
-        <a href="/#order" class="nav-btn py-1.5 text-center hover:bg-opacity-90 transition-all">Заказать</a>
+      <div class="flex flex-col space-y-4">
+        <a href="/#benefits" class="nav-link py-2">Преимущества</a>
+        <a href="/#products" class="nav-link py-2">Каталог</a>
+        <a href="/#about" class="nav-link py-2">О нас</a>
+        <a href="/#footer-contacts" class="nav-link py-2">Контакты</a>
+        <a href="/blog/" class="nav-link py-2">Блог</a>
+        <a href="/delivery.html" class="active-nav-link-alt py-2 text-center">Доставка</a>
+        <a href="/#order" class="nav-btn py-2 text-center !rounded-button hover:bg-opacity-90 transition-all">Заказать</a>
       </div>
     </div>
   </nav>
@@ -862,7 +731,7 @@
                 <div class="payment-icon">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" preserveAspectRatio="xMidYMid meet">
                     <g transform="translate(0,200) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
-                      <path d="M1433 1913 c-95 -112 -260 -318 -272 -340 -8 -17 -9 -28 -1 -43 9 -17 21 -20 86 -20 l75 0 -3 -52 -3 -51 -295 -79 c-219 -59 -299 -85 -312 -100 -17 -18 -18 -53 -18 -408 0 -355 1 -390 18 -409 9 -11 192 -104 405 -206 l388 -186 122 57 c286 134 672 325 679 337 4 7 8 191 8 409 0 347 -2 399 -16 412 -8 9 -17 16 -19 16 -5 0 -469 125 -543 146 l-53 15 3 47 3 47 70 3 c74 3 95 13 95 44 0 10 -73 109 -161 218 -124 154 -167 200 -184 200 -16 0 -39 -19 -72 -57z m177 -193 l93 -115 -44 -5 c-24 -3 -50 -9 -56 -13 -10 -6 -13 -49 -13 -158 l0 -149 -85 0 -85 0 0 138 c0 164 -6 179 -75 184 l-44 3 101 123 c55 68 104 120 108 115 4 -4 49 -60 100 -123z m-290 -454 c0 -149 -9 -182 -55 -203 -41 -19 -937 -17 -974 2 -43 23 -51 54 -51 201 l0 135 540 0 540 0 0 -135z"/>
+                      <path d="M1433 1913 c-95 -112 -260 -318 -272 -340 -8 -17 -9 -28 -1 -43 9 -17 21 -20 86 -20 l75 0 -3 -52 -3 -51 -295 -79 c-219 -59 -299 -85 -312 -100 -17 -18 -18 -53 -18 -408 0 -355 1 -390 18 -409 9 -11 192 -104 405 -206 l388 -186 122 57 c286 134 672 325 679 337 4 7 8 191 8 409 0 347 -2 399 -16 412 -8 9 -17 16 -19 16 -5 0 -469 125 -543 146 l-53 15 3 47 3 47 70 3 c74 3 95 13 95 44 0 10 -73 109 -161 218 -124 154 -167 200 -184 200 -16 0 -39 -19 -72 -57z m177 -193 l93 -115 -44 -5 c-24 -3 -50 -9 -56 -13 -10 -6 -13 -49 -13 -158 l0 -149 -85 0 -85 0 0 138 c0 164 -6 179 -75 184 l-44 3 101 123 c55 68 104 120 108 115 4 -4 49 -60 100 -123z m-290 -454 c0 -73 8 -76 184 -76 105 0 156 4 164 12 7 7 12 34 12 60 0 26 3 48 8 48 13 0 403 -108 408 -113 3 -2 -130 -55 -294 -116 l-299 -111 -301 112 c-166 62 -300 113 -298 115 3 3 397 112 409 112 4 1 7 -19 7 -43z m-187 -258 l327 -121 0 -369 c0 -314 -2 -369 -14 -366 -8 2 -159 72 -335 157 l-321 154 0 334 c0 183 3 333 8 333 4 0 154 -55 335 -122z m1087 -208 l0 -330 -117 -59 c-160 -80 -540 -261 -547 -261 -3 0 -6 166 -6 369 l0 370 58 21 c31 12 174 66 317 120 143 54 268 98 278 99 16 1 17 -21 17 -329z"/>
                     </g>
                   </svg>
                 </div>
@@ -901,171 +770,174 @@
     </section>
   </main>
 
-  <!-- ФУТЕР С УМЕНЬШЕННЫМИ ОТСТУПАМИ -->
-  <footer>
-    <div id="footer-contacts" class="container-wide">
-      <div class="footer-grid">
-        <!-- Лого и описание -->
+  <footer class="py-10 md:py-12 w-full">
+    <div id="footer-contacts" class="container mx-auto px-4 md:px-6 w-full">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 w-full">
         <div class="footer-column">
           <div class="logo-wrapper">
             <a href="/" class="text-2xl md:text-3xl font-['Pacifico'] mb-3 md:mb-4 block">Алтайский мёд</a>
           </div>
           <div class="description-wrapper">
-            <p class="footer-description">Натуральные продукты пчеловодства с Алтайских гор.</p>
-            <p class="https-info">Сайт защищён — работает по протоколу HTTPS</p>
-            <p class="footer-copyright">© 2025 Алтайский мёд. Все права защищены.</p>
+            <p class="text-xs">Натуральные продукты пчеловодства с Алтайских гор.</p>
+            <p class="text-xs">Сайт защищён — работает по протоколу HTTPS</p>
+            <p class="text-xs">© 2025 Алтайский мёд. Все права защищены.</p>
           </div>
         </div>
         
-        <!-- Каталог -->
         <div class="footer-column">
-          <h4>Каталог</h4>
+          <h4 class="text-base md:text-lg font-bold">Каталог</h4>
           <ul>
             <li>
-              <a href="/#product-1" class="footer-link-item">
-                <span class="bullet"></span>
-                <span>Разнотравье</span>
+              <a href="/#product-1" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+                <span class="bullet mr-2"></span>
+                <span class="text-sm md:text-base">Разнотравье</span>
               </a>
             </li>
             <li>
-              <a href="/#product-2" class="footer-link-item">
-                <span class="bullet"></span>
-                <span>Таёжный мёд</span>
+              <a href="/#product-2" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+                <span class="bullet mr-2"></span>
+                <span class="text-sm md:text-base">Таёжный мёд</span>
               </a>
             </li>
             <li>
-              <a href="/#product-3" class="footer-link-item">
-                <span class="bullet"></span>
-                <span>Гречишный мёд</span>
+              <a href="/#product-3" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+                <span class="bullet mr-2"></span>
+                <span class="text-sm md:text-base">Гречишный мёд</span>
               </a>
             </li>
           </ul>
         </div>
         
-        <!-- Материалы -->
         <div class="footer-column">
-          <h4>Материалы</h4>
+          <h4 class="text-base md:text-lg font-bold">Материалы</h4>
           <ul>
             <li>
-              <a href="/blog/" class="footer-link-item">
-                <span class="bullet"></span>
-                <span>Блог</span>
+              <a href="/blog/" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+                <span class="bullet mr-2"></span>
+                <span class="text-sm md:text-base">Блог</span>
               </a>
             </li>
             <li>
-              <a href="/faq/" class="footer-link-item">
-                <span class="bullet"></span>
-                <span>FAQ</span>
+              <a href="/faq/" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+                <span class="bullet mr-2"></span>
+                <span class="text-sm md:text-base">FAQ</span>
               </a>
             </li>
             <li>
-              <a href="/legal.html" class="footer-link-item">
-                <span class="bullet"></span>
-                <span>Правовая информация</span>
+              <a href="/legal.html" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+                <span class="bullet mr=2"></span>
+                <span class="text-sm md:text-base">Правовая информация</span>
               </a>
             </li>
             <li>
-              <a href="/wholesale.html" class="footer-link-item">
-                <span class="bullet"></span>
-                <span>Мёд оптом для кафе, магазинов и заведений</span>
+              <a href="/wholesale.html" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+                <span class="bullet mr=2"></span>
+                <span class="text-sm md:text-base">Мёд оптом для кафе, магазинов и заведений</span>
               </a>
             </li>
           </ul>
         </div>
         
-        <!-- Информация -->
         <div class="footer-column">
-          <h4>Информация</h4>
+          <h4 class="text-base md:text-lg font-bold">Информация</h4>
           <ul>
             <li>
-              <a href="/#benefits" class="footer-link-item">
-                <span class="bullet"></span>
-                <span>Преимущества</span>
+              <a href="/#benefits" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+                <span class="bullet mr-2"></span>
+                <span class="text-sm md:text-base">Преимущества</span>
               </a>
             </li>
             <li>
-              <a href="/#about" class="footer-link-item">
-                <span class="bullet"></span>
-                <span>О нас</span>
+              <a href="/#about" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+                <span class="bullet mr-2"></span>
+                <span class="text-sm md:text-base">О нас</span>
               </a>
             </li>
             <li>
-              <a href="#footer-contacts" class="footer-link-item">
-                <span class="bullet"></span>
-                <span>Контакты</span>
+              <a href="/#footer-contacts" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+                <span class="bullet mr-2"></span>
+                <span class="text-sm md:text-base">Контакты</span>
               </a>
             </li>
             <li>
-              <a href="/delivery.html" class="footer-link-item">
-                <span class="bullet"></span>
-                <span>Доставка и оплата</span>
+              <a href="/delivery.html" class="hover:text-gray-300 transition-colors flex items-center footer-link-item">
+                <span class="bullet mr-2"></span>
+                <span class="text-sm md:text-base">Доставка и оплата</span>
               </a>
             </li>
           </ul>
         </div>
         
-        <!-- Контакты -->
         <div class="footer-column">
-          <h4>Контакты</h4>
+          <h4 class="text-base md:text-lg font-bold">Контакты</h4>
           <ul>
-            <li class="footer-link-item">
-              <div class="contact-icon">
-                <i class="ri-map-pin-2-line"></i>
-              </div>
-              <span class="contact-text">Владимирская обл. Город Ковров</span>
-            </li>
-            <li class="footer-link-item">
-              <a href="tel:+79209400222" class="footer-link">
+            <li>
+              <a class="footer-link-item">
                 <div class="contact-icon">
-                  <i class="ri-phone-line"></i>
+                  <i class="ri-map-pin-2-line ri-sm md:ri-base" aria-hidden="true"></i>
+                </div>
+                <span class="contact-text">Владимирская обл. Город Ковров</span>
+              </a>
+            </li>
+            <li>
+              <a href="tel:+79209400222" class="footer-link-item">
+                <div class="contact-icon">
+                  <i class="ri-phone-line ri-sm md:ri-base" aria-hidden="true"></i>
                 </div>
                 <span class="contact-text">+7 (920) 940-02-22</span>
               </a>
             </li>
-            <li class="footer-link-item">
-              <a href="mailto:altaymed.shop@yandex.ru" class="footer-link">
+            <li>
+              <a href="mailto:altaymed.shop@yandex.ru" class="footer-link-item">
                 <div class="contact-icon">
-                  <i class="ri-mail-line"></i>
+                  <i class="ri-mail-line ri-sm md:ri-base" aria-hidden="true"></i>
                 </div>
                 <span class="contact-text">altaymed.shop@yandex.ru</span>
               </a>
             </li>
           </ul>
           
-          <!-- Социальные сети -->
-          <div class="footer-social-icons">
-            <a href="https://vk.com/honeybuckwheat" target="_blank" rel="noopener noreferrer" class="social-icon-bw" aria-label="Наша страница ВКонтакте">
-              <i class="ri-vk-line ri-lg"></i>
-            </a>
-            <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" rel="noopener noreferrer" class="social-icon-bw" aria-label="Наш Telegram канал">
-              <i class="ri-telegram-line ri-lg"></i>
-            </a>
-            <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing" 
-               target="_blank" rel="noopener noreferrer" class="social-icon-bw" aria-label="Наше объявление на Авито">
-              <div class="avito-icon-bw">
-                <svg width="24" height="24" viewBox="0 0 160.00012 149.00977">
-                  <g style="stroke-width:8.63157;stroke-dasharray:none" transform="translate(-15.999621,-21.494796)">
-                    <path fill="#04e061" d="m 61.924,172.07 c 26.468,0 47.924,-21.456 47.924,-47.924 0,-26.468 -21.456,-47.924 -47.924,-47.924 C 35.456,76.222 14,97.678 14,124.146 c 0,26.468 21.456,47.925 47.924,47.925 z" style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:8.63157;stroke-dasharray:none;stroke-opacity:1" transform="matrix(0.92683,0,0,0.92683,7.024,7.024)"/>
-                    <path fill="#ff4053" d="m 149.044,166.007 c 15.992,0 28.956,-12.963 28.956,-28.955 0,-15.992 -12.964,-28.955 -28.956,-28.955 -15.99,0 -28.954,12.963 -28.954,28.955 0,15.992 12.963,28.955 28.954,28.955 z" style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:8.63157;stroke-dasharray:none;stroke-opacity:1" transform="matrix(0.92683,0,0,0.92683,7.024,7.024)"/>
-                    <path fill="#965eeb" d="m 71.086,65.979 c 9.898,0 17.922,-8.024 17.922,-17.921 0,-9.898 -8.024,-17.922 -17.922,-17.922 -9.898,0 -17.921,8.024 -17.921,17.922 0,9.897 8.023,17.921 17.921,17.921 z" style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:8.63157;stroke-dasharray:none;stroke-opacity:1" transform="matrix(0.92683,0,0,0.92683,7.024,7.024)"/>
-                    <path fill="#0af" d="m 137.789,97.856 c 21.519,0 38.964,-17.444 38.964,-38.963 0,-21.52 -17.445,-38.964 -38.964,-38.964 -21.52,0 -38.964,17.445 -38.964,38.964 0,21.519 17.445,38.963 38.964,38.963 z" style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:8.63157;stroke-dasharray:none;stroke-opacity:1" transform="matrix(0.92683,0,0,0.92683,7.024,7.024)"/>
-                  </g>
-                </svg>
-              </div>
-            </a>
-            <a href="https://dzen.ru/altaymed" target="_blank" rel="noopener noreferrer" class="social-icon-bw" aria-label="Наш канал на Яндекс Дзен">
-              <svg width="24" height="24" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet">
-                <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
-                  <path d="M2310 5113 c-833 -85 -1562 -559 -1979 -1286 -189 -328 -309 -731 -328 -1094 l-6 -123 34 0 c121 1 626 22 734 30 509 42 835 129 1075 288 395 261 571 645 635 1379 12 134 35 651 35 786 l0 27 -82 -2 c-46 0 -99 -3 -118 -5z"/>
-                  <path d="M2660 5069 c0 -117 21 -601 30 -719 52 -637 183 -1005 451 -1271 298 -295 743 -425 1549 -454 85 -3 218 -8 294 -11 l139 -6 -6 124 c-36 681 -384 1362 -922 1803 -417 341 -921 546 -1432 581 l-103 7 0 -54z"/>
-                  <path d="M4 2361 c57 -835 546 -1604 1289 -2030 329 -189 731 -309 1095 -328 l124 -6 -6 139 c-3 76 -8 211 -11 299 -21 579 -94 959 -241 1245 -68 132 -128 212 -243 323 -183 176 -395 282 -701 351 -267 59 -548 85 -1094 102 l-219 6 7 -101z"/>
-                  <path d="M4756 2449 c-875 -32 -1305 -153 -1610 -456 -180 -178 -289 -376 -361 -658 -72 -281 -101 -558 -120 -1149 l-7 -189 102 7 c833 57 1603 546 2029 1289 183 318 302 707 327 1065 l7 102 -79 -2 c-43 0 -173 -5 -288 -9z"/>
-                </g>
-              </svg>
-            </a>
-            <a href="https://yandex.ru/maps/" target="_blank" rel="noopener noreferrer" class="social-icon-bw" aria-label="Мы на Яндекс Картах">
-              <i class="ri-map-pin-line ri-lg"></i>
-            </a>
+          <div class="mt-4 md:mt-6">
+            <p class="text-base md:text-lg font-bold mb-2 md:mb-3">Следите за нами</p>
+            <div class="flex space-x-2 md:space-x-3">
+              <a href="https://vk.com/honeybuckwheat" target="_blank" class="social-icon-bw" aria-label="Наша страница ВКонтакте">
+                <i class="ri-vk-line ri-lg" aria-hidden="true"></i>
+              </a>
+              <a href="https://t.me/HONEYBUCKWHEAT" target="_blank" class="social-icon-bw" aria-label="Наш Telegram канал">
+                <i class="ri-telegram-line ri-lg" aria-hidden="true"></i>
+              </a>
+              <a href="https://www.avito.ru/kovrov/produkty_pitaniya/med_grechishnyy_s_altayskogo_kraya_kupit_v_kovrove_4293409000?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing" 
+                 target="_blank" class="social-icon-bw" aria-label="Наше объявление на Авито">
+                <div class="icon-inner">
+                  <svg viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#04e061" d="M61.924 172.07c26.468 0 47.924-21.456 47.924-47.924S88.392 76.222 61.924 76.222 14 97.678 14 124.146s21.456 47.925 47.924 47.925z" transform="translate(7.024 7.024) scale(.92683)"/>
+                    <path fill="#ff4053" d="M149.044 166.007c15.992 0 28.956-12.963 28.956-28.955 0-15.992-12.964-28.955-28.956-28.955-15.99 0-28.954 12.963-28.954 28.955 0 15.992 12.963 28.955 28.954 28.955z" transform="translate(7.024 7.024) scale(.92683)"/>
+                    <path fill="#965eeb" d="M71.086 65.979c9.898 0 17.922-8.024 17.922-17.921 0-9.898-8.024-17.922-17.922-17.922-9.898 0-17.921 8.024-17.921 17.922 0 9.897 8.023 17.921 17.921 17.921z" transform="translate(7.024 7.024) scale(.92683)"/>
+                    <path fill="#0af" d="M137.789 97.856c21.519 0 38.964-17.444 38.964-38.963 0-21.52-17.445-38.964-38.964-38.964-21.52 0-38.964 17.445-38.964 38.964s17.445 38.963 38.964 38.963z" transform="translate(7.024 7.024) scale(.92683)"/>
+                  </svg>
+                </div>
+              </a>
+              <a href="https://yandex.ru/maps/" target="_blank" class="social-icon-bw" aria-label="Наше местоположение на Яндекс Картах">
+                <div class="icon-inner">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C8.13 2 5 5.13 5 9C5 13.17 9.42 18.92 11.24 21.11C11.64 21.59 12.37 21.59 12.77 21.11C14.58 18.92 19 13.17 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" 
+                          fill="currentColor"/>
+                  </svg>
+                </div>
+              </a>
+              <a href="https://dzen.ru/altaymed" target="_blank" class="social-icon-bw" aria-label="Наш канал в Яндекс Дзен">
+                <div class="icon-inner">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">
+                    <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)" fill="currentColor" stroke="none">
+                      <path d="M2310 5113 c-833 -85 -1562 -559 -1979 -1286 -189 -328 -309 -731 -328 -1094 l-6 -123 34 0 c121 1 626 22 734 30 509 42 835 129 1075 288 395 261 571 645 635 1379 12 134 35 651 35 786 l0 27 -82 -2 c-46 0 -99 -3 -118 -5z"/>
+                      <path d="M2660 5069 c0 -117 21 -601 30 -719 52 -637 183 -1005 451 -1271 298 -295 743 -425 1549 -454 85 -3 218 -8 294 -11 l139 -6 -6 124 c-36 681 -384 1362 -922 1803 -417 341 -921 546 -1432 581 l-103 7 0 -54z"/>
+                      <path d="M4 2361 c57 -835 546 -1604 1289 -2030 329 -189 731 -309 1095 -328 l124 -6 -6 139 c-3 76 -8 211 -11 299 -21 579 -94 959 -241 1245 -68 132 -128 212 -243 323 -183 176 -395 282 -701 351 -267 59 -548 85 -1094 102 l-219 6 7 -101z"/>
+                      <path d="M4756 2449 c-875 -32 -1305 -153 -1610 -456 -180 -178 -289 -376 -361 -658 -72 -281 -101 -558 -120 -1149 l-7 -189 102 7 c833 57 1603 546 2029 1289 183 318 302 707 327 1065 l7 102 -79 -2 c-43 0 -173 -5 -288 -9z"/>
+                    </g>
+                  </svg>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
       </div>
